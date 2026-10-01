@@ -599,59 +599,12 @@ world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Lie Zed
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Midway 1621
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Pliqel 1419
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Zhdokr Bsiej 1522
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0101                      X87A000-0 Ba Lo Ni Wa        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0110                      X641000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0202                      X489000-0 Ba Lo Ni Cp        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0203                      X444000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0206                      X552000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0302                      X573000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0305                      X336000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0308                      X331000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0403                      X756000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0501                      XAB8000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0505                      X445000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0507                      X466000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0602                      X374000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0606                      X262000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0630                      X387000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0701                      X785000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0703                      X59A000-0 Ba Lo Ni Wa        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0705                      X632000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0801                      X972000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0821                      X000000-0 As Ba Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 0903                      XAA6000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 1101                      X220000-0 Ba De Lo Ni Po     ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 1112                      X200000-0 Ba Lo Ni Va        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 1424                      X6B9000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 1806                      X456000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 1814                      X445000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 2740                      X8B5000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 2838                      X423000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 2904                      X8C6000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 2937                      X788000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 2940                      X544000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3035                      X788000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3036                      X8B7000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3038                      X322000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3039                      X9C8000-0 Ba Fl Lo Ni        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3135                      X644000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3137                      X636000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3139                      X500000-0 Ba Lo Ni Va        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3234                      X341000-0 Ba Lo Ni Po        ---- ---- ----       XXX   XXXX
-world-parse | Nadir (M1105) | Parse Error: Input string was not in a correct format., 3237                      X346000-0 Ba Lo Ni           ---- ---- ----       XXX   XXXX
 world-parse | Ruupiin (M1105) | Parse Error: Invalid eHex digit: '?', 1420 Agneex          A5327RK-F                                     - K - ?34   Kk M7 III
 world-parse | Yiklerdanzh (Meshan Saga) (M1105) | Unexpected value for B: 'Z', 1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              Z    101   ZC
 xml-schema | ~/res/Sectors/Faraway/Alte Grenzen.xml | The element 'Sector' has invalid child element 'Allegiance'. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/Faraway/Anniversary.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Faraway/Anniversary.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Faraway/Anniversary.xml | The required attribute 'Color' is missing.
 xml-schema | ~/res/Sectors/Faraway/Constance.xml | The 'Tags' attribute is invalid - The value '' is invalid according to its datatype 'http://www.w3.org/2001/XMLSchema:NMTOKENS' - The attribute value cannot be empty.
 xml-schema | ~/res/Sectors/Faraway/Foreven-ImperiumStaple.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
 xml-schema | ~/res/Sectors/Faraway/Fulani-TTT.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/Faraway/Marischal.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Faraway/Outer Reaches.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Faraway/Outer Reaches.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Faraway/Outer Reaches.xml | The required attribute 'Color' is missing.
 xml-schema | ~/res/Sectors/Faraway/Rim Worlds.xml | The 'Tags' attribute is invalid - The value '' is invalid according to its datatype 'http://www.w3.org/2001/XMLSchema:NMTOKENS' - The attribute value cannot be empty.
 xml-schema | ~/res/Sectors/M1105/Astron.xml | The 'WrapLabel' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/Astron.xml | The 'WrapLabel' attribute is not declared.
@@ -664,8 +617,6 @@ xml-schema | ~/res/Sectors/M1105/Kidunal.xml | The 'Wraplabel' attribute is not 
 xml-schema | ~/res/Sectors/M1105/M1105.xml | The 'Source-Milieu' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/M1105.xml | The 'Source-Milieu' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/Numbis.xml | The 'Era' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Reft.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/M1105/RimReach.xml | The required attribute 'Color' is missing.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
@@ -688,13 +639,7 @@ xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contai
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Touchstone.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/M1105/Touchstone.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/M1105/Touchstone.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/M1105/Touchstone.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/M1105/Trojan Reach.xml | The required attribute 'Color' is missing.
 xml-schema | ~/res/Sectors/M1201/Antares.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M1201/Reft.xml | The required attribute 'Color' is missing.
 xml-schema | ~/res/Sectors/M1201/Spinward Marches.xml | The 'label' attribute is not declared.
 xml-schema | ~/res/Sectors/M1900/Dashis.xml | The 'Tabs' attribute is not declared.
 xml-schema | ~/res/Sectors/M1900/Dhuerorrg.xml | The 'Tabs' attribute is not declared.
@@ -704,7 +649,6 @@ xml-schema | ~/res/Sectors/M1900/Kloo.xml | The 'Tabs' attribute is not declared
 xml-schema | ~/res/Sectors/M1900/Knoellighz.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
 xml-schema | ~/res/Sectors/M1900/Loow.xml | The 'Tabs' attribute is not declared.
 xml-schema | ~/res/Sectors/M1900/Pars.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Reft.xml | The required attribute 'Color' is missing.
 xml-schema | ~/res/Sectors/M1900/Rish.xml | The 'Tabs' attribute is not declared.
 xml-schema | ~/res/Sectors/M1900/Snen.xml | The 'Tabs' attribute is not declared.
 xml-schema | ~/res/Sectors/M1900/Tash.xml | The 'Tabs' attribute is not declared.
@@ -720,8 +664,3 @@ xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain
 xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M990/Diaspora.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
 xml-schema | ~/res/Sectors/M990/Diaspora.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/Meta/legend.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Meta/legend.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Meta/legend.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Meta/legend.xml | The required attribute 'Color' is missing.
-xml-schema | ~/res/Sectors/Meta/legend.xml | The required attribute 'Color' is missing.

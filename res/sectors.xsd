@@ -104,7 +104,7 @@
                       <xs:extension base="xs:string">
                         <xs:attribute name="Allegiance" type="xs:string" use="optional" />
                         <xs:attribute name="Hex" type="xs:unsignedShort" use="required" />
-                        <xs:attribute name="Color" type="xs:string" use="required" />
+                        <xs:attribute name="Color" type="xs:string" use="optional" /><!-- defaults to amber (Label.DefaultColor) -->
                         <xs:attribute name="Size" type="xs:string" use="optional" />
                         <xs:attribute name="Wrap" type="xs:boolean" use="optional" />
                         <xs:attribute name="OffsetX" type="xs:float" use="optional" />

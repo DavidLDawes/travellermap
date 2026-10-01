@@ -165,6 +165,11 @@ The Phase 4 ratchet stops *new* errors; this item works down the existing ones. 
 the visible-on-map fixes, then D1/D2 as an opt-in tool, then D3 and the allegiance definitions
 with their authors. Regenerate the baseline after each step to lock in the gains.
 
+**Status: T1–T4 DONE** (branch `data-quality-tools`). Measured result: **664 errors** (as predicted)
+and **~60,300 warnings** (from 187,263). The baseline dropped 61 entries. `/admin/errors` shows
+the TL/Gov/Law checks as `Hint:` lines, and Nadir no longer reports parse errors. Remaining:
+the visible-on-map fixes, D1–D3, and the other data items above (owner review needed).
+
 ## Phase 5 — Remaining version updates — DONE (branch `phase5-updates`) [up]
 - MSTest v1 → **MSTest 4.4.1** NuGet (supports net462+ and modern .NET). Its analyzers found 7 swapped
   expected/actual assertions and 1 always-true assertion; fixed.

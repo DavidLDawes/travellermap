@@ -48,7 +48,7 @@ namespace Maps.Admin
                                   && (type == null || sector.DataFile.Type == type)
                                   && (milieu == null || sector.CanonicalMilieu == milieu)
                                   && (tag == null || sector.Tags.Contains(tag))
-                                  && (sector.Tags.Contains("OTU") || sector.Tags.Contains("Apocryphal") || sector.Tags.Contains("Faraway"))
+                                  && DataValidator.IsCurated(sector)
                                   orderby sector.Names[0].Text
                                   select sector;
 

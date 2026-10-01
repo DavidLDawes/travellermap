@@ -35,6 +35,15 @@ namespace Maps.Admin
             public override string ToString() => $"{Severity}: [{Category}] {Where}: {Message}";
         }
 
+        /// <summary>
+        /// Sector tags whose data is curated for this site (the same set /admin/errors checks).
+        /// Other data (fan projects such as the Zhodani Core Route) is still checked for errors,
+        /// but its data-quality warnings are not reported.
+        /// </summary>
+        internal static readonly IReadOnlyList<string> CuratedTags = new[] { "OTU", "Apocryphal", "Faraway" };
+
+        internal static bool IsCurated(Sector sector) => CuratedTags.Any(tag => sector.Tags.Contains(tag));
+
         private readonly List<Finding> findings = new List<Finding>();
         public IReadOnlyList<Finding> Findings => findings;
 
@@ -50,6 +59,7 @@ namespace Maps.Admin
             foreach (var sector in map.Sectors.Where(s => s.DataFile != null && (filter == null || filter(s))))
             {
                 string where = $"{sector.Names[0].Text} ({sector.CanonicalMilieu})";
+                bool reportWarnings = IsCurated(sector);
 
                 WorldCollection? worlds = null;
                 try
@@ -69,7 +79,7 @@ namespace Maps.Admin
                         {
                             if (record.severity >= ErrorLogger.Severity.Error)
                                 Add(Severity.Error, "world-parse", where, record.message);
-                            else if (record.severity == ErrorLogger.Severity.Warning)
+                            else if (record.severity == ErrorLogger.Severity.Warning && reportWarnings)
                                 Add(Severity.Warning, "world-data", where, record.message);
                         }
                     }
@@ -100,7 +110,7 @@ namespace Maps.Admin
                         Astrometrics.LocationToCoordinates(new Location(endSector, route.End)));
                     if (distance == 0)
                         Add(Severity.Error, "route-length", where, $"Zero-length route: {route}");
-                    else if (distance > 4)
+                    else if (distance > 4 && reportWarnings)
                         Add(Severity.Warning, "route-length", where, $"Route length {distance}: {route}");
                 }
             }
