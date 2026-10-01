@@ -81,8 +81,8 @@
     <X>1</X>
     <Name>Old Expanses</Name>
     <Name Lang="vi">Mikadira</Name>
-    <DataFile Author="Daniel Hammersley, Richard Perks and Grahame Muliss" Source="1248 Sourcebook 4: The Freedom League">1248_OldE.sec</DataFile>
-    <MetadataFile>1248_OldE.xml</MetadataFile>
+    <DataFile Author="Daniel Hammersley, Richard Perks and Grahame Muliss" Source="1248 Sourcebook 4: The Freedom League">1248_Olde.sec</DataFile>
+    <MetadataFile>1248_Olde.xml</MetadataFile>
   </Sector>
   <Sector Abbreviation="Solo" Tags="Unreviewed" Selected="true" Milieu="M1248">
     <Y>3</Y>

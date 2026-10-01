@@ -1,4 +1,4 @@
-# Known data validation errors; see unittests/UnitTests/DataValidationTest.cs.
+# Known data validation errors; see server/admin/DataValidator.cs.
 # Format: category | sector (milieu) or file | message. Regenerate with TM_UPDATE_BASELINE=1.
 metadata-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Border
 metadata-allegiance | Alte Grenzen (M1105) | Undefined allegiance code OC on Border
@@ -612,8 +612,6 @@ xml-schema | ~/res/Sectors/M1105/Astron.xml | The 'WrapLabel' attribute is not d
 xml-schema | ~/res/Sectors/M1105/Chiep Zhez.xml | The 'WrapLabel' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/Chiep Zhez.xml | The 'WrapLabel' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/Gakghang.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/M1105/Kidunal.xml | The 'Wraplabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Kidunal.xml | The 'Wraplabel' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/M1105.xml | The 'Source-Milieu' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/M1105.xml | The 'Source-Milieu' attribute is not declared.
 xml-schema | ~/res/Sectors/M1105/Numbis.xml | The 'Era' attribute is not declared.
@@ -639,6 +637,8 @@ xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contai
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
 xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
+xml-schema | ~/res/Sectors/M1105/kidunal.xml | The 'Wraplabel' attribute is not declared.
+xml-schema | ~/res/Sectors/M1105/kidunal.xml | The 'Wraplabel' attribute is not declared.
 xml-schema | ~/res/Sectors/M1201/Antares.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
 xml-schema | ~/res/Sectors/M1201/Spinward Marches.xml | The 'label' attribute is not declared.
 xml-schema | ~/res/Sectors/M1900/Dashis.xml | The 'Tabs' attribute is not declared.

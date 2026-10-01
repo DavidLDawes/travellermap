@@ -136,7 +136,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>-5</Y>
     <X>-1</X>
     <Name Lang="va">Listanaya</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">listanaya.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Listanaya.sec</DataFile>
     <Borders>
       <Border Allegiance="VE" Color="olivedrab">1615 1716 1717 1718 1618 1619 1618 1617 1616 1615</Border>
       <Border Allegiance="VL" Color="olivedrab">1931 2030 2130 2230 2331 2430 2530 2630 2731 2830 2931 2932 2933 2833 2733 2632 2532 2432 2332 2232 2132 2032 1933 1932 1931</Border>
@@ -169,14 +169,14 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <X>0</X>
     <Name Lang="va">Veg Fergakh</Name>
     <Name Lang="va" Source="Underdeveloped">Veg Vergakh</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">vegvergakh.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">VegVergakh.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-5</Y>
     <X>1</X>
     <Name Lang="va">Dfotseth</Name>
     <Name Lang="va" Publisher="HIWG">Ugulorkurr</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">dfotseth.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Dfotseth.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-5</Y>
@@ -184,19 +184,19 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Name Lang="va">Irugangog</Name>
     <Name Lang="va" Source="Underdeveloped">Irugangong</Name>
     <Name Lang="va" Publisher="HIWG">Ksongrru</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">irugangong.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Irugangong.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-5</Y>
     <X>3</X>
     <Name Lang="va" Publisher="HIWG">Finggvakhou</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">finggvakhou.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Finggvakhou.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-5</Y>
     <X>4</X>
     <Name Publisher="HIWG">Zortakh</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">zortakh.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Zortakh.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-5</Y>
@@ -287,7 +287,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <X>-3</X>
     <Name Lang="va">Ksinanirz</Name>
     <Name Lang="zh">Zheranzanj</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">ksinanirz.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Ksinanirz.sec</DataFile>
     <Borders>
       <Border Allegiance="VP" Color="olivedrab">0803 0904 1004 1104 1204 1304 1305 1405 1506 1507 1508 1608 1609 1610 1611 1712 1812 1713 1613 1514 1413 1412 1411 1410 1310 1209 1208 1207 1206 1106 1005 0905 0804 0803</Border>
       <Border Allegiance="VR" Color="olivedrab">0506 0606 0706 0806 0907 1007 0908 0808 0809 0709 0609 0608 0607 0606 0506</Border>
@@ -370,7 +370,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>-4</Y>
     <X>-1</X>
     <Name Lang="va">Knaeleng</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">knaeleng.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Knaeleng.sec</DataFile>
     <Borders>
       <Border Allegiance="VA" Color="olivedrab">1722 1821 1921 2021 2121 2220 2320 2419 2418 2417 2416 2516 2615 2715 2714 2813 2812 2912 3011 3111 3210 3310 3311 3312 3313 3314 3315 3316 3317 3318 3319 3320 3321 3322 3323 3324 3325 3326 3327 3328 3329 3328 3227 3127 3026 3025 2925 2824 2724 2623 2524 2424 2325 2224 2124 2023 1923 1823 1723 1722</Border>
       <Border Allegiance="VK" Color="olivedrab">0013 0114 0214 0315 0414 0514 0513 0512 0612 0713 0813 0913 1013 1114 1213 1313 1412 1512 1511 1512 1513 1514 1515 1415 1416 1317 1217 1218 1219 1220 1221 1222 1223 1124 1125 1126 1026 0927 0928 0827 0728 0628 0528 0427 0327 0226 0127 0027 0026 0025 0024 0023 0022 0021 0020 0019 0018 0017 0016 0015 0014 0013</Border>
@@ -404,7 +404,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>-4</Y>
     <X>0</X>
     <Name Lang="va">Kharrthon</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">kharrthon.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Kharrthon.sec</DataFile>
     <Borders>
       <Border Allegiance="VA" Color="olivedrab">0010 0110 0209 0309 0308 0307 0306 0205 0105 0104 0103 0203 0303 0403 0504 0604 0705 0805 0905 0906 1006 1007 1008 1109 1110 1210 1211 1312 1313 1314 1315 1215 1116 1117 1118 1119 1120 1121 1122 1022 0923 0823 0824 0825 0826 0827 0728 0628 0528 0428 0329 0228 0129 0128 0027 0026 0025 0024 0023 0022 0021 0020 0019 0018 0017 0016 0015 0014 0013 0012 0011 0010</Border>
       <Border Allegiance="VD" Color="olivedrab">1726 1825 1925 1924 2023 2123 2122 2121 2221 2321 2420 2520 2619 2719 2819 2920 3020 3121 3021 3022 3023 3024 3025 2926 2927 2826 2726 2625 2526 2426 2327 2227 2127 2026 1927 1826 1726</Border>
@@ -442,7 +442,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>-4</Y>
     <X>1</X>
     <Name Lang="va">Oeghz Vaerrghr</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">oeghzvaerrghr.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">OeghzVaerrghr.sec</DataFile>
     <Borders>
       <Border Allegiance="VX" Color="olivedrab">0038 0138 0237 0337 0336 0337 0338 0238 0139 0039 0040 0039 0038</Border>
     </Borders>
@@ -517,7 +517,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Name Lang="va">Angfutsag</Name>
     <Name Lang="va" Publisher="HIWG">Gzerzarssou</Name>
     <Name Publisher="HIWG">Puragaaku</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">angfutsag.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Angfutsag.sec</DataFile>
     <Subsectors>
       <Subsector Index="A">Khugzkfael</Subsector>
       <Subsector Index="B">Oenggaen</Subsector>
@@ -541,7 +541,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>-4</Y>
     <X>4</X>
     <Name Lang="va" Publisher="HIWG">Rfigh</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">rfigh.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Rfigh.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-4</Y>
@@ -630,7 +630,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Name Lang="zh">Itvikiastaf</Name>
     <Name Lang="va">Aerenfors</Name>
     <MetadataFile>Itvikiastaf.xml</MetadataFile>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">aerenfors.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Aerenfors.sec</DataFile>
   </Sector>
   <Sector>
     <Y>-3</Y>
@@ -773,7 +773,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
 
       ]]>
     </Credits>
-    <DataFile Source="Federation Development Agency" Author="Leroy W. L. Guatney" Ref="https://web.archive.org/web/20071029174129/http://home.earthlink.net/~ngc5139/FDA/">ktiingzat.sec</DataFile>
+    <DataFile Source="Federation Development Agency" Author="Leroy W. L. Guatney" Ref="https://web.archive.org/web/20071029174129/http://home.earthlink.net/~ngc5139/FDA/">Ktiingzat.sec</DataFile>
     <Subsectors>
       <Subsector Index="A">Gaengrerdhoerk</Subsector>
       <Subsector Index="B">Kikakhamkishis</Subsector>
@@ -1042,7 +1042,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <X>4</X>
     <Name Lang="kk">Gn'hk'r</Name>
     <Name Lang="va">Gelath</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">gelath.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Gelath.sec</DataFile>
     <Subsectors Ref="https://wiki.travellerrpg.com/Gn%27hk%27r_Sector">
       <Subsector Index="A">'triliir!!gr</Subsector>
       <Subsector Index="B">N'r Kra Kat</Subsector>
@@ -1248,7 +1248,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>-1</Y>
     <X>4</X>
     <Name Lang="kk">Gh!hken</Name>
-    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">gh1hken.sec</DataFile>
+    <DataFile Author="John G. Wood" Source="Underdeveloped Sectors" Ref="https://web.archive.org/web/20160205040546/http://homepage.ntlworld.com/elvwood/Traveller/Sectors/">Gh1hken.sec</DataFile>
     <Subsectors Ref="https://wiki.travellerrpg.com/Gh!hken_Sector">
       <Subsector Index="B">Xikat Raarr</Subsector>
       <Subsector Index="C">Ux'x!gn!</Subsector>
@@ -1898,8 +1898,8 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <X>4</X>
     <Name>Extolian</Name>
     <Name Lang="kk">Krurrihkugr</Name>
-    <DataFile Source="Federation Development Agency" Type="SecondSurvey" Author="Leroy W. L. Guatney" Ref="https://web.archive.org/web/20071029174129/http://home.earthlink.net/~ngc5139/FDA/">extolian.txt</DataFile>
-    <MetadataFile Author="Mark Humphreys">Extolian.xml</MetadataFile>
+    <DataFile Source="Federation Development Agency" Type="SecondSurvey" Author="Leroy W. L. Guatney" Ref="https://web.archive.org/web/20071029174129/http://home.earthlink.net/~ngc5139/FDA/">Extolian.txt</DataFile>
+    <MetadataFile Author="Mark Humphreys">extolian.xml</MetadataFile>
   </Sector>
   <Sector>
     <Y>2</Y>
@@ -1915,8 +1915,8 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <X>6</X>
     <Name Lang="hv">Blaskon</Name>
     <Name Lang="kk">Okteekrul</Name>
-    <DataFile Author="Mark Humphreys" Type="SecondSurvey">Blaskon.txt</DataFile>
-    <MetadataFile Author="Mark Humphreys">Blaskon.xml</MetadataFile>
+    <DataFile Author="Mark Humphreys" Type="SecondSurvey">blaskon.txt</DataFile>
+    <MetadataFile Author="Mark Humphreys">blaskon.xml</MetadataFile>
   </Sector>
   <Sector>
     <Y>2</Y>
@@ -2212,7 +2212,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <X>4</X>
     <Name Lang="hv">Centrax</Name>
     <Name Lang="hv">Glea</Name>
-    <DataFile Author="Mark Humphreys" Type="SecondSurvey">Centrax.txt</DataFile>
+    <DataFile Author="Mark Humphreys" Type="SecondSurvey">centrax.txt</DataFile>
     <MetadataFile Author="Mark Humphreys">Centrax.xml</MetadataFile>
   </Sector>
   <Sector>
@@ -2240,7 +2240,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>3</Y>
     <X>8</X>
     <Name Lang="hv" Publisher="HIWG">Kolire</Name>
-    <DataFile Author="Mark Humphreys" Type="SecondSurvey">Kolire.txt</DataFile>
+    <DataFile Author="Mark Humphreys" Type="SecondSurvey">kolire.txt</DataFile>
     <Subsectors>
       <Subsector Index="A">Biggum</Subsector>
       <Subsector Index="B">Kolier</Subsector>
@@ -2276,7 +2276,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>4</Y>
     <X>-8</X>
     <Name Lang="as">Yahehwe</Name>
-    <DataFile Source="Solomani and Aslan" Ref="https://travellermap.com/data/yahehwe" Type="TabDelimited">yahehwe.tab</DataFile>
+    <DataFile Source="Solomani and Aslan" Ref="https://travellermap.com/data/yahehwe" Type="TabDelimited">Yahehwe.tab</DataFile>
     <Subsectors>
       <Subsector Index="A">Aloiui</Subsector>
       <Subsector Index="B">Ouei'ya</Subsector>
@@ -2335,7 +2335,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>4</Y>
     <X>-6</X>
     <Name Lang="as">Heakhafaw</Name>
-    <DataFile Source="Solomani and Aslan" Ref="https://travellermap.com/data/heakhafaw" Type="TabDelimited">heakhafaw.tab</DataFile>
+    <DataFile Source="Solomani and Aslan" Ref="https://travellermap.com/data/heakhafaw" Type="TabDelimited">Heakhafaw.tab</DataFile>
     <Subsectors>
       <Subsector Index="A">Staiahio</Subsector>
       <Subsector Index="B">Aaotla</Subsector>
@@ -2566,8 +2566,8 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>4</Y>
     <X>6</X>
     <Name>Kidunal</Name>
-    <DataFile Author="Mark Humphreys" Type="SecondSurvey">Kidunal.txt</DataFile>
-    <MetadataFile Author="Mark Humphreys">Kidunal.xml</MetadataFile>
+    <DataFile Author="Mark Humphreys" Type="SecondSurvey">kidunal.txt</DataFile>
+    <MetadataFile Author="Mark Humphreys">kidunal.xml</MetadataFile>
   </Sector>
   <Sector>
     <Y>4</Y>
@@ -2617,7 +2617,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>5</Y>
     <X>-8</X>
     <Name Lang="as">Ohieraoi</Name>
-    <DataFile Source="Solomani and Aslan" Author="Leigh Heron" Ref="https://travellermap.com/data/ohieraoi" Type="TabDelimited">ohieraoi.tab</DataFile> 
+    <DataFile Source="Solomani and Aslan" Author="Leigh Heron" Ref="https://travellermap.com/data/ohieraoi" Type="TabDelimited">Ohieraoi.tab</DataFile> 
     <Subsectors>
       <Subsector Index="A">Ol</Subsector>
       <Subsector Index="B">Irluikaei</Subsector>
@@ -2645,7 +2645,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>5</Y>
     <X>-7</X>
     <Name Lang="as">Fahreahluis</Name>
-    <DataFile Source="Solomani and Aslan" Author="Leigh Heron" Ref="https://travellermap.com/data/fahreahluis" Type="TabDelimited">fahreahluis.tab</DataFile>
+    <DataFile Source="Solomani and Aslan" Author="Leigh Heron" Ref="https://travellermap.com/data/fahreahluis" Type="TabDelimited">Fahreahluis.tab</DataFile>
     <Subsectors>
       <Subsector Index="A">Weoasoar</Subsector>
       <Subsector Index="B">Eaearleke</Subsector>
@@ -3028,7 +3028,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
     <Y>5</Y>
     <X>4</X>
     <Name>Darret</Name>
-    <DataFile Source="General Turokan's Expedition to the Rim" Type="SecondSurvey" Author="Bari Z. Stafford Sr." Ref="https://web.archive.org/web/20030406042613/http://www.geocities.com/traveller_core_route/proj004/proj004.html">darret.txt</DataFile>
+    <DataFile Source="General Turokan's Expedition to the Rim" Type="SecondSurvey" Author="Bari Z. Stafford Sr." Ref="https://web.archive.org/web/20030406042613/http://www.geocities.com/traveller_core_route/proj004/proj004.html">Darret.txt</DataFile>
     <MetadataFile>Darret.xml</MetadataFile>
   </Sector>
   <Sector>
