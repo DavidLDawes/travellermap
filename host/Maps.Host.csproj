@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <!--
+    Cross-platform host (ASP.NET Core, .NET 10) for the map site: serves the same routes and
+    handlers as the IIS site (Maps.csproj), from the portable core, plus the static files.
+      Run: dotnet run (Debug configuration) with this project; see host/README.md.
+
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>Maps.Host</RootNamespace>
+    <AssemblyName>Maps.Host</AssemblyName>
+    <!-- The repo root holds a web.config for IIS; don't generate or publish one here. -->
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../core/Maps.Core.csproj" />
+    <!-- SkiaSharp's native library for Linux (Windows and macOS come with SkiaSharp). -->
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="4.153.1" />
+  </ItemGroup>
+</Project>

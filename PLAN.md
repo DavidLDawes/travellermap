@@ -332,11 +332,40 @@ parity tests between the old and new hosts.
 - **Linux:** a Linux host needs `SkiaSharp.NativeAssets.Linux.NoDependencies` (in the 7.3 host
   project). Rendering on Linux gets verified by running the browser suites against the 7.3 host.
 
-### 7.3 ASP.NET Core host (net10.0)
-- New `host/` project: minimal-API endpoints mirroring `Global.asax` routes (RoutingTest's URL
-  list as the spec). Port `DataResponder` content negotiation (JSON/XML/text, JSONP) and the
-  handlers. Static files; admin pages with the key check.
-- Run both hosts side by side; point `npm run test:browser` at the new one; reach parity.
+### 7.3 ASP.NET Core host (net10.0) — DONE (branch `phase7-host`)
+- **Shared handlers.** Instead of rewriting the handlers for ASP.NET Core, they moved to the
+  core unchanged in shape, on a host-neutral HTTP layer (`Maps.Web`, the subset of System.Web
+  they use). Both hosts adapt it:
+  - IIS: `server/http/SystemWebHost.cs`.
+  - ASP.NET Core: `host/AspNetCoreContext.cs`. It reads request bodies up front and buffers
+    responses, since the handlers are synchronous.
+- **Routes** moved from `Global.asax` to a portable `RouteTable` (`server/http/Routing.cs`);
+  `RoutingTest` tests it.
+- **Search** sits behind `ISearchIndex` (`SearchEngine.Index`). IIS registers SQL Server; the new
+  host has none yet (503).
+- **GDI+ renderer** sits behind `ILegacyBitmapRenderer`; IIS only.
+- **`host/`**: static files, hidden paths, extensionless pages, CORS, MIME types, caching,
+  compression (success responses only, as IIS) and the 404 page, all as in `Web.config`.
+- **Parity, checked response by response** (90 requests: API, data, images, static,
+  redirects, errors, POST uploads, admin):
+  - The refactored IIS site matches `main` except two intended changes (below).
+  - The new host matches the IIS site except: search (503), `renderer=gdi` (400), PDF bytes
+    (a different PDFsharp build; pages render identically), and one SVG float's last digit.
+  - Browser suites pass on both hosts. A new CI job runs them against the host on Linux.
+- **Made deterministic across runtimes** (found by the comparison):
+  - MSEC output used `List.Sort`, which is unstable and orders differently on .NET Framework
+    and .NET. It's now stable (file order); `msec_legend.txt` was regenerated.
+  - Code lists sorted culture-aware (NLS vs ICU disagree on e.g. "K'kr"). They now use
+    `Util.StableStringComparer` (ordinal, case-insensitive).
+  - The XML declaration and namespace order are pinned to .NET Framework's.
+  - Windows-1252 needs `CodePagesEncodingProvider` on .NET.
+- **Not ported:** the `PageFooter` module, and the production redirects (HTTPS, `www.`), which
+  belong in the reverse proxy (7.5).
+- **Gotchas:**
+  - ASP.NET Core reserves the `contentRoot` setting, so the host's is `SiteRoot`.
+  - `Maps.Host.exe` looks for a machine-wide .NET; with the user-local SDK run
+    `dotnet Maps.Host.dll`.
+  - Stopping a background `dotnet run` leaves its child process holding the build output.
 
 ### 7.4 Search on SQLite
 - An `ISearchIndex` interface over `SearchEngine`. Implement SQLite, built by a `tools/reindex`

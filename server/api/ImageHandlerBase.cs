@@ -6,12 +6,11 @@ using Maps.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Mime;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.API
 {
@@ -48,8 +47,10 @@ namespace Maps.API
         /// "Renderer" app setting; the "renderer" query option overrides it per request, for
         /// comparing the two. SVG text measurement follows the same choice.
         /// </summary>
-        private static readonly string s_defaultRenderer =
-            System.Configuration.ConfigurationManager.AppSettings["Renderer"] ?? "skia";
+        private static string DefaultRenderer => AppSettings.Get("Renderer") ?? "skia";
+
+        /// <summary>The GDI+ renderer for renderer=gdi; registered by hosts that have it (IIS).</summary>
+        public static ILegacyBitmapRenderer? GdiRenderer { get; set; }
 
         protected abstract class ImageResponder : DataResponder
         {
@@ -60,7 +61,7 @@ namespace Maps.API
                 bool transparent = false)
             {
                 ProduceResponse(context, this, title, ctx, tileSize, transform, transparent,
-                    (context.Items["RouteData"] as System.Web.Routing.RouteData)!.Values);
+                    context.RouteValues);
             }
 
             protected void ProduceResponse(HttpContext context, ITypeAccepter accepter, string title, RenderContext ctx, Size tileSize,
@@ -70,8 +71,11 @@ namespace Maps.API
                 ApplyStyleOptions(ctx.Styles, queryDefaults);
                 double devicePixelRatio = GetDevicePixelRatio(queryDefaults);
                 bool dataURI = GetBoolOption("datauri", queryDefaults: queryDefaults, defaultValue: false);
-                bool skia = !string.Equals(GetStringOption("renderer", queryDefaults: queryDefaults, defaultValue: s_defaultRenderer),
-                    "gdi", StringComparison.OrdinalIgnoreCase);
+                ILegacyBitmapRenderer? gdi = null;
+                if (string.Equals(GetStringOption("renderer", queryDefaults: queryDefaults, defaultValue: DefaultRenderer), "gdi", StringComparison.OrdinalIgnoreCase))
+                {
+                    gdi = GdiRenderer ?? throw new HttpError(400, "Bad Request", "renderer=gdi is not available on this server.");
+                }
 
                 // "content-disposition: inline" is not used as Chrome opens that in a tab, then
                 // (sometimes?) fails to allow it to be saved due to being served via POST.
@@ -87,11 +91,11 @@ namespace Maps.API
 
                 if (accepter.Accepts(context, ContentTypes.Image.Svg, ignoreHeaderFallbacks: true))
                     WriteSvg(context.Response, outputStream, downloadDisposition, title, ctx, tileSize, transform,
-                        skia ? SkiaFonts.TextMeasurer : GdiSupport.TextMeasurer);
+                        gdi?.TextMeasurer ?? SkiaFonts.TextMeasurer);
                 else if (accepter.Accepts(context, ContentTypes.Application.Pdf, ignoreHeaderFallbacks: true))
                     WritePdf(context.Response, outputStream, downloadDisposition, title, ctx, tileSize, transform);
                 else
-                    WriteBitmap(context.Response, outputStream, disposition, title, ctx, tileSize, transform, devicePixelRatio, transparent, skia);
+                    WriteBitmap(context.Response, outputStream, disposition, title, ctx, tileSize, transform, devicePixelRatio, transparent, gdi);
 
                 if (dataUriBuffer != null)
                     WriteDataUri(context.Response, dataUriBuffer);
@@ -208,7 +212,7 @@ namespace Maps.API
             }
 
             private static void WriteBitmap(HttpResponse response, Stream output, string disposition, string title,
-                RenderContext ctx, Size tileSize, AbstractMatrix transform, double devicePixelRatio, bool transparent, bool skia)
+                RenderContext ctx, Size tileSize, AbstractMatrix transform, double devicePixelRatio, bool transparent, ILegacyBitmapRenderer? gdi)
             {
                 double requestedWidth = Math.Floor(tileSize.Width * devicePixelRatio);
                 double requestedHeight = Math.Floor(tileSize.Height * devicePixelRatio);
@@ -220,56 +224,58 @@ namespace Maps.API
                 int width = (int)requestedWidth;
                 int height = (int)requestedHeight;
 
-                if (skia)
+                // JPEG or PNG, based on style; transparency needs PNG.
+                string mimeType = transparent || ctx.Styles.preferredMimeType != ContentTypes.Image.Jpeg
+                    ? ContentTypes.Image.Png : ContentTypes.Image.Jpeg;
+                void Render(AbstractGraphics graphics)
                 {
-                    // JPEG or PNG, based on style; transparency needs PNG.
-                    string mimeType = transparent || ctx.Styles.preferredMimeType != ContentTypes.Image.Jpeg
-                        ? ContentTypes.Image.Png : ContentTypes.Image.Jpeg;
-                    byte[] encoded = SkiaGraphics.RenderBitmap(width, height, mimeType, graphics =>
-                    {
-                        graphics.ScaleTransform((float)devicePixelRatio);
-                        RenderToGraphics(ctx, transform, graphics);
-                    }) ?? throw new HttpError(500, "Internal Server Error",
-                        $"Failed to allocate bitmap ({width}x{height}). Insufficient memory?");
-                    response.ContentType = mimeType;
-                    if (title != null)
-                    {
-                        string extension = mimeType == ContentTypes.Image.Jpeg ? "jpg" : "png";
-                        response.AddHeader("content-disposition", $"{disposition};filename=\"{Util.SanitizeFilename(title)}.{extension}\"");
-                    }
-                    output.Write(encoded, 0, encoded.Length);
-                    return;
+                    graphics.ScaleTransform((float)devicePixelRatio);
+                    RenderToGraphics(ctx, transform, graphics);
                 }
 
-                using var bitmap = TryConstructBitmap(width, height, PixelFormat.Format32bppArgb);
-                if (bitmap == null)
+                string? written;
+                if (gdi == null)
+                {
+                    byte[]? encoded = SkiaGraphics.RenderBitmap(width, height, mimeType, Render);
+                    if (encoded != null)
+                        output.Write(encoded, 0, encoded.Length);
+                    written = encoded == null ? null : mimeType;
+                }
+                else
+                {
+                    try
+                    {
+                        written = gdi.RenderBitmap(output, width, height, mimeType, transparent, Render);
+                    }
+                    catch (System.Runtime.InteropServices.ExternalException)
+                    {
+                        // GDI+ throws "A generic error occurred in GDI+." when saving on low memory.
+                        throw new HttpError(500, "Internal Server Error",
+                            $"Unknown GDI error encoding bitmap ({width}x{height}). Insufficient memory?");
+                    }
+                }
+                if (written == null)
                 {
                     throw new HttpError(500, "Internal Server Error",
                         $"Failed to allocate bitmap ({width}x{height}). Insufficient memory?");
                 }
 
-                if (transparent)
-                    bitmap.MakeTransparent();
-
-                using (var g = System.Drawing.Graphics.FromImage(bitmap))
+                response.ContentType = written;
+                string? extension = written switch
                 {
-                    // Grayscale anti-aliasing. ClearType's sub-pixel color fringes depend on the
-                    // rendering machine's ClearType settings (so output varied between machines)
-                    // and assume an LCD's sub-pixel layout, which a saved/scaled image doesn't have.
-                    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-
-                    using var graphics = new BitmapGraphics(g);
-                    graphics.ScaleTransform((float)devicePixelRatio);
-                    RenderToGraphics(ctx, transform, graphics);
-                }
-
-                BitmapResponse(response, disposition, output, ctx.Styles, bitmap, transparent ? ContentTypes.Image.Png : null, title);
+                    ContentTypes.Image.Jpeg => "jpg",
+                    ContentTypes.Image.Gif => "gif",
+                    ContentTypes.Image.Png => "png",
+                    _ => null
+                };
+                if (title != null && extension != null)
+                    response.AddHeader("content-disposition", $"{disposition};filename=\"{Util.SanitizeFilename(title)}.{extension}\"");
             }
 
             /// <summary>Writes the buffered rendering as text: "data:{type};base64,...".</summary>
             private static void WriteDataUri(HttpResponse response, MemoryStream rendered)
             {
-                string contentType = response.ContentType;
+                string? contentType = response.ContentType;
                 response.ContentType = ContentTypes.Text.Plain;
                 rendered.Seek(0, SeekOrigin.Begin);
 
@@ -282,19 +288,6 @@ namespace Maps.API
                 using var cs = new System.Security.Cryptography.CryptoStream(response.OutputStream, encoder, System.Security.Cryptography.CryptoStreamMode.Write);
                 rendered.WriteTo(cs);
                 cs.FlushFinalBlock();
-            }
-
-            private static Bitmap? TryConstructBitmap(int width, int height, PixelFormat pixelFormat)
-            {
-                try
-                {
-                    return new Bitmap(width, height, pixelFormat);
-                }
-                catch (ArgumentException)
-                {
-                    // See http://stackoverflow.com/questions/1949045/net-bitmap-class-constructor-int-int-and-int-int-pixelformat-throws-argu
-                    return null;
-                }
             }
 
             private static void RenderToGraphics(RenderContext ctx, AbstractMatrix transform, AbstractGraphics graphics)
@@ -339,96 +332,19 @@ namespace Maps.API
                 }
             }
 
-            private static void BitmapResponse(HttpResponse response, string disposition, Stream outputStream, Stylesheet styles, Bitmap bitmap, string? mimeType, string? title)
-            {
-                try
-                {
-                    // JPEG or PNG if not specified, based on style
-                    mimeType ??= styles.preferredMimeType;
-
-                    response.ContentType = mimeType;
-                    string? extension = mimeType switch
-                    {
-                        ContentTypes.Image.Jpeg => "jpg",
-                        ContentTypes.Image.Gif => "gif",
-                        ContentTypes.Image.Png => "png",
-                        _ => null
-                    };
-
-
-                    // Searching for a matching encoder
-                    ImageCodecInfo encoder = ImageCodecInfo.GetImageEncoders()
-                        .FirstOrDefault(e => e.MimeType == response.ContentType);
-
-                    if (encoder != null)
-                    {
-                        EncoderParameters encoderParams;
-                        if (mimeType == ContentTypes.Image.Jpeg)
-                        {
-                            encoderParams = new EncoderParameters(1);
-                            encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, (long)95);
-                        }
-                        else if (mimeType == ContentTypes.Image.Png)
-                        {
-                            encoderParams = new EncoderParameters(1);
-                            encoderParams.Param[0] = new EncoderParameter(Encoder.ColorDepth, 8);
-                        }
-                        else
-                        {
-                            encoderParams = new EncoderParameters(0);
-                        }
-
-                        if (mimeType == ContentTypes.Image.Png)
-                        {
-                            // PNG encoder is picky about streams - need to do an indirection
-                            // http://www.west-wind.com/WebLog/posts/8230.aspx
-                            using var ms = new MemoryStream();
-                            bitmap.Save(ms, encoder, encoderParams);
-                            ms.WriteTo(outputStream);
-                        }
-                        else
-                        {
-                            bitmap.Save(outputStream, encoder, encoderParams);
-                        }
-
-                        encoderParams.Dispose();
-                    }
-                    else
-                    {
-                        // Default to GIF if we can't find anything
-                        response.ContentType = ContentTypes.Image.Gif;
-                        bitmap.Save(outputStream, ImageFormat.Gif);
-                    }
-
-                    if (title != null && extension != null)
-                    {
-                        response.AddHeader("content-disposition", $"{disposition};filename=\"{Util.SanitizeFilename(title)}.{extension}\"");
-                    }
-
-                }
-                catch (System.Runtime.InteropServices.ExternalException)
-                {
-                    // Saving seems to throw "A generic error occurred in GDI+." on low memory.
-                    throw new HttpError(500, "Internal Server Error",
-                        $"Unknown GDI error encoding bitmap ({bitmap.Width}x{bitmap.Height}). Insufficient memory?");
-                }
-            }
-
             protected static Sector? GetPostedSector(HttpRequest request, ErrorLogger errors)
             {
                 Sector? sector;
 
-                if (request.Files["file"] != null && request.Files["file"].ContentLength > 0)
+                if (request.Files["file"] is HttpPostedFile file && file.ContentLength > 0)
                 {
-                    HttpPostedFile hpf = request.Files["file"];
-                    sector = new Sector(hpf.InputStream, hpf.ContentType, errors);
+                    sector = new Sector(file.InputStream, file.ContentType ?? ContentTypes.Text.Plain, errors);
                 }
-                else if (!string.IsNullOrEmpty(request.Form["data"]))
+                else if (request.Form["data"] is string data && data.Length > 0)
                 {
-                    string data = request.Form["data"];
                     sector = new Sector(data.ToStream(), ContentTypes.Text.Plain, errors);
                 }
-                else if (new ContentType(request.ContentType).MediaType == ContentTypes.Text.Plain)
+                else if (new ContentType(request.ContentType ?? "").MediaType == ContentTypes.Text.Plain)
                 {
                     sector = new Sector(request.InputStream, ContentTypes.Text.Plain, errors);
                 }
@@ -437,17 +353,14 @@ namespace Maps.API
                     return null;
                 }
 
-                if (request.Files["metadata"] != null && request.Files["metadata"].ContentLength > 0)
+                if (request.Files["metadata"] is HttpPostedFile hpf && hpf.ContentLength > 0)
                 {
-                    HttpPostedFile hpf = request.Files["metadata"];
-
                     string type = SectorMetadataFileParser.SniffType(hpf.InputStream);
                     Sector meta = SectorMetadataFileParser.ForType(type).Parse(hpf.InputStream);
                     sector.Merge(meta);
                 }
-                else if (!string.IsNullOrEmpty(request.Form["metadata"]))
+                else if (request.Form["metadata"] is string metadata && metadata.Length > 0)
                 {
-                    string metadata = request.Form["metadata"];
                     string type = SectorMetadataFileParser.SniffType(metadata.ToStream());
                     var parser = SectorMetadataFileParser.ForType(type);
                     using var reader = new StringReader(metadata);

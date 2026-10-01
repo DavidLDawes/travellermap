@@ -4,7 +4,7 @@ using Maps.Utilities;
 using System.IO;
 using System.Net.Mime;
 using System.Text;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.API
 {
@@ -52,7 +52,7 @@ namespace Maps.API
 
                     try
                     {
-                        sector = new Sector(Context.Request.InputStream, new ContentType(Context.Request.ContentType).MediaType, errors);
+                        sector = new Sector(Context.Request.InputStream, new ContentType(Context.Request.ContentType ?? "").MediaType, errors);
                     }
                     catch (ParseException ex)
                     {

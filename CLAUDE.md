@@ -17,20 +17,33 @@ Most upstream commits are **data** changes under `res/Sectors/`, not code.
 
 **Portable core — `core/Maps.Core.csproj` (net48 + net10.0).** Links (doesn't move) the data
 model, parsing/serialization, astrometrics, SectorMap, ResourceManager, geometry
-(`server/Geometry.cs`), validation, utilities, and the renderer (`RenderContext`, `RenderUtil`,
+(`server/Geometry.cs`), validation, utilities, the renderer (`RenderContext`, `RenderUtil`,
 `Stylesheet`, the `AbstractGraphics` drawing abstraction, and the SkiaSharp/PDFsharp/SVG
-backends) from `server/`. Only the legacy GDI+ bitmap backend (`BitmapGraphics`, `GdiSupport`,
-for `renderer=gdi`) stays in `Maps.csproj`. Rules for code in the core: no
+backends), and **all request handlers and routes** from `server/`. Handlers use a host-neutral
+HTTP layer, `Maps.Web.HttpContext`/`HttpRequest`/`HttpResponse` (`server/http/HttpAbstractions.cs`),
+which follows System.Web's API. Only IIS-specific pieces stay in `Maps.csproj`:
+`Global.asax.cs`, the System.Web adapter (`server/http/SystemWebHost.cs`), SQL Server search
+(`server/search/SearchEngine.cs`), and the GDI+ renderer (`renderer=gdi`). Rules for code in the core: no
 System.Web and no Windows-only System.Drawing (`Point`/`PointF`/`Color`/`RectangleF` are fine).
 Use `Util.MapPath`, and `#if NETFRAMEWORK` for anything IIS-only. Visual Studio/msbuild builds only
 net48; `dotnet build` (SDK 10, in `%USERPROFILE%\.dotnet\dotnet.exe`) builds both. `PLAN.md`
 Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 
-**Server — ASP.NET (System.Web), .NET Framework 4.8, C# 12 (pinned), Windows/IIS only.**
-- `Global.asax.cs` — registers every URL route (regex-based, see `server/http/Routing.cs`).
+**Two hosts run the same handlers:**
+- **IIS** — ASP.NET (System.Web), .NET Framework 4.8, C# 12 (pinned), Windows only (`Maps.csproj`,
+  `Global.asax.cs`). Registers SQL Server search and the GDI+ renderer.
+- **ASP.NET Core** — .NET 10, any OS (`host/`, see `host/README.md`). Static files, hidden paths,
+  extensionless pages, CORS and the 404 page are configured in `host/Program.cs` to match
+  `Web.config`; change both together. No search until Phase 7.4 (returns 503).
+
+**Server code.**
+- `server/http/Routing.cs` — `RouteTable`: every URL route (regex-based), used by both hosts.
   Route order matters: more specific patterns (e.g. `/data/{sector}/sec`) must be registered
   before catch-alls (e.g. `/data/{sector}/{subsector}`). `AddSectorPartRoutes` registers the
   data/`sec`/`tab`/`image` routes for quadrants and subsectors.
+- Output must be the same on both runtimes: sort strings with `Util.StableStringComparer`
+  (culture-aware ordering differs between Windows and Linux) and prefer stable sorts (`OrderBy`)
+  to `List.Sort`. Settings come from `AppSettings.Get(name)` (web.config or appsettings.json).
 - Query options: use `HandlerBase.GetStringOption`/`GetBoolOption`/`HasOption` (the request
   first, then route defaults). Booleans: non-zero integer or a bare flag (`?nogrid`) is true.
 - `server/api/*Handler.cs` — one handler per API. Data handlers derive from `DataHandlerBase`

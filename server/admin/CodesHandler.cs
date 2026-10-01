@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 
+using Maps.Web;
+
 namespace Maps.Admin
 {
     /// <summary>
@@ -27,7 +29,7 @@ namespace Maps.Admin
             "Z", // Zhodani
         };
 
-        static ThreadLocal<RegexMap<string>> s_knownCodes = new ThreadLocal<RegexMap<string>>(() =>
+        private static readonly RegexMap<string> s_knownCodes =
             new RegexMap<string> {
             // General
             { @"^Rs[ABGDEZHT]$", "Rs" },
@@ -86,9 +88,9 @@ namespace Maps.Admin
             { @"^Mr\((" + string.Join("|", SecondSurvey.AllegianceCodes) + @")\)$", "(military rule)" },
 
             { @"^{.*}$", "(comment)" }
-        });
+        };
 
-        protected override void Process(System.Web.HttpContext context, ResourceManager resourceManager)
+        protected override void Process(HttpContext context, ResourceManager resourceManager)
         {
             context.Response.ContentType = ContentTypes.Text.Plain;
             context.Response.StatusCode = 200;
@@ -129,7 +131,7 @@ namespace Maps.Admin
 
                     foreach (var code in worlds
                         .SelectMany(world => world.Codes)
-                        .Where(code => filter.IsMatch(code) && !s_knownCodes.Value.IsMatch(code)))
+                        .Where(code => filter.IsMatch(code) && !s_knownCodes.IsMatch(code)))
                     {
                         if (!codes.ContainsKey(code))
                         {
@@ -139,10 +141,10 @@ namespace Maps.Admin
                     }
                 }
 
-                foreach (var code in codes.Keys.OrderBy(s => s))
+                foreach (var code in codes.Keys.OrderBy(s => s, Util.StableStringComparer))
                 {
                     context.Response.Output.Write(code + " - ");
-                    foreach (var sector in codes[code].OrderBy(s => s))
+                    foreach (var sector in codes[code].OrderBy(s => s, Util.StableStringComparer))
                         context.Response.Output.Write(sector + " ");
                     context.Response.Output.WriteLine("");
                 }

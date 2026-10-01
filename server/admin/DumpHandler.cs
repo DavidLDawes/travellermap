@@ -2,6 +2,8 @@
 using Maps.Utilities;
 using System.Collections.Generic;
 
+using Maps.Web;
+
 namespace Maps.Admin
 {
     /// <summary>
@@ -9,7 +11,7 @@ namespace Maps.Admin
     /// </summary>
     internal class DumpHandler : AdminHandlerBase
     {
-        protected override void Process(System.Web.HttpContext context, ResourceManager resourceManager)
+        protected override void Process(HttpContext context, ResourceManager resourceManager)
         {
             // NOTE: This (re)initializes a static data structure used for 
             // resolving names into sector locations, so needs to be run

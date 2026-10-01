@@ -210,6 +210,17 @@ namespace Maps.Utilities
 
     internal static class Util
     {
+        /// <summary>
+        /// Orders strings (codes, names) the same on every platform: case-insensitive ordinal,
+        /// then ordinal. Culture-aware ordering differs between Windows (NLS, used by .NET
+        /// Framework) and ICU (.NET on Linux), e.g. for apostrophes as in "K'kr".
+        /// </summary>
+        public static readonly IComparer<string> StableStringComparer = Comparer<string>.Create((a, b) =>
+        {
+            int c = StringComparer.OrdinalIgnoreCase.Compare(a, b);
+            return c != 0 ? c : StringComparer.Ordinal.Compare(a, b);
+        });
+
         public static readonly Encoding UTF8_NO_BOM = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
 
         // TODO: Could be a variant of Enumerable.Range(...).Select(...)

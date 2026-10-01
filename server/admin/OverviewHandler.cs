@@ -3,13 +3,13 @@ using Maps.API;
 using Maps.Graphics;
 using Maps.Rendering;
 using System.Drawing;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.Admin
 {
     internal class OverviewHandler : AdminHandler
     {
-        IHttpHandler impl = new OverviewImpl();
+        Maps.HTTP.IRequestHandler impl = new OverviewImpl();
 
         // TODO: Passed resourceManager is discarded. Avoid creating it.
         protected override void Process(HttpContext context, ResourceManager resourceManager)

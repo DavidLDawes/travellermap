@@ -3,8 +3,8 @@ using Maps.API;
 using Maps.HTTP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Web.Routing;
 
 namespace UnitTests
 {
@@ -59,14 +59,14 @@ namespace UnitTests
         [TestMethod]
         public void RedirectTargetTest()
         {
-            var values = new RouteValueDictionary { { "sector", "Spinward Marches" }, { "hex", "1910" } };
+            var values = new Dictionary<string, object> { { "sector", "Spinward Marches" }, { "hex", "1910" } };
             Assert.AreEqual("/print/world?sector=Spinward%20Marches&hex=1910",
-                RedirectRouteHandler.ExpandTarget("/print/world?sector={sector}&hex={hex}", values));
+                RedirectHandler.ExpandTarget("/print/world?sector={sector}&hex={hex}", values));
 
             // Characters that would otherwise break the query string are encoded
-            values = new RouteValueDictionary { { "sector", "A&B #1+2" } };
+            values = new Dictionary<string, object> { { "sector", "A&B #1+2" } };
             Assert.AreEqual("/?sector=A%26B%20%231%2B2",
-                RedirectRouteHandler.ExpandTarget("/?sector={sector}", values));
+                RedirectHandler.ExpandTarget("/?sector={sector}", values));
         }
 
         [TestMethod]

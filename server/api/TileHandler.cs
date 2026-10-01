@@ -3,7 +3,7 @@ using Maps.Graphics;
 using Maps.Rendering;
 using Maps.Utilities;
 using System.Drawing;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.API
 {

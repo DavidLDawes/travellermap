@@ -4,8 +4,7 @@ using Maps.API;
 using Maps.HTTP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Web;
-using System.Web.Routing;
+using System.Collections.Generic;
 
 namespace UnitTests
 {
@@ -17,79 +16,41 @@ namespace UnitTests
     [TestClass]
     public class RoutingTest
     {
-        private class FakeRequest : HttpRequestBase
-        {
-            private readonly string path;
-            public FakeRequest(string path) { this.path = path; }
-            public override string Path => path;
-        }
+        // The route table both hosts dispatch through (first match wins).
+        private static (Maps.HTTP.Route route, IDictionary<string, object> values)? Resolve(string path) => RouteTable.Match(path);
 
-        private class FakeContext : HttpContextBase
+        private static void AssertHandler(string path, Type handler, params string[] expectedValues)
         {
-            private readonly HttpRequestBase request;
-            public FakeContext(string path) { request = new FakeRequest(path); }
-            public override HttpRequestBase Request => request;
-        }
-
-        private static RouteCollection routes;
-
-        [ClassInitialize]
-        public static void Initialize(TestContext context)
-        {
-            routes = new RouteCollection();
-            GlobalAsax.RegisterRoutes(routes);
-        }
-
-        // Same precedence as RouteCollection.GetRouteData (first match wins), without
-        // needing a hosted ASP.NET environment.
-        private static RouteData Resolve(string path)
-        {
-            var context = new FakeContext(path);
-            foreach (RouteBase route in routes)
-            {
-                RouteData data = route.GetRouteData(context);
-                if (data != null)
-                    return data;
-            }
-            return null;
-        }
-
-        private static RouteData AssertHandler(string path, Type handler, params string[] expectedValues)
-        {
-            RouteData data = Resolve(path);
-            Assert.IsNotNull(data, $"No route for {path}");
-            var generic = data.RouteHandler as GenericRouteHandler;
-            Assert.IsNotNull(generic, $"{path} is not handled by a GenericRouteHandler");
-            Assert.AreEqual(handler, generic.HandlerType, path);
-            AssertValues(path, data, expectedValues);
-            return data;
+            var match = Resolve(path);
+            Assert.IsNotNull(match, $"No route for {path}");
+            Assert.AreEqual(handler, match.Value.route.HandlerType, path);
+            AssertValues(path, match.Value.values, expectedValues);
         }
 
         private static void AssertRedirect(string path, string target, params string[] expectedValues)
         {
-            RouteData data = Resolve(path);
-            Assert.IsNotNull(data, $"No route for {path}");
-            var redirect = data.RouteHandler as RedirectRouteHandler;
-            Assert.IsNotNull(redirect, $"{path} is not a redirect");
-            Assert.AreEqual(target, redirect.Target, path);
-            AssertValues(path, data, expectedValues);
+            var match = Resolve(path);
+            Assert.IsNotNull(match, $"No route for {path}");
+            Assert.IsNotNull(match.Value.route.RedirectTarget, $"{path} is not a redirect");
+            Assert.AreEqual(target, match.Value.route.RedirectTarget, path);
+            AssertValues(path, match.Value.values, expectedValues);
         }
 
         // expectedValues are "key=value" pairs, or "!key" for a value that must be absent
         // (several routes share a handler, e.g. /data/{sector}/sec and /data/{sector}/{subsector},
         // so the values are what distinguish them).
-        private static void AssertValues(string path, RouteData data, string[] expectedValues)
+        private static void AssertValues(string path, IDictionary<string, object> values, string[] expectedValues)
         {
             foreach (var kv in expectedValues)
             {
                 if (kv.StartsWith("!"))
                 {
-                    Assert.IsFalse(data.Values.ContainsKey(kv.Substring(1)), $"{path}: unexpected {kv.Substring(1)}");
+                    Assert.IsFalse(values.ContainsKey(kv.Substring(1)), $"{path}: unexpected {kv.Substring(1)}");
                     continue;
                 }
                 string[] parts = kv.Split(new[] { '=' }, 2);
-                Assert.IsTrue(data.Values.ContainsKey(parts[0]), $"{path}: missing {parts[0]}");
-                Assert.AreEqual(parts[1], data.Values[parts[0]].ToString(), $"{path}: {parts[0]}");
+                Assert.IsTrue(values.ContainsKey(parts[0]), $"{path}: missing {parts[0]}");
+                Assert.AreEqual(parts[1], values[parts[0]].ToString(), $"{path}: {parts[0]}");
             }
         }
 

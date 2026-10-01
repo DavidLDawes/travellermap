@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 
+using Maps.Web;
+
 namespace Maps.Admin
 {
     /// <summary>
@@ -11,7 +13,7 @@ namespace Maps.Admin
     /// </summary>
     internal class ErrorsHandler : AdminHandlerBase
     {
-        protected override void Process(System.Web.HttpContext context, ResourceManager resourceManager)
+        protected override void Process(HttpContext context, ResourceManager resourceManager)
         {
             context.Response.ContentType = ContentTypes.Text.Plain;
             context.Response.BufferOutput = false;

@@ -5,26 +5,26 @@ sector Legend
 
 # Other
 #
-label 1004/+30 World
-label 1004/-30 Name
-label 1104/-30 Allegiance
-label 1103 Gas Giant
-label 0904/+30 X-Boat
-label 0904/-30 Route
-label 0906/+30 Travel
-label 0906/-30 Zone
-label 1106/+30 No
-label 1106/-30 Gas Giant
-label 0903 Bases
-label 0907 Border
-label 0605 Population
 label 0601/+30 World
 label 0601/-30 Characteristics
+label 0605 Population
+label 1401 Travel Zones
+label 1405 Bases
+label 1001 Map Legend
 label 1002/+30 Starport
 label 1002/-30 Type
-label 1001 Map Legend
-label 1405 Bases
-label 1401 Travel Zones
+label 1103 Gas Giant
+label 1104/-30 Allegiance
+label 1004/+30 World
+label 1004/-30 Name
+label 0904/+30 X-Boat
+label 0904/-30 Route
+label 0903 Bases
+label 1106/+30 No
+label 1106/-30 Gas Giant
+label 0906/+30 Travel
+label 0906/-30 Zone
+label 0907 Border
 route 1003 0904
 
 # Third Imperium

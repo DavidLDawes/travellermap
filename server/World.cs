@@ -626,7 +626,7 @@ namespace Maps
             get
             {
                 if (routes == null && Sector != null)
-                    routes = string.Join(" ", Sector.RoutesForWorld(this).OrderBy(s => s));
+                    routes = string.Join(" ", Sector.RoutesForWorld(this).OrderBy(s => s, Util.StableStringComparer));
                 return routes;
             }
         }
