@@ -16,6 +16,17 @@ namespace UnitTests
         [AssemblyInitialize]
         public static void Initialize(TestContext context)
         {
+            // The site gets binding redirects from Web.config (e.g. PDFsharp references
+            // Microsoft.Extensions.Logging.Abstractions 8.0.0.0; 8.0.0.3 is deployed), but the
+            // test host doesn't apply UnitTests.dll.config. Load such dependencies from the test
+            // directory regardless of the version requested.
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
+                string name = new System.Reflection.AssemblyName(args.Name).Name;
+                string path = Path.Combine(Path.GetDirectoryName(typeof(TestSetup).Assembly.Location), name + ".dll");
+                return File.Exists(path) ? System.Reflection.Assembly.LoadFrom(path) : null;
+            };
+
             // Tests run outside ASP.NET, so "~/res/..." paths resolve against the repo.
             // Where tests run from depends on the test runner (base directory, shadow
             // copies, deployment folders), so try several starting points.

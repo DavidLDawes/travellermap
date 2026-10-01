@@ -116,6 +116,26 @@ namespace UnitTests
             Assert.IsTrue(white, "Expected white text pixels");
         }
 
+        [TestMethod]
+        public void PdfEmbedsSubsetBundledFonts()
+        {
+            using var stream = new System.IO.MemoryStream();
+            var info = new PdfSharpGraphics.PdfInfo { Title = "Test" };
+            PdfSharpGraphics.RenderPdf(stream, 200, 100, info, g =>
+            {
+                g.DrawRectangle(new AbstractBrush(Color.Black), 0, 0, 200, 100);
+                // U+2316 is only in the second fallback font (Noto Sans Symbols 2).
+                g.DrawString("Regina ⌖", new AbstractFont("Arial", 12, FontStyle.Bold), new AbstractBrush(Color.White), 100, 50, StringAlignment.Centered);
+            });
+            byte[] pdf = stream.ToArray();
+            string text = System.Text.Encoding.ASCII.GetString(pdf);
+            Assert.StartsWith("%PDF-1.4", text);
+            StringAssert.Contains(text, "+Liberation#20Sans,Bold");
+            StringAssert.Contains(text, "+Noto#20Sans#20Symbols#202");
+            // Fonts are subset to the glyphs used (the full Liberation Sans Bold is 414 KB).
+            Assert.IsLessThan(60000, pdf.Length, $"PDF is {pdf.Length} bytes");
+        }
+
         // Text measurement emulates GDI+ MeasureString (label layout was designed around it):
         // the advance width + 3% + 1/3 em, and the line spacing + 1/8 em.
         [TestMethod]

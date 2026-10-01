@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <!--
     Portable core: sector data model, parsing/serialization, astrometrics, validation, and
-    rendering (SVG, and bitmaps via SkiaSharp with the fonts bundled in res/fonts).
+    rendering (SVG; bitmaps via SkiaSharp and PDF via PDFsharp, both with the fonts bundled in
+    res/fonts).
     No System.Web or Windows-only System.Drawing. Built for .NET Framework 4.8 (used by
     the current IIS site, Maps.csproj) and .NET 10 (future cross-platform host and tools).
     Source files stay in server/ (linked here) so upstream changes still apply.
@@ -31,6 +32,8 @@
     <!-- Includes native libraries for Windows and macOS; a Linux app adds
          SkiaSharp.NativeAssets.Linux.NoDependencies. -->
     <PackageReference Include="SkiaSharp" Version="4.153.1" />
+    <!-- The core (cross-platform) build of PDFsharp, not PDFsharp-GDI. -->
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="../server/Astrometrics.cs" Link="server/Astrometrics.cs" />
@@ -57,5 +60,6 @@
     <Compile Include="../server/graphics/SVGGraphics.cs" Link="server/graphics/SVGGraphics.cs" />
     <Compile Include="../server/graphics/SkiaFonts.cs" Link="server/graphics/SkiaFonts.cs" />
     <Compile Include="../server/graphics/SkiaGraphics.cs" Link="server/graphics/SkiaGraphics.cs" />
+    <Compile Include="../server/graphics/PdfSharpGraphics.cs" Link="server/graphics/PdfSharpGraphics.cs" />
   </ItemGroup>
 </Project>

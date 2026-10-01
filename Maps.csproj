@@ -94,9 +94,6 @@
     <CodeAnalysisRuleSet>Maps.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PDFsharp-GDI">
-      <Version>6.2.4</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies">
       <Version>1.0.3</Version>
       <PrivateAssets>all</PrivateAssets>
@@ -136,7 +133,6 @@
     <Compile Include="server\api\RouteHandler.cs" />
     <Compile Include="server\graphics\BitmapGraphics.cs" />
     <Compile Include="server\graphics\GdiSupport.cs" />
-    <Compile Include="server\graphics\PdfSharpGraphics.cs" />
     <Compile Include="server\http\Modules.cs" />
     <Compile Include="server\http\Routing.cs" />
     <Compile Include="server\search\SearchEngine.cs" />

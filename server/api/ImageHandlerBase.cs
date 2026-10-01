@@ -3,8 +3,6 @@ using Maps.Graphics;
 using Maps.Rendering;
 using Maps.Serialization;
 using Maps.Utilities;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -192,32 +190,18 @@ namespace Maps.API
             {
                 using var stream = new MemoryStream();
 
-                // PDFSharp 1.5 is not thread-safe, so serialize usage
-                lock (ImageHandlerBase.s_pdf_serialization_lock)
+                // TODO: Credits/Copyright metadata (needs an XMP /photoshop/Copyright entry).
+                var info = new PdfSharpGraphics.PdfInfo
                 {
-                    using var document = new PdfDocument();
-                    document.Version = 14; // 1.4 for opacity
-                    document.Info.Title = title;
-                    document.Info.Author = "Joshua Bell";
-                    document.Info.Creator = "TravellerMap.com";
-                    document.Info.Subject = DateTime.Now.ToString("F", CultureInfo.InvariantCulture);
-                    document.Info.Keywords = "The Traveller game in all forms is owned by Mongoose Publishing. Copyright 1977 - 2024 Mongoose Publishing.";
-
-                    // TODO: Credits/Copyright
-                    // This is close, but doesn't define the namespace correctly:
-                    // document.Info.Elements.Add( new KeyValuePair<string, PdfItem>( "/photoshop/Copyright", new PdfString( "HelloWorld" ) ) );
-
-                    PdfPage page = document.AddPage();
-
-                    // NOTE: only PageUnit currently supported in MGraphics is Points
-                    page.Width = XUnit.FromPoint(tileSize.Width);
-                    page.Height = XUnit.FromPoint(tileSize.Height);
-
-                    using var gfx = new PdfSharpGraphics(XGraphics.FromPdfPage(page));
-                    RenderToGraphics(ctx, transform, gfx);
-
-                    document.Save(stream, closeStream: false);
-                }
+                    Title = title,
+                    Author = "Joshua Bell",
+                    Creator = "TravellerMap.com",
+                    Subject = DateTime.Now.ToString("F", CultureInfo.InvariantCulture),
+                    Keywords = "The Traveller game in all forms is owned by Mongoose Publishing. Copyright 1977 - 2024 Mongoose Publishing.",
+                };
+                // Page size in points.
+                PdfSharpGraphics.RenderPdf(stream, tileSize.Width, tileSize.Height, info,
+                    graphics => RenderToGraphics(ctx, transform, graphics));
                 response.ContentType = ContentTypes.Application.Pdf;
                 AddDownloadHeaders(response, disposition, title, "pdf", stream.Length);
                 stream.WriteTo(output);
@@ -492,6 +476,5 @@ namespace Maps.API
             stylesheet.microBorders.textStyle.Rotation = degrees;
         }
 
-        private static object s_pdf_serialization_lock = new object();
     }
 }

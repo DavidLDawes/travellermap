@@ -10,7 +10,7 @@ using System.Linq;
 namespace Maps.Graphics
 {
     /// <summary>
-    /// The fonts the SkiaSharp renderer draws with: only the files bundled in res/fonts (see its
+    /// The fonts the SkiaSharp and PDF renderers draw with: only the files bundled in res/fonts (see its
     /// README), never installed fonts, so output is the same on every machine. Requested family
     /// names (e.g. "Arial", "Calibri,Arial") map to metrically compatible open fonts.
     /// </summary>
@@ -53,36 +53,40 @@ namespace Maps.Graphics
             () => new SkiaFonts(Util.MapPath("~/res/fonts")));
         public static SkiaFonts Instance => s_instance.Value;
 
-        // family -> (bold, italic) -> typeface
-        private readonly Dictionary<string, Dictionary<(bool bold, bool italic), SKTypeface>> typefaces =
-            new Dictionary<string, Dictionary<(bool, bool), SKTypeface>>(StringComparer.OrdinalIgnoreCase);
+        // family -> (bold, italic) -> typeface and its file
+        private readonly Dictionary<string, Dictionary<(bool bold, bool italic), (SKTypeface typeface, string path)>> typefaces =
+            new Dictionary<string, Dictionary<(bool, bool), (SKTypeface, string)>>(StringComparer.OrdinalIgnoreCase);
 
         private SkiaFonts(string directory)
         {
             foreach (var (family, prefix, styles) in s_files)
             {
-                var byStyle = new Dictionary<(bool, bool), SKTypeface>();
+                var byStyle = new Dictionary<(bool, bool), (SKTypeface, string)>();
                 foreach (var style in styles)
                 {
                     string path = Path.Combine(directory, style.Length == 0 ? prefix + ".ttf" : $"{prefix}-{style}.ttf");
                     var typeface = SKTypeface.FromFile(path)
                         ?? throw new FileNotFoundException("Bundled font missing or unreadable", path);
-                    byStyle[(style.Contains("Bold"), style.Contains("Italic"))] = typeface;
+                    byStyle[(style.Contains("Bold"), style.Contains("Italic"))] = (typeface, path);
                 }
                 typefaces[family] = byStyle;
             }
         }
 
-        /// <summary>A resolved font: the typeface plus any synthesized styling.</summary>
+        /// <summary>A resolved font: the bundled family, typeface and file, plus any synthesized styling.</summary>
         internal sealed class Face
         {
-            public Face(SKTypeface typeface, bool fakeBold, bool fakeItalic)
+            public Face(string family, SKTypeface typeface, string path, bool fakeBold, bool fakeItalic)
             {
+                Family = family;
                 Typeface = typeface;
+                Path = path;
                 FakeBold = fakeBold;
                 FakeItalic = fakeItalic;
             }
+            public string Family { get; }
             public SKTypeface Typeface { get; }
+            public string Path { get; }
             public bool FakeBold { get; }
             public bool FakeItalic { get; }
 
@@ -118,39 +122,59 @@ namespace Maps.Graphics
 
         /// <summary>The primary font and its fallbacks at the font's size.</summary>
         public FontSet CreateFonts(AbstractFont font) =>
-            new FontSet(Resolve(font).CreateFont(font.Size), Fallbacks(font).Select(f => f.CreateFont(font.Size)).ToArray());
+            new FontSet(new[] { Resolve(font) }.Concat(Fallbacks(font)).ToArray(), font.Size);
 
         private readonly Dictionary<(string, bool, bool), Face> faces = new Dictionary<(string, bool, bool), Face>();
-        private Face GetFace(string family, bool bold, bool italic)
+
+        /// <summary>
+        /// The face for a bundled family and style. Styles without their own file are
+        /// synthesized from the closest one (FakeBold/FakeItalic).
+        /// </summary>
+        public Face GetFace(string family, bool bold, bool italic)
         {
             lock (faces)
             {
                 if (faces.TryGetValue((family, bold, italic), out Face? face))
                     return face;
                 var byStyle = typefaces[family];
-                if (byStyle.TryGetValue((bold, italic), out SKTypeface? exact))
-                    face = new Face(exact, false, false);
-                else if (bold && byStyle.TryGetValue((true, false), out SKTypeface? boldFace))
-                    face = new Face(boldFace, false, italic);
-                else if (italic && byStyle.TryGetValue((false, true), out SKTypeface? italicFace))
-                    face = new Face(italicFace, bold, false);
+                if (byStyle.TryGetValue((bold, italic), out var exact))
+                    face = new Face(family, exact.typeface, exact.path, false, false);
+                else if (bold && byStyle.TryGetValue((true, false), out var boldFace))
+                    face = new Face(family, boldFace.typeface, boldFace.path, false, italic);
+                else if (italic && byStyle.TryGetValue((false, true), out var italicFace))
+                    face = new Face(family, italicFace.typeface, italicFace.path, bold, false);
                 else
-                    face = new Face(byStyle.Values.First(), bold, italic);
+                {
+                    var any = byStyle.Values.First();
+                    face = new Face(family, any.typeface, any.path, bold, italic);
+                }
                 faces[(family, bold, italic)] = face;
                 return face;
             }
         }
 
+        /// <summary>Whether the family is one of the bundled ones.</summary>
+        public bool IsBundledFamily(string family) => typefaces.ContainsKey(family);
+
         /// <summary>A primary font plus fallbacks for characters it lacks.</summary>
         internal sealed class FontSet : IDisposable
         {
-            public FontSet(SKFont primary, SKFont[] fallbacks)
+            private readonly Dictionary<SKFont, Face> faceOf = new Dictionary<SKFont, Face>();
+
+            /// <param name="faces">The primary face, then the fallbacks.</param>
+            public FontSet(Face[] faces, float size)
             {
-                Primary = primary;
-                Fallbacks = fallbacks;
+                var fonts = faces.Select(face => face.CreateFont(size)).ToArray();
+                for (int i = 0; i < faces.Length; ++i)
+                    faceOf[fonts[i]] = faces[i];
+                Primary = fonts[0];
+                Fallbacks = fonts.Skip(1).ToArray();
             }
             public SKFont Primary { get; }
             public SKFont[] Fallbacks { get; }
+
+            /// <summary>The face a font in this set was created from.</summary>
+            public Face FaceOf(SKFont font) => faceOf[font];
 
             public SKFontHinting Hinting
             {
@@ -193,6 +217,42 @@ namespace Maps.Graphics
 
             /// <summary>Advance width of text, using fallbacks where needed.</summary>
             public float MeasureAdvance(string text) => Runs(text).Sum(run => run.font.MeasureText(run.text));
+
+            /// <summary>
+            /// Where to start drawing text (left edge and baseline) for an AbstractGraphics
+            /// DrawString alignment, matching GDI+: near- and far-aligned text is inset by 1/6 em
+            /// (its default StringFormat padding), and centered lines center the line box on y.
+            /// </summary>
+            public (float left, float baseline) Layout(string text, float emSize, float x, float y, StringAlignment format)
+            {
+                float width = MeasureAdvance(text);
+                float ascent = -Primary.Metrics.Ascent;
+                float lineSpacing = Primary.Spacing;
+
+                float pad = emSize / 6;
+                float left = format switch
+                {
+                    StringAlignment.Centered or StringAlignment.TopCenter => x - width / 2,
+                    StringAlignment.TopRight => x - width - pad,
+                    _ => x + pad,
+                };
+                float baseline = format switch
+                {
+                    StringAlignment.Baseline => y,
+                    StringAlignment.TopLeft or StringAlignment.TopCenter or StringAlignment.TopRight => y + ascent,
+                    _ => y - lineSpacing / 2 + ascent, // Centered, CenterLeft: center the line box on y
+                };
+                return (left, baseline);
+            }
+
+            /// <summary>The underline or strikeout bar for a run of text, as a rectangle.</summary>
+            public RectangleF Decoration(AbstractFont font, float left, float baseline, float advance)
+            {
+                float ascent = -Primary.Metrics.Ascent;
+                float thickness = Math.Max(font.Size / 14, 0);
+                float offset = font.Underline ? font.Size / 9 : -ascent * 0.3f;
+                return new RectangleF(left, baseline + offset, advance, thickness);
+            }
 
             public void Dispose()
             {
