@@ -78,11 +78,10 @@ jobs:
               } catch { Start-Sleep -Seconds 2 }
             }
             if (-not $ready) { Write-Error "Site did not start"; exit 1 }
-            # ImageTest compares pixels near-exactly against references rendered on a Windows
-            # desktop, and most text-heavy images differ on the Windows Server runner (likely
-            # GDI+ text anti-aliasing). Informational here until that's resolved; differing
-            # images are uploaded as the image-diffs artifact.
-            node test/run-browser-tests.mjs --no-search --informational ImageTest --save-images image-diffs
+            # Images use grayscale text and ImageTest tolerates anti-aliasing jitter, so it
+            # passes across machines. If it fails, the differing images are uploaded as the
+            # image-diffs artifact.
+            node test/run-browser-tests.mjs --no-search --save-images image-diffs
             exit $LASTEXITCODE
           } finally {
             Stop-Process -Id $site.Id -Force -ErrorAction SilentlyContinue

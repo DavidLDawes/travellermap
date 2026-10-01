@@ -195,8 +195,8 @@ the visible-on-map fixes, D1–D3, and the other data items above (owner review 
   order, or worker threads. So ImageTest now tolerates sparse differences (hard ≥64 up to 0.01%
   of pixels, soft up to 0.1%). That was validated both ways: jittered references pass, and a
   covered label, a single covered letter, and a +12 color shift all fail.
-  **Follow-up:** ImageTest is still informational in CI. If it reports PASS on the Windows
-  runner, drop `--informational ImageTest` from `.github/workflows/ci.yml` to make it gating.
+  **Follow-up done:** ImageTest passed on the Windows CI runner (PR #6's CI run, 45/46 with only
+  the intentional bad example failing), so it fails CI again (`--informational` removed).
 
 ## Phase 6 — Simplifications — DONE (branch `phase6-simplify`, built on `phase5-updates`) [up, case by case]
 Each refactor was checked for unchanged behavior with more than the unit tests:
