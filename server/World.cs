@@ -311,6 +311,9 @@ namespace Maps
             void Error(string message) { errors.Warning(message, lineNumber, line); }
             void ErrorIf(bool test, string message) { if (test) Error(message); }
             void ErrorUnless(bool test, string message) { if (!test) Error(message); }
+            // Generation-rule checks: whether a value could come from the T5 world generation
+            // rolls. Canon worlds often deviate on purpose, so these are hints, not warnings.
+            void HintUnless(bool test, string message) { if (!test) errors.Hint(message, lineNumber, line); }
 
             static bool Check(int value, string hex)
             {
@@ -349,9 +352,9 @@ namespace Maps
                 $"UWP: Hyd={Hydrographics} out of range; should be: 0...A");
             ErrorIf(PopulationExponent > 15,
                 $"UWP: Pop={PopulationExponent} out of range; should be: 0...F");
-            ErrorUnless(customGov || Government.InRange(PopulationExponent - 5, Math.Max(15, PopulationExponent + 5)),
+            HintUnless(customGov || Government.InRange(PopulationExponent - 5, Math.Max(15, PopulationExponent + 5)),
                 $"UWP: Gov={Government} out of range; should be: Pop(={PopulationExponent}) + Flux");
-            ErrorUnless(customLaw || Law.InRange(Government - 5, Math.Max(18, Government + 5)),
+            HintUnless(customLaw || Law.InRange(Government - 5, Math.Max(18, Government + 5)),
                 $"UWP: Law={Law} out of range; should be: Gov(={Government}) + Flux");
             int tlmod =
                 (Starport == 'A' ? 6 : 0) + (Starport == 'B' ? 4 : 0) + (Starport == 'C' ? 2 : 0) + (Starport == 'X' ? -4 : 0) +
@@ -360,7 +363,7 @@ namespace Maps
                 (Hydrographics == 9 ? 1 : 0) + (Hydrographics == 10 ? 2 : 0) +
                 (PopulationExponent.InRange(1, 5) ? 1 : 0) + (PopulationExponent == 9 ? 2 : 0) + (PopulationExponent >= 10 ? 4 : 0) +
                 (Government == 0 || Government == 5 ? 1 : 0) + (Government == 13 ? -2 : 0);
-            ErrorUnless(TechLevel.InRange(tlmod + 1, tlmod + 6) ||
+            HintUnless(TechLevel.InRange(tlmod + 1, tlmod + 6) ||
                 (PopulationExponent == 0 && TechLevel == 0),
                 $"UWP: TL={TechLevel} out of range; should be: mods(={tlmod}) + 1D");
             #endregion
@@ -443,15 +446,21 @@ namespace Maps
                 $"Bases: Must be distinct and appear in alphabetical order: {Bases}");
             #endregion
 
+            // Unknown extensions may be written as dashes (e.g. "----"); skip those.
+            static bool IsPlaceholder(string s) => s.Trim().All(c => c == '-');
+
             // {Ix}
             int imp = CalculateImportance();
             if (!string.IsNullOrWhiteSpace(Importance))
             {
                 string ix = Importance?.Replace('{', ' ').Replace('}', ' ').Trim() ?? "";
-                if (ix != "")
+                if (ix != "" && !IsPlaceholder(ix))
                 {
-                    ErrorUnless(Int32.Parse(ix) == imp,
-                        $"{{Ix}} Importance={ix} incorrect; should be: {imp}");
+                    if (!Int32.TryParse(ix, NumberStyles.Integer, CultureInfo.InvariantCulture, out int ixValue))
+                        Error($"{{Ix}} Importance={ix} is not a number");
+                    else
+                        ErrorUnless(ixValue == imp,
+                            $"{{Ix}} Importance={ix} incorrect; should be: {imp}");
                 }
             }
 
@@ -459,12 +468,16 @@ namespace Maps
             if (!string.IsNullOrWhiteSpace(Economic))
             {
                 string ex = Economic?.Replace('(', ' ').Replace(')', ' ').Trim() ?? "";
-                if (ex != "")
+                if (ex.Length < 4 || !Int32.TryParse(ex.Substring(3), NumberStyles.Integer, CultureInfo.InvariantCulture, out int efficiency))
+                {
+                    if (ex != "" && !IsPlaceholder(ex))
+                        Error($"(Ex) Economic={ex} is malformed; should be: RLIE, e.g. (A46+2)");
+                }
+                else
                 {
                     int resources = SecondSurvey.FromHex(ex[0]);
                     int labor = SecondSurvey.FromHex(ex[1]);
                     int infrastructure = SecondSurvey.FromHex(ex[2]);
-                    int efficiency = Int32.Parse(ex.Substring(3));
 
                     // Resources=2D; if TL8+, +GG +Belts (min 0)
                     // per T5.10 Book 3 pp.27
@@ -525,7 +538,12 @@ namespace Maps
             if (!string.IsNullOrWhiteSpace(Cultural))
             {
                 string cx = Cultural?.Replace('[', ' ').Replace(']', ' ').Trim() ?? "";
-                if (cx != "")
+                if (cx.Length < 4 || IsPlaceholder(cx))
+                {
+                    if (cx != "" && !IsPlaceholder(cx))
+                        Error($"[Cx] Cultural={cx} is malformed; should be: HASS, e.g. [4726]");
+                }
+                else
                 {
                     int heterogeneity = SecondSurvey.FromHex(cx[0]);
                     int acceptance = SecondSurvey.FromHex(cx[1]);
