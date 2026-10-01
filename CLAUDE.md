@@ -117,7 +117,10 @@ redirects to copy into `Web.config.sample`.
   runs `test/APITest.html`, `ContentTest.html`, and `ImageTest.html` in headless Chrome
   (`--no-search` when there's no SQL Server search index). Or open the pages directly.
   References live in `test/refs/`. When data changes legitimately alter output, update the
-  matching reference after confirming the difference is the data change.
+  matching reference after confirming the difference is the data change:
+  `npm run test:update-refs -- ref3 ref28` (or no names for all) fetches them from the running
+  server. Bitmaps render with SkiaSharp and the fonts in `res/fonts`, so output is deterministic.
+  Append `&renderer=gdi` to an image URL to compare with the old GDI+ renderer.
 - **JS lint**: `npm install` then `npm run lint` (whole repo) or `npx eslint <file>`. The flat
   config is in `eslint.config.js`. Type checking via `jsconfig.json` (`checkJs`) in editors that
   support it.

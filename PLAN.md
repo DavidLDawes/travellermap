@@ -282,12 +282,44 @@ parity tests between the old and new hosts.
   URIs) are byte-identical to the previous build. PDFs differ only in per-request XMP metadata.
   - Gotcha: GDI+ renders an image slightly differently the first time after server start
     (glyph caching). Compare a second, warm render.
-- **Next — 7.2c:** a SkiaSharp `AbstractGraphics` backend (PNG). Keep the SVG backend (check its text
-  measurement). PDF: SkiaSharp's PDF backend, or PDFsharp's Core build with a font resolver.
-- **Fonts:** Arial/Georgia/Wingdings/Segoe UI Symbol aren't on Linux, so bundle open fonts
-  (e.g. Liberation Sans, metrically compatible with Arial) or ship font files. This changes
-  rendered output, so references get regenerated *once*, deliberately.
-- Parity check: the ImageTest tolerance rule from Phase 5/6 compares old vs new renders.
+- **7.2c DONE — SkiaSharp bitmap backend.**
+  - `SkiaGraphics` (SkiaSharp 4.153, in the core) is the default PNG/JPEG renderer on the IIS host.
+  - The `Renderer` app setting (`skia`/`gdi`) chooses the renderer; the hidden
+    `renderer=gdi|skia` query option overrides it per request, for side-by-side comparison.
+  - SVG text measurement follows the same choice.
+  - It mirrors GDI+ where layout depends on it:
+    - pens narrower than a pixel draw as hairlines;
+    - dash patterns scale with the pen width;
+    - nonzero fill rule;
+    - GDI+'s cardinal-spline formula;
+    - string alignment;
+    - `MeasureString` padding: measured on GDI+ as advance × 1.03 + ⅓ em by line spacing + ⅛ em.
+  - **Fonts:** bundled in `res/fonts` (8.4 MB, open licenses, see its README) and never taken from
+    the system:
+    - Liberation Sans/Mono for Arial/Courier New, Carlito for Calibri, Gelasio for Georgia, and
+      Comic Neue for Comic Sans MS.
+    - DejaVu Sans, then Noto Sans Symbols 2, for symbols and any character a font lacks.
+    - Wingdings isn't used; glyphs fall back to Unicode symbols, so ◆ and ★ are a bit different.
+  - **Output is deterministic:** byte-identical across runs and server restarts, unlike GDI+.
+    ImageTest references were regenerated once, deliberately, after side-by-side review of every
+    style:
+    - default, print, atlas, FASA, Mongoose, terminal, draft, candy;
+    - jump maps, rotations, macro and galaxy scales, the data overview.
+    - Small text at macro scales is cleaner than GDI+'s, which mis-spaced letters at tiny sizes.
+  - `npm run test:update-refs` regenerates references from a running server, for future
+    deliberate rendering changes.
+  - Unit tests:
+    - `AbstractMatrix` matches `XMatrix` exactly over random operation sequences.
+    - The bundled fonts cover every glyph and overlay symbol.
+    - Family resolution.
+    - A render/encode smoke test.
+    - GDI-compatible measurement.
+- **Next — 7.2d: PDF without GDI+.**
+  - PDF output still uses PDFsharp-GDI with `GdiSupport` fonts.
+  - Options: SkiaSharp's PDF backend (`SKDocument`), or PDFsharp's Core build with a font resolver
+    that serves the bundled fonts.
+- **Linux:** a Linux host needs `SkiaSharp.NativeAssets.Linux.NoDependencies` (in the 7.3 host
+  project). Rendering on Linux gets verified by running the browser suites against the 7.3 host.
 
 ### 7.3 ASP.NET Core host (net10.0)
 - New `host/` project: minimal-API endpoints mirroring `Global.asax` routes (RoutingTest's URL

@@ -173,9 +173,11 @@
   <appSettings>
     <add key="AdminKey" value="YOUR_KEY_HERE"/>
     <!-- <add key="PageFooter" value="PAGE_FOOTER_HERE"/> -->
+    <!-- Bitmap renderer: "skia" (default; bundled fonts, same output on any OS) or "gdi" (System.Drawing). -->
+    <!-- <add key="Renderer" value="gdi"/> -->
   </appSettings>
 
-  <!-- Required by PDFsharp 6 dependencies (see build warning MSB3247 if versions change). -->
+  <!-- Required by PDFsharp 6 and SkiaSharp dependencies (see build warning MSB3247 if versions change). -->
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
@@ -185,6 +187,22 @@
       <dependentAssembly>
         <assemblyIdentity name="System.Security.Cryptography.Pkcs" culture="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
         <bindingRedirect oldVersion="0.0.0.0-8.0.0.1" newVersion="8.0.0.1"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Buffers" culture="neutral" publicKeyToken="cc7b13ffcd2ddd51"/>
+        <bindingRedirect oldVersion="0.0.0.0-4.0.5.0" newVersion="4.0.5.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Memory" culture="neutral" publicKeyToken="cc7b13ffcd2ddd51"/>
+        <bindingRedirect oldVersion="0.0.0.0-4.0.5.0" newVersion="4.0.5.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Numerics.Vectors" culture="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+        <bindingRedirect oldVersion="0.0.0.0-4.1.6.0" newVersion="4.1.6.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" culture="neutral" publicKeyToken="b03f5f7f11d50a3a"/>
+        <bindingRedirect oldVersion="0.0.0.0-6.0.3.0" newVersion="6.0.3.0"/>
       </dependentAssembly>
     </assemblyBinding>
   </runtime>

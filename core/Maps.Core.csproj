@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <!--
-    Portable core: sector data model, parsing/serialization, astrometrics, validation.
+    Portable core: sector data model, parsing/serialization, astrometrics, validation, and
+    rendering (SVG, and bitmaps via SkiaSharp with the fonts bundled in res/fonts).
     No System.Web or Windows-only System.Drawing. Built for .NET Framework 4.8 (used by
     the current IIS site, Maps.csproj) and .NET 10 (future cross-platform host and tools).
     Source files stay in server/ (linked here) so upstream changes still apply.
@@ -27,6 +28,11 @@
     <InternalsVisibleTo Include="maps-validate" />
   </ItemGroup>
   <ItemGroup>
+    <!-- Includes native libraries for Windows and macOS; a Linux app adds
+         SkiaSharp.NativeAssets.Linux.NoDependencies. -->
+    <PackageReference Include="SkiaSharp" Version="4.153.1" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="../server/Astrometrics.cs" Link="server/Astrometrics.cs" />
     <Compile Include="../server/Geometry.cs" Link="server/Geometry.cs" />
     <Compile Include="../server/Location.cs" Link="server/Location.cs" />
@@ -49,5 +55,7 @@
     <Compile Include="../server/VectorObject.cs" Link="server/VectorObject.cs" />
     <Compile Include="../server/graphics/AbstractGraphics.cs" Link="server/graphics/AbstractGraphics.cs" />
     <Compile Include="../server/graphics/SVGGraphics.cs" Link="server/graphics/SVGGraphics.cs" />
+    <Compile Include="../server/graphics/SkiaFonts.cs" Link="server/graphics/SkiaFonts.cs" />
+    <Compile Include="../server/graphics/SkiaGraphics.cs" Link="server/graphics/SkiaGraphics.cs" />
   </ItemGroup>
 </Project>

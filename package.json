@@ -3,7 +3,8 @@
   "scripts": {
     "test": "node --test \"test/unit/*.test.js\"",
     "lint": "eslint",
-    "test:browser": "node test/run-browser-tests.mjs"
+    "test:browser": "node test/run-browser-tests.mjs",
+    "test:update-refs": "node test/update-image-refs.mjs"
   },
   "devDependencies": {
     "@types/handlebars": "^4.0.40",
