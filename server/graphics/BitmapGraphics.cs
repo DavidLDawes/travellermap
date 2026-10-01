@@ -45,6 +45,7 @@ namespace Maps.Graphics
         private void Apply(AbstractPen pen, AbstractBrush brush) { Apply(pen); Apply(brush); }
 
         public bool SupportsWingdings => true;
+        public bool IsRaster => true;
         public SmoothingMode SmoothingMode { get => GdiSupport.Convert(g.SmoothingMode); set => g.SmoothingMode = GdiSupport.Convert(value); }
         public bool TextGridFit { set => g.TextRenderingHint = value ? System.Drawing.Text.TextRenderingHint.AntiAliasGridFit : System.Drawing.Text.TextRenderingHint.AntiAlias; }
         public void ScaleTransform(float scaleXY) { g.ScaleTransform(scaleXY, scaleXY); }

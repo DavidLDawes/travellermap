@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web.Hosting;
 
 namespace Maps.Rendering
 {
@@ -126,7 +125,7 @@ namespace Maps.Rendering
             public AbstractImage riftImage;
             public Dictionary<string, AbstractImage> worldImages;
 
-            private static ThreadLocal<ImageCache> s_instance = new ThreadLocal<ImageCache>(() => new ImageCache());
+            private static readonly ThreadLocalCache<ImageCache> s_instance = new ThreadLocalCache<ImageCache>(() => new ImageCache());
             public static ImageCache GetInstance()
             {
                 return s_instance.Value;
@@ -333,7 +332,7 @@ namespace Maps.Rendering
                     // HACK: Clipping to tileRect rapidly becomes inaccurate away from
                     // the origin due to float precision. Only do it if really necessary.
                     bool clip = layer.clip && (ctx.ForceClip ||
-                        !((ClipPath == null) && (graphics is BitmapGraphics)));
+                        !((ClipPath == null) && graphics.IsRaster));
 
                     // Impose a clipping region if desired, or remove it if not.
                     if (clip && state == null)

@@ -46,6 +46,15 @@ namespace Maps.Graphics
             }
         }
 
+        /// <summary>GDI+ text measurement for backends without their own text layout (SVG).</summary>
+        public static readonly ITextMeasurer TextMeasurer = new GdiTextMeasurer();
+
+        private sealed class GdiTextMeasurer : ITextMeasurer
+        {
+            public SizeF MeasureString(string text, AbstractFont font) => GdiSupport.MeasureString(text, font);
+            public FontMetrics GetFontMetrics(AbstractFont font) => Metrics(font);
+        }
+
         public static Image Image(AbstractImage image) => image.Natives.Get(() =>
         {
             // Use a stream since Image.FromFile(path) locks the file on disk.

@@ -134,11 +134,9 @@
     <Compile Include="server\admin\RoutesHandler.cs" />
     <Compile Include="server\api\CodesHandler.cs" />
     <Compile Include="server\api\RouteHandler.cs" />
-    <Compile Include="server\graphics\AbstractGraphics.cs" />
     <Compile Include="server\graphics\BitmapGraphics.cs" />
     <Compile Include="server\graphics\GdiSupport.cs" />
     <Compile Include="server\graphics\PdfSharpGraphics.cs" />
-    <Compile Include="server\graphics\SVGGraphics.cs" />
     <Compile Include="server\http\Modules.cs" />
     <Compile Include="server\http\Routing.cs" />
     <Compile Include="server\search\SearchEngine.cs" />
@@ -194,10 +192,6 @@
     <Compile Include="server\api\TileHandler.cs" />
     <Compile Include="server\api\UniverseHandler.cs" />
     <Compile Include="server\HandlerBase.cs" />
-    <Compile Include="server\RenderContext.cs" />
-    <Compile Include="server\RenderUtil.cs" />
-    <Compile Include="server\Stylesheet.cs" />
-    <Compile Include="server\VectorObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SETUP.md" />

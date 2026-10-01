@@ -18,6 +18,12 @@ namespace Maps.Graphics
         bool SupportsWingdings { get; }
 
         /// <summary>
+        /// True for pixel surfaces, which clip drawing to the image bounds themselves, so
+        /// clipping to the tile rectangle can be skipped. False for vector output (SVG, PDF).
+        /// </summary>
+        bool IsRaster { get; }
+
+        /// <summary>
         /// Whether text is fitted to the pixel grid (crisper upright text). Turned off for
         /// rotated labels, where grid fitting distorts glyphs. Ignored by vector backends.
         /// Saved and restored with Save()/Restore().
@@ -59,6 +65,16 @@ namespace Maps.Graphics
 
         AbstractGraphicsState Save();
         void Restore(AbstractGraphicsState state);
+    }
+
+    /// <summary>
+    /// Text measurement for backends that don't lay out text themselves (e.g. SVG, where the
+    /// viewer renders text but label placement still needs sizes).
+    /// </summary>
+    internal interface ITextMeasurer
+    {
+        SizeF MeasureString(string text, AbstractFont font);
+        FontMetrics GetFontMetrics(AbstractFont font);
     }
 
     internal abstract class AbstractGraphicsState : IDisposable

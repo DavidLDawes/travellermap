@@ -43,5 +43,11 @@
     <Compile Include="../server/serialization/*.cs" LinkBase="server/serialization" />
     <Compile Include="../server/utilities/*.cs" LinkBase="server/utilities" />
     <Compile Include="../server/admin/DataValidator.cs" Link="server/admin/DataValidator.cs" />
+    <Compile Include="../server/RenderContext.cs" Link="server/RenderContext.cs" />
+    <Compile Include="../server/RenderUtil.cs" Link="server/RenderUtil.cs" />
+    <Compile Include="../server/Stylesheet.cs" Link="server/Stylesheet.cs" />
+    <Compile Include="../server/VectorObject.cs" Link="server/VectorObject.cs" />
+    <Compile Include="../server/graphics/AbstractGraphics.cs" Link="server/graphics/AbstractGraphics.cs" />
+    <Compile Include="../server/graphics/SVGGraphics.cs" Link="server/graphics/SVGGraphics.cs" />
   </ItemGroup>
 </Project>

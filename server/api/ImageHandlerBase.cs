@@ -165,7 +165,7 @@ namespace Maps.API
             private static void WriteSvg(HttpResponse response, Stream output, string? disposition, string title,
                 RenderContext ctx, Size tileSize, AbstractMatrix transform)
             {
-                using var svg = new SVGGraphics(tileSize.Width, tileSize.Height);
+                using var svg = new SVGGraphics(tileSize.Width, tileSize.Height, GdiSupport.TextMeasurer);
                 RenderToGraphics(ctx, transform, svg);
 
                 using var stream = new MemoryStream();

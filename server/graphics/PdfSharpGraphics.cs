@@ -57,6 +57,7 @@ namespace Maps.Graphics
         }
 
         public bool SupportsWingdings => true;
+        public bool IsRaster => false;
         public SmoothingMode SmoothingMode { get => (SmoothingMode)g.SmoothingMode; set => g.SmoothingMode = (XSmoothingMode)value; }
         public bool TextGridFit { set { } }
         public void ScaleTransform(float scaleXY) { g.ScaleTransform(scaleXY); }

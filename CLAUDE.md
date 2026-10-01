@@ -17,7 +17,9 @@ Most upstream commits are **data** changes under `res/Sectors/`, not code.
 
 **Portable core — `core/Maps.Core.csproj` (net48 + net10.0).** Links (doesn't move) the data
 model, parsing/serialization, astrometrics, SectorMap, ResourceManager, geometry
-(`server/Geometry.cs`), validation and utilities from `server/`. Rules for code in the core: no
+(`server/Geometry.cs`), validation, utilities, and the renderer (`RenderContext`, `RenderUtil`,
+`Stylesheet`, the `AbstractGraphics` drawing abstraction, the SVG backend) from `server/`. The
+GDI+ backends (`BitmapGraphics`, `PdfSharpGraphics`, `GdiSupport`) stay in `Maps.csproj`. Rules for code in the core: no
 System.Web and no Windows-only System.Drawing (`Point`/`PointF`/`Color`/`RectangleF` are fine).
 Use `Util.MapPath`, and `#if NETFRAMEWORK` for anything IIS-only. Visual Studio/msbuild builds only
 net48; `dotnet build` (SDK 10, in `%USERPROFILE%\.dotnet\dotnet.exe`) builds both. `PLAN.md`

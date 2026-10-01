@@ -329,8 +329,11 @@ namespace Maps.Graphics
         }
         private Element Append(Element element) => Current.Append(element);
 
-        public SVGGraphics(float width, float height)
+        private readonly ITextMeasurer measurer;
+
+        public SVGGraphics(float width, float height, ITextMeasurer measurer)
         {
+            this.measurer = measurer;
             this.width = width;
             this.height = height;
 
@@ -342,6 +345,7 @@ namespace Maps.Graphics
         bool AbstractGraphics.TextGridFit { set { } }
         SmoothingMode AbstractGraphics.SmoothingMode { get; set; }
         public bool SupportsWingdings => false;
+        public bool IsRaster => false;
         #region Drawing
 
         public void DrawLine(AbstractPen pen, float x1, float y1, float x2, float y2)
@@ -506,8 +510,8 @@ namespace Maps.Graphics
 
         #region Text
         // SVG text is laid out by the viewer, but label placement needs measurements.
-        public SizeF MeasureString(string text, AbstractFont font) => GdiSupport.MeasureString(text, font);
-        public FontMetrics GetFontMetrics(AbstractFont font) => GdiSupport.Metrics(font);
+        public SizeF MeasureString(string text, AbstractFont font) => measurer.MeasureString(text, font);
+        public FontMetrics GetFontMetrics(AbstractFont font) => measurer.GetFontMetrics(font);
 
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment alignment)
         {

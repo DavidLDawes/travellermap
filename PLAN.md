@@ -262,15 +262,27 @@ parity tests between the old and new hosts.
   - **31 sector-index references had the wrong file-name case** (e.g. `listanaya.sec` vs
     `Listanaya.sec`). Windows ignores case, Linux doesn't, so those sectors would have been
     missing on a Linux host. Fixed (case-only edits to `M1105.xml`/`M1248.xml`; upstream-friendly).
-- **To do:** 46 nullable warnings that surface only on net10.0 (the .NET 10 base library is
-  annotated). They're warnings, not errors, on that target for now (`WarningsNotAsErrors`).
-  Fix them, then remove the exemption.
+- 46 nullable warnings that surfaced only on net10.0 (the .NET 10 base library is annotated)
+  were fixed and the exemption removed: warnings are errors on both targets.
 
 ### 7.2 Rendering on SkiaSharp (largest step)
-- Introduce a font/text-measurement abstraction so that `RenderContext`/`RenderUtil`/`Stylesheet`
-  no longer use `System.Drawing.Font`/`Graphics` directly. Then move rendering into a shared
-  library that builds for both targets.
-- A SkiaSharp `AbstractGraphics` backend (PNG). Keep the SVG backend (check its text
+- **7.2a DONE — portable drawing abstraction.** `AbstractGraphics` and its types no longer use
+  GDI+ or PDFsharp types:
+  - `AbstractMatrix` has its own math, ported from PDFsharp's `XMatrix` with its type shortcuts.
+  - `AbstractFont` is families/size/style.
+  - Font metrics come from `GetFontMetrics`.
+  - `AbstractImage` holds path/URL.
+  - Own `FontStyle`/`SmoothingMode` enums; `TextGridFit` replaces the raw `Graphics` property.
+  - GDI+ code is in `graphics/GdiSupport.cs`; backends cache native objects per font/image.
+- **7.2b DONE — renderer in the core.** `RenderContext`, `RenderUtil`, `Stylesheet`,
+  `VectorObject`, `AbstractGraphics` and `SVGGraphics` build in `Maps.Core` for net48 and
+  net10.0. SVG takes an `ITextMeasurer` (GDI+ on the IIS host). `IsRaster` replaces an
+  `is BitmapGraphics` check. The bitmap and PDF backends stay in `Maps.csproj` (GDI+).
+- 7.2a/b verification: 28 PNG/SVG/PDF renders (all styles, rotations, images, overlays, data
+  URIs) are byte-identical to the previous build. PDFs differ only in per-request XMP metadata.
+  - Gotcha: GDI+ renders an image slightly differently the first time after server start
+    (glyph caching). Compare a second, warm render.
+- **Next — 7.2c:** a SkiaSharp `AbstractGraphics` backend (PNG). Keep the SVG backend (check its text
   measurement). PDF: SkiaSharp's PDF backend, or PDFsharp's Core build with a font resolver.
 - **Fonts:** Arial/Georgia/Wingdings/Segoe UI Symbol aren't on Linux, so bundle open fonts
   (e.g. Liberation Sans, metrically compatible with Arial) or ship font files. This changes
