@@ -18,8 +18,9 @@ Most upstream commits are **data** changes under `res/Sectors/`, not code.
 **Portable core — `core/Maps.Core.csproj` (net48 + net10.0).** Links (doesn't move) the data
 model, parsing/serialization, astrometrics, SectorMap, ResourceManager, geometry
 (`server/Geometry.cs`), validation, utilities, and the renderer (`RenderContext`, `RenderUtil`,
-`Stylesheet`, the `AbstractGraphics` drawing abstraction, the SVG backend) from `server/`. The
-GDI+ backends (`BitmapGraphics`, `PdfSharpGraphics`, `GdiSupport`) stay in `Maps.csproj`. Rules for code in the core: no
+`Stylesheet`, the `AbstractGraphics` drawing abstraction, and the SkiaSharp/PDFsharp/SVG
+backends) from `server/`. Only the legacy GDI+ bitmap backend (`BitmapGraphics`, `GdiSupport`,
+for `renderer=gdi`) stays in `Maps.csproj`. Rules for code in the core: no
 System.Web and no Windows-only System.Drawing (`Point`/`PointF`/`Color`/`RectangleF` are fine).
 Use `Util.MapPath`, and `#if NETFRAMEWORK` for anything IIS-only. Visual Studio/msbuild builds only
 net48; `dotnet build` (SDK 10, in `%USERPROFILE%\.dotnet\dotnet.exe`) builds both. `PLAN.md`
@@ -35,7 +36,8 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 - `server/api/*Handler.cs` — one handler per API. Data handlers derive from `DataHandlerBase`
   (content negotiation: `accept=` query param → `Accept` header → route default → handler
   default; JSON/XML/text; JSONP via `jsonp=`). Image handlers derive from `ImageHandlerBase`
-  (PNG via System.Drawing, SVG, or PDF via PDFsharp-GDI 6.x, serialized behind a lock).
+  (PNG/JPEG via SkiaSharp, SVG, or PDF via PDFsharp 6's core build, serialized behind a lock;
+  text uses only the fonts in `res/fonts`).
 - `server/admin/*` — admin pages (`/admin/flush`, `/admin/reindex`, `/admin/errors`, …).
   Allowed from localhost, or over HTTPS with `?key=` matching `AdminKey` in `web.config`.
 - `server/SectorMap.cs` — loads `res/Sectors/milieu.tab` → per-milieu XML sector lists →
@@ -43,7 +45,9 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 - `server/serialization/` — parsers/writers for sector data: T5 Second Survey column format
   (`.tab`/`.sec`), legacy SEC, MSEC metadata, XML metadata.
 - `server/RenderContext.cs`, `Stylesheet.cs`, `RenderUtil.cs`, `server/graphics/` — map rendering.
-  `AbstractGraphics` has Bitmap/SVG/PdfSharp backends; keep all three working.
+  `AbstractGraphics` has Skia (bitmaps), SVG and PdfSharp backends, plus the legacy GDI+
+  `BitmapGraphics`; keep them working. Text layout for Skia and PDF is shared
+  (`SkiaFonts.FontSet.Layout`), so PNG and PDF place text identically.
 - `server/search/SearchEngine.cs` — SQL Server search index (built by `/admin/reindex`).
 - Caches are **thread-affine**: one copy per worker thread, so they need no locking. Don't
   convert them to plain statics without adding locking. Anything loaded from a data file
@@ -76,14 +80,15 @@ Visual Studio 2022 (or its MSBuild) on Windows is required (see `SETUP.md` for f
    are only needed for search. The `<runtime>` binding redirects are required for PDF output.
 2. Build: `msbuild Maps.sln -t:Restore` then `msbuild Maps.sln -p:Configuration=Debug`
    (MSBuild lives at `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe`).
-   NuGet supplies PDFsharp-GDI 6.x and the net48 reference assemblies.
+   NuGet supplies SkiaSharp, PDFsharp 6 (core build) and the net48 reference assemblies.
 3. Run: `"C:\Program Files\IIS Express\iisexpress.exe" /path:<repo> /port:50103`, or Ctrl+F5 in VS.
    Smoke test: `/api/poster?sector=Spinward%20Marches&subsector=C&accept=application/pdf`.
 4. Optional: SQL Server + `/admin/reindex` to populate search. Debug builds index only
    "selected" sectors.
 
-If PDFsharp's dependency versions change, the build prints MSB3247 with the binding
-redirects to copy into `Web.config.sample`.
+If PDFsharp's or SkiaSharp's dependency versions change, the build prints MSB3247 with the
+binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
+`TestSetup` resolves such dependencies from the test directory.)
 
 `TreatWarningsAsErrors` is on for both configurations — new warnings break the build.
 
@@ -120,7 +125,7 @@ redirects to copy into `Web.config.sample`.
   matching reference after confirming the difference is the data change:
   `npm run test:update-refs -- ref3 ref28` (or no names for all) fetches them from the running
   server. Bitmaps render with SkiaSharp and the fonts in `res/fonts`, so output is deterministic.
-  Append `&renderer=gdi` to an image URL to compare with the old GDI+ renderer.
+  Append `&renderer=gdi` to a PNG/JPEG URL to compare with the old GDI+ renderer.
 - **JS lint**: `npm install` then `npm run lint` (whole repo) or `npx eslint <file>`. The flat
   config is in `eslint.config.js`. Type checking via `jsconfig.json` (`checkJs`) in editors that
   support it.

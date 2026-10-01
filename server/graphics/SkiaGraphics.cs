@@ -199,25 +199,7 @@ namespace Maps.Graphics
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment format)
         {
             var set = Fonts(font);
-            float width = set.MeasureAdvance(s);
-            float ascent = -set.Primary.Metrics.Ascent;
-            float lineSpacing = set.Primary.Spacing;
-
-            // GDI+ (default StringFormat) insets near-aligned text by 1/6 em and far-aligned
-            // text likewise; centered text is unaffected.
-            float pad = font.Size / 6;
-            float left = format switch
-            {
-                StringAlignment.Centered or StringAlignment.TopCenter => x - width / 2,
-                StringAlignment.TopRight => x - width - pad,
-                _ => x + pad,
-            };
-            float baseline = format switch
-            {
-                StringAlignment.Baseline => y,
-                StringAlignment.TopLeft or StringAlignment.TopCenter or StringAlignment.TopRight => y + ascent,
-                _ => y - lineSpacing / 2 + ascent, // Centered, CenterLeft: center the line box on y
-            };
+            var (left, baseline) = set.Layout(s, font.Size, x, y, format);
 
             var p = Fill(brush);
             p.IsAntialias = true;
@@ -227,9 +209,8 @@ namespace Maps.Graphics
                 float advance = f.MeasureText(text);
                 if (font.Underline || font.Strikeout)
                 {
-                    float thickness = Math.Max(font.Size / 14, 0);
-                    float offset = font.Underline ? font.Size / 9 : -ascent * 0.3f;
-                    canvas.DrawRect(left, baseline + offset, advance, thickness, p);
+                    var bar = set.Decoration(font, left, baseline, advance);
+                    canvas.DrawRect(bar.X, bar.Y, bar.Width, bar.Height, p);
                 }
                 left += advance;
             }

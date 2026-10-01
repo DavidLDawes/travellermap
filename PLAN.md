@@ -314,10 +314,21 @@ parity tests between the old and new hosts.
     - Family resolution.
     - A render/encode smoke test.
     - GDI-compatible measurement.
-- **Next — 7.2d: PDF without GDI+.**
-  - PDF output still uses PDFsharp-GDI with `GdiSupport` fonts.
-  - Options: SkiaSharp's PDF backend (`SKDocument`), or PDFsharp's Core build with a font resolver
-    that serves the bundled fonts.
+- **7.2d DONE — PDF without GDI+** (branch `phase7-pdf`).
+  - `PdfSharpGraphics` now uses PDFsharp 6's **core** build (cross-platform) and lives in the core.
+    PDFsharp-GDI is gone from every project.
+  - A font resolver serves the bundled fonts. Text uses the same fallback runs and layout as
+    the Skia renderer (`FontSet.Layout`, shared). Faded images are made with SkiaSharp.
+  - Why not Skia's PDF backend (`SKDocument`)? SkiaSharp's native build has no font
+    subsetter, so it embeds whole fonts: a subsector poster was 800 KB against 80 KB before.
+    PDFsharp subsets per document, so the new PDFs are **smaller** than before (50 KB; the
+    bundled fonts subset better than the Windows ones).
+  - Verified against the previous PDFsharp-GDI output, rasterized with PDFium:
+    - same page sizes and same extractable text;
+    - about 1% of pixels differ (font substitutes), as with PNG;
+    - data-URI PDFs and concurrent requests checked too.
+  - `TestSetup` resolves dependencies (e.g. `Microsoft.Extensions.Logging.Abstractions`) from the
+    test directory, because the test host doesn't apply binding redirects.
 - **Linux:** a Linux host needs `SkiaSharp.NativeAssets.Linux.NoDependencies` (in the 7.3 host
   project). Rendering on Linux gets verified by running the browser suites against the 7.3 host.
 

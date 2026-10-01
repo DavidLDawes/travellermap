@@ -51,6 +51,8 @@ Dependencies
 
 * The site is built using ASP.NET (System.Web) on .NET Framework 4.8 and runs under IIS / IIS Express on Windows.
 * PDF rendering is done using PDFsharp 6 http://www.pdfsharp.net/ (MIT License), via NuGet
+* Bitmap rendering is done using SkiaSharp https://github.com/mono/SkiaSharp (MIT License), via NuGet,
+  with the open-licensed fonts in `res/fonts` (see its README)
 * HTML templating uses Handlebars.js https://handlebarsjs.com/ (MIT License)
 * Search requires SQL Server (Express/Developer is fine); the rest of the site works without it.
 * JavaScript linting uses ESLint via Node/npm (development only).
