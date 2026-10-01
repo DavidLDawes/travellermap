@@ -44,6 +44,15 @@ namespace Maps.API
             return !bitmap || width * height <= MaxBitmapPixels;
         }
 
+        /// <summary>
+        /// Bitmap renderer: "skia" (SkiaSharp with the fonts bundled in res/fonts; same output on
+        /// every OS) or "gdi" (System.Drawing with installed fonts; Windows only). Set by the
+        /// "Renderer" app setting; the "renderer" query option overrides it per request, for
+        /// comparing the two. SVG text measurement follows the same choice.
+        /// </summary>
+        private static readonly string s_defaultRenderer =
+            System.Configuration.ConfigurationManager.AppSettings["Renderer"] ?? "skia";
+
         protected abstract class ImageResponder : DataResponder
         {
             protected ImageResponder(HttpContext context) : base(context) { }
@@ -63,6 +72,8 @@ namespace Maps.API
                 ApplyStyleOptions(ctx.Styles, queryDefaults);
                 double devicePixelRatio = GetDevicePixelRatio(queryDefaults);
                 bool dataURI = GetBoolOption("datauri", queryDefaults: queryDefaults, defaultValue: false);
+                bool skia = !string.Equals(GetStringOption("renderer", queryDefaults: queryDefaults, defaultValue: s_defaultRenderer),
+                    "gdi", StringComparison.OrdinalIgnoreCase);
 
                 // "content-disposition: inline" is not used as Chrome opens that in a tab, then
                 // (sometimes?) fails to allow it to be saved due to being served via POST.
@@ -77,11 +88,12 @@ namespace Maps.API
                 string? downloadDisposition = dataURI ? null : disposition;
 
                 if (accepter.Accepts(context, ContentTypes.Image.Svg, ignoreHeaderFallbacks: true))
-                    WriteSvg(context.Response, outputStream, downloadDisposition, title, ctx, tileSize, transform);
+                    WriteSvg(context.Response, outputStream, downloadDisposition, title, ctx, tileSize, transform,
+                        skia ? SkiaFonts.TextMeasurer : GdiSupport.TextMeasurer);
                 else if (accepter.Accepts(context, ContentTypes.Application.Pdf, ignoreHeaderFallbacks: true))
                     WritePdf(context.Response, outputStream, downloadDisposition, title, ctx, tileSize, transform);
                 else
-                    WriteBitmap(context.Response, outputStream, disposition, title, ctx, tileSize, transform, devicePixelRatio, transparent);
+                    WriteBitmap(context.Response, outputStream, disposition, title, ctx, tileSize, transform, devicePixelRatio, transparent, skia);
 
                 if (dataUriBuffer != null)
                     WriteDataUri(context.Response, dataUriBuffer);
@@ -163,9 +175,9 @@ namespace Maps.API
             }
 
             private static void WriteSvg(HttpResponse response, Stream output, string? disposition, string title,
-                RenderContext ctx, Size tileSize, AbstractMatrix transform)
+                RenderContext ctx, Size tileSize, AbstractMatrix transform, ITextMeasurer measurer)
             {
-                using var svg = new SVGGraphics(tileSize.Width, tileSize.Height);
+                using var svg = new SVGGraphics(tileSize.Width, tileSize.Height, measurer);
                 RenderToGraphics(ctx, transform, svg);
 
                 using var stream = new MemoryStream();
@@ -212,7 +224,7 @@ namespace Maps.API
             }
 
             private static void WriteBitmap(HttpResponse response, Stream output, string disposition, string title,
-                RenderContext ctx, Size tileSize, AbstractMatrix transform, double devicePixelRatio, bool transparent)
+                RenderContext ctx, Size tileSize, AbstractMatrix transform, double devicePixelRatio, bool transparent, bool skia)
             {
                 double requestedWidth = Math.Floor(tileSize.Width * devicePixelRatio);
                 double requestedHeight = Math.Floor(tileSize.Height * devicePixelRatio);
@@ -223,6 +235,28 @@ namespace Maps.API
                 }
                 int width = (int)requestedWidth;
                 int height = (int)requestedHeight;
+
+                if (skia)
+                {
+                    // JPEG or PNG, based on style; transparency needs PNG.
+                    string mimeType = transparent || ctx.Styles.preferredMimeType != ContentTypes.Image.Jpeg
+                        ? ContentTypes.Image.Png : ContentTypes.Image.Jpeg;
+                    byte[] encoded = SkiaGraphics.RenderBitmap(width, height, mimeType, graphics =>
+                    {
+                        graphics.ScaleTransform((float)devicePixelRatio);
+                        RenderToGraphics(ctx, transform, graphics);
+                    }) ?? throw new HttpError(500, "Internal Server Error",
+                        $"Failed to allocate bitmap ({width}x{height}). Insufficient memory?");
+                    response.ContentType = mimeType;
+                    if (title != null)
+                    {
+                        string extension = mimeType == ContentTypes.Image.Jpeg ? "jpg" : "png";
+                        response.AddHeader("content-disposition", $"{disposition};filename=\"{Util.SanitizeFilename(title)}.{extension}\"");
+                    }
+                    output.Write(encoded, 0, encoded.Length);
+                    return;
+                }
+
                 using var bitmap = TryConstructBitmap(width, height, PixelFormat.Format32bppArgb);
                 if (bitmap == null)
                 {

@@ -17,7 +17,9 @@ Most upstream commits are **data** changes under `res/Sectors/`, not code.
 
 **Portable core — `core/Maps.Core.csproj` (net48 + net10.0).** Links (doesn't move) the data
 model, parsing/serialization, astrometrics, SectorMap, ResourceManager, geometry
-(`server/Geometry.cs`), validation and utilities from `server/`. Rules for code in the core: no
+(`server/Geometry.cs`), validation, utilities, and the renderer (`RenderContext`, `RenderUtil`,
+`Stylesheet`, the `AbstractGraphics` drawing abstraction, the SVG backend) from `server/`. The
+GDI+ backends (`BitmapGraphics`, `PdfSharpGraphics`, `GdiSupport`) stay in `Maps.csproj`. Rules for code in the core: no
 System.Web and no Windows-only System.Drawing (`Point`/`PointF`/`Color`/`RectangleF` are fine).
 Use `Util.MapPath`, and `#if NETFRAMEWORK` for anything IIS-only. Visual Studio/msbuild builds only
 net48; `dotnet build` (SDK 10, in `%USERPROFILE%\.dotnet\dotnet.exe`) builds both. `PLAN.md`
@@ -115,7 +117,10 @@ redirects to copy into `Web.config.sample`.
   runs `test/APITest.html`, `ContentTest.html`, and `ImageTest.html` in headless Chrome
   (`--no-search` when there's no SQL Server search index). Or open the pages directly.
   References live in `test/refs/`. When data changes legitimately alter output, update the
-  matching reference after confirming the difference is the data change.
+  matching reference after confirming the difference is the data change:
+  `npm run test:update-refs -- ref3 ref28` (or no names for all) fetches them from the running
+  server. Bitmaps render with SkiaSharp and the fonts in `res/fonts`, so output is deterministic.
+  Append `&renderer=gdi` to an image URL to compare with the old GDI+ renderer.
 - **JS lint**: `npm install` then `npm run lint` (whole repo) or `npx eslint <file>`. The flat
   config is in `eslint.config.js`. Type checking via `jsconfig.json` (`checkJs`) in editors that
   support it.

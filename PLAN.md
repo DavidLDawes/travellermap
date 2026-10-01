@@ -262,20 +262,64 @@ parity tests between the old and new hosts.
   - **31 sector-index references had the wrong file-name case** (e.g. `listanaya.sec` vs
     `Listanaya.sec`). Windows ignores case, Linux doesn't, so those sectors would have been
     missing on a Linux host. Fixed (case-only edits to `M1105.xml`/`M1248.xml`; upstream-friendly).
-- **To do:** 46 nullable warnings that surface only on net10.0 (the .NET 10 base library is
-  annotated). They're warnings, not errors, on that target for now (`WarningsNotAsErrors`).
-  Fix them, then remove the exemption.
+- 46 nullable warnings that surfaced only on net10.0 (the .NET 10 base library is annotated)
+  were fixed and the exemption removed: warnings are errors on both targets.
 
 ### 7.2 Rendering on SkiaSharp (largest step)
-- Introduce a font/text-measurement abstraction so that `RenderContext`/`RenderUtil`/`Stylesheet`
-  no longer use `System.Drawing.Font`/`Graphics` directly. Then move rendering into a shared
-  library that builds for both targets.
-- A SkiaSharp `AbstractGraphics` backend (PNG). Keep the SVG backend (check its text
-  measurement). PDF: SkiaSharp's PDF backend, or PDFsharp's Core build with a font resolver.
-- **Fonts:** Arial/Georgia/Wingdings/Segoe UI Symbol aren't on Linux, so bundle open fonts
-  (e.g. Liberation Sans, metrically compatible with Arial) or ship font files. This changes
-  rendered output, so references get regenerated *once*, deliberately.
-- Parity check: the ImageTest tolerance rule from Phase 5/6 compares old vs new renders.
+- **7.2a DONE — portable drawing abstraction.** `AbstractGraphics` and its types no longer use
+  GDI+ or PDFsharp types:
+  - `AbstractMatrix` has its own math, ported from PDFsharp's `XMatrix` with its type shortcuts.
+  - `AbstractFont` is families/size/style.
+  - Font metrics come from `GetFontMetrics`.
+  - `AbstractImage` holds path/URL.
+  - Own `FontStyle`/`SmoothingMode` enums; `TextGridFit` replaces the raw `Graphics` property.
+  - GDI+ code is in `graphics/GdiSupport.cs`; backends cache native objects per font/image.
+- **7.2b DONE — renderer in the core.** `RenderContext`, `RenderUtil`, `Stylesheet`,
+  `VectorObject`, `AbstractGraphics` and `SVGGraphics` build in `Maps.Core` for net48 and
+  net10.0. SVG takes an `ITextMeasurer` (GDI+ on the IIS host). `IsRaster` replaces an
+  `is BitmapGraphics` check. The bitmap and PDF backends stay in `Maps.csproj` (GDI+).
+- 7.2a/b verification: 28 PNG/SVG/PDF renders (all styles, rotations, images, overlays, data
+  URIs) are byte-identical to the previous build. PDFs differ only in per-request XMP metadata.
+  - Gotcha: GDI+ renders an image slightly differently the first time after server start
+    (glyph caching). Compare a second, warm render.
+- **7.2c DONE — SkiaSharp bitmap backend.**
+  - `SkiaGraphics` (SkiaSharp 4.153, in the core) is the default PNG/JPEG renderer on the IIS host.
+  - The `Renderer` app setting (`skia`/`gdi`) chooses the renderer; the hidden
+    `renderer=gdi|skia` query option overrides it per request, for side-by-side comparison.
+  - SVG text measurement follows the same choice.
+  - It mirrors GDI+ where layout depends on it:
+    - pens narrower than a pixel draw as hairlines;
+    - dash patterns scale with the pen width;
+    - nonzero fill rule;
+    - GDI+'s cardinal-spline formula;
+    - string alignment;
+    - `MeasureString` padding: measured on GDI+ as advance × 1.03 + ⅓ em by line spacing + ⅛ em.
+  - **Fonts:** bundled in `res/fonts` (8.4 MB, open licenses, see its README) and never taken from
+    the system:
+    - Liberation Sans/Mono for Arial/Courier New, Carlito for Calibri, Gelasio for Georgia, and
+      Comic Neue for Comic Sans MS.
+    - DejaVu Sans, then Noto Sans Symbols 2, for symbols and any character a font lacks.
+    - Wingdings isn't used; glyphs fall back to Unicode symbols, so ◆ and ★ are a bit different.
+  - **Output is deterministic:** byte-identical across runs and server restarts, unlike GDI+.
+    ImageTest references were regenerated once, deliberately, after side-by-side review of every
+    style:
+    - default, print, atlas, FASA, Mongoose, terminal, draft, candy;
+    - jump maps, rotations, macro and galaxy scales, the data overview.
+    - Small text at macro scales is cleaner than GDI+'s, which mis-spaced letters at tiny sizes.
+  - `npm run test:update-refs` regenerates references from a running server, for future
+    deliberate rendering changes.
+  - Unit tests:
+    - `AbstractMatrix` matches `XMatrix` exactly over random operation sequences.
+    - The bundled fonts cover every glyph and overlay symbol.
+    - Family resolution.
+    - A render/encode smoke test.
+    - GDI-compatible measurement.
+- **Next — 7.2d: PDF without GDI+.**
+  - PDF output still uses PDFsharp-GDI with `GdiSupport` fonts.
+  - Options: SkiaSharp's PDF backend (`SKDocument`), or PDFsharp's Core build with a font resolver
+    that serves the bundled fonts.
+- **Linux:** a Linux host needs `SkiaSharp.NativeAssets.Linux.NoDependencies` (in the 7.3 host
+  project). Rendering on Linux gets verified by running the browser suites against the 7.3 host.
 
 ### 7.3 ASP.NET Core host (net10.0)
 - New `host/` project: minimal-API endpoints mirroring `Global.asax` routes (RoutingTest's URL

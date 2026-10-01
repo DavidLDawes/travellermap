@@ -4,8 +4,6 @@ using Maps.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Linq;
 using System.Threading;
 
@@ -42,35 +40,35 @@ namespace Maps.Rendering
                 new PointF(-0.5f + RenderUtil.HEX_EDGE, -0.5f),
             },
             new byte[] {
-                (byte)PathPointType.Start,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)(PathPointType.Line | PathPointType.CloseSubpath),
+                PathPointTypes.Start,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                (byte)(PathPointTypes.Line | PathPointTypes.CloseSubpath),
             });
 
         // NOTE: Wingdings are often used instead of UNICODE equivalents in a common font
         // because the glyphs are much higher quality.
         // See http://www.alanwood.net/demos/wingdings.html for a good mapping
 
-        private static ThreadLocal<IReadOnlyDictionary<char, char>> DING_MAP = new ThreadLocal<IReadOnlyDictionary<char, char>>(() =>
+        private static readonly IReadOnlyDictionary<char, char> DING_MAP =
             new Dictionary<char, char> {
             { '\x2666', '\x74' }, // U+2666 (BLACK DIAMOND SUIT)
             { '\x2756', '\x76' }, // U+2756 (BLACK DIAMOND MINUS WHITE X)
             { '\x2726', '\xAA' }, // U+2726 (BLACK FOUR POINTED STAR)
             { '\x2605', '\xAB' }, // U+2605 (BLACK STAR)
             { '\x2736', '\xAC' }, // U+2736 (BLACK SIX POINTED STAR)
-        });
+        };
 
         public static void DrawGlyph(AbstractGraphics g, Glyph glyph, FontCache styleRes, AbstractBrush brush, PointF pt)
         {
             AbstractFont font;
             string s = glyph.Characters;
-            if (g.SupportsWingdings && s.All(c => DING_MAP.Value.ContainsKey(c)))
+            if (g.SupportsWingdings && s.All(c => DING_MAP.ContainsKey(c)))
             {
-                s = string.Join("", s.Select(c => DING_MAP.Value[c]));
+                s = string.Join("", s.Select(c => DING_MAP[c]));
                 font = styleRes.WingdingFont;
             }
             else
@@ -114,10 +112,7 @@ namespace Maps.Rendering
             var lines = text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None).ToList();
             var sizes = lines.Select(s => g.MeasureString(s, font)).ToList();
 
-            float fontUnitsToWorldUnits = font.Size / font.FontFamily.GetEmHeight(font.Style);
-            float lineSpacing = font.FontFamily.GetLineSpacing(font.Style) * fontUnitsToWorldUnits;
-            float ascent = font.FontFamily.GetCellAscent(font.Style) * fontUnitsToWorldUnits;
-            //float descent = font.FontFamily.GetCellDescent(font.Style) * fontUnitsToWorldUnits;
+            float lineSpacing = g.GetFontMetrics(font).LineSpacing;
 
             SizeF boundingSize = new SizeF(sizes.Max(s => s.Width), lineSpacing * sizes.Count());
 
@@ -178,8 +173,8 @@ namespace Maps.Rendering
                 g.RotateTransform(labelStyle.Rotation);
                 g.ScaleTransform(labelStyle.Scale.Width, labelStyle.Scale.Height);
 
-                if (labelStyle.Rotation != 0 && g.Graphics != null)
-                    g.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+                if (labelStyle.Rotation != 0)
+                    g.TextGridFit = false;
 
                 DrawString(g, text, font, brush, 0, 0);
             }
@@ -267,7 +262,7 @@ namespace Maps.Rendering
             return glyph;
         }
 
-        private static ThreadLocal<RegexMap<Glyph>> s_baseGlyphTable = new ThreadLocal<RegexMap<Glyph>>(() =>
+        private static readonly RegexMap<Glyph> s_baseGlyphTable =
             new GlobMap<Glyph> {
             { "*.C", new Glyph(Glyph.StarStar, bias:GlyphBias.Bottom) }, // Vargr Corsair Base
             { "Im.D", new Glyph(Glyph.Square, bias:GlyphBias.Bottom) }, // Imperial Depot
@@ -289,9 +284,9 @@ namespace Maps.Rendering
             { "Sc.H", Glyph.HiverSupplyBase }, // Hiver Supply Base
             { "*.I", Glyph.Interface }, // Interface
             { "*.T", Glyph.Terminus }, // Terminus
-        });
+        };
 
-        public static Glyph FromBaseCode(string allegiance, char code) => s_baseGlyphTable.Value.Match(allegiance + "." + code);
+        public static Glyph FromBaseCode(string allegiance, char code) => s_baseGlyphTable.Match(allegiance + "." + code);
     }
 
     #region Stellar Rendering
@@ -306,7 +301,7 @@ namespace Maps.Rendering
     internal static class StellarRendering
     {
         // Additions to radius based on luminosity.
-        private static ThreadLocal<IReadOnlyDictionary<string, float>> LUM = new ThreadLocal<IReadOnlyDictionary<string, float>>(() =>
+        private static readonly IReadOnlyDictionary<string, float> LUM =
             new Dictionary<string, float> {
                 { "Ia", 7 },
                 { "Ib", 5 },
@@ -315,16 +310,16 @@ namespace Maps.Rendering
                 { "IV", 1 },
                 { "V", 0 },
                 { "VI", -0.1f }
-            });
+            };
 
         // Base radius for spectral class.
-        private static ThreadLocal<IReadOnlyDictionary<char, float>> RAD = new ThreadLocal<IReadOnlyDictionary<char, float>>(() =>
+        private static readonly IReadOnlyDictionary<char, float> RAD =
             new Dictionary<char, float> { 
                 { 'O', 4 }, { 'B', 3 }, { 'A', 2 }, { 'F', 1.5f }, { 'G', 1 }, { 'K', 0.7f }, { 'M', 0.5f }
-            });
+            };
 
         // Maps spectral class to color.
-        private static ThreadLocal<IReadOnlyDictionary<char, Color>> COLOR = new ThreadLocal<IReadOnlyDictionary<char, Color>>(() =>
+        private static readonly IReadOnlyDictionary<char, Color> COLOR =
             new Dictionary<char, Color> {
                 { 'O', Color.FromArgb(0x9d, 0xb4, 0xff) },
                 { 'B', Color.FromArgb(0xbb, 0xcc, 0xff) },
@@ -333,7 +328,7 @@ namespace Maps.Rendering
                 { 'G', Color.FromArgb(0xff, 0xff, 0x00) },
                 { 'K', Color.FromArgb(0xff, 0x98, 0x33) },
                 { 'M', Color.FromArgb(0xff, 0x00, 0x00) },
-            });
+            };
 
         public static StarProps StarToProps(StellarData.Star star)
         {
@@ -347,7 +342,7 @@ namespace Maps.Rendering
             if (star.classification == "BD")
                 return new StarProps(Color.Brown, Color.Black, 0.3f);
 
-            return new StarProps(COLOR.Value[star.type], Color.Black, RAD.Value[star.type] + LUM.Value[star.luminosity ?? "V"]);
+            return new StarProps(COLOR[star.type], Color.Black, RAD[star.type] + LUM[star.luminosity ?? "V"]);
         }
 
         private static float SinF(double r) => (float)Math.Sin(r);

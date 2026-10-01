@@ -46,24 +46,25 @@ namespace Maps.Graphics
         }
         private void Apply(AbstractPen pen, AbstractBrush brush) { Apply(pen); Apply(brush); }
 
-        private Dictionary<Font, XFont> fontMap = new Dictionary<Font, XFont>();
-        private XFont Convert(Font font)
+        private Dictionary<AbstractFont, XFont> fontMap = new Dictionary<AbstractFont, XFont>();
+        private XFont Convert(AbstractFont font)
         {
             if (fontMap.ContainsKey(font))
                 return fontMap[font];
-            XFont xfont = new XFont(font, new XPdfFontOptions(PdfFontEncoding.Unicode));
+            XFont xfont = new XFont(GdiSupport.Font(font), new XPdfFontOptions(PdfFontEncoding.Unicode));
             fontMap.Add(font, xfont);
             return xfont;
         }
 
         public bool SupportsWingdings => true;
+        public bool IsRaster => false;
         public SmoothingMode SmoothingMode { get => (SmoothingMode)g.SmoothingMode; set => g.SmoothingMode = (XSmoothingMode)value; }
-        public System.Drawing.Graphics? Graphics => g.Graphics;
+        public bool TextGridFit { set { } }
         public void ScaleTransform(float scaleXY) { g.ScaleTransform(scaleXY); }
         public void ScaleTransform(float scaleX, float scaleY) { g.ScaleTransform(scaleX, scaleY); }
         public void TranslateTransform(float dx, float dy) { g.TranslateTransform(dx, dy); }
         public void RotateTransform(float angle) { g.RotateTransform(angle); }
-        public void MultiplyTransform(AbstractMatrix m) { g.MultiplyTransform(m.XMatrix); }
+        public void MultiplyTransform(AbstractMatrix m) { g.MultiplyTransform(new XMatrix(m.M11d, m.M12d, m.M21d, m.M22d, m.OffsetXd, m.OffsetYd)); }
 
         public void IntersectClip(AbstractPath path) { g.IntersectClip(new XGraphicsPath(path.Points, path.Types, XFillMode.Winding)); }
         public void IntersectClip(RectangleF rect) { g.IntersectClip(rect); }
@@ -87,7 +88,7 @@ namespace Maps.Graphics
 
         public void DrawImage(AbstractImage image, float x, float y, float width, float height)
         {
-            XImage ximage = image.XImage;
+            XImage ximage = GetXImage(image);
             lock (ximage)
             {
                 g.DrawImage(ximage, x, y, width, height);
@@ -106,16 +107,19 @@ namespace Maps.Graphics
             if (alpha <= 0f)
                 return;
 
-            ximage = (alpha >= 1f) ? mimage.XImage : GetAlphaVariant(alpha, mimage);
+            ximage = (alpha >= 1f) ? GetXImage(mimage) : GetAlphaVariant(alpha, mimage);
             lock (ximage)
             {
                 g.DrawImage(ximage, targetRect);
             }
         }
 
+        private static XImage GetXImage(AbstractImage image) =>
+            image.Natives.Get(() => XImage.FromGdiPlusImage(GdiSupport.Image(image)));
+
         private static XImage GetAlphaVariant(float alpha, AbstractImage mimage)
         {
-            Image image = mimage.Image!;
+            Image image = GdiSupport.Image(mimage);
             lock (image)
             {
                 XImage ximage;
@@ -160,12 +164,13 @@ namespace Maps.Graphics
             }
         }
 
-        public SizeF MeasureString(string text, AbstractFont font) => g.MeasureString(text, font.Font).ToSizeF();
+        public SizeF MeasureString(string text, AbstractFont font) => g.MeasureString(text, GdiSupport.Font(font)).ToSizeF();
+        public FontMetrics GetFontMetrics(AbstractFont font) => GdiSupport.Metrics(font);
 
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment format)
         {
             Apply(brush);
-            g.DrawString(s, Convert(font.Font), this.brush, x, y, Format(format));
+            g.DrawString(s, Convert(font), this.brush, x, y, Format(format));
         }
 
         public AbstractGraphicsState Save() => new State(this, g.Save());

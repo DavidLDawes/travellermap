@@ -3,7 +3,6 @@ using Maps.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Xml.Serialization;
 
 namespace Maps.Rendering
@@ -118,10 +117,10 @@ namespace Maps.Rendering
                 {
                     List<byte> types = new List<byte>(PathDataPoints.Length)
                     {
-                        (byte)PathPointType.Start
+                        PathPointTypes.Start
                     };
                     for (int i = 1; i < PathDataPoints.Length; ++i)
-                        types.Add((byte)PathPointType.Line);
+                        types.Add(PathPointTypes.Line);
                     pathDataTypes = types.ToArray();
                 }
 

@@ -31,6 +31,7 @@ namespace Maps.Graphics
         public const byte Start = 0;
         public const byte Line = 1;
         public const byte Bezier = 3;
+        public const byte PathTypeMask = 0x07;
         public const byte CloseSubpath = 0x80;
     }
 }
