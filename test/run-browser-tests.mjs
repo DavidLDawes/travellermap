@@ -46,20 +46,29 @@ if (!CHROME) {
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const PORT = 9300 + Math.floor(Math.random() * 600);
 const profile = mkdtempSync(path.join(tmpdir(), 'tm-browser-tests-'));
+// In CI on Linux, Chrome's sandbox is unavailable (e.g. Ubuntu 24.04 restricts the user
+// namespaces it needs) and /dev/shm is small.
+const ciFlags = process.platform === 'linux' && process.env.CI ?
+  ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'] : [];
 const chrome = spawn(CHROME, ['--headless=new', `--remote-debugging-port=${PORT}`,
-  `--user-data-dir=${profile}`, '--no-first-run', 'about:blank'], {stdio: 'ignore'});
+  `--user-data-dir=${profile}`, '--no-first-run', ...ciFlags, 'about:blank'],
+{stdio: ['ignore', 'ignore', 'pipe']});
+let chromeErrors = '';
+chrome.stderr.on('data', d => {
+  chromeErrors = (chromeErrors + d).slice(-4000);
+});
 
 let exitCode = 0;
 try {
   let target;
-  for (let i = 0; i < 100 && !target; ++i) {
+  for (let i = 0; i < 300 && !target; ++i) {
     try {
       target = await (await fetch(`http://127.0.0.1:${PORT}/json/new?about:blank`, {method: 'PUT'})).json();
     } catch {
       await sleep(200);
     }
   }
-  if (!target) throw new Error('Could not connect to Chrome');
+  if (!target) throw new Error('Could not connect to Chrome. Its output:\n' + chromeErrors);
 
   const ws = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise(r => ws.addEventListener('open', r));
