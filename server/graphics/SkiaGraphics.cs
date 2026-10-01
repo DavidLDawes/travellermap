@@ -180,20 +180,20 @@ namespace Maps.Graphics
                 set = SkiaFonts.Instance.CreateFonts(font);
                 fonts[font] = set;
             }
-            set.Hinting = textGridFit ? SKFontHinting.Slight : SKFontHinting.None;
+            set.Hinting = SKFontHinting.None;
             return set;
         }
 
         public SizeF MeasureString(string text, AbstractFont font)
         {
             var set = Fonts(font);
-            return SkiaFonts.GdiCompatibleSize(set.MeasureAdvance(text), set.Primary.Spacing, font.Size);
+            return SkiaFonts.GdiCompatibleSize(set.MeasureAdvance(text), set.LineSpacing, font.Size);
         }
 
         public FontMetrics GetFontMetrics(AbstractFont font)
         {
-            var primary = Fonts(font).Primary;
-            return new FontMetrics(-primary.Metrics.Ascent, primary.Spacing);
+            var set = Fonts(font);
+            return new FontMetrics(set.Ascent, set.LineSpacing);
         }
 
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment format)
@@ -205,8 +205,9 @@ namespace Maps.Graphics
             p.IsAntialias = true;
             foreach (var (text, f) in set.Runs(s))
             {
-                canvas.DrawText(text, left, baseline, SKTextAlign.Left, f, p);
-                float advance = f.MeasureText(text);
+                using (var glyphs = set.TextPath(f, text, left, baseline))
+                    canvas.DrawPath(glyphs, p);
+                float advance = set.Advance(f, text);
                 if (font.Underline || font.Strikeout)
                 {
                     var bar = set.Decoration(font, left, baseline, advance);

@@ -257,13 +257,13 @@ namespace Maps.Graphics
         public SizeF MeasureString(string text, AbstractFont font)
         {
             var set = Fonts(font);
-            return SkiaFonts.GdiCompatibleSize(set.MeasureAdvance(text), set.Primary.Spacing, font.Size);
+            return SkiaFonts.GdiCompatibleSize(set.MeasureAdvance(text), set.LineSpacing, font.Size);
         }
 
         public FontMetrics GetFontMetrics(AbstractFont font)
         {
-            var primary = Fonts(font).Primary;
-            return new FontMetrics(-primary.Metrics.Ascent, primary.Spacing);
+            var set = Fonts(font);
+            return new FontMetrics(set.Ascent, set.LineSpacing);
         }
 
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment format)
@@ -274,7 +274,7 @@ namespace Maps.Graphics
             foreach (var (text, f) in set.Runs(s))
             {
                 g.DrawString(text, GetXFont(set.FaceOf(f), font), this.brush, left, baseline, XStringFormats.BaseLineLeft);
-                float advance = f.MeasureText(text);
+                float advance = set.Advance(f, text);
                 if (font.Underline || font.Strikeout)
                     g.DrawRectangle(this.brush, ToXRect(set.Decoration(font, left, baseline, advance)));
                 left += advance;

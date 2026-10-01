@@ -90,6 +90,10 @@ namespace Maps.Graphics
             public bool FakeBold { get; }
             public bool FakeItalic { get; }
 
+            private FontTables? tables;
+            /// <summary>Metrics read from the font file (the same on every platform).</summary>
+            public FontTables Tables => tables ??= new FontTables(Typeface);
+
             public SKFont CreateFont(float size)
             {
                 var font = new SKFont(Typeface, size)
@@ -160,6 +164,7 @@ namespace Maps.Graphics
         internal sealed class FontSet : IDisposable
         {
             private readonly Dictionary<SKFont, Face> faceOf = new Dictionary<SKFont, Face>();
+            private readonly Dictionary<(SKFont, ushort), SKPath> glyphPaths = new Dictionary<(SKFont, ushort), SKPath>();
 
             /// <param name="faces">The primary face, then the fallbacks.</param>
             public FontSet(Face[] faces, float size)
@@ -175,6 +180,47 @@ namespace Maps.Graphics
 
             /// <summary>The face a font in this set was created from.</summary>
             public Face FaceOf(SKFont font) => faceOf[font];
+
+            // Vertical metrics of the primary font, in world units, as GDI+ defined them (from
+            // the font tables, so the same on every platform).
+            public float Ascent => FaceOf(Primary).Tables.Ascent * Primary.Size;
+            public float LineSpacing => FaceOf(Primary).Tables.LineSpacing * Primary.Size;
+
+            /// <summary>
+            /// Advance width of text in one font, from the font's hmtx table. (SKFont.MeasureText
+            /// uses the platform's glyph scaler, DirectWrite or FreeType, whose widths differ.)
+            /// </summary>
+            public float Advance(SKFont font, string text)
+            {
+                var tables = FaceOf(font).Tables;
+                float units = 0;
+                foreach (ushort glyph in font.GetGlyphs(text))
+                    units += tables.AdvanceWidth(glyph);
+                return units * font.Size;
+            }
+
+            /// <summary>
+            /// Text in one font as glyph outlines, starting at (x, baseline), placed by hmtx
+            /// advances. Filled by Skia's own rasterizer, this draws the same pixels on every OS
+            /// (drawing text directly uses the platform's rasterizer, which hints and places
+            /// glyphs differently).
+            /// </summary>
+            public SKPath TextPath(SKFont font, string text, float x, float baseline)
+            {
+                var tables = FaceOf(font).Tables;
+                using var builder = new SKPathBuilder();
+                foreach (ushort glyph in font.GetGlyphs(text))
+                {
+                    if (!glyphPaths.TryGetValue((font, glyph), out SKPath? outline))
+                    {
+                        outline = font.GetGlyphPath(glyph) ?? new SKPath();
+                        glyphPaths[(font, glyph)] = outline;
+                    }
+                    builder.AddPath(outline, x, baseline);
+                    x += tables.AdvanceWidth(glyph) * font.Size;
+                }
+                return builder.Detach();
+            }
 
             public SKFontHinting Hinting
             {
@@ -216,7 +262,7 @@ namespace Maps.Graphics
             }
 
             /// <summary>Advance width of text, using fallbacks where needed.</summary>
-            public float MeasureAdvance(string text) => Runs(text).Sum(run => run.font.MeasureText(run.text));
+            public float MeasureAdvance(string text) => Runs(text).Sum(run => Advance(run.font, run.text));
 
             /// <summary>
             /// Where to start drawing text (left edge and baseline) for an AbstractGraphics
@@ -226,8 +272,8 @@ namespace Maps.Graphics
             public (float left, float baseline) Layout(string text, float emSize, float x, float y, StringAlignment format)
             {
                 float width = MeasureAdvance(text);
-                float ascent = -Primary.Metrics.Ascent;
-                float lineSpacing = Primary.Spacing;
+                float ascent = Ascent;
+                float lineSpacing = LineSpacing;
 
                 float pad = emSize / 6;
                 float left = format switch
@@ -248,7 +294,7 @@ namespace Maps.Graphics
             /// <summary>The underline or strikeout bar for a run of text, as a rectangle.</summary>
             public RectangleF Decoration(AbstractFont font, float left, float baseline, float advance)
             {
-                float ascent = -Primary.Metrics.Ascent;
+                float ascent = Ascent;
                 float thickness = Math.Max(font.Size / 14, 0);
                 float offset = font.Underline ? font.Size / 9 : -ascent * 0.3f;
                 return new RectangleF(left, baseline + offset, advance, thickness);
@@ -259,6 +305,9 @@ namespace Maps.Graphics
                 Primary.Dispose();
                 foreach (var f in Fallbacks)
                     f.Dispose();
+                foreach (var path in glyphPaths.Values)
+                    path.Dispose();
+                glyphPaths.Clear();
             }
         }
 
@@ -278,13 +327,13 @@ namespace Maps.Graphics
             public SizeF MeasureString(string text, AbstractFont font)
             {
                 using var fonts = Instance.CreateFonts(font);
-                return GdiCompatibleSize(fonts.MeasureAdvance(text), fonts.Primary.Spacing, font.Size);
+                return GdiCompatibleSize(fonts.MeasureAdvance(text), fonts.LineSpacing, font.Size);
             }
 
             public FontMetrics GetFontMetrics(AbstractFont font)
             {
-                using var primary = Instance.Resolve(font).CreateFont(font.Size);
-                return new FontMetrics(-primary.Metrics.Ascent, primary.Spacing);
+                var tables = Instance.Resolve(font).Tables;
+                return new FontMetrics(tables.Ascent * font.Size, tables.LineSpacing * font.Size);
             }
         }
     }

@@ -68,6 +68,7 @@
     <Compile Include="../server/graphics/AbstractGraphics.cs" Link="server/graphics/AbstractGraphics.cs" />
     <Compile Include="../server/graphics/SVGGraphics.cs" Link="server/graphics/SVGGraphics.cs" />
     <Compile Include="../server/graphics/SkiaFonts.cs" Link="server/graphics/SkiaFonts.cs" />
+    <Compile Include="../server/graphics/FontTables.cs" Link="server/graphics/FontTables.cs" />
     <Compile Include="../server/graphics/SkiaGraphics.cs" Link="server/graphics/SkiaGraphics.cs" />
     <Compile Include="../server/graphics/PdfSharpGraphics.cs" Link="server/graphics/PdfSharpGraphics.cs" />
   </ItemGroup>

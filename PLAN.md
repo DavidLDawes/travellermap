@@ -359,6 +359,16 @@ parity tests between the old and new hosts.
     `Util.StableStringComparer` (ordinal, case-insensitive).
   - The XML declaration and namespace order are pinned to .NET Framework's.
   - Windows-1252 needs `CodePagesEncodingProvider` on .NET.
+- **Same images on Windows and Linux.** The first Linux CI run showed text rendered differently:
+  SkiaSharp rasterizes glyphs with DirectWrite on Windows and FreeType on Linux, which hint,
+  measure and place glyphs differently (~2% of pixels). Text is now drawn as glyph outlines,
+  filled by Skia, with advances and vertical metrics from the font's own tables
+  (`server/graphics/FontTables.cs`).
+  - Most test images are now byte-identical across the two OSes; the rest differ by a few
+    levels on isolated pixels.
+  - Text is unhinted, so slightly softer. The ImageTest references were regenerated (34 with
+    text).
+  - Checked locally by running the host in a Linux container (Docker).
 - **Not ported:** the `PageFooter` module, and the production redirects (HTTPS, `www.`), which
   belong in the reverse proxy (7.5).
 - **Gotchas:**
