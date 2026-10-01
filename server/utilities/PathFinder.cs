@@ -18,7 +18,7 @@ namespace Maps.Utilities
             }
             public T entity;
             public double fScore;
-            public int CompareTo(Node<T> other)
+            public int CompareTo(Node<T>? other)
             {
                 if (other == null) throw new ArgumentNullException(nameof(other));
                 return fScore.CompareTo(other.fScore);

@@ -3,6 +3,7 @@ using Maps.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -116,18 +117,111 @@ namespace Maps.Admin
             }
         }
 
+        /// <summary>Validates all sectors and all sector index/metadata XML.</summary>
+        public void ValidateAll(SectorMap map, ResourceManager resourceManager)
+        {
+            ValidateSectors(map, resourceManager);
+            var xmlFiles = SectorMap.MetafilePaths()
+                .Concat(map.Sectors.Where(s => s.MetadataFile != null).Select(s => s.MetadataFile!))
+                .ToList();
+            ValidateXml(xmlFiles);
+            ValidateFileNameCase(xmlFiles.Concat(map.Sectors.Where(s => s.DataFile != null).Select(s => s.DataFile!.FileName)));
+        }
+
+        /// <summary>
+        /// Checks that referenced files exist with exactly the given case. Windows file systems
+        /// ignore case but Linux doesn't, so a mismatch works locally and fails on Linux.
+        /// </summary>
+        public void ValidateFileNameCase(IEnumerable<string> virtualPaths)
+        {
+            string root = Util.MapPath("~/");
+            foreach (var path in virtualPaths.Distinct(StringComparer.Ordinal))
+            {
+                string dir = root;
+                foreach (var segment in path.TrimStart('~').Split(new[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    if (segment == ".")
+                        continue;
+                    if (segment == "..")
+                    {
+                        dir = System.IO.Path.GetDirectoryName(dir.TrimEnd('/', '\\')) ?? dir;
+                        continue;
+                    }
+                    var names = System.IO.Directory.Exists(dir)
+                        ? System.IO.Directory.EnumerateFileSystemEntries(dir).Select(System.IO.Path.GetFileName).ToList()
+                        : new List<string?>();
+                    if (!names.Contains(segment, StringComparer.Ordinal))
+                    {
+                        string? actual = names.FirstOrDefault(n => string.Equals(n, segment, StringComparison.OrdinalIgnoreCase));
+                        if (actual != null)
+                            Add(Severity.Error, "file-case", path, $"'{segment}' is '{actual}' on disk (Linux file names are case-sensitive)");
+                        else
+                            Add(Severity.Error, "file-missing", path, $"'{segment}' not found");
+                        break;
+                    }
+                    dir = System.IO.Path.Combine(dir, segment);
+                }
+            }
+        }
+
+        #region Baseline
+        // test/data-validation-baseline.txt lists known errors; checks fail only on new ones.
+
+        private static readonly Regex LINE_NUMBER = new Regex(@"\bline \d+[:,]?\s*");
+
+        /// <summary>
+        /// Baseline key for an error. Line numbers are omitted because they shift whenever a
+        /// file is edited.
+        /// </summary>
+        public static string BaselineKey(Finding f) => $"{f.Category} | {f.Where} | {LINE_NUMBER.Replace(f.Message, "")}";
+
+        public IEnumerable<Finding> Errors => findings.Where(f => f.Severity == Severity.Error);
+
+        /// <summary>Contents for a new baseline file.</summary>
+        public IEnumerable<string> FormatBaseline() =>
+            new[] {
+                "# Known data validation errors; see server/admin/DataValidator.cs.",
+                "# Format: category | sector (milieu) or file | message. Regenerate with TM_UPDATE_BASELINE=1.",
+            }.Concat(Errors.Select(BaselineKey).OrderBy(k => k, StringComparer.Ordinal));
+
+        /// <summary>
+        /// Compares current errors with a baseline. Returns errors not in the baseline (counting
+        /// duplicates), and how many baseline entries no longer occur.
+        /// </summary>
+        public (IReadOnlyList<string> added, int fixedCount) CompareToBaseline(IEnumerable<string> baselineLines)
+        {
+            static Dictionary<string, int> Count(IEnumerable<string> keys) =>
+                keys.GroupBy(k => k).ToDictionary(g => g.Key, g => g.Count());
+            var current = Count(Errors.Select(BaselineKey));
+            var baseline = Count(baselineLines.Where(l => l.Length > 0 && !l.StartsWith("#")));
+            var added = current
+                .Where(kv => kv.Value > (baseline.TryGetValue(kv.Key, out int n) ? n : 0))
+                .Select(kv => kv.Key).OrderBy(k => k, StringComparer.Ordinal).ToList();
+            int fixedCount = baseline.Sum(kv => Math.Max(0, kv.Value - (current.TryGetValue(kv.Key, out int n) ? n : 0)));
+            return (added, fixedCount);
+        }
+
+        /// <summary>Counts per severity and category, e.g. "Error world-allegiance: 590".</summary>
+        public IEnumerable<string> Summary() =>
+            findings.GroupBy(f => (f.Severity, f.Category)).OrderBy(g => g.Key.ToString())
+                .Select(g => $"{g.Key.Severity} {g.Key.Category}: {g.Count()}");
+        #endregion
+
         /// <summary>
         /// Validates XML files (sector metadata and milieu index files) against
         /// res/sectors.xsd.
         /// </summary>
         public void ValidateXml(IEnumerable<string> virtualPaths)
         {
-            var settings = new XmlReaderSettings { ValidationType = ValidationType.Schema };
-            settings.Schemas.Add(null, Util.MapPath("~/res/sectors.xsd"));
+            var schemas = new XmlSchemaSet();
+            schemas.Add(null, Util.MapPath("~/res/sectors.xsd"));
+            schemas.Compile();
 
             foreach (var path in virtualPaths.Distinct(StringComparer.OrdinalIgnoreCase))
             {
-                var fileSettings = settings.Clone();
+                // Fresh settings per file (not XmlReaderSettings.Clone): on .NET 10 a handler
+                // added to a clone isn't used, and validation errors throw instead.
+                var fileSettings = new XmlReaderSettings { ValidationType = ValidationType.Schema, Schemas = schemas };
                 fileSettings.ValidationEventHandler += (sender, e) =>
                     Add(e.Severity == XmlSeverityType.Error ? Severity.Error : Severity.Warning, "xml-schema", path,
                         $"line {e.Exception.LineNumber}: {e.Message}");

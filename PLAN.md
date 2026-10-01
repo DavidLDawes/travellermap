@@ -195,8 +195,8 @@ the visible-on-map fixes, D1–D3, and the other data items above (owner review 
   order, or worker threads. So ImageTest now tolerates sparse differences (hard ≥64 up to 0.01%
   of pixels, soft up to 0.1%). That was validated both ways: jittered references pass, and a
   covered label, a single covered letter, and a +12 color shift all fail.
-  **Follow-up:** ImageTest is still informational in CI. If it reports PASS on the Windows
-  runner, drop `--informational ImageTest` from `.github/workflows/ci.yml` to make it gating.
+  **Follow-up done:** ImageTest passed on the Windows CI runner (PR #6's CI run, 45/46 with only
+  the intentional bad example failing), so it fails CI again (`--informational` removed).
 
 ## Phase 6 — Simplifications — DONE (branch `phase6-simplify`, built on `phase5-updates`) [up, case by case]
 Each refactor was checked for unchanged behavior with more than the unit tests:
@@ -230,14 +230,65 @@ Notes:
   machine-dependence as CI (Phase 5 note). That makes the ClearType decision more pressing:
   refreshing the references would only fix them for one machine, temporarily.
 
-## Phase 7 — Moving off Microsoft infrastructure [fork] (to be scoped separately)
-Rough order, each step keeping the site working:
-1. **Rendering**: System.Drawing → SkiaSharp behind the existing `AbstractGraphics`. The SVG
-   backend is already independent. PDF → PDFsharp's cross-platform build (needs a font
-   resolver) or Skia's PDF backend.
-2. **Search**: an interface over `SearchEngine`; SQLite (simplest, file-based) or PostgreSQL.
-3. **Host**: System.Web handlers → ASP.NET Core minimal APIs on .NET 8/10 LTS, running on
-   Kestrel in a Linux container. The regex route table and `DataResponder` map over fairly
-   directly. Still .NET, but no Windows, IIS or SQL Server.
-4. **Config**: `web.config` → `appsettings.json` and environment variables.
-Guard rail: compare the `test/refs` reference images and PDFs before and after each step.
+## Phase 7 — Moving off Microsoft infrastructure [fork]
+**Decisions (2026-10-01):** target **.NET 10 LTS** (supported to Nov 2028; .NET 8 ends Nov 2026).
+The SDK is installed user-locally in `%USERPROFILE%\.dotnet`. Search moves to **SQLite**.
+
+**Scope (survey of 60 server files, ~17.6k lines):**
+- System.Web: all 30 handler/host files. The data core needed only small fixes.
+- Windows-only System.Drawing (fonts, bitmaps, graphics): 14 rendering files. `RenderContext`,
+  `RenderUtil` and `Stylesheet` use `Font`/`Graphics` directly (about 50 uses), on top of the
+  three graphics backends.
+- SQL Server: `SearchEngine`, plus the admin reindex. PDFsharp: the PDF backend.
+
+**Approach:** one step at a time, keeping the IIS site working throughout. Shared code builds
+for both net48 and net10.0. The browser suites and the image/content references serve as
+parity tests between the old and new hosts.
+
+### 7.1 Portable core library — DONE (branch `phase7-core`)
+- `core/Maps.Core.csproj` links (doesn't move) 25 `server/` files: the data model, parsing and
+  serialization, astrometrics, SecondSurvey, SectorMap, ResourceManager, validation, and
+  utilities. `Maps.csproj` references it instead of compiling them.
+  - `msbuild.exe`/Visual Studio builds net48 only, so the IIS site and Windows CI need nothing new.
+  - `dotnet build` (SDK 10) builds net48 and net10.0.
+- Portable geometry (`BorderPath`, `PathUtil`, `ClipPath`, `AbstractPath`, hex edges) moved from
+  `RenderUtil`/`AbstractGraphics` to `server/Geometry.cs`. Path point types are now byte
+  constants with GDI+'s values. `TravellerColors` moved to `ColorUtil.cs`.
+- `tools/validate`: data validation on .NET 10. It finds the same 664 errors as the net48 test,
+  in 6.6 s. A new **Linux CI job** runs it.
+- **Found by running on .NET 10 / targeting Linux:**
+  - `XmlReaderSettings.Clone()` loses the validation handler on .NET 10 (schema errors threw).
+    Fixed with fresh settings per file.
+  - **31 sector-index references had the wrong file-name case** (e.g. `listanaya.sec` vs
+    `Listanaya.sec`). Windows ignores case, Linux doesn't, so those sectors would have been
+    missing on a Linux host. Fixed (case-only edits to `M1105.xml`/`M1248.xml`; upstream-friendly).
+- **To do:** 46 nullable warnings that surface only on net10.0 (the .NET 10 base library is
+  annotated). They're warnings, not errors, on that target for now (`WarningsNotAsErrors`).
+  Fix them, then remove the exemption.
+
+### 7.2 Rendering on SkiaSharp (largest step)
+- Introduce a font/text-measurement abstraction so that `RenderContext`/`RenderUtil`/`Stylesheet`
+  no longer use `System.Drawing.Font`/`Graphics` directly. Then move rendering into a shared
+  library that builds for both targets.
+- A SkiaSharp `AbstractGraphics` backend (PNG). Keep the SVG backend (check its text
+  measurement). PDF: SkiaSharp's PDF backend, or PDFsharp's Core build with a font resolver.
+- **Fonts:** Arial/Georgia/Wingdings/Segoe UI Symbol aren't on Linux, so bundle open fonts
+  (e.g. Liberation Sans, metrically compatible with Arial) or ship font files. This changes
+  rendered output, so references get regenerated *once*, deliberately.
+- Parity check: the ImageTest tolerance rule from Phase 5/6 compares old vs new renders.
+
+### 7.3 ASP.NET Core host (net10.0)
+- New `host/` project: minimal-API endpoints mirroring `Global.asax` routes (RoutingTest's URL
+  list as the spec). Port `DataResponder` content negotiation (JSON/XML/text, JSONP) and the
+  handlers. Static files; admin pages with the key check.
+- Run both hosts side by side; point `npm run test:browser` at the new one; reach parity.
+
+### 7.4 Search on SQLite
+- An `ISearchIndex` interface over `SearchEngine`. Implement SQLite, built by a `tools/reindex`
+  command into a file shipped with the app. Port the query parsing (wildcards, `uwp:` etc.).
+  Add the search query-parsing tests deferred from Phase 4.
+
+### 7.5 Config, container, deployment
+- `appsettings.json` + environment variables (admin key, paths). A Dockerfile (Linux, .NET 10
+  runtime + fonts + data). CI builds the image and runs the browser suites against it.
+- Retire the IIS host once the new host passes everything (or keep both while upstream uses IIS).

@@ -142,13 +142,6 @@
     <Compile Include="server\http\Routing.cs" />
     <Compile Include="server\search\SearchEngine.cs" />
     <Compile Include="server\search\SearchResult.cs" />
-    <Compile Include="server\SectorMap.cs" />
-    <Compile Include="server\utilities\ColorUtil.cs" />
-    <Compile Include="server\utilities\Json.cs" />
-    <Compile Include="server\utilities\PathFinder.cs" />
-    <Compile Include="server\utilities\ThreadLocalCache.cs" />
-    <Compile Include="server\utilities\Util.cs" />
-    <Compile Include="server\WorldCollection.cs" />
     <Content Include="404.html" />
     <Content Include="borders\**\*.*" />
     <Content Include="doc\**\*.*" />
@@ -183,7 +176,6 @@
     </Compile>
     <Compile Include="server\admin\AdminHandler.cs" />
     <Compile Include="server\admin\CodesHandler.cs" />
-    <Compile Include="server\admin\DataValidator.cs" />
     <Compile Include="server\admin\DumpHandler.cs" />
     <Compile Include="server\admin\ErrorsHandler.cs" />
     <Compile Include="server\admin\OverviewHandler.cs" />
@@ -200,28 +192,11 @@
     <Compile Include="server\api\SectorMetaDataHandler.cs" />
     <Compile Include="server\api\TileHandler.cs" />
     <Compile Include="server\api\UniverseHandler.cs" />
-    <Compile Include="server\Astrometrics.cs" />
     <Compile Include="server\HandlerBase.cs" />
-    <Compile Include="server\Location.cs" />
-    <Compile Include="server\Metadata.cs" />
     <Compile Include="server\RenderContext.cs" />
     <Compile Include="server\RenderUtil.cs" />
-    <Compile Include="server\ResourceManager.cs" />
-    <Compile Include="server\SecondSurvey.cs" />
-    <Compile Include="server\Sector.cs" />
-    <Compile Include="server\SectorStylesheet.cs" />
-    <Compile Include="server\Selector.cs" />
-    <Compile Include="server\serialization\ColumnUtils.cs" />
-    <Compile Include="server\serialization\MSECParser.cs" />
-    <Compile Include="server\serialization\MSECWriter.cs" />
-    <Compile Include="server\serialization\SectorMetadataParser.cs" />
-    <Compile Include="server\serialization\SectorMetadataSerializer.cs" />
-    <Compile Include="server\serialization\SectorParser.cs" />
-    <Compile Include="server\serialization\SectorWriter.cs" />
-    <Compile Include="server\StellarData.cs" />
     <Compile Include="server\Stylesheet.cs" />
     <Compile Include="server\VectorObject.cs" />
-    <Compile Include="server\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SETUP.md" />
@@ -261,5 +236,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <ItemGroup>
+    <!-- Data model, parsing, astrometrics, validation (also builds for .NET 10). -->
+    <ProjectReference Include="core\Maps.Core.csproj">
+      <Name>Maps.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
 </Project>

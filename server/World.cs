@@ -164,7 +164,7 @@ namespace Maps
         internal bool IsPenalColony => HasCode("Pe");
         internal bool IsPrisonExileCamp => HasCode("Px") || HasCode("Ex");         // TODO: "Pr" is used in some legacy files, conflicts with T5 "Pre-Rich" - convert codes on import/export
         internal bool IsReserve => HasCode("Re");
-        internal string ResearchStation => GetCodePrefix("Rs");
+        internal string? ResearchStation => GetCodePrefix("Rs");
 
         internal bool IsPlaceholder => UWP == "XXXXXXX-X" || UWP == "???????-?";
         internal bool IsAnomaly => HasCode("{Anomaly}");
@@ -187,7 +187,7 @@ namespace Maps
         public bool HasServiceSpecialBase() => HasBase('W') || HasBase('D');
 
 
-        public string GetCodePrefix(string code)
+        public string? GetCodePrefix(string code)
         {
             if (code == null)
                 throw new ArgumentNullException(nameof(code));

@@ -15,6 +15,14 @@ Most upstream commits are **data** changes under `res/Sectors/`, not code.
 
 ## Architecture
 
+**Portable core — `core/Maps.Core.csproj` (net48 + net10.0).** Links (doesn't move) the data
+model, parsing/serialization, astrometrics, SectorMap, ResourceManager, geometry
+(`server/Geometry.cs`), validation and utilities from `server/`. Rules for code in the core: no
+System.Web and no Windows-only System.Drawing (`Point`/`PointF`/`Color`/`RectangleF` are fine).
+Use `Util.MapPath`, and `#if NETFRAMEWORK` for anything IIS-only. Visual Studio/msbuild builds only
+net48; `dotnet build` (SDK 10, in `%USERPROFILE%\.dotnet\dotnet.exe`) builds both. `PLAN.md`
+Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
+
 **Server — ASP.NET (System.Web), .NET Framework 4.8, C# 12 (pinned), Windows/IIS only.**
 - `Global.asax.cs` — registers every URL route (regex-based, see `server/http/Routing.cs`).
   Route order matters: more specific patterns (e.g. `/data/{sector}/sec`) must be registered
@@ -94,7 +102,10 @@ redirects to copy into `Web.config.sample`.
   metadata must parse, use defined allegiance codes, and match `res/sectors.xsd`. Existing
   problems are listed in `test/data-validation-baseline.txt`; the test fails only on errors
   not in the baseline. After fixing data, regenerate the baseline by running the test with
-  `TM_UPDATE_BASELINE=1` and commit it. Interactive equivalents: `/admin/errors`,
+  `TM_UPDATE_BASELINE=1` and commit it. The same check runs on any OS with .NET 10:
+  `dotnet run -c Debug --project tools/validate` (add `-- --update-baseline` or
+  `-- --report out.tsv`); CI runs it on Linux. Sector index `<DataFile>`/`<MetadataFile>` names
+  must match the file names' **case** exactly (Linux). Interactive equivalents: `/admin/errors`,
   `/admin/codes`, `tools/lintsec.html`.
 - **JS unit tests**: `npm test` (Node's built-in `node --test`, no extra dependencies).
   Tests live in `test/unit/*.test.js`. Import `./setup.js` first; it stubs `window`,

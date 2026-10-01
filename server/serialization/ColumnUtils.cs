@@ -15,7 +15,7 @@ namespace Maps.Serialization
         {
             string? header = null;
             string? separator = null;
-            string line;
+            string? line;
             int lineNumber = 0;
 
             // TODO: Make this a generator, parsing on demand.

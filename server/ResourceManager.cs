@@ -4,8 +4,6 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Threading;
-using System.Web;
-using System.Web.Hosting;
 using System.Xml.Serialization;
 
 namespace Maps
@@ -48,8 +46,8 @@ namespace Maps
             using var stream = new FileStream(Util.MapPath(name), FileMode.Open, FileAccess.Read, FileShare.Read);
             try
             {
-                object o = new XmlSerializer(typeof(T)).Deserialize(stream);
-                if (o.GetType() != typeof(T))
+                object? o = new XmlSerializer(typeof(T)).Deserialize(stream);
+                if (o == null || o.GetType() != typeof(T))
                     throw new ApplicationException($"Invalid file: {name}");
                 return (T)o;
             }

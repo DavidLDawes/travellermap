@@ -335,7 +335,12 @@ namespace Maps
                 this.dict = dict;
             }
 
-            private bool GetValue(string property, out string value) => dict.TryGetValue(property, out value) && !string.IsNullOrEmpty(value);
+            private bool GetValue(string property, out string value)
+            {
+                bool found = dict.TryGetValue(property, out string? v) && !string.IsNullOrEmpty(v);
+                value = v ?? "";
+                return found;
+            }
 
             public string? GetString(string property) => GetValue(property, out string value) ? value : null;
 
@@ -360,7 +365,7 @@ namespace Maps
                 if (!typeof(T).IsEnum)
                     throw new ParseException("Type must be an enum");
 
-                if (!dict.TryGetValue(property, out string value) || string.IsNullOrEmpty(value))
+                if (!dict.TryGetValue(property, out string? value) || string.IsNullOrEmpty(value))
                     return null;
 
                 bool ignoreCase = true;
@@ -388,7 +393,7 @@ namespace Maps
         public StyleResult Apply(string element, string? code)
         {
             var key = Tuple.Create(element, code);
-            if (memo.TryGetValue(key, out StyleResult result))
+            if (memo.TryGetValue(key, out StyleResult? result))
                 return result;
 
             var dict = new Dictionary<string, Tuple<int, string>>(StringComparer.InvariantCultureIgnoreCase);
@@ -404,7 +409,7 @@ namespace Maps
 
                         foreach (var declaration in rule.declarations)
                         {
-                            if (!dict.TryGetValue(declaration.property, out Tuple<int, string> current) || match >= current.Item1)
+                            if (!dict.TryGetValue(declaration.property, out Tuple<int, string>? current) || match >= current.Item1)
                                 dict[declaration.property] = new Tuple<int, string>(match, declaration.value);
                         }
                     }

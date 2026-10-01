@@ -12,8 +12,8 @@ jobs:
     name: JavaScript lint and unit tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -21,13 +21,27 @@ jobs:
       - run: npm run lint
       - run: npm test
 
+  data-linux:
+    # Builds the portable core (core/Maps.Core.csproj) on .NET 10 and validates all sector
+    # data with it on Linux, which also catches file-name case mismatches (Linux paths are
+    # case-sensitive).
+    name: Data validation (.NET 10, Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Validate sector data
+        run: dotnet run -c Debug --project tools/validate
+
   windows:
     name: Build, unit tests, data validation
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: microsoft/setup-msbuild@v2
+      - uses: microsoft/setup-msbuild@v3
 
       - name: Restore
         run: msbuild Maps.sln -t:Restore -v:minimal
@@ -64,11 +78,10 @@ jobs:
               } catch { Start-Sleep -Seconds 2 }
             }
             if (-not $ready) { Write-Error "Site did not start"; exit 1 }
-            # ImageTest compares pixels near-exactly against references rendered on a Windows
-            # desktop, and most text-heavy images differ on the Windows Server runner (likely
-            # GDI+ text anti-aliasing). Informational here until that's resolved; differing
-            # images are uploaded as the image-diffs artifact.
-            node test/run-browser-tests.mjs --no-search --informational ImageTest --save-images image-diffs
+            # Images use grayscale text and ImageTest tolerates anti-aliasing jitter, so it
+            # passes across machines. If it fails, the differing images are uploaded as the
+            # image-diffs artifact.
+            node test/run-browser-tests.mjs --no-search --save-images image-diffs
             exit $LASTEXITCODE
           } finally {
             Stop-Process -Id $site.Id -Force -ErrorAction SilentlyContinue
@@ -76,7 +89,7 @@ jobs:
 
       - name: Upload differing images
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: image-diffs
           path: image-diffs/

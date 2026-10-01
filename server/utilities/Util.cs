@@ -147,7 +147,7 @@ namespace Maps.Utilities
             return (a1, a2) =>
             {
                 var key = Tuple.Create(a1, a2);
-                if (map.TryGetValue(key, out R value))
+                if (map.TryGetValue(key, out R? value))
                     return value;
                 value = f(a1, a2);
                 map.Add(key, value);
@@ -184,7 +184,7 @@ namespace Maps.Utilities
         #endregion
 
         #region Dictionary Methods
-        public static bool TryAdd<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value)
+        public static bool TryAdd<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value) where TKey : notnull
         {
             if (!dict.ContainsKey(key))
             {
@@ -195,7 +195,7 @@ namespace Maps.Utilities
             return false;
         }
 
-        public static TValue GetOrAdd<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, Func<TKey, TValue> func)
+        public static TValue GetOrAdd<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, Func<TKey, TValue> func) where TKey : notnull
         {
             if (!dict.ContainsKey(key))
             {
@@ -243,8 +243,10 @@ namespace Maps.Utilities
         /// </summary>
         public static string MapPath(string virtualPath)
         {
+#if NETFRAMEWORK
             if (System.Web.Hosting.HostingEnvironment.IsHosted)
                 return System.Web.Hosting.HostingEnvironment.MapPath(virtualPath);
+#endif
 
             if (ContentRoot == null)
                 throw new InvalidOperationException($"Util.ContentRoot must be set to resolve {virtualPath} outside of ASP.NET");
@@ -271,7 +273,7 @@ namespace Maps.Utilities
 
         public void Add(Regex r, T v) { list.Add(new KeyValuePair<Regex, T>(r, v)); }
         public virtual void Add(string r, T v) { Add(new Regex(r), v); }
-        public virtual void Add(T v) { Add(new Regex("^" + Regex.Escape(v!.ToString()) + "$"), v); }
+        public virtual void Add(T v) { Add(new Regex("^" + Regex.Escape(v!.ToString() ?? "") + "$"), v); }
 
         public T Match(string s) => list.FirstOrDefault(pair => pair.Key.IsMatch(s)).Value;
         public bool IsMatch(string s) => list.Any(pair => pair.Key.IsMatch(s));
@@ -285,7 +287,7 @@ namespace Maps.Utilities
         public GlobMap() { }
 
         public override void Add(string r, T v) { Add(new Glob(r), v); }
-        public override void Add(T v) { Add(new Glob(v!.ToString()), v); }
+        public override void Add(T v) { Add(new Glob(v!.ToString() ?? ""), v); }
     }
 
     // Don't close the underlying stream when disposed; must be disposed
@@ -504,7 +506,9 @@ namespace Maps.Utilities
         public ParseException() : base("Parse error") { }
         public ParseException(string message) : base(message) { }
         public ParseException(string message, Exception innerException) : base(message, innerException) { }
+#if NETFRAMEWORK
         protected ParseException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+#endif
     }
 
     internal class LRUCache

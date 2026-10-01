@@ -122,7 +122,9 @@ namespace Maps
             public InvalidSystemException() : base("System data is not valid") { }
             public InvalidSystemException(string message) : base(message) { }
             public InvalidSystemException(string message, Exception innerException) : base(message, innerException) { }
+#if NETFRAMEWORK
             protected InvalidSystemException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+#endif
         }
 
         private abstract class Unit

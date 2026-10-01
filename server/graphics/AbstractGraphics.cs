@@ -235,18 +235,6 @@ namespace Maps.Graphics
         CenterLeft,
     };
 
-    internal class AbstractPath
-    {
-        public PointF[] Points { get; set; }
-        public byte[] Types { get; set; }
-
-        public AbstractPath(PointF[] points, byte[] types)
-        {
-            Points = points;
-            Types = types;
-        }
-    }
-
     internal enum DashStyle
     {
         Solid,

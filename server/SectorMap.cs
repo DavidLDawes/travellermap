@@ -16,7 +16,9 @@ namespace Maps
         public MapNotInitializedException() : base("SectorMap data not initialized") { }
         public MapNotInitializedException(string message) : base(message) { }
         public MapNotInitializedException(string message, Exception innerException) : base(message, innerException) { }
+#if NETFRAMEWORK
         protected MapNotInitializedException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+#endif
     }
 
     internal struct SectorMetafileEntry
@@ -60,15 +62,15 @@ namespace Maps
             private Dictionary<string, Sector> nameMap = new Dictionary<string, Sector>(StringComparer.InvariantCultureIgnoreCase);
             private Dictionary<Point, Sector> locationMap = new Dictionary<Point, Sector>();
 
-            public Sector FromName(string name)
+            public Sector? FromName(string name)
             {
-                nameMap.TryGetValue(name, out Sector sector);
+                nameMap.TryGetValue(name, out Sector? sector);
                 return sector;
             }
 
-            public Sector FromLocation(Point coords)
+            public Sector? FromLocation(Point coords)
             {
-                locationMap.TryGetValue(coords, out Sector sector);
+                locationMap.TryGetValue(coords, out Sector? sector);
                 return sector;
             }
 
