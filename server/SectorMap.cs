@@ -16,7 +16,9 @@ namespace Maps
         public MapNotInitializedException() : base("SectorMap data not initialized") { }
         public MapNotInitializedException(string message) : base(message) { }
         public MapNotInitializedException(string message, Exception innerException) : base(message, innerException) { }
+#if NETFRAMEWORK
         protected MapNotInitializedException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+#endif
     }
 
     internal struct SectorMetafileEntry

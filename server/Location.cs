@@ -31,7 +31,7 @@ namespace Maps
         public bool IsEmpty => Sector.IsEmpty && Hex.IsEmpty;
         public bool IsValid => Hex.IsValid;
         public bool Equals(Location other) => other.Sector == Sector && other.Hex == Hex;
-        public override bool Equals(object other) => other is Location location && Equals(location);
+        public override bool Equals(object? other) => other is Location location && Equals(location);
         public static bool operator ==(Location a, Location b) => a.Equals(b);
         public static bool operator !=(Location a, Location b) => !a.Equals(b);
 

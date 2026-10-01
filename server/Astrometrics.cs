@@ -161,7 +161,7 @@ namespace Maps
                 ((Y - 1) % Astrometrics.SubsectorHeight + 1)
             ).ToString("0000", CultureInfo.InvariantCulture);
 
-        public override bool Equals(object other) => other is Hex hex && Equals(hex);
+        public override bool Equals(object? other) => other is Hex hex && Equals(hex);
         public bool Equals(Hex other) => other.X == X && other.Y == Y;
 
         public static bool operator ==(Hex a, Hex b) => a.Equals(b);

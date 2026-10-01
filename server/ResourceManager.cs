@@ -4,8 +4,6 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Threading;
-using System.Web;
-using System.Web.Hosting;
 using System.Xml.Serialization;
 
 namespace Maps

@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Portable core: sector data model, parsing/serialization, astrometrics, validation.
+    No System.Web or Windows-only System.Drawing. Built for .NET Framework 4.8 (used by
+    the current IIS site, Maps.csproj) and .NET 10 (future cross-platform host and tools).
+    Source files stay in server/ (linked here) so upstream changes still apply.
+  -->
+  <PropertyGroup>
+    <!-- Visual Studio / msbuild.exe (used for the IIS site) builds net48 only, so it needs no
+         .NET 10 SDK; `dotnet build` (SDK 10+) builds both. -->
+    <TargetFrameworks Condition="'$(MSBuildRuntimeType)' == 'Core'">net48;net10.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(MSBuildRuntimeType)' != 'Core'">net48</TargetFrameworks>
+    <LangVersion>12.0</LangVersion>
+    <RootNamespace>Maps</RootNamespace>
+    <AssemblyName>Maps.Core</AssemblyName>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <!-- .NET 10's base library has full nullable annotations, which surface ~47 possible-null
+         warnings the net48 build can't see. Reported (not errors) until fixed; see PLAN.md. -->
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);nullable</WarningsNotAsErrors>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <!-- Util.MapPath uses HostingEnvironment when running under IIS. -->
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The IIS site, tests, and tools use the core's internal types. -->
+    <InternalsVisibleTo Include="Maps" />
+    <InternalsVisibleTo Include="UnitTests" />
+    <InternalsVisibleTo Include="maps-validate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="../server/Astrometrics.cs" Link="server/Astrometrics.cs" />
+    <Compile Include="../server/Geometry.cs" Link="server/Geometry.cs" />
+    <Compile Include="../server/Location.cs" Link="server/Location.cs" />
+    <Compile Include="../server/Metadata.cs" Link="server/Metadata.cs" />
+    <Compile Include="../server/Sector.cs" Link="server/Sector.cs" />
+    <Compile Include="../server/SectorMap.cs" Link="server/SectorMap.cs" />
+    <Compile Include="../server/SectorStylesheet.cs" Link="server/SectorStylesheet.cs" />
+    <Compile Include="../server/SecondSurvey.cs" Link="server/SecondSurvey.cs" />
+    <Compile Include="../server/StellarData.cs" Link="server/StellarData.cs" />
+    <Compile Include="../server/World.cs" Link="server/World.cs" />
+    <Compile Include="../server/WorldCollection.cs" Link="server/WorldCollection.cs" />
+    <Compile Include="../server/Selector.cs" Link="server/Selector.cs" />
+    <Compile Include="../server/ResourceManager.cs" Link="server/ResourceManager.cs" />
+    <Compile Include="../server/serialization/*.cs" LinkBase="server/serialization" />
+    <Compile Include="../server/utilities/*.cs" LinkBase="server/utilities" />
+    <Compile Include="../server/admin/DataValidator.cs" Link="server/admin/DataValidator.cs" />
+  </ItemGroup>
+</Project>

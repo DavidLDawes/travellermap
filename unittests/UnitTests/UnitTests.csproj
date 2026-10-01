@@ -75,6 +75,9 @@
     <Compile Include="WorldValidationTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\core\Maps.Core.csproj">
+      <Name>Maps.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Maps.csproj">
       <Project>{02ae6284-5044-4a23-b5d6-a86ee9c7dfa1}</Project>
       <Name>Maps</Name>

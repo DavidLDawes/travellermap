@@ -9,13 +9,6 @@ using System.Text.RegularExpressions;
 
 namespace Maps.Rendering
 {
-    public static class TravellerColors
-    {
-        public static readonly Color Red = Color.FromArgb(0xE3, 0x27, 0x36);
-        public static readonly Color Amber = Color.FromArgb(0xFF, 0xCC, 0x00);
-        public static readonly Color Green = Color.FromArgb(0x04, 0x81, 0x04);
-    }
-
     [Flags]
     public enum MapOptions : int
     {
