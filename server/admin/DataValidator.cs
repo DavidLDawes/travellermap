@@ -3,6 +3,7 @@ using Maps.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -116,18 +117,72 @@ namespace Maps.Admin
             }
         }
 
+        /// <summary>Validates all sectors and all sector index/metadata XML.</summary>
+        public void ValidateAll(SectorMap map, ResourceManager resourceManager)
+        {
+            ValidateSectors(map, resourceManager);
+            ValidateXml(SectorMap.MetafilePaths()
+                .Concat(map.Sectors.Where(s => s.MetadataFile != null).Select(s => s.MetadataFile!)));
+        }
+
+        #region Baseline
+        // test/data-validation-baseline.txt lists known errors; checks fail only on new ones.
+
+        private static readonly Regex LINE_NUMBER = new Regex(@"\bline \d+[:,]?\s*");
+
+        /// <summary>
+        /// Baseline key for an error. Line numbers are omitted because they shift whenever a
+        /// file is edited.
+        /// </summary>
+        public static string BaselineKey(Finding f) => $"{f.Category} | {f.Where} | {LINE_NUMBER.Replace(f.Message, "")}";
+
+        public IEnumerable<Finding> Errors => findings.Where(f => f.Severity == Severity.Error);
+
+        /// <summary>Contents for a new baseline file.</summary>
+        public IEnumerable<string> FormatBaseline() =>
+            new[] {
+                "# Known data validation errors; see server/admin/DataValidator.cs.",
+                "# Format: category | sector (milieu) or file | message. Regenerate with TM_UPDATE_BASELINE=1.",
+            }.Concat(Errors.Select(BaselineKey).OrderBy(k => k, StringComparer.Ordinal));
+
+        /// <summary>
+        /// Compares current errors with a baseline. Returns errors not in the baseline (counting
+        /// duplicates), and how many baseline entries no longer occur.
+        /// </summary>
+        public (IReadOnlyList<string> added, int fixedCount) CompareToBaseline(IEnumerable<string> baselineLines)
+        {
+            static Dictionary<string, int> Count(IEnumerable<string> keys) =>
+                keys.GroupBy(k => k).ToDictionary(g => g.Key, g => g.Count());
+            var current = Count(Errors.Select(BaselineKey));
+            var baseline = Count(baselineLines.Where(l => l.Length > 0 && !l.StartsWith("#")));
+            var added = current
+                .Where(kv => kv.Value > (baseline.TryGetValue(kv.Key, out int n) ? n : 0))
+                .Select(kv => kv.Key).OrderBy(k => k, StringComparer.Ordinal).ToList();
+            int fixedCount = baseline.Sum(kv => Math.Max(0, kv.Value - (current.TryGetValue(kv.Key, out int n) ? n : 0)));
+            return (added, fixedCount);
+        }
+
+        /// <summary>Counts per severity and category, e.g. "Error world-allegiance: 590".</summary>
+        public IEnumerable<string> Summary() =>
+            findings.GroupBy(f => (f.Severity, f.Category)).OrderBy(g => g.Key.ToString())
+                .Select(g => $"{g.Key.Severity} {g.Key.Category}: {g.Count()}");
+        #endregion
+
         /// <summary>
         /// Validates XML files (sector metadata and milieu index files) against
         /// res/sectors.xsd.
         /// </summary>
         public void ValidateXml(IEnumerable<string> virtualPaths)
         {
-            var settings = new XmlReaderSettings { ValidationType = ValidationType.Schema };
-            settings.Schemas.Add(null, Util.MapPath("~/res/sectors.xsd"));
+            var schemas = new XmlSchemaSet();
+            schemas.Add(null, Util.MapPath("~/res/sectors.xsd"));
+            schemas.Compile();
 
             foreach (var path in virtualPaths.Distinct(StringComparer.OrdinalIgnoreCase))
             {
-                var fileSettings = settings.Clone();
+                // Fresh settings per file (not XmlReaderSettings.Clone): on .NET 10 a handler
+                // added to a clone isn't used, and validation errors throw instead.
+                var fileSettings = new XmlReaderSettings { ValidationType = ValidationType.Schema, Schemas = schemas };
                 fileSettings.ValidationEventHandler += (sender, e) =>
                     Add(e.Severity == XmlSeverityType.Error ? Severity.Error : Severity.Warning, "xml-schema", path,
                         $"line {e.Exception.LineNumber}: {e.Message}");
