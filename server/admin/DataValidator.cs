@@ -121,8 +121,47 @@ namespace Maps.Admin
         public void ValidateAll(SectorMap map, ResourceManager resourceManager)
         {
             ValidateSectors(map, resourceManager);
-            ValidateXml(SectorMap.MetafilePaths()
-                .Concat(map.Sectors.Where(s => s.MetadataFile != null).Select(s => s.MetadataFile!)));
+            var xmlFiles = SectorMap.MetafilePaths()
+                .Concat(map.Sectors.Where(s => s.MetadataFile != null).Select(s => s.MetadataFile!))
+                .ToList();
+            ValidateXml(xmlFiles);
+            ValidateFileNameCase(xmlFiles.Concat(map.Sectors.Where(s => s.DataFile != null).Select(s => s.DataFile!.FileName)));
+        }
+
+        /// <summary>
+        /// Checks that referenced files exist with exactly the given case. Windows file systems
+        /// ignore case but Linux doesn't, so a mismatch works locally and fails on Linux.
+        /// </summary>
+        public void ValidateFileNameCase(IEnumerable<string> virtualPaths)
+        {
+            string root = Util.MapPath("~/");
+            foreach (var path in virtualPaths.Distinct(StringComparer.Ordinal))
+            {
+                string dir = root;
+                foreach (var segment in path.TrimStart('~').Split(new[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    if (segment == ".")
+                        continue;
+                    if (segment == "..")
+                    {
+                        dir = System.IO.Path.GetDirectoryName(dir.TrimEnd('/', '\\')) ?? dir;
+                        continue;
+                    }
+                    var names = System.IO.Directory.Exists(dir)
+                        ? System.IO.Directory.EnumerateFileSystemEntries(dir).Select(System.IO.Path.GetFileName).ToList()
+                        : new List<string?>();
+                    if (!names.Contains(segment, StringComparer.Ordinal))
+                    {
+                        string? actual = names.FirstOrDefault(n => string.Equals(n, segment, StringComparison.OrdinalIgnoreCase));
+                        if (actual != null)
+                            Add(Severity.Error, "file-case", path, $"'{segment}' is '{actual}' on disk (Linux file names are case-sensitive)");
+                        else
+                            Add(Severity.Error, "file-missing", path, $"'{segment}' not found");
+                        break;
+                    }
+                    dir = System.IO.Path.Combine(dir, segment);
+                }
+            }
         }
 
         #region Baseline

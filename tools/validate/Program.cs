@@ -26,7 +26,19 @@ string? reportPath = reportIndex >= 0 && reportIndex + 1 < args.Length ? args[re
 
 var watch = System.Diagnostics.Stopwatch.StartNew();
 var validator = new DataValidator();
-validator.ValidateAll(SectorMap.GetInstance(), ResourceManager.GetDedicatedInstance());
+SectorMap map;
+try
+{
+    map = SectorMap.GetInstance();
+}
+catch (Exception ex) when (ex is IOException || ex is UnauthorizedAccessException || ex is InvalidOperationException)
+{
+    // The sector index itself couldn't be loaded (e.g. a file name whose case doesn't match
+    // on a case-sensitive file system), so nothing else can be checked.
+    Console.Error.WriteLine($"Could not load the sector index: {ex.Message}");
+    return 1;
+}
+validator.ValidateAll(map, ResourceManager.GetDedicatedInstance());
 Console.WriteLine($"Validated res/Sectors in {watch.Elapsed.TotalSeconds:F1}s");
 foreach (var line in validator.Summary())
     Console.WriteLine("  " + line);
