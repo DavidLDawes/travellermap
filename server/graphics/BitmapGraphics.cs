@@ -45,13 +45,13 @@ namespace Maps.Graphics
         private void Apply(AbstractPen pen, AbstractBrush brush) { Apply(pen); Apply(brush); }
 
         public bool SupportsWingdings => true;
-        public SmoothingMode SmoothingMode { get => g.SmoothingMode; set => g.SmoothingMode = value; }
-        public System.Drawing.Graphics? Graphics => g;
+        public SmoothingMode SmoothingMode { get => GdiSupport.Convert(g.SmoothingMode); set => g.SmoothingMode = GdiSupport.Convert(value); }
+        public bool TextGridFit { set => g.TextRenderingHint = value ? System.Drawing.Text.TextRenderingHint.AntiAliasGridFit : System.Drawing.Text.TextRenderingHint.AntiAlias; }
         public void ScaleTransform(float scaleXY) { g.ScaleTransform(scaleXY, scaleXY); }
         public void ScaleTransform(float scaleX, float scaleY) { g.ScaleTransform(scaleX, scaleY); }
         public void TranslateTransform(float dx, float dy) { g.TranslateTransform(dx, dy); }
         public void RotateTransform(float angle) { g.RotateTransform(angle); }
-        public void MultiplyTransform(AbstractMatrix m) { g.MultiplyTransform(m.Matrix); }
+        public void MultiplyTransform(AbstractMatrix m) { g.MultiplyTransform(GdiSupport.Matrix(m)); }
 
         public void IntersectClip(AbstractPath path) { g.IntersectClip(new System.Drawing.Region(new GraphicsPath(path.Points, path.Types, FillMode.Winding))); }
         public void IntersectClip(RectangleF rect) { g.IntersectClip(rect); }
@@ -75,7 +75,7 @@ namespace Maps.Graphics
 
         public void DrawImage(AbstractImage image, float x, float y, float width, float height)
         {
-            Image gdiImage = image.Image;
+            Image gdiImage = GdiSupport.Image(image);
             lock (gdiImage)
             {
                 g.DrawImage(gdiImage, x, y, width, height);
@@ -85,7 +85,7 @@ namespace Maps.Graphics
         {
             if (alpha <= 0)
                 return;
-            Image gdiImage = image.Image;
+            Image gdiImage = GdiSupport.Image(image);
             lock (gdiImage)
             {
                 if (alpha >= 1)
@@ -114,20 +114,19 @@ namespace Maps.Graphics
             }
         }
 
-        public SizeF MeasureString(string text, AbstractFont font) => g.MeasureString(text, font.Font);
+        public SizeF MeasureString(string text, AbstractFont font) => g.MeasureString(text, GdiSupport.Font(font));
+        public FontMetrics GetFontMetrics(AbstractFont font) => GdiSupport.Metrics(font);
 
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment format)
         {
             Apply(brush);
             if (format == StringAlignment.Baseline)
             {
-                float fontUnitsToWorldUnits = font.Size / font.FontFamily.GetEmHeight(font.Style);
-                float ascent = font.FontFamily.GetCellAscent(font.Style) * fontUnitsToWorldUnits;
-                g.DrawString(s, font.Font, this.brush, x, y - ascent);
+                g.DrawString(s, GdiSupport.Font(font), this.brush, x, y - GdiSupport.Metrics(font).Ascent);
             }
             else
             {
-                g.DrawString(s, font.Font, this.brush, x, y, Format(format));
+                g.DrawString(s, GdiSupport.Font(font), this.brush, x, y, Format(format));
             }
         }
 

@@ -136,6 +136,7 @@
     <Compile Include="server\api\RouteHandler.cs" />
     <Compile Include="server\graphics\AbstractGraphics.cs" />
     <Compile Include="server\graphics\BitmapGraphics.cs" />
+    <Compile Include="server\graphics\GdiSupport.cs" />
     <Compile Include="server\graphics\PdfSharpGraphics.cs" />
     <Compile Include="server\graphics\SVGGraphics.cs" />
     <Compile Include="server\http\Modules.cs" />

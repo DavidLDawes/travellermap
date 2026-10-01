@@ -339,7 +339,7 @@ namespace Maps.Graphics
             stack.Push(root);
         }
 
-        System.Drawing.Graphics? AbstractGraphics.Graphics => null;
+        bool AbstractGraphics.TextGridFit { set { } }
         SmoothingMode AbstractGraphics.SmoothingMode { get; set; }
         public bool SupportsWingdings => false;
         #region Drawing
@@ -505,12 +505,9 @@ namespace Maps.Graphics
         #endregion
 
         #region Text
-        private System.Drawing.Graphics? scratch;
-        public SizeF MeasureString(string text, AbstractFont font)
-        {
-            scratch ??= System.Drawing.Graphics.FromImage(new Bitmap(1, 1));
-            return scratch.MeasureString(text, font.Font);
-        }
+        // SVG text is laid out by the viewer, but label placement needs measurements.
+        public SizeF MeasureString(string text, AbstractFont font) => GdiSupport.MeasureString(text, font);
+        public FontMetrics GetFontMetrics(AbstractFont font) => GdiSupport.Metrics(font);
 
         public void DrawString(string s, AbstractFont font, AbstractBrush brush, float x, float y, StringAlignment alignment)
         {
@@ -748,11 +745,6 @@ namespace Maps.Graphics
         {
             if (disposed)
                 return;
-            if (disposing)
-            {
-                scratch?.Dispose();
-                scratch = null;
-            }
             disposed = true;
         }
         #endregion

@@ -5,7 +5,6 @@ using Maps.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -359,7 +358,7 @@ namespace Maps.Rendering
 #if SHOW_TIMING
                 using( graphics.Save() )
                 {
-                    Font font = new Font( FontFamily.GenericSansSerif, 12, FontStyle.Regular);
+                    AbstractFont font = new AbstractFont("Arial", 12, Graphics.FontStyle.Regular);
                     graphics.MultiplyTransform( worldSpaceToImageSpace );
                     float cursorX = 20.0f, cursorY = 20.0f;
                     DateTime last = dtStart;

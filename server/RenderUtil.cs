@@ -4,8 +4,6 @@ using Maps.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Linq;
 using System.Threading;
 
@@ -42,13 +40,13 @@ namespace Maps.Rendering
                 new PointF(-0.5f + RenderUtil.HEX_EDGE, -0.5f),
             },
             new byte[] {
-                (byte)PathPointType.Start,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)PathPointType.Line,
-                (byte)(PathPointType.Line | PathPointType.CloseSubpath),
+                PathPointTypes.Start,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                PathPointTypes.Line,
+                (byte)(PathPointTypes.Line | PathPointTypes.CloseSubpath),
             });
 
         // NOTE: Wingdings are often used instead of UNICODE equivalents in a common font
@@ -114,10 +112,7 @@ namespace Maps.Rendering
             var lines = text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None).ToList();
             var sizes = lines.Select(s => g.MeasureString(s, font)).ToList();
 
-            float fontUnitsToWorldUnits = font.Size / font.FontFamily.GetEmHeight(font.Style);
-            float lineSpacing = font.FontFamily.GetLineSpacing(font.Style) * fontUnitsToWorldUnits;
-            float ascent = font.FontFamily.GetCellAscent(font.Style) * fontUnitsToWorldUnits;
-            //float descent = font.FontFamily.GetCellDescent(font.Style) * fontUnitsToWorldUnits;
+            float lineSpacing = g.GetFontMetrics(font).LineSpacing;
 
             SizeF boundingSize = new SizeF(sizes.Max(s => s.Width), lineSpacing * sizes.Count());
 
@@ -178,8 +173,8 @@ namespace Maps.Rendering
                 g.RotateTransform(labelStyle.Rotation);
                 g.ScaleTransform(labelStyle.Scale.Width, labelStyle.Scale.Height);
 
-                if (labelStyle.Rotation != 0 && g.Graphics != null)
-                    g.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+                if (labelStyle.Rotation != 0)
+                    g.TextGridFit = false;
 
                 DrawString(g, text, font, brush, 0, 0);
             }

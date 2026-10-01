@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
+using FontStyle = Maps.Graphics.FontStyle;
 
 namespace Maps.Rendering
 {
@@ -143,7 +144,7 @@ namespace Maps.Rendering
         {
             if (families == null)
                 throw new ApplicationException("AbstractFont has null name");
-            return new AbstractFont(families, size * 1.4f, style, GraphicsUnit.World);
+            return new AbstractFont(families, size * 1.4f, style);
         }
     }
 
