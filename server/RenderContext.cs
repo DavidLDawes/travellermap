@@ -598,7 +598,7 @@ namespace Maps.Rendering
                 {
                     for (int i = 0; i < 16; i++)
                     {
-                        Subsector ss = sector.Subsector(i);
+                        Subsector? ss = sector.Subsector(i);
                         if (ss == null || string.IsNullOrEmpty(ss.Name))
                             continue;
 
@@ -1194,7 +1194,7 @@ namespace Maps.Rendering
 
                                     // Research Stations
                                     {
-                                        string rs;
+                                        string? rs;
                                         Glyph? glyph = null;
                                         if ((rs = world.ResearchStation) != null)
                                         {

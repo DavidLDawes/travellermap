@@ -16,11 +16,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
-    <!-- .NET 10's base library has full nullable annotations, which surface ~47 possible-null
-         warnings the net48 build can't see. Reported (not errors) until fixed; see PLAN.md. -->
-    <WarningsNotAsErrors>$(WarningsNotAsErrors);nullable</WarningsNotAsErrors>
-  </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <!-- Util.MapPath uses HostingEnvironment when running under IIS. -->
     <Reference Include="System.Web" />

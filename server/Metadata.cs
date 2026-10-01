@@ -64,9 +64,9 @@ namespace Maps
         #region IMetadata Members
 
         private Dictionary<string, string> metaData = new Dictionary<string, string>();
-        private string TryGet(string key)
+        private string? TryGet(string key)
         {
-            metaData.TryGetValue(key, out string s);
+            metaData.TryGetValue(key, out string? s);
             return s;
         }
 
@@ -89,7 +89,7 @@ namespace Maps
         public string? Milieu { get => TryGet("era"); set { if (value != null) metaData["era"] = value; } }
 
         [XmlAttribute]
-        public string? Ref { get { metaData.TryGetValue("ref", out string s); return s; } set { if (value != null) metaData["ref"] = value; } }
+        public string? Ref { get { metaData.TryGetValue("ref", out string? s); return s; } set { if (value != null) metaData["ref"] = value; } }
 
         #endregion
     }

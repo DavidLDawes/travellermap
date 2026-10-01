@@ -56,23 +56,23 @@ namespace Json
                 SerializeValue(writer, item);
         }
 
-        private static string GetName(object item) => item.GetType().GetCustomAttributes(typeof(JsonNameAttribute), inherit: true)
+        private static string? GetName(object item) => item.GetType().GetCustomAttributes(typeof(JsonNameAttribute), inherit: true)
             .OfType<JsonNameAttribute>().Select(jn => jn.Name).FirstOrDefault();
 
         private static string GetName(PropertyInfo pi)
         {
-            JsonNameAttribute jn = pi.GetCustomAttributes(typeof(JsonNameAttribute), inherit: true).OfType<JsonNameAttribute>().FirstOrDefault();
+            JsonNameAttribute? jn = pi.GetCustomAttributes(typeof(JsonNameAttribute), inherit: true).OfType<JsonNameAttribute>().FirstOrDefault();
             return jn?.Name ?? pi.Name;
         }
 
-        private static object GetDefaultValue(PropertyInfo pi) => pi.GetCustomAttributes(typeof(DefaultValueAttribute), inherit: true)
+        private static object? GetDefaultValue(PropertyInfo pi) => pi.GetCustomAttributes(typeof(DefaultValueAttribute), inherit: true)
             .OfType<DefaultValueAttribute>().Select(dva => dva.Value).FirstOrDefault();
 
         private static bool Ignore(PropertyInfo info) => info.GetCustomAttributes(typeof(JsonIgnoreAttribute), inherit: true).Any();
 
         private void SerializeObject(TextWriter writer, object item)
         {
-            string name = GetName(item);
+            string? name = GetName(item);
             if (name != null)
             {
                 writer.Write(JsonConstants.StartObject);
@@ -111,7 +111,7 @@ namespace Json
 
         private void SerializeArray(TextWriter writer, IEnumerable enumerable)
         {
-            string name = GetName(enumerable);
+            string? name = GetName(enumerable);
             if (name != null)
             {
                 writer.Write(JsonConstants.StartObject);

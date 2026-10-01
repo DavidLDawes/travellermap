@@ -146,7 +146,7 @@ namespace Maps
         public Allegiance? GetAllegianceFromCode(string code)
         {
             // TODO: Consider hashtable
-            Allegiance alleg = Allegiances.Where(a => a.T5Code == code).FirstOrDefault();
+            Allegiance? alleg = Allegiances.Where(a => a.T5Code == code).FirstOrDefault();
             return alleg ?? SecondSurvey.GetStockAllegianceFromCode(code);
         }
 
@@ -167,16 +167,16 @@ namespace Maps
 
         public void AdjustRelativePaths(string baseFileName)
         {
-            string dir = Path.GetDirectoryName(baseFileName);
+            string dir = Path.GetDirectoryName(baseFileName) ?? "";
             if (DataFile != null)
                 DataFile.FileName = Path.Combine(dir, DataFile.FileName).Replace(Path.DirectorySeparatorChar, '/');
             if (MetadataFile != null)
                 MetadataFile = Path.Combine(dir, MetadataFile).Replace(Path.DirectorySeparatorChar, '/');
         }
 
-        public Subsector Subsector(char alpha) => Subsectors.Where(ss => ss.Index != null && ss.Index[0] == alpha).FirstOrDefault();
+        public Subsector? Subsector(char alpha) => Subsectors.Where(ss => ss.Index != null && ss.Index[0] == alpha).FirstOrDefault();
 
-        public Subsector Subsector(int index)
+        public Subsector? Subsector(int index)
         {
             if (index < 0 || index > 15)
                 throw new ArgumentOutOfRangeException(nameof(index));
@@ -186,7 +186,7 @@ namespace Maps
             return Subsector(alpha);
         }
 
-        public Subsector Subsector(int x, int y)
+        public Subsector? Subsector(int x, int y)
         {
             if (x < 0 || x > 3)
                 throw new ArgumentOutOfRangeException(nameof(x));
@@ -200,7 +200,7 @@ namespace Maps
         {
             if (string.IsNullOrWhiteSpace(label))
                 return -1;
-            Subsector subsector;
+            Subsector? subsector;
             if (label.Length == 1)
             {
                 char c = char.ToUpperInvariant(label[0]);
@@ -333,7 +333,7 @@ namespace Maps
                 for (int i = 0; i < 16; ++i)
                 {
                     char c = (char)('A' + i);
-                    Subsector ss = Subsector(c);
+                    Subsector? ss = Subsector(c);
                     writer.WriteLine($"# Subsector {c}: {ss?.Name ?? ""}");
                 }
                 writer.WriteLine();
@@ -450,7 +450,7 @@ namespace Maps
                     for (int y = Y - 1; y <= Y + 1; ++y)
                     {
                         var pt = new Point(x, y);
-                        Sector sector = MilieuMap.FromLocation(pt);
+                        Sector? sector = MilieuMap.FromLocation(pt);
                         if (pt == Location && sector != this)
                             throw new ApplicationException("Sector lookup did not find itself");
                         if (sector != null)

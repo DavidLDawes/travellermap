@@ -42,7 +42,7 @@ namespace Maps.Serialization
             try
             {
                 using var reader = new NoCloseStreamReader(stream, Encoding.GetEncoding(1252), detectEncodingFromByteOrderMarks: true, bufferSize: BUFFER_SIZE);
-                for (string line = reader.ReadLine(); line != null; line = reader.ReadLine())
+                for (string? line = reader.ReadLine(); line != null; line = reader.ReadLine())
                 {
                     if (line.Length == 0 || COMMENT_REGEX.IsMatch(line))
                         continue;
@@ -77,7 +77,7 @@ namespace Maps.Serialization
         public override void Parse(TextReader reader, WorldCollection worlds, ErrorLogger? errors)
         {
             int lineNumber = 0;
-            for (string line = reader.ReadLine(); line != null; line = reader.ReadLine())
+            for (string? line = reader.ReadLine(); line != null; line = reader.ReadLine())
             {
                 ++lineNumber;
 
@@ -390,7 +390,7 @@ namespace Maps.Serialization
         public TSVParser(TextReader reader)
         {
             int lineNumber = 0;
-            string line;
+            string? line;
             while (true)
             {
                 line = reader.ReadLine();

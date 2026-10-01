@@ -200,7 +200,7 @@ namespace Maps.Serialization
             StringBuilder accum = new StringBuilder();
             while (true)
             {
-                string line = reader.ReadLine();
+                string? line = reader.ReadLine();
                 if (line == null)
                     break;
                 if (Regex.IsMatch(line, @"^\s*$"))

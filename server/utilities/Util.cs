@@ -147,7 +147,7 @@ namespace Maps.Utilities
             return (a1, a2) =>
             {
                 var key = Tuple.Create(a1, a2);
-                if (map.TryGetValue(key, out R value))
+                if (map.TryGetValue(key, out R? value))
                     return value;
                 value = f(a1, a2);
                 map.Add(key, value);
@@ -273,7 +273,7 @@ namespace Maps.Utilities
 
         public void Add(Regex r, T v) { list.Add(new KeyValuePair<Regex, T>(r, v)); }
         public virtual void Add(string r, T v) { Add(new Regex(r), v); }
-        public virtual void Add(T v) { Add(new Regex("^" + Regex.Escape(v!.ToString()) + "$"), v); }
+        public virtual void Add(T v) { Add(new Regex("^" + Regex.Escape(v!.ToString() ?? "") + "$"), v); }
 
         public T Match(string s) => list.FirstOrDefault(pair => pair.Key.IsMatch(s)).Value;
         public bool IsMatch(string s) => list.Any(pair => pair.Key.IsMatch(s));
@@ -287,7 +287,7 @@ namespace Maps.Utilities
         public GlobMap() { }
 
         public override void Add(string r, T v) { Add(new Glob(r), v); }
-        public override void Add(T v) { Add(new Glob(v!.ToString()), v); }
+        public override void Add(T v) { Add(new Glob(v!.ToString() ?? ""), v); }
     }
 
     // Don't close the underlying stream when disposed; must be disposed

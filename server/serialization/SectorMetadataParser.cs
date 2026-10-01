@@ -1,6 +1,7 @@
 ﻿#nullable enable 
 using Maps.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -39,7 +40,7 @@ namespace Maps.Serialization
             {
                 using (var reader = new NoCloseStreamReader(stream, Encoding.GetEncoding(1252), detectEncodingFromByteOrderMarks: true, bufferSize: BUFFER_SIZE))
                 {
-                    string line = reader.ReadLine();
+                    string? line = reader.ReadLine();
                     if (line != null && SNIFF_XML_REGEX.IsMatch(line))
                         return "XML";
                 }
@@ -104,11 +105,15 @@ namespace Maps.Serialization
             catch (Exception ex) { throw new Exception($"{ex.Message}\n in {elem.OuterXml}"); }
         }
 
+        // XmlNode.SelectNodes is annotated as possibly null; treat that as no matches.
+        private static IEnumerable<XmlElement> Elements(XmlDocument xd, string xpath)
+            => xd.SelectNodes(xpath)?.OfType<XmlElement>() ?? Enumerable.Empty<XmlElement>();
+
         private Sector Parse(XmlDocument xd)
         {
             Sector sector = new Sector();
 
-            foreach (var e in xd.SelectNodes("/Sector/Name").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Name"))
             {
                 ParseErrorAppender(e, name => sector.Names.Add(new Name()
                 {
@@ -116,7 +121,7 @@ namespace Maps.Serialization
                     Text = name.InnerText,
                 }));
             }
-            foreach (var e in xd.SelectNodes("/Sector/Subsectors/Subsector").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Subsectors/Subsector"))
             {
                 ParseErrorAppender(e, subsector => sector.Subsectors.Add(new Subsector()
                 {
@@ -124,7 +129,7 @@ namespace Maps.Serialization
                     Name = subsector.InnerText,
                 }));
             }
-            foreach (var e in xd.SelectNodes("/Sector/Routes/Route").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Routes/Route"))
             {
                 ParseErrorAppender(e, route =>
                 {
@@ -149,7 +154,7 @@ namespace Maps.Serialization
                     sector.Routes.Add(r);
                 });
             }
-            foreach (var e in xd.SelectNodes("/Sector/Borders/Border").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Borders/Border"))
             {
                 ParseErrorAppender(e, border => sector.Borders.Add(new Border()
                 {
@@ -165,7 +170,7 @@ namespace Maps.Serialization
                     WrapLabel = ParseBool(border.GetAttribute("WrapLabel")) ?? false,
                 }));
             }
-            foreach (var e in xd.SelectNodes("/Sector/Regions/Region").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Regions/Region"))
             {
                 ParseErrorAppender(e, region => sector.Regions.Add(new Region()
                 {
@@ -181,7 +186,7 @@ namespace Maps.Serialization
                     WrapLabel = ParseBool(region.GetAttribute("WrapLabel")) ?? false,
                 }));
             }
-            foreach (var e in xd.SelectNodes("/Sector/Allegiances/Allegiance").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Allegiances/Allegiance"))
             {
                 ParseErrorAppender(e, alleg => sector.Allegiances.Add(new Allegiance()
                 {
@@ -190,7 +195,7 @@ namespace Maps.Serialization
                     Name = alleg.InnerText,
                 }));
             }
-            foreach (var e in xd.SelectNodes("/Sector/Labels/Label").OfType<XmlElement>())
+            foreach (var e in Elements(xd, "/Sector/Labels/Label"))
             {
                 ParseErrorAppender(e, label => sector.Labels.Add(new Label()
                 {
