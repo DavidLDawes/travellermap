@@ -21,6 +21,20 @@ jobs:
       - run: npm run lint
       - run: npm test
 
+  data-linux:
+    # Builds the portable core (core/Maps.Core.csproj) on .NET 10 and validates all sector
+    # data with it on Linux, which also catches file-name case mismatches (Linux paths are
+    # case-sensitive).
+    name: Data validation (.NET 10, Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Validate sector data
+        run: dotnet run -c Debug --project tools/validate
+
   windows:
     name: Build, unit tests, data validation
     runs-on: windows-latest
