@@ -54,5 +54,5 @@ Dependencies
 * Bitmap rendering is done using SkiaSharp https://github.com/mono/SkiaSharp (MIT License), via NuGet,
   with the open-licensed fonts in `res/fonts` (see its README)
 * HTML templating uses Handlebars.js https://handlebarsjs.com/ (MIT License)
-* Search requires SQL Server (Express/Developer is fine); the rest of the site works without it.
+* Search uses a SQLite index file, built automatically on first start (Microsoft.Data.Sqlite, MIT License)
 * JavaScript linting uses ESLint via Node/npm (development only).

@@ -22,8 +22,8 @@ model, parsing/serialization, astrometrics, SectorMap, ResourceManager, geometry
 backends), and **all request handlers and routes** from `server/`. Handlers use a host-neutral
 HTTP layer, `Maps.Web.HttpContext`/`HttpRequest`/`HttpResponse` (`server/http/HttpAbstractions.cs`),
 which follows System.Web's API. Only IIS-specific pieces stay in `Maps.csproj`:
-`Global.asax.cs`, the System.Web adapter (`server/http/SystemWebHost.cs`), SQL Server search
-(`server/search/SearchEngine.cs`), and the GDI+ renderer (`renderer=gdi`). Rules for code in the core: no
+`Global.asax.cs`, the System.Web adapter (`server/http/SystemWebHost.cs`), the optional SQL
+Server search index (`server/search/SearchEngine.cs`), and the GDI+ renderer (`renderer=gdi`). Rules for code in the core: no
 System.Web and no Windows-only System.Drawing (`Point`/`PointF`/`Color`/`RectangleF` are fine).
 Use `Util.MapPath`, and `#if NETFRAMEWORK` for anything IIS-only. Visual Studio/msbuild builds only
 net48; `dotnet build` (SDK 10, in `%USERPROFILE%\.dotnet\dotnet.exe`) builds both. `PLAN.md`
@@ -31,10 +31,10 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 
 **Two hosts run the same handlers:**
 - **IIS** — ASP.NET (System.Web), .NET Framework 4.8, C# 12 (pinned), Windows only (`Maps.csproj`,
-  `Global.asax.cs`). Registers SQL Server search and the GDI+ renderer.
+  `Global.asax.cs`). Also has the GDI+ renderer and, optionally, the SQL Server search index.
 - **ASP.NET Core** — .NET 10, any OS (`host/`, see `host/README.md`). Static files, hidden paths,
   extensionless pages, CORS and the 404 page are configured in `host/Program.cs` to match
-  `Web.config`; change both together. No search until Phase 7.4 (returns 503).
+  `Web.config`; change both together.
 
 **Server code.**
 - `server/http/Routing.cs` — `RouteTable`: every URL route (regex-based), used by both hosts.
@@ -61,7 +61,13 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
   `AbstractGraphics` has Skia (bitmaps), SVG and PdfSharp backends, plus the legacy GDI+
   `BitmapGraphics`; keep them working. Text layout for Skia and PDF is shared
   (`SkiaFonts.FontSet.Layout`), so PNG and PDF place text identically.
-- `server/search/SearchEngine.cs` — SQL Server search index (built by `/admin/reindex`).
+- `server/search/` — search. `SearchQuery` parses queries (words, quotes, wildcards, `uwp:` and
+  other operators) into SQL for both index backends. `SqliteSearchIndex` is the default index on
+  both hosts: `App_Data/search.db` (git-ignored), built in the background on first start if
+  missing (~15 s, all sectors), rebuilt by `/admin/reindex` or `dotnet run --project tools/reindex`.
+  Searches return 503 until it exists. `SqliteNative` loads the native SQLite library itself
+  (SQLitePCLRaw's loader fails under IIS shadow copying). `SearchEngine.cs` is the SQL Server
+  index, used on IIS only with the setting `SearchBackend=sqlserver`.
 - Caches are **thread-affine**: one copy per worker thread, so they need no locking. Don't
   convert them to plain statics without adding locking. Anything loaded from a data file
   (`SectorMap`, `ResourceManager`, the T5SS allegiance/sophont tables, the default sector
@@ -89,15 +95,14 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 ## Building & running
 
 Visual Studio 2022 (or its MSBuild) on Windows is required (see `SETUP.md` for full steps).
-1. Copy `Web.config.sample` → `web.config` (git-ignored). Set `AdminKey`; connection strings
-   are only needed for search. The `<runtime>` binding redirects are required for PDF output.
+1. Copy `Web.config.sample` → `web.config` (git-ignored). Set `AdminKey`. The `<runtime>`
+   binding redirects are required for PDF and image output.
 2. Build: `msbuild Maps.sln -t:Restore` then `msbuild Maps.sln -p:Configuration=Debug`
    (MSBuild lives at `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe`).
    NuGet supplies SkiaSharp, PDFsharp 6 (core build) and the net48 reference assemblies.
 3. Run: `"C:\Program Files\IIS Express\iisexpress.exe" /path:<repo> /port:50103`, or Ctrl+F5 in VS.
    Smoke test: `/api/poster?sector=Spinward%20Marches&subsector=C&accept=application/pdf`.
-4. Optional: SQL Server + `/admin/reindex` to populate search. Debug builds index only
-   "selected" sectors.
+4. Search works out of the box: the site builds `App_Data/search.db` on first start.
 
 If PDFsharp's or SkiaSharp's dependency versions change, the build prints MSB3247 with the
 binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
@@ -131,9 +136,9 @@ binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
   Tests live in `test/unit/*.test.js`. Import `./setup.js` first; it stubs `window`,
   `location`, `localStorage`, and the `fetch` calls that `world_util.js` makes at import time,
   so `map.js` and `world_util.js` load unchanged in Node.
-- **Browser tests**: with the site running on port 50103, `npm run test:browser -- --no-search`
+- **Browser tests**: with the site running on port 50103, `npm run test:browser`
   runs `test/APITest.html`, `ContentTest.html`, and `ImageTest.html` in headless Chrome
-  (`--no-search` when there's no SQL Server search index). Or open the pages directly.
+  (add `--no-search` to tolerate a missing search index). Or open the pages directly.
   References live in `test/refs/`. When data changes legitimately alter output, update the
   matching reference after confirming the difference is the data change:
   `npm run test:update-refs -- ref3 ref28` (or no names for all) fetches them from the running

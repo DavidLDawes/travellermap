@@ -29,6 +29,7 @@
     <InternalsVisibleTo Include="UnitTests" />
     <InternalsVisibleTo Include="maps-validate" />
     <InternalsVisibleTo Include="Maps.Host" />
+    <InternalsVisibleTo Include="maps-reindex" />
   </ItemGroup>
   <ItemGroup>
     <!-- Includes native libraries for Windows and macOS; a Linux app adds
@@ -36,6 +37,11 @@
     <PackageReference Include="SkiaSharp" Version="4.153.1" />
     <!-- The core (cross-platform) build of PDFsharp, not PDFsharp-GDI. -->
     <PackageReference Include="PDFsharp" Version="6.2.4" />
+    <!-- The search index (server/search/SqliteSearchIndex.cs). The native library is loaded by
+         server/search/SqliteNative.cs (not SQLitePCLRaw's bundle, whose loader fails under IIS). -->
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="10.0.12" />
+    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.12" />
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="2.1.12" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="../server/Astrometrics.cs" Link="server/Astrometrics.cs" />
@@ -61,6 +67,9 @@
     <Compile Include="../server/http/Routing.cs" Link="server/http/Routing.cs" />
     <Compile Include="../server/search/SearchResult.cs" Link="server/search/SearchResult.cs" />
     <Compile Include="../server/search/SearchIndex.cs" Link="server/search/SearchIndex.cs" />
+    <Compile Include="../server/search/SearchQuery.cs" Link="server/search/SearchQuery.cs" />
+    <Compile Include="../server/search/SqliteSearchIndex.cs" Link="server/search/SqliteSearchIndex.cs" />
+    <Compile Include="../server/search/SqliteNative.cs" Link="server/search/SqliteNative.cs" />
     <Compile Include="../server/RenderContext.cs" Link="server/RenderContext.cs" />
     <Compile Include="../server/RenderUtil.cs" Link="server/RenderUtil.cs" />
     <Compile Include="../server/Stylesheet.cs" Link="server/Stylesheet.cs" />

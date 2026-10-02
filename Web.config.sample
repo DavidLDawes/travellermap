@@ -175,6 +175,10 @@
     <!-- <add key="PageFooter" value="PAGE_FOOTER_HERE"/> -->
     <!-- Bitmap renderer: "skia" (default; bundled fonts, same output on any OS) or "gdi" (System.Drawing). -->
     <!-- <add key="Renderer" value="gdi"/> -->
+    <!-- Search index: SQLite file (default ~/App_Data/search.db, built on first start if missing), -->
+    <!-- or SearchBackend "sqlserver" for the SQL Server index (connection strings above). -->
+    <!-- <add key="SearchIndex" value="~/App_Data/search.db"/> -->
+    <!-- <add key="SearchBackend" value="sqlserver"/> -->
   </appSettings>
 
   <!-- Required by PDFsharp 6 and SkiaSharp dependencies (see build warning MSB3247 if versions change). -->
