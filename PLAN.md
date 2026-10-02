@@ -377,10 +377,32 @@ parity tests between the old and new hosts.
     `dotnet Maps.Host.dll`.
   - Stopping a background `dotnet run` leaves its child process holding the build output.
 
-### 7.4 Search on SQLite
-- An `ISearchIndex` interface over `SearchEngine`. Implement SQLite, built by a `tools/reindex`
-  command into a file shipped with the app. Port the query parsing (wildcards, `uwp:` etc.).
-  Add the search query-parsing tests deferred from Phase 4.
+### 7.4 Search on SQLite — DONE (branch `phase7-search`)
+- **`SqliteSearchIndex`** is the search index on both hosts. It uses the same tables and
+  queries as SQL Server; text columns are `COLLATE NOCASE` to match SQL Server's
+  case-insensitive default, and a C# Soundex backs `like:` queries.
+  - The file is `App_Data/search.db` (git-ignored, ~25 MB).
+  - It's built in the background on first start if missing; searches return 503 meanwhile.
+  - `/admin/reindex` and `tools/reindex` rebuild it.
+  - All sectors take ~10–15 s (120,564 worlds), so Debug builds no longer index only "selected"
+    sectors.
+  - A rebuild writes a new file and swaps it in; searches keep working (checked with 120
+    concurrent searches during a reindex).
+- **`SearchQuery`** parses queries for both backends; SQL concatenation differs per dialect.
+  The SQL Server index (`SearchBackend=sqlserver`, IIS only) uses it too.
+- **Tests:**
+  - 13 new unit tests: the query-parsing tests deferred from Phase 4 (words, quotes, wildcards,
+    every operator, type words, sector+hex, both dialects), Soundex, and end-to-end searches
+    against an index built from `res/Sectors`.
+  - The browser suites now run with search on both hosts and in CI: APITest 81/81, with no
+    expected failures.
+- **Native library loading** (`SqliteNative`): SQLitePCLRaw's own loader fails under IIS.
+  - ASP.NET shadow-copies assemblies without their native files, and its fallback path is
+    URL-escaped, which breaks paths with spaces.
+  - So the core loads `e_sqlite3` itself: `bin\runtimes\<arch>\native` on .NET Framework,
+    the runtime's resolution on .NET.
+- **Build workaround:** `Directory.Build.targets` drops a `win-arm` native file that
+  SQLitePCLRaw 2.1.12's .NET Framework targets reference but the package lacks.
 
 ### 7.5 Config, container, deployment
 - `appsettings.json` + environment variables (admin key, paths). A Dockerfile (Linux, .NET 10

@@ -2,6 +2,7 @@ using Maps.API;
 using Maps.Graphics;
 using Maps.HTTP;
 using Maps.Search;
+using Maps.Utilities;
 using System;
 using System.Globalization;
 
@@ -17,8 +18,20 @@ namespace Maps
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 
-            // Services only this host has: SQL Server search and the GDI+ renderer.
-            SearchEngine.Index = new SqlSearchIndex();
+            // Search: SQLite (App_Data/search.db, built on first start if missing), or the SQL
+            // Server index with the setting SearchBackend=sqlserver.
+            if (AppSettings.Get("SearchBackend") == "sqlserver")
+            {
+                SearchEngine.Index = new SqlSearchIndex();
+            }
+            else
+            {
+                var index = SqliteSearchIndex.FromSettings();
+                SearchEngine.Index = index;
+                index.EnsureBuilt(message => System.Diagnostics.Trace.TraceInformation(message));
+            }
+
+            // Only this host has the GDI+ renderer.
             ImageHandlerBase.GdiRenderer = new GdiBitmapRenderer();
 
             System.Web.Routing.RouteTable.Routes.Add(new PortableRoutes());

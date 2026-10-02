@@ -1,0 +1,13 @@
+<Project>
+  <!--
+    SQLitePCLRaw.lib.e_sqlite3 2.1.12's .NET Framework build targets copy a win-arm (32-bit) native
+    library that the package no longer contains, which fails the build (MSB3030). Drop that item;
+    win-x86, win-x64 and win-arm64 are still deployed. Remove once a fixed version is in use.
+  -->
+  <Target Name="RemoveMissingSqliteWinArm" BeforeTargets="AssignTargetPaths;_CopyOutOfDateSourceItemsToOutputDirectory">
+    <ItemGroup>
+      <Content Remove="@(Content)" Condition="'%(Content.Link)' == 'runtimes\win-arm\native\e_sqlite3.dll'" />
+      <None Remove="@(None)" Condition="'%(None.Link)' == 'runtimes\win-arm\native\e_sqlite3.dll'" />
+    </ItemGroup>
+  </Target>
+</Project>

@@ -65,6 +65,7 @@
     <Compile Include="OptionParsingTest.cs" />
     <Compile Include="RenderingTest.cs" />
     <Compile Include="RoutingTest.cs" />
+    <Compile Include="SearchTest.cs" />
     <Compile Include="SecondSurveyTest.cs" />
     <Compile Include="SerializationTest.cs" />
     <Compile Include="TestSetup.cs" />

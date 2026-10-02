@@ -17,6 +17,7 @@ namespace Maps.Search
     internal sealed class SearchUnavailableException : Exception
     {
         public SearchUnavailableException() : base("Search is not available on this server.") { }
+        public SearchUnavailableException(string message) : base(message) { }
     }
 
     /// <summary>

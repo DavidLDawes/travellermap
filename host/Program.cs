@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 //   SiteRoot     the site's files (the repo root); found by searching up from the app if unset
 //   AdminKey     key for /admin pages from other machines (over HTTPS)
 //   Renderer     "skia" (only option on this host)
+//   SearchIndex  the search index file (default ~/App_Data/search.db; built if missing)
 
 CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 // Legacy SEC output uses Windows-1252, which .NET (not .NET Framework) only has via this provider.
@@ -38,6 +39,11 @@ builder.Services.AddSingleton<Microsoft.AspNetCore.ResponseCompression.IResponse
 
 var app = builder.Build();
 app.Logger.LogInformation("Serving {ContentRoot}", contentRoot);
+
+// Search index (SQLite), built in the background if missing.
+var searchIndex = Maps.Search.SqliteSearchIndex.FromSettings();
+Maps.Search.SearchEngine.Index = searchIndex;
+searchIndex.EnsureBuilt(message => app.Logger.LogInformation("{Message}", message));
 
 var files = new PhysicalFileProvider(contentRoot);
 

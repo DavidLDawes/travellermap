@@ -50,14 +50,17 @@ jobs:
           node-version: 22
       - name: Build host
         run: dotnet build host -c Debug
+      # (The host would also build it on first start; this checks the tool.)
+      - name: Build search index
+        run: dotnet run --project tools/reindex
       - name: Browser tests
         run: |
           dotnet host/bin/Debug/net10.0/Maps.Host.dll --urls http://localhost:5080 > host.log 2>&1 &
           for i in $(seq 1 60); do
-            curl -sf -o /dev/null "http://localhost:5080/api/coordinates?sector=Spin" && break
+            curl -sf -o /dev/null "http://localhost:5080/api/search?q=Regina" && break
             sleep 2
           done
-          node test/run-browser-tests.mjs --base http://localhost:5080 --no-search --save-images image-diffs
+          node test/run-browser-tests.mjs --base http://localhost:5080 --save-images image-diffs
       - name: Host log
         if: always()
         run: cat host.log || true
@@ -106,9 +109,10 @@ jobs:
           $site = Start-Process $iis -ArgumentList "/path:$PWD", "/port:50103", "/systray:false" -PassThru
           try {
             $ready = $false
-            foreach ($i in 1..60) {
+            # Waits for search too: the site builds its search index on first start.
+            foreach ($i in 1..90) {
               try {
-                Invoke-WebRequest "http://localhost:50103/api/coordinates?sector=Spin" -UseBasicParsing -TimeoutSec 30 | Out-Null
+                Invoke-WebRequest "http://localhost:50103/api/search?q=Regina" -UseBasicParsing -TimeoutSec 30 | Out-Null
                 $ready = $true; break
               } catch { Start-Sleep -Seconds 2 }
             }
@@ -116,7 +120,7 @@ jobs:
             # Images use grayscale text and ImageTest tolerates anti-aliasing jitter, so it
             # passes across machines. If it fails, the differing images are uploaded as the
             # image-diffs artifact.
-            node test/run-browser-tests.mjs --no-search --save-images image-diffs
+            node test/run-browser-tests.mjs --save-images image-diffs
             exit $LASTEXITCODE
           } finally {
             Stop-Process -Id $site.Id -Force -ErrorAction SilentlyContinue

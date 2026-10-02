@@ -339,16 +339,13 @@ namespace Maps.Search
         {
             List<SearchResult> results = new List<SearchResult>();
 
-            types = ParseQuery(query, types, out var clauses, out var terms);
-
-            if (clauses.Count() == 0 && !random)
+            var parsed = SearchQuery.Parse(query, types, SearchQuery.Dialect.SqlServer);
+            types = parsed.Types;
+            if (parsed.Clauses.Count == 0 && !random)
                 return results;
 
-            clauses.Insert(0, "milieu = @term");
-            terms.Insert(0, milieu ?? SectorMap.DEFAULT_MILIEU);
-
-            string where = string.Join(" AND ",
-                clauses.Select((clause, index) => "(" + clause.Replace("@term", $"@term{index}") + ")"));
+            var terms = parsed.TermsWithMilieu(milieu);
+            string where = parsed.Where;
 
             string orderBy = random ? "ORDER BY NEWID()" : "";
 
@@ -441,24 +438,6 @@ namespace Maps.Search
             return results;
         }
 
-        private static readonly string[] OPS = {
-                                                   "uwp:",
-                                                   "pbg:",
-                                                   "zone:",
-                                                   "alleg:",
-                                                   "stellar:",
-                                                   "remark:",
-                                                   "exact:",
-                                                   "like:",
-                                                   "in:",
-                                                   "ix:", "ex:", "cx:"
-                                               };
-        private static readonly Regex RE_TERMS = new Regex("(" + string.Join("|", OPS) + ")?(\"[^\"]+\"|\\S+)",
-            RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-        private static IEnumerable<string> ParseTerms(string q) =>
-            RE_TERMS.Matches(q).Cast<Match>().Select(m => m.Value).Where(s => !string.IsNullOrWhiteSpace(s));
-
         public static WorldResult? FindNearestWorldMatch(string name, string milieu, int x, int y)
         {
             // Only the nearest row is read.
@@ -480,150 +459,6 @@ namespace Maps.Search
             if (!row.Read())
                 return null;
             return new WorldResult(row.GetInt32(0), row.GetInt32(1), (byte)row.GetInt32(2), (byte)row.GetInt32(3));
-        }
-
-        private static Regex SECTOR_HEX_REGEX = new Regex(@"^(?<sector>[A-Za-z0-9!' ]{3,}) (?<hex>\d{4})$",
-            RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-        private static SearchResultsType ParseQuery(string? query, SearchResultsType types, out List<string> clauses, out List<string> terms)
-        {
-            clauses = new List<string>();
-            terms = new List<string>();
-            if (string.IsNullOrWhiteSpace(query))
-                return types;
-            query = query!.Trim().ToLowerInvariant();
-
-            Match m = SECTOR_HEX_REGEX.Match(query);
-            if (m.Success)
-            {
-                int hex = int.Parse(m.Groups["hex"].Value);
-                clauses.Add("sector_name LIKE @term + '%'");
-                terms.Add(m.Groups["sector"].Value);
-                clauses.Add("hex_x = @term");
-                terms.Add((hex / 100).ToString());
-                clauses.Add("hex_y = @term");
-                terms.Add((hex % 100).ToString());
-                return SearchResultsType.Worlds;
-            }
-
-            foreach (string t in ParseTerms(query))
-            {
-                string term = t;
-                string? op = null;
-                bool quoted = false;
-
-                foreach (var o in OPS)
-                {
-                    if (term.StartsWith(o))
-                    {
-                        op = o;
-                        term = term.Substring(o.Length);
-                        break;
-                    }
-                }
-
-                // Infer a trailing "
-                if (term.StartsWith("\"") && (!term.EndsWith("\"") || term.Length == 1))
-                    term += '"';
-                if (term.Length >= 2 && term.StartsWith("\"") && term.EndsWith("\""))
-                {
-                    quoted = true;
-                    term = term.Substring(1, term.Length - 2);
-                }
-                if (term.Length == 0)
-                    continue;
-
-                string clause;
-                if (op == "uwp:")
-                {
-                    clause = "uwp LIKE @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "pbg:")
-                {
-                    clause = "pbg LIKE @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "ix:")
-                {
-                    clause = "ix = @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "ex:")
-                {
-                    clause = "ex LIKE @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "cx:")
-                {
-                    clause = "cx LIKE @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "zone:")
-                {
-                    clause = "zone LIKE @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "alleg:")
-                {
-                    clause = "alleg LIKE @term";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "stellar:")
-                {
-                    clause = "' ' + stellar+ ' ' LIKE '% ' + @term + ' %'";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "remark:")
-                {
-                    clause = "' ' + remarks + ' ' LIKE '% ' + @term + ' %'";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "in:")
-                {
-                    clause = "sector_name LIKE '%' + @term + '%'";
-                    types = SearchResultsType.Worlds;
-                }
-                else if (op == "exact:")
-                {
-                    clause = "name LIKE @term";
-                }
-                else if (op == "like:")
-                {
-                    clause = "SOUNDEX(name) = SOUNDEX(@term)";
-                }
-                else if (quoted)
-                {
-                    clause = "name LIKE @term";
-                }
-                else if (term.Contains("%") || term.Contains("_"))
-                {
-                    clause = "name LIKE @term";
-                }
-                else if (term.Equals("sector", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    types = SearchResultsType.Sectors;
-                    continue;
-                }
-                else if (term.Equals("subsector", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    types = SearchResultsType.Subsectors;
-                    continue;
-                }
-                else if (term.Equals("world", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    types = SearchResultsType.Worlds;
-                    continue;
-                }
-                else
-                {
-                    clause = "name LIKE @term + '%' OR name LIKE '% ' + @term + '%'";
-                }
-
-                clauses.Add(clause);
-                terms.Add(term);
-            }
-            return types;
         }
 
         static string? StripBrackets(string? input)

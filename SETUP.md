@@ -37,10 +37,19 @@ Trying it out
 * IIS will start and your default browser will connect to the site.
 * The map will display!
 
-To Add a Database
------------------
+Search
+------
 
-Some features such as search require a database.
+Search needs no setup: on first start the site builds a SQLite search index,
+`App_Data/search.db`, in the background (about 15 seconds; searches return "503 Service
+Unavailable" until it's ready). To rebuild it after changing sector data, load
+`http://localhost:<YOUR_PORT>/admin/reindex`, or run `dotnet run --project tools/reindex`
+(with the .NET 10 SDK). The setting `SearchIndex` moves the file.
+
+### Optional: SQL Server
+
+The original SQL Server index is still available on IIS, with the setting
+`<add key="SearchBackend" value="sqlserver"/>`:
 
 1. Ensure you have some version of SQL Server installed (Express, Developer, etc). [SQL Server Downloads](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 1. Track down the **connection string** for the database. When installing SQL Server Express Edition, this is given at the end of the install, and looks like: `Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;`
