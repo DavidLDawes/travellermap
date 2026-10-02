@@ -437,19 +437,19 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2440 Wolves Rabble        B799467-9 Ni Mr                               - MN - 315   Na F2 V M1 V          
 2634 Khalamukii           C130457-7 De Ni Po                            - -  - 413   Na A3 V M7 V          
 2636 Uashi                D426518-9 Ni                                  - -  - 514   Na M1 V M3 V          
-2740 Rurrna Roo           C53146F-A Mr Ni Po                            - N  - 302   KO M0 V M5 V          
+2740 Rurrna Roo           C53146F-A Mr Ni Po                            - N  - 302   Ko M0 V M5 V          
 2835                      X470000-0 Ba De He                            - -  - 023   -- F6 V               
-2839 R'gnara              X40046F-A Mr Ni Va                            - N  - 320   KO F7 V M1 V          
+2839 R'gnara              X40046F-A Mr Ni Va                            - N  - 320   Ko F7 V M1 V          
 2932                      X100000-0 Ba Va                               - -  - 003   -- K9 V               
 2934                      X343000-0 Ba Po                               - -  - 015   -- M7 V               
 2936 Asllagh              BA7A7A6-9 Pi Oc                               - -  - 714   Va M4 V M5 V          
 2937 Egga                 BAB1369-9 Fl Lo He O:2936                     - N  - 414   Va K8 V               
 3031                      X789000-0 Ba                                  - -  - 004   -- M4 V               
 3034                      X310000-0 Ba                                  - -  - 004   -- M1 V               
-3038 Kangnu               X64746F-A Mr Ni Pa                            - N  - 320   KO F0 V               
+3038 Kangnu               X64746F-A Mr Ni Pa                            - N  - 320   Ko F0 V               
 3132                      X110000-0 Ba                                  - -  - 002   -- F5 V               
 3134                      X000000-0 As Ba Va                            - -  - 004   -- K7 V               
 3136 Zonkoegz             B100369-9 Lo Va O:2936                        - N  - 427   Va G2 V M6 V          
 3231                      X689000-0 Ba                                  - -  - 001   -- F3 V               
-3238 !'purrla             X65446F-A Mr Ni Pa                            - N  - 300   KO G9 V               
+3238 !'purrla             X65446F-A Mr Ni Pa                            - N  - 300   Ko G9 V               
 3240                      X885000-0 Ba Ga                               - -  - 000   -- F3 V               

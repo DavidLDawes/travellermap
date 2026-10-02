@@ -123,8 +123,8 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 3140 Unseren              X4524D9-5 Po Ni Lo {Base Ruins}                     - -  - 803   Wi G5 V
 3231 Roger                X424000-0 Ba                                        - -  - 000   -- M8 V
 3237 Jeandrent            DA7A655-7 Wa Ni {Base Ruins}                        - -  - 513   Na G0 V M4 V
-0321 Bridge Base 11       B000100-A                                           - I  - 404   TB
-0325 Bridge Base 10       B000100-A                                           - I  - 404   TB
-0329 Bridge Base 09       B000100-A                                           - I  - 404   TB
-0333 Bridge Base 08       B000100-A                                           - I  - 404   TB
-0337 Bridge Base 07       B000100-A                                           - I  - 404   TB
+0321 Bridge Base 11       B000100-A                                           - I  - 404   Tb
+0325 Bridge Base 10       B000100-A                                           - I  - 404   Tb
+0329 Bridge Base 09       B000100-A                                           - I  - 404   Tb
+0333 Bridge Base 08       B000100-A                                           - I  - 404   Tb
+0337 Bridge Base 07       B000100-A                                           - I  - 404   Tb
