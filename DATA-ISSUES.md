@@ -115,9 +115,4 @@ World allegiance codes that no allegiance table defines: not the stock T5SS code
 | Yiklerdanzh (Meshan Saga) (M1105) | Unexpected value for B: 'Z' | `1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              Z    101   ZC` |
 
 - Ruupiin 1420 Agneex: the PBG is `?34`. The population multiplier is unknown; T5SS uses a digit (0-9).
-- Yiklerdanzh (Meshan Saga) 1438: base code `Z` isn't a T5 base code. The file also isn't UTF-8 (Windows-1252), which the tools skip; converting it would be a good first step.
-
-## Files the tools skip
-
-
-- `res/Sectors/M1105/yiklerzdanzh.sec`: not UTF-8.
+- Yiklerdanzh (Meshan Saga) 1438: base code `Z` isn't a T5 base code. A hint: the M1105 Yiklerzdanzh file's own legend says that in this region's legacy codes "X, Z, Y are Zhodani relay route, Naval base, Depot", so `Z` is probably a Zhodani naval base; the world's allegiance `ZC` isn't one the server treats as Zhodani, so the legacy code isn't translated.
