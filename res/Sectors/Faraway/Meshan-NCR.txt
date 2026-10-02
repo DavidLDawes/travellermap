@@ -22,5 +22,5 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B Z PB
 0739 Tigris               E7A5400-7 Ni Fl                               - - - 101   Im
 0831 Vi Khivgh            A360368-7 De Lo                               - - - 101   NaVa
 0835 Filegrei             D366565-3 Ni Ag Pr                            - - - 100   NaHu
-0838 Ankor                X765000-0 Ri, Ba Ga                           - - - 100   NaXX
+0838 Ankor                X765000-0 Ri, Ba Ga                           - - - 000   NaXX
 0839 Calor                D570626-7 De He Ni                            - - - 101   Im

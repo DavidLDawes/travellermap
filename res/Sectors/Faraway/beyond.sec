@@ -1,6 +1,6 @@
-Beyond
-3 4
-              1    2          3 4               5  6   7
+# Beyond
+# 3 4
+#               1    2          3 4               5  6   7
 #extracted from a galactic archive by Jeff Zeitlin
 #see sector notes
 #Sub-Sector: Meizirn SECTOR: The Beyond
@@ -22,7 +22,7 @@ Tonni         0402 C744566-5  S Ag Ni              412 Um
 Meizirn       0405 B63A257-C  N Lo Wa              703 Um
 Liermalost    0409 A788202-A  S Lo                 700 Na
 Giinurega     0504 CAA46AB-7    Fl Ni              102 Um
-Lerli         0506 C567011-7  S Di                 913 Um
+Lerli         0506 C567011-7  S Di                 013 Um
 Li            0507 B96A47C-D  S Ni Wa              910 Um
 Eseryro       0509 C575465-6  S Ni Pa              710 Na
 Dash          0602 C000547-9    As Ni Va           914 Um
@@ -51,7 +51,7 @@ Gopadbad      1309 C260420-6    De Ni              204 Av
 Hangseke      1401 A3009AB-C  N Hi Na Va In          424 Av
 Yapora        1403 B733201-C  N Lo Po              903 Av
 Sharrar       1405 C898597-7    Ag Ni              901 Av
-Ker           1409 A646010-A    Di                 904 Av
+Ker           1409 A646010-A    Di                 004 Av
 Trantaor      1501 C110766-A  S Na Pi              213 Av
 Hagatdit      1503 B201663-C    Ic Na Ni Va        414 Av
 Khimi         1505 C641677-4    Ni Po He           204 Av
@@ -78,8 +78,8 @@ Tontrir       2202 C766868-7  S Ri Ga Ph Pa          504 Ke
 Lona          2205 B100683-8  N Na Ni Va           623 Na
 Dapohof       2208 D4318DA-5  S Na Po Ph           824 Na
 Dagocag       2302 C72A245-C    Lo                 104 Ke
-Bibhambehr    2307 A303000-C    Ic Va Di           725 Na
-Apatap        2309 C331000-9    Po Di              113 Na
+Bibhambehr    2307 A303000-C    Ic Va Di           025 Na
+Apatap        2309 C331000-9    Po Di              013 Na
 Bakei         2310 B6876AA-A  N Ag Ni Ga Ri          701 Na
 Ssuiapij      2403 C57588D-6  S  Ph Pa Pi          914 Na
 Sheawin       2404 B450630-8  N De Ni Po           803 Mk
@@ -95,7 +95,7 @@ Haah          2604 A7B1410-C  N Fl Ni He           900 Mk
 Dedeged       2609 A765122-B  2 Lo Ga              800 Mk
 Noegteta      2705 B645546-B  S Ag Ni              802 Mk
 Paagen        2706 A140754-B  N De Po Pi           411 Mk
-Debonbe       2710 D675000-4  S Di                 705 Mk
+Debonbe       2710 D675000-4  S Di                 005 Mk
 Ratpop        2802 EAB58BA-5    Fl Ph              400 Na
 Innidees      2803 A8A5887-D  N Fl Ph              902 Na
 Marrakesh     2905 A5238A9-8  N Na Po Ph Pi          621 Mk
@@ -139,7 +139,7 @@ Shyir         0618 D361767-7    Ri                 520 Co
 Kirhi         0714 A468256-A    Lo                 904 Co
 Ysshi         0718 B25489A-B     Ph Pa             803 Co
 Newen         0719 E6596BC-2    Ni                 905 Co
-Etol          0814 E302036-6    Ic Va Di           710 Co
+Etol          0814 E302036-6    Ic Va Di           010 Co
 Dastla        0815 E243769-7    Po Pi              300 Co
 #Sub-Sector: Ventura SECTOR: The Beyond
 #
@@ -184,7 +184,7 @@ Shalukin      1812 B120302-B    De Lo Po           725 Na
 Gat           1817 C4517AB-7    Po                 120 Fg
 Reasi         1818 B100266-9  S Lo Va              114 Fg
 Acapga        1914 D42979B-9     Pi                802 Fg
-Haodfa        1917 B8A6000-7  N Fl Di              615 Fg
+Haodfa        1917 B8A6000-7  N Fl Di              015 Fg
 Treri         1920 B535200-9  N Lo                 510 Fg
 Ryelbh        2011 D8B4300-7    Fl Lo              823 Fg
 Kurrariir     2012 C232354-B    Lo Po              223 Fg
@@ -233,7 +233,7 @@ Afaera        3220 C77A9HA-9    Hi In Wa           400 As
 #Planetname   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
 Levin         0121 A758565-C  2 Ag Ni              303 Co
-Arase         0122 C77A000-A  S Wa Di              713 Co
+Arase         0122 C77A000-A  S Wa Di              013 Co
 Iijn          0125 D363468-6  S Ni                 103 Co
 Thynca        0127 C110336-C    Lo                 303 Co
 Olas          0128 B547720-5  N Ag Pi              424 Co

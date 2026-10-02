@@ -1,6 +1,6 @@
-Veg Vergakh
-8 -1
-              1    2          3 4               5  6   7      8
+# Veg Vergakh
+# 8 -1
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 23158
 #Alleg: 04: Va: "Vargr (non-aligned)"
@@ -347,6 +347,6 @@ Sunakoks      1840 C130779-8  G De Na Po           902 Va     M1V
 Dzudzir       2240 D343430-6    Ni Po              503 Va     F9V M7V
 Aelluerzzogh  2340 E634544-4  C Ni                 404 Va     M0V 
 Iloghir       2740 E200978-4    Hi Na Va In          803 Va     F9V M3V
-Nogzaeras     2940 C515000-7    Ic Di              506 Va     M3V M6V
+Nogzaeras     2940 C515000-7    Ic Di              006 Va     M3V M6V
 Dhazoroekh    3140 C656740-3    Ag Ga              400 Va     M2V 
 Ghesurrg      3240 C896942-7    Hi In              100 Va     F8V 

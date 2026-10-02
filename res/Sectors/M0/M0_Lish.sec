@@ -494,7 +494,7 @@ Inerenuur            2725 E611333-5   Ic Lo                            002 -- G0
 Iishvla Im           2726 A546511-B   Ag Ni                            410 -- K3 V M0 V M0 V
 Niirge Khar          2729 A594555-8   Ag Ni {Vilani Depot (Ruins)}     900 -- G8 V
 Kheda                2730 B888100-A   Lo                               603 -- M3 V
-Irkar Vlak           2733 D310000-6   Di                               800 -- G2 V M1 V
+Irkar Vlak           2733 D310000-6   Di                               000 -- G2 V M1 V
 Irshi In             2734 E312000-3   Ic Di                            004 -- M2 V M5 V
 Ankii An             2736 A563ABB-B   Hi                               223 -- G1 V M2 V
 Khiidnaska           2738 B525699-9   Ni                               804 -- K2 V M0 V
@@ -527,7 +527,7 @@ Shegu Apis           2915 C677000-7   Di                               000 -- K4
 Kingir               2916 C652144-5   Po Lo Chir?                      310 -- K0 V M2 V
 Kig                  2918 D55A866-7   Wa Ph Chir? {Full Data}              524 -- K4 V
 Kharbarbi            2919 B85A688-8   Ni Wa                            410 -- M3 V M2 V
-Aama                 2921 C200000-9   Va Di                            600 -- M2 V
+Aama                 2921 C200000-9   Va Di                            000 -- M2 V
 Kerip Ka             2922 C584444-8   Ni Pa                            000 -- K4 V M7 V
 Kir                  2923 E876000-2 S Di                               000 -- G0 V
 Ot Zell              2924 C9B7877-9   Fl Ph                            210 -- K4 V M7 V

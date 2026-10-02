@@ -1,45 +1,45 @@
-Malorn
+# Malorn
 
-A: Malorn                    sec_a.dat
-B: Maiste                    sec_b.dat
-C: Heiligebet                sec_c.dat
-D: Oberer                    sec_d.dat
-E: Frankfurt                 sec_e.dat
-F: Amorine                   sec_f.dat
-G: Volxenke                  sec_g.dat
-H: Geheim                    sec_h.dat
-I: Gesetz                    sec_i.dat
-J: Lords                     sec_j.dat
-K: Toh                       sec_k.dat
-L: Attacotti                 sec_l.dat
-M: Kiel                      sec_m.dat
-N: Ustov                     sec_n.dat
-O: Saar                      sec_o.dat
-P: Terese                    sec_p.dat
+# A: Malorn                    sec_a.dat
+# B: Maiste                    sec_b.dat
+# C: Heiligebet                sec_c.dat
+# D: Oberer                    sec_d.dat
+# E: Frankfurt                 sec_e.dat
+# F: Amorine                   sec_f.dat
+# G: Volxenke                  sec_g.dat
+# H: Geheim                    sec_h.dat
+# I: Gesetz                    sec_i.dat
+# J: Lords                     sec_j.dat
+# K: Toh                       sec_k.dat
+# L: Attacotti                 sec_l.dat
+# M: Kiel                      sec_m.dat
+# N: Ustov                     sec_n.dat
+# O: Saar                      sec_o.dat
+# P: Terese                    sec_p.dat
 
-Bases:
-N = Naval Base
-S = Scout Base
-2 = Navy & Scout Bases
-  = None
+# Bases:
+# N = Naval Base
+# S = Scout Base
+# 2 = Navy & Scout Bases
+#   = None
 
-Allegiance:
-12 Im = Imperial
-14 As = Aslan
-11 So = Solomani
-07 Na = Non-aligned
-04 Cs = Client State
-01 Mu = Malorn Union
-02 Gt = Great Terbah
-03 Jd = Joie De Vivre
-05 Bs = Bright Star Cooperate
-06 Pb = Parity of Brothers
-13 Cn = Creation of Nonpareil
-14 Lv = Lords of Vision
-10 Tr = Toh Republic
-09 Dj = Daprolix Juncture of Suns
-08    = Unknown
-A: Malorn
+# Allegiance:
+# 12 Im = Imperial
+# 14 As = Aslan
+# 11 So = Solomani
+# 07 Na = Non-aligned
+# 04 Cs = Client State
+# 01 Mu = Malorn Union
+# 02 Gt = Great Terbah
+# 03 Jd = Joie De Vivre
+# 05 Bs = Bright Star Cooperate
+# 06 Pb = Parity of Brothers
+# 13 Cn = Creation of Nonpareil
+# 14 Lv = Lords of Vision
+# 10 Tr = Toh Republic
+# 09 Dj = Daprolix Juncture of Suns
+# 08    = Unknown
+# A: Malorn
 
 @SUB-SECTOR: sec_A   SECTOR: Malorn
 #
@@ -53,9 +53,9 @@ Whane         0104 DAE2478-6  S Ni                 414 Mu
 Paraguay      0205 D22075A-7  S De Na Po Pi          504 Mu
 Blaecleah     0206 C67398A-5    Hi In              904 Mu
 Varmer        0208 E400586-9    Ni Va              600 Mu
-Dade          0304 A388000-E    Di                 904 Mu
+Dade          0304 A388000-E    Di                 004 Mu
 Carthag       0305 A586322-8  S Lo                 112 Mu
-Spector       0306 A351000-9    Po Di              910 Mu
+Spector       0306 A351000-9    Po Di              010 Mu
 Uadrian       0401 D665675-4    Ag Ni Ri Ga          100 Mu
 Lipschitz     0402 E310898-5    Na Ph Pi           813 Mu
 Taro          0403 E411785-8    Ic Na Pi           401 Mu
@@ -72,7 +72,7 @@ Emery         0705 E410756-9    Na Pi              323 Mu
 0802          0802 X897000-0    Ba                 004 Na
 Ordred        0806 CAB87AC-4  S Fl                 302 Mu
 0810          0810 X310000-0    Ba                 024 Na
-B: Maiste
+# B: Maiste
 
 @SUB-SECTOR: sec_B   SECTOR: Malorn
 #
@@ -100,7 +100,7 @@ Macedon       1510 B75A778-9    Wa                 425 Gt
 1603          1603 X000000-0    Ba As Va           021 Na
 Maiste        1607 B88699E-A    Hi Ga Pr           103 Gt
 Grenoble      1608 B968665-5    Ag Ni Ri           914 Gt
-C: Heiligebet
+# C: Heiligebet
 
 @SUB-SECTOR: sec_C   SECTOR: Malorn
 #
@@ -141,7 +141,7 @@ Plainfield    2309 B75A431-B  N Ni Wa              401 Gt
 2406          2406 X410000-0    Ba                 003 Na
 Tasslehoff    2409 C410352-C    Lo                 105 Gt
 Derel         2410 B676878-7     Ph Pa Pi          723 Gt
-D: Oberer
+# D: Oberer
 
 @SUB-SECTOR: sec_D   SECTOR: Malorn
 #
@@ -173,7 +173,7 @@ Mcintyre      2610 B576575-8    Ag Ni              414 Gt
 3203          3203 X629000-0    Ba                 003 Na
 3205          3205 X89A000-0    Ba Wa              003 Na
 3210          3210 X373000-0    Ba                 004 Na
-E: Frankfurt
+# E: Frankfurt
 
 @SUB-SECTOR: sec_E   SECTOR: Malorn
 #
@@ -203,7 +203,7 @@ E: Frankfurt
 0811          0811 X346000-0    Ba                 014 Na
 0812          0812 X685000-0    Ba Ga              003 Na
 0815          0815 X410000-0    Ba                 003 Na
-F: Amorine
+# F: Amorine
 
 @SUB-SECTOR: sec_F   SECTOR: Malorn
 #
@@ -251,7 +251,7 @@ Amorine       1611 B5369A8-8  N Hi                 922 Gt
 1613          1613 X744000-0    Ba                 002 Na
 1618          1618 X774000-0    Ba                 013 Na
 1619          1619 X481000-0    Ba                 000 Na
-G: Volxenke
+# G: Volxenke
 
 @SUB-SECTOR: sec_G   SECTOR: Malorn
 #
@@ -299,7 +299,7 @@ Baumer        2312 C201532-A    Ic Ni Va           502 Gt
 2414          2414 X665000-0    Ba Ga              023 Na
 2417          2417 X444000-0    Ba                 001 Na
 2418          2418 X7C6000-0    Ba Fl              000 Na
-H: Geheim
+# H: Geheim
 
 @SUB-SECTOR: sec_H   SECTOR: Malorn
 #
@@ -346,11 +346,11 @@ Jaeger        3115 B8B4240-8  N Fl Lo              304 Pb
 3120          3120 X899000-0    Ba                 034 Na
 3211          3211 X8A0000-0    Ba He              015 Na
 Wandi         3213 X321657-3    Na Ni Po He          513 Pb
-Honeywell     3214 B110020-8    Di                 603 Pb
+Honeywell     3214 B110020-8    Di                 003 Pb
 3215          3215 X9A4000-0    Ba Fl              013 Na
 3216          3216 X697000-0    Ba                 004 Na
 Rosalinda     3220 B250200-D  N De Lo Po           920 Cn
-I: Gesetz
+# I: Gesetz
 
 @SUB-SECTOR: sec_I   SECTOR: Malorn
 #
@@ -375,7 +375,7 @@ I: Gesetz
 0729          0729 XAD7000-0    Ba                 013 Na
 0826          0826 X764000-0    Ba                 024 Na
 0829          0829 X422000-0    Ba He Po           024 Na
-J: Lords
+# J: Lords
 
 @SUB-SECTOR: sec_J   SECTOR: Malorn
 #
@@ -428,7 +428,7 @@ Verdi         1227 D333550-8  S Ni Po              125 Lv
 1621          1621 X321000-0    Ba He Po           000 Na
 1624          1624 X668000-0    Ba                 024 Na
 1626          1626 X7A7000-0    Ba Fl              004 Na
-K: Toh
+# K: Toh
 
 @SUB-SECTOR: sec_K   SECTOR: Malorn
 #
@@ -446,7 +446,7 @@ Fogter        1828 X86379A-0    Ri                 802 Tr
 1925          1925 X321000-0    Ba He Po           013 Na
 Bavaria       1927 D657210-6  S Lo Ga              204 Tr
 1930          1930 X583000-0    Ba                 000 Na
-Idint         2026 D512000-6    Ic Di              502 Tr
+Idint         2026 D512000-6    Ic Di              002 Tr
 2028          2028 X454000-0    Ba                 003 Na
 2029          2029 X879000-0    Ba                 000 Na
 2121          2121 X353000-0    Ba Po              003 Na
@@ -469,7 +469,7 @@ Schweitzer    2325 D150212-7  S De Lo Po           902 Tr
 2427          2427 X223000-0    Ba Po              003 Na
 2428          2428 X53A000-0    Ba Wa              001 Na
 2429          2429 X666000-0    Ba Ga              004 Na
-L: Attacotti
+# L: Attacotti
 
 @SUB-SECTOR: sec_L   SECTOR: Malorn
 #
@@ -478,7 +478,7 @@ L: Attacotti
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-Pericles      2522 D463000-5  S Di                 503 Bs
+Pericles      2522 D463000-5  S Di                 003 Bs
 Jew           2523 DAC4757-7  S Fl                 901 Bs
 2526          2526 X633000-0    Ba Po              012 Na
 2528          2528 X665000-0    Ba Ga              013 Na
@@ -520,7 +520,7 @@ Asia          3126 C746445-6  S Ni Pa              703 Dj
 3130          3130 X310000-0    Ba                 004 Na
 Peite         3221 C645221-5    Lo                 100 Cn
 3224          3224 X774000-0    Ba                 000 Na
-M: Kiel
+# M: Kiel
 
 @SUB-SECTOR: sec_M   SECTOR: Malorn
 #
@@ -548,7 +548,7 @@ M: Kiel
 0737          0737 X8C2000-0    Ba Fl He           002 Na
 0834          0834 X000000-0    Ba As Va           020 Na
 0835          0835 X130000-0    Ba De Po           002 Na
-N: Ustov
+# N: Ustov
 
 @SUB-SECTOR: sec_N   SECTOR: Malorn
 #
@@ -587,7 +587,7 @@ N: Ustov
 1636          1636 X986000-0    Ba                 023 Na
 1637          1637 X896000-0    Ba                 024 Na
 1639          1639 X548000-0    Ba                 005 Na
-O: Saar
+# O: Saar
 
 @SUB-SECTOR: sec_O   SECTOR: Malorn
 #
@@ -629,7 +629,7 @@ O: Saar
 2432          2432 X554000-0    Ba                 003 Na
 2434          2434 X340000-0    Ba De He Po          014 Na
 2435          2435 X373000-0    Ba                 003 Na
-P: Terese
+# P: Terese
 
 @SUB-SECTOR: sec_P   SECTOR: Malorn
 #

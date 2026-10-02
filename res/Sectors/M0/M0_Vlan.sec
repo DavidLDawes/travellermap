@@ -234,21 +234,21 @@ Gim                  1803 C645100-6   Lo                               822 -- G7
 Arkhii Kasa          1804 B540433-7   Po De He Ni                        420 -- M2 V M8 V
 Kuurkar Kuu          1807 C999000-0   Ba                               001 -- K1 V G5 V
 Eshu                 1810 B560000-0   De Ba                            022 -- K3 V
-Anaam                1811 C424000-0   Ba                               210 -- G1 V
-Khusher              1813 C646000-0   Ba                               622 -- G5 V G9 V
+Anaam                1811 C424000-0   Ba                               010 -- G1 V
+Khusher              1813 C646000-0   Ba                               022 -- G5 V G9 V
 Shinla               1816 E560611-0   Ni De Ri {Full Data}                 634 -- K2 V M9 V
 Tauri                1817 B430AAA-C   Na Po De Hi {Full Data}          220 -- K3 V
 Arirk                1819 B9E4111-8   Lo {Full Data}                   520 -- F3 V
 Kha                  1820 C86A9CC-A   Wa Hi Pr {Full Data}                 024 -- K6 V
-Iikhok               1821 C434000-0   Ba {Full Data}                   824 -- M2 V
-Kasear               1822 C547000-0   Ba {Full Data}                   520 -- G5 V M2 V
+Iikhok               1821 C434000-0   Ba {Full Data}                   024 -- M2 V
+Kasear               1822 C547000-0   Ba {Full Data}                   020 -- G5 V M2 V
 Karfir               1825 A753366-9   Po Lo                            323 -- K4 V
 Sindal               1830 E9B8466-6   Fl Ni                            301 -- G6 V M3 V
-Iinuup               1831 D546000-0   Ba                               325 -- K3 V M1 V
-Shadi                1833 C597000-0   Ba                               201 -- G6 V M3 V
+Iinuup               1831 D546000-0   Ba                               025 -- K3 V M1 V
+Shadi                1833 C597000-0   Ba                               001 -- G6 V M3 V
 Gumi                 1839 E778211-4   Lo                               403 -- M3 V
 Ghurrllekh           1901 A560333-C   De Lo                            020 -- M3 V
-Gemid                1903 D423000-0   Po Ba                            524 -- K0 V
+Gemid                1903 D423000-0   Po Ba                            024 -- K0 V
 Kiiip                1904 C576000-0   Ba                               001 -- M2 V K4 V
 Zainmisha            1906 C9C5344-6   Lo Fl An                         801 -- M2 V
 Kakkin               1907 C423544-8   Ni Po                            002 -- G8 V
@@ -258,11 +258,11 @@ Kipii                1916 C430A88-8   Na Po De Hi {Full Data}          002 -- M3
 Daer Map             1918 E596133-2   Lo {Full Data}                   520 -- F8 V
 Khula                1919 C575144-7   Lo (Khulan) {Full Data}          810 -- M0 V
 Inkha                1920 D797566-6   Ag Ni {Full Data}                110 -- M0 V M4 V
-Sagida               1923 B423000-0   Po Ba                            702 -- M0 V M0 V
+Sagida               1923 B423000-0   Po Ba                            002 -- M0 V M0 V
 Nimmer               1928 B420000-0   Po De Ba He                        024 -- G4 V
 Sakhem               1929 B404000-0   Va Ic Ba                         010 -- M0 V
 Ziirkago             1930 C878433-9   Ni Pa                            213 -- M0 V
-Kikaash              1931 D430000-0   Po De Ba                         702 -- M1 V
+Kikaash              1931 D430000-0   Po De Ba                         002 -- M1 V
 Rur                  1932 C765455-A   Ga Ni Pa                         024 -- G8 V
 Kishsuur             1933 D673366-8   Lo                               001 -- K6 V M0 V
 Bina                 1936 C400444-8   Va Ni                            601 -- M0 III M7 V
@@ -276,11 +276,11 @@ Guuish               2016 C563300-7   Lo (Tahavi) {Full Data}          402 -- M1
 Tahaver              2017 D769344-4   Lo {Full Data}                   410 -- M2 V
 Diipa                2019 B554477-8   Ni Pa                            610 -- M2 V M3 V
 Shushguum            2020 D522766-0   Na Po He Pi                        124 -- G6 V
-Kakaaim              2022 C100000-0   Va Ba                            201 -- M0 V
+Kakaaim              2022 C100000-0   Va Ba                            001 -- M0 V
 Zhattar              2023 A88AA66-E   Wa Hi                            010 -- M3 V
 Daaiish              2027 C775000-0   Ba                               020 -- M0 V M1 V
 Gabik                2029 D512333-3   Ic Lo                            033 -- F2 V
-Duusan               2030 B9CA000-0   Fl Ba An                         222 -- M3 V
+Duusan               2030 B9CA000-0   Fl Ba An                         022 -- M3 V
 Vuldaan              2032 C522644-0   Na Ni Po He                        523 -- F8 V
 Hykluitt             2035 B540644-0   Ni Po De He                        204 -- M1 V
 Diinagar             2036 C560133-9   De Lo                            610 -- K0 V M2 V
@@ -361,7 +361,7 @@ Martle               2425 D5408BB-0   Po De He Ph Pi {Full Data}                
 Khanaddar            2426 B000000-0   Va Ba As {Full Data}             012 -- K6 V M6 V
 Esish                2429 B420244-9   Po De Lo He                        012 -- M3 V
 Dusekhip             2431 C633622-0   Na Ni Po                         222 -- K7 V
-Korm                 2432 E987000-0   Ba                               903 -- M0 V
+Korm                 2432 E987000-0   Ba                               003 -- M0 V
 Mirk                 2433 C310100-6   Lo                               720 -- G6 V
 Gidiirk Khar         2435 E423666-0   Na Ni Po                         420 -- M1 V
 Shakir               2438 A626000-0   Ba                               023 -- K6 V

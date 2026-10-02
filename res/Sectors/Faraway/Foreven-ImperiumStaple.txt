@@ -95,7 +95,7 @@ Hex  Name           UWP       Remarks          {Ix} (Ex) [Cx] N B  Z PBG W A    
 3123 Ubron          X96A233-2 Lo Wa                           - -  R 923   Na   M9 V
 3124 Stilp          C575201-6 Lo                              - -  - 733   Na   K2 V
 3125 Outer          B100445-C Ni Va                           - M  A 712   Na   K1 V D
-3126 723-214        E8D4000-0 Ba                              - -  - 504   Na   M3 V
+3126 723-214        E8D4000-0 Ba                              - -  - 004   Na   M3 V
 3127 Hitre          B620736-B De Na He Pi Po                  - -  - 801   Na   K9 V
 3128 Philbiin       C412543-8 Ic Ni                           - N  - 110   CsIm F4 V D
 3129 Solo           A85A556-F Ni Wa                           - -  - 700   CsIm M3 V
@@ -130,7 +130,7 @@ Hex  Name           UWP       Remarks          {Ix} (Ex) [Cx] N B  Z PBG W A    
 3032 Lapet          C120554-B Ni De Po                        - N  - 811   CsIm M4 IV
 3033 Porter's World C527513-A Ni                              - S  - 802   Na   M3 V
 3034 Ornaz          A955843-9 Ph Pa                           - -  - 922   Na   F9 V
-3035 340-274        D7A7000-0 Ba Fl Reserve                   - -  R 510   CsIm F6 V D
+3035 340-274        D7A7000-0 Ba Fl Reserve                   - -  R 010   CsIm F6 V D
 3040 Vines          C200623-F Ni Va Na                        - N  - 112   CsIm M8 V
 3135 Yulp           B743444-A Ni Po                           - MS - 613   CsIm F6 V
 3136 Cembar         E32046A-B Ni De Po He                     - -  - 514   CsIm G9 V

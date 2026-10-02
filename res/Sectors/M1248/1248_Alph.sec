@@ -36,7 +36,7 @@ Keats                0210 C4456A7-9 J Ag Ni                                     
                      0236 ???????-?                                                 ?02 -- M2 V          
                      0240 ???????-?                                                 ?04 -- M1 V          
 Etienne              0302 B847645-A   Ag Ni                                         700 La G6 V M4 V
-Wulfe                0303 X434000-0   Ba                                            302 Na M0 V
+Wulfe                0303 X434000-0   Ba                                            002 Na M0 V
 UUMKARGUU            0305 C987998-A   Hi Pr                                         100 La G3 V M8 V
 Antraillia           0306 X335000-0   Ba {Base Ruins}                               003 Na M8 V
                      0311 ???????-?                                                 ?04 -- K1 V          
@@ -344,7 +344,7 @@ Clavis Nine          2305 X436000-0   Ba {Base Ruins}                           
                      2339 ???????-?                                                 ?00 -- M0 V M7 V     
 Cloudia              2401 D110414-A   Ni {Salvage World}                            214 Rr M6 V M6 V
 Ke-aday              2404 D4556M7-8   Ag Ni                                         610 Na K4 V K5 V
-Azure                2405 X989000-0   Ba                                            922 Na G6 V
+Azure                2405 X989000-0   Ba                                            022 Na G6 V
 Harland              2408 E599221-6   Lo                                            904 Na K3 V
 Valhalla             2410 D785694-7   Ag Ni Ri Ga                                     312 Na G7 V
                      2411 ???????-?                                                 ?03 -- M3 V          

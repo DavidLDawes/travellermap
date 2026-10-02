@@ -1,39 +1,39 @@
-Chtierabl
+# Chtierabl
 
-A: Chiemi                    sub_a.dat
-B: Dlanjij                   sub_b.dat
-C: Zanjevi                   sub_c.dat
-D: Bianchebl                 sub_d.dat
-E: Sebli                     sub_e.dat
-F: Shtieqr                   sub_f.dat
-G: Azha                      sub_g.dat
-H: Iazhdebl                  sub_h.dat
-I: Dliania                   sub_i.dat
-J: Kiepl                     sub_j.dat
-K: Jdali                     sub_k.dat
-L: Jdiedri                   sub_l.dat
-M: Tiena                     sub_m.dat
-N: Stoetl                    sub_n.dat
-O: Vedbragh                  sub_o.dat
-P: Bredrel                   sub_p.dat
+# A: Chiemi                    sub_a.dat
+# B: Dlanjij                   sub_b.dat
+# C: Zanjevi                   sub_c.dat
+# D: Bianchebl                 sub_d.dat
+# E: Sebli                     sub_e.dat
+# F: Shtieqr                   sub_f.dat
+# G: Azha                      sub_g.dat
+# H: Iazhdebl                  sub_h.dat
+# I: Dliania                   sub_i.dat
+# J: Kiepl                     sub_j.dat
+# K: Jdali                     sub_k.dat
+# L: Jdiedri                   sub_l.dat
+# M: Tiena                     sub_m.dat
+# N: Stoetl                    sub_n.dat
+# O: Vedbragh                  sub_o.dat
+# P: Bredrel                   sub_p.dat
 
-Bases:
-Z = Zhodani Navy
-Y = Zhodani Depot
-X = Zhodani Relay
-  = None
+# Bases:
+# Z = Zhodani Navy
+# Y = Zhodani Depot
+# X = Zhodani Relay
+#   = None
 
-Allegiance:
-11 Zh = Zhodani
-01 Zc = Zhodani Client
-07 Na = Non-aligned
-10 Dr = Droyne
-08    = Unknown
-                                          
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+# Allegiance:
+# 11 Zh = Zhodani
+# 01 Zc = Zhodani Client
+# 07 Na = Non-aligned
+# 10 Dr = Droyne
+# 08    = Unknown
+
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Chiemi SECTOR: Chtierabl
 #
 #--------1---------2---------3---------4---------5---------6---
@@ -68,10 +68,10 @@ Zdiensstiazh  0706 X899000-0    Ba              R  003 Na
 Ielzhdiavro   0709 C538567-6    Ni                 401 Zh
 Blitiettosh   0804 C645679-5    Ag Ni              601 Na
 Pledlchient   0806 X887000-0    Ba Ga           R  001 Na
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Dlanjij SECTOR: Chtierabl
 #
 $1008 1207 0 0 13
@@ -133,10 +133,10 @@ Zdal          1607 X977000-0    Ba              R  014 Zh
 Chezrel       1608 B985424-7  Z Ni Pa              703 Zh
 Zhdadlnap     1609 B545348-8  Z Lo                 413 Zh
 
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Zanjevi SECTOR: Chtierabl
 #
 $2310 2012 0 1 10
@@ -191,10 +191,10 @@ Zanjevi       2307 A657957-C  Z Hi Ga              314 Zh
 Kiam          2310 A887685-B  Z Ag Ni Ri Ga          202 Zh
 Shteplvraqr   2406 C596412-9    Ni Pa           A  624 Zh
 Qiblbrosh     2408 C580657-6    De Ni Ri           805 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Bianchebl SECTOR: Chtierabl
 #
 $2909 3111 0 1 10
@@ -256,10 +256,10 @@ Chtenshtlev   3205 C888546-9    Ag Ni Pr           304 Zc
 Yiebleqr      3206 C663300-A    Lo              A  124 Na
 Driaqrak      3208 X99A000-0    Ba Wa           R  011 Na
 Shiavlozdied  3210 C652738-8    Po                 734 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Sebli SECTOR: Chtierabl
 #
 $0113 0415 0 0 13
@@ -300,10 +300,10 @@ Shafrntsidr   0812 A533744-B  Z Po Na              322 Zh
 Dlots         0818 C486677-5    Ag Ni Ri           601 Zh
 Chtikchtezh   0819 X79A000-0    Ba Wa           R  015 Zh
 Chtieprzdrl   0820 C431647-A    Na Ni Po           902 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Shtieqr SECTOR: Chtierabl
 #
 $1619 1523 0 1 10
@@ -367,10 +367,10 @@ Dliazhdbriej  1612 CA87764-4  Z Ag Ri           A  124 Zh
 Ebeipl        1613 A43255A-D  Z Ni Po              710 Zh
 Iek'-737      1616 X100000-0    Ba Va           R  010 Zh
 Inpliaprz     1619 A251857-A  Z Po Ph              302 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Azha SECTOR: Chtierabl
 #
 $2012 1613 -1 0 10
@@ -399,10 +399,10 @@ Brnbribl      2117 C110377-A    Lo                 200 Zh
 Vreoqre       2211 C445300-B    Lo                 600 Zh
 Madl-939      2219 X310000-0    Ba              R  020 Zh
 Eshtabr       2419 C400110-8    Lo Va              100 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Iazhdebl SECTOR: Chtierabl
 #
 $3018 3021 0 1 10
@@ -439,10 +439,10 @@ Fleshdevrapl  3214 C779496-5    Ni                 321 Zh
 Shefldlebl    3217 D450767-4    De Po           A  203 Zh
 Eshtedlchte   3218 B587653-8  Z Ag Ni Ri           313 Zh
 Eqlnchieq     3219 X422000-0    Ba Po He        R  024 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Dliania SECTOR: Chtierabl
 #
 $0126 0225 0 0 13
@@ -491,10 +491,10 @@ Namtie        0824 C323356-7    Lo Po              513 Zh
 Bribdlapr     0826 C668234-9    Lo                 724 Zh
 Ifllench      0828 B7A3104-A    Fl Lo              203 Zh
 Fintszdial    0830 D86A747-4    Ri Wa              803 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Kiepl SECTOR: Chtierabl
 #
 $1523 1824 1 0 10
@@ -538,7 +538,7 @@ Eklsa         1223 B403465-C  Z Ic Ni Va           803 Zh
 Zadrpliefr    1224 B270765-B  Z De Pi              402 Zh
 Dlesntadl     1227 E544320-7    Lo                 410 Zh
 Avapra        1321 C772501-6    Ni He              600 Zh
-Chotlins      1322 C326000-A    Di                 103 Zh
+Chotlins      1322 C326000-A    Di                 003 Zh
 Kiepl         1323 A8D7984-C  Z Hi                 602 Zh
 Zdezhdiats    1328 A425305-E  Z Lo                 523 Zh
 Shanaz        1329 X7B6000-0    Ba Fl           R  034 Zh
@@ -558,10 +558,10 @@ Kiadldevont   1625 E545300-5    Lo                 115 Zh
 Klia-565      1626 X431000-0    Ba Po           R  024 Zh
 Rofrevr       1627 B232544-C    Ni Po              320 Zh
 Qlalrpl       1630 C97A683-8    Wa Ni              320 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Jdali SECTOR: Chtierabl
 #
 $2329 2231 0 1 10
@@ -620,10 +620,10 @@ Jefbrieql     2425 B210652-8  Z Na Ni              220 Zh
 Zdeflnzhiz    2430 B111674-C    Ic Na Ni           223 Zh
 
 
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Jdiedri SECTOR: Chtierabl
 #
 $2526 2329 -1 0 10
@@ -689,10 +689,10 @@ Beshsta       3226 A5658BA-9  Z  Ph Pa Ri          100 Zh
 Dazhif        3228 C100377-7    Lo Va              214 Zh
 Qanchnizhen   3229 C644223-7    Lo                 802 Zh
 Chtialal      3230 B797533-9    Ag Ni              804 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Tiena SECTOR: Chtierabl
 #
 $0738 0736 0 0 13
@@ -711,7 +711,7 @@ Jdiezola      0232 C9E6421-A    Ni                 512 Zc
 Krievqliev    0235 C98A777-6  Z Ri Wa              425 Zc
 Shte          0236 C652863-8    Po Ph              114 Zc
 Zdajlokr      0238 B357783-7    Ag                 921 Na
-Samtiejqlo    0240 X776000-0    Ba              R  513 Na
+Samtiejqlo    0240 X776000-0    Ba              R  013 Na
 Shtieblplezh  0333 B6A4667-9    Fl Ni              321 Zc
 Brokobl       0334 X121000-0    Ba Po           R  020 Na
 Noshzdiaplod  0338 C645364-7    Lo                 221 Na
@@ -740,10 +740,10 @@ Iebrqef       0834 B10036A-A    Lo Va              502 Zh
 Kiefivr       0836 C200774-7    Na Va Pi           104 Zh
 Atlziamevr    0838 C322413-8    Ni Po He           202 Zh
 Tli'          0839 C4637B9-6     Ri                200 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Stoetl SECTOR: Chtierabl
 #
 $1035 0736 -1 0 13
@@ -804,10 +804,10 @@ Zhadkraql     1635 B634356-B  Z Lo                 622 Zh
 Diafnchabiets 1637 D354523-3  Z Ag Ni              102 Zh
 Ianzhtetliez  1638 C985786-6    Ag Ri              313 Zh
 Nazhnchiefrol 1639 D450740-4    De Po              710 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Vedbragh SECTOR: Chtierabl
 #
 $2238 2201 0 1 10
@@ -888,10 +888,10 @@ Tienzhdlatle  2433 C46589B-6    Ri Ph Pa           203 Zh
 Vliezhdqish   2437 A300652-D  Z Na Va Ni           700 Zh
 Ezh Fliblnzh  2438 B587787-8  Z Ag Ri              103 Zh
 Ejnietle      2440 C543641-6    Ni Po              923 Zh
-                                          
-                                          
----------------------------------------------------------------------- 
-                                          
+
+
+# ---------------------------------------------------------------------- 
+
 @SUB-SECTOR: Bredrel SECTOR: Chtierabl
 #
 $2631 2231 -1 0 13
@@ -959,4 +959,4 @@ Tlaj          3234 C160500-B    De Ni Pr           214 Zh
 Voie          3235 B8888AB-B  Z  Ph Pa Ri          824 Zh
 Tievrli'      3239 D200867-8    Na Va Ph Pi          324 Zh
 Bienj         3240 B658623-A  Z Ag Ni              402 Zh
-                                          
+

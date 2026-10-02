@@ -1,18 +1,18 @@
-CRUCIS MARGIN SECTOR - M1000 (GATEWAY) ERA
+# CRUCIS MARGIN SECTOR - M1000 (GATEWAY) ERA
 
-The data in the sector text files is laid out in column format:
+# The data in the sector text files is laid out in column format:
 
- 1-14: Name
-15-18: HexNbr
-20-28: UWP
-   31: Bases
-33-47: Codes & Comments
-   49: Zone
-52-54: PBG
-56-57: Allegiance
-59-74: Stellar Data
+#  1-14: Name
+# 15-18: HexNbr
+# 20-28: UWP
+#    31: Bases
+# 33-47: Codes & Comments
+#    49: Zone
+# 52-54: PBG
+# 56-57: Allegiance
+# 59-74: Stellar Data
 
-....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+# ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
 Aiwo          0101 D685740-5    Ag Ri Ga           402 Na B9 V F0 V 
 Boe           0103 B897896-9     Ph Pa Pi          101 Na K7 V G2 V 
 Acier         0106 EAC4652-9    Fl Ni              820 Na M7 V F9 V 
@@ -259,7 +259,7 @@ Loche         1936 C766653-7    Ag Ni Ri Ga          612 Na K6 V
 Erywin        1938 D773434-2    Ni                 702 Na B8 V 
 Beowawe       2003 E643953-9    Hi In Po           204 Na A1 V G0 D 
 Souris        2004 B753636-B  N Ni Po              724 Na K6 V 
-Taginae       2008 E666040-0    Ga Ba              600 Na M2 V 
+Taginae       2008 E666040-0    Ga Ba              000 Na M2 V 
 Sluiskin      2010 B767559-B    Ag Ni Ga Pr          622 Na F4 V 
 Konski        2012 E535400-5    Ni                 800 KC M5 V 
 Katowice      2014 A8A7868-B  N Fl Ph              522 KC M3 V 

@@ -1,6 +1,6 @@
-Angfutsag
-11 0
-              1    2          3 4               5  6   7      8
+# Angfutsag
+# 11 0
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 23693
 #Alleg: 04: Va: "Vargr (non-aligned)"
@@ -285,7 +285,7 @@ Angfutsag
 .             1734 X691000-0    Ba He              013 --     F1V 
 .             2834 X766000-0    Ba Ga              000 --     F6V 
 .             3134 X443000-0    Ba Po              017 --     F6V M2V
-Kfoersarsaz   0335 B884001-9    Di                 535 Va     F4V M8V
+Kfoersarsaz   0335 B884001-9    Di                 035 Va     F4V M8V
 .             1435 X220000-0    Ba De Po           000 --     K2V 
 .             1935 X544000-0    Ba                 015 --     F6V K4V M0V
 .             2435 X997000-0    Ba                 020 --     F2V 

@@ -136,7 +136,7 @@ Hex  Name                 UWP       Remarks                               {Ix} (
 1427 Merant               D766975-5 Ga Hi Pr                              {-1} (A86+1) [B879] - - - 702 9  Rf K1 V             
 1428 Dal Hallen           A485736-A Ag Ri Tz (Quemm)W (minor)             {+4} (B6B+2) [7B2B] - M - 624 10 Rf M0 V             
 1528 Pel Avena            B102243-9 Ic Lo Va                              {+0} (710+1) [1216] - M - 420 7  Rf K7 III           
-1621 Demon's Eye          X000000-0 As Ba Va Da                           {-3} (200-5) [0000] - - A 300 3  Nx A3 Ib F3 III M7 V
+1621 Demon's Eye          X000000-0 As Ba Va Da                           {-3} (200-5) [0000] - - A 000 3  Nx A3 Ib F3 III M7 V
 1627 Nassin               C6A1358-A He Fl Lo                              {+0} (620-1) [6388] - - - 400 7  Rf K2 V             
 1628 Zuramid              C89A545-6 Ni Wa                                 {-2} (B40+1) [7356] - - - 802 8  Rf F5 V M7 V        
 1629 Lias                 B877978-9 Hi In                                 {+3} (A8C-2) [5C56] - - - 410 8  Rf G1 V M3 V        

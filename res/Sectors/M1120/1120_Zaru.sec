@@ -197,7 +197,7 @@ Gengil     0818 B325474-E    Ni                623  Na
 # Subsector F: Khipge
 # Name     Hex  UWP       B  Trade Code(s)    TPPG  Alg
 Khipge     0914 E756AA6-9    Hi Ga             114  Lu
-Deyis II   0917 E874000-8    Di               A 900  Na
+Deyis II   0917 E874000-8    Di               A 000  Na
 Hirah      0918 AABA433-E N  Fl Ni             103  Na
 Belebrat   1011 C7997A7-9     Pi               605  Na
 Resra      1012 C425100-B S  Lo                932  Na
@@ -403,12 +403,12 @@ Temenee    1821 B465220-D    Lo                804  Lu   F3V M4D
 Sagree     1822 C756440-A    Ni Ga Pa          605  Na   K0V M9D
 Tetrini    1823 B876554-C    Ag Ni             812  Na   G2V
 Zecu       1826 B667253-D    Lo Ga             603  Na   K0V M8D
-Sensee     1922 B310010-A  N Di                715  Na   G4IV M0D
+Sensee     1922 B310010-A  N Di                015  Na   G4IV M0D
 Kdept      1924 E625785-9     Pi               623  Na   F4V M2D
 Ter-ritt   2023 B765440-A  N Ni Ga Pa          603  Oa   F2IV M2D
 Alcau      2030 B897554-7  N Ag Ni             100  Na   G2V
 Reemen     2129 B77A405-A  S Ni Wa             703  Na   F2V
-Mettari    2130 D654002-9  S Di                204  Na   F1IV M4D
+Mettari    2130 D654002-9  S Di                004  Na   F1IV M4D
 Clavert    2222 B100433-B    Ni Va             914  Oa   K0IV
 Bacelbron  2223 B525677-C  S Ni                614  Oa   A5V
 Dust       2224 B331721-B    Na Po             724  Oa   M0V
@@ -467,11 +467,11 @@ Donsam     3230 B766502-A    Lo                303  Oa   K4V
 
 # Subsector M: Void
 # Name     Hex  UWP       B  Trade Code(s)    TPPG  Alg
-Farreach   0135 X677000-0    Ba                824  Na
+Farreach   0135 X677000-0    Ba                024  Na
 Askyat     0140 B665835-B    Ga Ph Pa Ri An Dw         314  Na
 Noritomo   0239 B675563-B    Ag Ni O:0338      623  Na
 Havre      0338 B577985-E    Hi In             110  Na
-Lutyen     0432 X639000-0    Ba                805  Na
+Lutyen     0432 X639000-0    Ba                005  Na
 Dent       0433 X885521-8    Ag Ni Ga Pr         622  Na
 Colony Four 0738 B897944-C    Hi In             623  Na
 # Note: Subsector was administered from Subsector I so there was no local subsector capital.
@@ -480,13 +480,13 @@ Colony Four 0738 B897944-C    Hi In             623  Na
 
 # Name     Hex  UWP       B  Trade Code(s)    TPPG  Alg
 Union      0934 C654477-E    Ni Pa             412  Na
-Vail       0937 X879000-0    Ba                400  Na
-Craxi      1038 X310000-0    Ba                501  Na
-Allegro    1140 X322000-0    Ba He Po          704  Na
-Highstaff  1239 X520000-0    Ba De He Po         710  Na
-Star's End 1340 X449000-0    Ba                521  Na
-Zero Zero  1535 X487000-0    Ba                414  Na
-Faesi      1631 X435000-0    Ba                924  Na
+Vail       0937 X879000-0    Ba                000  Na
+Craxi      1038 X310000-0    Ba                001  Na
+Allegro    1140 X322000-0    Ba He Po          004  Na
+Highstaff  1239 X520000-0    Ba De He Po         010  Na
+Star's End 1340 X449000-0    Ba                021  Na
+Zero Zero  1535 X487000-0    Ba                014  Na
+Faesi      1631 X435000-0    Ba                024  Na
 # Note: Subsector was administered from Subsector O so there was no local subsector capital.
 
 # Subsector O: Rhamsteppe

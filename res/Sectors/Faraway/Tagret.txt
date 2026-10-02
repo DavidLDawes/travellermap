@@ -39,18 +39,18 @@ Hex  Name                 UWP       Remarks                 {Ix} (Ex) [Cx] N B  
 2307 Czatz                D167568-9 Ni Ag Pr Ag, Ni, O:2308                  -    100   Pr
 2308 Mansty               B000976-B Na, In As Va Hi Na                       -    101   Pr
 2310 Stromtu              C8914A7-A Ni He                                    M    101   Pr
-2405 Phoena               X876000-0 Ba                                          A 101   Pr
+2405 Phoena               X876000-0 Ba                                          A 001   Pr
 2406 Dreamworld           A968422-D Ni Pa                                         101   Pr
 2408 Balth                B788799-A Ag Ri Ar, R                              M    101   Pr
 2501 Dispopula            D432958-8 Hi Na Po Na, P                           -    101   Na
 2505 Hartz                A442695-A Ni He Po                                 M    101   Pr
 2507 Centra               A875A43-D Hi In In, Cx                             M    101   Pr
-2604 Agaro Elz            X4A0000-0 He Ba                                    -  R 100   Pr
+2604 Agaro Elz            X4A0000-0 He Ba                                    -  R 000   Pr
 2606 Lithiol              B898484-9 Ni Pa                                    M    101   Pr
 2607 Standa               B768797-B Ag Ri                                    -    101   Pr
 2608 Drulkap              D474232-8 Lo                                       -    100   Pr
 2610 Aprac-Culle          C577720-9 Ag Pi                                    M    101   Pr
-2702 Nextilin             X969000-0 Ba                                       -    101   Na
+2702 Nextilin             X969000-0 Ba                                       -    001   Na
 2703 Guagim               C849466-A Ni                                       M    100   Pr
 2705 Miracle              B1A0459-7 Ni                                       -    100   Pr
 2803 Eyslo                A348979-C Hi In In,                                M    101   Na
@@ -59,15 +59,15 @@ Hex  Name                 UWP       Remarks                 {Ix} (Ex) [Cx] N B  
 2807 Seflin               C9B7769-A Fl                                       M    101   Pr
 2808 Maroque              A615579-C Ic Ni                                    M    100   Pr
 2809 Dobol                E757676-6 Ag, Ni Ga Ag                             -    101   Pr
-2902 Norma                X000000-0 As Va Ba                                 -    101   Na
-2905 Marijol              X698000-0 Ba                                       -    101   Na
+2902 Norma                X000000-0 As Va Ba                                 -    001   Na
+2905 Marijol              X698000-0 Ba                                       -    001   Na
 2907 Spaolre              B44576A-A Ag Pi                                    M  A 100   Pr
 2910 Gorjiak              C9C7515-6 Ni Fl                                    S    101   Cs
-3001 076-789              X663000-0 Ba                                       -    101   Na
+3001 076-789              X663000-0 Ba                                       -    001   Na
 3004 Illopsis             E342468-9 He Ni Po Ni, P                           M    101   Na
 3008 Tresde Deyde         B877756-B Ag Pi                                    M    101   Na
-3103 Runnepty             X000000-0 As Va Ba                                 -    100   Na
-3105 Goosgrek             X29A000-0 Ba                                       -  A 101   Na
+3103 Runnepty             X000000-0 As Va Ba                                 -    000   Na
+3105 Goosgrek             X29A000-0 Ba                                       -  A 001   Na
 3107 Fantastica           D8894A7-6 Ni                                       -  A 100   Na
 0113 Shard                B7C4204-C Fl Lo                                    S    101   Cs
 0119 Elvuil               D455676-6 Ag, Ni Ag                                -    100   Na
@@ -75,6 +75,6 @@ Hex  Name                 UWP       Remarks                 {Ix} (Ex) [Cx] N B  
 0420 Skilok               A457419-B Ni Pa                                    -    101   Na
 0512 057-943              C996204-C Lo                                       S    101   Cs
 0616 Darvo Nett           X004600-0 As Ic Va Ni Rs                           S    101   Im
-0714 Wilkorv              X737000-0 Ba                                       -    101   Na
-0816 Deatra               X000000-0 As Va Ba                                 -    100   Na
+0714 Wilkorv              X737000-0 Ba                                       -    001   Na
+0816 Deatra               X000000-0 As Va Ba                                 -    000   Na
 0818 Sig-Natrea Prime     B679684-A Ag, Ni O:0919                            -    101   Na

@@ -1,9 +1,9 @@
-Yiklerzdanzh
-1 3
+# Yiklerzdanzh
+# 1 3
 
 # 2012-03-05 - josh - Corrected truncated names (per table at the bottom of the file)
 
-              1    2          3 4               5  6   7  
+#               1    2          3 4               5  6   7  
 # Credits to HIWG australia, at http://dove.mtx.net.au/~grants/hiwg.html.
 # they list this as 1200 data, but the same data should be usable in 
 # 1120 by just chopping 80 years off the timeline.
@@ -290,7 +290,7 @@ Kizdalfa      2007 A433AC7-E  Z Hi Na Po Cp        324 Zh G3V
 Abrievie      2010 B99558A-A    Ag Ni              500 Zh F2V                 
 Sobropr       2011 C585865-8    Ri Ph Pa O:2211          711 Zh F0V                 
 Liansh        2013 D87A164-A    Wa Lo O:1615       104 Mi M1V                 
-Elfedlent     2016 DAA2064-A    Fl He Di Rv 1615    813 Mi M0V                 
+Elfedlent     2016 DAA2064-A    Fl He Di Rv 1615    013 Mi M0V                 
 Flekriabr     2023 C9A8532-8    Ni Fl              230 Na K1V D               
 Kansh         2028 C8A5979-B  M Hi Fl In           304 Na D D                 
 Itsplanzhikar 2035 A358786-E  I Ag                 341 Iz F8V                 
@@ -438,7 +438,7 @@ Adrdochdachia 3211 B767557-A    Ag Ni Ga Pr          501 Zh D
 Edshanjo      3217 X656651-2    Ag Ni Ga        F  802 Zh F1V                 
 Afroqnats     3228 C8776AE-C    Ag Ni              903 Na D                   
 Zdaefia       3229 X978000-0    Ba                 032 Na D D                 
-Arikrfekr     3235 X200012-A    Va Di           F  902 Zh M7III               
+Arikrfekr     3235 X200012-A    Va Di           F  002 Zh M7III               
 Jeshiel       3237 X8A0830-8    He Ph           F  403 Zh D D                 
 Rodebr Rifia  3239 X368899-E    Ri Ph Pa C6       F  310 Zh F7V D               
 #Zh Zhodani Consulate

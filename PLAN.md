@@ -187,6 +187,15 @@ with their authors. Regenerate the baseline after each step to lock in the gains
 - D1/D2: `tools/tradecodes` recomputes UWP-determined trade codes and mechanical (Ex) values,
   using the validator's own rules (`World.TradeCodeRules`). Applied: 31,315 worlds in 215
   files (generated T5SS files excluded).
+- Group 1 mechanical fixes (branch `datafix-group1`), also in `tools/tradecodes`: warnings
+  9,972 → **6,839**, errors unchanged.
+  - (Ex) efficiency `+0` → `+1` (1,022 worlds).
+  - PBG population multiplier → 0 when Pop is 0 (780; the 41 written `X` are left alone).
+  - `{Ix}` set to the calculated importance (573, keeping each file's brace style).
+  - Legacy SEC header/note lines the parser ignored → `#` comments (372 lines). Five malformed
+    world lines in JG-CrucisMargin.sec are left as they are, and the tool reports them.
+  - T5SS-generated M1105 sectors: `--t5ss` edits the sources in `res/t5ss/data` (392 Pop-0
+    (Ex) values, 1 missing `Pr`), then `perl update_world_data.pl --source-data` regenerates them.
 - The rest needs sector authors: **`DATA-ISSUES.md`** lists the 199 worlds with undefined codes
   (13 sectors), 3 border codes, and 2 unparseable lines, with what was checked.
 

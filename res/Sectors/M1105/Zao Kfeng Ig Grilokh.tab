@@ -4,7 +4,7 @@ Zaok	A	0105	Khuraezvoen	C7B3413-8		Fl Ni		304	Va	M1 V						0
 Zaok	A	0109	Sullkhoekorr	B400878-5	K	Na Va Ph Pi		300	Va	F6 V						0
 Zaok	A	0407	Lesung	C634578-3		Ni		103	Va	M6 V						0
 Zaok	A	0506	Gaghdoerr	X8788AF-0	C	Ph Pa Pi		423	Va	K2 V D						0
-Zaok	A	0601	Goknaerar	B562000-8	K	Di		100	Va	F8 V						0
+Zaok	A	0601	Goknaerar	B562000-8	K	Di		000	Va	F8 V						0
 Zaok	A	0603	Gaseorr	C434723-8	K			401	Va	M8 V						0
 Zaok	A	0605	Louguedhogh	C100798-8		Na Va Pi		702	Va	M5 V						0
 Zaok	A	0810	Thogzosukhu	D565564-5		Ag Ni Pr		915	Va	G6 V D						0
@@ -16,7 +16,7 @@ Zaok	B	1201	Atskun	C758542-4		Ag Ni		603	VF	G0 V						0
 Zaok	B	1203	Thoeraath	C200563-7		Mr Ni Va		504	VF	M0 V						0
 Zaok	B	1210	Dhuellu	B666242-A	K	Lo Ga		506	Va	F3 V M8 V F7 V D						0
 Zaok	B	1305	Koungoegh	A9B1974-B	K	Cp Cx Fl He Hi In		207	VF	F8 V F9 V D						0
-Zaok	B	1403	Daetsanoesou	C000000-7	C	As Di Va		203	VF	F0 V						0
+Zaok	B	1403	Daetsanoesou	C000000-7	C	As Di Va		003	VF	F0 V						0
 Zaok	B	1608	Earvourrgh	C778486-6	C	Ni Pa		801	Va	F0 V						0
 Zaok	C	1705	Ngourruerr	E200977-6	C	Hi Na Va In		400	Va	F2 V D						0
 Zaok	C	1708	Ozughgon	B773773-7		Pi		403	Va	G9 V D						0
@@ -53,8 +53,8 @@ Zaok	E	0619	Gzuegversats	C55A224-8		Lo Wa		106	Va	K9 V D						0
 Zaok	E	0713	Kfoutsikang	B366133-8		Lo		504	Va	K0 V D						0
 Zaok	F	0920	Fangguguegz	B636977-B		Hi		606	Va	M3 V D						0
 Zaok	F	1019	Dokhzadz	E41289A-2	C	Ic Na Ph Pi		203	Va	F6 V						0
-Zaok	F	1115	Uevuueng	A353000-9		Po Di		913	Va	F8 V						0
-Zaok	F	1116	Arodzodh	D455000-3		Di		302	Va	F5 V						0
+Zaok	F	1115	Uevuueng	A353000-9		Po Di		013	Va	F8 V						0
+Zaok	F	1116	Arodzodh	D455000-3		Di		002	Va	F5 V						0
 Zaok	F	1517	Nanthueg	C645979-A		Hi In		603	Va	F1 V						0
 Zaok	F	1611	Rekhsluekh	D9E6125-2	C	Lo		302	Va	M3 V						0
 Zaok	F	1616	Arrdzodh	B56997C-8	K	Hi Pr		404	Va	G5 V D						0
@@ -96,7 +96,7 @@ Zaok	H	2920	Gveuvoer	C563878-3	K	Ph Ri		312	VK	F3 V D						0
 Zaok	H	3017	Garoknurz	D566100-4	C	Lo		904	VK	F7 V						0
 Zaok	H	3018	Geledzkek	C547341-4		Lo		803	VK	F6 V D						0
 Zaok	H	3019	Kugueraakh	C350577-5		De Ni Po		811	VK	F3 V D						0
-Zaok	H	3117	Anluthraegh	C566000-5	K	Di		616	VK	F7 V D						0
+Zaok	H	3117	Anluthraegh	C566000-5	K	Di		016	VK	F7 V D						0
 Zaok	H	3119	Kodzae	X000774-3	C	As Na Va Pi		303	VK	M4 V						0
 Zaok	H	3213	Ngaeken	DA9A796-6		Oc Pi		103	VK	F1 V						0
 Zaok	H	3218	Dzetsouth	D689514-5		Ni Pr		204	VK	F8 V D						0
@@ -111,7 +111,7 @@ Zaok	I	0422	Khoukan	C749489-5	C	Ni		300	Va	G6 V D						0
 Zaok	I	0426	Khoellarr	A9BA443-C	K	Fl Ni		301	VS	M1 V						0
 Zaok	I	0526	Egho	C563445-6	K	Ni		200	VS	F8 V						0
 Zaok	I	0527	Ouza	A784568-D		Ag Mr Ni Pr		605	VS	F8 V D						0
-Zaok	I	0530	Kueksghaegz	B665000-9	K	Di Ga		122	VS	F3 V						0
+Zaok	I	0530	Kueksghaegz	B665000-9	K	Di Ga		022	VS	F3 V						0
 Zaok	I	0622	Aekhgaekh	C8A1455-7		Fl Ni He		102	Va	G3 V						0
 Zaok	I	0627	Kfagirs	B6647BE-5		Ag Pz Ri	A	414	VS	K1 V						0
 Zaok	I	0830	Gaezoku	C562866-5		Ri Ph		905	Va	F5 V D						0
@@ -124,7 +124,7 @@ Zaok	J	1130	Ugvuellue	B89A7AC-A		Wa Pi		300	Va	G6 V D						0
 Zaok	J	1326	Ghogueorr	B694865-9	K	Ph Pa Pi		700	Va	K1 V D						0
 Zaok	J	1330	Ukhurogh	C422255-6		Lo Po He		215	Va	M7 V D						0
 Zaok	J	1421	Dzaeksgnae	C67A510-9	K	Ni Wa		326	Va	F6 V D						0
-Zaok	J	1424	Gzadhlaaeng	A203000-E	K	Ic Va Di		104	Va	M4 V M7 V						0
+Zaok	J	1424	Gzadhlaaeng	A203000-E	K	Ic Va Di		004	Va	M4 V M7 V						0
 Zaok	J	1526	Rurrol	C430355-7	K	De Lo Po		502	Va	F5 IV D						0
 Zaok	J	1627	Outoul	C666254-8	C	Lo Ga		311	Va	F1 V						0
 Zaok	K	1721	Teeggoung	E300333-3		Lo Va		600	Va	K4 V						0
@@ -169,7 +169,7 @@ Zaok	L	3127	Ngororrg	C859443-5		Ni		221	VK	F0 V						0
 Zaok	L	3128	Goeren	C474200-6	K	Lo		800	VK	M3 V						0
 Zaok	L	3221	Dzafue	C000659-A	C	As Na Ni Va		412	VK	F6 V						0
 Zaok	L	3222	Kfuenounruer	B34489E-5		Ph Pa Pi		501	VK	F2 V						0
-Zaok	L	3226	Voungang	E651000-5		Po Di		103	VK	G0 V						0
+Zaok	L	3226	Voungang	E651000-5		Po Di		003	VK	G0 V						0
 Zaok	L	3227	Sougaeekaeg	B787766-8	C	Ag Ri Ga		901	VK	K5 V D						0
 Zaok	M	0137	Turadhadz	C8A3831-6		Fl Ph		500	Va	F3 V						0
 Zaok	M	0139	Loure	D628577-4	C	Ni		301	Va	M7 V						0
@@ -197,7 +197,7 @@ Zaok	N	0940	Kuedzouan	D300576-6	C	Ni Va		804	Va	M5 V D						0
 Zaok	N	1134	Oekhoe	C274547-A		Ag Ni		920	Va	F1 V						0
 Zaok	N	1136	Ousoenoeksku	C4659CB-8	C	Hi Pr		712	Va	F1 V						0
 Zaok	N	1139	Khonueodz	C3208AD-5		De Na Po He Ph Pi		116	Va	F6 V D						0
-Zaok	N	1233	Udhoedz	C000000-5	K	As Va Di		312	Va	K9 V						0
+Zaok	N	1233	Udhoedz	C000000-5	K	As Va Di		012	Va	K9 V						0
 Zaok	N	1234	Gaenaegodz	C597746-6	C	Ag Pi		920	Va	F0 V						0
 Zaok	N	1331	Ellkneng	C667774-4	K	Ag Ga Ri		102	Va	F6 V D						0
 Zaok	N	1332	Fasoukh	E579346-1	C	Lo		601	Va	F2 V						0

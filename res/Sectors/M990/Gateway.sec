@@ -1,18 +1,18 @@
-GATEWAY SECTOR - M1000 (GATEWAY) ERA
+# GATEWAY SECTOR - M1000 (GATEWAY) ERA
 
-The data in the sector text files is laid out in column format:
+# The data in the sector text files is laid out in column format:
 
- 1-14: Name
-15-18: HexNbr
-20-28: UWP
-   31: Bases
-33-47: Codes & Comments
-   49: Zone
-52-54: PBG
-56-57: Allegiance
-59-74: Stellar Data
+#  1-14: Name
+# 15-18: HexNbr
+# 20-28: UWP
+#    31: Bases
+# 33-47: Codes & Comments
+#    49: Zone
+# 52-54: PBG
+# 56-57: Allegiance
+# 59-74: Stellar Data
 
-....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+# ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
 Tanis         0127 EA89655-7    Ni Ri              520 Na F0 V 
 Far Portal    0130 A238546-A  N Ni                 323 Na M4 III 
 Harper        0135 E647ABC-9    Hi In              215 Na F9 V G9 D 
@@ -238,7 +238,7 @@ Megas         2639 EA9A5A9-7    Ni Oc              724 Na F6 V
 Drasheveen    2701 C230225-9    De Lo Po           812 Na M0 III 
 Holbert       2704 E243442-4    Ni Po              112 Na F9 V K0 D 
 Akeen         2708 A66A620-D  N Ni Wa Ri           112 Ak F5 V M5 D 
-Hidden Body   2716 E100000-0    Va Ba              313 Na A8 V 
+Hidden Body   2716 E100000-0    Va Ba              013 Na A8 V 
 Carlton       2720 B667754-A    Ag Ri Ga           825 Sw F2 V M7 D 
 Freeport      2722 B646402-9    Ni Pa              423 Sw F5 V 
 Goldstar      2725 B658301-A    Lo                 914 Na F5 V 

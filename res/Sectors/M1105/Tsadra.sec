@@ -1,76 +1,76 @@
 
-Tsadra Sector Data
+# Tsadra Sector Data
 
-A: Adrablar                  sub_a.dat
-B: Ziebell                   sub_b.dat
-C: Tash                      sub_c.dat
-D: Driaflzha                 sub_d.dat
-E: Ezh'Bremla                sub_e.dat
-F: Ritsie                    sub_f.dat
-G: Lisheen                   sub_g.dat
-H: Iplzhdr                   sub_h.dat
-I: Adrsidle                  sub_i.dat
-J: Jdibla                    sub_j.dat
-K: Chazhdar                  sub_k.dat
-L: Fjords                    sub_l.dat
-M: Ozenj                     sub_m.dat
-N: Febasi                    sub_n.dat
-O: Shtiaiqr'                 sub_o.dat
-P: Zhdoekl                   sub_p.dat
+# A: Adrablar                  sub_a.dat
+# B: Ziebell                   sub_b.dat
+# C: Tash                      sub_c.dat
+# D: Driaflzha                 sub_d.dat
+# E: Ezh'Bremla                sub_e.dat
+# F: Ritsie                    sub_f.dat
+# G: Lisheen                   sub_g.dat
+# H: Iplzhdr                   sub_h.dat
+# I: Adrsidle                  sub_i.dat
+# J: Jdibla                    sub_j.dat
+# K: Chazhdar                  sub_k.dat
+# L: Fjords                    sub_l.dat
+# M: Ozenj                     sub_m.dat
+# N: Febasi                    sub_n.dat
+# O: Shtiaiqr'                 sub_o.dat
+# P: Zhdoekl                   sub_p.dat
 
-Bases:
-A = Naval and Scout
-D = Depot
-M = Military
-N = Naval
-r = Research Facility
-S = Scout
-W = Way Station
-X = Zhodani Relay
-Y = Zhodani Depot
-Z = Zhodani Navy
-  = None
+# Bases:
+# A = Naval and Scout
+# D = Depot
+# M = Military
+# N = Naval
+# r = Research Facility
+# S = Scout
+# W = Way Station
+# X = Zhodani Relay
+# Y = Zhodani Depot
+# Z = Zhodani Navy
+#   = None
 
-Allegiance:
-01 Zh = Zhodani
-02 Zc = Zhodani Client
-03 Dr = Droyne
-04 Va = Vargr
-05 Ed = Eiaplial Davr
-06 Fj = Fjords
-07 Tc = Talpaku Client
-08 Tl = Talpaku Communality
-09 Tn = Tsadra Nadir
-10 Na = Not Aligned
+# Allegiance:
+# 01 Zh = Zhodani
+# 02 Zc = Zhodani Client
+# 03 Dr = Droyne
+# 04 Va = Vargr
+# 05 Ed = Eiaplial Davr
+# 06 Fj = Fjords
+# 07 Tc = Talpaku Client
+# 08 Tl = Talpaku Communality
+# 09 Tn = Tsadra Nadir
+# 10 Na = Not Aligned
 
 @SUB-SECTOR A: Adrablar SECTOR: Tsadra
 #
 #--------1---------2---------3---------4---------5---------6-----
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- ---
-              0102 X8A3000-0    Ba Fl              313 Na G4V
-              0107 X69A000-0    Ba Wa              911 Na M3V M8V
-              0110 X7A7000-0    Ba Fl              403 Na G3II
-              0204 X748000-0    Ba                 603 Na M3V
-              0301 X210000-0    Ba                 125 Na K1IV
-              0303 X400000-0    Ba Va              525 Na F0V M4V
-              0305 X000000-0    As Va Ba           322 Na A2V F0V
-              0308 X79A000-0    Ba Wa              802 Na M8III
-              0310 X100000-0    Ba Va              101 Na M4V
-              0402 X596000-0    Ba                 722 Na M0V M8V
-              0406 XA6A000-0    Ba Oc              410 Na F0V
-              0408 X520000-0    Ba De Po He         112 Na M2V M6V
-              0410 X468000-0    Ba                 424 Na F5V
-              0503 X976000-0    Ba                 522 Na M8V
+              0102 X8A3000-0    Ba Fl              013 Na G4V
+              0107 X69A000-0    Ba Wa              011 Na M3V M8V
+              0110 X7A7000-0    Ba Fl              003 Na G3II
+              0204 X748000-0    Ba                 003 Na M3V
+              0301 X210000-0    Ba                 025 Na K1IV
+              0303 X400000-0    Ba Va              025 Na F0V M4V
+              0305 X000000-0    As Va Ba           022 Na A2V F0V
+              0308 X79A000-0    Ba Wa              002 Na M8III
+              0310 X100000-0    Ba Va              001 Na M4V
+              0402 X596000-0    Ba                 022 Na M0V M8V
+              0406 XA6A000-0    Ba Oc              010 Na F0V
+              0408 X520000-0    Ba De Po He         012 Na M2V M6V
+              0410 X468000-0    Ba                 024 Na F5V
+              0503 X976000-0    Ba                 022 Na M8V
 ADRABLAR      0505 A867954-B  A Hi Ga Pr Cp         202 Na G3IV
-              0601 X424000-0    Ba                 213 Na F8V
-              0603 X301000-0    Ba Ic Va           134 Na K3v K0v
-              0607 X86A000-0    Ba Wa              301 Na F8V
+              0601 X424000-0    Ba                 013 Na F8V
+              0603 X301000-0    Ba Ic Va           034 Na K3v K0v
+              0607 X86A000-0    Ba Wa              001 Na F8V
 Shatir'Le     0701 C100555-A  M Ni Va           R  610 Na M3V
 Ainsfer       0706 C000462-8    As Ni Va           312 Na M4V
 IATSDLE       0709 C867AAA-7    Hi Ga              103 Tn G7V
-Aintfr        0802 X89A000-0    Ba Wa              423 Na G3V
-Stianzs       0804 X514000-0    Ba Ic              724 Na A4V
+Aintfr        0802 X89A000-0    Ba Wa              023 Na G3V
+Stianzs       0804 X514000-0    Ba Ic              024 Na A4V
 Baviedle      0808 C488100-6    Lo                 913 Tn M4V
 Nebasisi      0809 A888674-9  N Ag Ni Ri           404 Tn G4III
 
@@ -79,13 +79,13 @@ Nebasisi      0809 A888674-9  N Ag Ni Ri           404 Tn G4III
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-Darkl         0901 X94A000-0    Ba Wa              112 Na M6V
+Darkl         0901 X94A000-0    Ba Wa              012 Na M6V
 Lofraits      0905 C967691-7    Ag Ni Ri           524 Na M0V
 Shitrav       0907 C511427-8  M Ic Ni              702 Na M2V M2V
 Zhobard       0910 C6A6531-7    Fl Ni              400 Tn M1V M2V M3V
 Yieleba       1002 C766310-5  M Lo Ga              310 Na M7V
-Capistra      1009 C8B7000-0    Ba Fl              411 Na G8V M5V
-Izmali        1101 X320000-0    Ba De He Po          804 Na M0V M3V
+Capistra      1009 C8B7000-0    Ba Fl              011 Na G8V M5V
+Izmali        1101 X320000-0    Ba De He Po          004 Na M0V M3V
 Lavelier      1104 A777530-B  N Ag Ni              702 Ed G6V
 Chaviets      1107 B352553-C  N Ni Po              220 Ed M9V
 Mietle        1110 C987659-9    Ri Ni Ag           423 Tn M6V
@@ -190,29 +190,29 @@ Sizhdriet     3209 A000775-F  r As Na Va Pi          204 Zh K4V
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-              0113 X200000-0    Ba Va              401 Na M9V
-              0118 X555000-0    Ba                 902 Na F4V M0V
-              0211 X000000-0    As Va Ba An          121 Na M1V
-              0215 X794000-0    Ba                 203 Na M1V M1V
-              0219 X9A6000-0    Ba Fl              135 Na G5V
-              0311 X357000-0    Ba                 220 Na M7IV
-              0314 X86A000-0    Ba Wa              204 Na G3IV
-              0318 X440000-0    Ba De He Po          512 Na M2V M2V
-              0414 X758000-0    Ba                 500 Na F8IV
-              0415 X343000-0    Ba Po              323 Na M1v
-              0417 X696000-0    Ba                 213 Na G2V
-              0419 X687000-0    Ba Ga              413 Na M3II
-              0511 X635000-0    Ba                 402 Na M1V M8V
-              0512 X799000-0    Ba                 502 Na M7v
-              0516 X8A7000-0    Ba Fl              802 Na G2IV
-              0518 X630000-0    Ba De Po           713 Na M1V M3V
-              0613 X000000-0    As Va Ba           212 Na K1II
-              0615 X475000-0    Ba                 714 Na M7v
-              0618 X446000-0    Ba                 104 Na M9VI
-              0620 X613000-0    Ba Ic              202 Na K3III
+              0113 X200000-0    Ba Va              001 Na M9V
+              0118 X555000-0    Ba                 002 Na F4V M0V
+              0211 X000000-0    As Va Ba An          021 Na M1V
+              0215 X794000-0    Ba                 003 Na M1V M1V
+              0219 X9A6000-0    Ba Fl              035 Na G5V
+              0311 X357000-0    Ba                 020 Na M7IV
+              0314 X86A000-0    Ba Wa              004 Na G3IV
+              0318 X440000-0    Ba De He Po          012 Na M2V M2V
+              0414 X758000-0    Ba                 000 Na F8IV
+              0415 X343000-0    Ba Po              023 Na M1v
+              0417 X696000-0    Ba                 013 Na G2V
+              0419 X687000-0    Ba Ga              013 Na M3II
+              0511 X635000-0    Ba                 002 Na M1V M8V
+              0512 X799000-0    Ba                 002 Na M7v
+              0516 X8A7000-0    Ba Fl              002 Na G2IV
+              0518 X630000-0    Ba De Po           013 Na M1V M3V
+              0613 X000000-0    As Va Ba           012 Na K1II
+              0615 X475000-0    Ba                 014 Na M7v
+              0618 X446000-0    Ba                 004 Na M9VI
+              0620 X613000-0    Ba Ic              002 Na K3III
 Ritlie        0711 C569748-6    Ri                 423 Tn F6IV
-              0714 X595000-0    Ba                 604 Na F3III
-              0715 X867000-0    Ba Ga              704 Na M7V
+              0714 X595000-0    Ba                 004 Na F3III
+              0715 X867000-0    Ba Ga              004 Na M7V
 Dinchya       0717 D744578-6    Ag Ni              904 Na G8V
 QUAE          0811 B68A975-C  N Hi Wa Pr           201 Tn M8IV
 EZH'BREMLA    0812 AAA5AC8-D  D Fl Hi In Cp        302 Tn F8V
@@ -276,7 +276,7 @@ TIAZHDR       2116 CAB6AA7-B    Fl Hi In           603 Zh F0IV
 Dreflpatl     2118 C338353-C    Lo                 704 Zh M7V
 Qlenjiebe     2119 C55947C-8    Ni                 401 Zh M2V
 Driaflzha     2211 B250310-B  Z De Lo Po        A  330 Zh K4V
-Kreztliap     2212 X200000-0    Ba Va              213 Zh K3V
+Kreztliap     2212 X200000-0    Ba Va              013 Zh K3V
 LISHEEN       2213 A867968-D  Z Hi Ga Pr Cp          104 Zh G9V
 Riqlapl       2214 C200684-9    Na Ni Va           701 Zh K7III
 Valkrie       2215 C200313-B    Lo Va           R  100 Zh F5V
@@ -342,27 +342,27 @@ Tsialsier     3220 A230553-D  Y De Ni Po           604 Zh M3V
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-              0123 XAC4000-0    Ba Fl              905 Na F8V
-              0125 X561000-0    Ba                 303 Na G7Iv
-              0126 X587000-0    Ba                 520 Na M4V
-              0128 X779000-0    Ba                 713 Na G4V
-              0224 X400000-0    Ba Va              204 Na F2III
-              0226 X300000-0    Ba Va              911 Na K2V
-              0227 X596000-0    Ba                 804 Na M2V M2V
-              0324 X446000-0    Ba                 111 Na F5V M2V
-              0326 X236000-0    Ba                 404 Na F8V
-              0330 X381000-0    Ba                 603 Na F3V M1V
-              0427 X411000-0    Ba Ic              314 Na K2V
-              0429 X649000-0    Ba                 502 Na F7V M3V
-              0521 X532000-0    Ba Po              805 Na M7V
-              0523 X000000-0    As Va Ba An          624 Na K3III
+              0123 XAC4000-0    Ba Fl              005 Na F8V
+              0125 X561000-0    Ba                 003 Na G7Iv
+              0126 X587000-0    Ba                 020 Na M4V
+              0128 X779000-0    Ba                 013 Na G4V
+              0224 X400000-0    Ba Va              004 Na F2III
+              0226 X300000-0    Ba Va              011 Na K2V
+              0227 X596000-0    Ba                 004 Na M2V M2V
+              0324 X446000-0    Ba                 011 Na F5V M2V
+              0326 X236000-0    Ba                 004 Na F8V
+              0330 X381000-0    Ba                 003 Na F3V M1V
+              0427 X411000-0    Ba Ic              014 Na K2V
+              0429 X649000-0    Ba                 002 Na F7V M3V
+              0521 X532000-0    Ba Po              005 Na M7V
+              0523 X000000-0    As Va Ba An          024 Na K3III
 ADRSIDLE      0525 A8679B5-C  N Hi Ga Pr           123 Na G8V
-              0527 X686000-0    Ba Ga              705 Na F4V
-              0628 X150000-0    Ba De Po           304 Na M6V
-              0630 X964000-0    Ba                 514 Na G2V
-              0724 X6B7000-0    Ba Fl              414 Na K7V
+              0527 X686000-0    Ba Ga              005 Na F4V
+              0628 X150000-0    Ba De Po           004 Na M6V
+              0630 X964000-0    Ba                 014 Na G2V
+              0724 X6B7000-0    Ba Fl              014 Na K7V
 Kebla         0821 C86A648-C    Ni Ri Wa Cp        203 Tn G3V
-              0825 X594000-0    Ba                 900 Na F2V M2V
+              0825 X594000-0    Ba                 000 Na F2V M2V
 
 @SUB-SECTOR J: Jdibla SECTOR: Tsadra
 #
@@ -370,23 +370,23 @@ Kebla         0821 C86A648-C    Ni Ri Wa Cp        203 Tn G3V
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
 Diesh         0923 B120764-B  N Po De Na Pi          204 Tn M2V
-              0925 X564000-0    Ba                 103 Na M5V
-              0926 X99A000-0    Ba Wa              314 Na F9V
-              0927 X776000-0    Ba                 724 Na G7IV
+              0925 X564000-0    Ba                 003 Na M5V
+              0926 X99A000-0    Ba Wa              014 Na F9V
+              0927 X776000-0    Ba                 024 Na G7IV
 Jdesi         1022 CA87959-A  N Hi Pr              304 Tn F7V
-              1029 X435000-0    Ba                 411 Na K4III
+              1029 X435000-0    Ba                 011 Na K4III
 Anslian       1124 A98A373-B  N Lo Wa              824 Tn G2V
-              1127 X555000-0    Ba                 911 Na F6V
+              1127 X555000-0    Ba                 011 Na F6V
 Imzl          1221 B66A452-C  D Ni Wa              512 Tn G3V
-              1226 X543000-0    Ba Po              713 Na F5V
+              1226 X543000-0    Ba Po              013 Na F5V
 Ismlz         1324 A423398-B  N Lo Po              314 Tn M2V
-              1327 X986000-0    Ba                 702 Na M7V
+              1327 X986000-0    Ba                 002 Na M7V
 Ozh           1421 A1008AA-C  N Na Va Ph Pi          522 Tn F7V
 JDIBLA        1425 A876954-C  A Hi In Cp           222 Na M4V
 Ezianzh       1523 C20067A-A    Na Ni Va           501 Tn F2V
-              1527 X000000-0    As Va Ba           202 Na M1V M4V
+              1527 X000000-0    As Va Ba           002 Na M1V M4V
 Chta'Inch     1622 AA67958-B  N Hi Pr              322 Tn G3V
-              1628 X798000-0    Ba                 915 Na F7V M1V
+              1628 X798000-0    Ba                 015 Na F7V M1V
 
 @SUB-SECTOR K: Chazhdar SECTOR: Tsadra
 #
@@ -394,22 +394,22 @@ Chta'Inch     1622 AA67958-B  N Hi Pr              322 Tn G3V
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
 Ziare         1721 A796672-C  N Ag Ni              514 Tn G4V
-              1724 X200000-0    Ba Va              124 Na F4V
-              1729 X556000-0    Ba                 425 Na M6V
-              1827 XA6A000-0    Ba Oc              112 Na K3V
-              1926 X344000-0    Ba                 824 Na M7V
-              2023 X5A7000-0    Ba Fl              100 Na M3III
-              2024 X341000-0    Ba He Po           222 Na F3IV
-              2030 X000000-0    As Va Ba           702 Na M5V
+              1724 X200000-0    Ba Va              024 Na F4V
+              1729 X556000-0    Ba                 025 Na M6V
+              1827 XA6A000-0    Ba Oc              012 Na K3V
+              1926 X344000-0    Ba                 024 Na M7V
+              2023 X5A7000-0    Ba Fl              000 Na M3III
+              2024 X341000-0    Ba He Po           022 Na F3IV
+              2030 X000000-0    As Va Ba           002 Na M5V
 CHAZHDAR      2125 A86795B-C  A Hi Ga Pr Cp       A  622 Na G2V
-              2221 X9C8000-0    Ba Fl           A  823 Na F2III
+              2221 X9C8000-0    Ba Fl           A  023 Na F2III
 Rathaus       2222 A100559-D  r Ni Va              513 Fj M5V
-              2228 X365000-0    Ba                 624 Na F6V
+              2228 X365000-0    Ba                 024 Na F6V
 Sazhefr       2321 E100300-8    Lo Va              321 Na M7V
 Norrway       2322 CAA7652-7    Fl Ni              513 Fj F8V
 Fynlan        2324 A764637-A  N Ag Ni Ri           902 Fj M4V
-              2327 X511000-0    Ba Ic              603 Na K4V M2V
-              2426 X544000-0    Ba                 322 Na G3IV
+              2327 X511000-0    Ba Ic              003 Na K4V M2V
+              2426 X544000-0    Ba                 022 Na G3IV
 
 
 @SUB-SECTOR L: Fjords SECTOR: Tsadra
@@ -447,92 +447,92 @@ Afar          3230 D6A7501-2    Fl Ni              622 Tc G2V
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-              0132 X539000-0    Ba                 724 Na M5V
-              0139 X679000-0    Ba                 104 Na F2III
-              0233 XAC4000-0    Ba Fl              703 Na M8V
-              0234 X8A9000-0    Ba Fl              900 Na G1V
-              0236 X400000-0    Ba Va              301 Na K6III
-              0331 X664000-0    Ba                 504 Na M7V
-              0339 X8C0000-0    Ba He              913 Na M6V
-              0432 X342000-0    Ba He Po           203 Na M5V
-              0435 X666000-0    Ba Ga              315 Na F7v
-              0437 X202000-0    Ba Ic Va           102 Na K7V
-              0534 X567000-0    Ba                 803 Na G7V
-              0540 X757000-0    Ba Ga              722 Na F1IV
-              0632 X79A000-0    Ba Wa              620 Na M7V
-              0636 X000000-0    As Va Ba           303 Na K3IV
-              0734 X876000-0    Ba                 602 Na F7III
-              0736 X6B3000-0    Ba Fl              714 Na M3V
-              0738 XAAA000-0    Ba Fl              601 Na G2V
-              0840 X650000-0    Ba De Po           503 Na F5V
+              0132 X539000-0    Ba                 024 Na M5V
+              0139 X679000-0    Ba                 004 Na F2III
+              0233 XAC4000-0    Ba Fl              003 Na M8V
+              0234 X8A9000-0    Ba Fl              000 Na G1V
+              0236 X400000-0    Ba Va              001 Na K6III
+              0331 X664000-0    Ba                 004 Na M7V
+              0339 X8C0000-0    Ba He              013 Na M6V
+              0432 X342000-0    Ba He Po           003 Na M5V
+              0435 X666000-0    Ba Ga              015 Na F7v
+              0437 X202000-0    Ba Ic Va           002 Na K7V
+              0534 X567000-0    Ba                 003 Na G7V
+              0540 X757000-0    Ba Ga              022 Na F1IV
+              0632 X79A000-0    Ba Wa              020 Na M7V
+              0636 X000000-0    As Va Ba           003 Na K3IV
+              0734 X876000-0    Ba                 002 Na F7III
+              0736 X6B3000-0    Ba Fl              014 Na M3V
+              0738 XAAA000-0    Ba Fl              001 Na G2V
+              0840 X650000-0    Ba De Po           003 Na F5V
 
 @SUB-SECTOR N: Febasi SECTOR: Tsadra
 #
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-              0932 X000000-0    As Va Ba           403 Na K3Iv
-              0940 XAAA000-0    Ba Fl              324 Na G2V
-              1037 X215000-0    Ba Ic              714 Na M3V
-              1131 X784000-0    Ba                 204 Na M0III
-              1134 X442000-0    Ba Po He           501 Na G8V
-              1135 X8A9000-0    Ba Fl              200 Na F7V
-              1137 X556000-0    Ba                 903 Na M2II
-              1234 X555000-0    Ba                 412 Na M6V
-              1235 X342000-0    Ba Po He           624 Na M5V
-              1237 X726000-0    Ba                 514 Na M3IV
-              1238 X735000-0    Ba                 104 Na K2V K2V
-              1332 X560000-0    Ba De              513 Na F9V
-              1333 X98A000-0    Ba Wa              600 Na G2V
-              1337 X101000-0    Ba Ic Va           802 Na K9II
-              1340 X76A000-0    Ba Wa              700 Na F3V
-              1433 XA67000-0    Ba                 114 Na G4V
-              1438 X85A000-0    Ba Wa              803 Na M2IV
-              1440 X5A4000-0    Ba Fl              912 Na M7IV
-              1536 X6BA000-0    Ba Fl              612 Na M9V
-              1633 XA6A000-9    Oc Di              310 Na F6V
-              1639 X8A7000-0    Ba Fl              704 Na G2III
+              0932 X000000-0    As Va Ba           003 Na K3Iv
+              0940 XAAA000-0    Ba Fl              024 Na G2V
+              1037 X215000-0    Ba Ic              014 Na M3V
+              1131 X784000-0    Ba                 004 Na M0III
+              1134 X442000-0    Ba Po He           001 Na G8V
+              1135 X8A9000-0    Ba Fl              000 Na F7V
+              1137 X556000-0    Ba                 003 Na M2II
+              1234 X555000-0    Ba                 012 Na M6V
+              1235 X342000-0    Ba Po He           024 Na M5V
+              1237 X726000-0    Ba                 014 Na M3IV
+              1238 X735000-0    Ba                 004 Na K2V K2V
+              1332 X560000-0    Ba De              013 Na F9V
+              1333 X98A000-0    Ba Wa              000 Na G2V
+              1337 X101000-0    Ba Ic Va           002 Na K9II
+              1340 X76A000-0    Ba Wa              000 Na F3V
+              1433 XA67000-0    Ba                 014 Na G4V
+              1438 X85A000-0    Ba Wa              003 Na M2IV
+              1440 X5A4000-0    Ba Fl              012 Na M7IV
+              1536 X6BA000-0    Ba Fl              012 Na M9V
+              1633 XA6A000-9    Oc Di              010 Na F6V
+              1639 X8A7000-0    Ba Fl              004 Na G2III
 
 @SUB-SECTOR O: Shtiaiqr' SECTOR: Tsadra
 #
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-              1735 X696000-0    Ba                 210 Na M3V M3V
-              1740 X255000-0    Ba                 322 Na K4V
-              1837 X704000-0    Ba Ic Va           613 Na M6V
-              1931 X333000-0    Ba Po              104 Na M2V M8V M5V
-              1935 XAB7000-0    Ba Fl              503 Na F5V
-              2031 X548000-0    Ba                 203 Na F2V
-              2037 X000000-0    As Va Ba           921 Na F7IV
-              2131 X434000-0    Ba                 312 Na K3V
-              2132 XAC6000-0    Ba Fl              702 Na M8V
-              2134 XAA6000-0    Ba Fl              424 Na G7V
-              2139 X77A000-0    Ba Wa              110 Na F7V
-              2236 X766000-0    Ba Ga              414 Na F8V
-              2332 X777000-0    Ba                 812 Na F1IV
-              2334 X86A000-0    Ba Wa              700 Na G4V
-              2340 X100000-0    Ba Va              512 Na M4III
-              2436 X120000-0    Ba De Po           604 Na K3V
-              2438 X846000-0    Ba                 813 Na G9V
+              1735 X696000-0    Ba                 010 Na M3V M3V
+              1740 X255000-0    Ba                 022 Na K4V
+              1837 X704000-0    Ba Ic Va           013 Na M6V
+              1931 X333000-0    Ba Po              004 Na M2V M8V M5V
+              1935 XAB7000-0    Ba Fl              003 Na F5V
+              2031 X548000-0    Ba                 003 Na F2V
+              2037 X000000-0    As Va Ba           021 Na F7IV
+              2131 X434000-0    Ba                 012 Na K3V
+              2132 XAC6000-0    Ba Fl              002 Na M8V
+              2134 XAA6000-0    Ba Fl              024 Na G7V
+              2139 X77A000-0    Ba Wa              010 Na F7V
+              2236 X766000-0    Ba Ga              014 Na F8V
+              2332 X777000-0    Ba                 012 Na F1IV
+              2334 X86A000-0    Ba Wa              000 Na G4V
+              2340 X100000-0    Ba Va              012 Na M4III
+              2436 X120000-0    Ba De Po           004 Na K3V
+              2438 X846000-0    Ba                 013 Na G9V
 
 @SUB-SECTOR P: Zhdoekl SECTOR: Tsadra
 #
 #--------1---------2---------3---------4---------5---------6---
 #PlanetName   Loc. UPP Code   B   Notes         Z  PBG Al LRX *
 #----------   ---- ---------  - --------------- -  --- -- --- -
-              2532 X9A6000-0    Ba Fl              804 Na M4V
-              2634 XA67000-0    Ba                 722 Na G2V
-              2732 X566000-0    Ba                 312 Na F6V
-              2833 X000000-0    As Va Ba           501 Na M2III
-              2835 X777000-0    Ba                 622 Na G3V
-              2838 X445000-0    Ba An              224 Na F7V M3V
-              2839 X234000-0    Ba                 912 Na M1V
-              2933 X430000-0    Ba De Po           602 Na F3IV
-              2937 X325000-0    Ba                 404 Na K2III
-              3032 X543000-0    Ba Po              512 Na M2III
-              3035 X787000-0    Ba Ga              700 Na F4II
-              3133 X8C4000-0    Ba Fl              303 Na M1V M3V
-              3136 X576000-0    Ba                 113 Na G7III
-              3233 X302000-0    Ba Ic Va           902 Na K3V
-              3240 X334000-0    Ba                 414 Na F6V
+              2532 X9A6000-0    Ba Fl              004 Na M4V
+              2634 XA67000-0    Ba                 022 Na G2V
+              2732 X566000-0    Ba                 012 Na F6V
+              2833 X000000-0    As Va Ba           001 Na M2III
+              2835 X777000-0    Ba                 022 Na G3V
+              2838 X445000-0    Ba An              024 Na F7V M3V
+              2839 X234000-0    Ba                 012 Na M1V
+              2933 X430000-0    Ba De Po           002 Na F3IV
+              2937 X325000-0    Ba                 004 Na K2III
+              3032 X543000-0    Ba Po              012 Na M2III
+              3035 X787000-0    Ba Ga              000 Na F4II
+              3133 X8C4000-0    Ba Fl              003 Na M1V M3V
+              3136 X576000-0    Ba                 013 Na G7III
+              3233 X302000-0    Ba Ic Va           002 Na K3V
+              3240 X334000-0    Ba                 014 Na F6V

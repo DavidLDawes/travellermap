@@ -11,7 +11,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 0403 Feasi                DAC7742-3 Fl                                         110   Na   F7 V
 0406 Refoha               B31079C-7 Na Pi                                      703   Na   M9 V
 0410 Egoyo                D313568-7 Ni Ic O:0507                               411   Na   K3 V
-0502 Veshia               B434000-8 Di                                    K    612   SC   G0 V
+0502 Veshia               B434000-8 Di                                    K    012   SC   G0 V
 0503 Lari                 A795440-B Ni Pa                                 K    715   SC   F7 V DM
 0504 Helore               C79A988-7 Hi In Wa                                   924   Na   F7 V DM
 0505 Lemafit              C9C5730-7 Fl                                         201   Na   M9 V
@@ -144,7 +144,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2320 Farfar               C10086A-7 Na Va Ph Pi O:2419                         714   Na   K6 V
 2418 Cal                  C432321-7 Lo Po                                 V    801   Na   K0 V DM
 2419 Jalana               C20089C-8 Na Va Ph Pi                                813   Na   A5 V
-2513 Laropoy              E300000-0 Ba Va                                      103   Na   M2 VI DM
+2513 Laropoy              E300000-0 Ba Va                                      003   Na   M2 VI DM
 2516 Wionef               D150110-8 De Lo Po                                   202   Na   F1 V DM
 2613 Harkod               C8A4587-A Fl Ni                                      813   Na   F4 V
 2713 Ireon                BA9A647-A Ni Oc                                      204   Na   G6 V DM
