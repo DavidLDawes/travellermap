@@ -302,6 +302,44 @@ namespace Maps
         private static Regex SOPHPOP_MINOR_CODE_REGEX = new Regex(@"^\((.*)\)([0-9])?$", RegexOptions.Compiled);
         private static Regex SOPHPOP_MAJOR_CODE_REGEX = new Regex(@"^\[(.*)\]([0-9])?$", RegexOptions.Compiled);
 
+        private static bool HexIn(int value, string hex) => hex.Any(c => value == SecondSurvey.FromHex(c));
+
+        /// <summary>
+        /// The T5 trade codes fully determined by the UWP, with their rules (T5.10 Book 3), in
+        /// T5SS order: planetary, population, economic. Used by Validate and tools/tradecodes.
+        /// (Di, for Pop 0 and TL 1+, may also be written Di(sophont), so it's handled separately.)
+        /// </summary>
+        internal static readonly IReadOnlyList<(string Code, Func<World, bool> Applies)> TradeCodeRules = new (string, Func<World, bool>)[]
+        {
+            // Planetary
+            ("As", w => HexIn(w.Size, "0") /*&& HexIn(w.Atmosphere, "0") && HexIn(w.Hydrographics, "0")*/),
+            ("De", w => HexIn(w.Atmosphere, "23456789") && HexIn(w.Hydrographics, "0")),
+            ("Fl", w => HexIn(w.Atmosphere, "ABC") && HexIn(w.Hydrographics, "123456789A")),
+            ("Ga", w => HexIn(w.Size, "678") && HexIn(w.Atmosphere, "568") && HexIn(w.Hydrographics, "567")),
+            ("He", w => HexIn(w.Size, "3456789ABC") && HexIn(w.Atmosphere, "2479ABC") && HexIn(w.Hydrographics, "012")),
+            ("Ic", w => HexIn(w.Atmosphere, "01") && HexIn(w.Hydrographics, "123456789A")),
+            ("Oc", w => HexIn(w.Size, "ABCDEF") && HexIn(w.Atmosphere, "3456789DEF") && HexIn(w.Hydrographics, "A")),
+            ("Va", w => HexIn(w.Atmosphere, "0")),
+            ("Wa", w => HexIn(w.Size, "3456789") && HexIn(w.Atmosphere, "3456789DEF") && HexIn(w.Hydrographics, "A")),
+
+            // Population
+            ("Ba", w => w.PopulationExponent == 0 /*&& Government == 0 && Law == 0*/ && w.TechLevel == 0),
+            ("Lo", w => HexIn(w.PopulationExponent, "123")),
+            ("Ni", w => HexIn(w.PopulationExponent, "456")),
+            ("Ph", w => HexIn(w.PopulationExponent, "8")),
+            ("Hi", w => HexIn(w.PopulationExponent, "9ABCDEF")),
+
+            // Economic
+            ("Pa", w => HexIn(w.Atmosphere, "456789") && HexIn(w.Hydrographics, "45678") && HexIn(w.PopulationExponent, "48")),
+            ("Ag", w => HexIn(w.Atmosphere, "456789") && HexIn(w.Hydrographics, "45678") && HexIn(w.PopulationExponent, "567")),
+            ("Na", w => HexIn(w.Atmosphere, "0123") && HexIn(w.Hydrographics, "0123") && HexIn(w.PopulationExponent, "6789ABCDEF")),
+            ("Pi", w => HexIn(w.Atmosphere, "012479") && HexIn(w.PopulationExponent, "78")),
+            ("In", w => HexIn(w.Atmosphere, "012479ABC") && HexIn(w.PopulationExponent, "9ABCDEF")),
+            ("Po", w => HexIn(w.Atmosphere, "2345") && HexIn(w.Hydrographics, "0123")),
+            ("Pr", w => HexIn(w.Atmosphere, "68") && HexIn(w.PopulationExponent, "59")),
+            ("Ri", w => HexIn(w.Atmosphere, "68") && HexIn(w.PopulationExponent, "678")),
+        };
+
         internal void Validate(ErrorLogger errors, int lineNumber, string line)
         {
             // TODO: Validate partial UWPs
@@ -314,16 +352,6 @@ namespace Maps
             // Generation-rule checks: whether a value could come from the T5 world generation
             // rolls. Canon worlds often deviate on purpose, so these are hints, not warnings.
             void HintUnless(bool test, string message) { if (!test) errors.Hint(message, lineNumber, line); }
-
-            static bool Check(int value, string hex)
-            {
-                foreach (char c in hex)
-                {
-                    if (value == SecondSurvey.FromHex(c))
-                        return true;
-                }
-                return false;
-            }
 
             bool CC(string code, bool calc)
             {
@@ -369,35 +397,14 @@ namespace Maps
             #endregion
 
             #region Codes
-            // Planetary
-            bool As = CC("As", Check(Size, "0") /*&& Check(Atmosphere, "0") && Check(Hydrographics, "0")*/);
-            bool De = CC("De", Check(Atmosphere, "23456789") && Check(Hydrographics, "0"));
-            bool Fl = CC("Fl", Check(Atmosphere, "ABC") && Check(Hydrographics, "123456789A"));
-            bool Ga = CC("Ga", Check(Size, "678") && Check(Atmosphere, "568") && Check(Hydrographics, "567"));
-            bool He = CC("He", Check(Size, "3456789ABC") && Check(Atmosphere, "2479ABC") && Check(Hydrographics, "012"));
-            bool Ic = CC("Ic", Check(Atmosphere, "01") && Check(Hydrographics, "123456789A"));
-            bool Oc = CC("Oc", Check(Size, "ABCDEF") && Check(Atmosphere, "3456789DEF") && Check(Hydrographics, "A"));
-            bool Va = CC("Va", Check(Atmosphere, "0"));
-            bool Wa = CC("Wa", Check(Size, "3456789") && Check(Atmosphere, "3456789DEF") && Check(Hydrographics, "A"));
+            // Trade codes determined by the UWP (TradeCodeRules).
+            var codes = new Dictionary<string, bool>();
+            foreach (var (code, applies) in TradeCodeRules)
+                codes[code] = CC(code, applies(this));
+            bool As = codes["As"], Va = codes["Va"], Ag = codes["Ag"], In = codes["In"], Ri = codes["Ri"];
 
-            // Population
             bool Di = (PopulationExponent == 0 /*&& Government == 0 && Law == 0*/ && TechLevel > 0);
             ErrorIf(Di && !HasCodePrefix("Di"), "Missing code: Di or Di(sophont) is required if Pop=0 and TL>0");
-            bool Ba = CC("Ba", PopulationExponent == 0 /*&& Government == 0 && Law == 0*/ && TechLevel == 0);
-            bool Lo = CC("Lo", Check(PopulationExponent, "123"));
-            bool Ni = CC("Ni", Check(PopulationExponent, "456"));
-            bool Ph = CC("Ph", Check(PopulationExponent, "8"));
-            bool Hi = CC("Hi", Check(PopulationExponent, "9ABCDEF"));
-
-            // Economic
-            bool Pa = CC("Pa", Check(Atmosphere, "456789") && Check(Hydrographics, "45678") && Check(PopulationExponent, "48"));
-            bool Ag = CC("Ag", Check(Atmosphere, "456789") && Check(Hydrographics, "45678") && Check(PopulationExponent, "567"));
-            bool Na = CC("Na", Check(Atmosphere, "0123") && Check(Hydrographics, "0123") && Check(PopulationExponent, "6789ABCDEF"));
-            bool Pi = CC("Pi", Check(Atmosphere, "012479") && Check(PopulationExponent, "78"));
-            bool In = CC("In", Check(Atmosphere, "012479ABC") && Check(PopulationExponent, "9ABCDEF"));
-            bool Po = CC("Po", Check(Atmosphere, "2345") && Check(Hydrographics, "0123"));
-            bool Pr = CC("Pr", Check(Atmosphere, "68") && Check(PopulationExponent, "59"));
-            bool Ri = CC("Ri", Check(Atmosphere, "68") && Check(PopulationExponent, "678"));
 
             ErrorUnless(As == IsAs, "Internal code failure: As/IsAs definitions");
             ErrorUnless(Va == IsVa, "Internal code failure: Va/IsVa definitions");
