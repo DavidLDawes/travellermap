@@ -9,7 +9,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 1302 Argastin             ?655???-? Ga Tz                                    - - - ?14 8  Nx M0 V     
 1305 Nastax               ?7A2???-? Fl He                                    - - - ?10 10 Nx F3 V     
 1401 Sannard              ?512???-? Ic Tz                                    - - - ?21 11 Nx K8 V M2 V
-3002 Kaa Hakh             E212000-0 Ba Ic Tz             {-3} (600+1) [0000] - - - 014 10 Sx M5 V BD  
+3002 Kaa Hakh             E212000-0 Ba Ic Tz             {-3} (600-5) [0000] - - - 014 10 Sx M5 V BD  
 3101 Ikhasha              D687324-6 Ga Lo (Sath)W        {-3} (920+1) [51A9] - - - 513 9  Sx G7 V     
 0821 Murshup              ?000???-? As Va                                    - - - ?23 11 Nx M9 III   
 2834 Tavi                 ?201???-? Ic Va Tz                                 - - - ?13 7  Nx M4 V     

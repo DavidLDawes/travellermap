@@ -247,7 +247,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 1428 Gilimey              A300367-A Lo Va Sa Px          {+1} (C21+1) [3459] - - - 621 11 EC A7 V D             
 1521 Quikker              CAB4101-9 Fl Lo                {-1} (800-1) [216B] - - - 702 9  Na F2 V               
 1522 Hasturo              E458634-7 Ag Ni Tz             {-2} (553+3) [4438] - - - 200 7  Na K6 V M1 V          
-1526 Wrayth               X557000-0 Ba Tz Fo             {-3} (800+5) [0000] - - R 020 6  Na M1 V               
+1526 Wrayth               X557000-0 Ba Tz Fo             {-3} (800-5) [0000] - - R 020 6  Na M1 V               
 1624 Sludge               X223000-0 Ba Po Sa Fo          {-3} (700-5) [0000] - - R 031 10 Na M5 V M7 V          
 1626 Glayyme              B564886-8 Ri Pa Ph Tz          {+1} (978+2) [9988] - - - 510 6  Na K8 V               
 1722 Anine                C643667-4 Ni Po Mr             {-2} (651+2) [8424] - - - 410 7  Na K2 V               

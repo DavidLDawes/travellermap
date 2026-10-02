@@ -64,7 +64,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 2808 Tryeai'ayu           B899799-B Pi                   {+2} (C67+1) [594A] - -  - 904 9  As F2 V M4 V      
 2809 Aiahoih              B948687-9 Ag Ni                {+1} (755+1) [3788] - N  - 720 8  As G3 V           
 2810 Hrasalrarar          B623353-B Lo Po                {+1} (921+1) [249B] - -  - 601 7  As K0 IV          
-2901 Ivvo                 X739000-0 Ba Tz                {-3} (600+1) [0000] - -  - 004 13 Na K5 V M7 V BD BD
+2901 Ivvo                 X739000-0 Ba Tz                {-3} (600-5) [0000] - -  - 004 13 Na K5 V M7 V BD BD
 2904 Aauawoihriy          C685244-9 Lo Ga                {-1} (810+1) [4176] - -  - 822 8  As K3 V M8 V      
 2907 Hloahyakh            B576677-6 Ag Ni Tz             {+0} (752+1) [7638] - -  - 703 8  As K5 V           
 2909 Waatel               B86A572-C Ni Wa Pr             {+1} (A46+1) [868F] - -  - 303 7  As G9 V           

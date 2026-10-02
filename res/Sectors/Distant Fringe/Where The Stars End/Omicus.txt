@@ -185,35 +185,35 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 1840 Shuvurisi            ?440???-? De He Po                                 - - - ?01 7  Nx F5 IV              
 1939 Iskoto               ?323???-? Po                                       - - - ?10 8  Nx F7 V               
 2037 Lorn                 ?7A2???-? Fl He                                    - - - ?23 10 Nx K1 V M2 V          
-2038 Omadur               E587000-7 Di                   {-3} (A00+1) [0000] - - - 001 6  Nx G6 V               
-2240 Rago                 X100000-9 Va Di Sa             {-2} (B00+1) [0000] - - - 021 9  Bw M7 V M8 V          
+2038 Omadur               E587000-7 Di                   {-3} (A00-5) [0000] - - - 001 6  Nx G6 V               
+2240 Rago                 X100000-9 Va Di Sa             {-2} (B00-5) [0000] - - - 021 9  Bw M7 V M8 V          
 2335 Guvusa               ?321???-? He Po Tz                                 - - - ?00 7  Nx M9 V               
-2339 Busako               E000000-A As Va Di Tz          {-1} (A00+1) [0000] - - - 011 6  Bw K4 V               
+2339 Busako               E000000-A As Va Di Tz          {-1} (A00-5) [0000] - - - 011 6  Bw K4 V               
 2435 Jysat                ?875???-? Tz                                       - - - ?00 4  Nx M1 V               
 2436 En sadar             ?696???-?                                          - - - ?23 10 Nx F4 V               
 2533 Phran                ?584???-?                                          - - - ?14 8  Nx G2 III M0 V        
-2536 Horch                E324000-4 Di Tz                {-3} (B00+1) [0000] - - - 000 7  Nx K6 V               
-2538 Ortino               X866000-7 Ga Di                {-3} (700+1) [0000] - - - 021 8  Nx G5 V               
+2536 Horch                E324000-4 Di Tz                {-3} (B00-5) [0000] - - - 000 7  Nx K6 V               
+2538 Ortino               X866000-7 Ga Di                {-3} (700-5) [0000] - - - 021 8  Nx G5 V               
 2632 Lebua                ?79A???-? Wa                                       - - - ?13 11 Nx G8 V K8 V          
 2635 Urvani               ?201???-? Ic Va Sa                                 - - - ?01 7  Nx M4 V               
-2637 Fhoru                E542000-8 He Po Di             {-3} (A00+1) [0000] - - - 020 10 Nx F8 V G1 V          
-2638 Ruv Durin            E000000-9 As Va Di             {-2} (900+1) [0000] - - - 021 9  Nx A5 V               
+2637 Fhoru                E542000-8 He Po Di             {-3} (A00-5) [0000] - - - 020 10 Nx F8 V G1 V          
+2638 Ruv Durin            E000000-9 As Va Di             {-2} (900-5) [0000] - - - 021 9  Nx A5 V               
 2734 Rhedur               ?677???-?                                          - - - ?11 9  Nx G4 V M2 V          
-2835 Cala                 X201000-4 Ic Va Di Tz          {-3} (800+1) [0000] - - - 001 5  Nx M1 V               
-2838 Go San               E411000-8 Ic Di Tz             {-3} (A00+1) [0000] - - - 011 14 Dr K8 V M9 V M6 V     
+2835 Cala                 X201000-4 Ic Va Di Tz          {-3} (800-5) [0000] - - - 001 5  Nx M1 V               
+2838 Go San               E411000-8 Ic Di Tz             {-3} (A00-5) [0000] - - - 011 14 Dr K8 V M9 V M6 V     
 2931 Vuchano              ?100???-? Va Tz                                    - - - ?01 6  Nx M4 V               
-2934 Throo                E6A0000-7 He Di Tz             {-3} (B00+1) [0000] - - - 011 7  Nx K9 V               
-2937 Indo                 X5A0000-4 He Di                {-3} (700+1) [0000] - - - 004 10 Dr F3 IV              
-2939 Whelan               XA59000-7 Di Tz                {-3} (600+1) [0000] - - - 013 11 Dr K8 V M7 V          
-2940 Su Huru              E570000-6 De He Di             {-3} (900+1) [0000] - - - 021 12 Dr M2 III M2 V        
-3035 Moloche              E342000-B He Po Di Tz          {-1} (C00+1) [0000] - - - 012 7  Dr K9 V               
-3036 Leemo                E756000-A Ga Di Tz             {-1} (700+1) [0000] - - - 004 7  Dr K6 V               
-3039 Dhar Luka            E485000-B Di                   {-1} (D00+1) [0000] - - - 024 11 Dr G1 V K1 V          
-3133 Kelal                E668000-9 Di                   {-2} (900+1) [0000] - - - 010 9  Nx M3 II K7 V         
-3134 Tamourn              E536000-7 Di                   {-3} (700+1) [0000] - - - 005 8  Nx K1 V               
-3136 Gana Zell            X8B0000-5 He Di Tz             {-3} (500+1) [0000] - - - 021 8  Dr K3 V               
-3138 Nahanah              E554000-A Di                   {-1} (A00+1) [0000] - - - 012 10 Dr F8 V M2 V          
+2934 Throo                E6A0000-7 He Di Tz             {-3} (B00-5) [0000] - - - 011 7  Nx K9 V               
+2937 Indo                 X5A0000-4 He Di                {-3} (700-5) [0000] - - - 004 10 Dr F3 IV              
+2939 Whelan               XA59000-7 Di Tz                {-3} (600-5) [0000] - - - 013 11 Dr K8 V M7 V          
+2940 Su Huru              E570000-6 De He Di             {-3} (900-5) [0000] - - - 021 12 Dr M2 III M2 V        
+3035 Moloche              E342000-B He Po Di Tz          {-1} (C00-5) [0000] - - - 012 7  Dr K9 V               
+3036 Leemo                E756000-A Ga Di Tz             {-1} (700-5) [0000] - - - 004 7  Dr K6 V               
+3039 Dhar Luka            E485000-B Di                   {-1} (D00-5) [0000] - - - 024 11 Dr G1 V K1 V          
+3133 Kelal                E668000-9 Di                   {-2} (900-5) [0000] - - - 010 9  Nx M3 II K7 V         
+3134 Tamourn              E536000-7 Di                   {-3} (700-5) [0000] - - - 005 8  Nx K1 V               
+3136 Gana Zell            X8B0000-5 He Di Tz             {-3} (500-5) [0000] - - - 021 8  Dr K3 V               
+3138 Nahanah              E554000-A Di                   {-1} (A00-5) [0000] - - - 012 10 Dr F8 V M2 V          
 3231 Ig Sula              ?865???-? Ga                                       - - - ?33 12 Nx F0 V M9 V M5 V     
-3233 Voy                  X547000-6 Di                   {-3} (500+1) [0000] - - - 001 5  Nx K2 V               
-3236 Sysax                E530000-8 De Po Di             {-3} (B00+1) [0000] - - - 013 10 Dr M5 III             
-3239 Vanalt               X689000-7 Di                   {-3} (900+1) [0000] - - - 010 9  Dr F1 V M8 V          
+3233 Voy                  X547000-6 Di                   {-3} (500-5) [0000] - - - 001 5  Nx K2 V               
+3236 Sysax                E530000-8 De Po Di             {-3} (B00-5) [0000] - - - 013 10 Dr M5 III             
+3239 Vanalt               X689000-7 Di                   {-3} (900-5) [0000] - - - 010 9  Dr F1 V M8 V          

@@ -468,7 +468,7 @@ Hex  Name                         UWP       Remarks                             
 0935 Agnikrang                    B6568RK-D Ga Pa Ph                                                         -       O  - 723   Kk   K5 IV M1 V                          
 0938 Karhkeen                     B4345QK-C Ni                                                               -       K  - 710   Kk   K4 V                                
 0939 Exuur'r                      C7976RK-B Ag Ni                                                            -       K  - 224   Kk   M6 V                                
-1032 X'kug Ghung                  B5575QK-E Ni                                                               -       -  - 710   Kk   F2 V                                
+1032 X'kug Ghung                  B5575QK-E Ni Ag                                                            -       -  - 710   Kk   F2 V                                
 1038 Gnaeta                       C6323QK-A Lo Po                                                            -       K  - 822   Kk   M8 V BD                             
 1131 Gz'kruungu                   B687989-B Ga Hi Pr (Inx)                                                   -       K  - 514   Kk   M4 V                                
 1136 Iirikraa                     B4235QK-B Ni Po                                                            -       O  - 704   Kk   K3 V M3 V                           

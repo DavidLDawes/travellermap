@@ -2,11 +2,11 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 ---- -------------------- --------- -------------------- ---- ---- ---- - -- - --- - ---- ------------
 0106 Duggan's World       B657146-8 Ga Lo                                 N  A 103   Im
 0107 Wostenhot            X435468-2 Ni O:0203                                R 105   Na
-0203 Fourth Union Complex B000354-B Ni As Va Lo                              A 101   Na
+0203 Fourth Union Complex B000354-B As Va Lo                                 A 101   Na
 0208 Beda Fomm            C438588-7 Ni                                    S    105   Na
 0301 New Spain            B200774-C Va Na Pi Cp                           NS   104   Im
 0306 Roupenian            A501344-9 Ic Lo Va                                   101   JD
-0307 Beelfeld             C553386-8 Ni Lo Po                              S    101   Na
+0307 Beelfeld             C553386-8 Lo Po                                 S    101   Na
 0309 Gilon                A300667-D Ni Va Na O:0608                       S  A 103   Na
 0402 Khemat               D662220-6 Lo                                    S    101   JD
 0403 Caswall              B270415-9 Ni De                                 S    104   Na
@@ -61,7 +61,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 0218 Televa               B536323-B Lo                                    S    104   Im
 0219 Mohr                 C620422-9 De He Ni Po                                103   Im
 0220 Correya              C000531-8 As Va Ni                                   100   Im
-0316 Idracid              C200765-6 Cy O: 0517                                 102   Im
+0316 Idracid              C200765-6 Va Na Pi Cy O: 0517                        102   Im
 0317 Aamumeriin           B000423-D As Va Ni                                   100   Im
 0417 Zharg                B898311-8 Lo                                         103   Im
 0420 Menia                C765856-6 Ga Ph Pa Ri                                100   Im
@@ -80,21 +80,21 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 1018 Indakiirim           B554557-C Ag Ni                                      104   Im
 1111 Mariel               C758654-9 Ag Ni                                 S    104   Im
 1216 Vedati               C531211-7 Lo Po Co                                   103   Im
-1220 Achan                B9CA8AA-A Fl Wa                                 S  A 104   Im
-1315 Keledem              C540987-9 De Hi In Po                                101   Im
-1317 Acelo                C567556-A Ag Ni                                 S    103   Im
-1319 Uusharikagu          B000688-A Ni Va                                 DS   101   Im
-1411 Namoi                C98A532-8 Ni Wa                                      100   Im
-1412 Supagadii            A67A853-D Wa                                    S    102   Im
+1220 Achan                B9CA8AA-A Fl Ph                                 S  A 104   Im
+1315 Keledem              C540987-9 De Hi In Po He                             101   Im
+1317 Acelo                C567556-A Ag Ni Pr                              S    103   Im
+1319 Uusharikagu          B000688-A Ni Va As Na                           DS   101   Im
+1411 Namoi                C98A532-8 Ni Wa Pr                                   100   Im
+1412 Supagadii            A67A853-D Wa Ph Pi                              S    102   Im
 1413 Okpaki               C222457-C Ni Po                                      100   Im
-1414 Vixtanjet            D8DA8CF-7 Fl Wa                                    A 104   Im
+1414 Vixtanjet            D8DA8CF-7 Wa Ph                                    A 104   Im
 1417 Iriirami             B111599-A Ic Ni                                      100   Im
 1420 Xocatl               C9B8451-9 Fl Ni                                    A 102   Im
 1512 Beles                C234977-8 Hi                                         103   Im
 1515 Isatyn               A86AA94-E Wa Hi Cp                              NS   105   Im
-1516 Qawee                C420769-7 De Na Po                                   103   Im
+1516 Qawee                C420769-7 De Na Po He Pi                             103   Im
 1518 Arashamri            C234977-8 Hi                                         103   Im
-1612 Chimadu              A769342-D                                       S    105   Im
-1614 Geiti                A585521-B Ag Ni                                      103   Im
-1616 Hannan's Find        B655763-A Ag                                    N    104   Im
+1612 Chimadu              A769342-D Lo                                    S    105   Im
+1614 Geiti                A585521-B Ag Ni Pr                                   103   Im
+1616 Hannan's Find        B655763-A Ag Ga                                 N    104   Im
 1619 Tatsu                C9C5400-5 Fl Ni                                    A 102   Im

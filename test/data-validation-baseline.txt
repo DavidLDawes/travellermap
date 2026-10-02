@@ -202,5 +202,5 @@ world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Lie Zed
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Midway 1621
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Pliqel 1419
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Zhdokr Bsiej 1522
-world-parse | Ruupiin (M1105) | Parse Error: Invalid eHex digit: '?', 1420 Agneex          A5327RK-F                                     - K - ?34   Kk M7 III
+world-parse | Ruupiin (M1105) | Parse Error: Invalid eHex digit: '?', 1420 Agneex          A5327RK-F Na Po                                   - K - ?34   Kk M7 III
 world-parse | Yiklerdanzh (Meshan Saga) (M1105) | Unexpected value for B: 'Z', 1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              Z    101   ZC

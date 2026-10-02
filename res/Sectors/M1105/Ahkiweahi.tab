@@ -229,7 +229,7 @@ Ahki	H	2720	Salle	C10056A-B		Mr Ni Va Asla6		203	Sh	M0 V	{  0 }	(     )	[    ]		
 Ahki	H	2819	Plono	A6659C9-D		Ga Hi Pr		504	Sh	K0 V	{  3 }	(     )	[    ]			0
 Ahki	H	2920	Grema	C352562-A		Ni Po O:3015		120	NaAs	K0 V	{  0 }	(     )	[    ]			0
 Ahki	H	3015	Thongthena	A5719CB-C		He Hi In		203	Sh	K0 V	{  4 }	(     )	[    ]			0
-Ahki	H	3016	Thomat	C300500-9		NI Va		504	Sh	M0 V	{ -1 }	(     )	[    ]			0
+Ahki	H	3016	Thomat	C300500-9		NI Va Ni		504	Sh	M0 V	{ -1 }	(     )	[    ]			0
 Ahki	H	3019	Ei	E412101-7		Ic Lo		510	NaHu	M7 V	{ -3 }	(     )	[    ]			0
 Ahki	H	3115	Faa	D7A4478-C		Fl Ni		202	Sh	M0 V	{ -1 }	(     )	[    ]			0
 Ahki	H	3118	Thiir	A688877-C		Pa Ph Ri		403	Sh	K0 V	{  3 }	(     )	[    ]			0
@@ -349,7 +349,7 @@ Ahki	L	2923	Ana	B895684-A		Ag Ni		331	NaHu	K0 V	{  2 }	(     )	[    ]			0
 Ahki	L	2927	Hefic	C7B1410-C		Fl He Ni		922	NaAs	M7 V	{  0 }	(     )	[    ]			0
 Ahki	L	3023	Vaeldcot	E536305-8		Lo		302	NaAs	M0 V	{ -3 }	(     )	[    ]			0
 Ahki	L	3026	Shedongi	B57558A-E		Ag Ni		201	NaAs	K0 V	{  2 }	(     )	[    ]			0
-Ahki	L	3027	Greset	B342548-E		He NI Po		702	NaAs	K0 V	{  1 }	(     )	[    ]			0
+Ahki	L	3027	Greset	B342548-E		He NI Po Ni		702	NaAs	K0 V	{  1 }	(     )	[    ]			0
 Ahki	L	3030	Ouraoh	B466634-9		Ag Ni Ri		330	AsMw	K0 V	{  2 }	(     )	[    ]			0
 Ahki	L	3123	Eethaneo	C348413-C		Ni Pa		201	NaAs	K0 V	{  0 }	(     )	[    ]			0
 Ahki	L	3124	Miing	C463340-9		Lo		702	NaAs	K0 V	{ -1 }	(     )	[    ]			0

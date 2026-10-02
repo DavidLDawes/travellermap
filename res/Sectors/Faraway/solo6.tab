@@ -57,7 +57,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 0440	Bloomingdale	C00025A-8	As Va Lo	{-2}	(C10-4)	[114B]	B	S	-	714	8	Im	G5 V
 0501	Simohiro	C200376-6	Va Lo	{-2}	(720-5)	[1158]	B	S	-	703	7	Im	M0 V
 0509	Coventry	DAB3444-6	Fl Ni	{-3}	(730+2)	[7117]	B	S	-	503	7	Im	M0 V
-0510	Bashi	CAB0000-0	He Ba	{-2}	(600+2)	[0000]	B	-	-	003	8	Im	G0 V
+0510	Bashi	CAB0000-0	He Ba	{-2}	(600-5)	[0000]	B	-	-	003	8	Im	G0 V
 0514	Rizhao	C200300-C	Va Lo	{+0}	(C20-1)	[3349]	B	S	-	105	6	Im	M5 V
 0517	Gomez Farias	DCB5445-3	Fl Ni	{-3}	(730-4)	[8161]	B	-	-	315	11	Im	K5 V M5 V
 0518	Mahdalynivka	C300378-9	Va Lo	{-1}	(F20+1)	[5258]	B	S	-	506	8	Im	D
@@ -112,7 +112,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 0918	Orem	C200566-8	Va Ni	{-2}	(741+1)	[3354]	B	-	-	204	7	Im	D
 0924	San Francisco	E200132-5	Va Lo	{-3}	(600-3)	[1116]	B	-	-	704	7	Im	M0 V
 0925	Calpulalpan	C8A7877-9	Fl Ph	{+0}	(975+5)	[9878]	eB	S	-	400	4	Im	G5 V G5 V
-0926	La Libertad	X000000-0	As Va Ba	{-3}	(A00-1)	[0000]	B	-	R	023	8	Im	G0 V
+0926	La Libertad	X000000-0	As Va Ba	{-3}	(A00-5)	[0000]	B	-	R	023	8	Im	G0 V
 0934	Megumi	C200486-B	Va Ni	{+0}	(A31+1)	[441A]	B	-	-	115	8	Im	M0 V
 0935	Jesus Nazareno	B2006A8-C	Va Ni Na	{+1}	(D54+4)	[276F]	B	-	-	605	6	Im	M5 V
 0936	Stakhanov	C7A258A-A	Fl He Ni	{+0}	(A42-3)	[1585]	B	S	-	310	8	Im	K0 III
@@ -144,7 +144,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 1118	Maringa	C200467-A	Va Ni	{+0}	(935-2)	[145A]	B	-	-	605	8	Im	M0 V
 1120	Panthos	C7A0657-9	He Ni	{-1}	(A52-4)	[7536]	B	-	-	503	8	Im	K0 V
 1121	Laetitia	D200110-4	Va Lo	{-3}	(700-1)	[5111]	B	-	-	115	7	Im	M5 V
-1126	Murnau am Staffels	E200000-0	Va Ba	{-3}	(900-1)	[0000]	B	-	-	014	6	Im	M5 V
+1126	Murnau am Staffels	E200000-0	Va Ba	{-3}	(900-5)	[0000]	B	-	-	014	6	Im	M5 V
 1130	Pharr	E9A6420-4	Fl Ni	{-3}	(731-4)	[3116]	B	-	-	513	9	Im	F5 V
 1136	Seijin	A5A099C-A	He Hi In	{+4}	(88E-2)	[5D5A]	fEB	S	-	621	6	Im	M5 V
 1137	Matinhos	DAB4342-8	Fl Lo	{-3}	(720+4)	[7139]	B	-	-	603	7	Im	K5 V
@@ -205,13 +205,13 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 1607	Dimbokro	E200251-5	Va Lo	{-3}	(510+1)	[31A6]	B	-	-	804	7	Im	M0 V
 1611	Chantonnay	D300459-8	Va Ni	{-3}	(A33-2)	[5134]	B	S	-	204	8	Im	K0 V
 1612	Connie	C200201-7	Va Lo	{-2}	(B10-3)	[1184]	B	-	-	406	7	Im	M5 V
-1613	Soledade	E200000-0	Va Ba	{-3}	(700+1)	[0000]	B	-	-	017	10	Im	M5 V M5 V
+1613	Soledade	E200000-0	Va Ba	{-3}	(700-5)	[0000]	B	-	-	017	10	Im	M5 V M5 V
 1615	Avellaneda	B000868-A	As Va Ph Na Pi	{+2}	(E7A-4)	[8A7C]	eDB	-	-	716	8	Im	D
 1617	La Troncal	B200689-A	Va Ni Na	{+1}	(F55+2)	[173C]	B	-	-	408	8	Im	D
 1618	Tlemcen	D300210-9	Va Lo	{-2}	(A10+5)	[1158]	B	S	-	103	6	Im	M5 V
 1622	Festin	C5A5210-8	Fl Lo	{-2}	(A10+3)	[515B]	B	-	-	205	7	Im	M0 V
 1624	Tutin	C764265-6	Lo	{-2}	(810-1)	[2154]	B	-	-	113	9	Im	G0 V
-1626	Csabai	A985898-A	Ph Ri	{+3}	(B7A+4)	[7A4A]	eB	S	-	714	11	Im	G5 V G5 V
+1626	Csabai	A985898-A	Ph Ri Pa	{+3}	(B7A+4)	[7A4A]	eB	S	-	714	11	Im	G5 V G5 V
 1635	Oak Grove	B8A0676-A	He Ni	{+1}	(D57+2)	[576D]	B	-	-	304	8	Im	K0 V
 1701	Yeung	B100788-B	Va Na Pi	{+2}	(B65-2)	[B92A]	DB	-	-	905	6	Im	M5 V
 1703	San Leandro	C000235-9	As Va Lo	{-1}	(D10+1)	[1148]	B	S	-	324	14	Im	K0 V K5 V
@@ -270,7 +270,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 2016	San Nicolas	BAB0613-9	He Ni	{+0}	(B52-3)	[364A]	B	N	-	303	9	Im	F0 V
 2017	Dobrush	E200305-8	Va Lo	{-3}	(820-2)	[3128]	B	-	-	105	7	Im	M5 V
 2021	East Alton	B20066A-9	Va Ni Na	{+0}	(E56-1)	[464C]	B	N	-	504	8	Im	K5 V
-2024	La Plata	C200000-0	Va Ba	{-2}	(B00+1)	[0000]	B	S	-	003	7	Im	M0 V
+2024	La Plata	C200000-0	Va Ba	{-2}	(B00-5)	[0000]	B	S	-	003	7	Im	M0 V
 2026	Sid	B000625-9	As Va Ni Na	{+0}	(A52+2)	[6659]	B	-	-	713	8	Im	K0 V
 2027	Persiceto	C200654-A	Va Ni Na	{+0}	(C52+1)	[9616]	B	S	-	514	7	Im	M0 V
 2035	Apen	C200400-8	Va Ni	{-2}	(F34+3)	[128A]	B	-	-	305	8	Im	M0 V
@@ -300,7 +300,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 2233	Boitsov	EBB0337-5	He Lo	{-3}	(B20+2)	[4134]	B	-	-	103	8	Im	G5 V
 2236	Medlock	C200300-B	Va Lo	{+0}	(A20+2)	[632A]	B	S	-	504	6	Im	M5 V
 2303	Augusta	C200557-C	Va Ni	{+0}	(B41-2)	[759B]	B	-	-	305	7	Im	M0 V
-2304	Geroskipou	E9A5000-0	Fl Ba	{-3}	(B00+1)	[0000]	B	-	-	013	8	Im	G0 V
+2304	Geroskipou	E9A5000-0	Fl Ba	{-3}	(B00-5)	[0000]	B	-	-	013	8	Im	G0 V
 2306	Rio Gallegos	A2008CE-A	Va Ph Na Pi	{+2}	(C76+2)	[AA9B]	eDB	-	A	105	6	Im	M5 V
 2307	Beni Enzar	D300343-5	Va Lo	{-3}	(420+2)	[1154]	B	-	-	707	8	Im	D
 2314	Jieshang	C200588-6	Va Ni	{-2}	(542+1)	[1348]	B	S	-	705	8	Im	M0 V
@@ -319,7 +319,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 2406	Bad Lauchstadt	B20098A-B	Va Hi Na In	{+4}	(A8B+1)	[5D59]	fEB	-	-	305	6	Im	M5 V
 2408	Oileus	C586477-6	Ni Pa	{-2}	(534+1)	[1258]	cB	-	-	303	8	Im	G5 V
 2409	Mugnano di Napoli	B20069E-8	Va Ni Na	{-1}	(E52+2)	[8568]	B	N	-	608	8	Im	D
-2410	Yoro	X100000-0	Va Ba	{-3}	(700+1)	[0000]	B	-	R	013	8	Im	M0 V
+2410	Yoro	X100000-0	Va Ba	{-3}	(700-5)	[0000]	B	-	R	013	8	Im	M0 V
 2425	Mahdishahr	CAB3558-8	Fl Ni Px	{-2}	(F42+1)	[5329]	B	-	-	824	10	Im	K5 V M5 V
 2427	Laie	CCB1388-5	Fl He Lo Px	{-2}	(720-1)	[6194]	B	-	-	904	9	Im	F0 V
 2435	Ka-Dar	C863536-7	Ni Pr	{-2}	(540+1)	[437B]	cB	-	-	412	9	Im	G0 V
@@ -348,7 +348,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 2616	Coreglia Antelmine	CAB5313-A	Fl Lo	{+0}	(D20-3)	[533C]	B	S	-	504	8	Im	K0 V
 2617	Raon-l Etape	B20089C-C	Va Ph Na Pi	{+2}	(F77-5)	[9A6D]	eDB	-	-	905	10	Im	M0 V M5 V
 2620	Brunswick	C000567-A	As Va Ni	{+0}	(745-1)	[6526]	B	S	-	413	7	Im	K5 V
-2621	Kanie	E8A6000-0	Fl Ba	{-3}	(500-2)	[0000]	B	-	-	003	13	Im	F0 V F5 V
+2621	Kanie	E8A6000-0	Fl Ba	{-3}	(500-5)	[0000]	B	-	-	003	13	Im	F0 V F5 V
 2623	Alayor	A100757-F	Va Na Pi	{+2}	(76D-4)	[493F]	DB	-	-	710	8	Im	M0 III
 2625	Sant Angelo Lodigi	C7A458A-6	Fl Ni	{-2}	(A42-1)	[6325]	B	S	-	205	7	Im	M0 V
 2630	Aquila	A944651-D	Ni Ag	{+2}	(953+1)	[586D]	CB	-	-	113	8	Im	G5 V
@@ -384,9 +384,9 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 2840	Tallkalakh	D200431-8	Va Ni	{-3}	(F31+2)	[6178]	B	-	-	414	7	Im	M0 V
 2903	Panciu	D761259-3	Lo	{-3}	(410+4)	[3185]	B	S	-	703	8	Im	G5 V
 2907	New Corella	C000520-7	As Va Ni	{-2}	(441+2)	[8354]	B	-	-	219	10	Im	D D
-2909	Binnish	E200000-0	Va Ba	{-3}	(500+4)	[0000]	B	-	-	014	8	Im	G0 V
+2909	Binnish	E200000-0	Va Ba	{-3}	(500-5)	[0000]	B	-	-	014	8	Im	G0 V
 2911	Thornaby on Tees	E8B0433-8	He Ni	{-3}	(D30+1)	[313D]	B	-	-	506	7	Im	D
-2913	Caledon	X200000-0	Va Ba	{-3}	(700-3)	[0000]	B	-	R	005	8	Im	M0 V
+2913	Caledon	X200000-0	Va Ba	{-3}	(700-5)	[0000]	B	-	R	005	8	Im	M0 V
 2915	Reiji	BCB1799-B	Fl He	{+2}	(86B-1)	[292C]	B	S	-	714	8	Im	K0 V
 2916	Katsuura	A7A29CC-D	Fl He Hi In	{+4}	(88B+1)	[7D4B]	fEB	-	-	203	8	Im	G5 V
 2918	Foresta	C20069D-A	Va Ni Na	{+0}	(F55-2)	[B679]	B	S	-	513	6	Im	M5 V
@@ -396,7 +396,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	Nobility	Bases	Zone	PBG	W	Allegiance	Stars
 2934	Shoin	B7B267A-9	Fl He Ni	{+0}	(A54+2)	[7655]	B	-	-	303	6	Im	M5 V
 2935	Poggio Renatico	ACB7987-E	Fl Hi In	{+4}	(78E+5)	[6D4C]	fEB	-	-	303	7	Im	M0 V
 3007	Soldato-Aleksandro	C200300-9	Va Lo	{-1}	(F20+1)	[2264]	B	-	-	516	11	Im	M5 V M5 V
-3010	North Reading	E200000-0	Va Ba	{-3}	(700-3)	[0000]	B	-	-	005	9	Im	M5 V M5 V
+3010	North Reading	E200000-0	Va Ba	{-3}	(700-5)	[0000]	B	-	-	005	9	Im	M5 V M5 V
 3011	Serravalle Pistoie	C100524-B	Va Ni	{+0}	(A43-3)	[251C]	B	-	-	606	7	Im	M5 V
 3012	Croata	C5A578A-6	Fl	{-1}	(664+1)	[A625]	B	-	-	413	11	Im	G0 V G5 V
 3013	Hejiachuan	C200304-C	Va Lo	{+0}	(720-1)	[535E]	B	S	-	604	8	Im	G5 V

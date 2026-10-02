@@ -65,8 +65,8 @@ Hex  Name                 UWP       Remarks                  {Ix}   (Ex)    [Cx]
 2006 Xratraox             C69721A-8 Lo                       { -2 } (A10-2) [118B] - -  - 924 16 KkTw M2 V M7 V       
 2007 Aak!'ak              E140000-0 Ba De Po                 { -3 } (600-5) [0000] - -  - 004 12 KkTw F0 V            
 2010 Tingeerrn!r          A69379A-9 Pi                       {  1 } (B66-1) [A84A] - -  - 523 13 KkTw G9 V M1 V       
-2101 Eeniam               E210000-0 Ba                       { -3 } (600+5) [0000] - -  - 012 7  KkTw M5 V            
-2104 Rakliang             E97A000-0 Ba Wa                    { -3 } (700-3) [0000] - -  - 010 11 KkTw K5 V M6 V       
+2101 Eeniam               E210000-0 Ba                       { -3 } (600-5) [0000] - -  - 012 7  KkTw M5 V            
+2104 Rakliang             E97A000-0 Ba Wa                    { -3 } (700-5) [0000] - -  - 010 11 KkTw K5 V M6 V       
 2105 Akraghung            B57543A-8 Ni Pa                    { -1 } (934+2) [533A] - K  - 502 11 KkTw G5 V M2 V       
 2108 !Aak                 E67911A-7 Lo                       { -3 } (600+5) [1126] - -  - 804 16 KkTw M2 V            
 2202 Kitou                DA9733A-6 Lo                       { -3 } (820-3) [2188] - -  - 904 10 KkTw A5 V K2 V       

@@ -108,84 +108,84 @@ Hex	Name	UWP	Remarks	B	Z	PBG	W	A	Stellar
 3209		???????-?		-	-	?13	13	ZS	M1 V M4 V
 0111	Kishara	E96A000-0	Ba Wa	-	-	002	10	Na	F4 V M2 V
 0116	Purdishi	E611000-0	Ic Ba	-	-	034	10	ZS	M1 V
-0214	Shululsish	A584939-C	Hi Cp	N	-	204	13	ZS	F8 V
-0215	Liriinan	C769836-6	Ri	-	-	503	16	ZS	G8 V M8 V
-0217	Neshukka	C889839-9		-	-	103	6	ZS	M1 V
-0313	Ashi	B421631-A	Na Ni	-	-	810	12	ZS	M2 V M6 V
-0316	Gararin	C579310-C	Ni	-	-	620	13	ZS	G1 V M8 V
-0317	Bemidshii	B56783A-7		-	-	812	17	ZS	G9 V M6 V
+0214	Shululsish	A584939-C	Hi Pr Cp	N	-	204	13	ZS	F8 V
+0215	Liriinan	C769836-6	Ri Ph	-	-	503	16	ZS	G8 V M8 V
+0217	Neshukka	C889839-9	Ph Ri	-	-	103	6	ZS	M1 V
+0313	Ashi	B421631-A	Na Ni He Po	-	-	810	12	ZS	M2 V M6 V
+0316	Gararin	C579310-C	Lo	-	-	620	13	ZS	G1 V M8 V
+0317	Bemidshii	B56783A-7	Ph Pa Ri	-	-	812	17	ZS	G9 V M6 V
 0319	Makamii	B100636-B	Na Ni Va	-	-	923	12	ZS	M3 V M9 V
-0411	Dushamaa	A877839-C		-	-	100	12	ZS	F4 V
-0511	Ushmi	B66393A-8	Hi	-	-	302	10	ZS	G0 V M5 V
-0518	Arukhur	C200636-8	Na Ni	-	-	122	7	ZS	M3 V
-0612	Arnaa	B886937-C	Ga Hi Na Ni	-	-	132	13	ZS	M2 V M9 V K2 V
-0617	Kaareshur	C967839-5		-	-	134	13	ZS	F4 V
+0411	Dushamaa	A877839-C	Ph Pa Pi	-	-	100	12	ZS	F4 V
+0511	Ushmi	B66393A-8	Hi Pr	-	-	302	10	ZS	G0 V M5 V
+0518	Arukhur	C200636-8	Na Ni Va	-	-	122	7	ZS	M3 V
+0612	Arnaa	B886937-C	Ga Hi Pr	-	-	132	13	ZS	M2 V M9 V K2 V
+0617	Kaareshur	C967839-5	Ph Pa Ri	-	-	134	13	ZS	F4 V
 0618	Lekuni	B000636-C	As Na Ni Va	-	-	520	12	ZS	A7 V
 0713	Miri	E511000-0	Ba Ic	-	-	003	12	ZS	M0 V
-0717	Kamsha	B9C5632-8	Fl	-	-	313	15	ZS	M0 V
+0717	Kamsha	B9C5632-8	Fl Ni	-	-	313	15	ZS	M0 V
 0718	Ippuraash	B200436-B	Ni Va	-	-	114	13	ZS	K0 IV
-0719	Maksha	C543316-C	Ni	-	-	002	7	ZS	K8 V M8 V
+0719	Maksha	C543316-C	Lo Po	-	-	002	7	ZS	K8 V M8 V
 0720	Mishaagi	C7A7411-8	Ni Fl	-	-	714	12	ZS	M0 V
 0814	Upirzanu	E9B553A-8	Ni Fl	-	-	824	9	ZS	M2 V
-0912	Umra	B621416-C	He Na	-	-	205	8	ZS	K5 V
+0912	Umra	B621416-C	He Ni Po	-	-	205	8	ZS	K5 V
 0913	Lanashri	CAC8411-8	Fl Ni	-	-	122	12	ZS	F7 V M1 V
-0914	Kimirsika	B988839-7		-	-	521	12	ZS	K2 V
-0918	Siinira	D544330-8	Lo Ni	-	-	210	12	ZS	M3 V M5 V
-0919	Marasra	BA5683A-8		-	-	223	13	ZS	G9 V
-1011	Ushiin	A562832-8	Tz	-	-	413	7	ZS	M2 V
+0914	Kimirsika	B988839-7	Ph Pa Ri	-	-	521	12	ZS	K2 V
+0918	Siinira	D544330-8	Lo	-	-	210	12	ZS	M3 V M5 V
+0919	Marasra	BA5683A-8	Ph Pa	-	-	223	13	ZS	G9 V
+1011	Ushiin	A562832-8	Ph Ri Tz	-	-	413	7	ZS	M2 V
 1020	Shashamak	A624609-8	Ni	-	-	104	7	ZS	F2 V M0 V
-1111	Dimmurak	B6578DA-5	Ga	-	-	804	12	ZS	M2 V
-1116	Niimuru	B568832-7		-	-	111	8	ZS	A6 V
-1117	Mashaddun	A994836-C		N	-	120	11	ZS	G8 IV M3 V
-1119	Dashinur	B66A836-7	Ri Wa	-	-	100	9	ZS	K6 V M0 V
-1120	Karnisari	B644834-5		-	-	323	9	ZS	M3 V
+1111	Dimmurak	B6578DA-5	Ga Ph Pa	-	-	804	12	ZS	M2 V
+1116	Niimuru	B568832-7	Ph Pa Ri	-	-	111	8	ZS	A6 V
+1117	Mashaddun	A994836-C	Ph Pa Pi	N	-	120	11	ZS	G8 IV M3 V
+1119	Dashinur	B66A836-7	Ri Wa Ph	-	-	100	9	ZS	K6 V M0 V
+1120	Karnisari	B644834-5	Ph Pa Pi	-	-	323	9	ZS	M3 V
 1214	Amgilash	E000000-0	As Ba Va	-	-	012	12	ZS	K0 III
-1216	Mikaam	C55683A-6		-	-	113	12	ZS	F9 V
-1218	Tunshaon Tyo	B554836-6	VegaW	-	-	412	13	ZSv	M1 V
-1219	Sasuniir	C100318-8	Lo Ni Sa	-	-	322	13	ZS	M2 V
+1216	Mikaam	C55683A-6	Ph Pa	-	-	113	12	ZS	F9 V
+1218	Tunshaon Tyo	B554836-6	Ph Pa VegaW	-	-	412	13	ZSv	M1 V
+1219	Sasuniir	C100318-8	Lo Va Sa	-	-	322	13	ZS	M2 V
 1311	Nishni	B000415-C	As Ni Va	-	-	111	13	ZS	M3 V M7 V
-1316	Khariishish	X530000-0	Ba De	-	-	013	14	ZS	F0 IV K0 V
-1318	Gashakur	B521337-C	He Lo Ni	-	-	602	12	ZS	M2 V
-1320	Dishiigi	E433000-0	Ba	-	-	020	12	ZS	K0 IV
-1417	Larimshar	B647737-7	Ag	-	-	302	12	ZS	G0 IV M5 V M1 V
-1418	Muan Ialour	B556836-B	VegaW	-	-	112	12	ZSv	M1 V M2 V
-1419	Genaraa	A59A8DA-C	Wa	-	-	224	12	ZS	G9 V
-1511	Imkha	C563839-7		-	-	824	13	ZS	A1 V M8 V
+1316	Khariishish	X530000-0	Ba De Po	-	-	013	14	ZS	F0 IV K0 V
+1318	Gashakur	B521337-C	He Lo Po	-	-	602	12	ZS	M2 V
+1320	Dishiigi	E433000-0	Ba Po	-	-	020	12	ZS	K0 IV
+1417	Larimshar	B647737-7	Ag Pi	-	-	302	12	ZS	G0 IV M5 V M1 V
+1418	Muan Ialour	B556836-B	Ph Pa VegaW	-	-	112	12	ZSv	M1 V M2 V
+1419	Genaraa	A59A8DA-C	Wa Ph Pi	-	-	224	12	ZS	G9 V
+1511	Imkha	C563839-7	Ph Ri	-	-	824	13	ZS	A1 V M8 V
 1512	Kiranura	E6A6000-0	Ba Fl	-	-	002	14	ZS	M1 V
 1515	Dzim Zhia Gwi	A556936-C	Hi VegaW	-	-	300	8	ZSv	F8 V M0 V
-1516	Ewmiak	B552836-B	Po VegaW	-	-	205	8	ZSv	F8 V
+1516	Ewmiak	B552836-B	Po Ph VegaW	-	-	205	8	ZSv	F8 V
 1517	Urima	A75593A-C	Cp Hi Ga	N	-	302	8	ZS	F7 V M0 V
-1519	Iinu	A88A832-C	Wa	-	-	433	9	ZS	M1 V
-1616	Orruiltan Tyui	C421336-B	He Lo Ni VegaW	-	-	304	7	ZSv	F9 V
-1619	Tyudhuar	D599736-5	VegaW	-	-	212	7	ZSv	G0 V
-1711	Kasaan	B785830-A	Ga	-	-	820	10	ZS	G2 V M8 V
+1519	Iinu	A88A832-C	Wa Ph Ri	-	-	433	9	ZS	M1 V
+1616	Orruiltan Tyui	C421336-B	He Lo Po VegaW	-	-	304	7	ZSv	F9 V
+1619	Tyudhuar	D599736-5	Pi VegaW	-	-	212	7	ZSv	G0 V
+1711	Kasaan	B785830-A	Ga Ph Pa Ri	-	-	820	10	ZS	G2 V M8 V
 1717	Muan Gwi	A556936-C	Hi Cp (Vegans) VegaW	-	-	422	17	ZSv	F2 V
-1718	Hsuilzish	A678836-C	VegaW	-	-	305	17	ZSv	M1 V
+1718	Hsuilzish	A678836-C	Ph Pa Pi VegaW	-	-	305	17	ZSv	M1 V
 1720	Duusirka	E000000-0	As Ba Va	-	-	020	17	ZS	A0 V
-1813	Wanish Tyo	C631636-8	Na Ni VegaW	-	-	502	15	ZSv	M2 V
+1813	Wanish Tyo	C631636-8	Na Ni Po VegaW	-	-	502	15	ZSv	M2 V
 1814	Tsamis	B547936-8	Hi In VegaW	-	-	113	15	ZSv	K1 V
-1816	Muan Issler	D554636-8	Na Ni VegaW	-	-	534	15	ZSv	M1 V
-1818	Ashtagz Tyui	B548336-C	Lo Ni VegaW	-	-	303	15	ZSv	G5 IV M3 V M4 V
+1816	Muan Issler	D554636-8	Ni Ag VegaW	-	-	534	15	ZSv	M1 V
+1818	Ashtagz Tyui	B548336-C	Lo VegaW	-	-	303	15	ZSv	G5 IV M3 V M4 V
 1911	Ikarak	A00063A-C	As Na Ni Va	-	-	312	9	ZS	A5 III K6 V
-1912	Galishgu	B422413-C	He Ni Sa	-	-	123	8	ZS	M3 V
-1917	Asterr Tyui	A666936-C	Hi Ga VegaW Tz	-	-	113	8	ZSv	M2 V
-1919	Khuraaga	B944736-C	Po	-	-	500	8	ZS	M3 V M3 V
+1912	Galishgu	B422413-C	He Ni Po Sa	-	-	123	8	ZS	M3 V
+1917	Asterr Tyui	A666936-C	Hi Ga Pr VegaW Tz	-	-	113	8	ZSv	M2 V
+1919	Khuraaga	B944736-C	Ag Pi	-	-	500	8	ZS	M3 V M3 V
 2011	Andiirish	E000000-0	As Ba Va	-	-	012	12	ZS	F5 V
-2012	Deraanasa	A866936-C	Hi Ga	N	-	325	10	ZS	M1 V
+2012	Deraanasa	A866936-C	Hi Ga Pr	N	-	325	10	ZS	M1 V
 2015	Duikin Tyui	C310436-C	Ni VegaW Sa	-	-	523	13	ZSv	G0 V
 2017	Hariksiat	B549336-C	Lo VegaW	-	-	420	13	ZSv	F0 V M0 V
-2114	Nikurmani	C8B6338-C	Lo Fl Ni	-	-	503	6	ZS	F5 V M6 V
-2118	Nakishi	C785839-7	Ga	-	-	323	8	ZS	K3 V M0 V
+2114	Nikurmani	C8B6338-C	Lo Fl	-	-	503	6	ZS	F5 V M6 V
+2118	Nakishi	C785839-7	Ga Ph Pa Ri	-	-	323	8	ZS	K3 V M0 V
 2213	Ganukak	E000000-0	As Ba Va	-	-	020	6	ZS	F6 V M4 V
-2218	Muan Kwoyen	B666936-C	Hi Ga VegaW	-	-	212	6	ZSv	G5 V
-2312	Direnaa	B865832-C	Ga	-	-	503	13	ZS	K1 V M0 V
+2218	Muan Kwoyen	B666936-C	Hi Ga Pr VegaW	-	-	212	6	ZSv	G5 V
+2312	Direnaa	B865832-C	Ga Ph Pa Ri	-	-	503	13	ZS	K1 V M0 V
 2319	Shulgiasu	A758938-C	Cs Cp Hi	N	-	222	8	ZS	G3 V M1 V M7 V
-2411	Dashiraa	E521000-0	Ba He	-	-	004	10	ZS	M3 V
-2414	Namirma	B548318-C	Lo Ni Sa	-	-	523	8	ZS	K4 V
-2415	Shani	C412332-8	Ic Lo Ni Sa	-	-	605	10	ZS	K1 V
+2411	Dashiraa	E521000-0	Ba He Po	-	-	004	10	ZS	M3 V
+2414	Namirma	B548318-C	Lo Sa	-	-	523	8	ZS	K4 V
+2415	Shani	C412332-8	Ic Lo Sa	-	-	605	10	ZS	K1 V
 2418	Khalikkam	D611538-8	Ic Ni	-	-	604	10	ZS	F1 V
-2419	Ganigami	C433334-C	Lo Ni Po	-	-	301	12	ZS	K0 V M6 V
-2420	Arrukir	B59A83B-A	Wa	-	-	200	11	ZS	M1 V
+2419	Ganigami	C433334-C	Lo Po	-	-	301	12	ZS	K0 V M6 V
+2420	Arrukir	B59A83B-A	Wa Ph Pi	-	-	200	11	ZS	M1 V
 2513		???????-?		-	-	?20	8	ZS	K5 V M3 V
 2514		???????-?		-	-	?13	10	ZS	M2 V
 2516		???????-?		-	-	?23	10	ZS	G2 V M3 V
@@ -214,77 +214,77 @@ Hex	Name	UWP	Remarks	B	Z	PBG	W	A	Stellar
 3217		???????-?		-	-	?02	10	ZS	K2 III
 3218		???????-?		-	-	?04	7	ZS	F7 V M2 V
 3219		???????-?		-	-	?00	10	ZS	G3 V M0 V
-0121	Khishirii	E553000-0	Ba Sa	-	-	013	8	Na	M3 V M4 V
-0123	Nushmi	X887836-2	Fo Ga Ri	-	R	223	12	ZSk	F8 V
-0125	Kishakhpap	E410000-0	Ba De	-	-	004	8	Na	F9 V
+0121	Khishirii	E553000-0	Ba Po Sa	-	-	013	8	Na	M3 V M4 V
+0123	Nushmi	X887836-2	Fo Ga Ri Ph Pa	-	R	223	12	ZSk	F8 V
+0125	Kishakhpap	E410000-0	Ba	-	-	004	8	Na	F9 V
 0126	Nunashi	C557734-6	Ag	-	-	522	7	ZSk	M1 V M8 V
-0224	Shaalgar	B666835-C	Ga Ri	-	-	300	10	ZSk	M2 V M7 V
-0226	Iishu	B579705-C		-	-	404	9	ZSk	K2 V
+0224	Shaalgar	B666835-C	Ga Ri Ph Pa	-	-	300	10	ZSk	M2 V M7 V
+0226	Iishu	B579705-C	Pi	-	-	404	9	ZSk	K2 V
 0230	Alizarin	E566000-0	Ba	-	-	000	6	Na	M1 V M8 V
-0326	Eneldun	B314603-C	Ic Na Ni	-	-	320	10	ZSk	M1 V
-0330	Krypton	E9A4000-0	Ba	-	-	014	13	Na	F8 V
-0424	Lakisha	B798839-7		-	-	303	15	ZS	M2 V K4 V
-0426	Siikani	B430435-A	De Ni	-	-	202	12	ZS	F2 III M0 V
-0524	Irashdaa	A68983A-C	Tz	-	-	213	14	ZS	M2 V M8 V
-0527	Masiira	B66983A-7		-	-	123	16	ZS	K6 V M0 V
+0326	Eneldun	B314603-C	Ic Ni	-	-	320	10	ZSk	M1 V
+0330	Krypton	E9A4000-0	Ba Fl	-	-	014	13	Na	F8 V
+0424	Lakisha	B798839-7	Ph Pa Pi	-	-	303	15	ZS	M2 V K4 V
+0426	Siikani	B430435-A	De Ni Po	-	-	202	12	ZS	F2 III M0 V
+0524	Irashdaa	A68983A-C	Ph Ri Tz	-	-	213	14	ZS	M2 V M8 V
+0527	Masiira	B66983A-7	Ph Ri	-	-	123	16	ZS	K6 V M0 V
 0528	Kidashi	A557936-C	Hi Lk Sa	N	-	324	11	ZSk	M2 V
 0624	Ishirshu	E8A3000-0	Ba Fl	-	-	023	15	ZS	F6 V
-0626	Kunekaar	B742733-6	He Po	-	-	103	8	ZSk	G3 V M9 V
-0628	Sagarasaar	B589839-C		-	-	205	15	ZS	M0 V M9 V
-0721	Akhamin	B662834-7	Ri	-	-	303	11	ZSk	M1 V M0 V
-0722	Apishlun	A9869DA-C	Hi Cp	-	-	303	11	ZS	K1 V
-0723	Shikashu	B866836-B	Ga Ri	-	-	823	9	ZSk	F5 V
-0726	Dikanishi	C000230-8	As Lo Ni Va	-	-	735	12	ZS	F0 II
-0729	Edaazun	A56A83A-8	Wa	-	-	520	6	ZS	K5 V M4 V
+0626	Kunekaar	B742733-6	He Po Pi	-	-	103	8	ZSk	G3 V M9 V
+0628	Sagarasaar	B589839-C	Ph Ri	-	-	205	15	ZS	M0 V M9 V
+0721	Akhamin	B662834-7	Ri Ph	-	-	303	11	ZSk	M1 V M0 V
+0722	Apishlun	A9869DA-C	Hi Pr Cp	-	-	303	11	ZS	K1 V
+0723	Shikashu	B866836-B	Ga Ri Ph Pa	-	-	823	9	ZSk	F5 V
+0726	Dikanishi	C000230-8	As Lo Va	-	-	735	12	ZS	F0 II
+0729	Edaazun	A56A83A-8	Wa Ph Ri	-	-	520	6	ZS	K5 V M4 V
 0822	Urshu	C427415-8	Ni Sa	-	-	102	12	ZS	F2 V M4 V
 0823	Shiranshar	EAA5000-0	Ba Fl Da	-	-	014	11	ZS	M1 V M5 V
-0824	Khurimisi	B642735-C	He Po	-	-	401	12	ZSk	G1 V M2 V
-0825	Duriim	A588934-B	Hi	-	-	200	12	ZSk	A2 V M9 V
-0826	Munilgan	B554833-8		-	-	322	15	ZSk	K2 V M3 V
-0921	Ensulur	B541631-C	He Na Ni	-	-	422	15	ZS	G1 V
-0922	Damakaa	C432430-C	Ni	-	-	523	9	ZS	M1 V
-0923	Kansara	A666838-8	Ga Ri	-	-	820	14	ZS	F4 IV
-0924	Ginaa	C532210-8	Lo Ni Po	-	-	420	10	ZS	M1 V M9 V
-0926	Ishumled	A577834-A		-	-	611	8	ZSk	M1 V
-0929	Saris	B42473A-8	Na	-	-	105	17	ZS	A6 V
+0824	Khurimisi	B642735-C	He Po Pi	-	-	401	12	ZSk	G1 V M2 V
+0825	Duriim	A588934-B	Hi Pr	-	-	200	12	ZSk	A2 V M9 V
+0826	Munilgan	B554833-8	Ph Pa	-	-	322	15	ZSk	K2 V M3 V
+0921	Ensulur	B541631-C	He Ni Po	-	-	422	15	ZS	G1 V
+0922	Damakaa	C432430-C	Ni Po	-	-	523	9	ZS	M1 V
+0923	Kansara	A666838-8	Ga Ri Ph Pa	-	-	820	14	ZS	F4 IV
+0924	Ginaa	C532210-8	Lo Po	-	-	420	10	ZS	M1 V M9 V
+0926	Ishumled	A577834-A	Ph Pa Pi	-	-	611	8	ZSk	M1 V
+0929	Saris	B42473A-8	Pi	-	-	105	17	ZS	A6 V
 1022	Khakushma	B535411-8	Ni	-	-	211	11	ZS	M2 V
 1024	Fomalhaut	E8C8000-0	Ba Fl Da	-	-	002	13	ZS	A3 V K5 V
-1026	Khulampu	C9A7313-B	Lo Fl Ni	-	-	722	17	ZS	G6 V M7 V
-1127	Gashidda	A56A839-C	Wa Cp	N	-	823	9	ZSk	G8 IV
-1129	Ishkur	B5628DA-5		-	-	413	12	ZSk	M1 V
-1222	Dingir	AA8993A-C	Hi Cp	D	-	105	13	ZSk	K3 V K5 V M2 V
+1026	Khulampu	C9A7313-B	Lo Fl	-	-	722	17	ZS	G6 V M7 V
+1127	Gashidda	A56A839-C	Wa Ph Ri Cp	N	-	823	9	ZSk	G8 IV
+1129	Ishkur	B5628DA-5	Ph Ri	-	-	413	12	ZSk	M1 V
+1222	Dingir	AA8993A-C	Hi Pr Cp	D	-	105	13	ZSk	K3 V K5 V M2 V
 1224	Kinunir	C532432-8	Ni Po	-	-	105	9	ZS	M3 V
 1324	Shulgi	C512412-8	Ic Ni	-	-	103	12	ZS	M2 V M2 V
-1326	Shulgiili	D67A310-C	Lo Ni Wa	-	-	302	7	ZS	M0 V M4 V
+1326	Shulgiili	D67A310-C	Lo Wa	-	-	302	7	ZS	M0 V M4 V
 1327	Enki Kalamma	C20063A-C	Na Ni Va	-	-	213	14	ZS	M1 V
-1424	Karkhar	B675738-B		-	-	513	12	ZSk	M0 V
-1427	Shuruppak	A000435-C	AS Ni Va	-	-	133	10	ZS	M0 V
+1424	Karkhar	B675738-B	Ag Pi	-	-	513	12	ZSk	M0 V
+1427	Shuruppak	A000435-C	AS Ni Va As	-	-	133	10	ZS	M0 V
 1429	Iilike	B5559DA-6	Hi	-	-	124	16	ZSk	G8 V
 1522	Altair	E000000-0	As Ba Va	-	-	001	8	ZS	A7 V
-1523	Zaggisi	B79983A-8		-	-	101	12	ZS	K0 V K4 V
+1523	Zaggisi	B79983A-8	Ph Pi	-	-	101	12	ZS	K0 V K4 V
 1526	Meshan	E435000-0	Ba	-	-	001	17	ZS	K5 V D
-1529	Markhashi	C301333-8	Ic Lo Ni Va Sa	-	-	105	11	ZS	M1 V M6 V
-1530	Shulimik	D783836-B	Ri	-	-	602	13	ZSk	K2 V
-1622	Apishal	D633233-8	Lo Ni Po	-	-	624	9	ZS	M3 V
+1529	Markhashi	C301333-8	Ic Lo Va Sa	-	-	105	11	ZS	M1 V M6 V
+1530	Shulimik	D783836-B	Ri Ph	-	-	602	13	ZSk	K2 V
+1622	Apishal	D633233-8	Lo Po	-	-	624	9	ZS	M3 V
 1629	Sirius	E000000-0	As Ba Va	-	-	010	4	Na	A1 V D
-1822	Nusku	A569948-C	Hi	K	-	114	15	TCv	K5 V K7 V
-1824	Agidda	D974449-C	Ni	-	-	401	9	TC	M3 V
+1822	Nusku	A569948-C	Hi Pr	K	-	114	15	TCv	K5 V K7 V
+1824	Agidda	D974449-C	Ni Pa	-	-	401	9	TC	M3 V
 1827	Terra	A867A49-B	Hi Ga Cp [Terrans]	K	-	114	10	TC	G2 V
-1830	Proycon	CA98442-C	Ni	-	-	220	15	TC	F5 V D
-1926	Barnard	B200316-C	Lo Ni Va	-	-	134	10	TC	M4 V
-1929	Junction	C975549-6	Ni	-	-	202	10	TC	M6 V
-2021	Ishimshulgi	D200210-B	Lo Ni Va	-	-	502	13	TC	M1 V M2 V
-2027	Prometheus	B785555-C	Ni Ga	-	-	923	10	TC	G2 V K1 V M5 V
+1830	Proycon	CA98442-C	Ni Pa	-	-	220	15	TC	F5 V D
+1926	Barnard	B200316-C	Lo Va	-	-	134	10	TC	M4 V
+1929	Junction	C975549-6	Ni Ag	-	-	202	10	TC	M6 V
+2021	Ishimshulgi	D200210-B	Lo Va	-	-	502	13	TC	M1 V M2 V
+2027	Prometheus	B785555-C	Ni Ga Ag Pr	-	-	923	10	TC	G2 V K1 V M5 V
 2028	Peraspera	C7A2418-B	Fl He Ni	-	-	120	11	TC	M1 V
 2029	Midway	E699456-5	Ni	-	-	322	8	TC	M2 V
 2030	Hades	C432423-B	Ni Po	-	-	112	13	TC	M2 V
-2121	Lagash	C667523-6	Ga Ni	-	-	124	9	TC	G0 V K7 V
+2121	Lagash	C667523-6	Ga Ni Ag Pr	-	-	124	9	TC	G0 V K7 V
 2222	Ninkhur Sagga	EAA7000-0	Ba Fl	-	-	003	6	Na	G5 V M5 V
-2227	Ember	D412300-C	Ic Lo Ni	-	-	312	10	TC	M6 V M6 V
+2227	Ember	D412300-C	Ic Lo	-	-	312	10	TC	M6 V M6 V
 2228	Loki	E9CA000-0	Ba Fl	-	-	002	12	TC	M4 V
-2323	Mukhaldim	E533000-0	Ba	-	-	020	5	Na	K5 V
+2323	Mukhaldim	E533000-0	Ba Po	-	-	020	5	Na	K5 V
 2325	Kaguk	E648000-0	Ba	-	-	001	10	Na	M3 V
-2330	Dismal	D421444-8	He Ni	-	-	112	6	Na	M2 V
+2330	Dismal	D421444-8	He Ni Po	-	-	112	6	Na	M2 V
 2521		???????-?		-	-	?13	12	ZS	M3 V
 2527		???????-?		-	-	?12	11	Na	M0 V
 2528		???????-?		-	-	?03	9	ZS	M1 V
@@ -323,16 +323,16 @@ Hex	Name	UWP	Remarks	B	Z	PBG	W	A	Stellar
 0532		?532???-?		-	-	?22	13	Na	K8 V M7 V
 0533		?312???-?	Ic Sa	-	-	?02	11	Na	M1 V M8 V
 0536		?696???-?		-	-	?22	11	Na	M1 V M7 V
-0632	Sionnach	D533200-8	Lo Ni Po	-	-	512	13	TC	F6 V M1 V
+0632	Sionnach	D533200-8	Lo Po	-	-	512	13	TC	F6 V M1 V
 0637		?434???-?		-	-	?00	8	Na	M1 V M5 V
 0639		???????-?		-	-	?14	12	Na	M1 V M0 V
 0640		???????-?		-	-	?15	9	Na	M2 V
-0832	Wallach	C578446-7	Ni	-	-	104	10	TC	M0 V
+0832	Wallach	C578446-7	Ni Pa	-	-	104	10	TC	M0 V
 0833	Thalassa	C58A446-C	Ni Wa	-	-	610	12	TC	M1 V
 0835		?659???-?		-	-	?02	8	Na	M2 V M6 V
-0931	Yenisei	C313313-C	Ic Lo Ni	-	-	110	12	TC	M1 V
+0931	Yenisei	C313313-C	Ic Lo	-	-	110	12	TC	M1 V
 0938		?000???-?	As Va	-	-	?12	14	Na	K1 III
-1032	Chrysolite	B547448-C	Ni	-	-	511	14	TC	G3 V
+1032	Chrysolite	B547448-C	Ni Pa	-	-	511	14	TC	G3 V
 1034	Tunguska	C551426-B	Ni Po	-	-	103	10	TC	A6 V
 1035		?568???-?		-	-	?01	4	Na	M3 V
 1136		?785???-?	Ga	-	-	?03	13	Na	M2 V
@@ -355,17 +355,17 @@ Hex	Name	UWP	Remarks	B	Z	PBG	W	A	Stellar
 1540		?755???-?	Ga	-	-	?21	10	Na	M3 V M5 V
 1636		?556???-?		-	-	?14	13	Na	K6 V M0 V M6 V
 1637		?311???-?	Ic Sa	-	-	?13	11	Na	A6 V
-1732	Ys	C84742A-8	Ni	-	-	320	17	TC	M3 V
+1732	Ys	C84742A-8	Ni Pa	-	-	320	17	TC	M3 V
 1736		?542???-?	He	-	-	?04	9	Na	M2 V
 1738		?56A???-?	Wa	-	-	?13	11	Na	M1 V
 1739		?732???-?		-	-	?03	9	Na	M2 V M5 V K4 V
 1740		???????-?		-	-	?20	9	Na	M2 V
-1833	Remulak	C974428-5	Ni	-	-	512	12	TC	M2 V
+1833	Remulak	C974428-5	Ni Pa	-	-	512	12	TC	M2 V
 1836		?A85???-?		-	-	?03	14	Na	F6 V
 1931	Hephaistos	C98A313-C	Lo Wa	-	-	602	7	TC	M3 V
 2031	Calgary	CA9A441-8	Ni Oc	-	-	125	10	TC	M2 V
-2131	Inferno	C578459-6	Ni	-	-	324	9	TC	M2 V M2 V
-2132	Forlorn	C596426-7	Ni	-	-	224	13	TC	M3 V
+2131	Inferno	C578459-6	Ni Pa	-	-	324	9	TC	M2 V M2 V
+2132	Forlorn	C596426-7	Ni Pa	-	-	224	13	TC	M3 V
 2135		???????-?		-	-	?04	15	Na	G8 V M0 V
 2138		???????-?		-	-	?04	9	Na	M2 V
 2235		???????-?		-	-	?03	11	Na	M2 V
