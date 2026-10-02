@@ -204,8 +204,14 @@ with their authors. Regenerate the baseline after each step to lock in the gains
 - Sophont code `Vila` (Vilani) added to `res/t5ss/sophont_codes.tab`: warnings 3,435 → **2,901**. M1120
   Vland and Corridor give Vilani population shares from MegaTraveller *Vilani & Vargr*. T5SS
   counts Vilani as `Huma`; the entry is local, like Rammak and Murrissi.
-- The rest needs sector authors: **`DATA-ISSUES.md`** lists the 199 worlds with undefined codes
-  (13 sectors), 3 border codes, and 2 unparseable lines, with what was checked.
+- Error fixes (branch `datafix-errors`): errors 204 → **186**, warnings 2,901 → **2,860**.
+  - `In` defined as Inyx Economic Sphere in Banners and Hanstone (16 worlds), as in neighboring
+    Ahriman; both sectors have inline `<Allegiances>` in `M1105.xml`.
+  - The PBG checks skip an unknown population multiplier (`X`/`?`). Ruupiin 1420's `?34` threw
+    "Invalid eHex digit" (reported as a parse error), and Nadir's 41 `X` values were read as 31.
+  - Yiklerdanzh (Meshan Saga) 1438: legacy Zhodani base `Z` → T5 `KM`, the server's own translation.
+- The rest needs sector authors: **`DATA-ISSUES.md`** lists the 183 worlds with undefined codes
+  (11 sectors) and 3 border codes, with what was checked.
 
 Earlier: **T1–T4 DONE** (branch `data-quality-tools`). Measured result: **664 errors** (as predicted)
 and **~60,300 warnings** (from 187,263). The baseline dropped 61 entries. `/admin/errors` shows
