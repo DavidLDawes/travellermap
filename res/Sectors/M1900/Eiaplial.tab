@@ -86,7 +86,7 @@ Eiap	M	0835	Qianzh-73	X648000-0	 	Ba 		002	Wild	M9 V	{ -3 }	(700-5)	[0000]	B	8	-
 Eiap	M	0840	Elpredr	X664000-0	 	Ba 		000	Wild	G7 V	{ -3 }	(800-5)	[0000]	B	8	-40
 Eiap	B	0908	Shiedav	A98A111-D	 	Lo Wa 		210	Wild	F4 V F9 VI K5 VI	{ 1 }	(601+2)	[321C]	B	10	12
 Eiap	B	0910	Inshdia	E49A000-5	 	Di Wa 		025	Wild	G7 III	{ -3 }	(800-5)	[0000]	B	14	-40
-Eiap	F	0911	Zhde'shtinj	C547832-8	 	Pa Pi Ph 		925	Wild	A7 V A3 V	{ -1 }	(C74+5)	[672B]	BcDe	14	1680
+Eiap	F	0911	Zhde'shtinj	C547832-8	 	Pa Pi Ph 		925	Wild	A3 V A7 V	{ -1 }	(C74+5)	[672B]	BcDe	14	1680
 Eiap	F	0913	Jichdrietl	D553875-1	 	Ph Po 		723	Wild	K0 V	{ -2 }	(976+1)	[8694]	Be	12	378
 Eiap	F	0915	Shiantie	D566224-7	 	Lo 		834	Wild	K3 IV K9 VI BD	{ -3 }	(610-1)	[1156]	B	16	-6
 Eiap	F	0917	Tlrdla	E666200-6	 	Ga Lo 		313	Wild	G1 V G0 VI G3 VI	{ -3 }	(410-4)	[11A9]	B	13	-16
@@ -301,7 +301,7 @@ Eiap	H	2713	Drenskiashen	EA65379-2	 	Lo 		614	Wild	K4 V	{ -3 }	(820+1)	[1142]	B	
 Eiap	H	2716	Ejiajdapl	C668775-8	 	Ag Ri 		624	Wild	K3 V M0 VI	{ 1 }	(B68+4)	[7884]	BC	10	2112
 Eiap	H	2719	Iezdeshrbr	A665144-B	 	Ga Lo 		300	Wild	F2 V G1 VI F4 V	{ 1 }	(501+5)	[1228]	B	7	25
 Eiap	H	2720	Ivistopr	X535000-B	 	Di 		012	Wild	K1 V K3 VI	{ -1 }	(A00-5)	[0000]	B	12	-50
-Eiap	L	2721	Tlelniabr	X000000-9	 	As Va Di 		004	Wild	A7 V A6 V K6 VI	{ -2 }	(B00-5)	[0000]	B	9	-55
+Eiap	L	2721	Tlelniabr	X000000-9	 	As Va Di 		004	Wild	A6 V A7 V K6 VI	{ -2 }	(B00-5)	[0000]	B	9	-55
 Eiap	L	2722	Iebr	C52489A-9	 	Ph Pi 		913	Wild	M3 II	{ 0 }	(97B+2)	[8879]	BDe	14	1386
 Eiap	L	2724	Zdika	D675000-9	 	Di 		003	Wild	G1 II K9 V	{ -2 }	(800-5)	[0000]	B	11	-40
 Eiap	L	2726	Chrshedr	X833000-A	 	Di Po 		024	Wild	F1 V G7 VI	{ -1 }	(A00-5)	[0000]	B	18	-50
@@ -345,7 +345,7 @@ Eiap	P	3032	Netlo	A684434-B	 	Ni Pa 		513	Wild	G9 V M9 VI M9 VI	{ 1 }	(933-1)	[1
 Eiap	P	3036	Niarafbranjt	X300000-9	 	Di Va 		023	Wild	G1 V K9 VI	{ -2 }	(B00-5)	[0000]	B	12	-55
 Eiap	P	3039	Eflieflno	XAF4000-6	 	Di 		010	Wild	K5 V M9 VI BD	{ -3 }	(B00-5)	[0000]	B	12	-55
 Eiap	D	3109	Vlijiel	X793000-3	 	Di 		014	Wild	K9 III	{ -3 }	(700-5)	[0000]	B	17	-35
-Eiap	H	3112	Vrecha	X524000-8	 	Di 		010	Wild	G6 VI G8 VI G0 VI	{ -3 }	(700-5)	[0000]	B	8	-35
+Eiap	H	3112	Vrecha	X524000-8	 	Di 		010	Wild	G0 VI G6 VI G8 VI	{ -3 }	(700-5)	[0000]	B	8	-35
 Eiap	H	3113	Bievransh	X528000-0	 	Ba 		012	Wild	G1 IV M3 V	{ -3 }	(B00-5)	[0000]	B	12	-55
 Eiap	H	3114	Naiaqrtla	X531000-A	 	Di Po 		022	Wild	M3 V D D BD	{ -1 }	(A00-5)	[0000]	B	15	-50
 Eiap	H	3116	Zhiedlazdi	X87A000-6	 	Di Wa 		024	Wild	M6 II D M0 V	{ -3 }	(B00-5)	[0000]	B	14	-55

@@ -63,7 +63,7 @@ Hex  Name                 UWP       Remarks                               {Ix} (
 2905 Mux                  BAA2426-A Fl He Ni                              {+1} (D32-1) [751C] - -  - 624 9  Tm A6 V            
 3003 Lospar               D578758-5 Ag Pi Lt                              {-1} (968-2) [A664] - -  - 100 10 Tm F8 V G7 VI      
 3007 Eldosan              C887846-4 Ga Ri Pa Ph Lt Tp DosaW (Dosanu)      {+0} (A77+4) [6852] - V  - 821 7  Ns G3 V            
-3107 Yarsa                D200114-9 Lo Va Tz                              {-2} (500+1) [113A] - -  - 310 6  Na M8 VI K7 VI     
+3107 Yarsa                D200114-9 Lo Va Tz                              {-2} (500+1) [113A] - -  - 310 6  Na K7 VI M8 VI     
 3109 Ambad                E7A1300-9 Fl He Lo                              {-2} (820+1) [1187] - -  - 733 9  Na G4 III          
 3203 Durgak               D241587-6 Ni Po                                 {-3} (641+1) [9239] - -  - 404 11 Tm K2 V K6 V       
 3204 Valishad             C000453-A As Ni Va                              {+0} (633+3) [143A] - -  - 401 5  Tm D               
@@ -184,7 +184,7 @@ Hex  Name                 UWP       Remarks                               {Ix} (
 2629 Telivant             D676743-6 Ag Pi Da Huma7 Jaib3                  {-1} (769-3) [6612] - -  A 723 10 Ko G1 VI BD        
 2722 Misch                B88779A-9 Ag Ga Ri Tp JaibW                     {+3} (968+4) [AA88] - -  - 113 9  Ko G4 V M7 V       
 2724 Ecosh                C000342-C As Lo Va Ht JaibW                     {+0} (820+1) [133E] - -  - 912 6  Ko M7 V            
-2725 Hilo                 C52358B-7 Ni Po Tp Huma2 Jaib8                  {-2} (A40+1) [4336] - V  - 202 6  Ko M1 V K6 V       
+2725 Hilo                 C52358B-7 Ni Po Tp Huma2 Jaib8                  {-2} (A40+1) [4336] - V  - 202 6  Ko K6 V M1 V       
 2726 Riddell              C56669B-4 Ag Ni Ri Lt Chir7 Jaib3               {+0} (755+2) [5638] - -  - 703 9  Ko F0 V            
 2825 Bylo                 D538525-6 Ni Tz Huma3 Jaib7                     {-3} (742+1) [6245] - -  - 504 7  Ko M3 V            
 2827 Burgoo               AA87664-B Ag Ni Ri Mr Tz JaibW                  {+3} (A59+1) [696D] - K  - 503 6  Ko M7 VI           

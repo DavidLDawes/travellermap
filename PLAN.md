@@ -196,6 +196,11 @@ with their authors. Regenerate the baseline after each step to lock in the gains
     world lines in JG-CrucisMargin.sec are left as they are, and the tool reports them.
   - T5SS-generated M1105 sectors: `--t5ss` edits the sources in `res/t5ss/data` (392 Pop-0
     (Ex) values, 1 missing `Pr`), then `perl update_world_data.pl --source-data` regenerates them.
+- Group 2 (branch `datafix-group2`): warnings 6,839 → **3,435**, errors unchanged.
+  - Gov 6 worlds that don't name a controller (`O:`/`Mr`/`Re`/`Px`) are now a **hint**, not a
+    warning (2,533): the owner can't be derived, and most canon data doesn't give one.
+  - Star order: `tools/tradecodes` moves the largest star to the front as the primary (868
+    worlds, including unexplored `???????-?` ones). 26 left use old notation (`M1 D`, `M7v`).
 - The rest needs sector authors: **`DATA-ISSUES.md`** lists the 199 worlds with undefined codes
   (13 sectors), 3 border codes, and 2 unparseable lines, with what was checked.
 

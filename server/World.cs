@@ -585,10 +585,11 @@ namespace Maps
                 }
             }
 
-            // Ownership
-            if (Government == 6 && !(HasCodePrefix("O:") || HasCodePrefix("Mr") ||
-                HasCode("Re") || HasCode("Px") || HasCode("Pe") || HasCode("Cy")))
-                Error("Gov 6 (captive/colony) missing one of: O:/Mr/Re/Px");
+            // Ownership. T5SS wants Gov 6 worlds to name their controller, but most canon data
+            // doesn't, and the owner can't be derived, so this is a hint, not a warning.
+            HintUnless(Government != 6 || HasCodePrefix("O:") || HasCodePrefix("Mr") ||
+                HasCode("Re") || HasCode("Px") || HasCode("Pe") || HasCode("Cy"),
+                "Gov 6 (captive/colony) missing one of: O:/Mr/Re/Px");
 
             // PBG
             ErrorIf(SecondSurvey.FromHex(PBG[PBG_P]) == 0 && PopulationExponent > 0,

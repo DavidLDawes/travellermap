@@ -27,7 +27,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0234	Maylo	C627683-5	S  	Ni 	 	403	  	F1 V                	-2				
 0237	Prumf	B401131-A	M  	Ic Va Lo 	 	800	  	F5 VI             	1				
 0302	Thanber	E5668CA-A		Ph Pa Ri 		120	  	F5 VI  M6 D         	1				
-0303	Oskin	A68A579-C	N	Ni Wa Pr		834	  	F5 VI  A4 II        	1				
+0303	Oskin	A68A579-C	N	Ni Wa Pr		834	  	A4 II F5 VI	1				
 0304	Quare	B114374-C	S	Ic Lo 		120	  	F5 V   M3 D         	1				
 0305	Hiroshi	D000432-8		As Va Ni 		624	  	F8 VI  M6 D         	-3				
 0307	Tewfik	A313776-9		Ic Na Pi 		310	  	F8 V                	1				
@@ -47,7 +47,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0336	Chinne	C200532-9		Va Ni 	 	820	  	F9 V   M8 D       	-1				
 0338	Cesse	C57A576-8		Wa Ni 	 	320	  	F5 VI               	-2				
 0340	Orche	C943846-6		Ph Pi Po 	 	310	  	F5 VI               	-1				
-0405	Morgana	A676634-E	S	Ni Ag 		112	  	F5 V   K2 Ib        	2				
+0405	Morgana	A676634-E	S	Ni Ag 		112	  	K2 Ib F5 V	2				
 0406	Tyo	B669668-E		Ni Ri 		523	  	F9 V   M1 D         	2				
 0409	Sidon	C140353-A	S	De Lo Po 		220	  	F7 V                	0				
 0410	Ceet	C539421-5	M  	Ni 		925	  	F7 V                	-2				
@@ -488,7 +488,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2823	Enos	B952862-9	N	Ph Po 	 	813	  	F8 VI  M5 D         	1				
 2825	Newcomb	D441443-6	S	He Ni Po 	 	120	  	F1 V   M3 D         	-3				
 2826	Tortuga	X400369-7		Va Lo 	R	700	  	F2 V                	-3				
-2827	Hexos	D520311-7	S	De He Lo Po 	 	220	  	M9 V   M1 V         	-3				
+2827	Hexos	D520311-7	S	De He Lo Po 	 	220	  	M1 V M9 V	-3				
 2828	Leandor	C432651-B		Ni Na Po 	 	700	  	F6 VI               	0				
 2829	Talcheck	E5107BF-8		Na Pi 	 	120	  	M6 V                	-2				
 2830	Warden	E358200-7		Lo 	 	610	  	F8 V                	-3				

@@ -36,7 +36,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1207 B-1207               X658000-0 Ba                          {-3}   (600-5) [0000]                012 14 Na G2 V
 1208 B-1208               X878000-0 Ba Co                       {-3}   (900-5) [0000]                011 15 Na A9 IV 
 1303 B-1303               X430000-0 De Ba Po                    {-3}   (600-5) [0000]                002 10 Na G8 V M4 V 
-1401 B-1401               X660000-0 De Ba                       {-3}   (B00-5) [0000]                012 7  Na K2 V M6 III
+1401 B-1401               X660000-0 De Ba                       {-3}   (B00-5) [0000]                012 7  Na M6 III K2 V                                             
 1407 B-1407               X425000-0 Ba Co Tz                    {-3}   (300-5) [0000]                020 10 Na M3 V
 1409 Coathlan             E599446-7 Ni                          {-3}   (734+1) [914B] B              700 12 Na F3 V M4 V
 1501 B-1501               X435000-0 Ba Co                       {-3}   (400-5) [0000]                010 8  Na G5 V
@@ -86,7 +86,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 3001 D-3001               X402000-0 Ic Va Ba Tz                 {-3}   (500-5) [0000]                003 14 Na M1 V
 3009 D-3009               X648000-0 Ba                          {-3}   (700-5) [0000]                002 7  Na A9 IV
 3010 D-3010               X9D9000-0 Ba                          {-3}   (600-5) [0000]                002 10 Na K5 V
-3102 D-3102               X77A000-0 Wa Ba                       {-3}   (500-5) [0000]                002 11 Na F8 V K2 VI F7 V K5 VI
+3102 D-3102               X77A000-0 Wa Ba                       {-3}   (500-5) [0000]                002 11 Na F7 V F8 V K2 VI K5 VI                                   
 3105 D-3105               X685000-0 Ba Ga Tu                    {-3}   (A00-5) [0000]                014 17 Na G0 V
 3106 D-3106               X432000-0 Ba Po                       {-3}   (700-5) [0000]                002 13 Na F3 V M1 VI G9 VI
 3108 D-3108               X7A5000-0 Fl Ba Co                    {-3}   (500-5) [0000]                004 10 Na F7 V G4 VI
@@ -99,7 +99,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 0118 E-0118               X7A3000-0 Fl Ba                       {-3}   (500-5) [0000]                021 10 Na K2 V
 0119 E-0119               X576000-0 Ba Co                       {-3}   (A00-5) [0000]                021 15 Na F3 V
 0120 E-0120               X545000-0 Ba                          {-3}   (700-5) [0000]                002 6  Na K2 V M7 V M5 VI M8 VI
-0215 E-0215               X435000-0 Ba Tz                       {-3}   (400-5) [0000]                002 14 Na M0 V M7 III M6 V
+0215 E-0215               X435000-0 Ba Tz                       {-3}   (400-5) [0000]                002 14 Na M7 III M0 V M6 V                                        
 0311 E-0311               X554000-0 Ba Tz                       {-3}   (400-5) [0000]                004 11 Na M3 V BD
 0314 E-0314               X9A4000-0 Fl Ba Tz                    {-3}   (600-5) [0000]                024 9  Na 
 0315 E-0315               X661000-0 Ba Tz                       {-3}   (530-5) [2196]                022 15 Na M3 V BD
@@ -124,7 +124,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1013 F-1013               X777000-0 Ba                          {-3}   (500-5) [0000]                000 6  Na F2 V M6 V
 1014 F-1014               X567000-0 Ba                          {-3}   (A00-5) [0000]                002 9  Na F3 V F7 V F7 VI
 1015 F-1015               X636000-0 Ba Tz                       {-3}   (400-5) [0000]                020 10 Na M0 V
-1111 F-1111               X523000-0 Ba Po Tz                    {-3}   (900-5) [0000]                000 11 Na M0 V K3 V
+1111 F-1111               X523000-0 Ba Po Tz                    {-3}   (900-5) [0000]                000 11 Na K3 V M0 V                                               
 1114 F-1114               X100000-0 Va Ba                       {-3}   (B00-5) [0000]                003 11 Na G9 V
 1118 F-1118               X557000-0 Ba                          {-3}   (600-5) [0000]                002 9  Na G7 V
 1119 F-1119               X848000-0 Ba Sa                       {-3}   (500-5) [0000]                000 10 Na F4 III G2 V K2 V G1 V
@@ -133,7 +133,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1217 F-1217               XBE4000-0 Ba                          {-3}   (B00-5) [0000]                032 12 Na K7 V
 1218 F-1218               X787000-0 Ga Ba                       {-3}   (600-5) [0000]                000 5  Na F2 V G9 VI
 1311 F-1311               X300000-0 Va Ba Co                    {-3}   (900-5) [0000]                003 13 Na F0 V
-1315 F-1315               X9A5000-0 Fl Ba Co                    {-3}   (400-5) [0000]                011 13 Na G6 V M6 III G4 V
+1315 F-1315               X9A5000-0 Fl Ba Co                    {-3}   (400-5) [0000]                011 13 Na M6 III G6 V G4 V                                        
 1317 F-1317               XDCA000-0 Fl Ba                       {-3}   (900-5) [0000]                003 12 Na A9 V
 1411 F-1411               X426000-0 Ba Lk Sa                    {-3}   (700-5) [0000]                012 15 Na G5 V K7 VI 
 1412 F-1412               X7A8000-0 Fl Ba Tz                    {-3}   (500-5) [0000]                013 15 Na M2 V
@@ -169,7 +169,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2713 Wellaway             X000000-0 As Ba Va                    {-3}   (600-5) [0000]                030 13 Sw G2 V
 2716 Jolene               X000000-0 As Ba Va                    {-3}   (B00-5) [0000]                000 12 Sw K0 V
 2812 Kayah                X000000-0 As Ba Va                    {-3}   (900-5) [0000]                000 7  Sw F1 V F7 VI
-2813 Undine               X000000-0 As Ba Va                    {-3}   (400-5) [0000]                002 10 Sw M3 V K4 V
+2813 Undine               X000000-0 As Ba Va                    {-3}   (400-5) [0000]                002 10 Sw K4 V M3 V                                               
 2817 H-2817               X662000-0 Ba Tz                       {-3}   (900-5) [0000]                002 14 Na M4 V
 2912 Merica               X000000-0 As Ba Va                    {-3}   (500-5) [0000]                020 7  Sw M0 V BD
 2913 Bybel                X000000-0 As Ba Va                    {-3}   (600-5) [0000]                022 14 Sw M2 V M7 V
@@ -188,7 +188,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 3217 H-3217               X420000-0 He Ba Po De Tz              {-3}   (B00-5) [0000]                000 8  Na M7 V BD
 3220 H-3220               X438000-0 Ba Co                       {-3}   (800-5) [0000]                001 9  Na F8 V
 0122 I-0122               X633000-0 Ba Po                       {-3}   (800-5) [0000]                033 13 Na G5 V
-0125 I-0125               X500000-0 Va Ba Tz                    {-3}   (300-5) [0000]                001 10 Na M1 V K4 V
+0125 I-0125               X500000-0 Va Ba Tz                    {-3}   (300-5) [0000]                001 10 Na K4 V M1 V                                               
 0128 I-0128               X686000-0 Ga Ba                       {-3}   (600-5) [0000]                002 11 Na K2 V
 0222 I-0222               X310000-0 Ba Co Tz                    {-3}   (900-5) [0000]                020 7  Na M3 V
 0224 I-0224               X434000-0 Ba                          {-3}   (600-5) [0000]                002 12 Na K2 V
@@ -200,7 +200,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 0424 I-0424               X7B5000-0 Fl Ba Co                    {-3}   (500-5) [0000]                000 7  Na A6 II G8 V
 0425 I-0425               X522000-0 He Ba Po Co                 {-3}   (B00-5) [0000]                022 14 Na K1 III
 0426 I-0426               X98A000-0 Wa Ba                       {-3}   (500-5) [0000]                000 9  Na K3 III
-0428 I-0428               X431000-0 Ba Po                       {-3}   (300-5) [0000]                000 7  Na G7 V M8 III G0 VI
+0428 I-0428               X431000-0 Ba Po                       {-3}   (300-5) [0000]                000 7  Na M8 III G7 V G0 VI                                       
 0430 I-0430               X783000-0 Ba                          {-3}   (600-5) [0000]                032 13 Na F6 V K9 VI
 0528 I-0528               X669000-0 Ba                          {-3}   (700-5) [0000]                002 10 Na F7 V
 0622 I-0622               X534000-0 Ba                          {-3}   (700-5) [0000]                012 13 Na K2 V M1 VI
@@ -231,7 +231,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1521 Dalthor's Den        A8697A7-E Ri                          {3}    (C66+2) [A90H] BC        N    914 15 Vn F6 V M6 V
 1528 Thailus              E567364-D Lo Lk Sa                    {-1}   (B20+2) [425J] B              720 6  Vn F4 V M4 V
 1530 Hansille             C420100-C He Lo Po De                 {0}    (C00+1) [007H] B              420 7  Vn G4 V
-1626 Talerin              D312351-E Ic Lo Tz                    {-1}   (E20+1) [029H] B              524 11 Vn M2 V K5 V
+1626 Talerin              D312351-E Ic Lo Tz                    {-1}   (E20+1) [029H] B              524 11 Vn K5 V M2 V                                               
 1628 Maccabbee            C843578-D Ni Po                       {0}    (842+3) [858F] BC             623 15 Vn F3 V
 1629 Sarinlor             C542532-D He Ni Po Co Tz              {0}    (E42+1) [143H] B         S    525 12 Vn M0 V
 1630 Sarinlad             A540267-C He Lo Po De Sa              {2}    (812+1) [344G] B         NS   924 13 Vn F7 V M7 V
@@ -312,12 +312,12 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1537 Orrin                B522999-A He Hi Na In Po              {4}    (98B+1) [AB09] BE             615 12 Vn F5 V
 1631 Yoshille             C773668-C Ni                          {0}    (656+1) [367H] BC        S    800 11 Vn F9 V M6 V
 1632 Tandoran             E885832-B Ga Ph Pa Ri Lk Sa           {1}    (A76+2) [795K] BcCe           924 15 Vn F3 V
-1633 Lemage               E430565-B De Ni Po Tz                 {-1}   (C44+1) [741B] B              514 14 Vn M0 V K2 V
+1633 Lemage               E430565-B De Ni Po Tz                 {-1}   (C44+1) [741B] B              514 14 Vn K2 V M0 V                                               
 1638 Edwert               B200687-A Va Ni Na Tz                 {1}    (954+1) [551G] B              614 17 Vn M1 V
 1733 Gareon               A423677-B Ni Na Po                    {1}    (D55+1) [47AG] B         S    112 8  Vn F1 IV
 1735 Malth                B57345A-A Ni                          {1}    (E33+3) [736K] Bc             823 15 Vn F3 V
 1736 Warredd              D1009B8-A Va Hi Na In                 {2}    (887+2) [8B5D] BE             400 13 Vn F5 V
-1737 Indolen              E434546-A Ni Tz                       {-1}   (744+2) [755H] BC             901 4  Vn M3 V G9 V
+1737 Indolen              E434546-A Ni Tz                       {-1}   (744+2) [755H] BC             901 4  Vn G9 V M3 V                                               
 1738 Cirilli              D551335-A Lo Po                       {-1}   (A20+1) [524E] B              112 11 Vn F5 V
 1833 Gordell              D567875-B Ph Pa Ri                    {1}    (D78+1) [698D] BcCe      S    623 10 Vn G3 V
 1835 Enghen               E89A655-A Wa Ni                       {-1}   (A54+1) [754G] B              525 13 Vn F4 V
@@ -333,7 +333,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2234 Magera               A6A7955-B Fl Hi In Cp                 {5}    (B9B+1) [BD19] BE        NS   402 9  Vn F4 V
 2236 Zanselut             A7BA325-A Fl Lo Tz                    {1}    (C21+5) [042J] B              212 15 Vn M3 V
 2237 Benvolent            C56169A-A Ni Ri                       {1}    (H52+2) [A65E] BC        M    525 15 Vn F8 V M3 V
-2240 O-2240               X666000-0 Ga Ba Tz                    {-3}   (A00-5) [0000]                023 11 Na M0 V K6 V
+2240 O-2240               X666000-0 Ga Ba Tz                    {-3}   (A00-5) [0000]                023 11 Na K6 V M0 V                                               
 2331 Marjoyan             C775655-C Ni Ag                       {1}    (A51+4) [467G] BC        S    120 12 Vn G5 V
 2332 Karistel             BA8A658-C Oc Ni Ri Co                 {2}    (951+4) [565H] BC        S    615 15 Vn F9 V
 2333 Logalist             C98A452-B Wa Ni                       {0}    (432+3) [435F] B         M    500 5  Vn F5 V M9 V
@@ -348,11 +348,11 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2840 P-2840               X200000-0 Va Ba Tz                    {-3}   (300-5) [0000]                014 15 Na M0 V
 2932 P-2932               X311000-0 Ic Ba Tz                    {-3}   (B00-5) [0000]                012 13 Na M2 V
 2933 P-2933               X691000-0 Ba He                       {-3}   (B00-5) [0000]                001 7  Na A4 V
-2937 P-2937               X653000-0 Ba Po                       {-3}   (900-5) [0000]                002 10 Na F7 V F2 V K9 VI F6 VI 
+2937 P-2937               X653000-0 Ba Po                       {-3}   (900-5) [0000]                002 10 Na F2 V F7 V K9 VI F6 VI                                   
 2938 P-2938               X657000-0 Ga Ba Sa                    {-3}   (600-5) [0000]                012 11 Na F6 V K2 VI K2 VI
-2939 P-2939               X8A8000-0 Fl Ba Sa                    {-3}   (200-5) [0000]                013 11 Na M0 V K6 V
+2939 P-2939               X8A8000-0 Fl Ba Sa                    {-3}   (200-5) [0000]                013 11 Na K6 V M0 V                                               
 3038 P-3038               X511000-0 Ic Ba Co                    {-3}   (400-5) [0000]                001 12 Na F2 V
-3040 P-3040               X556000-0 Ba                          {-3}   (A00-5) [0000]                012 9  Na G9 V G1 V
+3040 P-3040               X556000-0 Ba                          {-3}   (A00-5) [0000]                012 9  Na G1 V G9 V                                               
 3133 P-3133               X430000-0 De Ba Po                    {-3}   (500-5) [0000]                011 11 Na M9 II
 3137 P-3137               X75A000-0 Wa Ba                       {-3}   (C00-5) [0000]                032 17 Na G8 V
 3139 P-3139               X875000-0 Ba Tz                       {-3}   (A00-5) [0000]                000 8  Na M8 V

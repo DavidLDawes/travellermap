@@ -15,21 +15,21 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 0307 Manoh                ?000???-? As Va                                                    -    -  - ?13 10 ImLc M7 V
 0401 Ges                  ?868???-?                                                          -    -  - ?03 12 StIm G4 V M9 V
 0402 Serpent's Reach      ?669???-?                                                          -    -  - ?14 8  StIm K1 V M0 V
-0405 Tree'chuakh          ?789???-?                                                          -    -  - ?10 12 ImLc M3 V M1 V
+0405 Tree'chuakh          ?789???-?                                                          -    -  - ?10 12 ImLc M1 V M3 V      
 0406 Muikha               ?000???-? As Va                                                    -    -  - ?22 11 ImLc K4 V M0 V
-0407 Kaldi                ?947???-?                                                          -    -  - ?13 11 ImLc M2 V M0 V
-0408 Tae                  ?552???-? Po                                                       -    -  - ?04 17 ImLc M2 V K0 V
+0407 Kaldi                ?947???-?                                                          -    -  - ?13 11 ImLc M0 V M2 V      
+0408 Tae                  ?552???-? Po                                                       -    -  - ?04 17 ImLc K0 V M2 V      
 0502 Ushkhuur             ?A7A???-? Oc                                                       -    -  - ?10 11 StIm G2 V M2 V
 0503 Geka                 ?311???-? Ic                                                       -    -  - ?04 10 StIm M9 III M0 V
 0504 Gushnemasha          ?888???-? Sa                                                       -    -  - ?13 14 ImLc M2 V
 0505 Iiu                  ?5A6???-? Fl                                                       -    -  - ?02 6  ImLc M4 V M5 V
 0506 Siakmasfa            ?540???-? De He Po                                                 -    -  - ?04 13 ImLc K2 V
 0509 Refuge               ?578???-?                                                          -    -  - ?24 9  ImLc K1 V
-0601 Ninaan               ?544???-?                                                          -    -  - ?35 12 StIm M2 V M1 V
+0601 Ninaan               ?544???-?                                                          -    -  - ?35 12 StIm M1 V M2 V      
 0604 Seminary             ?422???-? He Po                                                    -    -  - ?00 11 ImLc M1 V
 0610 Zishku               ?7A5???-? Fl                                                       -    -  - ?24 9  LuIm K0 V
 0705 Zuiar                ?550???-? De Po                                                    -    -  - ?23 8  ImLc K0 V
-0707 Khumara              ?561???-?                                                          -    -  - ?00 12 ImLc M2 V M1 V
+0707 Khumara              ?561???-?                                                          -    -  - ?00 12 ImLc M1 V M2 V      
 0708 Ssi                  ?758???-?                                                          -    -  - ?03 6  ImLc K6 V M9 V
 0709 Irshe                ?94A???-? Wa                                                       -    -  - ?13 13 ImLc M2 V M6 V
 0801 Shéaniki             ?612???-? Ic Sa                                                    -    -  - ?04 7  StIm M2 V
@@ -70,7 +70,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 1605 Daridura             ?550???-? De Po                                                    -    -  - ?23 9  LuIm G1 V M5 V
 1702 Manshuruk            ?6A4???-? Fl                                                       -    -  - ?05 10 StIm M2 V M3 V
 1703 Diu                  ?835???-?                                                          -    -  - ?03 7  StIm M2 V M3 V
-1705 Liikirba             ?687???-? Ga Sa                                                    -    -  - ?04 11 LuIm M3 V M0 V
+1705 Liikirba             ?687???-? Ga Sa                                                    -    -  - ?04 11 LuIm M0 V M3 V      
 1709 Rusadaa              ?555???-?                                                          -    -  - ?04 8  LuIm M1 V
 1710 Line's End           ?557???-?                                                          -    -  - ?14 13 LuIm K5 IV
 1801 Gursa                ?547???-?                                                          -    -  - ?03 12 StIm K2 V
@@ -108,7 +108,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 2505 Urpa                 ?776???-? (Urpayans)?                                              -    -  - ?03 14 LuIm K4 V
 2506 Shuakhuar            ?572???-? He                                                       -    -  - ?00 12 LuIm M2 V
 2601 Arna                 ?8B8???-? Fl                                                       -    -  - ?03 15 StIm M0 V M8 V
-2602 Aashma               ?000???-? As Va                                                    -    -  - ?03 9  LuIm M1 V G1 V
+2602 Aashma               ?000???-? As Va                                                    -    -  - ?03 9  LuIm G1 V M1 V      
 2603 Khi                  ?685???-? Ga                                                       -    -  - ?04 12 LuIm M0 V
 2604 Irsaar               ?884???-?                                                          -    -  - ?02 10 LuIm M2 V
 2605 Shigkhu              ?643???-? Po                                                       -    -  - ?20 11 LuIm G1 V
@@ -127,7 +127,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 3001 Ersharsa             ?89A???-? Wa Sa                                                    -    -  - ?02 13 LuIm K3 V
 3004 Aadshas              ?571???-? He                                                       -    -  - ?00 3  LuIm M2 V
 3005 Dana                 ?689???-?                                                          -    -  - ?22 13 LuIm F0 V M9 V
-3006 Kurdeshu             ?544???-?                                                          -    -  - ?15 9  LuIm M1 V K9 V
+3006 Kurdeshu             ?544???-?                                                          -    -  - ?15 9  LuIm K9 V M1 V      
 3008 Iiradu               ?542???-? He Po                                                    -    -  - ?00 9  LuIm M3 V
 3101 Iimkhir              ?552???-? Po                                                       -    -  - ?03 13 LuIm M2 V
 3103 Karsa                ?7A8???-? Fl                                                       -    -  - ?02 15 LuIm K6 IV
@@ -135,7 +135,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 3110 Anshu                ?567???-?                                                          -    -  - ?24 12 LuIm G3 V M4 V
 3202 Lir                  ?576???-?                                                          -    -  - ?01 13 LuIm M3 V M6 V
 3205 Duukhaa              ?000???-? As Va                                                    -    -  - ?14 12 LuIm K1 V M6 V
-3206 Aska                 ?201???-? Ic Va                                                    -    -  - ?03 13 LuIm M3 V M7 V M1 V
+3206 Aska                 ?201???-? Ic Va                                                    -    -  - ?03 13 LuIm M1 V M3 V M7 V 
 3208 Kassandra            ?898???-?                                                          -    -  - ?12 10 LuIm K7 V
 3209 Gishmarkash          ?536???-?                                                          -    -  - ?25 13 LuIm K8 V
 0111 Upag                 ?310???-?                                                          -    -  - ?14 8  ImLc M0 V
@@ -186,7 +186,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 1017 Talnes'ra            ?565???-?                                                          -    -  - ?20 11 LuIm M0 V M9 V
 1020 Maamkumar            ?535???-?                                                          -    -  - ?04 10 LuIm K3 V
 1113 Laruu                ?521???-? He Po                                                    -    -  - ?04 16 LuIm M1 V
-1114 Tethys               ?89A???-? Wa (Hamaran)?                                            -    -  - ?11 11 LuIm M1 V M0 V
+1114 Tethys               ?89A???-? Wa (Hamaran)?                                            -    -  - ?11 11 LuIm M0 V M1 V      
 1115 Nox                  ?9A5???-? Fl                                                       -    -  - ?20 13 LuIm M2 V
 1117 Antioch              ?545???-?                                                          -    -  - ?00 9  LuIm K3 V M8 V
 1118 Kaurga               ?686???-? Ga                                                       -    -  - ?01 7  LuIm M2 V M6 V
@@ -248,7 +248,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 2617 Hasoi'aohalaiko      ?876???-?                                                          -    -  - ?00 10 LuIm M3 V
 2618 Shirlukam            ?573???-?                                                          -    -  - ?04 13 LuIm G9 V M7 V
 2711 Remanec              ?577???-?                                                          -    -  - ?00 15 LuIm K0 V
-2714 Negev                ?540???-? De He Po                                                 -    -  - ?04 14 LuIm M3 V M0 V
+2714 Negev                ?540???-? De He Po                                                 -    -  - ?04 14 LuIm M0 V M3 V      
 2715 Dupusirlu            ?95A???-? Wa                                                       -    -  - ?00 11 LuIm K4 V M7 V
 2717 Kuriishe             ?631???-? Po                                                       -    -  - ?00 11 LuIm G4 V
 2719 Gareesh Ra           ?565???-?                                                          -    -  - ?12 11 LuIm K2 V
@@ -300,7 +300,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 0625 Keshga               ?666???-? Ga                                                       -    -  - ?24 9  LuIm G4 V
 0628 Iur                  ?796???-?                                                          -    -  - ?02 8  ImAp M3 V
 0721 Zeda                 ?873???-? (Ziadd)?                                                 -    -  - ?24 14 LuIm K4 V
-0723 A'niaqoro            ?9AA???-? Fl                                                       -    -  - ?04 8  LuIm M2 V K4 V
+0723 A'niaqoro            ?9AA???-? Fl                                                       -    -  - ?04 8  LuIm K4 V M2 V      
 0724 Guan                 ?510???-?                                                          -    -  - ?01 9  LuIm M0 V
 0725 Sumuu                ?300???-? Va                                                       -    -  - ?13 11 LuIm K2 V
 0729 Shogun               ?89A???-? Wa                                                       -    -  - ?11 8  ImAp M1 V
@@ -381,7 +381,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 2227 A'a'suni             ?546???-? (Athar)?                                                 -    -  - ?00 10 LuIm M2 V
 2228 Kurkhi               ?401???-? Ic Va                                                    -    -  - ?14 9  LuIm M0 V
 2322 Ishigumam            ?100???-? Va                                                       -    -  - ?02 9  LuIm K2 V M6 V
-2324 Tilmea               ?433???-? Po                                                       -    -  - ?00 11 LuIm M1 V K8 V
+2324 Tilmea               ?433???-? Po                                                       -    -  - ?00 11 LuIm K8 V M1 V      
 2327 Station Two          ?560???-? De                                                       -    -  - ?02 11 LuIm M4 V
 2424 Mo'line              ?435???-?                                                          -    -  - ?13 7  LuIm M2 V
 2426 For'star             ?623???-? Po                                                       -    -  - ?05 8  LuIm M2 V M9 V
@@ -506,7 +506,7 @@ Hex  Name                 UWP       Remarks                            {Ix}   (E
 2037 Hadraach             ?AE5???-?                                                          -    -  - ?23 9  LuIm M2 V
 2038 Ya'uiya-ko           ?520???-? De He Po                                                 -    -  - ?04 7  LuIm K1 V
 2135 Harlequin            ?433???-? Po                                                       -    -  - ?23 13 LuIm K4 V M4 V
-2137 Sapphyre             ?977???-?                                                          -    -  - ?04 15 LuIm M3 V K0 V
+2137 Sapphyre             ?977???-?                                                          -    -  - ?04 15 LuIm K0 V M3 V      
 2139 Shaida               ?521???-? He Po                                                    -    -  - ?15 10 LuIm M2 V M8 V
 2140 Miana                ?649???-?                                                          -    -  - ?13 8  LuIm M2 V
 2232 Guurdim              ?681???-?                                                          -    -  - ?24 10 LuIm G1 V M1 V

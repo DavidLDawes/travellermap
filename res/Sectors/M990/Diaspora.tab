@@ -61,9 +61,9 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 1508	Puget	E7989C7-8	Hi In	{ 0 }	(C85+1)	[E959]	EB	-	-	202	6	ImDs	M2 V
 1510	Cayene	D425537-9	Ni Px	{ -2 }	(C40-2)	[639A]	B	-	-	120	10	ImDs	K1 V
 1602	Zeeland	E989ACC-B	Hi Da	{ 1 }	(C98-3)	[BB8F]	EB	-	A	504	9	ImDs	K2 V
-1610	Unsuited	E0008A9-9	As Na Ph Pi Va	{ -1 }	(976-1)	[8788]	eDB	-	-	104	8	ImDs	M3 V M1 V
+1610	Unsuited	E0008A9-9	As Na Ph Pi Va	{ -1 }	(976-1)	[8788]	eDB	-	-	104	8	ImDs	M1 V M3 V
 1701	Grourard	A89656A-9	Ag Ni O:2104	{ 1 }	(947+1)	[4676]	CB	-	-	300	14	ImDs	G2 V M4 V
-1704	Onliu	C310437-B	Ni	{ 0 }	(B32+1)	[143F]	B	-	-	224	11	ImDs	M1 V M6 V M0 V
+1704	Onliu	C310437-B	Ni	{ 0 }	(B32+1)	[143F]	B	-	-	224	11	ImDs	M0 V M1 V M6 V
 1707	Boyne	D562563-7	Ni Pr O:2104	{ -3 }	(740+2)	[4249]	cB	-	-	603	12	ImDs	M1 V
 1708	Erakhuu	B896868-A	Pa Ph Pi O:2104	{ 2 }	(87C-2)	[7A88]	eDcB	-	-	902	13	ImDs	G1 V
 1804	Navar	C5479D8-8	Hi In Da	{ 1 }	(C89+1)	[CA15]	EB	-	A	805	12	ImDs	F9 V
@@ -76,7 +76,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 2104	Gamov	A0009EE-E	As Hi In Na Va Cp Da	{ 4 }	(58C+2)	[7D4F]	FfEB	-	A	801	10	ImDs	K1 V M2 V
 2105	Heymac	C300345-B	Lo Va	{ 0 }	(520-4)	[335A]	B	-	-	601	8	ImDs	M4 V
 2201	Dahl	D100413-A	Ni Va	{ -1 }	(631+1)	[3339]	B	-	-	313	14	ImDs	M0 V
-2203	Troy	A622730-C	He Na Pi Po	{ 2 }	(A6B+1)	[497B]	DB	-	-	814	12	ImDs	M2 V M1 V
+2203	Troy	A622730-C	He Na Pi Po	{ 2 }	(A6B+1)	[497B]	DB	-	-	814	12	ImDs	M1 V M2 V
 2207	Lassie	A421135-B	He Lo Po	{ 1 }	(A01-3)	[227C]	B	-	-	604	8	ImDs	G0 V M5 V
 2208	Naasha	D69757A-7	Ag Ni	{ -2 }	(A41-2)	[4333]	CB	-	-	814	14	ImDs	G0 V M2 V
 2209	Backman	B554877-A	Pa Ph	{ 2 }	(87E-2)	[8AAB]	ecB	N	-	703	13	ImDs	K0 V M0 V
@@ -102,7 +102,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 2709	Gorakpur	B000524-E	As Ni Va	{ 1 }	(A47+2)	[965G]	B	-	-	204	11	ImDs	M4 V D
 2802	Voss	B867432-B	Ga Ni Pa	{ 1 }	(B33+1)	[752A]	cB	-	-	703	8	ImDs	M0 V
 2806	Raazu	E545577-7	Ag Ni	{ -2 }	(940-4)	[53AA]	CB	-	-	815	14	ImDs	G2 V
-2807	Blanket	C424554-C	Ni	{ 0 }	(843+4)	[153E]	B	S	-	601	11	ImDs	M3 V M1 V
+2807	Blanket	C424554-C	Ni	{ 0 }	(843+4)	[153E]	B	S	-	601	11	ImDs	M1 V M3 V
 2901	Lar	C431379-B	Lo Po Px	{ 0 }	(720+4)	[534G]	B	-	-	104	11	ImDs	M2 V M8 V
 2905	Muuze	E792731-6	He Pi Pz	{ -2 }	(A62-1)	[7539]	DB	-	A	513	13	ImDs	F5 V M0 V M4 V
 2906	Dordogne	A554599-8	Ag Ni	{ 0 }	(746-3)	[6579]	CB	-	-	304	11	ImDs	M3 V
@@ -139,7 +139,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 0413	Allenwald	D310400-A	Ni	{ -1 }	(735+5)	[135C]	B	-	-	203	7	ImDs	M1 V M8 V M3 V
 0414	Kashaashii	D574402-8	Ni Pa	{ -3 }	(C31+1)	[8179]	cB	S	-	703	6	ImDs	M1 V
 0415	Ninja	E685862-6	Ga Pa Ph Ri Chir6 O:0512	{ -1 }	(A7A-2)	[A773]	eCcB	-	-	303	15	ImDs	K6 V M1 V
-0416	Terra Far	C5447AB-8	Ag Pi Da	{ 0 }	(B6A-1)	[5757]	DCB	-	A	713	13	ImDs	M2 V G5 V
+0416	Terra Far	C5447AB-8	Ag Pi Da	{ 0 }	(B6A-1)	[5757]	DCB	-	A	713	13	ImDs	G5 V M2 V
 0417	Kosmo	A54979A-8	Pi	{ 0 }	(965+1)	[7774]	DB	-	-	703	11	ImDs	K3 V
 0418	Cuttack	E575521-7	Ag Ni	{ -2 }	(C42-3)	[5366]	CB	-	-	810	10	ImDs	G3 V
 0511	Quota	A100365-D	Lo Va Mr	{ 1 }	(D21+1)	[141F]	B	N	-	913	7	ImDs	K2 V
@@ -152,7 +152,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 0616	Sudan	E691000-0	Ba He	{ -3 }	(800-5)	[0000]	-	-	-	025	10	ImDs	F2 V
 0617	Vaasa	E423000-0	Ba Po	{ -3 }	(900-5)	[0000]	-	-	-	005	10	ImDs	M3 V
 0712	Thea	B100300-C	Lo Va	{ 1 }	(621-3)	[144F]	B	-	-	102	12	ImDs	A8 V
-0713	Renaasha	C541412-9	He Ni Po	{ -1 }	(G35+1)	[238E]	B	-	-	104	9	ImDs	M2 V K3 V
+0713	Renaasha	C541412-9	He Ni Po	{ -1 }	(G35+1)	[238E]	B	-	-	104	9	ImDs	K3 V M2 V
 0719	High Point	C100733-B	Na Pi Va	{ 1 }	(868-2)	[A83B]	-	-	-	110	17	OS	M3 V
 0813	Martina	D310689-8	Na Ni	{ -3 }	(A50-5)	[2399]	B	-	-	514	14	ImDs	M4 V M6 V
 0819	Millo	X100342-7	Lo Va Fo	{ -3 }	(620+3)	[3198]	-	-	R	504	7	OS	M5 III M6 V
@@ -192,14 +192,14 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 1717	Weyburn	C437440-B	Ni	{ 0 }	(935+1)	[4459]	-	-	-	701	11	OS	G7 V
 1814	Shaanii	C557454-A	Ni Pa	{ 0 }	(A35+4)	[549A]	cB	-	-	804	12	ImDs	M2 V
 1815	Waboni	E672769-6	He Pi O:2116	{ -2 }	(463+1)	[3513]	DB	-	-	913	12	ImDs	M2 V
-1816	Umorphutwyo	C5506CD-8	De Ni Po DroyW Fo	{ -2 }	(B50+1)	[A447]	-	-	R	821	12	ImDs	M2 V M1 V
+1816	Umorphutwyo	C5506CD-8	De Ni Po DroyW Fo	{ -2 }	(B50+1)	[A447]	-	-	R	821	12	ImDs	M1 V M2 V
 1818	Dryden	D759677-7	Ni	{ -3 }	(750+3)	[7328]	-	-	-	113	10	OS	M0 V M5 V
 1819	Megelina	D300562-9	Ni Va O:2420	{ -2 }	(641-1)	[63A9]	-	-	-	804	13	OS	K3 V
 1820	Remington	A896554-B	Ag Ni	{ 2 }	(745-4)	[6769]	-	-	-	102	16	OS	M2 V M8 V
 1911	Ekuur	A658203-9	Lo	{ 0 }	(810+1)	[1279]	B	N	-	104	10	ImDs	G1 V K9 V
 1912	Raymore	D556846-6	Pa Ph	{ -2 }	(375-3)	[5664]	ecB	-	-	112	10	ImDs	M0 V
 1914	Khanii	C53A89D-B	Ph Wa Da	{ 1 }	(879+1)	[895A]	eB	-	A	813	7	ImDs	M2 V
-1916	Daazu	E591596-7	He Ni	{ -3 }	(540+1)	[4259]	B	-	-	100	5	ImDs	M2 V M0 V
+1916	Daazu	E591596-7	He Ni	{ -3 }	(540+1)	[4259]	B	-	-	100	5	ImDs	M0 V M2 V
 1918	Tigo	E410000-0	Ba	{ -3 }	(A00-5)	[0000]	-	-	-	002	14	NaXX	M0 V
 1919	Arrow Rock	A310644-D	Na Ni	{ 1 }	(C55-5)	[875C]	-	-	-	610	12	OS	M2 V M5 V
 2012	Feeble	A100533-E	Ni Va	{ 1 }	(D44+3)	[167F]	B	-	-	515	13	ImDs	M0 V M3 V
@@ -223,7 +223,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 2317	Gilgamesh	D100699-9	Na Ni Va	{ -2 }	(654+3)	[9459]	-	M	-	801	12	OS	K0 V
 2411	Beep	B310894-C	Na Ph Pi	{ 2 }	(776-1)	[6A18]	eDB	-	-	303	15	ImDs	M2 V
 2414	Hewes	C436544-B	Ni	{ 0 }	(B44+1)	[654E]	B	-	-	614	12	ImDs	K3 V M3 V
-2415	Trot	A310465-E	Ni O:2116	{ 1 }	(736-1)	[654C]	B	-	-	201	13	ImDs	M4 V M0 V
+2415	Trot	A310465-E	Ni O:2116	{ 1 }	(736-1)	[654C]	B	-	-	201	13	ImDs	M0 V M4 V
 2417	Chief	A100544-D	Ni Va	{ 1 }	(D45+1)	[767C]	-	-	-	214	8	OS	K0 V
 2419	Didinka	E578000-0	Ba	{ -3 }	(700-5)	[0000]	-	-	-	003	13	NaXX	F7 V
 2420	Layne	B796A99-E	Hi In	{ 4 }	(A9A+2)	[9E7C]	-	-	-	205	13	OS	G2 V M3 V
@@ -267,7 +267,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 0327	Pane	C747665-8	Ag Ni O:0425	{ -1 }	(655-1)	[4578]	-	-	-	503	8	SoCf	K2 V
 0422	Hideous	E422797-8	He Na Pi Po	{ -2 }	(B63+2)	[854C]	-	-	-	202	11	SoCf	G4 V
 0425	Flehemu	A558541-B	Ag Ni Cp	{ 3 }	(845-1)	[682E]	-	KM	-	914	11	SoCf	G4 V M2 V
-0430	Laruusalii	C410316-7	Lo	{ -2 }	(720+1)	[1154]	-	-	-	114	13	SoCf	M2 V K6 V M9 V
+0430	Laruusalii	C410316-7	Lo	{ -2 }	(720+1)	[1154]	-	-	-	114	13	SoCf	K6 V M2 V M9 V
 0521	Vigo	E552667-6	Ni Po O:0823	{ -3 }	(C53-2)	[8356]	-	-	-	615	12	OS	M2 V
 0524	Pesuuzu	A766556-A	Ag Ga Ni Pr	{ 3 }	(B48+1)	[18AE]	-	KM	-	104	9	SoCf	G1 V
 0526	Aahasu	C423133-B	Lo Po	{ 0 }	(800+1)	[114D]	-	-	-	300	12	SoCf	M2 V
@@ -277,9 +277,9 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 0626	Careful	E100752-A	Na Pi Va	{ 0 }	(A64+2)	[572A]	-	-	-	204	13	SoCf	M1 V M6 V M9 V
 0627	531-210	X99A677-5	Ni Wa (Shrashee) Fo	{ -3 }	(750+1)	[338A]	-	-	R	304	9	SoCf	K8 V
 0628	Arappa	A310666-9	Na Ni O:0425	{ 0 }	(553+4)	[6645]	-	-	-	811	12	SoCf	G1 V
-0629	Quioxan	A100532-B	Ni Va	{ 1 }	(442+2)	[862A]	-	-	-	601	10	SoCf	M3 V M2 V
-0721	Jene	E65556A-7	Ag Ga Ni O:0823	{ -2 }	(A41+1)	[7358]	-	-	-	700	16	OS	M2 V K0 V
-0722	Zekhesii	A76547B-D	Ga Ni Pa	{ 1 }	(B35-1)	[956G]	-	-	-	704	11	OS	M3 V K9 V
+0629	Quioxan	A100532-B	Ni Va	{ 1 }	(442+2)	[862A]	-	-	-	601	10	SoCf	M2 V M3 V
+0721	Jene	E65556A-7	Ag Ga Ni O:0823	{ -2 }	(A41+1)	[7358]	-	-	-	700	16	OS	K0 V M2 V
+0722	Zekhesii	A76547B-D	Ga Ni Pa	{ 1 }	(B35-1)	[956G]	-	-	-	704	11	OS	K9 V M3 V
 0723	Six Gun	D98A766-8	Ri Wa O:0823	{ -1 }	(F65-1)	[9648]	-	-	-	813	8	OS	K3 V
 0726	Oyster	E200534-A	Ni Va	{ -1 }	(741-3)	[8457]	-	-	-	104	11	SoCf	M3 V
 0729	Rouen	C58247A-9	Ni	{ -1 }	(A35-3)	[834A]	-	-	-	720	12	SoCf	K2 V
@@ -294,7 +294,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 1123	Shoehorn	C200321-C	Lo Va	{ 0 }	(820-1)	[135C]	-	-	-	204	9	OS	G5 V M6 V
 1124	Wellun	B99A88B-C	Ph Pi Wa	{ 2 }	(97A-2)	[BA3F]	-	-	-	113	9	OS	F6 V M2 V
 1128	Pequot	D767885-6	Ga Pa Ph Ri	{ -1 }	(374+2)	[5756]	-	-	-	503	6	SoCf	M0 V M8 V
-1223	Ledge	E658A89-A	Hi	{ 1 }	(796-4)	[CB7A]	-	-	-	201	12	OS	M1 V M0 V
+1223	Ledge	E658A89-A	Hi	{ 1 }	(796-4)	[CB7A]	-	-	-	201	12	OS	M0 V M1 V
 1229	Nani	A657415-8	Ga Ni Pa	{ -1 }	(E34+1)	[13AB]	-	-	-	512	13	SoCf	G1 V M6 V
 1230	Helena	C532433-A	Ni Po	{ 0 }	(634+2)	[4486]	-	-	-	703	11	SoCf	F4 V M9 V
 1321	Birii	C100555-D	Ni Va Sa	{ 0 }	(945-1)	[751B]	-	-	-	102	9	OS	M0 V M3 V
@@ -376,13 +376,13 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 0336	Carl's World	B567845-A	Pa Ph Ri	{ 3 }	(G78-1)	[4B67]	-	-	-	325	15	SoCf	K2 V M7 V
 0338	Vornam	C67599A-A	Hi In	{ 3 }	(C89+1)	[9C48]	-	-	-	604	15	SoCf	M0 V M5 V
 0339	Sequoia	A546537-B	Ag Ni	{ 2 }	(C45-2)	[6739]	-	-	-	112	8	SoCf	G2 V
-0431	Vision	A67555A-D	Ag Ni	{ 2 }	(947+1)	[574C]	-	-	-	500	16	Cu	M2 V M0 V
+0431	Vision	A67555A-D	Ag Ni	{ 2 }	(947+1)	[574C]	-	-	-	500	16	Cu	M0 V M2 V
 0432	Angebo	B200849-D	Na Ph Pi Va	{ 2 }	(878-3)	[DA5B]	-	-	-	903	8	Cu	M0 V M0 V
 0440	Maasii	D540235-7	De He Lo Po	{ -3 }	(910+1)	[4168]	-	-	-	103	12	SoCf	G7 V
 0531	Attax	A5875A6-A	Ag Ni Pr	{ 2 }	(B47+2)	[574A]	-	-	-	313	7	Cu	K0 V
 0532	Cumber	B3109CC-C	Hi In Na Cp Da	{ 4 }	(88E-2)	[AD49]	-	-	A	813	8	Cu	F4 V
 0533	Sheshene	D100747-9	Na Pi Va	{ -1 }	(F68+1)	[C668]	-	-	-	514	16	Cu	M2 V M2 V
-0534	Alone	X559533-4	Ni Fo	{ -3 }	(442+1)	[5211]	-	-	R	223	13	NaHu	K9 V G2 V
+0534	Alone	X559533-4	Ni Fo	{ -3 }	(442+1)	[5211]	-	-	R	223	13	NaHu	G2 V K9 V
 0535	Jue-ni	E756552-8	Ag Ga Ni	{ -2 }	(D44+3)	[5357]	-	-	-	512	10	SoCf	M1 V M5 V
 0536	Akureyri	A000555-C	As Ni Va	{ 1 }	(C47+5)	[7649]	-	-	-	714	9	SoCf	M0 V
 0537	Fazed	E310647-8	Na Ni	{ -3 }	(E52+4)	[7325]	-	-	-	724	9	SoCf	K4 V M1 V
@@ -391,7 +391,7 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 0633	Varina	D76946A-8	Ni O:0532	{ -3 }	(B30-4)	[3168]	-	-	-	904	9	Cu	K1 V M0 V
 0731	Tulane	C581300-5	Lo	{ -2 }	(B20-2)	[6133]	-	-	-	114	11	SoCf	F6 V
 0732	Zee's Place	X100433-7	Ni Va Fo	{ -3 }	(530-5)	[2149]	-	-	R	623	12	SoCf	M7 V
-0734	Pettelli	B551212-B	Lo Po	{ 1 }	(911-2)	[4356]	-	-	-	304	8	Cu	M3 V M0 V M2 V
+0734	Pettelli	B551212-B	Lo Po	{ 1 }	(911-2)	[4356]	-	-	-	304	8	Cu	M0 V M3 V M2 V
 0740	Amaani	E100000-0	Ba Va	{ -3 }	(900-5)	[0000]	-	-	-	012	7	NaXX	M0 V
 0831	Domo	A564514-A	Ag Ni Pr Da	{ 2 }	(A44+1)	[576C]	-	-	A	100	12	SoCf	G3 V M4 V
 0832	Cunning	E788530-7	Ag Ni Pr	{ -2 }	(340-1)	[4357]	-	-	-	602	16	SoCf	M1 V
@@ -439,8 +439,8 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 2040	Epic	E434748-8		{ -2 }	(F69-1)	[9544]	-	-	-	912	17	SoCf	G6 V
 2134	Geonia	D53A410-A	Ni Wa	{ -1 }	(A30+2)	[3338]	-	K	-	402	10	SoCf	M2 V
 2136	Tavara	D67A211-9	Lo Wa	{ -2 }	(910-1)	[416C]	-	-	-	412	11	SoCf	K0 V
-2236	Pekhuraa	A784322-8	Lo	{ -1 }	(C20+1)	[624C]	-	-	-	405	13	SoCf	M0 V K5 V
-2333	Saagii	B544734-A	Ag Pi	{ 3 }	(96B-1)	[4A27]	-	-	-	414	12	SoCf	M2 V M0 V
+2236	Pekhuraa	A784322-8	Lo	{ -1 }	(C20+1)	[624C]	-	-	-	405	13	SoCf	K5 V M0 V
+2333	Saagii	B544734-A	Ag Pi	{ 3 }	(96B-1)	[4A27]	-	-	-	414	12	SoCf	M0 V M2 V
 2334	Kiiki	B425663-C	Ni O:2304	{ 1 }	(B53+2)	[6759]	-	-	-	524	12	SoCf	K9 V
 2338	Saratov	D559110-8	Lo	{ -3 }	(A00-2)	[113A]	-	-	-	803	9	SoCf	M2 V
 2340	Kelvin	B6419BE-C	He Hi In Po Da	{ 4 }	(D8A+1)	[BD7A]	-	-	A	604	15	SoCf	M0 V M2 V
@@ -454,13 +454,13 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 2633	Bikar	C79A522-B	Ni Wa	{ 0 }	(B42+1)	[6578]	-	-	-	813	17	SoCf	K7 V
 2635	Lira	D527534-8	Ni	{ -3 }	(D41-1)	[8269]	-	-	-	402	11	SoCf	M1 V
 2636	Ekhapen	D100564-A	Ni Va O:2340	{ -1 }	(E41+1)	[146C]	-	-	-	304	9	SoCf	K0 V M6 V
-2731	Khesanadu	E788247-7	Lo	{ -3 }	(610+1)	[6116]	-	-	-	100	14	SoCf	M1 V K2 V
+2731	Khesanadu	E788247-7	Lo	{ -3 }	(610+1)	[6116]	-	-	-	100	14	SoCf	K2 V M1 V
 2734	Ryvo	E682425-7	Ni	{ -3 }	(730-2)	[7149]	-	-	-	121	11	SoCf	K4 V
 2834	Khirekhera	B551465-B	Ni Po O:3138	{ 1 }	(732-3)	[252B]	-	-	-	604	7	SoCf	M2 V
 2835	Acorn	B100300-C	Lo Va	{ 1 }	(721+3)	[242D]	-	-	-	302	13	SoCf	M1 V
 2836	Montezuma	B562642-A	Ni Ri	{ 2 }	(A55-4)	[885B]	-	-	-	604	15	SoCf	K4 V
 2838	Dijon	A434522-D	Ni	{ 2 }	(F43+3)	[375B]	-	KM	-	634	10	SoCf	M1 V M9 V
-2839	049-949	X520588-7	De He Ni Po Fo	{ -3 }	(741-4)	[7283]	-	-	R	813	11	NaHu	M2 V M1 V
+2839	049-949	X520588-7	De He Ni Po Fo	{ -3 }	(741-4)	[7283]	-	-	R	813	11	NaHu	M1 V M2 V
 2840	Suudo	B778538-B	Ag Ni	{ 2 }	(D45-1)	[874B]	-	-	-	302	16	SoCf	F1 V
 2933	Quarry	B99A344-C	Lo Wa RsA	{ 1 }	(821+3)	[243E]	-	-	-	404	15	SoCf	M3 V
 2939	Sofar	B8D457B-C	Ni	{ 2 }	(747+1)	[374D]	-	KM	-	400	6	SoCf	K9 V
@@ -473,5 +473,5 @@ Hex	Name	UWP	Remarks	{Ix}	(Ex)	[Cx]	N	B	Z	PBG	W	A	Stellar
 3138	Gresham	A3109A9-E	Hi In Na Cp	{ 4 }	(F8C+1)	[9D4H]	-	-	-	804	8	SoCf	M1 V
 3139	Uppsala	C9795AC-A	Ni Fo	{ 0 }	(943-5)	[5599]	-	-	R	512	11	SoCf	F4 V M8 V
 3140	Futok	B594634-A	Ag Ni	{ 2 }	(655-3)	[584D]	-	-	-	901	17	SoCf	M1 V M8 V
-3231	Desel	E1006BF-9	Na Ni Va Fo	{ -2 }	(C51+1)	[6449]	-	-	R	403	10	NaHu	M3 V M2 V
+3231	Desel	E1006BF-9	Na Ni Va Fo	{ -2 }	(C51+1)	[6449]	-	-	R	403	10	NaHu	M2 V M3 V
 3236	Lebherz	E657830-6	Ga Pa Ph	{ -2 }	(775-1)	[5657]	-	-	-	113	14	SoCf	G1 V

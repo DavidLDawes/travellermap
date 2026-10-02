@@ -2,7 +2,7 @@ Sector	SS	Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	No
 Sidi	A	0103	Jashd-16	X637000-0	 	Ba 		010	Wild	A1 III	{ -3 }	(600-5)	[0000]	B	11	-30
 Sidi	A	0106	Moblsadldlots	XA9A000-0	 	Ba Oc 		023	Wild	M5 V	{ -3 }	(400-5)	[0000]	B	12	-20
 Sidi	E	0117	Zhdiqlp-60	X9C7000-0	 	Ba Fl 		023	Wild	K7 V M1 VI	{ -3 }	(600-5)	[0000]	B	12	-30
-Sidi	I	0126	Sieflat	X202000-0	 	Ba Ic Va 		000	Wild	M5 V M1 V	{ -3 }	(700-5)	[0000]	B	7	-35
+Sidi	I	0126	Sieflat	X202000-0	 	Ba Ic Va 		000	Wild	M1 V M5 V	{ -3 }	(700-5)	[0000]	B	7	-35
 Sidi	I	0127	Azhzdi-56	X633000-0	 	Ba Po 		023	Wild	K8 V	{ -3 }	(700-5)	[0000]	B	16	-35
 Sidi	I	0129	Drtlia-82	X764000-0	 	Ba 		004	Wild	G8 V M7 VI M0 VI M2 VI	{ -3 }	(500-5)	[0000]	B	15	-25
 Sidi	M	0131	Ianzajde	X500000-0	 	Ba Va 		024	Wild	F2 V K8 VI	{ -3 }	(600-5)	[0000]	B	18	-30
@@ -74,7 +74,7 @@ Sidi	I	0828	Vranshafrshe	XA69000-0	 	Ba 		000	Wild	G9 V G8 VI K6 VI	{ -3 }	(700-
 Sidi	I	0829	Niem-31	X615000-0	 	Ba Ic 		002	Wild	A3 V	{ -3 }	(600-5)	[0000]	B	7	-30
 Sidi	B	0910	Prilzdedl	X520000-0	 	Ba De He Po 		022	Wild	F8 V G5 VI	{ -3 }	(700-5)	[0000]	B	13	-35
 Sidi	F	0912	Tlarqief	X8B0000-0	 	Ba He 		003	Wild	G3 IV G4 V K1 VI	{ -3 }	(A00-5)	[0000]	B	16	-50
-Sidi	F	0913	Onzhqriechch	X627000-0	 	Ba 		021	Wild	G9 V M8 VI G4 V	{ -3 }	(400-5)	[0000]	B	11	-20
+Sidi	F	0913	Onzhqriechch	X627000-0	 	Ba 		021	Wild	G4 V G9 V M8 VI	{ -3 }	(400-5)	[0000]	B	11	-20
 Sidi	J	0924	Zavlben-46	X611000-0	 	Ba Ic 		024	Wild	F7 IV	{ -3 }	(800-5)	[0000]	B	14	-40
 Sidi	J	0926	Penzhni-22	X995000-0	 	Ba 		012	Wild	K9 V M2 VI K5 VI D	{ -3 }	(700-5)	[0000]	B	9	-35
 Sidi	J	0927	Pripla	X501000-7	 	Di Ic Va 		004	Wild	K0 V K4 VI	{ -3 }	(700-5)	[0000]	B	12	-35
@@ -101,7 +101,7 @@ Sidi	N	1135	Shtevrivri	X86A445-4	 	Ni Wa 		410	Wild	G6 V	{ -3 }	(530+3)	[6184]	B
 Sidi	N	1139	Eflrchpla	X562400-4	 	Ni 		124	Wild	F0 IV F8 V	{ -3 }	(733+3)	[1191]	B	12	189
 Sidi	N	1140	Niadrzhr	X63A000-0	 	Ba Wa 		023	Wild	G2 V D K9 V K2 VI	{ -3 }	(600-5)	[0000]	B	15	-30
 Sidi	B	1208	Pied-35	X200000-0	 	Ba Va 		002	Wild	K8 V	{ -3 }	(900-5)	[0000]	B	11	-45
-Sidi	B	1210	Ieshjepenshi	X654000-0	 	Ba 		024	Wild	F9 V F4 V G8 V	{ -3 }	(900-5)	[0000]	B	14	-45
+Sidi	B	1210	Ieshjepenshi	X654000-0	 	Ba 		024	Wild	F4 V F9 V G8 V	{ -3 }	(900-5)	[0000]	B	14	-45
 Sidi	F	1215	Frantqriej	X797000-0	 	Ba 		024	Wild	K3 II	{ -3 }	(800-5)	[0000]	B	18	-40
 Sidi	F	1216	Dlrn-72	X679000-0	 	Ba 		024	Wild	G6 V	{ -3 }	(500-5)	[0000]	B	17	-25
 Sidi	F	1217	Fanzhmi'tlazh	X421000-7	 	Di He Po 		004	Wild	G2 V K4 VI G8 V	{ -3 }	(700-5)	[0000]	B	9	-35
@@ -115,7 +115,7 @@ Sidi	N	1235	Biievabl	X674000-0	 	Ba 		002	Wild	M9 III BD BD BD	{ -3 }	(700-5)	[0
 Sidi	N	1238	Davam	D576000-6	 	Di 		023	Wild	A4 V	{ -3 }	(500-5)	[0000]	B	17	-25
 Sidi	B	1306	Iezhklienz	X641000-0	 	Ba He Po 		033	Wild	G3 IV M5 V	{ -3 }	(600-5)	[0000]	B	10	-30
 Sidi	B	1308	Iaieqr-47	X532000-0	 	Ba Po 		010	Wild	A5 II G9 VI	{ -3 }	(400-5)	[0000]	B	5	-20
-Sidi	F	1316	Rzhets-74	X634000-0	 	Ba 		023	Wild	G8 V M2 V G6 V K8 VI	{ -3 }	(B00-5)	[0000]	B	12	-55
+Sidi	F	1316	Rzhets-74	X634000-0	 	Ba 		023	Wild	G6 V G8 V M2 V K8 VI	{ -3 }	(B00-5)	[0000]	B	12	-55
 Sidi	F	1319	Blef-22	X98A000-0	 	Ba Wa 		000	Wild	F1 V	{ -3 }	(900-5)	[0000]	B	7	-45
 Sidi	F	1320	Ianzhzhosh	X627000-0	 	Ba 		000	Wild	G2 V	{ -3 }	(400-5)	[0000]	B	7	-20
 Sidi	J	1324	Enzhb-13	X552000-0	 	Ba Po 		012	Wild	M9 V D	{ -3 }	(800-5)	[0000]	B	8	-40
@@ -176,7 +176,7 @@ Sidi	K	1825	Ieshs-31	X628000-0	 	Ba 		034	Wild	G5 V	{ -3 }	(700-5)	[0000]	B	15	-
 Sidi	K	1828	Artiens	A67549B-D	 	Ni Pa 		622	Wild	G9 V M2 VI	{ 1 }	(E34+1)	[455D]	Bc	11	168
 Sidi	K	1830	Ovlianzh	X6769CB-1	 	Hi In 		324	Wild	F2 IV D	{ 0 }	(583+2)	[D955]	BE	15	240
 Sidi	O	1832	Dianzhdo	X552000-6	 	Di Po 		014	Wild	K2 V	{ -3 }	(800-5)	[0000]	B	14	-40
-Sidi	O	1833	Shtrvrpiadrc	C5457B6-2	 	Ag Pi 		314	Wild	K9 V K5 V	{ 0 }	(465+2)	[6732]	BCD	9	240
+Sidi	O	1833	Shtrvrpiadrc	C5457B6-2	 	Ag Pi 		314	Wild	K5 V K9 V	{ 0 }	(465+2)	[6732]	BCD	9	240
 Sidi	O	1834	Jonjqie	C444644-7	 	Ag Ni 		322	Wild	G8 V	{ -1 }	(A50-2)	[5595]	BC	14	-100
 Sidi	O	1835	Zhiache'	E594000-5	 	Di 		023	Wild	K0 V	{ -3 }	(800-5)	[0000]	B	15	-40
 Sidi	O	1837	Chtieie	X636000-8	 	Di 		024	Wild	F0 III	{ -3 }	(900-5)	[0000]	B	15	-45
@@ -187,7 +187,7 @@ Sidi	C	1905	Bentji	X99A000-B	 	Di Wa 		024	Wild	A7 V K7 VI	{ -1 }	(E00-5)	[0000]
 Sidi	C	1908	Alshi-18	X542000-0	 	Ba He Po 		024	Wild	M6 VI	{ -3 }	(600-5)	[0000]	B	13	-30
 Sidi	C	1909	Blrfz-53	X420000-0	 	Ba De He Po 		000	Wild	G8 III	{ -3 }	(900-5)	[0000]	B	7	-45
 Sidi	G	1913	Qrepr-48	X576000-0	 	Ba 		024	Wild	K1 V M0 VI	{ -3 }	(600-5)	[0000]	B	13	-30
-Sidi	G	1914	Deziad-87	X642000-0	 	Ba He Po 		020	Wild	K5 V D K0 V BD	{ -3 }	(500-5)	[0000]	B	10	-25
+Sidi	G	1914	Deziad-87	X642000-0	 	Ba He Po 		020	Wild	K0 V K5 V D BD	{ -3 }	(500-5)	[0000]	B	10	-25
 Sidi	G	1915	Pidlinshdlie	X776000-0	 	Ba 		000	Wild	G3 V G9 VI	{ -3 }	(400-5)	[0000]	B	11	-20
 Sidi	G	1918	Zdeqpanshkrr	X622000-0	 	Ba He Po 		010	Wild	A4 V	{ -3 }	(600-5)	[0000]	B	13	-30
 Sidi	G	1920	Frdanj	X4549BA-5	 	Hi 		623	Wild	G9 V	{ -1 }	(C87+1)	[B835]	BE	10	672
@@ -207,7 +207,7 @@ Sidi	G	2013	Shiachrbr	X636000-8	 	Di 		003	Wild	K8 V	{ -3 }	(C00-5)	[0000]	B	10	
 Sidi	G	2020	Refliantsblr	X427000-0	 	Ba 		010	Wild	K9 V	{ -3 }	(900-5)	[0000]	B	12	-45
 Sidi	K	2023	Qrazhkra	X667000-0	 	Ba Ga 		022	Wild	G7 V	{ -3 }	(600-5)	[0000]	B	11	-30
 Sidi	K	2024	Ekchtad-81	X110000-0	 	Ba 		000	Wild	A3 Ia	{ -3 }	(300-5)	[0000]	B	7	-15
-Sidi	K	2027	Brabltlikr	X665000-0	 	Ba Ga 		013	Wild	G6 V G7 V G0 V	{ -3 }	(700-5)	[0000]	B	11	-35
+Sidi	K	2027	Brabltlikr	X665000-0	 	Ba Ga 		013	Wild	G0 V G6 V G7 V	{ -3 }	(700-5)	[0000]	B	11	-35
 Sidi	K	2030	Krartspliana	X855000-2	 	Di Ga 		004	Wild	K8 V	{ -3 }	(800-5)	[0000]	B	8	-40
 Sidi	O	2038	Pliantsdlinzh	X525000-9	 	Di 		003	Wild	K5 V BD	{ -2 }	(600-5)	[0000]	B	13	-30
 Sidi	C	2104	Onchiapav	C876589-7	 	Ag Ni 		500	Wild	K0 IV	{ -1 }	(940+1)	[7485]	BC	7	36

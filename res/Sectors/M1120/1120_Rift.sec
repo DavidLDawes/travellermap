@@ -12,7 +12,7 @@ Hex  Name          UWP       Remarks            {Ix}   (Ex)    [Cx]   N B Z PBG 
 0403 Oilraroi      C5867BB-8 Ag Ri Fo           { 1 }  (969+3) [987A] - - R 300 4  AsWc A3 V G7 V     
 0404 Teikhahfauoa  B56258A-A Ni Pr              { 1 }  (745+3) [767C] - - - 600 6  AsMw M3 V          
 0407 Hastaofta     B200497-C Va Ni              { 1 }  (A34+1) [455C] - - - 213 13 AsWc M0 V M4 V     
-0503 Wyoyohku'     C31078A-A Na Pi              { 1 }  (D6A+3) [987C] - - - 904 11 AsWc M2 V M0 V     
+0503 Wyoyohku'     C31078A-A Na Pi              { 1 }  (D6A+3) [987C] - - - 904 11 AsWc M0 V M2 V     
 0507 Aulryakh      A542A54-E He Hi In Po        { 4 }  (E9G+2) [8E3C] - T - 502 13 AsTv K1 V          
 0602 Seihueiakh    C567314-9 Lo                 { -1 } (920-3) [1237] - - - 504 9  AsMw G8 V M2 V     
 0701 Eioiye'       A7A8777-D Fl                 { 2 }  (D6D+2) [795D] - - - 704 12 AsSc M2 V          
@@ -45,7 +45,7 @@ Hex  Name          UWP       Remarks            {Ix}   (Ex)    [Cx]   N B Z PBG 
 1315 Auih          B57A557-D Wa Ni              { 1 }  (745+1) [565D] - - - 500 3  AsTv M3 III        
 1316 Toawi         B40075A-D Va Na Pi           { 2 }  (96D+4) [997F] - R - 800 9  AsMw K2 V M1 V     
 1415 Hyarlih       B7C6166-C Fl Lo O:1517       { 1 }  (501+1) [124B] - - - 511 9  AsMw K5 V          
-1420 Waikhta       C639267-B Lo O:1517          { 0 }  (810+1) [225B] - - - 713 12 AsMw M1 V K7 V     
+1420 Waikhta       C639267-B Lo O:1517          { 0 }  (810+1) [225B] - - - 713 12 AsMw K7 V M1 V     
 1515 Seisyaftao    B544387-B Lo                 { 1 }  (921+1) [345B] - - - 104 10 AsWc G8 III        
 1516 Ehyeiyaw      D53898A-8 Hi                 { -1 } (C88+1) [B87A] - - - 410 9  AsVc F4 V          
 1517 Hkurlei       A5409DB-C De He Hi In Po Fo  { 4 }  (F8F+5) [BD7E] - - R 404 17 AsMw K2 V          
@@ -64,7 +64,7 @@ Hex  Name          UWP       Remarks            {Ix}   (Ex)    [Cx]   N B Z PBG 
 0630 Uistihwoa     A767259-E Ga Lo              { 1 }  (611+2) [336F] - - - 520 8  AsTv G3 V          
 0722 Teirikh       A54787C-C Ph Pa Pi           { 2 }  (C7C+5) [BA8F] - T - 311 9  AsSc G0 V          
 1624 Ouohlolr      C89A576-8 Wa Ni              { -2 } (B42-3) [4347] - - - 504 15 AsSc M0 V          
-1629 Uikhyrleirla  B400A75-C Va Hi Na In        { 4 }  (H9F+2) [8E3A] - - - 614 16 AsSc M3 V M1 V M6 V
+1629 Uikhyrleirla  B400A75-C Va Hi Na In        { 4 }  (H9F+2) [8E3A] - - - 614 16 AsSc M1 V M3 V M6 V
 1927 Atliyai       D512156-9 Ic Lo              { -2 } (600-5) [1159] - - - 104 14 AsXX K4 V          
 2226 Ta'ali        B43015A-9 De Lo Po           { 0 }  (500+2) [317B] - - - 202 10 NaAs M3 V M4 V     
 2423 Uihwayu       B43427A-8 Lo                 { -1 } (910+1) [417A] - - - 305 18 AsSc F4 V          
@@ -87,7 +87,7 @@ Hex  Name          UWP       Remarks            {Ix}   (Ex)    [Cx]   N B Z PBG 
 1937 Hfeae'yo      B549833-B Ph Pi              { 2 }  (E7C-1) [5A28] - - - 704 12 AsMw K9 IV         
 2137 Htoisofea     D565656-7 Ni Ag Ri           { -1 } (853-2) [5546] - - - 903 8  AsWc F4 V          
 2139 Stiyseakhih   B67697C-B Hi In              { 4 }  (B8F+5) [CD8E] - R - 500 8  AsSc M3 V          
-2238 Stiyteatiru   C9A5977-B Fl Hi In           { 3 }  (D8E+3) [9C5B] - - - 211 9  AsSc M2 V K2 V     
+2238 Stiyteatiru   C9A5977-B Fl Hi In           { 3 }  (D8E+3) [9C5B] - - - 211 9  AsSc K2 V M2 V     
 2239 Resoi         C5899CA-B Hi Pr Fo           { 2 }  (F8C+4) [BB7D] - - R 713 12 AsTv M1 V          
 2437 Staoiya       A796438-B Ni Pa Da           { 1 }  (834+1) [455B] - - A 520 10 AsVc F0 V M9 V     
 2439 Oiharael      C544646-8 Ni Ag              { -1 } (D53-2) [5547] - - - 523 12 AsMw M2 V M4 V     

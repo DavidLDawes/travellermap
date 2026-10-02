@@ -143,7 +143,8 @@ binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
   `DATA-ISSUES.md`.
 - **Mechanical data fixes**: `dotnet run --project tools/tradecodes` reports, and `-- --apply`
   fixes, the values the validator can derive in sector files: UWP-determined trade codes (the
-  validator's `World.TradeCodeRules`), mechanical (Ex) values, `{Ix}`, Pop-0 PBG multipliers, and
+  validator's `World.TradeCodeRules`), mechanical (Ex) values, `{Ix}`, Pop-0 PBG multipliers, star
+  order (largest star first), and
   ignored non-UWP lines in legacy SEC files (made `#` comments). Run it after adding or editing
   hand-maintained sector data. Files marked "Generated file - DO NOT MODIFY" come from
   `res/t5ss/data`: fix those with `-- --t5ss --apply`, then regenerate with

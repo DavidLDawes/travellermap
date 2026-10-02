@@ -31,7 +31,7 @@ Hex  Name           UWP       Remarks          {Ix} (Ex) [Cx] N B  Z PBG W A    
 2329 Gerlac         B9A0238-8 Lo He                           - S  - 334   DW   G8 IV
 2430 Addai          D460676-5 De Ni Ri                        - -  A 700   DW   G3 V D
 1733 Nellapez       B767677-6 Ag Ni Ri Ga                     - S  - 610   Na   G5 V
-1739 Lorbog         A7B4368-9 Lo Fl                           - -  - 400   Na   M8 V M5 V D
+1739 Lorbog         A7B4368-9 Lo Fl                           - -  - 400   Na   M5 V M8 V D
 1832 Libah          A00038A-B As Lo Va                        - -  - 412   AN   K9 V
 1833 Noimad         B88678A-A Ag Ri Ga                        - M  - 603   AN   F9 V
 1834 Ereppet        C200987-A Hi In Na Va                     - -  - 703   AN   M0 V
@@ -53,7 +53,7 @@ Hex  Name           UWP       Remarks          {Ix} (Ex) [Cx] N B  Z PBG W A    
 2332 Kresif         B7965AC-8 Ag Ni                           - M  - 934   DW   K7 V M0 VI
 2333 Clonsk         B777477-A Ni Pa                           - -  - 303   DW   M7 V
 2336 Ninyapran      C250557-8 De Ni Po                        - S  - 802   Na   F0 V
-2337 Tatheryatoni   C897755-6 Ag Pi                           - -  A 704   Na   M5 V K6 V
+2337 Tatheryatoni   C897755-6 Ag Pi                           - -  A 704   Na   K6 V M5 V  
 2339 Nojklepi       C858240-8 Lo                              - -  - 234   Na   M4 V D
 2434 Piah           B9A69DA-E Fl Hi In                        - S  - 522   DW   M7 VI
 2436 Nedinori       C854677-4 Ag Ni                           - -  - 404   Na   G0 V D
