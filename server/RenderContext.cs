@@ -125,7 +125,7 @@ namespace Maps.Rendering
             public AbstractImage riftImage;
             public Dictionary<string, AbstractImage> worldImages;
 
-            private static readonly ThreadLocalCache<ImageCache> s_instance = new ThreadLocalCache<ImageCache>(() => new ImageCache());
+            private static readonly SharedCache<ImageCache> s_instance = new SharedCache<ImageCache>(() => new ImageCache());
             public static ImageCache GetInstance()
             {
                 return s_instance.Value;

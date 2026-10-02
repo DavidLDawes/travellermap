@@ -15,11 +15,11 @@ namespace Maps
 
     internal class ResourceManager
     {
-        // Thread affinity; replaced (dropping its cache) after CacheGeneration.InvalidateAll().
-        private static readonly ThreadLocalCache<ResourceManager> s_instance = new ThreadLocalCache<ResourceManager>(() => new ResourceManager());
+        // Shared by all threads; replaced (dropping its cache) after CacheGeneration.InvalidateAll().
+        private static readonly SharedCache<ResourceManager> s_instance = new SharedCache<ResourceManager>(() => new ResourceManager());
         
         /// <summary>
-        /// Use for caching where thread-affinity is desired.
+        /// The shared instance, whose cache all threads use (it's thread-safe).
         /// </summary>
         /// <returns></returns>
         public static ResourceManager GetInstance()
@@ -35,7 +35,22 @@ namespace Maps
             return new ResourceManager();
         }
 
-        private LRUCache cache = new LRUCache(50);
+        private readonly LRUCache cache = new LRUCache(50);
+
+        // Files are parsed outside the lock, so a slow parse doesn't block other threads; if two
+        // threads load the same file at once, the first one cached wins.
+        private object? CacheGet(string name) { lock (cache) return cache[name]; }
+        private object CachePut(string name, object o)
+        {
+            lock (cache)
+            {
+                object? existing = cache[name];
+                if (existing != null)
+                    return existing;
+                cache[name] = o;
+                return o;
+            }
+        }
 
         private ResourceManager()
         {
@@ -59,13 +74,10 @@ namespace Maps
 
         public T GetCachedXmlFileObject<T>(string name)
         {
-            object? o = cache[name];
+            object? o = CacheGet(name);
 
             if (o == null)
-            {
-                o = GetXmlFileObject<T>(name);
-                cache[name] = o;
-            }
+                o = CachePut(name, GetXmlFileObject<T>(name)!);
             if (o == null)
                 throw new ApplicationException("Unexpected null");
 
@@ -96,13 +108,10 @@ namespace Maps
         }
         public T GetCachedDeserializableFileObject<T>(string name, string mediaType)
         {
-            object? obj = cache[name];
+            object? obj = CacheGet(name);
 
             if (obj == null)
-            {
-                obj = GetDeserializableFileObject<T>(name, mediaType);
-                cache[name] = obj;
-            }
+                obj = CachePut(name, GetDeserializableFileObject<T>(name, mediaType)!);
             if (obj == null)
                 throw new ApplicationException("Unexpected null");
 
@@ -110,7 +119,8 @@ namespace Maps
         }
         public void Flush()
         {
-            cache.Clear();
+            lock (cache)
+                cache.Clear();
         }
     }
 }

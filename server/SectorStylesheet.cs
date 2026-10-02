@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using Maps.Utilities;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -376,7 +377,8 @@ namespace Maps
             }
         }
 
-        private Dictionary<Tuple<string, string?>, StyleResult> memo = new Dictionary<Tuple<string, string?>, StyleResult>();
+        // Concurrent: stylesheets belong to the shared SectorMap and are applied by many threads.
+        private readonly ConcurrentDictionary<Tuple<string, string?>, StyleResult> memo = new ConcurrentDictionary<Tuple<string, string?>, StyleResult>();
 
         private List<SectorStylesheet> Chain()
         {
@@ -418,9 +420,7 @@ namespace Maps
             Dictionary<string, string> resultDictionary = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
             foreach (var entry in dict)
                 resultDictionary[entry.Key] = entry.Value.Item2;
-            result = new StyleResult(element, code, resultDictionary);
-            memo[key] = result;
-            return result;
+            return memo.GetOrAdd(key, new StyleResult(element, code, resultDictionary));
         }
 
         private static int Match(string element, string? code, Selector selector)

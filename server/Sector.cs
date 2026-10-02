@@ -403,7 +403,7 @@ namespace Maps
         }
 
         // Loaded from a data file, so reloaded after CacheGeneration.InvalidateAll().
-        private static readonly ThreadLocalCache<SectorStylesheet> s_defaultStyleSheet = new ThreadLocalCache<SectorStylesheet>(() =>
+        private static readonly SharedCache<SectorStylesheet> s_defaultStyleSheet = new SharedCache<SectorStylesheet>(() =>
             SectorStylesheet.Parse(
                 Util.SharedFileReader(Util.MapPath("~/res/styles/otu.css"))));
 

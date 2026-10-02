@@ -60,15 +60,18 @@ namespace Maps
             }
         }
 
-        private int? calculatedImportance; // cache
+        // Cache; an int (not int?) so that threads sharing the world read and write it atomically.
+        private const int ImportanceNotCalculated = int.MinValue;
+        private int calculatedImportance = ImportanceNotCalculated;
         [XmlIgnore, JsonIgnore]
         public int CalculatedImportance
         {
             get
             {
-                if (!calculatedImportance.HasValue)
-                    calculatedImportance = CalculateImportance();
-                return calculatedImportance.Value;
+                int value = calculatedImportance;
+                if (value == ImportanceNotCalculated)
+                    calculatedImportance = value = CalculateImportance();
+                return value;
             }
         }
 
