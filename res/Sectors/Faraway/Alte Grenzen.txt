@@ -10,7 +10,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 1932 Neshras              C330845-9 De Na Ph Po                                920   Na   M8 V
 1934 Kojiko               C769267-A Lo Cy:2035                                 102   Na   G3 V
 1935 Akhmi                E423442-6 Ni Po                                      121   Na   M7 V
-2034 Ilfding              E879231-6 Lo Ni                                    A 601   Na   K3 V
+2034 Ilfding              E879231-6 Lo                                       A 601   Na   K3 V
 2035 Satsu                B570996-C De He Hi In                           KV   412   Na   G2 V
 2038 Khiigenanik          X969378-1 Lo                                       R 800   Na   F9 V K5 V
 2039 Siyanda              B5A4341-B Fl Lo                                    A 414   Na   K4 V

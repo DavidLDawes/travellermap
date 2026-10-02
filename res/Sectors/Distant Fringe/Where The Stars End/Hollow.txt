@@ -56,28 +56,28 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 2330 Wesepon              ?320???-? De He Po Sa                              - - - ?01 5  Nx M6 VI         
 2828 Aurira               ?443???-? Po Tz                                    - - - ?21 8  Nx M1 V          
 3029 Nala Mar             ?67A???-? Wa Tz                                    - - - ?11 7  Nx K8 V          
-0134 Chapu                E423000-4 Po Di Tz             {-3} (600+1) [0000] - - - 013 7  Nx M3 V          
-0137 Nyso                 E200000-8 Va Di Tz             {-3} (A00+1) [0000] - - - 011 10 Dr M2 V          
-0234 Ho Sovak             X784000-9 Di                   {-2} (B00+1) [0000] - - - 023 11 Nx G1 V M8 V     
-0238 Plagan               E545000-7 Di Tz                {-3} (900+1) [0000] - - - 002 9  Dr K3 V K6 V     
+0134 Chapu                E423000-4 Po Di Tz             {-3} (600-5) [0000] - - - 013 7  Nx M3 V          
+0137 Nyso                 E200000-8 Va Di Tz             {-3} (A00-5) [0000] - - - 011 10 Dr M2 V          
+0234 Ho Sovak             X784000-9 Di                   {-2} (B00-5) [0000] - - - 023 11 Nx G1 V M8 V     
+0238 Plagan               E545000-7 Di Tz                {-3} (900-5) [0000] - - - 002 9  Dr K3 V K6 V     
 0332 Fense                ?475???-? Tz                                       - - - ?11 6  Nx K4 V          
 0333 Lamawe               ?101???-? Ic Va Sa                                 - - - ?32 9  Nx G7 IV         
-0337 Durugal              E453000-9 Po Di Tz             {-2} (A00+1) [0000] - - - 014 8  Dr M1 V          
+0337 Durugal              E453000-9 Po Di Tz             {-2} (A00-5) [0000] - - - 014 8  Dr M1 V          
 0431 Az Alam              ?000???-? As Va                                    - - - ?03 9  Nx A4 V          
 0432 Neeso                ?323???-? Po Tz                                    - - - ?20 6  Nx M7 V          
-0439 Enfarsan             EA9A000-7 Oc Di                {-3} (900+1) [0000] - - - 015 10 Dr F3 V          
+0439 Enfarsan             EA9A000-7 Oc Di                {-3} (900-5) [0000] - - - 015 10 Dr F3 V          
 0535 Igsos                ?211???-? Ic Tz                                    - - - ?10 4  Nx M8 V          
-0540 Ro Molot             X667000-9 Ga Di                {-2} (700+1) [0000] - - - 014 11 Dr G4 V M6 V     
+0540 Ro Molot             X667000-9 Ga Di                {-2} (700-5) [0000] - - - 014 11 Dr G4 V M6 V     
 0634 Bharus               ?6A0???-? He                                       - - - ?23 10 Nx A1 IV         
-0637 Thurn                X342000-8 He Po Di Tz          {-3} (500+1) [0000] - - - 010 4  Dr M8 V          
-0638 Durukin              E453000-4 Po Di Tz             {-3} (800+1) [0000] - - - 021 7  Dr M2 V          
-0738 Voronian             X658000-A Di Tz                {-1} (D00+1) [0000] - - - 034 14 Dr K7 V M8 V M7 V
-0740 Higo                 E799000-9 Di                   {-2} (700+1) [0000] - - - 003 9  Dr F3 V          
+0637 Thurn                X342000-8 He Po Di Tz          {-3} (500-5) [0000] - - - 010 4  Dr M8 V          
+0638 Durukin              E453000-4 Po Di Tz             {-3} (800-5) [0000] - - - 021 7  Dr M2 V          
+0738 Voronian             X658000-A Di Tz                {-1} (D00-5) [0000] - - - 034 14 Dr K7 V M8 V M7 V
+0740 Higo                 E799000-9 Di                   {-2} (700-5) [0000] - - - 003 9  Dr F3 V          
 0833 Lud                  ?645???-?                                          - - - ?22 8  Nx A9 V          
 0835 Telermin             ?000???-? As Va                                    - - - ?00 6  Nx M4 V          
-0939 Zamba                X000000-7 As Va Di             {-3} (600+1) [0000] - - - 032 9  Dr M2 III        
-1037 Gott                 E767000-5 Di Ga                {-3} (B00+1) [0000] - - - 010 9  Nx G3 V          
-1040 Rybizin              E433000-9 Po Di Tz             {-2} (900+1) [0000] - - - 023 8  Nx M2 V M4 V     
+0939 Zamba                X000000-7 As Va Di             {-3} (600-5) [0000] - - - 032 9  Dr M2 III        
+1037 Gott                 E767000-5 Di Ga                {-3} (B00-5) [0000] - - - 010 9  Nx G3 V          
+1040 Rybizin              E433000-9 Po Di Tz             {-2} (900-5) [0000] - - - 023 8  Nx M2 V M4 V     
 1138 Bulthar              ?687???-? Ga                                       - - - ?01 8  Nx K2 V M4 V     
 1334 Lorka                ?566???-? Tz                                       - - - ?01 6  Nx M0 V          
 1338 Fa Mal               ?373???-? Tz                                       - - - ?10 6  Nx M1 V          

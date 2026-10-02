@@ -128,4 +128,7 @@
     <Route Start="2701" End="2600" Type="Trade"/>
     <Route Start="2902" End="3301" Type="Trade"/>
   </Routes>
+  <Allegiances>
+    <Allegiance Code="Hf">Hive FDA Uplift/Observation Site</Allegiance><!-- As in neighboring sectors (Spica, Phlask, Centrax, Langere). -->
+  </Allegiances>
 </Sector>

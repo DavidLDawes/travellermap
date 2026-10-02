@@ -8,6 +8,9 @@
     <xs:attribute name="Ref" type="xs:anyURI" use="optional" />
     <xs:attribute name="Milieu" type="xs:string" use="optional" />
     <xs:attribute name="Note" type="xs:string" use="optional" />
+    <!-- Provenance notes, not read by the server: the milieu or year the data was taken from. -->
+    <xs:attribute name="Source-Milieu" type="xs:string" use="optional" />
+    <xs:attribute name="Era" type="xs:string" use="optional" />
   </xs:attributeGroup>
 
   <xs:element name="Sectors">

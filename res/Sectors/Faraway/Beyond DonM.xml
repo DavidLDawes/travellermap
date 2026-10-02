@@ -42,6 +42,10 @@
     <Allegiance Code="PL">Parallel Lines</Allegiance>
     <Allegiance Code="BL">Beaufort Lines</Allegiance>
     <Allegiance Code="OC">Other Commercial Lines</Allegiance>
+    <!-- As defined in the companion Vanguard Reaches (Don McKinney 2015). -->
+    <Allegiance Code="Dw">Die Weltbund</Allegiance>
+    <Allegiance Code="MF">Mal'Gnar Primarchic</Allegiance>
+    <Allegiance Code="Ms">Client state, Mal'Gnar Primarchic</Allegiance><!-- As in the companion Vanguard Reaches (Don McKinney 2015). -->
   </Allegiances>
 
   <Stylesheet>

@@ -40,6 +40,7 @@
     <Allegiance Code="K5">K'Kree Client State</Allegiance>
     <Allegiance Code="Lt">Lords of Thunder</Allegiance>
     <Allegiance Code="Kk">The Two Thousand Worlds</Allegiance>
+    <Allegiance Code="Kc">K'kree Client State</Allegiance><!-- As in neighboring Numbis. -->
   </Allegiances>
   <Borders>
     <Border WrapLabel="false" Color="DarkGreen"

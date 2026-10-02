@@ -3,7 +3,8 @@
   <Name>Foreven (Imperium Staple)</Name>
   <X>70</X>
   <Y>69</Y>
-  <![CDATA[
+  <Credits>
+    <![CDATA[
              <p>
              The Reidan, Urnian and Piah subsectors of this version of
              Foreven Sector were designed by Herb Petro and appeared in
@@ -23,6 +24,7 @@
              Data transcribed and edited by Graham Donald.
              </p>
   ]]>
+  </Credits>
   <Subsectors>
     <Subsector Index="D">Massina</Subsector>
     <Subsector Index="H">Fessor</Subsector>

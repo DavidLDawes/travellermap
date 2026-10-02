@@ -137,7 +137,7 @@ Fahr	F	0919	Ériu	B97A788-E	M	Fo Pi Wa Huma6 RyXb4	R	402	Sa	G0 V	{  2 }	(665+1)	
 Fahr	F	1019	Beresmo	C554226-A		Fo Lo RyXbW	R	931	Sa	G1 V M1 V	{  0 }	(C10-1)	[124C]		11	-12
 Fahr	F	1112	Caturix	A100647-B	K	Na Ni Va RyXb6		103	Na	K2 V	{  1 }	(755-3)	[874D]		8	-525
 Fahr	F	1113	Carman	C334000-B		Di		031	NaXX	M3 V	{  0 }	(E00-5)	[0000]		13	-70
-Fahr	F	1118	Marulo	D200000-0		Ba Fo Va	R	032	Sa	M7 V	{ -3 }	(800+3)	[0000]		9	24
+Fahr	F	1118	Marulo	D200000-0		Ba Fo Va	R	032	Sa	M7 V	{ -3 }	(800-5)	[0000]		9	-40
 Fahr	F	1213	Icauna	E79A400-6		Ni Wa RyXbW		502	Na	K1 V	{ -3 }	(633-1)	[7136]		10	-54
 Fahr	F	1215	Divona	C000326-8	S	As Fo Lo Va RyXbW	R	421	Sa	M4 V M8 V	{ -2 }	(920+1)	[1187]		10	18
 Fahr	F	1217	Borne	C963ACA-D	S	Fo Hi RyXbW	R	601	Sa	K0 V	{  2 }	(699+1)	[CC7C]		14	486

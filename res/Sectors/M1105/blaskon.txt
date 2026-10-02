@@ -2,7 +2,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 ---- -------------------- --------- --------------------------- ------ ------- ------ - - - --- -- ---- ----------------------
 0102 Darat                E357674-5 Ag Ni                       { -2 } (750-3) [4441] - - - 622 8  HvFd G8 V
 0107 Naamglev             C451987-9 Hi Po                       {  1 } (D84-4) [BA59] - - - 323 13 HvFd F8 V
-0202 Axilan               E200000-0 Ba Va                       { -3 } (700+2) [0000] - - - 002 6  HvFd G4 V M3 V
+0202 Axilan               E200000-0 Ba Va                       { -3 } (700-5) [0000] - - - 002 6  HvFd G4 V M3 V
 0207 Tatuage              C401756-7 Ic Na Pi Va (Iftaouh) Da    { -1 } (761+4) [A616] - - A 803 9  HvFd M4 V M7 V
 0305 Olaal                D98A410-8 Ni Wa                       { -3 } (E30+1) [3147] - - - 403 9  HvFd M1 V M6 V
 0307 Ask                  B000216-C As Lo Va                    {  1 } (711+1) [132C] - - - 403 13 HvFd G1 V
@@ -49,20 +49,20 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1505 Karatnar             C646410-5 Ni Pa                       { -2 } (533-1) [524A] - - - 413 11 HvFd M3 V
 1508 Ertphlucar           B612632-A Ic Na Ni                    {  1 } (A52-2) [471D] - - - 803 11 HvFd M0 V
 1509 Ark                  B568400-B Ni Pa                       {  1 } (C33+2) [2548] - - - 805 11 HvFd G2 V M4 V
-1510 Ernil                EAF9000-0 Ba                          { -3 } (800-1) [0000] - - - 000 8  HvFd A0 V
+1510 Ernil                EAF9000-0 Ba                          { -3 } (800-5) [0000] - - - 000 8  HvFd A0 V
 1603 Enapldan             B778210-7 Lo                          { -1 } (810+1) [1166] - - - 604 12 HvFd F1 V M0 V
 1606 Thusdoku             A384A85-F Hi Cp                       {  3 } (A9D+1) [DD5F] - - - 203 9  HvFd G2 V
 1609 Dixxee               B340116-C De He Lo Po                 {  1 } (C01-1) [126E] - - - 802 8  HvFd M2 V
 1610 Texaornu             E886410-6 Ga Ni Pa                    { -3 } (230-1) [1194] - - - 803 10 HvFd G6 V M3 V 
-1704 Daskaleran           E77A000-0 Ba Wa                       { -3 } (800-4) [0000] - - - 003 10 HvFd M9 V
+1704 Daskaleran           E77A000-0 Ba Wa                       { -3 } (800-5) [0000] - - - 003 10 HvFd M9 V
 1708 Ninege               A130856-D De Na Ph Po Pz (Ninege)W    {  2 } (B75+1) [4A4F] - - A 804 13 HvFd G7 V
-1804 Antina               E210000-0 Ba                          { -3 } (500-3) [0000] - - - 003 7  HvFd M6 V
+1804 Antina               E210000-0 Ba                          { -3 } (500-5) [0000] - - - 003 7  HvFd M6 V
 1806 Unri                 B202510-C Ic Ni Va                    {  1 } (D44+4) [961D] - - - 702 13 HvFd M8 V
 1807 Hiskthik             D370110-5 He De Lo                    { -3 } (700-1) [1132] - - - 201 14 HvFd G2 IV
 1808 Tounsk               A659875-8 Ph                          {  0 } (D74+3) [C88C] - - - 703 13 HvFd M2 V M4 V 
 1902 Ovicala              E447566-7 Ag Ni O:1806                { -2 } (641-2) [6369] - - - 813 9  HvFd K8 V M8 V
 1903 Kiklitre             E787516-6 Ag Ni Pr Ga                 { -2 } (840+3) [2345] - - - 823 13 HvFd G7 IV
-1905 Kukorol              E849000-0 Ba                          { -3 } (700-1) [0000] - - - 011 9  HvFd F4 V
+1905 Kukorol              E849000-0 Ba                          { -3 } (700-5) [0000] - - - 011 9  HvFd F4 V
 1907 Oxhoqat              C887412-6 Ga Ni Pa                    { -2 } (531+2) [2258] - - - 711 9  HvFd F1 V M6 V
 1908 Inaro                E200000-0 Ba Va                       { -3 } (500-5) [0000] - - - 012 13 HvFd G4 V M2 V
 2004 Antkexir             E544216-5 Da Lo Ldoo7                 { -3 } (C10-2) [1154] - - A 903 11 HvFd K2 V
@@ -161,8 +161,8 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1415 Maqate               C76A856-9 Ri Wa Ph                    {  1 } (F7B-4) [593C] - - - 514 14 HvFd K4 V
 1417 Atnaeld              C9C766A-9 Fl Ni Pz O:1119 (Atnaeld)W  { -1 } (952+1) [1559] - - A 800 3  HvFd M1 V M7 V 
 1418 Kuarutdit            C427416-7 Ni Atna7 Pz                 { -2 } (734+3) [5244] - - A 113 15 HvFd M3 V M8 V 
-1511 Qih't'kko            E110000-0 Ba                          { -3 } (A00+5) [0000] - - - 012 15 HvFd M4 V
-1512 Thafu                E130000-0 Ba De Po                    { -3 } (600+1) [0000] - - - 004 13 HvFd F4 IV M4 V
+1511 Qih't'kko            E110000-0 Ba                          { -3 } (A00-5) [0000] - - - 012 15 HvFd M4 V
+1512 Thafu                E130000-0 Ba De Po                    { -3 } (600-5) [0000] - - - 004 13 HvFd F4 IV M4 V
 1515 Tovi                 D9C7220-3 Fl Lo                       { -3 } (810+4) [2182] - - - 513 12 HvFd F6 V G2 V
 1516 Axrirgan             E596625-5 Ag Ni                       { -2 } (454+1) [6424] - - - 804 9  HvFd M8 V
 1518 Xihz't'              E549000-0 Ba                          { -3 } (500-5) [0000] - - - 014 17 HvFd M0 V M8 V 
@@ -229,7 +229,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 3113 Ornglan              E633210-7 Lo Po                       { -3 } (C10+1) [1139] - - - 323 14 HvFd G1 V
 3214 Laka                 B333615-B Na Ni Po                    {  1 } (754-2) [572C] - - - 713 15 Na   G7 V
 3216 Oldox                A230311-E De Lo Po                    {  1 } (C21-2) [445B] - - - 304 10 HvFd M2 V
-3220 Nageko               E400000-0 Ba Va                       { -3 } (300+5) [0000] - - - 000 9  HvFd M0 V
+3220 Nageko               E400000-0 Ba Va                       { -3 } (300-5) [0000] - - - 000 9  HvFd M0 V
 0122 Gelkluark            C86A510-7 Ni Pr Wa                    { -2 } (740-3) [4386] - - - 703 16 HvFd A7 V M3 V
 0126 Mipex                X360120-2 De Lo Fo HumaW              { -3 } (700-1) [1161] - - R 503 12 HvFd K1 V
 0128 Kopblan              C572545-9 He Ni                       { -1 } (A40+4) [5426] - - - 805 13 HvFd F6 IV
@@ -310,7 +310,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2528 Glacar               C222416-7 Ni Po                       { -2 } (B30+3) [5257] - - - 820 10 HvFd G0 V
 2622 Truhloc              B651620-A Ni Po                       {  1 } (F55+1) [675D] - - - 823 10 HvFd F7 V
 2625 Ksolyxxu             C8D5120-7 Lo                          { -2 } (800+1) [113A] - - - 523 12 HvFd G6 V
-2630 Dyukli               E979000-0 Ba                          { -3 } (C00-2) [0000] - - - 003 10 HvFd M0 V M3 V M6 V
+2630 Dyukli               E979000-0 Ba                          { -3 } (C00-5) [0000] - - - 003 10 HvFd M0 V M3 V M6 V
 2722 Kodyu                E322210-7 He Lo Po                    { -3 } (410+1) [1155] - - - 824 14 HvFd G1 V
 2724 Jzura                C676220-9 Lo                          { -1 } (810-3) [1144] - - - 802 7  HvFd M8 V
 2725 Goliwror             A434516-E Ni Pz                       {  1 } (B47-1) [262F] - - A 814 13 HvFd F7 V

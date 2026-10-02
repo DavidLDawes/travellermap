@@ -30,6 +30,7 @@
     <InternalsVisibleTo Include="maps-validate" />
     <InternalsVisibleTo Include="Maps.Host" />
     <InternalsVisibleTo Include="maps-reindex" />
+    <InternalsVisibleTo Include="maps-tradecodes" />
   </ItemGroup>
   <ItemGroup>
     <!-- Includes native libraries for Windows and macOS; a Linux app adds

@@ -110,7 +110,7 @@ Hex  Name                           UWP       Remarks                 {Ix} (Ex) 
 1818 Ksikasue Thaerz                C100554-9 Ni Va                   {-1} (845+1) [9479] - - - 404 9  Ve A5 V F4 V                 
 1819 Vungagnourr                    CA8A223-6 Lo Oc Co                {-2} (710+1) [51A5] - - - 503 11 Ve K7 V K8 V M2 V            
 1914 Kughaerrg Orrkogh              C657540-8 Ag Ni Ga Tr             {-1} (D43+1) [543A] - - - 604 12 Ve G7 V M2 V                 
-1917 Kaeg                           E250000-0 Ba De Po                {-3} (A00+3) [0000] - - - 031 8  Ve K0 IV                     
+1917 Kaeg                           E250000-0 Ba De Po                {-3} (A00-5) [0000] - - - 031 8  Ve K0 IV                     
 1919 Konolk Foengkaegh Koulzaerrg   A744788-8 Ag Pi Tz                {+1} (A6B+1) [481A] - - - 503 10 Ve G0 V M4 V G4 V            
 2012 Kfeth Erraen Khukhrrar         B667555-8 Ag Ni Ga Pr Tr          {+0} (746+1) [4557] - - - 322 17 Ve A2 Ia K7 V F4 V F6 IV F8 V
 2013 Ueraegho                       B855165-6 Lo Ga Tr Re             {-1} (C00-1) [1143] - K - 603 8  Ve F6 III                    
@@ -356,7 +356,7 @@ Hex  Name                           UWP       Remarks                 {Ix} (Ex) 
 2732 Vaeodi                         A648566-B Ag Ni Re                {+2} (747+1) [675F] - - - 921 8  Ve F1 V                      
 2733 Foukiral Ughzueng              E797300-5 Lo                      {-3} (B20-1) [3119] - - - 700 9  Ve F2 V G5 V                 
 2736 Thaerraelodhaek                CA7A450-A Ni Oc Co                {+0} (E35-1) [543B] - K - 802 11 Ve G5 V M1 V G7 V            
-2737 Onthuen                        E9AA000-0 Ba Fl Ho                {-3} (800-3) [0000] - C - 032 10 Ve A9 Ib F7 V                
+2737 Onthuen                        E9AA000-0 Ba Fl Ho                {-3} (800-5) [0000] - C - 032 10 Ve A9 Ib F7 V                
 2738 Taen                           B000685-8 As Ni Na Va             {-1} (J52-2) [3559] - K - 533 10 Ve M9 V                      
 2739 Ghillounksog Unozuk Seth       E456876-4 Pa Ph                   {-2} (579+3) [3613] - - - 702 9  Ve G7 IV M6 V                
 2740 Unfulunknoed                   B435656-D Ni Ho                   {+1} (C57-3) [672E] - - - 223 11 Ve F5 V G7 V                 

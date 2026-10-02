@@ -132,7 +132,7 @@ Kordonia      1924 X9D6000-0    Ba                   R  031 Na
 Lampaleva     1927 E765ADE-6    Ga Hi                A  601 Fp
 Afranie       1928 C757514-6    Ga Ni Ag                101 Fp
 Letherata     2026 E9A5456-9    Fl Ni                   423 Fp
-Parce         2039 C535620-7    Ni                      110 Fp
+Parce         2039 C535620-7    Ni Va                   110 Fp
 Anadia        2127 D9AA231-A  S Fl Lo                   412 Fp
 Finson        2128 A57599B-C    Hi In Cp                223 Fp
 Evera         2129 E6A4243-7    Fl Lo                   112 Fp

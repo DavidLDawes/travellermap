@@ -39,8 +39,8 @@ Gvur	A	0405	Tarraekhs	C000554-B	 	As Va Ni 		111	Wild	M2 V M4 V	{ 0 }	(A45-2)	[6
 Gvur	A	0407	Uedhoelukhue	D300148-5	 	Lo Va 		820	Wild	K6 V	{ -3 }	(500-4)	[2166]	B	12	-20
 Gvur	A	0410	Roeknughroe	C100485-7	 	Ni Va 		324	Wild	M4 III	{ -2 }	(C33+1)	[2244]	B	15	108
 Gvur	E	0411	Zuts Asgning	C436355-B	 	Lo 		722	Wild	M3 V	{ 0 }	(D20+1)	[2367]	B	13	26
-Gvur	E	0419	Uefokung	D433000-6	 	Di Po 		021	Wild	F6 IV	{ -3 }	(800+1)	[0000]	B	14	8
-Gvur	I	0422	Rarrk Sagougae	D310000-D	 	Di 		001	Wild	M1 V	{ -1 }	(400+1)	[0000]	B	12	4
+Gvur	E	0419	Uefokung	D433000-6	 	Di Po 		021	Wild	F6 IV	{ -3 }	(800-5)	[0000]	B	14	-40
+Gvur	I	0422	Rarrk Sagougae	D310000-D	 	Di 		001	Wild	M1 V	{ -1 }	(400-5)	[0000]	B	12	-20
 Gvur	I	0425	Zulgziga	D8B4358-7	 	Fl Lo Px 		502	Wild	K0 V	{ -3 }	(A20+1)	[6177]	B	8	20
 Gvur	I	0426	Ethue	D554875-6	 	An Pa Ph 		933	Wild	F7 V M5 V	{ -2 }	(575+1)	[7643]	Bce	10	175
 Gvur	I	0428	Vlazh Epr	C5A1310-9	 	Fl He Lo Huma4		824	Wild	M0 III	{ -1 }	(F20-2)	[4259]	B	11	-60
@@ -139,7 +139,7 @@ Gvur	F	1216	Ngoerrgh	C4209DD-B	 	De He Hi Na In Po 		403	Wild	K8 V	{ 3 }	(B87-2)
 Gvur	F	1219	Ngurstur	E87A477-4	 	Ni Wa 		334	Wild	F3 V	{ -3 }	(331-4)	[3184]	B	15	-36
 Gvur	J	1225	Aedhar	A590159-E	 	De He Lo 		922	Wild	M0 V	{ 1 }	(E01+4)	[121J]	B	9	56
 Gvur	J	1226	Voulla Tueng	A203113-E	 	Ic Va Lo 		221	Wild	K6 V	{ 1 }	(801+3)	[428D]	B	8	24
-Gvur	N	1233	Udae Thaen	D421000-9	 	Di He Po 		020	Wild	F6 IV	{ -2 }	(700-3)	[0000]	B	12	-21
+Gvur	N	1233	Udae Thaen	D421000-9	 	Di He Po 		020	Wild	F6 IV	{ -2 }	(700-5)	[0000]	B	12	-35
 Gvur	N	1236	Ksorraknue	B200898-B	 	Na Pi Ph Va 		104	Wild	G9 V	{ 2 }	(C7B+1)	[3AAD]	BDe	10	924
 Gvur	N	1238	Uerzthu	C425899-9	 	Ph Pi 		602	Wild	G0 V M6 V	{ 0 }	(D7A-1)	[AB2A]	BE	7	-910
 Gvur	B	1305	Kukhvu	D000754-8	 	As Va Na Pi 		711	Wild	K7 V M3 V	{ -2 }	(866+1)	[657A]	BD	9	288
@@ -251,7 +251,7 @@ Gvur	O	2336	Otsesu	C673240-7	 	Lo 		225	Wild	M5 III M3 V	{ -2 }	(610+1)	[6166]	B
 Gvur	O	2338	Kaets	C63689B-5	 	Ph 		111	Cs	G0 IV	{ -1 }	(876+1)	[6794]	Be	10	336
 Gvur	O	2339	Ueghrrozue	C6A4798-6	 	Fl 		213	Wild	M0 V	{ -1 }	(961+2)	[8646]	B	14	108
 Gvur	O	2340	Ghisaer Zae	B758240-A	 	Lo 		302	Wild	G7 V	{ 1 }	(A11+4)	[336A]	B	13	40
-Gvur	C	2404	Gaengour	E540000-6	 	De He Di Po 		003	Wild	K8 V	{ -3 }	(500-1)	[0000]	B	10	-5
+Gvur	C	2404	Gaengour	E540000-6	 	De He Di Po 		003	Wild	K8 V	{ -3 }	(500-5)	[0000]	B	10	-25
 Gvur	C	2407	Ilughavo	A426424-F	 	Ni 		804	Wild	M0 V	{ 1 }	(835-3)	[451K]	B	8	-360
 Gvur	C	2408	Sagukhunngo	B995431-7	 	Ni Pa 		101	Wild	M1 V M6 V	{ -1 }	(833+2)	[6363]	Bc	6	144
 Gvur	G	2412	Kfugvugzozoaeksaer	D77A479-4	 	Ni Wa 		501	Wild	M1 V M5 V	{ -3 }	(333-3)	[8137]	B	8	-81
@@ -289,7 +289,7 @@ Gvur	D	2701	Lluezukgzang	A432447-B	 	Ni Px Po 		602	Wild	K5 V M9 V	{ 1 }	(E33-1)
 Gvur	D	2702	Ghoukoezo	C626201-7	 	Lo 		314	Wild	K7 V	{ -2 }	(810-1)	[1159]	B	11	-8
 Gvur	D	2703	Kaeg	E423757-7	 	Na Pi Po 		201	Wild	M0 V M1 V	{ -2 }	(668+1)	[4578]	BD	10	288
 Gvur	D	2704	Vakhoell	A584452-E	 	Ni Pa 		803	Wild	K2 V M2 V	{ 1 }	(934+1)	[354D]	Bc	9	108
-Gvur	H	2715	Dhanrranoez	D9A8000-8	 	Di Fl 		002	Wild	M0 V M4 V	{ -3 }	(700-1)	[0000]	B	8	-7
+Gvur	H	2715	Dhanrranoez	D9A8000-8	 	Di Fl 		002	Wild	M0 V M4 V	{ -3 }	(700-5)	[0000]	B	8	-35
 Gvur	H	2717	Aerzdanthi	C84A635-7	 	Ni Wa 		824	Wild	G3 V	{ -2 }	(851-2)	[744B]	B	14	-80
 Gvur	H	2720	Radellogvate	C7B8343-6	 	Fl Lo 		101	Wild	K5 V M6 V	{ -2 }	(420+5)	[3115]	B	6	40
 Gvur	L	2722	Zue Logvoks	D786574-4	 	Ag Pr Ga Ni 		822	Wild	F3 V	{ -2 }	(542+1)	[3391]	BcC	10	40
@@ -347,8 +347,8 @@ Gvur	P	3133	Oziz	C677224-9	 	Lo 		524	Wild	G0 V M8 V	{ -1 }	(C10-4)	[217C]	B	16	
 Gvur	P	3137	Torrerrz	C563300-7	 	Lo 		621	Wild	M5 III M2 V	{ -2 }	(B20+1)	[2175]	B	10	22
 Gvur	D	3201	Dhurrgthaedz	B562843-A	 	Ph Ri 		833	Wild	K3 V	{ 3 }	(E7D+1)	[5B4D]	BCe	11	1274
 Gvur	H	3211	Taek Aefueghz	B896155-9	 	Lo 		603	Wild	M0 V	{ 0 }	(800+1)	[3158]	B	6	8
-Gvur	H	3213	Eksfarrarr	D671000-7	 	Di He 		022	Wild	F8 V M3 V	{ -3 }	(900-2)	[0000]	B	11	-18
-Gvur	H	3217	Tuelehollar	E552000-7	 	Di Po 		011	Wild	M1 V	{ -3 }	(700+3)	[0000]	B	8	21
+Gvur	H	3213	Eksfarrarr	D671000-7	 	Di He 		022	Wild	F8 V M3 V	{ -3 }	(900-5)	[0000]	B	11	-45
+Gvur	H	3217	Tuelehollar	E552000-7	 	Di Po 		011	Wild	M1 V	{ -3 }	(700-5)	[0000]	B	8	-35
 Gvur	H	3218	Ikkhadz	D685674-1	 	Ag Ri Ga Huma2 Ni 		601	Wild	G5 V M6 V	{ -1 }	(A52+1)	[2554]	BC	10	100
 Gvur	H	3220	Rroungkhi	A73667A-D	 	Ni 		403	Wild	G4 V	{ 1 }	(A55+1)	[771G]	B	15	250
 Gvur	L	3221	Dzaekh	C547302-6	 	Lo 		903	Wild	K9 V	{ -2 }	(620-2)	[2136]	B	10	-24

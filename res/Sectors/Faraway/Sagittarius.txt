@@ -38,7 +38,7 @@ Corvette 0411 C655668-5 - Ga Ni Ag         314 TT F3 V M2 V
 Susuba 0412 D776655-4 - Ni Ag            110 TT M0 V 
 Levuka 0413 E6B5643-4 - Fl Ni            724 TT K3 V M8 V
 Hewlett 0414 B510795-C - Na Pi Ht         311 TT M5 V G6 V M7 IV
-DeadRock 0415 D000003-B - As Va            014 TT M6 V M3 V M8 V
+DeadRock 0415 D000003-B - As Va Di         014 TT M6 V M3 V M8 V
 Nosmoker 0417 C9A3768-6 - Fl               614 RR F9 V K2 V
 Smoker 0418 C878B25-8 - Hi In            921 RR M7 V G1 V
 Tomtake 0420 B646ABD-B - Hi In            810 UU K8 V K6 V
@@ -94,7 +94,7 @@ Garnix 0736 D688866-3 - Ph Pa Ri         701 EE M4 IV M8 V
 Morena 0737 C518564-9 - Ic Ni            923 EE K9 D K2 V
 Parzad'r 0804 A747977-D N Hi In Ht         811 CC K3 V G0 V
 Torlisson 0806 B552689-A - Ni Po            811 CC M1 V M8 V
-X8163 0808 X200003-4 - Va               030 SS M4 V M3 V
+X8163 0808 X200003-4 - Va Di            030 SS M4 V M3 V
 Rehn 0809 AA55B77-D N Hi Ht            712 SS M2 V M0 V
 Nbaro 0810 C56398C-6 - Hi Pr            710 SS K5 V M2 V
 Thackery 0811 D473768-7 - Pi               611 SS K9 V F1 V
@@ -155,7 +155,7 @@ Nanu 1027 E563478-9 - Ni               110 UU A5 V M4 III
 Howell's Nexus 1028 C884967-6 - Hi Pr            711 UU M1 IV K6 V
 X9917 1029 X424244-7 - Lo               212 FF K7 V M3 V
 Forsyth 1030 A946A89-A N Hi In            320 FF K3 V M9 V
-X5903 1032 X213030-4 - Ic               000 EE M8 V K8 V
+X5903 1032 X213030-4 - Ic Di            000 EE M8 V K8 V
 X4258 1033 E130257-7 - De Lo Po         211 EE M1 V 
 Nelson 1034 A898CCF-B N Hi In            601 EE M4 V G6 V
 Graham 1036 A847A98-E N Hi In Ht         511 EE K3 V G8 V
@@ -166,14 +166,14 @@ Sultana 1111 A858B9B-C N Hi Ht            911 SS M5 V M3 V
 Ripe 1113 D797988-4 - Hi In            214 SS M4 V M0 V
 X0006 1114 X231000-6 - Di Po            011 SS K0 V M0 V
 Neilstup 1116 E527668-4 - Ni               831 TT K9 IV F1 V
-X9690 1117 X100001-7 - Va               011 TT M7 V G8 V
+X9690 1117 X100001-7 - Va Di            011 TT M7 V G8 V
 Keeper 1119 C651654-9 - Ni Po            611 TT M8 V F2 V
 Milbank 1123 B686739-7 - Ga Ag Ri         220 UU K3 V M6 V M1 II
 Thepit 1124 D480234-6 - De Lo            911 UU K5 V G1 V
 Calcium 1125 D76387C-8 - Ph Ri            322 UU M1 IV M0 III
 Lossinspuz 1126 D232135-8 - Lo Po            314 UU G2 IV K4 V
 Smith's Bane 1127 A314C72-F N Ic Hi In Ht      311 UU M3 V M3 V
-X5762 1128 X000001-7 - As Va            011 UU M1 V K4 V
+X5762 1128 X000001-7 - As Va Di         011 UU M1 V K4 V
 Astelene 1129 C999B78-A - Hi In            111 UU K9 V M9 V
 Endlin 1132 D7A5630-6 - Fl Ni            312 VV M7 V M8 D
 X8255 1135 X434320-4 - Lo               711 EE M0 V G9 V
@@ -185,7 +185,7 @@ Santosh 1206 A867C99-D N Ga Hi Ht         212 CC K2 V M5 V
 Huntley 1207 D544855-5 - Ph Pa Pi         712 CC M7 V K9 V F5 V M1 V
 Melmac 1210 D3457AC-4 - Ag Pi            411 SS K4 V M7 V
 Catshome 1211 E430332-9 - De Lo Po         110 SS M9 Ib 
-X7564 1213 X110022-8 -                  013 SS K3 V M2V M7 V
+X7564 1213 X110022-8 -  Di              013 SS K3 V M2V M7 V
 X0910 1214 X476444-4 - Ni Pa            921 SS K1 V
 Nottingham 1216 B763ABC-8 - Hi               613 TT M3 V F9 V
 Orkenii 1217 E246200-9 - Lo               121 TT M2 V M7 V F3 V
@@ -198,7 +198,7 @@ Cheekrun 1228 C898BAD-9 - Hi In            213 UU M8 V O1 V
 Lorden's Watch 1230 B844962-8 - Hi In Cy         621 VV K8 V M3 III
 Merlin's Folly 1232 A868B87-B N Hi               821 EE M6 V K6 V
 Quinones 1234 A469855-B N Ph Ri            714 EE M2 V 
-X0312 1236 X100012-6 - Va               003 EE K3 Ia M1 V
+X0312 1236 X100012-6 - Va Di            003 EE K3 Ia M1 V
 Notenuff 1302 C538643-9 - Ni               711 BB M8 IV K5 V
 Moltrist 1305 C837C86-B - Hi               131 CC K4 V M6 D
 Formulan 1308 D34368A-7 - Ni Po            931 DD K2 V 
@@ -232,12 +232,12 @@ Shreveport 1418 D656C68-9 - Ga Hi            211 ZZ K6 V K8 V M7 V
 Romankin 1419 E461440-7 - Ni               713 XX M6 V K7 V
 Venice 1420 BAA8A78-E - Fl Hi In Ht      134 XX F4 V O4 D
 Browten 1421 BBBAA9A-D - Fl Hi In Ht      312 XX F9 V M8 V
-X6943 1423 X110031-2 -                  014 VV M2 V F6 V
+X6943 1423 X110031-2 -  Di              014 VV M2 V F6 V
 Jetson 1425 B555985-9 - Hi               101 VV M5 V M7 V
 Big Red One 1426 A998CBB-D N Hi In Ht         630 VV M0 V K4 V
 Stopmot 1427 X776620-1 - Ni Ag            923 VV F9 V 
 Sybell 1429 B677B9A-C - Hi In Ht         912 VV M2 V 
-X3704 1430 X220022-2 - De Po            014 VV M6 V M3 V
+X3704 1430 X220022-2 - De Po Di         014 VV M6 V M3 V
 Nockurn 1431 E889963-5 - Hi Pr Cy         111 EE K1 V M3 V
 Outer Rim 1432 A5448B9-A N Ph Pa Pi         831 EE K7 III M3 V
 Backridge 1436 A564BB8-B N Hi               913 EE M7 V M6 V M1 V
@@ -245,14 +245,14 @@ York 1438 B75387B-9 - Ph Po            710 GG K7 V F9 IV
 Sornoz 1440 B531988-8 - Hi Na Po         531 GG B2 V M6 V
 Tomany 1501 A8949E9-A N Hi In            721 BB M3 V M6 V
 X1480 1504 X462331-1 - Lo               334 CC M6 V M3 V
-X7780 1506 X100023-7 - Va               003 CC F8 V G8 V
+X7780 1506 X100023-7 - Va Di            003 CC F8 V G8 V
 Charley's Edge 1508 A898969-C N Hi In Ht         731 DD M0 V M6 V
 Lapan 1509 E674544-4 - Ni Ag            520 DD K3 III M3 III
 X5464 1513 X375430-2 - Ni Pa            911 SS M6 V M2 V
 Condify 1514 B644AA7-9 - Hi In            110 SS M6 V K1 V
 Diwata 1516 E531774-7 - Na Po            213 ZZ G6 V K3 V F2 V
 Jensen's Loft 1517 B6439D9-6 - Hi In Po         810 TT F0 V M6 V
-X0279 1518 X490012-6 - De He            022 ZZ M3 V M5 D
+X0279 1518 X490012-6 - De He Di         022 ZZ M3 V M5 D
 Mozit 1519 D589598-5 - Ni Pr            110 ZZ G2 V 
 Sarmans 1520 D425340-8 - Lo               912 ZZ M7 IV M0 V
 Dubahr 1521 D200530-9 - Va Ni            711 XX M0 D K2 V
@@ -297,7 +297,7 @@ Gastenov 1716 D676964-7 - Hi In            510 ZZ K3 V M9 V
 Trident Gulch 1717 A639785-D - Ht               332 ZZ M3 III F2 V
 Fort Tempest 1718 B8788AA-8 - Ph Pa Pi         111 ZZ K0 V F8 V
 Nodipherous 1719 D54459A-4 - Ni Ag            534 ZZ M1 V G5 V
-Jibralter 1720 D000021-8 - As Va            013 ZZ M3 V G4 V
+Jibralter 1720 D000021-8 - As Va Di         013 ZZ M3 V G4 V
 Dole 1721 A557A85-B N Hi               530 XX O2 IV M3 V
 Randollee 1722 D426516-6 - Ni               113 XX K0 III M4 V
 X1215 1723 X450220-6 - De Lo Po         334 XX K1 V K9 V
@@ -308,7 +308,7 @@ X3560 1729 X484442-3 - Ni Pa            431 VV K7 V F4 V
 Finian 1730 E320434-A - De He Ni Po      814 WW G3 V F5 V
 McMurdo 1731 D616532-5 - Ic Ni            324 WW M1 V G8 V
 Fennel 1732 C223732-8 - Na Pi Po         821 WW M9 III 
-X0282 1735 X100044-4 - Va               011 EE M1 III G3 V
+X0282 1735 X100044-4 - Va Di            011 EE M1 III G3 V
 X2993 1738 X485225-4 - Lo               433 GG M1 V G9 V
 Junithy 1807 B685754-8 - Ga Ag Ri         623 CC G0 III G5 V
 Donjarin 1809 C440698-7 - De He Ni Po      611 QW M5 V K3 V
@@ -340,7 +340,7 @@ X0700 1915 X653303-4 - Lo Po            611 ZZ M0 V M8 V
 Holkemsto 1916 B564952-A - Hi Pr            913 ZZ M2 V M7 V
 X8709 1917 E340135-5 - De He Lo Po      311 ZZ M0 V F6 D
 Champlin 1918 E869669-8 - Ni Ri            110 ZZ M5 III F9 III
-X4785 1919 E262020-5 -                  011 AS M0 V 
+X4785 1919 E262020-5 -  Di              011 AS M0 V 
 Howtufer 1920 C758A66-7 - Hi               913 AS F6 V K6 V
 Nosterom 1921 B784B98-B - Hi               320 AS K0 V M9 V
 Lippenzell 1922 B779A98-A - Hi In            613 AS M5 V M9 V M1 V M4 V F5 V
@@ -401,14 +401,14 @@ Vibrant 2205 C672423-9 - He Ni            924 PP M6 V M0 V
 Flump 2208 C697778-7 - Ag Pi            311 QW K8 V K3 V
 Akerston 2209 D432785-5 - Na Po            324 QW K3 V M2 III
 Tonedge 2212 B8B2641-9 - Fl He Ni         911 SS M1 V K6 V
-X0326 2213 X000014-5 - As Va            012 SS K4 V 
+X0326 2213 X000014-5 - As Va Di         012 SS K4 V 
 X4891 2214 E2A0112-7 - Lo               211 SS M7 V K3 V
 Anton's Paradise 2216 A774A54-C N Hi In Ht         123 ZZ K3 Ia 
 X9155 2219 X100000-6 - Va Di            031 AS M3 V K7 V
 Intrepid 2220 C437595-8 - Ni               214 AS G3 III M2 V
 X0307 2223 X545400-3 - Ni Pa            323 XX K3 V M4 V
 Mathdar 2224 D673587-4 - Ni               321 XX M4 V K8 V
-X6378 2225 X030010-6 - De Po As         011 XX K0 V 
+X6378 2225 X030010-6 - De Po As Di        011 XX K0 V 
 Discovery 2227 B868658-A - Ni Ag Ri         313 YY M0 V K5 V
 Hirschid 2237 E423698-7 - Ni Na Px Po      810 HH M8 V K3 V
 Forjist 2239 D654663-6 - Ni Ag Cy         711 HH M3 IV G9 III
@@ -416,7 +416,7 @@ Tozwald 2305 D4955AA-7 - Ni Ag            901 PP G8 V G2 V
 Elsugund 2313 D35368A-4 - Ni Po            121 SS M1 V 
 Corkis 2315 C7579BC-8 - Ga Hi            113 ZZ G8 V M5 V
 Ted's Blessing 2317 B8A6AAB-D - Fl Hi In Ht      510 ZZ M9 V 
-X8052 2319 X000034-8 - As Va            024 AS M5 V 
+X8052 2319 X000034-8 - As Va Di         024 AS M5 V 
 Grolotek 2321 D788765-3 - Ag Ri            114 AS K4 V M5 V G7 V
 X9918 2323 X332432-5 - Ni Po            311 JJ M4 V M8 V
 X1556 2324 X000214-8 - As Lo Va         611 JJ K3 III K8 V
@@ -450,20 +450,20 @@ Campbell's World 2430 A768C96-D N Hi Ht            111 YY K1 V M8 V
 Minnyapp 2433 B764AA8-C - Hi Ht            911 HH F6 D M0 V
 Femmill 2435 C867AA6-8 - Ga Hi            310 HH K2 V G2 V
 X8139 2438 X345266-3 - Lo               812 HH M8 V M2 V
-X0707 2439 X010021-6 - As               011 HH M4 V G8 V
-X5629 2501 X300021-4 - Va               003 PP M6 V M8 V
+X0707 2439 X010021-6 - As Di            011 HH M4 V G8 V
+X5629 2501 X300021-4 - Va Di            003 PP M6 V M8 V
 Thrustmake 2506 AA88BB8-C N Hi Ht            101 PP K0 V M9 V
 Higgins 2508 E526300-6 - Lo               111 PP M4 V M8 V
 Peeploz 2511 D543847-3 - Ph Pi Po         222 MM M2 V M3 V
 Tokemik 2512 C795778-8 - Ag Pi            111 MM M2 V F6 V
-Destiny 2513 D100010-A - Va               003 ZZ M2 D K9 V
+Destiny 2513 D100010-A - Va Di            003 ZZ M2 D K9 V
 X5379 2515 X510330-5 - Lo               631 MM K5 V M8 V
 X6978 2518 X120220-8 - De Lo Po         913 KK M0 V M5 V
 Lipsotal 2521 D664547-6 - Ni Ag Pr         113 AS M6 V M7 V
 Drybone 2522 A360842-B N De Ph Ri         931 AS M0 V F7 V
 Baylorga 2523 C838AAB-8 - Hi               724 JJ K1 V M0 V
 Irwin 2524 B370766-B - De He Pi         512 JJ K4 V G2 V
-X6199 2526 X100055-6 - Va               011 YY K0 V M7 V M0 V
+X6199 2526 X100055-6 - Va Di            011 YY K0 V M7 V M0 V
 Dungora 2530 B624AAD-B - Hi In            132 YY K3 IV K8 V
 Hopeless 2533 B877BBC-A - Hi In            932 HH K9 V F7 V
 X2069 2538 X300300-9 - Va Lo            911 HH G0 V F5 V
@@ -524,11 +524,11 @@ Janssen's World 2920 A777A87-D N Hi In Ht         521 JJ M1 V K3 V
 Sam's Holdout 2922 C684434-8 - Ni Pa            534 JJ M0 V 
 Shepherd 2923 B675A94-B - Hi In            731 JJ M1 V M9 V
 Flotism 2925 C885BAA-8 - Ga Hi            311 JJ M0 V 
-X3074 2926 X000002-6 - As Va            023 JJ M4 IV 
+X3074 2926 X000002-6 - As Va Di         023 JJ M4 IV 
 Sledme 2928 D669524-4 - Ni Pr            514 JJ K8 V M6 V M9 V M7 V M0 V
 Gatirud 2929 D765889-5 - Ga Ph Pa Ri      414 JJ M9 V K5 V
 Toster 2933 A878A99-B N Hi In            831 II G8 V M3 V
-X9771 2934 X000010-7 - As Va            021 II F9 V M2 V
+X9771 2934 X000010-7 - As Va Di         021 II F9 V M2 V
 Filporall 2935 D41457C-8 - Ic Ni            813 II M6 V K5 V
 X8606 2937 X614410-6 - Ic Ni            911 II M3 V M0 V
 Redlund 3004 E323647-5 - Ni Na Px Po      410 PP M6 V K1 V

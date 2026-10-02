@@ -35,7 +35,7 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 1003 ?                    ???????-?                                           - - - 001   --         
 1005 ?                    ???????-?                                           - - - 001   --      
 1006 ?                    ???????-?                                           - - - 001   --          
-1010 Gauu Ushino          E559255-5 Lo Ni                                           124   EF  F1 V         
+1010 Gauu Ushino          E559255-5 Lo                                              124   EF  F1 V         
 1103 ?                    ???????-?                                           - - - 001   --          
 1104 ?                    ???????-?                                           - - - 001   --         
 1107 Gaargi Kii           E511000-0 Ba Ic                                           004   Va  K0 III D     
@@ -46,11 +46,11 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 1205 ?                    ???????-?                                           - - - 001   --           
 1207 ?                    E400000-0 Ba Va                                           001   __  M0 V          
 1209 Kaasu                AA7A854-9 Oc Ph Pi                                        922   EF  A6 V       
-1210 Ker                  B87A100-A Lo Ni Wa                                        402   EF  M2 V K4 V    
+1210 Ker                  B87A100-A Lo Wa                                           402   EF  M2 V K4 V    
 1301 ?                    ???????-?                                           - - - 001   --         
 1304 ?                    ???????-?                                           - - - 001   --          
-1307 Meku                 C568344-4 Lo Ni                                           803   Va  K1 V          
-1309 Imaga                C556455-6 Lo Ni Pa Cw                                     723   EF  K7 V         
+1307 Meku                 C568344-4 Lo                                              803   Va  K1 V          
+1309 Imaga                C556455-6 Ni Pa Cw                                        723   EF  K7 V         
 1401 ?                    ???????-?                                           - - - 000   --           
 1402 ?                    ???????-?                                           - - - 001   --          
 1404 ?                    ???????-?                                           - - - 001   --          
@@ -148,9 +148,9 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 0611 ?                    ???????-?                                           - - - 001   --            
 0614 ?                    ???????-?                                           - - - 001   --     
 0617 ?                    ???????-?                                           - - - 001   --           
-0714 Khiishin             C438333-8 Lo Ni                                           910   Na  M3 V M0 V   
-0815 Sumi Araark          C494100-8 Lo Ni                                           901   Vs  M0 V          
-0816 Azkizan              C223333-B Ni Po Lo                                        214   Vs  F6 V         
+0714 Khiishin             C438333-8 Lo                                              910   Na  M3 V M0 V   
+0815 Sumi Araark          C494100-8 Lo                                              901   Vs  M0 V          
+0816 Azkizan              C223333-B Po Lo                                           214   Vs  F6 V         
 0912 Tekkfakkh            A366777-C Ag Ri Cp                                    V   901   EF  M2 V M7 V      
 0913 Uguundi              B3417AA-9 He Pi Po                                        822   EF  K9 V M7 V    
 0916 Ungurlii             A445633-A Ag Ni                                         A 624   Vs  F3 V        
@@ -163,7 +163,7 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 1216 ?                    E577000-0 Ba                                              001   __  M8 V          
 1218 ?                    ???????-?                                           - - - 000   --    
 1413 Gamin                D442610-7 He Ni Po                                        902   Cs  F7 V        
-1414 Giish                C412000-6 Ba Ic Di                                        022   Cs  F7 V M9 V    
+1414 Giish                C412000-6 Ic Di                                           022   Cs  F7 V M9 V    
 1415 Zudagim              E682777-3 Ri                                              722   Na  F9 V         
 1418 ?                    ???????-?                                           - - - 001   --              
 1511 ?                    ???????-?                                           - - - 001   --              

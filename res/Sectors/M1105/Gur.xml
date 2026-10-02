@@ -34,4 +34,7 @@
       0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 0027 0026 0025 0024 0023
     </Border>
   </Borders>
+  <Allegiances>
+    <Allegiance Code="Kc">K'kree Client State</Allegiance><!-- As in Numbis. -->
+  </Allegiances>
 </Sector>

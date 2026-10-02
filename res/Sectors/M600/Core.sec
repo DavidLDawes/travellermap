@@ -239,7 +239,7 @@ Hex  Name                 UWP       Remarks                               {Ix}  
 1323 Kushur Naa           A310343-D Lo                                                                     603 8       G3 V M8 V      
 1328 Sar                  B647687-A Ag Ni                                                                  402 8       M0 V M2 V      
 1330 Shidkar              B68548A-7 Ga Ni Pa                                                               300 13      F3 V M7 V      
-1334 Anshar               BACA104-C Fl Lo Oc                                                               712 8       G5 V M0 V      
+1334 Anshar               BACA104-C Fl Lo                                                                  712 8       G5 V M0 V      
 1335 Umkashuu             B55499B-B Hi                                                                     822 7       M2 V           
 1336 Kuka                 EA97212-3 Lo                                                                     903 6       M0 V M3 V      
 1338 Rid                  B695204-A Lo                                                                     202 9       M2 V           
@@ -464,7 +464,7 @@ Hex  Name                 UWP       Remarks                               {Ix}  
 2538 Duuind               B768475-9 Ni Pa                                                                  402 8       K6 V           
 2540 Uumda                C553201-7 Lo Po                                                                  120 12      K3 V           
 2602 Gasa Kuu             B544411-9 Ni Pa                                                                  501 8       M1 V M6 V      
-2603 Arunde               EAAA247-9 Fl Lo Oc                                                               803 8       K4 V           
+2603 Arunde               EAAA247-9 Fl Lo                                                                  803 8       K4 V           
 2606 Margish Liir         B547321-A Lo                                                                     305 11      K2 V           
 2608 Duur                 B557678-7 Ag Ni                                                                  413 7       M3 V M7 V      
 2609 Bambe                B599330-B Lo                                                                     113 14      M3 V           

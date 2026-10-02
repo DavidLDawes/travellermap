@@ -79,7 +79,7 @@ Fadz	A	0803	Ghauek Feaengu	B537678-8	 	Ni 		603	Wild	F4 V	{ -1 }	(B53+4)	[4669]	
 Fadz	A	0804	Knaeng Sueg	C100414-C	 	Ni Va 		300	Wild	M8 V	{ 0 }	(832+1)	[241E]	B	0	48
 Fadz	A	0807	Gaefae	E896653-3	 	Ag Ni 		204	Wild	F0 V	{ -2 }	(852-4)	[54A1]	BC	0	-320
 Fadz	E	0812	Dzaersaesae	C542388-6	 	He Lo Po 		511	Wild	G6 V	{ -2 }	(C20-1)	[113A]	B	0	-24
-Fadz	E	0814	Goenarrghakhsugz	D784000-D	 	Di 		000	Wild	F7 V D	{ -1 }	(500+1)	[0000]	B	0	5
+Fadz	E	0814	Goenarrghakhsugz	D784000-D	 	Di 		000	Wild	F7 V D	{ -1 }	(500-5)	[0000]	B	0	-25
 Fadz	E	0815	Kfagonguae	C120588-9	 	De Ni Po 		919	Wild	M0 V D	{ -1 }	(J43-5)	[A448]	B	0	-1080
 Fadz	E	0818	Rrosokh	C775754-9	 	Ag Pi 		910	Wild	F6 V D D	{ 1 }	(867+1)	[8849]	BCD	0	336
 Fadz	E	0819	Kaegzzong	B665211-9	 	Ga Lo 		600	Wild	F3 V M1 V	{ 0 }	(710+2)	[1238]	B	0	14
@@ -164,7 +164,7 @@ Fadz	F	1518	Zige	C556553-8	 	Ag Ni 		514	Wild	F7 V	{ -1 }	(C43-1)	[745B]	BC	0	-1
 Fadz	F	1519	Nuezarrg	C67A345-7	 	Lo Wa 		414	Wild	F7 V	{ -2 }	(320+1)	[1173]	B	0	6
 Fadz	J	1522	Gvatu	X616784-0	 	Ic Pi 		801	Wild	M2 III	{ -2 }	(962+1)	[3541]	BD	0	108
 Fadz	J	1528	Girron	D53A877-9	 	Ph Wa 		620	Wild	M3 V	{ -1 }	(C74+4)	[774C]	Be	0	1344
-Fadz	J	1530	Edhalla	D200000-D	 	Di Va 		010	Wild	K2 V	{ -1 }	(500-3)	[0000]	B	0	-15
+Fadz	J	1530	Edhalla	D200000-D	 	Di Va 		010	Wild	K2 V	{ -1 }	(500-5)	[0000]	B	0	-25
 Fadz	N	1532	Gaekigh	B778453-A	 	Ni Pa 		901	Wild	F7 V D	{ 1 }	(733-3)	[456B]	Bc	0	-189
 Fadz	N	1535	Kigharrgh	A625577-9	 	Ni 		521	Wild	G8 V D	{ 0 }	(945+1)	[663A]	BC	0	180
 Fadz	N	1536	Dhaztuen	X997687-0	 	Ag Ni 		711	Wild	K2 V D D	{ -2 }	(653-1)	[8451]	BC	0	-90
@@ -178,7 +178,7 @@ Fadz	F	1614	Ghaekaraen	C67A579-A	 	Ni Wa 		400	Wild	F5 V	{ 0 }	(842-3)	[155C]	B	
 Fadz	F	1615	Llugharaen	DBB6543-8	 	Ni Fl 		412	Wild	G3 V	{ -3 }	(A41+5)	[2266]	B	0	200
 Fadz	F	1618	Oghughaf	B79A154-B	 	Lo Wa 		311	Wild	F9 V	{ 1 }	(D01-4)	[621D]	B	0	-52
 Fadz	J	1625	Uevorrkfodze	D536659-3	 	Ni 		312	Wild	K6 V M1 V	{ -3 }	(752+1)	[3345]	B	0	70
-Fadz	J	1627	Ghurorrak	D99A000-8	 	Di Wa 		002	Wild	F6 V	{ -3 }	(900-1)	[0000]	B	0	-9
+Fadz	J	1627	Ghurorrak	D99A000-8	 	Di Wa 		002	Wild	F6 V	{ -3 }	(900-5)	[0000]	B	0	-45
 Fadz	J	1630	Aedz Zikhs	A84548B-C	 	Ni Pa 		621	Wild	F6 V	{ 1 }	(635-2)	[155B]	B	0	-180
 Fadz	C	1702	Zoughzvungran	C546A99-9	 	Hi In 		123	Wild	F0 V	{ 2 }	(D99-3)	[AC97]	BE	0	-3159
 Fadz	C	1708	Kfagaknu	B636677-A	 	Ni 		502	Wild	M2 V	{ 1 }	(D55-2)	[6779]	B	0	-650
@@ -202,16 +202,16 @@ Fadz	G	2020	Range	C76959E-6	 	Ni Pr 		114	Wild	F6 V	{ -2 }	(644-4)	[5348]	Bc	0	-
 Fadz	K	2030	Uefaekh Sorrllon	B4667A8-A	C 	Ag Ri Cp 		814	Wild	F1 V D	{ 4 }	(A6D+1)	[7B59]	BCf	0	780
 Fadz	C	2107	Oeoengnokdhis	D524215-7	 	Lo 		421	Wild	F2 V	{ -3 }	(710+1)	[216B]	B	0	7
 Fadz	C	2110	Nguegovaghek	B638787-4	 			402	Wild	K7 V D	{ 0 }	(767-2)	[A775]	B	0	-588
-Fadz	G	2114	Vungaer	X78A000-A	 	Di Wa 	B	000	Wild	F9 V	{ -1 }	(300+1)	[0000]	B	0	3
+Fadz	G	2114	Vungaer	X78A000-A	 	Di Wa 	B	000	Wild	F9 V	{ -1 }	(300-5)	[0000]	B	0	-15
 Fadz	G	2119	Gvaellai	A447533-C	C 	Ag Ni 		803	Wild	F4 V	{ 2 }	(A44-5)	[4747]	BC	0	-800
 Fadz	C	2201	Zarzikhdaeg	E000344-6	 	As Va Lo 		903	Wild	G3 V D	{ -3 }	(B20+1)	[3126]	B	0	22
 Fadz	C	2202	Araerrgh	D300400-7	 	Va Ni 		412	Wild	K8 V 	{ -3 }	(932-2)	[1184]	B	0	-108
-Fadz	C	2207	Ksenganzar	D346000-1	 	Di 		028	Wild	F8 V D D	{ -3 }	(600+1)	[0000]	B	0	6
+Fadz	C	2207	Ksenganzar	D346000-1	 	Di 		028	Wild	F8 V D D	{ -3 }	(600-5)	[0000]	B	0	-30
 Fadz	C	2209	Ingaeksllaelarrgaethog	C4947BA-3	 	Ag Pi 		223	Wild	F2 V D D	{ 0 }	(967+1)	[8747]	BCD	0	378
 Fadz	C	2302	Gzaeou	E400685-5	 	Na Ni Va 		526	Wild	G0 V D	{ -3 }	(653+2)	[6363]	B	0	180
 Fadz	C	2307	Gvoedzaerug	CAB489A-4	 	Fl Ph 		820	Wild	F1 V	{ -1 }	(978-2)	[5724]	Be	0	-1008
 Fadz	G	2311	Rueksersaetsknugh	A899503-B	 	Ni 		702	Wild	M6 V D	{ 1 }	(A42+3)	[6638]	B	0	240
-Fadz	C	2403	Naenoetssa	D250000-5	 	De Di Po 		012	Wild	F8 V	{ -3 }	(700+1)	[0000]	B	0	7
+Fadz	C	2403	Naenoetssa	D250000-5	 	De Di Po 		012	Wild	F8 V	{ -3 }	(700-5)	[0000]	B	0	-35
 Fadz	D	2501	Llaengksaesuezarrghaerr	E8B7995-4	 	Fl Hi In 		204	Wild	M7 V	{ 0 }	(887+1)	[C964]	BE	0	448
 Fadz	D	2508	Naerraghoungluersdoekfaz	A896445-B	 	Ni Pa 		603	Wild	G4 V D	{ 1 }	(B37-3)	[1577]	Bc	0	-693
 Fadz	D	2601	Aknaen	A655100-8	 	Ga Lo 	B	801	Wild	K2 V D	{ -1 }	(C00+1)	[4188]	B	0	12
@@ -232,7 +232,7 @@ Fadz	D	2907	Zinnedhon	B562425-6	 	Ni 		400	Wild	K9 V	{ -1 }	(631-2)	[1325]	B	0	-
 Fadz	H	2911	Fogoeganrron	B768574-3	 	Ag Pr Ni 	B	112	Wild	F1 V D	{ 0 }	(743+1)	[5532]	BcC	0	84
 Fadz	H	2913	Noeuekfoungong	C77A443-5	 	Ni Wa 	B	413	Wild	F9 V 	{ -2 }	(931+2)	[6212]	Bc	0	54
 Fadz	D	3008	Deiuedourrgh	B98A784-6	 	Ri Wa 		922	Wild	F5 V D	{ 1 }	(368+1)	[5847]	BC	0	144
-Fadz	H	3014	Adaeokfue	D524000-2	 	Di 		003	Wild	K7 V	{ -3 }	(A00+1)	[0000]	B	0	10
+Fadz	H	3014	Adaeokfue	D524000-2	 	Di 		003	Wild	K7 V	{ -3 }	(A00-5)	[0000]	B	0	-50
 Fadz	D	3102	Ozaaeving	E430B9C-8	 	De Hi Na Po 		102	Wild	G8 V	{ -1 }	(8A4-5)	[AA74]	BE	0	-1600
 Fadz	D	3103	Ksuerazvaegh	C500241-6	 	Lo Va 		422	Wild	F5 V	{ -2 }	(710+5)	[1144]	B	0	35
 Fadz	D	3105	Aerrorae	E68767A-3	 	Ga Ag Ni Ri  		713	Wild	F5 V	{ -1 }	(B53+2)	[4362]	B	0	330
@@ -241,4 +241,4 @@ Fadz	D	3107	Doaekfoe	B56478C-8	 	Ag Ri 		605	Wild	F1 V D	{ 2 }	(A6A+1)	[8928]	BC
 Fadz	D	3203	Giknaghaer	C200754-5	 	Na Pi Va 		903	Wild	K6 V M8 V	{ -1 }	(A63-1)	[7616]	BD	0	-180
 Fadz	D	3204	Ragnoedh	C7A6243-5	 	Lo Fl 		812	Wild	M4 V	{ -2 }	(710-3)	[4154]	B	0	-21
 Fadz	D	3207	Khozkhanueks	B360455-A	 	De Ni 		514	Wild	K9 V	{ 1 }	(A35-1)	[158F]	B	0	-150
-Fadz	D	3208	Khozkhanueks	D875000-5	 	Di 		012	Wild	M8 V	{ -3 }	(600+1)	[0000]	B	0	6
+Fadz	D	3208	Khozkhanueks	D875000-5	 	Di 		012	Wild	M8 V	{ -3 }	(600-5)	[0000]	B	0	-30

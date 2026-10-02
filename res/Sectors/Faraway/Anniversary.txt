@@ -63,7 +63,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 0611 Nevbird              E675721-2 Pi Ag                                      101   Im
 0612 Pointer              C000745-7 Va Pi Na As                                101   Im
 0617 Khenia               B230661-9 De Na Ni Po O:0716                    N    101   Im
-0713 Camroed              CAB8400-9 FL Ni                                      101   Im
+0713 Camroed              CAB8400-9 FL Ni Fl                                   101   Im
 0714 She'kad              A441446-E He Ni Po                                   101   Im
 0715 Kinori               B667899-A Ga Ph Pa Ri                           N    101   Im
 0716 Orion                A100342-B Va Lo Cp                                   101   Im
@@ -199,7 +199,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2323 Emita                X788000-0 Ba                                       R 000   Im
 2327 Mhando               C551457-4 Ni Po                                      100   Im
 2328 Kusanmi              B100999-A Hi Na In Va                              A 101   Im  
-2425 Arlan                AA9A346-9 Lo Ni Oc                              S    101   Im
+2425 Arlan                AA9A346-9 Lo Oc                                 S    101   Im
 2428 Esvroren             C959992-B Hi                                         100   Im
 2429 Thollan              C000432-B As Ni Va                              S    101   Im
 2430 Zecin                E681277-7 Lo                                         100   Im

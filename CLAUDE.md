@@ -132,7 +132,14 @@ binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
   `dotnet run -c Debug --project tools/validate` (add `-- --update-baseline` or
   `-- --report out.tsv`); CI runs it on Linux. Sector index `<DataFile>`/`<MetadataFile>` names
   must match the file names' **case** exactly (Linux). Interactive equivalents: `/admin/errors`,
-  `/admin/codes`, `tools/lintsec.html`.
+  `/admin/codes`, `tools/lintsec.html`. Data problems that need sector authors are listed in
+  `DATA-ISSUES.md`.
+- **Trade codes**: `dotnet run --project tools/tradecodes` reports, and `-- --apply` fixes,
+  UWP-determined trade codes and mechanical (Ex) values in sector files, using the validator's
+  rules (`World.TradeCodeRules`). Run it after adding or editing hand-maintained sector data.
+- **Editing data files with scripts**: preserve the BOM, line endings and encoding. Don't use
+  `sed -i` with a differently-cased path on Windows: it rewrites the file under the name you
+  typed, changing its case, which the file-case check rejects.
 - **JS unit tests**: `npm test` (Node's built-in `node --test`, no extra dependencies).
   Tests live in `test/unit/*.test.js`. Import `./setup.js` first; it stubs `window`,
   `location`, `localStorage`, and the `fetch` calls that `world_util.js` makes at import time,

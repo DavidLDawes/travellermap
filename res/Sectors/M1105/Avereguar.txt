@@ -2,10 +2,10 @@ Hex  Name                 UWP       Remarks                      {Ix}   (Ex)    
 ---- -------------------- --------- ---------------------------- ------ ------- ------ - -- - --- -- ---- ------------------
 0101 Lyec                 C353610-9 Ni Po                        { -1 } (E50+1) [756A] - -  - 804 11 HvFd M8 V
 0106 Nojjo                A8B4856-9 Ph Fl AqarW                  {  1 } (57B+4) [896C] - -  - 600  3 HvFd F0 V
-0109 Thedi                E87A000-0 Ba Wa                        { -3 } (700-2) [0000] - -  - 002  6 HvFd M6 V
-0110 Kara                 E426000-0 Ba                           { -3 } (900+4) [0000] - -  - 011 11 HvFd M3 V M6 V
+0109 Thedi                E87A000-0 Ba Wa                        { -3 } (700-5) [0000] - -  - 002  6 HvFd M6 V
+0110 Kara                 E426000-0 Ba                           { -3 } (900-5) [0000] - -  - 011 11 HvFd M3 V M6 V
 0204 Xezza                CAA6556-8 Ni Fl Gurv4 Pz               { -2 } (742-1) [6375] - M  A 913 15 HvFd G9 V
-0205 Zuda                 E429000-0 Ba                           { -3 } (900+4) [0000] - -  - 003 11 HvFd M5 V M6 V
+0205 Zuda                 E429000-0 Ba                           { -3 } (900-5) [0000] - -  - 003 11 HvFd M5 V M6 V
 0207 Jakla'a              B793875-9 Pi Ph                        {  1 } (C7B-1) [A94A] - K  - 313 10 HvFd G2 V
 0209 Hiinii               B544731-8 Ag Pi Aqar3                  {  1 } (76B+3) [9838] - M  - 600 11 HvFd M1 V
 0210 Nathyxa              B665953-A Hi Pr Ga                     {  3 } (C88-1) [4C49] - K  - 624 17 HvFd M5 V
@@ -129,7 +129,7 @@ Hex  Name                 UWP       Remarks                      {Ix}   (Ex)    
 0613 Armin                A447426-C Ni Pa GurvW Pz               {  1 } (635+3) [2549] - E  A 704 13 HvFd K5 V
 0614 Slontaac             C776631-7 Ag Ni                        { -1 } (653+3) [5563] - M  - 502  6 HvFd G7 V
 0711 Nicke                C686A64-9 Cy Ga Hi O:0613 GurvW        {  1 } (998+1) [9B48] - M  - 804 13 HvFd K3 V
-0814 Entgo                E433000-0 Ba Po                        { -3 } (700-2) [0000] - -  - 001 10 HvFd M1 V
+0814 Entgo                E433000-0 Ba Po                        { -3 } (700-5) [0000] - -  - 001 10 HvFd M1 V
 0816 Noghujje             B352884-9 Po Ph                        {  1 } (979+3) [791A] - K  - 815 14 HvFd K9 V M0 V 
 0817 Markorkeld           A7A3436-B Ni Fl GurvW Pz               {  1 } (D33+1) [4567] - -  A 830  8 HvFd M6 V
 0912 Riqiiga              B245563-8 Ag Ni Cy O:1011              {  0 } (A46+1) [5546] - K  - 704  9 HvFd F9 V

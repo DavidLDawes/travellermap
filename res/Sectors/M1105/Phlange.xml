@@ -29,6 +29,7 @@
     <Allegiance Code="GC">Grennan Combine</Allegiance>
     <Allegiance Code="MC">Mahler Combine</Allegiance>
     <Allegiance Code="SA">Saiph Alliance</Allegiance>
+    <Allegiance Code="Sa">Stardust Alliance</Allegiance><!-- As in neighboring RimReach. -->
   </Allegiances>
   <Stylesheet>
     border.Ae { color: blue }

@@ -214,7 +214,7 @@ Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N
 3228 Nestos               X76830A-5 Lo                   { -3 } (620-1) [213A] Bc   -  - 600 10 Wi G0 V          
 3229 Beless               X130638-2 De Mr Na Ni Po       { -3 } (851+2) [7355] B    N  - 414 14 Wi K2 V          
 3230 Gallejat             X757101-8 Lo Ga                { -3 } (700-3) [1116] B    -  - 403 9  Wi M0 V M7 V     
-0337 Ktiyleawoi           X67A000-1 Di Wa                { -3 } (400-1) [0000] -    -  - 400 7  As M2 V M6 V     
+0337 Ktiyleawoi           X67A000-1 Di Wa                { -3 } (400-5) [0000] -    -  - 400 7  As M2 V M6 V     
 0338 Khtis                XAB9100-5 Fl Lo                { -3 } (900-5) [1136] -    -  - 205 15 As M8 III        
 0339 Khee'                X557133-4 Lo                   { -3 } (400-3) [1145] -    -  - 413 13 As M0 V          
 0438 Tryoekaui            X438140-4 Lo                   { -3 } (700+1) [1155] -    R  - 304 15 As M3 V          
@@ -229,7 +229,7 @@ Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N
 1238 Prased               X510226-1 Lo                   { -3 } (A10+1) [3143] -    -  - 404 8  Wi G1 V M3 V     
 1339 Kharon               X225200-5 Lo                   { -3 } (B10-5) [1115] -    S  - 205 8  Wi K5 V M6 V     
 1839 Taxia                X110405-7 Ni                   { -3 } (A32-2) [3139] -    -  - 203 8  Wi M3 V M5 V     
-2137 Otrar                X501012-4 Di Ic Va             { -3 } (900+1) [0000] -    -  - 014 9  Wi M0 V M0 V     
+2137 Otrar                X501012-4 Di Ic Va             { -3 } (900-5) [0000] -    -  - 014 9  Wi M0 V M0 V     
 2434 Kiakuyan             X100240-5 Lo Va                { -3 } (810-5) [1116] -    -  - 203 10 Wi M1 V          
 2439 Ariis                E875878-7 Pa Ph Pi             { -2 } (776+3) [A65A] -    -  - 402 6  Wi M0 V M2 V     
 2637 Tulu                 X31067A-5 Na Ni                { -3 } (C52+1) [6348] -    -  - 512 12 Wi M0 V M0 V     

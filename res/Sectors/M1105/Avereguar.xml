@@ -32,6 +32,7 @@
   <Allegiances>
     <Allegiance Code="Hf">Hive FDA Uplift/Observation Site</Allegiance>
     <Allegiance Code="Iy">Iyuok Hegemony</Allegiance>
+    <Allegiance Code="Xh">Hive FDA extra-Federation operation</Allegiance><!-- As in neighboring Blaskon. -->
   </Allegiances>
   <Borders>
     <Border Allegiance="Iy">

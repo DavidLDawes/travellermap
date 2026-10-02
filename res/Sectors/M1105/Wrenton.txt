@@ -148,7 +148,7 @@ Hex  Name                 UWP       Remarks                          {Ix}   (Ex)
 0914 Kuukky               E23536A-6 Lo O:0713                        { -3 } (820+1) [1128] - -  - 714 16 HvFd G1 IV M2 V
 0916 Fuxorra              E446286-5 Lo Hana8                         { -3 } (510+1) [2136] - -  A 700 10 HvFd K4 V
 0917 Hzis't'              E867462-6 Ga Pa Ni O:1015 HanaW            { -3 } (630-1) [4188] - -  - 514 10 HvFd K3 V
-0919 Doutroghi            E300000-0 Ba Va                            { -3 } (800-1) [0000] - -  - 013 12 HvFd K7 V M0 V
+0919 Doutroghi            E300000-0 Ba Va                            { -3 } (800-5) [0000] - -  - 013 12 HvFd K7 V M0 V
 1011 Xyki                 C75A668-9 Ni Wa Cy O:0713                  {  0 } (B55+4) [7664] - KM - 803 11 HvFd M0 V
 1012 Thudue               E000000-0 As Ba Va                         { -3 } (800-5) [0000] - -  - 000  7 HvFd G9 V
 1015 Hanaosk              B585A96-B Hi (Hanaosk)                     {  3 } (E98+4) [AD27] - -  A 304 12 HvFd M1 V M2 V
@@ -345,7 +345,7 @@ Hex  Name                 UWP       Remarks                          {Ix}   (Ex)
 0539 Urnenglun            D68A110-6 Lo Wa                            { -3 } (900+1) [115A] - -  - 703 13 HvFd G4 V
 0540 Re'uzi               B554896-A Ph Pa                            {  2 } (676+4) [9A2B] - K  - 804 13 HvFd F3 V M4 V
 0632 Slukiq               C985411-5 Ni Pa                            { -2 } (A32-2) [62A6] - M  - 803 11 HvFd M1 V
-0633 Onunt                E410000-0 Ba                               { -3 } (A00+1) [0000] - -  - 023 11 HvFd K5 V
+0633 Onunt                E410000-0 Ba                               { -3 } (A00-5) [0000] - -  - 023 11 HvFd K5 V
 0634 Gathesk              E597415-5 Pa Ni                            { -3 } (C33+1) [4146] - -  - 100 12 HvFd G8 V
 0635 Uaxualax             B585842-A Ri Ph Pa                         {  3 } (C77+1) [6BA9] - -  - 503 12 HvFd F0 V
 0639 Slugoldan            C9D7210-6 Lo                               { -2 } (A10+2) [5127] - M  - 824 10 HvFd K8 V

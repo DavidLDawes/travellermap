@@ -76,21 +76,21 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 3007 Emoric               ?000???-? As Va                                    - - - ?13 9  Nx A7 V           
 3008 Ermalon              ?656???-? Ga                                       - - - ?13 10 Nx F4 V           
 3201 Ivorn                ?8C3???-? Fl                                       - - - ?24 11 Nx F7 V M1 V      
-0111 Amordage             X778000-0 Ba                   {-3} (700+1) [0000] - - - 012 7  Nx K2 V           
+0111 Amordage             X778000-0 Ba                   {-3} (700-5) [0000] - - - 012 7  Nx K2 V           
 0115 Nostin               ?000???-? As Va                                    - - - ?24 10 Nx G3 II          
 0116 Charghan             ?536???-? Tz                                       - - - ?10 8  Nx M1 V           
 0120 Osga                 ?6A4???-? Fl Tz                                    - - - ?20 7  Nx M6 V           
-0211 Selaxin              X312000-0 Ba Ic Tz             {-3} (600+1) [0000] - - - 011 6  Nx M1 V           
-0217 Pensor               E66A000-0 Ba Wa                {-3} (900+1) [0000] - - - 010 10 Nx F8 IV          
+0211 Selaxin              X312000-0 Ba Ic Tz             {-3} (600-5) [0000] - - - 011 6  Nx M1 V           
+0217 Pensor               E66A000-0 Ba Wa                {-3} (900-5) [0000] - - - 010 10 Nx F8 IV          
 0313 Xalanoxo             ?300???-? Va Sa                                    - - - ?30 11 Nx F5 IV K1 V     
-0317 Farst                X422000-0 Ba He Po Tz          {-3} (500+1) [0000] - - - 001 6  Nx M1 V           
-0411 Tagarad              X685000-0 Ba Ga                {-3} (B00+1) [0000] - - - 023 12 Nx G4 V M1 V      
-0417 Dorig                X512000-0 Ba Ic Sa             {-3} (600+1) [0000] - - - 000 5  Nx M3 V           
-0513 Inigu                X5A3000-0 Ba Fl Tz             {-3} (600+1) [0000] - - - 010 5  Nx M2 V           
-0516 Muvasan              X755000-0 Ba Ga                {-3} (A00+1) [0000] - - - 014 9  Nx G3 V           
-0613 Varsac               X675000-0 Ba Tz                {-3} (600+1) [0000] - - - 003 8  Nx K7 V           
-0614 Chalsort             X443000-0 Ba Po Tz             {-3} (900+1) [0000] - - - 012 6  Nx M4 V           
-0713 Nepuro               X97A000-0 Ba Wa                {-3} (A00+1) [0000] - - - 003 8  Nx G4 V           
+0317 Farst                X422000-0 Ba He Po Tz          {-3} (500-5) [0000] - - - 001 6  Nx M1 V           
+0411 Tagarad              X685000-0 Ba Ga                {-3} (B00-5) [0000] - - - 023 12 Nx G4 V M1 V      
+0417 Dorig                X512000-0 Ba Ic Sa             {-3} (600-5) [0000] - - - 000 5  Nx M3 V           
+0513 Inigu                X5A3000-0 Ba Fl Tz             {-3} (600-5) [0000] - - - 010 5  Nx M2 V           
+0516 Muvasan              X755000-0 Ba Ga                {-3} (A00-5) [0000] - - - 014 9  Nx G3 V           
+0613 Varsac               X675000-0 Ba Tz                {-3} (600-5) [0000] - - - 003 8  Nx K7 V           
+0614 Chalsort             X443000-0 Ba Po Tz             {-3} (900-5) [0000] - - - 012 6  Nx M4 V           
+0713 Nepuro               X97A000-0 Ba Wa                {-3} (A00-5) [0000] - - - 003 8  Nx G4 V           
 0716 Ira Mejin            ?766???-? Ga                                       - - - ?30 10 Nx G6 V M7 V      
 0718 Kelok                ?321???-? He Po Tz                                 - - - ?11 8  Nx M6 V M8 V      
 0811 Rusigor              ?656???-? Ga                                       - - - ?20 8  Nx M0 V           
@@ -147,7 +147,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 3018 Porokal              ?443???-? Po Tz                                    - - - ?21 8  Nx M2 V           
 3119 Lajaka               ?6B2???-? Fl He Tz                                 - - - ?02 5  Nx M8 V           
 3220 Imbur                ?544???-? Tz                                       - - - ?20 6  Nx K4 V           
-0129 Perion               X202000-0 Ba Ic Va Sa          {-3} (A00+1) [0000] - - - 001 10 Nx M6 V M2 VI     
+0129 Perion               X202000-0 Ba Ic Va Sa          {-3} (A00-5) [0000] - - - 001 10 Nx M6 V M2 VI     
 0222 Urshin               ?645???-? Tz                                       - - - ?31 9  Nx K3 V M9 V      
 0223 Stelper              ?643???-? Po Tz                                    - - - ?13 9  Nx K9 V M7 V      
 0427 Moukiru              ?79A???-? Wa                                       - - - ?02 9  Nx F7 V           
@@ -173,10 +173,10 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 1225 Machis               ?656???-? Ga Tz                                    - - - ?00 7  Nx M0 V M2 V      
 1226 Genez                ?443???-? Po Tz                                    - - - ?11 8  Nx M3 V           
 1324 Jerox                ?640???-? De He Po                                 - - - ?33 10 Nx M3 III M8 V    
-1327 Chalys               E673000-0 Ba Tz                {-3} (900+1) [0000] - - - 013 8  Nx K7 V BD        
+1327 Chalys               E673000-0 Ba Tz                {-3} (900-5) [0000] - - - 013 8  Nx K7 V BD        
 1428 Aristaclar           ?687???-? Ga                                       - - - ?20 10 Nx K1 V M8 V      
-1430 Zhum                 X000000-0 As Ba Va             {-3} (C00+1) [0000] - - - 022 10 Nx M2 V M7 V      
-1528 Farpoint             E887000-0 Ba Ga                {-3} (700+1) [0000] - - - 033 11 Nx G6 V M6 V      
+1430 Zhum                 X000000-0 As Ba Va             {-3} (C00-5) [0000] - - - 022 10 Nx M2 V M7 V      
+1528 Farpoint             E887000-0 Ba Ga                {-3} (700-5) [0000] - - - 033 11 Nx G6 V M6 V      
 1529 Ottakal              ?A9A???-? Oc                                       - - - ?12 9  Nx G3 V           
 1628 Bido                 ?AC9???-? Fl                                       - - - ?10 9  Nx F2 V           
 1727 Scirator             ?000???-? Fl                                       - - - ?20 7  Nx M2 II          
@@ -215,7 +215,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 3222 Shassu               ?641???-? He Po Tz                                 - - - ?10 7  Lh M1 V           
 3223 Vriel                ?765???-? Ga                                       - - - ?02 9  Lh G8 V           
 3224 Excalisor            ?000???-? As Va                                    - - - ?23 10 Lh F7 III         
-0131 Yumidiz              X9C2000-0 Ba Fl He                  (A00+1) [0000] - - - 014 10 Nx G3 V           
+0131 Yumidiz              X9C2000-0 Ba Fl He                  (A00-5) [0000] - - - 014 10 Nx G3 V           
 0234 Bosa                 ?431???-? Po Tz                                    - - - ?00 3  Nx M4 VI          
 0331 Shubbuth             ?656???-? Ga                                       - - - ?12 8  Nx G6 VI          
 0333 Valatan              ?5A0???-? He Tz                                    - - - ?01 4  Nx M8 V           
