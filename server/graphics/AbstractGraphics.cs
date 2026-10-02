@@ -77,6 +77,20 @@ namespace Maps.Graphics
         FontMetrics GetFontMetrics(AbstractFont font);
     }
 
+    /// <summary>
+    /// A bitmap renderer outside the core (GDI+ on the IIS host, for renderer=gdi).
+    /// </summary>
+    internal interface ILegacyBitmapRenderer
+    {
+        ITextMeasurer TextMeasurer { get; }
+
+        /// <summary>
+        /// Renders a width x height bitmap with render() and writes it to output encoded as
+        /// mimeType if possible. Returns the type written, or null if the bitmap couldn't be allocated.
+        /// </summary>
+        string? RenderBitmap(Stream output, int width, int height, string mimeType, bool transparent, Action<AbstractGraphics> render);
+    }
+
     internal abstract class AbstractGraphicsState : IDisposable
     {
 

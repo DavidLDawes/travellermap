@@ -128,15 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="server\admin\RoutesHandler.cs" />
-    <Compile Include="server\api\CodesHandler.cs" />
-    <Compile Include="server\api\RouteHandler.cs" />
     <Compile Include="server\graphics\BitmapGraphics.cs" />
     <Compile Include="server\graphics\GdiSupport.cs" />
+    <Compile Include="server\graphics\GdiBitmapRenderer.cs" />
+    <Compile Include="server\http\SystemWebHost.cs" />
     <Compile Include="server\http\Modules.cs" />
-    <Compile Include="server\http\Routing.cs" />
     <Compile Include="server\search\SearchEngine.cs" />
-    <Compile Include="server\search\SearchResult.cs" />
     <Content Include="404.html" />
     <Content Include="borders\**\*.*" />
     <Content Include="doc\**\*.*" />
@@ -169,25 +166,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="server\admin\AdminHandler.cs" />
-    <Compile Include="server\admin\CodesHandler.cs" />
-    <Compile Include="server\admin\DumpHandler.cs" />
-    <Compile Include="server\admin\ErrorsHandler.cs" />
-    <Compile Include="server\admin\OverviewHandler.cs" />
-    <Compile Include="server\api\CoordinatesHandler.cs" />
-    <Compile Include="server\api\CreditsHandler.cs" />
-    <Compile Include="server\api\DataHandlerBase.cs" />
-    <Compile Include="server\api\ImageHandlerBase.cs" />
-    <Compile Include="server\api\JumpMapHandler.cs" />
-    <Compile Include="server\api\JumpWorldsHandler.cs" />
-    <Compile Include="server\api\MSECHandler.cs" />
-    <Compile Include="server\api\PosterHandler.cs" />
-    <Compile Include="server\api\SearchHandler.cs" />
-    <Compile Include="server\api\SECHandler.cs" />
-    <Compile Include="server\api\SectorMetaDataHandler.cs" />
-    <Compile Include="server\api\TileHandler.cs" />
-    <Compile Include="server\api\UniverseHandler.cs" />
-    <Compile Include="server\HandlerBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SETUP.md" />

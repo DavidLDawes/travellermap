@@ -2,15 +2,14 @@
 using Maps.Search;
 using Maps.Utilities;
 using System;
-using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.Admin
 {
-    internal abstract class AdminHandlerBase : Maps.HandlerBase, IHttpHandler
+    internal abstract class AdminHandlerBase : Maps.HandlerBase, Maps.HTTP.IRequestHandler
     {
         // Value shipped in Web.config.sample; never accepted as a real key.
         internal const string PlaceholderAdminKey = "YOUR_KEY_HERE";
@@ -24,7 +23,7 @@ namespace Maps.Admin
                 return false;
 
             return IsValidAdminKey(context.Request["key"],
-                System.Configuration.ConfigurationManager.AppSettings["AdminKey"]);
+                AppSettings.Get("AdminKey"));
         }
 
         /// <summary>
@@ -48,7 +47,6 @@ namespace Maps.Admin
             return diff == 0;
         }
 
-        public bool IsReusable => true;
         public void ProcessRequest(HttpContext context)
         {
             if (context == null)
@@ -81,7 +79,7 @@ namespace Maps.Admin
     {
         protected override void Process(HttpContext context, ResourceManager resourceManager)
         {
-            context.Server.ScriptTimeout = 3600; // An hour should be plenty
+            context.ExtendTimeout(TimeSpan.FromHours(1)); // An hour should be plenty
             context.Response.ContentType = ContentTypes.Text.Html;
             context.Response.BufferOutput = false;
 
@@ -90,11 +88,11 @@ namespace Maps.Admin
             WriteLine("<!DOCTYPE html>");
             WriteLine("<title>Admin Page</title>");
             WriteLine("<style>");
-            using (var reader = new StreamReader(context.Server.MapPath("~/site.css"), Encoding.UTF8))
+            using (var reader = new StreamReader(Util.MapPath("~/site.css"), Encoding.UTF8))
             {
                 while (!reader.EndOfStream)
                 {
-                    WriteLine(reader.ReadLine());
+                    WriteLine(reader.ReadLine() ?? "");
                 }
             }
             WriteLine("</style>");
@@ -130,11 +128,7 @@ namespace Maps.Admin
             // Every thread's sector map, resource cache, and code tables reload on next use.
             CacheGeneration.InvalidateAll();
 
-            var enumerator = context.Cache.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                context.Cache.Remove(enumerator.Key.ToString());
-            }
+            context.ClearHostCache();
 
             Write(context.Response, $"Caches flushed on all threads (generation {CacheGeneration.Current}).");
             Write(context.Response, "<b>&Omega;</b>");
@@ -146,16 +140,15 @@ namespace Maps.Admin
         }
         private static void Uptime(HttpContext context)
         {
-            TimeSpan uptime = DateTime.Now - Maps.GlobalAsax.startup_time;
+            TimeSpan uptime = DateTime.Now - StartupTime;
 
             Write(context.Response, $"Uptime: {uptime.Days}d {uptime.Hours}h {uptime.Minutes}m {uptime.Seconds}s<br>");
             Write(context.Response, "<b>&Omega;</b>");
         }
         private static void Profile(HttpContext context)
         {
-            WriteStat(context.Response, "Cache.Count", context.Cache.Count);
-            WriteStat(context.Response, "Cache.EffectivePercentagePhysicalMemoryLimit", context.Cache.EffectivePercentagePhysicalMemoryLimit);
-            WriteStat(context.Response, "Cache.EffectivePrivateBytesLimit", context.Cache.EffectivePrivateBytesLimit);
+            foreach (var stat in context.HostCacheStats())
+                WriteStat(context.Response, stat.Key, stat.Value);
             var process = System.Diagnostics.Process.GetCurrentProcess();
             WriteStat(context.Response, "Process.Id", process.Id);
             WriteStat(context.Response, "Process.MinWorkingSet", process.MinWorkingSet);
@@ -177,34 +170,6 @@ namespace Maps.Admin
             ResourceManager resourceManager = ResourceManager.GetDedicatedInstance();
 
             SearchEngine.PopulateDatabase(resourceManager, s => Write(context.Response, s));
-
-            Write(context.Response, "&nbsp;");
-            Write(context.Response, "Summary:");
-            using (var connection = DBUtil.MakeConnection())
-            {
-                foreach (string table in new string[] { "sectors", "subsectors", "worlds", "labels" })
-                {
-                    string sql = $"SELECT COUNT(*) FROM {table}";
-                    using var command = new SqlCommand(sql, connection);
-                    using var reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        Write(context.Response, $"{table}: {reader.GetInt32(0)}");
-                    }
-                }
-
-                {
-                    Write(context.Response, "&nbsp;");
-                    Write(context.Response, "Worlds by Milieu:");
-                    string sql = $"SELECT milieu, COUNT(*) FROM worlds GROUP BY milieu ORDER BY milieu";
-                    using var command = new SqlCommand(sql, connection);
-                    using var reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        Write(context.Response, $"{reader.GetString(0)} &mdash; {reader.GetInt32(1)}");
-                    }
-                }
-            }
 
             Write(context.Response, "<b>&Omega;</b>");
         }

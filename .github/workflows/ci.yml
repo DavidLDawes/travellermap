@@ -35,6 +35,41 @@ jobs:
       - name: Validate sector data
         run: dotnet run -c Debug --project tools/validate
 
+  host-linux:
+    # Runs the site on the .NET 10 host (host/) on Linux and the browser suites against it:
+    # routes, content negotiation, and rendering (SkiaSharp with the bundled fonts, PDFsharp).
+    name: .NET 10 host on Linux, browser tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Build host
+        run: dotnet build host -c Debug
+      - name: Browser tests
+        run: |
+          dotnet host/bin/Debug/net10.0/Maps.Host.dll --urls http://localhost:5080 > host.log 2>&1 &
+          for i in $(seq 1 60); do
+            curl -sf -o /dev/null "http://localhost:5080/api/coordinates?sector=Spin" && break
+            sleep 2
+          done
+          node test/run-browser-tests.mjs --base http://localhost:5080 --no-search --save-images image-diffs
+      - name: Host log
+        if: always()
+        run: cat host.log || true
+      - name: Upload differing images
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: image-diffs-linux
+          path: image-diffs/
+          if-no-files-found: ignore
+          retention-days: 14
+
   windows:
     name: Build, unit tests, data validation
     runs-on: windows-latest

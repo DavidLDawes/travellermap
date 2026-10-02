@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using static Maps.API.Results.SearchResults;
 
+using Maps.Web;
+
 namespace Maps.Admin
 {
     /// <summary>
@@ -24,7 +26,7 @@ namespace Maps.Admin
             public string allegiance;
             public string type;
         }
-        protected override void Process(System.Web.HttpContext context, ResourceManager resourceManager)
+        protected override void Process(HttpContext context, ResourceManager resourceManager)
         {
             context.Response.ContentType = ContentTypes.Text.Plain;
             context.Response.StatusCode = 200;
@@ -60,8 +62,7 @@ namespace Maps.Admin
                         if (allegiance != null && allegiance != route_allegiance) continue;
 
                         RouteKey key = new RouteKey { type = route_type, allegiance = route_allegiance };
-                        RouteTally tally;
-                        if (!results.TryGetValue(key, out tally))
+                        if (!results.TryGetValue(key, out RouteTally? tally))
                         {
                             tally = new RouteTally();
                             results.Add(key, tally);

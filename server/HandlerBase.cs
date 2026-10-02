@@ -3,14 +3,16 @@ using Maps.Utilities;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
-using System.Web.Routing;
+using Maps.Web;
 
 namespace Maps
 {
     internal abstract class HandlerBase
     {
         // TODO: Enforce verbs (i.e. GET or POST)
+
+        /// <summary>When the server (this code) started, for /admin/uptime.</summary>
+        public static readonly System.DateTime StartupTime = System.DateTime.Now;
 
         public static void SendError(HttpResponse response, int code, string description, string message)
         {
@@ -21,12 +23,7 @@ namespace Maps
             response.Output.WriteLine(message);
         }
 
-        public static RouteValueDictionary Defaults(HttpContext context)
-        {
-            RouteData data = context.Items["RouteData"] as RouteData ??
-                throw new System.ApplicationException("RouteData not assigned by RouteHandler");
-            return data.Values;
-        }
+        public static IDictionary<string, object> Defaults(HttpContext context) => context.RouteValues;
 
         #region Option Parsing
         // Shared by the data/image APIs and the admin pages. Options come from the request

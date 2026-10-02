@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using SearchResultsType = Maps.Search.SearchEngine.SearchResultsType;
 
 namespace Maps.Search
 {
@@ -30,20 +31,43 @@ namespace Maps.Search
         }
     }
 
-    /// <summary>
-    /// Summary description for SearchEngine.
-    /// </summary>
-    internal static class SearchEngine
+    /// <summary>The SQL Server search index (IIS host), registered as SearchEngine.Index.</summary>
+    internal sealed class SqlSearchIndex : ISearchIndex
     {
-        [Flags]
-        public enum SearchResultsType : int
+        public IEnumerable<SearchResult> PerformSearch(string? milieu, string? query, SearchResultsType types, int maxResultsPerType, bool random)
+            => SqlSearchEngine.PerformSearch(milieu, query, types, maxResultsPerType, random);
+
+        public WorldResult? FindNearestWorldMatch(string name, string milieu, int x, int y)
+            => SqlSearchEngine.FindNearestWorldMatch(name, milieu, x, y);
+
+        public void PopulateDatabase(ResourceManager resourceManager, Action<string> statusCallback)
         {
-            Sectors = 1 << 0,
-            Subsectors = 1 << 1,
-            Worlds = 1 << 2,
-            Labels = 1 << 3,
-            Default = Sectors | Subsectors | Worlds | Labels
+            SqlSearchEngine.PopulateDatabase(resourceManager, statusCallback);
+
+            statusCallback("&nbsp;");
+            statusCallback("Summary:");
+            using var connection = DBUtil.MakeConnection();
+            foreach (string table in new string[] { "sectors", "subsectors", "worlds", "labels" })
+            {
+                using var command = new SqlCommand($"SELECT COUNT(*) FROM {table}", connection);
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
+                    statusCallback($"{table}: {reader.GetInt32(0)}");
+            }
+
+            statusCallback("&nbsp;");
+            statusCallback("Worlds by Milieu:");
+            using (var command = new SqlCommand("SELECT milieu, COUNT(*) FROM worlds GROUP BY milieu ORDER BY milieu", connection))
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                    statusCallback($"{reader.GetString(0)} &mdash; {reader.GetInt32(1)}");
+            }
         }
+    }
+
+    internal static class SqlSearchEngine
+    {
 
         private static readonly object s_lock = new object();
 
@@ -93,7 +117,7 @@ namespace Maps.Search
         public static void PopulateDatabase(ResourceManager resourceManager, Action<string> statusCallback)
         {
             // Lock to prevent indexing twice, without blocking tile requests.
-            lock (SearchEngine.s_lock)
+            lock (SqlSearchEngine.s_lock)
             {
                 // NOTE: This (re)initializes a static data structure used for 
                 // resolving names into sector locations, so needs to be run

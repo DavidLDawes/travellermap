@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.API
 {
@@ -83,8 +83,8 @@ namespace Maps.API
 
             private World? ResolveLocation(HttpContext context, string field, ResourceManager manager, SectorMap.Milieu map)
             {
-                string query = context.Request.QueryString[field];
-                if (string.IsNullOrWhiteSpace(query))
+                string? query = context.Request.QueryString[field];
+                if (query == null || string.IsNullOrWhiteSpace(query))
                     throw new HttpError(400, "Bad Request", $"Missing {field} location");
 
                 query = query.Trim();

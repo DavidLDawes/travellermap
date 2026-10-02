@@ -21,12 +21,14 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <!-- Util.MapPath uses HostingEnvironment when running under IIS. -->
     <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <!-- The IIS site, tests, and tools use the core's internal types. -->
     <InternalsVisibleTo Include="Maps" />
     <InternalsVisibleTo Include="UnitTests" />
     <InternalsVisibleTo Include="maps-validate" />
+    <InternalsVisibleTo Include="Maps.Host" />
   </ItemGroup>
   <ItemGroup>
     <!-- Includes native libraries for Windows and macOS; a Linux app adds
@@ -51,7 +53,14 @@
     <Compile Include="../server/ResourceManager.cs" Link="server/ResourceManager.cs" />
     <Compile Include="../server/serialization/*.cs" LinkBase="server/serialization" />
     <Compile Include="../server/utilities/*.cs" LinkBase="server/utilities" />
-    <Compile Include="../server/admin/DataValidator.cs" Link="server/admin/DataValidator.cs" />
+    <Compile Include="../server/admin/*.cs" LinkBase="server/admin" />
+    <!-- Request handlers, routes and the host-neutral HTTP layer (server/http/HttpAbstractions.cs). -->
+    <Compile Include="../server/HandlerBase.cs" Link="server/HandlerBase.cs" />
+    <Compile Include="../server/api/*.cs" LinkBase="server/api" />
+    <Compile Include="../server/http/HttpAbstractions.cs" Link="server/http/HttpAbstractions.cs" />
+    <Compile Include="../server/http/Routing.cs" Link="server/http/Routing.cs" />
+    <Compile Include="../server/search/SearchResult.cs" Link="server/search/SearchResult.cs" />
+    <Compile Include="../server/search/SearchIndex.cs" Link="server/search/SearchIndex.cs" />
     <Compile Include="../server/RenderContext.cs" Link="server/RenderContext.cs" />
     <Compile Include="../server/RenderUtil.cs" Link="server/RenderUtil.cs" />
     <Compile Include="../server/Stylesheet.cs" Link="server/Stylesheet.cs" />
@@ -59,6 +68,7 @@
     <Compile Include="../server/graphics/AbstractGraphics.cs" Link="server/graphics/AbstractGraphics.cs" />
     <Compile Include="../server/graphics/SVGGraphics.cs" Link="server/graphics/SVGGraphics.cs" />
     <Compile Include="../server/graphics/SkiaFonts.cs" Link="server/graphics/SkiaFonts.cs" />
+    <Compile Include="../server/graphics/FontTables.cs" Link="server/graphics/FontTables.cs" />
     <Compile Include="../server/graphics/SkiaGraphics.cs" Link="server/graphics/SkiaGraphics.cs" />
     <Compile Include="../server/graphics/PdfSharpGraphics.cs" Link="server/graphics/PdfSharpGraphics.cs" />
   </ItemGroup>

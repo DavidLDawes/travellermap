@@ -1,7 +1,7 @@
 #nullable enable
 using Maps.Utilities;
 using System.Linq;
-using System.Web;
+using Maps.Web;
 
 namespace Maps.API
 {
@@ -16,7 +16,7 @@ namespace Maps.API
             public override void Process(ResourceManager resourceManager)
             {
                 SendResult(SecondSurvey.SophontCodes
-                    .OrderBy(code => code)
+                    .OrderBy(code => code, Util.StableStringComparer)
                     .Select(code =>
                     {
                         var sophont = SecondSurvey.SophontForCode(code)!;
@@ -38,7 +38,7 @@ namespace Maps.API
             public override void Process(ResourceManager resourceManager)
             {
                 SendResult(SecondSurvey.AllegianceCodes
-                    .OrderBy(code => code)
+                    .OrderBy(code => code, Util.StableStringComparer)
                     .Select(code =>
                     {
                         var alleg = SecondSurvey.GetStockAllegianceFromCode(code)!;

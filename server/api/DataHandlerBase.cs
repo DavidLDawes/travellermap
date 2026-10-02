@@ -13,21 +13,19 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
-using System.Web.Routing;
+using Maps.Web;
 using System.Xml.Serialization;
 
 namespace Maps.API
 {
-    public interface ITypeAccepter
+    internal interface ITypeAccepter
     {
         IEnumerable<string> AcceptTypes(HttpContext context, bool ignoreHeaderFallbacks = false);
         bool Accepts(HttpContext context, string mediaType, bool ignoreHeaderFallbacks = false);
     }
 
-    internal abstract class DataHandlerBase : HandlerBase, IHttpHandler
+    internal abstract class DataHandlerBase : HandlerBase, Maps.HTTP.IRequestHandler
     {
-        public bool IsReusable => true;
         public void ProcessRequest(HttpContext context)
         {
             if (context == null)
@@ -46,8 +44,8 @@ namespace Maps.API
                 context.Response.Cache.SetCacheability(HttpCacheability.Public);
                 context.Response.Cache.SetMaxAge(TimeSpan.FromHours(1));
                 context.Response.Cache.SetValidUntilExpires(true);
-                context.Response.Cache.VaryByParams["*"] = true;
-                context.Response.Cache.VaryByHeaders["Accept"] = true;
+                context.Response.Cache.VaryByAllParams();
+                context.Response.Cache.VaryByHeader("Accept");
 #endif
             }
 
@@ -58,6 +56,10 @@ namespace Maps.API
             catch (HttpError error)
             {
                 SendError(context.Response, error.Code, error.Description, error.Message);
+            }
+            catch (Search.SearchUnavailableException ex)
+            {
+                SendError(context.Response, 503, "Service Unavailable", ex.Message);
             }
 #if !DEBUG
             catch (Exception ex) when (IsServerFault(ex))
@@ -131,9 +133,9 @@ namespace Maps.API
                 // Vary: * is basically ignored by browsers
                 Context.Response.Cache.SetOmitVaryStar(true);
 
-                if (Context.Request.QueryString["jsonp"] != null)
+                if (Context.Request.QueryString["jsonp"] is string jsonp)
                 {
-                    if (!IsSimpleJSIdentifier(Context.Request.QueryString["jsonp"]))
+                    if (!IsSimpleJSIdentifier(jsonp))
                         throw new HttpError(400, "Bad Request", "The jsonp parameter must be a simple script identifier.");
 
                     SendJson(o);
@@ -160,7 +162,19 @@ namespace Maps.API
             public void SendXml(object o)
             {
                 Context.Response.ContentType = ContentTypes.Text.Xml;
-                new XmlSerializer(o.GetType()).Serialize(Context.Response.OutputStream, o);
+                // What XmlSerializer.Serialize(Stream) does on .NET Framework: UTF-8, indented, and no
+                // encoding in the declaration. (On .NET it adds encoding="utf-8".)
+                var writer = new System.Xml.XmlTextWriter(Context.Response.OutputStream, null)
+                {
+                    Formatting = System.Xml.Formatting.Indented,
+                    Indentation = 2,
+                };
+                // Namespace declarations in .NET Framework's order (.NET puts xsi first).
+                var namespaces = new XmlSerializerNamespaces();
+                namespaces.Add("xsd", "http://www.w3.org/2001/XMLSchema");
+                namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+                new XmlSerializer(o.GetType()).Serialize(writer, o, namespaces);
+                writer.Flush();
             }
 
             public void SendText(object o, Encoding? encoding = null)
@@ -187,7 +201,7 @@ namespace Maps.API
 
             public bool CheckFile(string filename)
             {
-                return File.Exists(Context.Server.MapPath(filename));
+                return File.Exists(Util.MapPath(filename));
             }
 
             public void SendJson(object o)
@@ -202,13 +216,13 @@ namespace Maps.API
 
             private void SendPreamble(string contentType)
             {
-                if (contentType == JsonConstants.MediaType && Context.Request.QueryString["jsonp"] != null)
+                if (contentType == JsonConstants.MediaType && Context.Request.QueryString["jsonp"] is string jsonp)
                 {
-                    if (!IsSimpleJSIdentifier(Context.Request.QueryString["jsonp"]))
+                    if (!IsSimpleJSIdentifier(jsonp))
                         throw new HttpError(400, "Bad Request", "The jsonp parameter must be a simple script identifier.");
 
                     using var w = new StreamWriter(Context.Response.OutputStream);
-                    w.Write(Context.Request.QueryString["jsonp"]);
+                    w.Write(jsonp);
                     w.Write("(");
                 }
             }
@@ -287,7 +301,7 @@ namespace Maps.API
                 ParseOptions(Context.Request, Defaults(Context), ref options, ref style);
             }
 
-            private static ThreadLocal<IReadOnlyDictionary<string, Style>> s_nameToStyle = new ThreadLocal<IReadOnlyDictionary<string, Style>>(() =>
+            private static readonly IReadOnlyDictionary<string, Style> s_nameToStyle =
                 new Dictionary<string, Style> {
                 { "poster", Style.Poster },
                 { "atlas" , Style.Atlas },
@@ -297,7 +311,7 @@ namespace Maps.API
                 { "fasa"  , Style.FASA },
                 { "terminal", Style.Terminal },
                 { "mongoose", Style.Mongoose },
-                });
+                };
 
             public void ParseOptions(HttpRequest request, IDictionary<string, object> queryDefaults, ref MapOptions options, ref Style style)
             {
@@ -314,9 +328,9 @@ namespace Maps.API
                 if (HasOption("style", queryDefaults))
                 {
                     string opt = GetStringOption("style", queryDefaults)!.ToLowerInvariant();
-                    if (!s_nameToStyle.Value.ContainsKey(opt))
+                    if (!s_nameToStyle.ContainsKey(opt))
                         throw new HttpError(400, "Bad Request", $"Invalid style option: {opt}");
-                    style = s_nameToStyle.Value[opt];
+                    style = s_nameToStyle[opt];
                 }
             }
 
@@ -330,18 +344,16 @@ namespace Maps.API
             // ITypeAccepter
             public IEnumerable<string> AcceptTypes(HttpContext context, bool ignoreHeaderFallbacks = false)
             {
-                IDictionary<string, object>? queryDefaults = null;
-                if (context.Items.Contains("RouteData"))
-                    queryDefaults = (context.Items["RouteData"] as RouteData)!.Values;
+                IDictionary<string, object> queryDefaults = context.RouteValues;
 
-                if (context.Request["accept"] != null)
-                    yield return context.Request["accept"].Replace(' ', '+'); // Hack to allow "image/svg+xml" w/o escaping
+                if (context.Request["accept"] is string acceptOption)
+                    yield return acceptOption.Replace(' ', '+'); // Hack to allow "image/svg+xml" w/o escaping
 
-                if (context.Request.Headers["accept"] != null)
-                    yield return context.Request.Headers["accept"];
+                if (context.Request.Headers["accept"] is string acceptHeader)
+                    yield return acceptHeader;
 
-                if (queryDefaults != null && queryDefaults.ContainsKey("accept"))
-                    yield return queryDefaults["accept"].ToString();
+                if (queryDefaults.TryGetValue("accept", out object? acceptDefault))
+                    yield return acceptDefault.ToString()!;
 
                 if (!ignoreHeaderFallbacks && context.Request.AcceptTypes != null)
                 {

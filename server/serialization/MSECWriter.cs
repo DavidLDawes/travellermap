@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace Maps.Serialization
 {
@@ -83,7 +84,9 @@ namespace Maps.Serialization
 
                 // Output grouped by allegiance
                 //
-                list.Sort(CompareAllegiances);
+                // Stable, so items with the same allegiance keep their order in the file (List.Sort
+                // is unstable, and its order differs between .NET Framework and .NET 10).
+                list = list.OrderBy(item => item, Comparer<IAllegiance>.Create(CompareAllegiances)).ToList();
                 bool isFirst = true;
                 string? code = null;
                 Allegiance? alleg = null;

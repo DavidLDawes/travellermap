@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
+using Maps.Web;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -27,7 +27,7 @@ namespace Maps.API
 
             public override void Process(ResourceManager resourceManager)
             {
-                string query = Context.Request.QueryString["q"];
+                string? query = Context.Request.QueryString["q"];
                 if (query == null)
                     return;
 
