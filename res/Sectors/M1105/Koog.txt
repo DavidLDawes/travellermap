@@ -333,7 +333,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B Z PB
 2238                      X553000-0 Po Ba                               - - - 003   NaXX F5 V
 2239                      X110000-0 Ba                                  - - - 000   NaXX M7 IV
 2240                      X696000-0 Ba                                  - - - 010   NaXX G8 V
-2307                      X100000-0 Ba Va                               - - - 004   NaXX M3 V M2 V
+2307                      X100000-0 Ba Va                               - - - 004   NaXX M2 V M3 V   
 2311                      X463000-0 Ba                                  - - - 023   NaXX
 2315                      X450000-0 De Po Ba                            - - - 013   NaXX F1 V
 2316                      X6B1000-0 Fl He Ba                            - - - 003   NaXX M9 V

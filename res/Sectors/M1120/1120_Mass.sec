@@ -29,14 +29,14 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 0608 Theodisus            B31058B-D Ni                          { 1 }  (945+3) [767F] B    S  - 902 6  LuIm M1 V
 0609 Clausen              A556672-D Ni Ag                       { 2 }  (C57-2) [2919] BC   N  - 204 11 LuIm K1 V M7 V
 0701 Raldery IV           D567466-8 Ni Pa O:Core-0839           { -3 } (831-4) [3147] Bc   S  - 602 9  LuIm G4 V M8 V
-0703 Death                B100300-E Va Lo Da                    { 1 }  (821-3) [1419] B    N  A 612 11 LuIm M3 V M1 V
+0703 Death                B100300-E Va Lo Da                    { 1 }  (821-3) [1419] B    N  A 612 11 LuIm M1 V M3 V     
 0704 Besholm              B84A445-C Wa Ni                       { 1 }  (A34-1) [253A] B    N  - 904 11 LuIm G4 V M3 V
 0706 Dalsgaard            B687100-D Ga Lo                       { 1 }  (501-3) [1218] B    -  - 220 16 LuIm M1 V M8 V
 0707 Yagas                B566AFC-E Hi Fo                       { 3 }  (E9F+5) [DD8H] BE   -  R 502 12 LuIm K3 V
 0801 Villana              B677334-B Lo                          { 1 }  (A21-1) [1439] B    -  - 305 8  LuIm M1 V M1 V
 0802 Aagkhuur             D100958-C Va Hi Na In Kagg9           { 2 }  (H8D+2) [9B5C] BE   -  - 224 14 LuIm K4 V
 0803 Nasuga               A300620-D Va Ni Na                    { 1 }  (D56-3) [1818] B    -  - 214 13 LuIm M2 V M5 V
-0805 Soro                 B772684-B He Ni                       { 1 }  (C56-1) [4839] B    -  - 204 10 LuIm M2 V M0 V
+0805 Soro                 B772684-B He Ni                       { 1 }  (C56-1) [4839] B    -  - 204 10 LuIm M0 V M2 V     
 0807 Observatory          C531544-9 Ni Po                       { -1 } (C42-3) [3337] B    -  - 714 11 LuIm K2 V
 0808 Rasaca               B552456-D Ni Po                       { 1 }  (734+1) [354C] B    -  - 810 14 LuIm F3 V
 0810 Golden Ring          B698541-A Ni Ag                       { 2 }  (B45-2) [1616] BC   N  - 104 14 LuIm M0 V
@@ -120,10 +120,10 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2910 New Stockton         B4226BA-C He Ni Na Po Da              { 1 }  (B56+3) [887E] B    S  A 103 10 MaSt M3 V M7 V
 3001 Reisland             C888373-A Lo                          { 0 }  (820-4) [1227] B    -  - 121 6  MaSt K6 V M5 V
 3002 Southard             B645410-B Ni Pa                       { 1 }  (A34-3) [1516] Bc   -  - 104 10 MaSt F7 V
-3003 Titmus               A873422-E Ni                          { 1 }  (934-3) [151A] B    -  - 703 7  MaSt M3 V M0 V
+3003 Titmus               A873422-E Ni                          { 1 }  (934-3) [151A] B    -  - 703 7  MaSt M0 V M3 V     
 3008 Zabel                A575210-C Lo                          { 1 }  (611-3) [1317] B    -  - 202 12 MaSt K9 V M3 V
 3009 Coxe                 B000101-G As Va Lo                    { 2 }  (802-3) [131C] B    S  - 414 9  MaSt M3 V
-3106 Vageau               E310884-9 Ph Na Pi                    { -1 } (D76-4) [6637] BDe  -  - 312 9  MaSt M9 V M8 V
+3106 Vageau               E310884-9 Ph Na Pi                    { -1 } (D76-4) [6637] BDe  -  - 312 9  MaSt M8 V M9 V     
 3108 Sanidon              B0008AA-D As Va Ph Na Pi Pz           { 2 }  (D7D+4) [AA7F] BDe  -  A 121 12 MaSt M0 V
 3203 Freelund             E792743-7 He Pi                       { -2 } (965-5) [4524] BD   -  - 302 10 MaSt K3 V
 3206 Dolenar              B542310-A He Lo Po                    { 1 }  (521-3) [1315] B    -  - 500 12 MaSt M0 V M7 V
@@ -180,7 +180,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1014 Silum                E865899-6 Ga Ph Pa Ri                 { -1 } (A76+1) [9767] BcCe -  - 201 11 LuIm K9 V M1 V
 1015 Naramorz Rock        B300567-D Va Ni O:0815                { 1 }  (B45+1) [565D] B    -  - 404 7  LuIm M2 V
 1017 Anniga               B300100-F Va Lo                       { 1 }  (501-3) [121A] B    -  - 202 15 LuIm M1 V
-1019 Shimshan             A310720-G Na Pi                       { 3 }  (D6E-2) [2A1B] BD   -  - 813 9  LuIm M0 V K3 V
+1019 Shimshan             A310720-G Na Pi                       { 3 }  (D6E-2) [2A1B] BD   -  - 813 9  LuIm K3 V M0 V     
 1020 Groves               E64648A-6 Ni Pa                       { -3 } (631-1) [6178] Bc   -  - 210 11 LuIm G5 V M2 V
 1117 Nary                 D000678-A As Va Ni Na                 { -1 } (C53-2) [655A] B    S  - 904 12 LuIm K7 V
 1120 Avarro               B8D5445-D Ni                          { 1 }  (834-1) [253B] B    N  - 402 10 LuIm M0 V
@@ -204,7 +204,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1614 Lybone               D5498BC-7 Ph Pi Fo                    { -2 } (A76+1) [B68A] BDe  -  R 404 7  MaSt G7 V
 1616 Shukadiin            B300463-E Va Ni O:1515                { 1 }  (B34-2) [152B] B    -  - 123 8  MaSt M5 III
 1711 Hasaggan             B735978-E Hi                          { 3 }  (G8F+3) [9C5E] BE   -  - 923 8  MaSt M3 V M3 V
-1713 Wander               B10057B-F Va Ni                       { 1 }  (A45+3) [767H] B    -  - 712 10 MaSt M2 V M1 V
+1713 Wander               B10057B-F Va Ni                       { 1 }  (A45+3) [767H] B    -  - 712 10 MaSt M1 V M2 V     
 1717 Narrad               B421740-B He Na Pi Po                 { 2 }  (C6C-2) [2916] BD   -  - 603 16 MaSt K9 V
 1719 Forquee              B564AAE-E Hi Cp Fo Geon4              { 3 }  (F9F+5) [ED9J] BEF  -  R 903 10 MaSt F3 V M3 V
 1813 Alla'mar             B543455-C Ni Po                       { 1 }  (634-1) [253A] B    N  - 500 14 MaSt M2 V M2 V
@@ -236,7 +236,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2414 Rode                 B755220-C Ga Lo                       { 1 }  (711-3) [1317] B    -  - 403 7  MaSt M2 V
 2417 Modawutt             EAF7249-7 Lo                          { -3 } (410-2) [3168] B    -  - 410 16 MaSt M2 V
 2418 Rechon               B10079B-E Va Na Pi Pz                 { 2 }  (D6D+4) [997G] BD   -  A 922 9  MaSt M2 V M4 V
-2420 Telfre               B553202-C Lo Po                       { 1 }  (511-3) [1318] B    -  - 401 6  MaSt M2 V M1 V
+2420 Telfre               B553202-C Lo Po                       { 1 }  (511-3) [1318] B    -  - 401 6  MaSt M1 V M2 V     
 2512 The Maralee          D57379A-7 Pi                          { -2 } (965+1) [9579] BD   -  - 803 10 MaSt K7 V
 2513 Atina                B6318A8-A Ph Na Po                    { 2 }  (C7A+2) [895A] Be   -  - 902 10 MaSt M3 V
 2514 Rovick               E554420-8 Ni Pa                       { -3 } (A31-5) [1113] Bc   -  - 822 7  MaSt M1 V M3 V M5 V
@@ -335,7 +335,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 1921 Star Triven          B581321-C Lo                          { 1 }  (921-3) [1418] B    S  - 913 10 LuIm G4 V
 1924 Rahum                D8D6522-8 Ni                          { -3 } (B41-5) [1214] B    -  - 113 11 LuIm K9 V
 1927 Gober                B768455-B Ni Pa                       { 1 }  (734-1) [2539] Bc   -  - 301 9  MaSt M3 V
-2029 Rarian               B571120-C He Lo                       { 1 }  (801-3) [1217] B    -  - 214 11 MaSt M3 V M1 V
+2029 Rarian               B571120-C He Lo                       { 1 }  (801-3) [1217] B    -  - 214 11 MaSt M1 V M3 V     
 2030 Hexum                B561525-B Ni Pr                       { 1 }  (745-1) [3639] Bc   -  - 900 8  MaSt M1 V M8 V
 2127 Ugdukida             C43199A-B Hi Na Po Cp                 { 2 }  (F8D+4) [BB7D] BE   -  - 413 15 MaSt M3 V M6 V
 2130 Bern                 A543413-E Ni Po                       { 1 }  (734-2) [152B] B    N  - 910 10 MaSt K4 V
@@ -352,9 +352,9 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2430 Cheresa              B655300-C Ga Lo                       { 1 }  (721-3) [1417] B    N  - 302 6  MaSt M1 V
 2521 Logol                B5735A9-B Ni                          { 1 }  (B45+2) [666C] B    -  - 713 7  MaSt K4 V M8 V
 2522 Gernice              B684645-B Ni Ag Ri                    { 3 }  (958+1) [4A39] BC   -  - 810 9  MaSt F4 V
-2523 Barden               B555787-B Ag Pz                       { 3 }  (A6C+4) [7A5B] BCf  S  A 601 16 MaSt M2 V M0 V
+2523 Barden               B555787-B Ag Pz                       { 3 }  (A6C+4) [7A5B] BCf  S  A 601 16 MaSt M0 V M2 V     
 2529 Feiths               A3108BC-E Ph Na Pi Fo                 { 2 }  (G7D+5) [BA8H] BDe  -  R 824 9  MaSt G1 V
-2530 Shigeko              C563832-8 Ph Ri                       { 0 }  (B78-4) [4814] BCe  -  - 110 17 MaSt M3 V M0 V M5 V
+2530 Shigeko              C563832-8 Ph Ri                       { 0 }  (B78-4) [4814] BCe  -  - 110 17 MaSt M0 V M3 V M5 V
 2621 Lendining            A545743-D Ag Pi                       { 3 }  (D6D+1) [4A2A] BCDF -  - 304 10 MaSt K4 V M7 V
 2622 Goematt              C8D7304-B Lo                          { 0 }  (720-2) [1339] B    S  - 320 7  MaSt M1 V M6 V
 2624 Lorfee               B865465-C Ga Ni Pa Mr                 { 1 }  (834+1) [253A] Bc   S  - 802 12 MaSt M2 V
@@ -368,12 +368,12 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2828 Gilafil              B584253-E Lo                          { 1 }  (411-2) [132B] B    -  - 900 7  MaSt M0 V M3 V
 2925 Giirsha              B87AA97-F Wa Hi In                    { 4 }  (D9G+4) [AE5F] BEf  -  - 110 7  MaSt K5 V M8 V
 2926 Nova                 B200303-E Va Lo                       { 1 }  (721-1) [142B] B    S  - 211 6  MaSt M1 V
-2927 Haterbur             B310246-E Lo                          { 1 }  (611+1) [134D] B    -  - 402 11 MaSt M3 V M2 V
+2927 Haterbur             B310246-E Lo                          { 1 }  (611+1) [134D] B    -  - 402 11 MaSt M2 V M3 V     
 2929 Varglen              B310687-C Ni Na                       { 1 }  (856+1) [685C] B    -  - 400 8  MaSt G3 V
 2930 Danmer               B525554-E Ni Da                       { 1 }  (845-1) [363C] B    -  A 401 11 MaSt K1 V M8 V
 3021 Haela                B553400-D Ni Po                       { 1 }  (934-3) [1518] B    -  - 603 10 MaSt M2 V
-3026 Erro                 B729110-C Lo                          { 1 }  (601-3) [1217] B    -  - 812 9  MaSt M0 V K1 V
-3027 Poorstar             B100333-E Va Lo                       { 1 }  (721-2) [142B] B    N  - 802 13 MaSt M0 V G6 V
+3026 Erro                 B729110-C Lo                          { 1 }  (601-3) [1217] B    -  - 812 9  MaSt K1 V M0 V     
+3027 Poorstar             B100333-E Va Lo                       { 1 }  (721-2) [142B] B    N  - 802 13 MaSt G6 V M0 V     
 3122 Glerum               A000300-G As Va Lo                    { 2 }  (522-3) [151B] B    -  - 800 12 MaSt G3 V
 3123 Mingle               D100897-A Va Ph Na Pi                 { 0 }  (F78-1) [875A] BDe  -  - 514 15 MaSt G4 V
 3124 Tooka                A541553-F He Ni Po Cp An              { 1 }  (945-2) [262C] B    S  - 602 9  MaSt K3 V M4 V
@@ -399,7 +399,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 0339 Hunberri             B884622-A Ni Ag Ri                    { 3 }  (C57-1) [2916] BC   -  - 504 11 LuIm M0 V M7 V
 0432 Pocker               B438254-E Lo                          { 1 }  (711-1) [133C] B    -  - 303 14 LuIm G8 IV
 0434 Rigold               A564679-D Ni Ag Ri Cp                 { 3 }  (C58+4) [7A6E] BCF  -  - 413 8  LuIm M1 V
-0436 Dax                  B565877-B Ph Pa Ri                    { 3 }  (D7C+3) [8B5B] BcCe S  - 103 9  LuIm M2 V M0 V
+0436 Dax                  B565877-B Ph Pa Ri                    { 3 }  (D7C+3) [8B5B] BcCe S  - 103 9  LuIm M0 V M2 V     
 0437 Shanell              E695840-7 Ph Pa Pi                    { -2 } (A75-5) [3612] BcDe -  - 402 6  LuIm K4 V
 0440 Crater               D300645-8 Va Ni Na                    { -3 } (C52-5) [4436] B    -  - 604 13 LuIm M1 V M7 V
 0532 Hadie                B664856-B Ph Pa Ri                    { 3 }  (E7D+2) [7B4A] BcCe -  - 104 12 LuIm M1 V
@@ -486,7 +486,7 @@ Hex  Name                 UWP       Remarks                     {Ix}   (Ex)    [
 2335 Nononlin             B8866A6-9 Ga Ni Ag Ri                 { 2 }  (D56+1) [5848] BC   -  - 814 12 MaSt K3 V M0 V
 2336 Todkar               B53A543-E Wa Ni                       { 1 }  (B45-2) [262B] B    N  - 704 11 MaSt M1 V M3 V
 2340 Luri                 B55698D-D Hi Cp Pz                    { 3 }  (F8E+5) [DC9H] BE   N  A 913 14 MaSt K9 V M1 V
-2433 Shanmos              D100311-9 Va Lo                       { -2 } (A20-5) [1115] B    -  - 414 13 MaSt M2 V G2 V
+2433 Shanmos              D100311-9 Va Lo                       { -2 } (A20-5) [1115] B    -  - 414 13 MaSt G2 V M2 V     
 2435 Nyroah               C76366B-8 Ni Ri O:2234                { -1 } (A54+1) [867A] BC   -  - 502 9  MaSt G4 V
 2439 Skillern             B646885-9 Ph Pa Pi                    { 1 }  (D79-1) [6837] BcDe N  - 703 9  MaSt G2 V M7 V
 2440 Rington              B543222-B Lo Po                       { 1 }  (A11-3) [1317] B    N  - 124 11 MaSt K5 V M2 V

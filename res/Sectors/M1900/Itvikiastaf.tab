@@ -102,7 +102,7 @@ Itvi	E	0712	Ocha'piach	C695200-9	 	Lo 		900	Wild	F5 V M0 D	{ -1 }	(910-1)	[218C]
 Itvi	E	0714	Fiablpoch	X110000-D	 	Di 		013	Wild	F1 V	{ -1 }	(900-5)	[0000]	B	0	-45
 Itvi	E	0718	Ilashdriavr	C2009AC-8	 	Hi Na In Va 		600	Wild	F7 D	{ 1 }	(489+1)	[7A56]	BE	0	288
 Itvi	E	0719	Jaflatl	X140000-0	 	Ba De Po 		003	Wild	F5 V	{ -3 }	(B00-5)	[0000]	B	0	-55
-Itvi	E	0720	Ieapratl	X100000-0	 	Ba Va 		008	Wild	M2 V M7 V M0 V	{ -3 }	(700-5)	[0000]	B	0	-35
+Itvi	E	0720	Ieapratl	X100000-0	 	Ba Va 		008	Wild	M0 V M2 V M7 V	{ -3 }	(700-5)	[0000]	B	0	-35
 Itvi	I	0722	Narrkizh	X8B6000-A	 	Di Fl 		026	Wild	A9 V M2 V	{ -1 }	(G00-5)	[0000]	B	0	-80
 Itvi	I	0723	Iepldriantie	X433000-C	 	Di Po 		004	Wild	M5 V M1 D	{ -1 }	(D00-5)	[0000]	B	0	-65
 Itvi	I	0727	Ashapchiedr	X448AAC-4	 	Hi In 		417	Wild	F3 V M0 D M7 D	{ 0 }	(597+2)	[CA54]	BE	0	630
@@ -159,7 +159,7 @@ Itvi	F	1117	Eljetl	X442000-7	 	Di He Po 		003	Wild	F1 V M7 D	{ -3 }	(600-5)	[000
 Itvi	F	1118	Iial	B500651-A	 	Na Ni Va 		915	Wild	F2 V	{ 1 }	(C52+1)	[3758]	B	0	120
 Itvi	F	1119	Eientdliar	X364000-2	 	Di 		003	Wild	F4 V M0 D	{ -3 }	(800-5)	[0000]	B	0	-40
 Itvi	J	1121	Achtieq	X348000-0	 	Ba 		003	Wild	M7 V	{ -3 }	(800-5)	[0000]	B	0	-40
-Itvi	J	1123	Dranshia	X615000-7	 	Di Ic 		015	Wild	M5 V K2 V	{ -3 }	(700-5)	[0000]	B	0	-35
+Itvi	J	1123	Dranshia	X615000-7	 	Di Ic 		015	Wild	K2 V M5 V	{ -3 }	(700-5)	[0000]	B	0	-35
 Itvi	J	1124	Iarjdallash	X120000-9	 	De Di Po 		004	Wild	K1 V	{ -2 }	(800-5)	[0000]	B	0	-40
 Itvi	N	1132	Sievlapr	X522000-8	 	Di He Po 		023	Wild	F7 IV	{ -3 }	(E00-5)	[0000]	B	0	-70
 Itvi	N	1134	Tabrzhitzdia	X737000-6	 	Di 		005	Wild	M0 V M3 D	{ -3 }	(300-5)	[0000]	B	0	-15
@@ -199,7 +199,7 @@ Itvi	J	1329	Edianiaplev	X443000-7	 	Di Po 		012	Wild	F9 V	{ -3 }	(600-5)	[0000]	
 Itvi	J	1330	Tiaklri	X302000-0	 	Ba Ic Va 		002	Wild	M6 II	{ -3 }	(900-5)	[0000]	B	0	-45
 Itvi	N	1332	Vriadiant	E97A000-6	 	Di Wa 		013	Wild	F9 V M1 D	{ -3 }	(A00-5)	[0000]	B	0	-50
 Itvi	N	1334	Iatlar	E758000-3	 	Di 		011	Wild	F2 V	{ -3 }	(C00-5)	[0000]	B	0	-60
-Itvi	N	1336	Vrietlchajel	X203000-0	 	Ba Ic Va 		034	Wild	M2 V M1 V	{ -3 }	(900-5)	[0000]	B	0	-45
+Itvi	N	1336	Vrietlchajel	X203000-0	 	Ba Ic Va 		034	Wild	M1 V M2 V	{ -3 }	(900-5)	[0000]	B	0	-45
 Itvi	N	1338	Zaprienchiae	E657845-3	 	Ga Pa Ph 		410	Wild	F7 V	{ -2 }	(378-3)	[9651]	Bce	0	-504
 Itvi	N	1339	Nidrjdiliabr	D659442-4	 	Ni 		203	Wild	F9 V	{ -3 }	(732-2)	[4144]	B	0	-84
 Itvi	B	1402	Tleflchefr	X6B0000-0	 	Ba He 		005	Wild	F4 V M4 D	{ -3 }	(400-5)	[0000]	B	0	-20
@@ -263,7 +263,7 @@ Itvi	K	1729	Doprebljiepr	X302000-0	 	Ba Ic Va 		003	Wild	M1 V M5 V	{ -3 }	(700-5
 Itvi	O	1734	Iakiltakr	D653577-5	 	Ni Po 		210	Wild	F2 V	{ -3 }	(641+1)	[7283]	B	0	24
 Itvi	O	1735	Vientanz	X302000-8	 	Di Ic Va 		025	Wild	M8 V M6 D	{ -3 }	(E00-5)	[0000]	B	0	-70
 Itvi	O	1739	Verdliakl	E7955AB-3	 	Ag Ni 		416	Wild	K2 V M0 D	{ -2 }	(A43+1)	[4324]	BC	0	120
-Itvi	O	1740	Ieazienzh	X625000-7	 	Di 		002	Wild	M7 V M3 V	{ -3 }	(A00-5)	[0000]	B	0	-50
+Itvi	O	1740	Ieazienzh	X625000-7	 	Di 		002	Wild	M3 V M7 V	{ -3 }	(A00-5)	[0000]	B	0	-50
 Itvi	C	1803	Stefllients	X331000-D	 	Di Po 		016	Wild	M7 V M8 V	{ -1 }	(D00-5)	[0000]	B	0	-65
 Itvi	C	1804	Zdiviepr	X200000-D	 	Di Va 		000	Wild	G6 V	{ -1 }	(B00-5)	[0000]	B	0	-55
 Itvi	C	1805	Iltanzh	E769434-6	 	Ni 		900	Wild	F6 V	{ -3 }	(730+1)	[1159]	B	0	21

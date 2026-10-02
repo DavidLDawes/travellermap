@@ -6,7 +6,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 1209 Fementok             ?426???-?                                        - - - ?23 11 StIm G7 V          
 1308 Loskuuatav           ?544???-?                                        - - - ?04 13 StIm G3 V M0 V     
 1407 Assunne              ?AE7???-?                                        - - - ?21 7  StIm K0 V M8 V     
-1507 Puumariash           ?300???-? Va                                     - - - ?04 11 StIm M2 V K5 V     
+1507 Puumariash           ?300???-? Va                                     - - - ?04 11 StIm K5 V M2 V     
 1510 Opiwiath             ?543???-? Po                                     - - - ?00 12 StIm K2 V          
 1605 Maa                  ?100???-? Va                                     - - - ?04 7  StIm M0 V M6 V     
 1702 Eesonwiy             ?547???-?                                        - - - ?22 7  StIm F6 V M0 V     
@@ -37,7 +37,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2406 Ellus                ?73A???-? Wa                                     - - - ?03 10 ImLc M2 V          
 2408 Cirsel               ?538???-?                                        - - - ?23 13 ImLc M3 V          
 2410 Admalaknii           ?88A???-? Wa                                     - - - ?04 13 ImLc K0 V M9 V     
-2501 Kell                 ?76A???-? Wa                                     - - - ?02 11 ImLc M3 V M0 V     
+2501 Kell                 ?76A???-? Wa                                     - - - ?02 11 ImLc M0 V M3 V     
 2502 Sayayr               ?735???-?                                        - - - ?10 8  ImLc K1 V M0 V     
 2503 Bradt Landing        ?8B9???-? Fl                                     - - - ?23 12 ImLc M2 V          
 2504 Routeburn            ?570???-? De He                                  - - - ?01 8  ImLc M3 V M7 V     
@@ -91,7 +91,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 0820 Asshashur            ?576???-?                                        - - - ?20 8  StIm M3 V          
 0912 Gakhamesh            ?683???-?                                        - - - ?00 6  StIm K7 V          
 0914 Chulesh              ?575???-?                                        - - - ?13 12 StIm K4 V M9 V     
-0920 Drayrk               ?550???-? De Po                                  - - - ?03 9  StIm M2 V M0 V     
+0920 Drayrk               ?550???-? De Po                                  - - - ?03 9  StIm M0 V M2 V     
 1013 Munnarn              ?410???-?                                        - - - ?02 11 StIm M3 V M5 V     
 1015 Usdiki               ?664???-? Cx                                     - - - ?03 10 StIm M0 V M0 V M9 V
 1018 Toraago              ?544???-?                                        - - - ?00 10 StIm M0 V M3 V     
@@ -117,7 +117,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 1619 Engallent            ?550???-? De Po                                  - - - ?21 12 StIm K9 V          
 1620 Kerek                ?000???-? As Va                                  - - - ?03 10 StIm G5 III D      
 1712 Gaanriigashii        ?757???-? Ga                                     - - - ?04 7  StIm K8 V          
-1715 Vehko                ?665???-? Ga                                     - - - ?15 12 StIm M2 V M1 V     
+1715 Vehko                ?665???-? Ga                                     - - - ?15 12 StIm M1 V M2 V     
 1717 Arsuch               ?566???-?                                        - - - ?04 8  StIm G0 V M8 V     
 1718 Iktaakas             ?74A???-? Wa                                     - - - ?10 12 StIm M3 V M3 V     
 1811 Crufra               ?583???-?                                        - - - ?04 12 StIm M2 V          
@@ -136,7 +136,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2113 Eennusinak           ?551???-? Po                                     - - - ?03 13 StIm K0 V M5 V     
 2115 Pihkiit              ?420???-? De He Po                               - - - ?02 13 StIm M0 V          
 2119 Nogo                 ?A9A???-? Oc                                     - - - ?01 9  StIm M2 V M7 V     
-2120 Esh Purshuur         ?570???-? De He                                  - - - ?30 8  StIm M1 V M0 V     
+2120 Esh Purshuur         ?570???-? De He                                  - - - ?30 8  StIm M0 V M1 V     
 2213 Vilir's World        ?9B4???-? Fl                                     - - - ?34 10 StIm K1 V M3 V     
 2215 Murshen              ?585???-?                                        - - - ?10 11 StIm G1 V          
 2216 Seaport              ?595???-? (Giiguuglum)?                          - - - ?14 8  StIm M2 V          
@@ -147,7 +147,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2320 Bleayn               ?674???-?                                        - - - ?00 13 StIm K3 V          
 2411 Cerell               ?78A???-? Wa                                     - - - ?02 5  ImLc M0 V          
 2414 Wolstene             ?000???-? As Va                                  - - - ?03 10 ImLc M2 V M6 V     
-2415 Kikhi Zun            ?77A???-? Wa                                     - - - ?00 11 ImLc M2 V M1 V     
+2415 Kikhi Zun            ?77A???-? Wa                                     - - - ?00 11 ImLc M1 V M2 V     
 2418 Liebing              ?621???-? He Po                                  - - - ?00 12 StIm M1 V M4 V     
 2511 Gurdadusu            ?736???-?                                        - - - ?03 10 ImLc M0 V M6 V     
 2512 Andelech             ?436???-?                                        - - - ?04 9  ImLc K9 V          
@@ -164,7 +164,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2620 Akushis              ?000???-? As Va                                  - - - ?04 18 ImLc M1 V          
 2713 Kinshasa             ?868???-?                                        - - - ?12 11 ImLc K2 V M8 V     
 2715 Bruyrkna             ?8B3???-? Fl                                     - - - ?04 8  ImLc K3 V          
-2716 Shakhamash           ?94A???-? Wa (Hanen)?                            - - - ?03 8  ImLc M3 V K0 V     
+2716 Shakhamash           ?94A???-? Wa (Hanen)?                            - - - ?03 8  ImLc K0 V M3 V     
 2717 Lallvi               ?587???-?                                        - - - ?04 9  ImLc K3 V          
 2812 Koinunmatie          ?566???-?                                        - - - ?04 11 ImLc M2 V          
 2813 Lumu                 ?553???-? Po                                     - - - ?03 15 ImLc K6 V M7 V     
@@ -174,7 +174,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2912 Lohme                ?848???-?                                        - - - ?01 11 ImLc M3 V M4 V     
 2914 Twele                ?000???-? As Va                                  - - - ?10 14 ImLc K7 V M5 V     
 2915 Jasper               ?563???-?                                        - - - ?00 13 ImLc G2 V M4 V     
-2916 Tinisutta            ?679???-?                                        - - - ?03 14 ImLc M2 V M1 V     
+2916 Tinisutta            ?679???-?                                        - - - ?03 14 ImLc M1 V M2 V     
 2917 Aran                 ?542???-? He Po                                  - - - ?02 12 ImLc K1 IV         
 2919 Oneria               ?544???-?                                        - - - ?00 11 ImLc M2 V          
 2920 Mezregh              ?8B9???-? Fl                                     - - - ?14 12 ImLc M3 V M8 V     
@@ -200,7 +200,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 0222 Daze                 ?776???-?                                        - - - ?00 6  StIm K7 V          
 0223 Abalesk              ?433???-? Po                                     - - - ?13 13 StIm M0 V          
 0227 Stoend               ?86A???-? Wa                                     - - - ?24 13 StIm M2 V          
-0228 Barren               ?652???-? Po                                     - - - ?00 14 StIm M2 V M1 V     
+0228 Barren               ?652???-? Po                                     - - - ?00 14 StIm M1 V M2 V     
 0229 Foussough            ?653???-? Po                                     - - - ?00 14 LuIm K0 V M5 V     
 0230 Estos                ?425???-?                                        - - - ?05 15 LuIm K2 V M6 V M1 V
 0327 Fay                  ?540???-? De He Po                               - - - ?22 8  StIm M0 V M7 V     
@@ -223,7 +223,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 0727 Hulr                 ?73A???-? Wa                                     - - - ?14 8  StIm M2 V M5 V     
 0728 Wenton               ?433???-? Po                                     - - - ?00 7  StIm M2 V          
 0729 Jousta               ?300???-? Va                                     - - - ?22 12 StIm M3 V          
-0824 Nonescue             ?547???-?                                        - - - ?05 10 StIm M1 V K1 V     
+0824 Nonescue             ?547???-?                                        - - - ?05 10 StIm K1 V M1 V     
 0826 Delaag               ?8B3???-? Fl                                     - - - ?13 10 StIm M3 V M5 V     
 0827 Loniva               ?203???-? Ic Va                                  - - - ?05 11 StIm M2 V          
 0829 Query                ?645???-?                                        - - - ?02 12 StIm K2 V          
@@ -272,14 +272,14 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 1530 Hemster              ?420???-? De He Po                               - - - ?05 14 StIm M0 V          
 1622 Blullaygh            ?648???-?                                        - - - ?03 10 StIm K1 V          
 1623 Fraynj               ?848???-?                                        - - - ?00 9  StIm K3 IV         
-1624 Leraag               ?520???-? De He Po                               - - - ?03 6  StIm M1 V M0 V     
+1624 Leraag               ?520???-? De He Po                               - - - ?03 6  StIm M0 V M1 V     
 1625 Emur                 ?564???-?                                        - - - ?14 9  StIm G0 V          
 1627 Nuuhlam              ?400???-? Va                                     - - - ?22 13 StIm M3 V          
-1629 Pesuune              ?534???-?                                        - - - ?15 9  StIm M1 V K1 V     
+1629 Pesuune              ?534???-?                                        - - - ?15 9  StIm K1 V M1 V     
 1721 Guslas               ?000???-? As Va                                  - - - ?00 9  StIm M2 V          
 1722 Ethbray              ?87A???-? Wa                                     - - - ?03 8  StIm M0 V          
 1723 Uurgikhushi          ?562???-?                                        - - - ?03 13 StIm M2 V M3 V     
-1724 Velte                ?772???-? He                                     - - - ?05 8  StIm M2 V K6 V     
+1724 Velte                ?772???-? He                                     - - - ?05 8  StIm K6 V M2 V     
 1727 Stedeng              ?424???-?                                        - - - ?20 10 StIm M0 V M2 V     
 1821 Iirshuur             ?544???-?                                        - - - ?34 10 StIm G2 V M4 V     
 1822 Ayltha               ?544???-?                                        - - - ?13 13 StIm G5 V          
@@ -308,7 +308,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2224 Kamurinmur           ?560???-? De                                     - - - ?13 11 StIm K0 V M8 V     
 2225 Elpple               ?310???-?                                        - - - ?03 11 StIm M3 V          
 2227 Helge                ?693???-?                                        - - - ?10 8  StIm M1 V M2 V     
-2228 Wrechner             ?432???-? Po                                     - - - ?05 10 StIm M1 V K5 V     
+2228 Wrechner             ?432???-? Po                                     - - - ?05 10 StIm K5 V M1 V     
 2229 Xanten               ?593???-?                                        - - - ?22 9  StIm K1 V M5 V M2 V
 2323 Syss                 ?400???-? Va                                     - - - ?10 5  StIm M9 III D M5 V 
 2325 Droun                ?543???-? Po                                     - - - ?00 11 StIm K1 V          
@@ -337,7 +337,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2724 Memern               ?540???-? De He Po                               - - - ?02 12 StIm K0 V M9 V     
 2725 Moytra               ?636???-?                                        - - - ?10 11 StIm M1 V M5 V     
 2726 Loholoka             ?556???-?                                        - - - ?00 12 StIm M2 V          
-2730 Irkhun               ?550???-? De Po                                  - - - ?00 12 StIm M2 V M1 V     
+2730 Irkhun               ?550???-? De Po                                  - - - ?00 12 StIm M1 V M2 V     
 2821 Fuch                 ?551???-? Po                                     - - - ?03 10 StIm M2 V          
 2822 Zomandao             ?688???-?                                        - - - ?00 7  StIm M0 V          
 2824 Anech Issan          ?564???-?                                        - - - ?02 11 StIm K1 V          
@@ -351,7 +351,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2930 Taeahtaho            ?887???-? Ga                                     - - - ?04 10 StIm K2 V          
 3023 Suysu                ?000???-? As Va                                  - - - ?12 13 StIm M2 V          
 3024 Brase                ?756???-? Ga                                     - - - ?04 7  StIm K1 V M3 V     
-3026 Beangub              ?786???-? Ga                                     - - - ?00 12 StIm M2 V K8 V     
+3026 Beangub              ?786???-? Ga                                     - - - ?00 12 StIm K8 V M2 V     
 3027 Gier                 ?596???-?                                        - - - ?03 13 StIm G2 V M8 V     
 3028 Doucttru             ?798???-?                                        - - - ?05 11 StIm K8 V          
 3029 Phaln                ?420???-? De He Po                               - - - ?12 10 StIm K4 V M9 V     
@@ -386,7 +386,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 0435 Gwelbyph             ?423???-? Po                                     - - - ?05 8  FdIl K3 V          
 0436 Flaslousk            ?543???-? Po                                     - - - ?10 12 FdIl M4 V          
 0437 Jaeyelya             ?584???-? (Ael Yael)?                            - - - ?02 10 FdIl K6 V          
-0438 Lem                  ?532???-? Po                                     - - - ?00 10 FdIl M3 V M1 V     
+0438 Lem                  ?532???-? Po                                     - - - ?00 10 FdIl M1 V M3 V     
 0439 Dimkodrarn           ?553???-? Po                                     - - - ?03 13 FdIl G0 V          
 0531 Rake                 ?425???-?                                        - - - ?02 13 LuIm K3 V M4 V     
 0532 Soel                 ?8A5???-? Fl                                     - - - ?02 14 LuIm K0 V M1 V     
@@ -399,7 +399,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 0640 Chezpan              ?200???-? Va                                     - - - ?02 9  FdIl K4 V M2 V     
 0732 Th'dir               ?100???-? Va                                     - - - ?13 10 LuIm M4 V          
 0733 Dendaash             ?9C7???-? Fl                                     - - - ?04 15 LuIm A6 V M6 V     
-0737 Zamashuug            ?585???-?                                        - - - ?00 13 FdIl M3 V K6 V     
+0737 Zamashuug            ?585???-?                                        - - - ?00 13 FdIl K6 V M3 V     
 0738 Dikaash              ?627???-?                                        - - - ?01 13 FdIl M4 V          
 0740 Wilson               ?100???-? Va                                     - - - ?00 13 FdIl M2 V M4 V     
 0831 Tenraash             ?79A???-? Wa                                     - - - ?02 8  StIm G4 V          
@@ -427,7 +427,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 1235 Icon                 ?434???-?                                        - - - ?15 9  FdIl K1 V          
 1236 Shiiki               ?551???-? Po                                     - - - ?10 12 FdIl G0 V          
 1237 Gumahler             ?655???-? Ga (Gumahl)?                           - - - ?05 8  FdIl K1 V M6 V     
-1239 Zalanor              ?100???-? Va                                     - - - ?24 9  FdIl M3 V G7 V     
+1239 Zalanor              ?100???-? Va                                     - - - ?24 9  FdIl G7 V M3 V     
 1331 Camal                ?421???-? He Po                                  - - - ?03 10 StIm G9 IV M6 V    
 1333 Wingate              ?877???-?                                        - - - ?00 9  LuIm M0 V          
 1334 Sidur Haski          ?786???-? Ga                                     - - - ?20 13 LuIm M0 V          
@@ -462,7 +462,7 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 1933 Oyrayt               ?586???-?                                        - - - ?00 7  LuIm M0 V          
 1935 Aisteaya             ?563???-?                                        - - - ?20 9  LuIm M2 V          
 1936 Atu Ista             ?679???-?                                        - - - ?10 8  LuIm M2 V          
-2031 Sombani              ?422???-? He Po                                  - - - ?23 10 StIm M2 V M1 V     
+2031 Sombani              ?422???-? He Po                                  - - - ?23 10 StIm M1 V M2 V     
 2036 Gushirdiimi          ?542???-? He Po                                  - - - ?23 11 FdIl M1 V          
 2037 Highbury             ?424???-?                                        - - - ?02 8  FdIl M3 V          
 2038 Yolai'               ?758???-?                                        - - - ?13 12 FdIl M0 V          
@@ -484,16 +484,16 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2335 Chipoka              ?666???-? Ga                                     - - - ?24 12 FdIl M2 V M6 V     
 2336 Arapenpa             ?540???-? De He Po                               - - - ?25 12 FdIl G5 V M5 V     
 2337 Giffard              ?513???-? Ic                                     - - - ?23 8  FdIl M3 V          
-2339 Thulm                ?656???-? Ga                                     - - - ?04 7  FdIl M1 V M0 V     
+2339 Thulm                ?656???-? Ga                                     - - - ?04 7  FdIl M0 V M1 V     
 2340 Elk                  ?874???-?                                        - - - ?12 6  FdIl M1 V M3 V     
 2431 Kiaan                ?583???-?                                        - - - ?03 12 StIm M2 V M5 V M9 V
-2434 Muaash               ?565???-?                                        - - - ?12 7  FdIl M3 V M0 V     
+2434 Muaash               ?565???-?                                        - - - ?12 7  FdIl M0 V M3 V     
 2438 Jars                 ?500???-? Va                                     - - - ?04 8  FdIl M0 V M6 V     
 2439 Susadi               ?8C3???-? Fl                                     - - - ?01 9  FdIl M3 V          
 2440 Oyrk                 ?557???-?                                        - - - ?13 7  FdIl M0 V M7 V     
 2532 Yntulk               ?889???-?                                        - - - ?24 13 StIm K4 V          
 2536 Sers                 ?540???-? De He Po                               - - - ?12 9  FdIl K4 V          
-2537 Stallfe              ?986???-?                                        - - - ?24 11 FdIl M1 V M0 V     
+2537 Stallfe              ?986???-?                                        - - - ?24 11 FdIl M0 V M1 V     
 2538 Thulm                ?87A???-? Wa                                     - - - ?03 13 FdIl M2 V M4 V     
 2539 Hate                 ?988???-?                                        - - - ?04 13 FdIl M3 V          
 2540 Temes                ?649???-?                                        - - - ?03 9  FdIl G2 V M4 V M0 V
@@ -504,8 +504,8 @@ Hex  Name                 UWP       Remarks          {Ix}   (Ex)    [Cx]   N B Z
 2639 Tudjman              ?687???-? Ga                                     - - - ?00 11 FdIl K3 V          
 2732 Khossfoy             ?430???-? De Po                                  - - - ?22 13 LuIm K7 V M9 V     
 2734 Traynor              ?434???-?                                        - - - ?13 12 FdIl K1 V          
-2735 Moy                  ?758???-?                                        - - - ?14 10 FdIl M2 V M1 V     
-2737 Chechen              ?597???-?                                        - - - ?22 9  FdIl M3 V M1 V     
+2735 Moy                  ?758???-?                                        - - - ?14 10 FdIl M1 V M2 V     
+2737 Chechen              ?597???-?                                        - - - ?22 9  FdIl M1 V M3 V     
 2738 Khalun               ?421???-? He Po                                  - - - ?04 10 FdIl K5 V          
 2740 Iishli               ?888???-?                                        - - - ?13 8  FdIl M1 V          
 2831 Abact                ?672???-? He                                     - - - ?04 8  LuIm M0 V          

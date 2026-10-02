@@ -41,7 +41,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0239	Amakobin Weshma	CA9A874-5	O	Oc Ph Pi (Wesh)	A	513	KC	M7 V M7 V	{ -1 }	(675+1)	[7725]		8
 0240	Keekori	E500000-0	K	Va Ba		012	Kk	M0 V	{ -3 }	(B00-5)	[0000]		9
 0302	Eek'gii	A4102PK-C	K	Lo		511	Kk	G5 IV K0 V K9 V	{ 1 }	(911+1)	[431G]		10
-0303	K'gakerr	C5A23QK-B		Fl He Lo		414	Kk	G0 V G9 IV	{ 0 }	(C20+1)	[234G]		14
+0303	K'gakerr	C5A23QK-B		Fl He Lo		414	Kk	G9 IV G0 V	{ 0 }	(C20+1)	[234G]		14
 0305	Mooaghirr	C4372PK-A	K	Lo		924	Kk	F1 V K7 V	{ 0 }	(D10+1)	[428C]		10
 0308	Hkaa Graat	E430000-0	K	De Ba Po		003	Kk	K1 V K2 V M1 V	{ -3 }	(900-5)	[0000]		10
 0310	Igharaat	A9748RK-E	K	Ph Pa Pi		324	Kk	M5 V	{ 2 }	(E79+1)	[6A2B]		14
@@ -58,7 +58,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0335	Keegrrreeka	D6313QK-B		Lo Po		705	Kk	G9 V	{ -1 }	(D20-1)	[321B]		12
 0336	Taniru	CAA74QK-A	K	Fl Ni		100	Kk	M5 V M7 V	{ 0 }	(633+1)	[146E]		10
 0340	Kalioo	C96A5QK-A	K	Wa Ni Pr		401	Kk	M1 V	{ 0 }	(744+1)	[9526]		9
-0402	Tr'kue	C5344QK-B	K	Ni		504	Kk	F7 V F7 IV	{ 0 }	(935+1)	[445C]		14
+0402	Tr'kue	C5344QK-B	K	Ni		504	Kk	F7 IV F7 V	{ 0 }	(935+1)	[445C]		14
 0403	Ka Xilb	C757856-A	O	Ga Ph Pa (Tilpish)	A	214	Kk	K1 V M0 V	{ 1 }	(D78+1)	[596A]		16
 0406	Rulughmo	B6335QK-D		Ni Po		401	Kk	M3 V BD	{ 1 }	(745+1)	[363B]		8
 0407	Gutoor!	B3234QK-C	K	Ni Po		811	Kk	K2 V M6 V	{ 1 }	(934+1)	[259G]		9
@@ -88,7 +88,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0514	Uux'ne	D6757RK-D	O	Ag Pi		623	Kk	K6 V K9 V M8 V	{ 1 }	(C68+1)	[685D]		15
 0516	Kteepta	D5965QK-A	K	Ni Ag		521	Kk	K3 IV	{ 0 }	(B46+1)	[454B]		13
 0519	Ambeer	B5669RK-F		Hi Pr		724	Kk	K4 V	{ 3 }	(F8B+1)	[7C4F]		14
-0521	Ika Ekta	C9A25QK-B	K	Fl He Ni		103	Kk	M2 V M0 V	{ 0 }	(944+1)	[654A]		11
+0521	Ika Ekta	C9A25QK-B	K	Fl He Ni		103	Kk	M0 V M2 V	{ 0 }	(944+1)	[654A]		11
 0522	Ruklii	A651ARK-F	K	Hi Po		324	Kk	M2 V M8 V	{ 3 }	(E9A+2)	[9D4F]		18
 0529	Gzanak'	E540000-0		De He Ba Po Di(Menetha)		010	Kk	G2 V D	{ -3 }	(800-5)	[0000]		6
 0530	Karannogr	C79A775-6	K	Wa Pi (Castenen)		814	Kk	M2 V	{ -1 }	(664-1)	[5667]		14
@@ -96,7 +96,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0539	Tuhkangki	D5325QK-A	K	Ni Po		423	Kk	K0 V D	{ -1 }	(D43+1)	[544A]		18
 0540	Hkurrri	E8C4000-0		Fl Ba		013	Kk	A7 V D	{ -3 }	(500-5)	[0000]		14
 0601	Kuubghiir	B6828RK-F		Ph Ri		124	Kk	G2 V K3 V M2 V	{ 3 }	(E7A+1)	[6B5G]		17
-0605	Kaagar	E9647RK-A		Ag Ri		712	Kk	M7 V BD M5 V	{ 2 }	(B68+1)	[7949]		10
+0605	Kaagar	E9647RK-A		Ag Ri		712	Kk	M5 V M7 V BD	{ 2 }	(B68+1)	[7949]		10
 0607	Atuulaa	C5586RK-C	K	Ni Ag		303	Kk	K0 V	{ 1 }	(A55+2)	[675B]		16
 0608	Ghugneed	C5604QK-B	K	De Ni		524	Kk	M9 V	{ 0 }	(D34+1)	[446C]		14
 0612	Raku Aram	E9974QK-9	K	Ni Pa		423	Kk	M2 V M7 V	{ -2 }	(B31+1)	[425A]		13
@@ -114,12 +114,12 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0636	Ee'krghar	EAC1000-0	K	Fl He Ba		011	Kk	G3 IV M6 V	{ -3 }	(500-5)	[0000]		13
 0640	Gharra'	B84A3QK-D		Wa Lo		124	Kk	F0 V	{ 1 }	(C21+1)	[443G]		15
 0702	Keghoar	E649000-0	K	Ba		000	Kk	M0 V	{ -3 }	(600-5)	[0000]		6
-0704	Irrkua	C5002PK-9	K	Va Lo		915	Kk	F8 V F3 V	{ -1 }	(A10+4)	[1148]		14
+0704	Irrkua	C5002PK-9	K	Va Lo		915	Kk	F3 V F8 V	{ -1 }	(A10+4)	[1148]		14
 0705	Triitkooax	C999556-A	K	Ni Giru5 Tilp5		224	Kk	K8 V	{ 0 }	(D43+4)	[5569]		14
 0708	Gniilgruta	C9D83QK-B	O	Lo		803	Kk	F5 V G9 V G0 V	{ 0 }	(A20+2)	[3339]		8
 0710	Ketgraa	C7527RK-C	K	Po		313	Kk	A4 V A5 V	{ 1 }	(B67-1)	[88AA]		14
 0713	Tuk'ngrag	C000758-A	K	As Va Na Pi Giru5 Tilp5		723	Kk	G0 V M3 V	{ 1 }	(C67-1)	[8867]		18
-0714	Kirkugu	C5956RK-D	O	Ni Ag		204	Kk	M3 V M1 V BD	{ 1 }	(D52-1)	[9749]		8
+0714	Kirkugu	C5956RK-D	O	Ni Ag		204	Kk	M1 V M3 V BD	{ 1 }	(D52-1)	[9749]		8
 0715	Langungren	E9C1000-0	K	Fl He Ba		022	Kk	G3 V M6 V	{ -3 }	(500-5)	[0000]		10
 0716	Larrignu	A0004QK-E	O	As Va Ni		512	Kk	K1 IV	{ 1 }	(834+1)	[8569]		11
 0722	Xt'xooee	E202000-0		Ic Va Ba		023	Kk	M8 V	{ -3 }	(400-5)	[0000]		11
@@ -136,7 +136,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0806	Tinuukax	E3775QK-9	K	Ni Ag		112	Kk	M9 V	{ -1 }	(A42+2)	[8469]		12
 0808	Rakeir	C7859RK-E		Ga Hi Pr		101	Kk	G1 V	{ 2 }	(A88-1)	[9B5F]		14
 0809	Eearroo	D8868RK-D	K	Ga Ph Pa Ri		825	Kk	F0 V	{ 1 }	(B77-1)	[6B8F]		18
-0813	Ankiighka	C6688RK-D	K	Ph Pa Ri		314	Kk	M8 V M1 V	{ 2 }	(E7A+1)	[9A79]		9
+0813	Ankiighka	C6688RK-D	K	Ph Pa Ri		314	Kk	M1 V M8 V	{ 2 }	(E7A+1)	[9A79]		9
 0814	Neetraa	B3668RK-F	K	Ph Pa Ri		923	Kk	F9 V M8 V	{ 3 }	(C76-4)	[ABAE]		15
 0816	Ahkarang	B6795QK-D	K	Ni		321	Kk	K9 V	{ 1 }	(D42-3)	[662D]		9
 0819	Gnapale	E511000-0		Ic Ba		012	Kk	A3 V K8 V D	{ -3 }	(700-5)	[0000]		12
@@ -160,11 +160,11 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0913	Ghamegneg	B9986RK-D	K	Ni Ag		810	Kk	K4 IV	{ 2 }	(756+3)	[2839]		12
 0914	Kuxuag	C5312PK-8	K	Lo Po		722	Kk	M0 V	{ -2 }	(910+1)	[513C]		9
 0916	Rakignee	E410000-0	K	Ba		024	Kk	G8 V M1 V	{ -3 }	(700-5)	[0000]		16
-0917	Tibikkir	B5405QK-C	K	De He Ni Po		414	Kk	G3 V G9 IV	{ 1 }	(B46-1)	[365B]		13
+0917	Tibikkir	B5405QK-C	K	De He Ni Po		414	Kk	G9 IV G3 V	{ 1 }	(B46-1)	[365B]		13
 0919	K'gr'bar	E570000-0	K	De He Ba		033	Kk	F1 V K8 V	{ -3 }	(800-5)	[0000]		13
 0921	Agnurrgh'	E7A0000-0	K	He Ba		013	Kk	K2 V M2 V M3 V M8 V	{ -3 }	(500-5)	[0000]		13
 0923	Guruiit	E8A42PK-9		Fl Lo		721	Kk	M6 V	{ -2 }	(A10+1)	[214B]		10
-0924	Gh!kraux	A655ARK-F	K	Ga Hi		712	Kk	M9 V M1 V	{ 3 }	(C98+1)	[BD4E]		11
+0924	Gh!kraux	A655ARK-F	K	Ga Hi		712	Kk	M1 V M9 V	{ 3 }	(C98+1)	[BD4E]		11
 0927	Xrookuurrmu	C5775QK-A		Ni Ag		502	Kk	K4 V	{ 1 }	(D46+4)	[865C]		8
 0929	Gnaangla	C6736RK-D	K	Ni		214	Kk	K9 V K9 V M3 V M4 V	{ 0 }	(F54-4)	[B67G]		15
 0932	K'xgarrga	E100000-0		Va Ba		014	Kk	K1 V M8 V	{ -3 }	(400-5)	[0000]		12
@@ -182,12 +182,12 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1007	Mahkenggem	C4124QK-B	K	Ic Ni		423	Kk	K5 V	{ 0 }	(E31+2)	[342A]		11
 1009	Karaghong	C5243QK-A	K	Lo		902	Kk	M9 V	{ 0 }	(820+1)	[334B]		8
 1011	Taltakar	C7446RK-C	O	Ni Ag		232	Kk	G8 V	{ 1 }	(A54+1)	[7767]		9
-1012	Arrukin	C4816RK-B	K	Ni Ri		824	Kk	G9 V G3 IV	{ 1 }	(D54-2)	[376D]		11
+1012	Arrukin	C4816RK-B	K	Ni Ri		824	Kk	G3 IV G9 V	{ 1 }	(D54-2)	[376D]		11
 1013	Kuxragha	E000000-0		As Va Ba		000	Kk	M7 V M9 V	{ -3 }	(A00-5)	[0000]		6
 1016	Rakuug'	C000557-B		As Va Ni Giru8 Hagh2		422	Kk	G6 V	{ 0 }	(A46+2)	[855F]		14
 1019	Egrakka	D98A4QK-A	K	Wa Ni		614	Kk	M8 V	{ -1 }	(831+3)	[535C]		11
 1021	T'kooa Naai	B8687RK-D	K	Ag Ri		534	Kk	G5 V M2 V M0 V M7 V	{ 4 }	(G6E+1)	[7B6D]		13
-1022	Kraghui	C9A35QK-A	K	Fl Ni		400	Kk	G5 V G0 V	{ 0 }	(242+1)	[8547]		10
+1022	Kraghui	C9A35QK-A	K	Fl Ni		400	Kk	G0 V G5 V	{ 0 }	(242+1)	[8547]		10
 1023	Arrhkiirgzar	A6667RK-D	K	Ga Ag Ri		700	Kk	G8 V	{ 4 }	(567+2)	[7B3D]		10
 1024	Ghanggitkaa	E200000-0	K	Va Ba		000	Kk	M3 V M4 V	{ -3 }	(600-5)	[0000]		7
 1027	Roogrleekur	A6659RK-E		Ga Hi Pr		314	Kk	K6 V	{ 3 }	(C8A+1)	[7C4K]		13
@@ -215,7 +215,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1140	Kuuarku	C6695QK-A		Ni Pr		910	Kk	A2 V	{ 0 }	(A41-3)	[354A]		5
 1203	Mbuu'ra	B5426RK-D	K	He Ni Po		614	Kk	K6 V	{ 1 }	(C52-1)	[675D]		15
 1207	Urkeei	C88A6RK-C	O	Wa Ni Ri		213	Kk	M3 V	{ 1 }	(E52+1)	[B71G]		15
-1211	Hk'kkaat	B554ARK-F	K	Hi		202	Kk	F0 V G0 IV	{ 3 }	(A9B-2)	[9D6J]		14
+1211	Hk'kkaat	B554ARK-F	K	Hi		202	Kk	G0 IV F0 V	{ 3 }	(A9B-2)	[9D6J]		14
 1212	Arradla	C9568RK-D	K	Ph Pa		522	Kk	G7 IV K1 V M3 V	{ 1 }	(A7A+4)	[797D]		14
 1215	Anina	C6515QK-A	K	Ni Po		700	Kk	M3 V M5 V M5 V	{ 0 }	(845+1)	[156A]		12
 1217	Tiulg!	E7A35QK-B	K	Fl Ni		334	Kk	M0 V M3 V	{ -1 }	(G45+3)	[544C]		18
@@ -223,7 +223,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1222	Aghaa Kuo'	B4829RK-F		Hi Pr		413	Kk	M8 V	{ 3 }	(D89+1)	[8C6F]		12
 1223	Taruka	C5559RK-D	K	Hi		722	Kk	M7 V M8 V	{ 2 }	(A8B+2)	[9BAJ]		11
 1225	Ar'rla	E6383QK-8	K	Lo		823	Kk	M4 V M9 V M6 V	{ -3 }	(D20+2)	[2158]		17
-1228	Engkarre	C4344QK-C	K	Ni		400	Kk	M2 V M0 V	{ 0 }	(635+2)	[146B]		7
+1228	Engkarre	C4344QK-C	K	Ni		400	Kk	M0 V M2 V	{ 0 }	(635+2)	[146B]		7
 1230	Kux'kta	B264ARK-E		Hi		312	Kk	M0 V BD	{ 3 }	(D99+1)	[6D5D]		11
 1232	Baameek	C6578RK-B	K	Ga Ph Pa		414	Kk	K6 V	{ 1 }	(979-2)	[794G]		11
 1237	Nagh'a Naai	B5466RK-C	K	Ni Ag		600	Kk	K5 V	{ 2 }	(A57-3)	[A82F]		6
@@ -360,7 +360,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2218	K'unakr	A583ARK-F	K	Hi		313	Kk	G8 V M7 V	{ 3 }	(C99+1)	[AD3F]		13
 2222	Gnoteuur	X656000-0	K	Ga Ba	R	022	Kk	G0 V	{ -3 }	(700-5)	[0000]		12
 2225	Kagaama Tuak	C9965QK-B	K	Ni Ag		813	Kk	G5 V D	{ 1 }	(C46+1)	[162B]		10
-2226	Atr'hka	C5537RK-C		Po		311	Kk	M3 V M1 V	{ 1 }	(768+2)	[786C]		10
+2226	Atr'hka	C5537RK-C		Po		311	Kk	M1 V M3 V	{ 1 }	(768+2)	[786C]		10
 2227	Hkaaluum	B7775QK-C	K	Ni Ag		714	Kk	G8 V	{ 2 }	(C45+5)	[2719]		15
 2228	Rukaniim	B6668RK-F	K	Ga Ph Pa Ri		500	Kk	M1 V M3 V	{ 3 }	(877+3)	[BB1D]		5
 2229	Nuuuugnoor	C75A4QK-A	K	Wa Ni		814	Kk	M1 V M7 V	{ 0 }	(C32-3)	[741B]		12
@@ -376,7 +376,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2313	Aghoorkiiru	C6558RK-E	O	Ga Ph Pa		600	Kk	G3 V G9 V	{ 1 }	(478+1)	[898G]		8
 2314	Rrunaatan	E302000-0	K	Ic Va Ba		013	Kk	K1 V	{ -3 }	(600-5)	[0000]		16
 2320	Utanga Kaba	B6887RK-E	O	Ag Ri		112	Kk	M5 V M7 V	{ 4 }	(B6G+1)	[6B7D]		12
-2324	Gnukau	A664ARK-F	K	Hi		303	Kk	A1 V G5 IV	{ 3 }	(C9D+1)	[CD6F]		13
+2324	Gnukau	A664ARK-F	K	Hi		303	Kk	G5 IV A1 V	{ 3 }	(C9D+1)	[CD6F]		13
 2328	Kutruulmba	D8492PK-8	O	Lo		221	Kk	F2 V D	{ -3 }	(A10-2)	[1158]		14
 2333	Ungakkuu	E8B43QK-9		Fl Lo		723	Kk	K5 V M2 V	{ -2 }	(920+1)	[318C]		14
 2336	Arrtrerriix	X5A3000-0		Fl Ba	R	022	Kk	M1 V M5 V	{ -3 }	(800-5)	[0000]		16
@@ -516,4 +516,4 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 3227	N'ghani	C4236RK-D		Ni Na Po		522	Kk	K4 IV K9 V	{ 0 }	(G51+3)	[565F]		10
 3231	Kekkeei	D2113QK-A		Ic Lo		700	Kk	K4 V	{ -1 }	(B20+4)	[32AF]		10
 3233	T'rkeerang	A564ARK-F	K	Hi		113	Kk	K1 V M4 V M2 V	{ 3 }	(798+2)	[ED2J]		8
-3234	N'baak	B7937RK-E	K	Pi		601	Kk	K2 V M4 V K5 V K1 V	{ 2 }	(B66+1)	[598F]		14
+3234	N'baak	B7937RK-E	K	Pi		601	Kk	K1 V K2 V M4 V K5 V	{ 2 }	(B66+1)	[598F]		14

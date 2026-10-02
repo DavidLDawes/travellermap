@@ -72,7 +72,7 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 0329 Naeerau              B7A04QK-D He Ni                   { 1 }  (932-4) [651C] - - - 412 10 Kk   M2 V M3 V M4 V       
 0423 Chandesti            E657300-5 Ga Lo                   { -3 } (920+3) [6167] - - - 324 17 NaHu M0 III M7 V          
 0426 Ubkurrrui            B87A457-B Wa Ni Giru6 Ciru4       { 1 }  (736-1) [157B] - K - 100 4  Kk   G4 V                 
-0427 Ghootkarr            A556ARK-F Hi                      { 3 }  (996+1) [8DAC] - - - 114 12 Kk   M5 V M3 V            
+0427 Ghootkarr            A556ARK-F Hi                      { 3 }  (996+1) [8DAC] - - - 114 12 Kk   M3 V M5 V            
 0430 Eeiik Nu             E000000-0 As Va Ba                { -3 } (B00-5) [0000] - K - 002 6  Kk   G7 V                 
 0521 L'thon               EA8A487-8 Oc Ni                   { -3 } (830+1) [415B] - - - 810 11 NaHu K7 V M3 V            
 0527 Argi Natan           B5678RK-E Ph Pa Ri                { 3 }  (77D+1) [6B5D] - K - 103 12 Kk   G9 V                 
@@ -99,7 +99,7 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 1328 I'eerak              A5518RK-F Ph Po                   { 2 }  (97B-2) [7A3G] - K - 304 8  Kk   M3 V M7 V M9 V       
 1329 Karirruutuk          A566ARK-F Hi                      { 3 }  (39A+1) [8D3L] - K - 700 11 Kk   M0 V                 
 1330 Elitrooux            C6869RK-E Ga Hi Pr                { 2 }  (D89-2) [AB5D] - - - 623 10 Kk   F5 III M5 V F1 V G2 V
-1427 Gzuukaarrmakku       C5454QK-C Ni Pa                   { 0 }  (A36-2) [143C] - K - 123 10 Kk   M8 V M6 V            
+1427 Gzuukaarrmakku       C5454QK-C Ni Pa                   { 0 }  (A36-2) [143C] - K - 123 10 Kk   M6 V M8 V            
 1428 Ekghiagni            E200000-0 Va Ba                   { -3 } (500-5) [0000] - K - 034 11 Kk   K3 V M9 V            
 1521 Mandolin             X683000-0 Ba Di(NaPhentok)        { -3 } (600-5) [0000] - - - 010 9  NaXX M8 V                 
 1528 K'eeugre             D6254QK-A Ni                      { -1 } (A33+3) [231E] - - - 205 11 Kk   A4 V                 
@@ -120,7 +120,7 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 2229 Batakriir            B553ARK-F Hi Po                   { 3 }  (498+1) [8D3H] - K - 600 6  Kk   M9 V                 
 2329 Tigh'hki             A7727RK-F He Pi                   { 2 }  (F69-1) [594C] - - - 924 12 Kk   K3 V                 
 2424 Ghixanar             E100000-0 Va Ba                   { -3 } (700-5) [0000] - - - 023 13 Kc   M2 V                 
-2426 Ukxau                BAC62PK-D Fl Lo                   { 1 }  (B11-2) [537D] - K - 120 13 Kk   G5 V G0 IV G3 IV     
+2426 Ukxau                BAC62PK-D Fl Lo                   { 1 }  (B11-2) [537D] - K - 120 13 Kk   G0 IV G5 V G3 IV     
 2427 Rraluuuua            B6457RK-E Ag Pi                   { 3 }  (A6E+3) [9A3D] - K - 513 13 Kk   K1 V K1 V            
 2428 Hkeekara             EAB8000-0 Fl Ba                   { -3 } (A00-5) [0000] - - A 002 12 Kk   M4 V                 
 2526 Akakr!mne            A886ARK-F Ga Hi                   { 3 }  (A97+3) [CD9J] - - - 500 11 Kk   G0 V                 
@@ -141,7 +141,7 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 3130 Gnaugnar             A5426RK-E He Ni Po                { 1 }  (755-1) [875G] - - - 202 11 Kk   M3 V                 
 3224 Kiruookat            B6437RK-E Pi Po                   { 2 }  (865+1) [595D] - K - 702 7  Kk   M2 V M2 V            
 0131 Kuali Gnioo          B6145QK-C Ic Ni                   { 1 }  (B47-2) [661B] - K - 223 13 Kk   M7 V                 
-0132 Pe'kaee              A7786RK-F Ni Ag                   { 2 }  (E53+3) [688J] - - - 515 15 Kk   M2 V M8 V M1 V       
+0132 Pe'kaee              A7786RK-F Ni Ag                   { 2 }  (E53+3) [688J] - - - 515 15 Kk   M1 V M2 V M8 V       
 0134 Kurareekee           E110000-0 Ba                      { -3 } (A00-5) [0000] - - - 025 15 Kk   M5 V BD              
 0135 Arrang Neri          D6344QK-A Ni                      { -1 } (930-2) [634D] - K - 813 13 Kk   M1 V                 
 0136 Kuoogrghii           A0004QK-F As Va Ni                { 1 }  (735+3) [459F] - K - 210 10 Kk   M9 V                 
@@ -160,11 +160,11 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 0340 Kurree Kruu          D7A35QK-A Fl Ni                   { -1 } (740+1) [745B] - - - 401 12 Kk   G0 V                 
 0431 Alooigh'rr           C9D14QK-A Ni                      { 0 }  (734+3) [745A] - K - 211 11 Kk   K0 V M6 V            
 0433 Nidlakraneng         D9A44QK-B Fl Ni                   { -1 } (D33+4) [432D] - K - 620 12 Kk   M3 V BD              
-0435 Kiregh Gaee          B84A4QK-E Wa Ni                   { 1 }  (B36-2) [158E] - - - 200 10 Kk   M6 V M8 V M4 V       
+0435 Kiregh Gaee          B84A4QK-E Wa Ni                   { 1 }  (B36-2) [158E] - - - 200 10 Kk   M4 V M6 V M8 V       
 0438 Engganggoo           E200000-0 Va Ba                   { -3 } (A00-5) [0000] - - - 023 12 Kk   G5 V                 
 0439 Tongno Mbal!         B4724QK-D He Ni                   { 1 }  (C35+5) [354A] - K - 613 12 Kk   A6 V                 
 0440 Gziala Kiiar         E400000-0 Va Ba                   { -3 } (900-5) [0000] - K - 024 16 Kk   G1 V                 
-0532 Kebghan              A8367RK-F                         { 2 }  (A69+1) [996D] - K - 122 10 Kk   M4 V M3 V            
+0532 Kebghan              A8367RK-F                         { 2 }  (A69+1) [996D] - K - 122 10 Kk   M3 V M4 V            
 0534 Tambakoom'           A5888RK-F Ph Pa Ri                { 3 }  (77C+5) [7B6J] - - - 701 9  Kk   K3 V M5 V            
 0535 Aait Aneear          A5315QK-E Ni Po                   { 1 }  (E45+1) [862D] - K - 224 15 Kk   M5 V BD              
 0537 Rrengrran'           B8937RK-E Pi                      { 2 }  (966-3) [492J] - - - 412 8  Kk   M1 V                 
@@ -177,9 +177,9 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 0634 Un Nagnou            C5935QK-C Ni                      { 0 }  (B42+1) [257F] - - - 214 15 Kk   G2 V                 
 0635 Koo'hki              B210557-C Ni Giru6 Ciru4          { 1 }  (A47-4) [763B] - K - 524 12 Kk   M3 V M9 V M3 V M3 V  
 0636 Agoki Ghuuto         C8975QK-B Ni Ag                   { 1 }  (743+4) [562F] - - - 312 9  Kk   A8 V K4 V            
-0638 Kungkran'r           C5456RK-D Ni Ag                   { 1 }  (854+2) [471D] - K - 112 16 Kk   G3 V M3 V G2 V K1 V  
+0638 Kungkran'r           C5456RK-D Ni Ag                   { 1 }  (854+2) [471D] - K - 112 16 Kk   G2 V G3 V M3 V K1 V  
 0731 Ubk'krru             B7736RK-F Ni                      { 1 }  (A55+2) [776E] - K - 120 10 Kk   K3 IV M6 V           
-0732 Raookke              C5454QK-B Ni Pa                   { 0 }  (935+1) [649F] - - - 803 13 Kk   M6 V M1 V            
+0732 Raookke              C5454QK-B Ni Pa                   { 0 }  (935+1) [649F] - - - 803 13 Kk   M1 V M6 V            
 0733 Aatkoograng          E100000-0 Va Ba                   { -3 } (900-5) [0000] - K - 004 9  Kk   K3 V                 
 0735 Agi Nagnou           A7976RK-E Ni Ag                   { 2 }  (B53-1) [889G] - K - 422 13 Kk   A5 V K3 V            
 0737 Anlukakr             B5795QK-D Ni                      { 1 }  (B47-1) [769B] - - - 704 11 Kk   G4 V                 
@@ -241,7 +241,7 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 1839 Lakruumtu            D3455QK-C Ni Ag                   { 0 }  (944-5) [854B] - - - 102 9  Kk   F3 V                 
 1840 Maggh'a              B9957RK-F Ag Pi                   { 3 }  (A6D-2) [AA8K] - K - 500 6  Kk   K9 V M4 V            
 2038 Kua Ghar             B5324QK-C Ni Po                   { 1 }  (637+5) [552B] - K - 111 9  Kk   M7 V BD              
-2131 Gnaadmi              C6456RK-D Ni Ag                   { 1 }  (953-4) [672A] - - - 214 14 Kk   M9 V M8 V M5 V       
+2131 Gnaadmi              C6456RK-D Ni Ag                   { 1 }  (953-4) [672A] - - - 214 14 Kk   M5 V M9 V M8 V       
 2136 R'anaar              B8A74QK-C Fl Ni                   { 1 }  (B33+5) [157C] - - - 122 11 Kk   G7 V K9 V            
 2137 Amkoox Gurma         B4233QK-E Lo Po                   { 1 }  (B21-1) [244F] - K - 103 13 Kk   M3 V                 
 2138 Rakikang             D210000-0 Ba                      { -3 } (400-5) [0000] - K - 024 9  Kk   M1 V M3 V            
@@ -250,14 +250,14 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 2238 Ghakrgha             E200000-0 Va Ba                   { -3 } (600-5) [0000] - - - 013 7  Kk   G8 V                 
 2239 Arreerkrid           C6244QK-C Ni                      { 0 }  (935+2) [245B] - K - 210 7  Kk   K4 V M6 V            
 2333 Arkara               A7879RK-E Ga Hi Pr                { 3 }  (C8F-2) [CC5K] - - - 213 11 Kk   G1 V K7 V K6 V       
-2338 Riaaama              E5424QK-A He Ni Po                { -1 } (A30-3) [635A] - K - 112 14 Kk   M5 V M0 V            
+2338 Riaaama              E5424QK-A He Ni Po                { -1 } (A30-3) [635A] - K - 112 14 Kk   M0 V M5 V            
 2339 Ettrakring           B0002PK-C As Va Lo                { 1 }  (911+1) [335E] - K - 303 15 Kk   G0 V                 
 2434 Nixrak!              A354ARK-F Hi                      { 3 }  (99A+2) [9D8D] - - - 724 19 Kk   M4 V                 
 2437 Tur'tgha             D5746RK-B Ni Ag                   { 0 }  (B53+1) [365A] - - - 614 16 Kk   F2 V                 
 2438 Eemekkeegh           C5558RK-E Ph Pa                   { 1 }  (978-3) [A97H] - K - 125 19 Kk   K1 V M3 V M3 V       
 2439 K'nloom              B89A4QK-D Wa Ni                   { 1 }  (B35+4) [254H] - - - 103 7  Kk   A5 V D               
 2532 Rakrignioong         B0004QK-E As Va Ni                { 1 }  (B32+3) [656F] - K - 910 6  Kk   F9 V G6 V            
-2533 Bahk'kka             B6394QK-C Ni                      { 1 }  (A37+3) [558A] - K - 203 11 Kk   K6 V M7 V K9 V K2 V  
+2533 Bahk'kka             B6394QK-C Ni                      { 1 }  (A37+3) [558A] - K - 203 11 Kk   K2 V K6 V M7 V K9 V  
 2534 Exta!                D100000-0 Va Ba                   { -3 } (400-5) [0000] - K - 013 10 Kk   G6 V K4 V            
 2538 Keerrgheeta          A5275QK-E Ni                      { 1 }  (D42+1) [662B] - - - 224 14 Kk   M9 V                 
 2539 Ka!ar                A000656-D As Va Ni Na Giru4 Ciru6 { 1 }  (G52+5) [672H] - - - 524 14 KC   M1 III               
@@ -274,23 +274,23 @@ Hex  Name                 UWP       Remarks                 {Ix}   (Ex)    [Cx] 
 2833 Ghangagnar           E000000-0 As Va Ba                { -3 } (B00-5) [0000] - - - 024 14 Kk   M9 V                 
 2834 Tokook'k             A5357RK-F                         { 2 }  (B6A+1) [996F] - K - 614 9  Kk   K1 V                 
 2837 Ingkakaarnerr        A5364QK-C Ni                      { 1 }  (E32+2) [3559] - K - 222 12 Kk   K1 IV K0 V M0 V      
-2838 Abmaarrhku           E9876RK-9 Ni Ag Ri                { 0 }  (G53+2) [661A] - - - 324 10 Kk   M4 V M3 V            
+2838 Abmaarrhku           E9876RK-9 Ni Ag Ri                { 0 }  (G53+2) [661A] - - - 324 10 Kk   M3 V M4 V            
 2840 Kedr'                D575774-4 Ag Pi (Kedrokiv)        { -1 } (769+2) [7685] - - A 134 13 KC   G1 V                 
-2934 Netmbang             C8567RK-C Ga Ag                   { 2 }  (E65-3) [A91E] - K - 203 14 Kk   K5 V K4 V            
+2934 Netmbang             C8567RK-C Ga Ag                   { 2 }  (E65-3) [A91E] - K - 203 14 Kk   K4 V K5 V            
 2936 Arignahkeer          B6648RK-E Ph Pa Ri                { 3 }  (97B+2) [8B8B] - K - 100 9  Kk   G4 V                 
 2939 Ghu'krga             B884ARK-F Hi                      { 3 }  (E99-1) [ED7E] - - - 723 13 Kk   M4 V                 
 2940 Arr Geekil           C5527RK-C Po                      { 1 }  (966-1) [483D] - - - 123 16 Kk   K2 V                 
 3031 Ghekrkoongxa         C5586RK-D Ni Ag                   { 1 }  (852+1) [671A] - K - 520 7  Kk   M4 V                 
 3033 Kiiaankem            B5639RK-F Hi Pr                   { 3 }  (685+3) [8C7H] - K - 100 9  Kk   K1 V                 
 3034 T'rkarrgh'           C8967RK-A Ag Pi                   { 2 }  (46C-2) [7976] - - - 110 8  Kk   K1 V M6 V            
-3035 Kruugh'kroogat       E8B53QK-A Fl Lo                   { -1 } (920+4) [7235] - - - 214 11 Kk   M7 V M1 V            
+3035 Kruugh'kroogat       E8B53QK-A Fl Lo                   { -1 } (920+4) [7235] - - - 214 11 Kk   M1 V M7 V            
 3040 Orrtur!              E628000-0 Ba                      { -3 } (300-5) [0000] - K - 024 13 Kk   G8 V M6 V            
 3131 R'pxurrren           D75A4QK-C Wa Ni                   { -1 } (D30-2) [236E] - - - 314 14 Kk   M2 V                 
 3133 Kali Atii            A5416RK-F He Ni Po                { 1 }  (A53+1) [678K] - K - 101 9  Kk   G5 V                 
 3134 Gnarrirmuuer         B86A5QK-D Wa Ni Pr                { 1 }  (A44-4) [465D] - K - 222 10 Kk   M7 V BD              
 3136 Reekrooakoog         C5456RK-D Ni Ag                   { 1 }  (B53-2) [776C] - - - 502 12 Kk   M5 V                 
 3137 Ka Gneeke            D7365QK-B Ni                      { -1 } (F40+1) [847F] - K - 303 12 Kk   G8 V M1 V            
-3138 Tarratgha            A5986RK-E Ni Ag                   { 2 }  (954-1) [385F] - K - 324 12 Kk   M9 V M5 V            
+3138 Tarratgha            A5986RK-E Ni Ag                   { 2 }  (954-1) [385F] - K - 324 12 Kk   M5 V M9 V            
 3140 K'ghkiirrrar         C7859RK-D Ga Hi Pr                { 2 }  (D8B-4) [4B7E] - - - 102 10 Kk   K1 V K5 V            
 3231 An'kki               D5365QK-A Ni                      { -1 } (745-5) [247C] - K - 302 15 Kk   K3 V                 
 3235 Krambura             C8B24QK-B Fl He Ni                { 0 }  (831-5) [646A] - K - 100 10 Kk   M5 V                 

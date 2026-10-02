@@ -39,14 +39,14 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 1103 ?                    ???????-?                                           - - - 001   --          
 1104 ?                    ???????-?                                           - - - 001   --         
 1107 Gaargi Kii           E511000-0 Ba Ic                                           004   Va  K0 III D     
-1109 Shushaka             A772699-B Ni He                                           815   EF  M0 V K2 V     
+1109 Shushaka             A772699-B Ni He                                           815   EF  K2 V M0 V     
 1201 ?                    ???????-?                                           - - - 001   --        
 1203 ?                    ???????-?                                           - - - 001   --      
 1204 ?                    ???????-?                                           - - - 001   --          
 1205 ?                    ???????-?                                           - - - 001   --           
 1207 ?                    E400000-0 Ba Va                                           001   __  M0 V          
 1209 Kaasu                AA7A854-9 Oc Ph Pi                                        922   EF  A6 V       
-1210 Ker                  B87A100-A Lo Wa                                           402   EF  M2 V K4 V    
+1210 Ker                  B87A100-A Lo Wa                                           402   EF  K4 V M2 V     
 1301 ?                    ???????-?                                           - - - 001   --         
 1304 ?                    ???????-?                                           - - - 001   --          
 1307 Meku                 C568344-4 Lo                                              803   Va  K1 V          
@@ -148,7 +148,7 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 0611 ?                    ???????-?                                           - - - 001   --            
 0614 ?                    ???????-?                                           - - - 001   --     
 0617 ?                    ???????-?                                           - - - 001   --           
-0714 Khiishin             C438333-8 Lo                                              910   Na  M3 V M0 V   
+0714 Khiishin             C438333-8 Lo                                              910   Na  M0 V M3 V     
 0815 Sumi Araark          C494100-8 Lo                                              901   Vs  M0 V          
 0816 Azkizan              C223333-B Po Lo                                           214   Vs  F6 V         
 0912 Tekkfakkh            A366777-C Ag Ri Cp                                    V   901   EF  M2 V M7 V      
@@ -159,7 +159,7 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 1013 Apki Asa             A532555-B Ni Po                                           702   EF  K6 V          
 1111 Mariir               D849000-0 Ba                                              022   EF  A6 V          
 1112 Khark                B326413-9 Ni                                              923   EF  M1 V        
-1213 Shiipan              C200433-8 Ni Va                                           302   Na  M3 V G5 V      
+1213 Shiipan              C200433-8 Ni Va                                           302   Na  G5 V M3 V      
 1216 ?                    E577000-0 Ba                                              001   __  M8 V          
 1218 ?                    ???????-?                                           - - - 000   --    
 1413 Gamin                D442610-7 He Ni Po                                        902   Cs  F7 V        

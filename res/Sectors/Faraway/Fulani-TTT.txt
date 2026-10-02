@@ -72,7 +72,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2202 Aluw                 B676630-7 Ag Ni                                      314   AQ   K2 VI DM
 2203 Nuh                  E671630-2 Ni He                                      921   AQ   F0 III
 2205 Yatat                C796477-4 Ni Pa                                      900   AQ   G7 V
-2207 Levewa               B8B6157-A Lo Fl                                      210   AQ   M4 V K6 V
+2207 Levewa               B8B6157-A Lo Fl                                      210   AQ   K6 V M4 V   
 2304 Womotym              C311214-7 Lo Ic                                 V    902   AQ   K1 VI
 2307 Henup                E200885-7 Na Va Ph Pi                                703   AQ	  G2 V
 2309 Insofe               C79A586-9 Ni Wa                                 V    403   AQ   K4 V DM
