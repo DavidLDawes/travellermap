@@ -17,7 +17,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 1431 Juggin               C857445-6 Ga Ni Pa                                   100   Na
 1435 Es-3                 X8A9000-0 Ba Fl                                    R 000   Na
 1437 Qlenazh              CA89510-9 Ni Pr                                      100   ZC
-1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              Z    101   ZC
+1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              KM   101   ZC
 1531 Solano               C7A3656-8 Ni Fl                                      100   CZ
 1532 Auric                D310548-6 Ni                                         100   In
 1537 Pielshiketl          D364541-6 Ni Ag Pr                                   100   ZC

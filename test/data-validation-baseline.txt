@@ -3,19 +3,6 @@
 metadata-allegiance | Dhuerorrg (M1900) | Undefined allegiance code Tangle on Border
 metadata-allegiance | Dhuerorrg (M1900) | Undefined allegiance code Tangle on Border
 metadata-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Border
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Blue Recluse 1840
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Exquisite 0813
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Genesis Accomplish 0807
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Genesis Loyal 0707
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Genesis Spa 2221
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Genesis Wonder 0708
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Genesis Yes 0607
-world-allegiance | Banners (M1105) | Undefined allegiance code In on High Affinity 1105
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Pleasurefoam 1936
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Prime Solution 1213
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Service 0231
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Swift Current 2419
-world-allegiance | Banners (M1105) | Undefined allegiance code In on Thalkharl 1215
 world-allegiance | Constance (M1105) | Undefined allegiance code De on Barstock 2331
 world-allegiance | Constance (M1105) | Undefined allegiance code De on Gallalee 2232
 world-allegiance | Constance (M1105) | Undefined allegiance code De on Glisten 2234
@@ -105,9 +92,6 @@ world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0735
 world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0736
 world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0934
 world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0935
-world-allegiance | Hanstone (M1105) | Undefined allegiance code In on Affinity Forward 1815
-world-allegiance | Hanstone (M1105) | Undefined allegiance code In on Bracing 1130
-world-allegiance | Hanstone (M1105) | Undefined allegiance code In on Coral 1618
 world-allegiance | Lishun (M1120) | Undefined allegiance code Cv on Gishinridu 0513
 world-allegiance | Lishun (M1120) | Undefined allegiance code Cv on Shela 0321
 world-allegiance | Lishun (M1120) | Undefined allegiance code Cv on Shuka 0205
@@ -202,5 +186,3 @@ world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Lie Zed
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Midway 1621
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Pliqel 1419
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Zhdokr Bsiej 1522
-world-parse | Ruupiin (M1105) | Parse Error: Invalid eHex digit: '?', 1420 Agneex          A5327RK-F Na Po                                   - K - ?34   Kk M7 III
-world-parse | Yiklerdanzh (Meshan Saga) (M1105) | Unexpected value for B: 'Z', 1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              Z    101   ZC

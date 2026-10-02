@@ -591,11 +591,14 @@ namespace Maps
                 HasCode("Re") || HasCode("Px") || HasCode("Pe") || HasCode("Cy"),
                 "Gov 6 (captive/colony) missing one of: O:/Mr/Re/Px");
 
-            // PBG
-            ErrorIf(SecondSurvey.FromHex(PBG[PBG_P]) == 0 && PopulationExponent > 0,
-                $"PBG: Pop Multiplier = 0 but Population Exponent (={PopulationExponent}) > 0");
-            ErrorIf(SecondSurvey.FromHex(PBG[PBG_P]) > 0 && PopulationExponent == 0,
-                $"PBG: Pop Exponent = 0 but Population Multiplier (={PBG[PBG_P]}) > 0");
+            // PBG. An unknown multiplier (X or ?) can't be checked.
+            if (SecondSurvey.FromHex(PBG[PBG_P], valueIfUnknown: -1) is int multiplier && multiplier >= 0)
+            {
+                ErrorIf(multiplier == 0 && PopulationExponent > 0,
+                    $"PBG: Pop Multiplier = 0 but Population Exponent (={PopulationExponent}) > 0");
+                ErrorIf(multiplier > 0 && PopulationExponent == 0,
+                    $"PBG: Pop Exponent = 0 but Population Multiplier (={PBG[PBG_P]}) > 0");
+            }
 
             // Worlds
             int min_worlds = 1 + GasGiants + Belts;

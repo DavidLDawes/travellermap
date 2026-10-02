@@ -2865,6 +2865,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
       <Allegiance Code="Ar">Aoiftu Roakh</Allegiance>
       <Allegiance Code="Dc">Delsun Comagistrant</Allegiance>
       <Allegiance Code="Ww">Woal Warliylr</Allegiance>
+      <Allegiance Code="In">Inyx Economic Sphere</Allegiance>
     </Allegiances>
   </Sector>
   <Sector>
@@ -2906,6 +2907,7 @@ Left:   0041 0040 0039 0038 0037 0036 0035 0034 0033 0032 0031 0030 0029 0028 00
       <Allegiance Code="Hc">Council of Heads</Allegiance>
       <Allegiance Code="Jn">Jurisdiction of Nadon</Allegiance>
       <Allegiance Code="Mu">Malorn Union</Allegiance>
+      <Allegiance Code="In">Inyx Economic Sphere</Allegiance>
     </Allegiances>
   </Sector>
   <Sector>
