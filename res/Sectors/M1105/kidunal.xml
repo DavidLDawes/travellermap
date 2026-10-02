@@ -41,11 +41,11 @@
       0014 0013 0012 0011 0010 0009 0008 0007 0006 0005 0004 0003 0002 0001
     </Border>
 
-    <Border Wraplabel="true" Color="Blue" Allegiance="Hg">
+    <Border WrapLabel="true" Color="Blue" Allegiance="Hg">
       0223 0323 0423 0523 0524 0624 0625 0525 0424 0325 0225 0224 0223
     </Border>
 
-    <Border Wraplabel="true" Color="Green" Allegiance="Sp" LabelPosition="1937">
+    <Border WrapLabel="true" Color="Green" Allegiance="Sp" LabelPosition="1937">
       1538 1637 1636 1635 1735 1835 1936 1836 1837 1838 1837 1737 1637 1538
     </Border>
 

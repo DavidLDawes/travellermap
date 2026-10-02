@@ -39,9 +39,9 @@
   </Allegiances>
   <Labels>
     <!-- Rift Names -->
-    <Label Hex="0919" Color="darkred" WrapLabel="false">Longer Void</Label>
-    <Label Hex="2208" Color="darkred" WrapLabel="false">Hudson Expanse</Label>
-    <Label Hex="2729" Color="darkred" WrapLabel="false">Astron Voids</Label>
+    <Label Hex="0919" Color="darkred" Wrap="false">Longer Void</Label>
+    <Label Hex="2208" Color="darkred" Wrap="false">Hudson Expanse</Label>
+    <Label Hex="2729" Color="darkred" Wrap="false">Astron Voids</Label>
     <!-- Cluster Names -->
     <Label Hex="0637" Color="gold">Armory&#x0a;Cluster</Label>
     <Label Hex="1436" Color="gold">Vilian&#x0a;Cluster</Label>

@@ -30,7 +30,7 @@
   </Regions>
   <Labels>
     <!-- Rift Names -->
-    <Label Hex="1916" Color="darkred" WrapLabel="false">Serpent Rift</Label>
-    <Label Hex="1234" Color="darkred" WrapLabel="false">Marapagas Void</Label>
+    <Label Hex="1916" Color="darkred" Wrap="false">Serpent Rift</Label>
+    <Label Hex="1234" Color="darkred" Wrap="false">Marapagas Void</Label>
   </Labels>
 </Sector>

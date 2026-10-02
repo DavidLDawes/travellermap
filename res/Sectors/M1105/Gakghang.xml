@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Sector>
   <Name Lang="va">Gakghang</Name>
-  <Name Lang="zh">Ianshaplzdier</Name>
+  <Name Lang="zh">Ianshaplzdier</Name>
   <Credits>
-    <![CDATA[
-      <b>Gakghang</b> sector was designed by John G. Wood, with additional data from Adrian Tymes.
-    ]]>
-  </Credits>
+    <![CDATA[
+      <b>Gakghang</b> sector was designed by John G. Wood, with additional data from Adrian Tymes.
+    ]]>
+  </Credits>
   <Subsectors>
     <Subsector Index="A">Spike</Subsector>
     <Subsector Index="B">Corain</Subsector>

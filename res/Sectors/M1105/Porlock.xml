@@ -34,6 +34,8 @@
     <Allegiance Code="Hq">Queendom Remnants</Allegiance>
     <Allegiance Code="Ar">Anpaan Republic</Allegiance>
     <Allegiance Code="Hd">Daaldoft Triumphate</Allegiance>
+    <Allegiance Code="Hf">Hive FDA Uplift/Observation Site</Allegiance><!-- As in neighboring sectors (Centrax, Wrenton, Folgore). -->
+    <Allegiance Code="Xh">Hive FDA extra-Federation operation</Allegiance><!-- As in neighboring Blaskon and K'trekreer. -->
   </Allegiances>
 
   <Regions>

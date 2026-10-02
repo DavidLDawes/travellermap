@@ -1,25 +1,8 @@
 # Known data validation errors; see server/admin/DataValidator.cs.
 # Format: category | sector (milieu) or file | message. Regenerate with TM_UPDATE_BASELINE=1.
-metadata-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Border
-metadata-allegiance | Alte Grenzen (M1105) | Undefined allegiance code OC on Border
 metadata-allegiance | Dhuerorrg (M1900) | Undefined allegiance code Tangle on Border
 metadata-allegiance | Dhuerorrg (M1900) | Undefined allegiance code Tangle on Border
-metadata-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Border
-metadata-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Border
-metadata-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Border
 metadata-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Border
-route-length | Vanguard Reaches (M1105) | Zero-length route: 2340 2340
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Abellio 2833
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Daikokuten 2832
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Ivasu 2935
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Mirami 2735
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Teji 2733
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code Au on Ḫapantali 2736
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code OC on Geiti 1840
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code OC on Korrolf 1740
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code OC on Kumisal 2240
-world-allegiance | Alte Grenzen (M1105) | Undefined allegiance code OC on Watatsumi 1739
-world-allegiance | Avereguar (M1105) | Undefined allegiance code Xh on Durian 1531
 world-allegiance | Banners (M1105) | Undefined allegiance code In on Blue Recluse 1840
 world-allegiance | Banners (M1105) | Undefined allegiance code In on Exquisite 0813
 world-allegiance | Banners (M1105) | Undefined allegiance code In on Genesis Accomplish 0807
@@ -74,24 +57,6 @@ world-allegiance | Constance (M1105) | Undefined allegiance code Nt on McVicar 1
 world-allegiance | Constance (M1105) | Undefined allegiance code Nt on Oustyn 1232
 world-allegiance | Constance (M1105) | Undefined allegiance code Nt on Terehan 1231
 world-allegiance | Dashis (M1900) | Undefined allegiance code Hg on Khurisi 1024
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Aqkuno 1312
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Atoka 2001
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Dacuoc 0713
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Geernu 0234
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Gelanan 1402
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Icaan 2027
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Idoda 2029
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Ilwrin 2030
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Kisiro 2814
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Nebie 2432
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Noqarar 1517
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Oxnarnat 1104
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Sickata 3017
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Taixat 0809
-world-allegiance | Drakken (M1105) | Undefined allegiance code Hf on Thovala 0304
-world-allegiance | Gur (M1105) | Undefined allegiance code Kc on Egrux 0621
-world-allegiance | Gur (M1105) | Undefined allegiance code Kc on Ghixanar 2424
-world-allegiance | Gur (M1105) | Undefined allegiance code Kc on Iraaarlu 1129
 world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0130
 world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0131
 world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0137
@@ -143,26 +108,9 @@ world-allegiance | Gvurrdon (M1248) | Undefined allegiance code Cc on  0935
 world-allegiance | Hanstone (M1105) | Undefined allegiance code In on Affinity Forward 1815
 world-allegiance | Hanstone (M1105) | Undefined allegiance code In on Bracing 1130
 world-allegiance | Hanstone (M1105) | Undefined allegiance code In on Coral 1618
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Bedazzled 0516
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Bewitched 0618
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Eberhardt Prime 0517
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Enchanted 0417
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Enthralled 0617
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Entranced 0817
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Mesmerised 0717
-world-allegiance | Kruse (M1105) | Undefined allegiance code Ec on Spellbound 0615
 world-allegiance | Lishun (M1120) | Undefined allegiance code Cv on Gishinridu 0513
 world-allegiance | Lishun (M1120) | Undefined allegiance code Cv on Shela 0321
 world-allegiance | Lishun (M1120) | Undefined allegiance code Cv on Shuka 0205
-world-allegiance | Lorspane (M1105) | Undefined allegiance code Hf on Aoo 2001
-world-allegiance | Lorspane (M1105) | Undefined allegiance code Hf on Kaooa 1008
-world-allegiance | Lorspane (M1105) | Undefined allegiance code Hf on Muadem 1513
-world-allegiance | Lorspane (M1105) | Undefined allegiance code Hf on Owruaf 1202
-world-allegiance | Lorspane (M1105) | Undefined allegiance code Hf on Saxai 1801
-world-allegiance | Luretiir!girr (M1105) | Undefined allegiance code Kc on Atagrroo 0605
-world-allegiance | Massilia (M1248) | Undefined allegiance code Gc on  0134
-world-allegiance | Massilia (M1248) | Undefined allegiance code Gc on  0234
-world-allegiance | Massilia (M1248) | Undefined allegiance code Gc on  0235
 world-allegiance | Muarne (M1105) | Undefined allegiance code Ka on  2506
 world-allegiance | Muarne (M1105) | Undefined allegiance code Ka on  2507
 world-allegiance | Muarne (M1105) | Undefined allegiance code Ka on  2508
@@ -176,21 +124,8 @@ world-allegiance | Mugheen't (M1105) | Undefined allegiance code KO on !'purrla 
 world-allegiance | Mugheen't (M1105) | Undefined allegiance code KO on Kangnu 3038
 world-allegiance | Mugheen't (M1105) | Undefined allegiance code KO on R'gnara 2839
 world-allegiance | Mugheen't (M1105) | Undefined allegiance code KO on Rurrna Roo 2740
-world-allegiance | Nooq (M1105) | Undefined allegiance code Xh on Glawrextoo 1132
-world-allegiance | Nooq (M1105) | Undefined allegiance code Xh on Nentglek Thu 1330
 world-allegiance | Numbis (M1105) | Undefined allegiance code J1 on Otou 0240
 world-allegiance | Phlange (M1105) | Undefined allegiance code NA on Vuthillia 2526
-world-allegiance | Phlange (M1105) | Undefined allegiance code Sa on Biplesia 2718
-world-allegiance | Phlange (M1105) | Undefined allegiance code Sa on Icci 2615
-world-allegiance | Phlange (M1105) | Undefined allegiance code Sa on Kymosia 2817
-world-allegiance | Phlange (M1105) | Undefined allegiance code Sa on Triccilona 2818
-world-allegiance | Porlock (M1105) | Undefined allegiance code Hf on Etgaglyut 0215
-world-allegiance | Porlock (M1105) | Undefined allegiance code Hf on Huucot 0604
-world-allegiance | Porlock (M1105) | Undefined allegiance code Hf on Raasko 2703
-world-allegiance | Porlock (M1105) | Undefined allegiance code Xh on  1034
-world-allegiance | Porlock (M1105) | Undefined allegiance code Xh on  1332
-world-allegiance | Porlock (M1105) | Undefined allegiance code Xh on  1433
-world-allegiance | Porlock (M1105) | Undefined allegiance code Xh on Kzuujjo 1620
 world-allegiance | Reft (M1201) | Undefined allegiance code TB on Bridge Base 07 0337
 world-allegiance | Reft (M1201) | Undefined allegiance code TB on Bridge Base 08 0333
 world-allegiance | Reft (M1201) | Undefined allegiance code TB on Bridge Base 09 0329
@@ -525,66 +460,6 @@ world-allegiance | Rim Worlds (M1105) | Undefined allegiance code na on Zan 0415
 world-allegiance | Rim Worlds (M1105) | Undefined allegiance code na on Zhao-Ping 2218
 world-allegiance | Spica (M1201) | Undefined allegiance code H1 on Import Yards 3040
 world-allegiance | Spica (M1201) | Undefined allegiance code H1 on Shipsboat 2532
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Abeitlung Drei 1402
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Abwehr 1709
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Baden em Zee 1609
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Beinbruch 1802
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Bierstube 1808
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Bundestag 1806
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Drachenfels 1302
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Drei Farben 1505
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Ewig Weibliche 2001
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Feldherrnhalle 1707
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Gasthof 1903
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Ilse 1905
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Liebeskinder 1705
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Liebeslied 2006
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Mansagt 1904
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Nervenheilanstalt 1507
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Nietszche 1909
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Oberprasidenten 1908
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Platz 1501
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Quatsch 1708
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Reckinghausen 1504
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Schloss Adler 1502
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Staatsbibliothek 1508
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Vierjahreszeiten 2003
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Wurger 2226
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Dw on Zeben 2101
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Den 3207
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Gnar El 3002
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Gnar-Krusk 2809
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Gnar-Tranx 2807
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Kask 2608
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Krusk 3004
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Phlo 2710
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Phon 3009
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Phulk 3007
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Quun 3209
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Thys 3012
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Tlal 3107
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Tlan 2912
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Tranx 2609
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'Zlim 2712
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'drur 2707
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code MF on Mal'jlan 2512
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Castillo la Nueva 2905
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Castillo la Vieja 2810
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Corps-a-corps 3109
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Dernier Cri 2410
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Dias 18 2708
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on El Maghred al Aqsa 3103
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Hel 2310
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Hradec Kralove 2610
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Llandrindod 2903
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Nine Hells 2908
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Quintet 3105
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Refnar's Monument 3208
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Shangri-La 2311
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Shequonur 2409
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Tindal's Shade 2531
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Zhuvastou 3106
-world-allegiance | The Beyond (Don McKinney 2015) (M1105) | Undefined allegiance code Ms on Zotral 2509
 world-allegiance | Windhorn (M1201) | Undefined allegiance code Ts on Aengkhekkuerr 2822
 world-allegiance | Windhorn (M1201) | Undefined allegiance code Ts on Khokorrghoer 2919
 world-allegiance | Windhorn (M1201) | Undefined allegiance code Ts on Thanaezfus 3120
@@ -601,66 +476,3 @@ world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Pliqel 
 world-allegiance | Ziafrplians (M1900) | Undefined allegiance code Ds on Zhdokr Bsiej 1522
 world-parse | Ruupiin (M1105) | Parse Error: Invalid eHex digit: '?', 1420 Agneex          A5327RK-F                                     - K - ?34   Kk M7 III
 world-parse | Yiklerdanzh (Meshan Saga) (M1105) | Unexpected value for B: 'Z', 1438 Mia'Brinrnz          C4128CF-8 Ic Ni Na                              Z    101   ZC
-xml-schema | ~/res/Sectors/Faraway/Alte Grenzen.xml | The element 'Sector' has invalid child element 'Allegiance'. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/Faraway/Constance.xml | The 'Tags' attribute is invalid - The value '' is invalid according to its datatype 'http://www.w3.org/2001/XMLSchema:NMTOKENS' - The attribute value cannot be empty.
-xml-schema | ~/res/Sectors/Faraway/Foreven-ImperiumStaple.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/Faraway/Fulani-TTT.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/Faraway/Rim Worlds.xml | The 'Tags' attribute is invalid - The value '' is invalid according to its datatype 'http://www.w3.org/2001/XMLSchema:NMTOKENS' - The attribute value cannot be empty.
-xml-schema | ~/res/Sectors/M1105/Astron.xml | The 'WrapLabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Astron.xml | The 'WrapLabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Astron.xml | The 'WrapLabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Chiep Zhez.xml | The 'WrapLabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Chiep Zhez.xml | The 'WrapLabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Gakghang.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/M1105/M1105.xml | The 'Source-Milieu' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/M1105.xml | The 'Source-Milieu' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Numbis.xml | The 'Era' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/Rzakki.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M1105/kidunal.xml | The 'Wraplabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1105/kidunal.xml | The 'Wraplabel' attribute is not declared.
-xml-schema | ~/res/Sectors/M1201/Antares.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M1201/Spinward Marches.xml | The 'label' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Dashis.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Dhuerorrg.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Fa Dzaets.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Kaas.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Kloo.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Knoellighz.xml | The element 'Sector' cannot contain text. List of possible elements expected: 'X, Y, Name, Product, Credits, DataFile, MetadataFile, Subsectors, Stylesheet, Labels, Routes, Borders, Regions, Allegiances'.
-xml-schema | ~/res/Sectors/M1900/Loow.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Pars.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Rish.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Snen.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Tash.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M1900/Uthm.xml | The 'Tabs' attribute is not declared.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M990/Daibei.xml | The element 'Routes' cannot contain text. List of possible elements expected: 'Route'.
-xml-schema | ~/res/Sectors/M990/Diaspora.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.
-xml-schema | ~/res/Sectors/M990/Diaspora.xml | The element 'Borders' cannot contain text. List of possible elements expected: 'Border'.

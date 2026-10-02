@@ -88,7 +88,6 @@ This updated version appears in <cite>The Spinward Extents</cite>
 
   <Routes>
 
-    <Route Start="2340" End="2340" Allegiance="AsXX"/>
 
     <Route Start="3112" End="3310" Allegiance="CoLg"/>
     <Route Start="3213" End="3514" Allegiance="CoLg"/>
