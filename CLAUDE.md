@@ -69,13 +69,20 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
   Searches return 503 until it exists. `SqliteNative` loads the native SQLite library itself
   (SQLitePCLRaw's loader fails under IIS shadow copying). `SearchEngine.cs` is the SQL Server
   index, used on IIS only with the setting `SearchBackend=sqlserver`.
-- Caches are **thread-affine**: one copy per worker thread, so they need no locking. Don't
-  convert them to plain statics without adding locking. Anything loaded from a data file
-  (`SectorMap`, `ResourceManager`, the T5SS allegiance/sophont tables, the default sector
-  stylesheet) uses `ThreadLocalCache<T>` (`server/utilities/ThreadLocalCache.cs`), so
-  `/admin/flush` → `CacheGeneration.InvalidateAll()` reloads it on every thread. Use it for
-  any new file-backed cache; plain `ThreadLocal<T>` is fine for constant tables.
-  `SectorMap.Flush()` resets only the current thread (admin reports use it to release memory).
+- **Caches are shared by all threads**, so cached objects must be safe for concurrent use.
+  Anything loaded from a data file (`SectorMap`, `ResourceManager`, the T5SS allegiance and
+  sophont tables, the default sector stylesheet, the Candy images) uses `SharedCache<T>`
+  (`server/utilities/SharedCache.cs`). It builds once, and `/admin/flush` →
+  `CacheGeneration.InvalidateAll()` rebuilds it. Use it for any new file-backed cache.
+  - Lazily filled state on shared objects must be thread-safe:
+    - `ConcurrentDictionary` for maps that grow at request time (`MilieuMap` adds Dotmap
+      sectors; `SectorStylesheet` memoizes);
+    - a lock around `ResourceManager`'s LRU;
+    - reference or `int` fields for idempotent caches (e.g. `Sector.worlds`,
+      `World.CalculatedImportance`, the border/clip path arrays).
+  - `SectorMap.Flush()` resets the shared map; admin reports use it to reload edited files.
+  - Until 2026-10 these were per-thread copies. Parsed worlds accumulated in each thread's map,
+    costing ~4× the memory under load.
 
 **Client — plain ES modules, no build step.**
 - `index.html` + `index.js` — main page UI (search, routes, world/sector info cards, settings).

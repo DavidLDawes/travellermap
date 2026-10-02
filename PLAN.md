@@ -80,7 +80,18 @@ Checked under IIS Express with 64 concurrent clients after editing a sector's me
 old code, 1 of 300 requests saw the edit after a flush; on the new code, 300 of 300. The
 allegiance table edit reached 300 of 300 after a flush. `/admin/errors` and `/admin/codes`
 still work. Unit tests: `CacheTest.cs` (4 tests).
-O1 (one shared map instead of one per thread) is still deferred, per below.
+**O1 DONE** (branch `shared-sectormap`, after Phase 7):
+- `ThreadLocalCache` → `SharedCache`: one copy of the sector map, resource cache, code tables,
+  stylesheet, and decoded images for all threads, instead of one per worker thread.
+- The per-thread copies cost ~30 MB each up front, plus every parsed sector's worlds, which are
+  cached on `Sector` objects for the life of the map.
+- Made safe for concurrent use: `MilieuMap` (lookups can add Dotmap sectors) and the
+  `SectorStylesheet` memo are concurrent; `ResourceManager`'s LRU is locked;
+  `World.CalculatedImportance` is an atomic `int`.
+- Measured on the .NET 10 host, 5,640 mixed requests from 16 concurrent clients:
+  **1,193 MB and still climbing → 273 MB, flat** (−77%), and slightly faster (55 s → 51 s).
+- Rendering is unchanged (all 45 ImageTest references byte-identical); browser suites pass on
+  both hosts.
 
 Original scope:
 - B2: a generation counter makes `/admin/flush` reach every thread's `SectorMap` and

@@ -1,6 +1,7 @@
 #nullable enable
 using Maps.Utilities;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -35,10 +36,11 @@ namespace Maps
     internal class SectorMap
     {
         /// <summary>
-        /// One instance per thread (lookups can add Dotmap sectors, so it isn't shared),
-        /// rebuilt after Flush() on this thread or CacheGeneration.InvalidateAll().
+        /// One instance shared by all threads, rebuilt after Flush() or
+        /// CacheGeneration.InvalidateAll(). Lookups can add Dotmap sectors (MilieuMap.TryAdd),
+        /// so the milieu maps are concurrent.
         /// </summary>
-        private static readonly ThreadLocalCache<SectorMap> s_instance = new ThreadLocalCache<SectorMap>(Load);
+        private static readonly SharedCache<SectorMap> s_instance = new SharedCache<SectorMap>(Load);
 
         /// <summary>
         /// Holds all known sectors across all milieux.
@@ -59,8 +61,12 @@ namespace Maps
             public MilieuMap(string name) { Name = name; }
             public string Name { get; }
 
-            private Dictionary<string, Sector> nameMap = new Dictionary<string, Sector>(StringComparer.InvariantCultureIgnoreCase);
-            private Dictionary<Point, Sector> locationMap = new Dictionary<Point, Sector>();
+            // Concurrent, since lookups (FromLocation with milieu fallbacks) can add Dotmap
+            // sectors while other threads read. Reads are lock-free; TryAdd takes a lock, as it
+            // updates several entries.
+            private readonly ConcurrentDictionary<string, Sector> nameMap = new ConcurrentDictionary<string, Sector>(StringComparer.InvariantCultureIgnoreCase);
+            private readonly ConcurrentDictionary<Point, Sector> locationMap = new ConcurrentDictionary<Point, Sector>();
+            private readonly object addLock = new object();
 
             public Sector? FromName(string name)
             {
@@ -75,6 +81,12 @@ namespace Maps
             }
 
             public void TryAdd(Sector sector)
+            {
+                lock (addLock)
+                    TryAddLocked(sector);
+            }
+
+            private void TryAddLocked(Sector sector)
             {
                 if (!locationMap.TryAdd(sector.Location, sector))
                     return;
