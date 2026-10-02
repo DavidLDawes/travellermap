@@ -201,6 +201,9 @@ with their authors. Regenerate the baseline after each step to lock in the gains
     warning (2,533): the owner can't be derived, and most canon data doesn't give one.
   - Star order: `tools/tradecodes` moves the largest star to the front as the primary (868
     worlds, including unexplored `???????-?` ones). 26 left use old notation (`M1 D`, `M7v`).
+- Sophont code `Vila` (Vilani) added to `res/t5ss/sophont_codes.tab`: warnings 3,435 → **2,901**. M1120
+  Vland and Corridor give Vilani population shares from MegaTraveller *Vilani & Vargr*. T5SS
+  counts Vilani as `Huma`; the entry is local, like Rammak and Murrissi.
 - The rest needs sector authors: **`DATA-ISSUES.md`** lists the 199 worlds with undefined codes
   (13 sectors), 3 border codes, and 2 unparseable lines, with what was checked.
 
