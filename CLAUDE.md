@@ -32,7 +32,8 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 **Two hosts run the same handlers:**
 - **IIS** — ASP.NET (System.Web), .NET Framework 4.8, C# 12 (pinned), Windows only (`Maps.csproj`,
   `Global.asax.cs`). Also has the GDI+ renderer and, optionally, the SQL Server search index.
-- **ASP.NET Core** — .NET 10, any OS (`host/`, see `host/README.md`). Static files, hidden paths,
+- **ASP.NET Core** — .NET 10, any OS (`host/`, see `host/README.md`; deploys with the root
+  `Dockerfile`). Static files, hidden paths,
   extensionless pages, CORS and the 404 page are configured in `host/Program.cs` to match
   `Web.config`; change both together.
 
@@ -150,8 +151,10 @@ binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
   config is in `eslint.config.js`. Type checking via `jsconfig.json` (`checkJs`) in editors that
   support it.
 
-**CI** (`.github/workflows/ci.yml`): lint and JS tests on Linux; MSBuild, C# unit tests, and
-data validation on Windows; browser tests too if the runner has IIS Express.
+**CI** (`.github/workflows/ci.yml`):
+- Linux: lint and JS tests; data validation on .NET 10.
+- Linux: browser suites, with search, against the .NET 10 host and against the Docker image.
+- Windows: MSBuild, C# unit tests, data validation; browser tests too if the runner has IIS Express.
 
 ## Conventions
 

@@ -73,6 +73,38 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
+  docker:
+    # Builds the deployable image (Dockerfile) and runs the browser suites against it.
+    name: Docker image, browser tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Build image
+        run: docker build -t travellermap .
+      - name: Browser tests
+        run: |
+          # Host networking, so the tests' requests are local (as for the admin pages).
+          docker run -d --name travellermap --network host -e ASPNETCORE_HTTP_PORTS=8080 travellermap
+          for i in $(seq 1 60); do
+            curl -sf -o /dev/null "http://localhost:8080/api/search?q=Regina" && break
+            sleep 2
+          done
+          node test/run-browser-tests.mjs --base http://localhost:8080 --save-images image-diffs
+      - name: Container log
+        if: always()
+        run: docker logs travellermap || true
+      - name: Upload differing images
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: image-diffs-docker
+          path: image-diffs/
+          if-no-files-found: ignore
+          retention-days: 14
+
   windows:
     name: Build, unit tests, data validation
     runs-on: windows-latest
