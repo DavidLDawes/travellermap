@@ -1,0 +1,14 @@
+# Build outputs, local state, and things the image doesn't need.
+.git
+.github
+.vs
+.vscode
+**/bin
+**/obj
+node_modules
+App_Data
+TestResults
+web.config
+Web.config
+*.user
+**/*.db

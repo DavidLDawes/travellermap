@@ -404,7 +404,23 @@ parity tests between the old and new hosts.
 - **Build workaround:** `Directory.Build.targets` drops a `win-arm` native file that
   SQLitePCLRaw 2.1.12's .NET Framework targets reference but the package lacks.
 
-### 7.5 Config, container, deployment
+### 7.5 Config, container, deployment — DONE (branch `phase7-deploy`)
+- **`Dockerfile`** (multi-stage):
+  - The build stage publishes the host for the target architecture (x64/arm64) and builds the
+    search index from the image's sector data (~5 s).
+  - The runtime stage is `aspnet:10.0-noble-chiseled`: no shell, non-root, port 8080, ~330 MB
+    (the Debian base was 523 MB).
+  - `.dockerignore` keeps local build outputs (over 1 GB) out of the build context.
+- **Settings:** `appsettings.json`/environment variables (from 7.3), plus Web.config's
+  production redirects as opt-in `RedirectToHttps`/`RemoveWww`.
+- **Reverse proxy:** `ASPNETCORE_FORWARDEDHEADERS_ENABLED`. Forwarded requests never count as
+  local, so a spoofed `X-Forwarded-For: 127.0.0.1` can't reach the admin pages without the key.
+  Checked: redirects, proxied HTTPS, and admin key/HTTPS rules (8 cases).
+- **CI:** a new job builds the image and runs the browser suites against the container.
+- **IIS host:** kept, since upstream deploys on IIS; both hosts run the same code and pass the
+  same suites.
+
+Originally planned:
 - `appsettings.json` + environment variables (admin key, paths). A Dockerfile (Linux, .NET 10
   runtime + fonts + data). CI builds the image and runs the browser suites against it.
 - Retire the IIS host once the new host passes everything (or keep both while upstream uses IIS).

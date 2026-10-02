@@ -14,6 +14,9 @@ using System.Text.RegularExpressions;
 //   AdminKey     key for /admin pages from other machines (over HTTPS)
 //   Renderer     "skia" (only option on this host)
 //   SearchIndex  the search index file (default ~/App_Data/search.db; built if missing)
+//   RedirectToHttps, RemoveWww   "true" for Web.config's production redirects (off by default)
+// Behind a reverse proxy, set ASPNETCORE_FORWARDEDHEADERS_ENABLED=true so the client's address
+// and scheme come from X-Forwarded-For/-Proto (see host/README.md).
 
 CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 // Legacy SEC output uses Windows-1252, which .NET (not .NET Framework) only has via this provider.
@@ -60,6 +63,26 @@ async Task SendNotFound(HttpContext context)
 }
 
 app.UseResponseCompression();
+
+// Production redirects (Web.config rewrite rules): strip "www." and/or require HTTPS (but not
+// for localhost). Opt-in, since they usually belong in the reverse proxy.
+bool removeWww = string.Equals(builder.Configuration["RemoveWww"], "true", StringComparison.OrdinalIgnoreCase);
+bool redirectToHttps = string.Equals(builder.Configuration["RedirectToHttps"], "true", StringComparison.OrdinalIgnoreCase);
+if (removeWww || redirectToHttps)
+{
+    app.Use((context, next) =>
+    {
+        string host = context.Request.Host.Host;
+        bool www = removeWww && host.StartsWith("www.", StringComparison.OrdinalIgnoreCase);
+        bool insecure = redirectToHttps && !context.Request.IsHttps && host != "localhost";
+        if (!www && !insecure)
+            return next(context);
+        string target = "https://" + (www ? host.Substring(4) : host) +
+            context.Request.PathBase + context.Request.Path + context.Request.QueryString;
+        context.Response.Redirect(target, permanent: true);
+        return Task.CompletedTask;
+    });
+}
 
 // CORS (as Web.config's customHeaders).
 app.Use((context, next) =>

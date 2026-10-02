@@ -88,11 +88,15 @@ namespace Maps.Host
         public override Uri Url => new Uri(context.Request.GetEncodedUrl());
         public override bool IsSecureConnection => context.Request.IsHttps;
 
-        // As System.Web: the request came from this machine.
+        // As System.Web: the request came from this machine. A request forwarded by a proxy
+        // (ASPNETCORE_FORWARDEDHEADERS_ENABLED; the middleware keeps the original address in
+        // X-Original-For) never counts, so a spoofed X-Forwarded-For can't pass as local.
         public override bool IsLocal
         {
             get
             {
+                if (context.Request.Headers.ContainsKey("X-Original-For"))
+                    return false;
                 var connection = context.Connection;
                 if (connection.RemoteIpAddress == null)
                     return true; // In-process (e.g. test server)
