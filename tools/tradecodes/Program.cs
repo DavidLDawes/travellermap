@@ -192,7 +192,7 @@ abstract class LineEditor
 
     public static LineEditor? For(List<string> lines)
     {
-        int tabHeader = lines.FindIndex(l => l.Split('\t') is var cells && cells.Contains("Hex") && cells.Contains("Remarks"));
+        int tabHeader = lines.FindIndex(l => l.Split('\t') is var cells && cells.Contains("Hex") && cells.Any(TabEditor.RemarksColumns.Contains));
         if (tabHeader >= 0)
             return new TabEditor(lines[tabHeader].Split('\t').ToList(), tabHeader);
         int header = lines.FindIndex(l => l.StartsWith("Hex", StringComparison.Ordinal));
@@ -216,12 +216,14 @@ abstract class LineEditor
 /// <summary>Tab-delimited T5 files (.tab).</summary>
 sealed class TabEditor : LineEditor
 {
+    // The names the server's parser accepts for the remarks column (TabDelimitedParser).
+    internal static readonly string[] RemarksColumns = { "Remarks", "Trade Codes", "Comments" };
     private readonly int header, hex, remarks, ex, ru;
     public TabEditor(List<string> columns, int header)
     {
         this.header = header;
         hex = columns.IndexOf("Hex");
-        remarks = columns.IndexOf("Remarks");
+        remarks = columns.FindIndex(RemarksColumns.Contains);
         ex = columns.IndexOf("{Ex}") is int a && a >= 0 ? a : columns.IndexOf("(Ex)");
         ru = columns.IndexOf("RU");
     }

@@ -165,7 +165,21 @@ The Phase 4 ratchet stops *new* errors; this item works down the existing ones. 
 the visible-on-map fixes, then D1/D2 as an opt-in tool, then D3 and the allegiance definitions
 with their authors. Regenerate the baseline after each step to lock in the gains.
 
-**Status: T1–T4 DONE** (branch `data-quality-tools`). Measured result: **664 errors** (as predicted)
+**Status: all actionable items DONE** (branch `data-fixes`). Errors 664 → **204**; warnings
+~60,300 → **10,325**.
+- Visible-on-map fixes, the zero-length route, and all 57 schema errors (stray text from
+  non-breaking spaces and typos, `Tabs=` for `Tags=` in 11 M1900 sectors, Alte Grenzen's
+  `<Allegiance>` wrapper, loose CDATA credits now in `<Credits>`).
+- Allegiance definitions from evidence in the repo: the sector's own border label, a companion
+  sector, neighbors, or another milieu. Case typos of stock codes fixed in the data (Rim Worlds
+  `na` and others; 272 worlds).
+- D1/D2: `tools/tradecodes` recomputes UWP-determined trade codes and mechanical (Ex) values,
+  using the validator's own rules (`World.TradeCodeRules`). Applied: 31,315 worlds in 215
+  files (generated T5SS files excluded).
+- The rest needs sector authors: **`DATA-ISSUES.md`** lists the 199 worlds with undefined codes
+  (13 sectors), 3 border codes, and 2 unparseable lines, with what was checked.
+
+Earlier: **T1–T4 DONE** (branch `data-quality-tools`). Measured result: **664 errors** (as predicted)
 and **~60,300 warnings** (from 187,263). The baseline dropped 61 entries. `/admin/errors` shows
 the TL/Gov/Law checks as `Hint:` lines, and Nadir no longer reports parse errors. Remaining:
 the visible-on-map fixes, D1–D3, and the other data items above (owner review needed).
