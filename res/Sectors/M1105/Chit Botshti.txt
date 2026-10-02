@@ -168,7 +168,7 @@ Hex  Name         UWP       Remarks                     {Ix}  (Ex)    [Cx]   N B
 1318 Ierki        D467279-4 Lo Lt                       {-3 } (B10-1) [1154]   -  A 523 16 Zh F8 V F8 V             
 1319 Iatsi        X200000-0 Ba Da Di Va                 {-3 } (400-5) [0000]   -  U 003 10 Zh G1 V                  
 1324 Zasha        B88A301-D Ht Lo Wa                    {+2 } (B22+3) [156E]   KM A 214 11 Zh G6 V M7 VI            
-1325 Nedarechtefr X336000-0 Ba Da Di                    {-3 } (700-5) [0000]   -  U 802 12 Zh G0 V G1 VI            
+1325 Nedarechtefr X336000-0 Ba Da Di                    {-3 } (700-5) [0000]   -  U 002 12 Zh G0 V G1 VI            
 1329 Zhenzaaj     B668576-9 Ag Ni Pr                    {+2 } (D48+1) [776B]   KV - 213 10 Zh M2 VI BD M9 VI        
 1335 Zanzhprie    A868854-9 Pa Ph Ri                    {+2 } (775-2) [6A79]   -  - 704 10 Zh K1 V                  
 1336 Aqrinch      C36569B-8 Ag Ni Ri                    { 0 } (853+1) [7638]   -  - 510 13 Zh K3 V                  

@@ -1,50 +1,50 @@
-Ktiin'gzat Sector {Kk}
-Ogzuekhfos Sector {Va}
-Ligim Sector {Vi}
+# Ktiin'gzat Sector {Kk}
+# Ogzuekhfos Sector {Va}
+# Ligim Sector {Vi}
 
-http://home.earthlink.net/~ngc5139/FDA/ligim.html
+# http://home.earthlink.net/~ngc5139/FDA/ligim.html
 
-Allegiance codes:
-Ef - Enclave Famuurueroergoghz
-J- - Julian Protectorate (1120)
-VC - Hezeraek Connective
-Na - Non-aligned
-Va - Non-aligned Vargr
-Dr - Droyne
--- - none
+# Allegiance codes:
+# Ef - Enclave Famuurueroergoghz
+# J- - Julian Protectorate (1120)
+# VC - Hezeraek Connective
+# Na - Non-aligned
+# Va - Non-aligned Vargr
+# Dr - Droyne
+# -- - none
 
-Sector Listing:
-Ogzuekhfos Sector             001-1115
-Sector developed by L.W.L. Guatney 2003
+# Sector Listing:
+# Ogzuekhfos Sector             001-1115
+# Sector developed by L.W.L. Guatney 2003
 
-A: Gaengrerdhoerk
-B: Kikakhamkishis
-C: Madaakuklunaa
-D: Ithesea
-E: Mikikuma
-F: Ru Lan
-G: Eru Atso
-H: Asotonitrodes
-I: Ilakhegiki
-J: Andakeg
-K: Mming
-L: Ad Esfazapo
-M: Uztsaadzuelleng
-N: Gzeengoumez
-O: Lalurderzirkuda
-P: Inunugishshaa
+# A: Gaengrerdhoerk
+# B: Kikakhamkishis
+# C: Madaakuklunaa
+# D: Ithesea
+# E: Mikikuma
+# F: Ru Lan
+# G: Eru Atso
+# H: Asotonitrodes
+# I: Ilakhegiki
+# J: Andakeg
+# K: Mming
+# L: Ad Esfazapo
+# M: Uztsaadzuelleng
+# N: Gzeengoumez
+# O: Lalurderzirkuda
+# P: Inunugishshaa
 
-  1-18: Name
- 20-23: HexNbr
- 25-33: UWP
-    35: Bases
- 37-52: Codes & Comments
-    54: Zone
- 56-58: PBG
- 60-61: Allegiance
- 63-82: Stellar Data
+#   1-18: Name
+#  20-23: HexNbr
+#  25-33: UWP
+#     35: Bases
+#  37-52: Codes & Comments
+#     54: Zone
+#  56-58: PBG
+#  60-61: Allegiance
+#  63-82: Stellar Data
 
-****************************************************************************
+# ****************************************************************************
 Angekhiirgasigag   0302 A343366-A   Lo Po              602 Va A0 V
 Arsuthgvirr        0305 D000379-A   Lo As Va           513 Va M5 V D
 Maarsigudumuudu    0307 B478200-C   Lo                 102 Va K1 V
@@ -167,7 +167,7 @@ Uth Orthmoing      1618 C100974-D C Na Hi In Va        200 Va K3 V M2 V
 Engoukhe           1620 C796679-5 G Ag Ni Tp           524 Va F1 V
 Agili              1718 D332101-A   Lo Po              603 Va K1 V
 Pilusiimgupilash   1720 E787697-3 C Ag Ni Ri Ga Tp         100 Va F5 V
-Asukhadu           1812 B7C0047-A   He Di              214 Va F4 IV
+Asukhadu           1812 B7C0047-A   He Di              014 Va F4 IV
 A Ka Elueks        1813 A796678-C   Ag Ni Tp           521 Va F5 V
 Amiza              1814 B443786-6 G C5 Po Pi           110 Va F8 V M3 V
 Uzermakani         1816 A756664-C G Ag Ni Ga Tp          323 Va K5 V
@@ -235,14 +235,14 @@ Foinriraw          0229 C462300-7   Lo                 600 Va G6 V
 Uguerz             0424 C665875-4 G Ga Ph Pa Ri Tp          700 Va K1 V
 Shaban             0425 C110545-9 G Ni                 401 Va M1 V M2 V
 Adasekaagi         0427 A655347-A G C4 Lo Ga Tp         400 Va K9 V
-I Lashaagir        0529 C338004-B   Di                 102 Va F7 V D
+I Lashaagir        0529 C338004-B   Di                 002 Va F7 V D
 Uan Fhoghzigzufa   0530 A549478-B C Ni                 400 Va K3 V
 Mmatskfagrnurr     0624 C511A7A-8 G Na Hi In Ic        700 Va K0 V M3 V
 Lamushkaaruudara   0626 A330363-E   Lo Po De           223 Va A0 V
 Ou Oathuu          0627 B896A75-B G Hi In Tp           623 Va G5 V
 Gazap              0726 B000562-E   Ni As Va           903 Va K6 V
-Shiibamnu          0729 B894022-8 C Di Tp              701 Va G8 V
-Arilaanabuba       0730 C695001-6 C Di Tp              600 Va M0 V
+Shiibamnu          0729 B894022-8 C Di Tp              001 Va G8 V
+Arilaanabuba       0730 C695001-6 C Di Tp              000 Va M0 V
 Ka Ashishile       0821 B000441-D   Ni As Va           104 Va M0 II K9 V
 Diikuu             0823 C300565-7 G Ni Va              912 Va M7 V D
 Ernii              0825 EA8A620-8 C Ni Oc Ri           223 Va K7 V
@@ -269,7 +269,7 @@ Suungdzoarrfhits   1230 C664677-7   Ag Ni Ri Tp          515 Va G9 V
 Shimikargiinuge    1323 X673742-0 C Pi Tp              800 Va K9 V M2 V
 Grokh              1327 AA6A444-D   C1 Ni Oc           603 Va G8 V
 Gukaa              1423 B96646A-9   Ni Pa Tn           502 Va F2 V
-Ii Gikemgugarmi    1427 A653000-D G Po Di Tp           923 Va K1 V M4 V
+Ii Gikemgugarmi    1427 A653000-D G Po Di Tp           023 Va K1 V M4 V
 Leshuur            1521 E000322-9 C Lo As Va           904 Va K4 V
 Soksgvael          1523 CAA7777-4 C Fl                 701 Va M0 V
 Aragam             1524 A76A720-9 C C4 Wa Ri           800 Va G7 V
@@ -296,7 +296,7 @@ Idirkamirkushin    2030 B759356-8 G C9 Lo Tp           803 Va K5 V D
 Ofesevopar         2121 A9C6497-B G Fl Ni              722 VC K4 V K5 V
 Onsukethyo         2122 B534896-6     Ph               700 VC G9 V M5 V M8 V
 Tidethmintsi       2124 D753265-2   Lo Po Tp           811 VC G7 V
-Dakhuguu           2125 B687001-C   Ga Di              800 Va M5 V M8 V
+Dakhuguu           2125 B687001-C   Ga Di              000 Va M5 V M8 V
 A Lasanpa          2126 E475754-7 C Ag Pi              532 Va F6 V G3 V
 Rraenoa            2127 A784675-C G Ag Ni Ri Tp St         803 Va G0 V
 Iriirgidiimla      2129 C444340-9 G Lo                 123 Va F8 V
@@ -332,7 +332,7 @@ Doli               2924 C7B0332-A   Lo He              700 VC M0 V
 Knourthog          2927 X87A87A-4 C Wa Ph Pi           501 Va K1 V M3 V
 Khimgakgumdiker    2928 C765ABB-8   Hi Ga Tn St          413 Va K7 V M9 V
 Uusmgaad           2929 A89147C-E   Ni He              922 Va F9 V
-Lin                2930 E765000-5   Ga Di Tn St         102 Va M0 V M1 V
+Lin                2930 E765000-5   Ga Di Tn St         002 Va M0 V M1 V
 Zaaghusorsethue    3021 C556478-5 C Ni Pa              111 VC K4 V M3 V
 Teaqa              3022 B541331-A   Lo Po He           401 VC G1 V
 Dadurga            3026 C2246B8-9   Ni                 800 Va K3 V
@@ -372,7 +372,7 @@ Sokugzaghzodull    0739 C7B4243-7   Fl Lo              522 Ef K9 V D
 Allirzughoith      0833 E443457-5   Ni Po              200 Ef K7 V M6 V
 Eggheng            0835 B555597-B   C6 Ag Ni Rs        501 Ef G4 V D
 Llotree            0839 A210AA7-G C Na Hi In           502 Ef M3 V
-Umarlesa           0931 C464000-8   Di                 802 Va K3 V
+Umarlesa           0931 C464000-8   Di                 002 Va K3 V
 Embadesashi        0932 B999300-C G D4 Lo Tp           302 Va F2 V
 Aarmgoitaamnaa     0934 B514444-C G Ni Ic              824 Ef K9 V M8 V
 Utsiraagluuthue    0938 B7898CC-7 G Ph Ri Tp           900 Ef K4 V M4 V
@@ -414,7 +414,7 @@ Khurmikurulir      1832 B5769AD-A   Hi In              813 Va M0 V
 Kigkishasha        1833 E410000-0   Ba                 001 -- M8 V
 Ad Ked Dulish      1834 C410487-B   Ni                 620 Va M5 V D
 Kaa Ushkamarikii   1835 B646222-9   Lo Tp              222 Va K4 V
-Arsiruruugumem     1931 A767025-8   Ga Di              904 Va F1 V
+Arsiruruugumem     1931 A767025-8   Ga Di              004 Va F1 V
 Kidikhiishum       1936 C223997-B   Na Hi In Po        503 Va G2 V K6 V
 Fozfighgengzua     1937 D73777B-3 C                    712 Va G9 V
 Gzakh              1938 C333320-B   Lo Po              614 Va K9 V
@@ -431,7 +431,7 @@ Gera Lukimir       2136 A400447-D G Ni Va              200 Va M5 V M7 V
 Gisuushukhur       2139 A6A0100-D G Lo He              924 Va K2 V
 Kirurminurima      2232 B8B8444-A C Fl Ni              103 Va M0 V M7 V
 Kii Igan           2233 B889224-C   Lo Tp              803 Va K6 V D
-Makisha            2235 C434000-9   Di                 702 Va F2 V M5 V
+Makisha            2235 C434000-9   Di                 002 Va F2 V M5 V
 Ru Mikisikimme     2237 E856598-4   Ni Ga Ag           903 Va M4 V M7 V
 Inbugaashag        2239 B585233-6   Lo                 303 Va M0 V M8 V
 Ku Sharmashasha    2240 E776559-5 C Ag Ni Tn           513 Va F8 V M2 V
@@ -449,7 +449,7 @@ Nudinshushirali    2538 D5407AD-2 C Po De He Pi          503 Va K5 V
 Kishagushumra      2636 B748440-7   Ni Pa Tp           600 Va K7 V M6 V
 Kakamiinzamamgim   2738 D330540-6   Ni Po De           803 Va K6 V
 Ougvorrghmuagh     2739 B62A975-E   Hi In              524 Va F4 V
-Gi Shenar          2740 D300014-7   Va Di              503 Va G7 III K9 V
+Gi Shenar          2740 D300014-7   Va Di              003 Va G7 III K9 V
 Uduu Gurukunsigu   2834 E513000-0   Ba Ic              003 -- M0 V
 Idraniingu         2835 D756688-1 C Ag Ni Ga Tp          303 Va G7 V
 Zirigunsii         2836 A545312-9   Lo                 203 Va G7 V
@@ -469,5 +469,5 @@ Ga Rath            3140 E357876-4 C  Ph Pa             203 Va G6 V M2 V
 Mikaakinli         3232 A697345-A G Lo Tp              901 Va K1 V
 Ar Ekigakisakhup   3236 E100646-7 C Na Ni Va           424 Va G1 V
 Diishagikugudin    3238 X4667BC-0 C D3 Ag Ri           100 Va K3 V
-****************************************************************************
+# ****************************************************************************
 

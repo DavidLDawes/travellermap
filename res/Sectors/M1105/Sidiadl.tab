@@ -50,7 +50,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2405	Edlfri-75	X694000-0		Ba		010	NaXX	A2 IV	{ -3 }	(300-5)	[0000]		12
 2501	I'tler	X653000-0		Ba Po		024	NaXX	G2 V	{ -3 }	(700-5)	[0000]		9
 2503	Zazianch	X8A6000-0		Fl Ba		012	NaXX	G4 VI	{ -3 }	(500-5)	[0000]		12
-2508	Donjbie'	E65A561-7		Wa Ni		110	NaHu	F1 III	{ -3 }	(840+0)	[3274]		11
+2508	Donjbie'	E65A561-7		Wa Ni		110	NaHu	F1 III	{ -3 }	(840+1)	[3274]		11
 2602	Stefie-79	X432000-0		Ba Po		034	NaXX	K8 V	{ -3 }	(800-5)	[0000]		15
 2605	Qrvrniqrchtr	E657464-5		Ga Ni Pa		314	NaHu	F5 V	{ -3 }	(730-1)	[1169]		16
 2610	Ilvlat-25	X110000-0		Ba		002	NaCh	M9 VI	{ -3 }	(B00-5)	[0000]		13
@@ -59,7 +59,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2710	Jdeflie	X432000-0		Ba Po		013	NaCh	F7 V M2 V	{ -3 }	(B00-5)	[0000]		12
 2805	Dlibla-20	X110000-0		Ba		023	NaXX	G3 IV	{ -3 }	(A00-5)	[0000]		12
 2807	Siansazhzhrp	X6A2000-0		Fl He Ba		023	NaXX	G6 V G1 VI	{ -3 }	(300-5)	[0000]		12
-2810	Fifljinch	C885689-9		Ga Ni Ag Ri		104	NaHu	F3 V	{ -1 }	(C51+1)	[6598]		8
+2810	Fifljinch	C885689-9		Ga Ni Ag Ri		104	NaHu	F3 V	{ 1 }	(C51+1)	[6598]		8
 2908	Flialde-52	X674000-0		Ba		022	NaXX	G3 II K4 V M0 V G3 V	{ -3 }	(B00-5)	[0000]		10
 3002	Sienzhn-59	X653000-0		Ba Po		012	NaXX	G6 V M3 VI M6 VI	{ -3 }	(600-5)	[0000]		14
 3003	Qraply-44	X665000-0		Ga Ba		004	NaXX	G8 V	{ -3 }	(900-5)	[0000]		11
@@ -105,8 +105,8 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1613	Zhrnshtli-1	X110000-0		Ba		022	NaXX	K0 V	{ -3 }	(400-5)	[0000]		11
 1620	Renesh-11	X557000-0		Ba		023	NaXX	G0 V	{ -3 }	(400-5)	[0000]		8
 1714	Iedrats	C455530-9		Ni Ag		102	NaHu	G0 IV M0 V	{ 0 }	(742-2)	[452A]		12
-1716	I'zhrl	X552732-0		Po	R	714	NaHu	G8 V	{ -2 }	(A65+0)	[5511]		14
-1719	Zhdadrtlabl	X6567AB-1		Ga Ag	R	713	NaHu	M1 III	{ -1 }	(664+0)	[6674]		12
+1716	I'zhrl	X552732-0		Po	R	714	NaHu	G8 V	{ -2 }	(A65+1)	[5511]		14
+1719	Zhdadrtlabl	X6567AB-1		Ga Ag	R	713	NaHu	M1 III	{ -1 }	(664+1)	[6674]		12
 1813	Ie'kems-47	X976000-0		Ba		001	NaXX	A4 V	{ -3 }	(600-5)	[0000]		12
 1818	Qetsniem	X541000-0		He Ba Po		000	NaXX	G4 IV G7 V	{ -3 }	(600-5)	[0000]		11
 1820	Zdanshpifedr	X626000-0		Ba		012	NaXX	M9 V M5 VI	{ -3 }	(700-5)	[0000]		13
@@ -137,7 +137,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2615	Fiazhla	C788504-5	KM	Ni Ag Pr	U	100	CsZh	K9 III	{ 0 }	(942-2)	[3537]		8
 2620	Dlizdiens	E889442-3		Ni		500	ZhMe	G1 V K0 VI	{ -3 }	(530-1)	[3181]		5
 2712	Chtiepriets	B60098C-C	KM	Va Hi Na In		314	CsZh	G5 V	{ 5 }	(F8A+3)	[6E69]		12
-2713	Shtievlqa	C766777-2		Ga Ag Ri An		211	NaHu	F8 VI F9 VI	{ -2 }	(332+2)	[122A]		7
+2713	Shtievlqa	C766777-2		Ga Ag Ri An		211	NaHu	F8 VI F9 VI	{ 1 }	(332+2)	[122A]		7
 2720	Flaqpe	B54769B-6	KM	Ni Ag		334	ZhMe	F1 V	{ 1 }	(757+1)	[5784]		15
 2816	Blasafl	E557414-3		Ni Pa		721	NaHu	F2 V	{ -3 }	(830-4)	[4112]		6
 2912	Er-434	C526562-7	KM	Ni		124	CsZh	G5 V	{ -1 }	(941-3)	[3474]		15
@@ -145,14 +145,14 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2916	Blotsstiebrat	X96A000-0		Wa Ba		000	NaXX	M6 V BD	{ -3 }	(800-5)	[0000]		9
 3012	Zhden-87	X423000-0		Ba Po		023	NaXX	M1 V BD M5 VI	{ -3 }	(700-5)	[0000]		17
 3014	Ipln-44	X100000-0		Va Ba		004	NaXX	K8 V	{ -3 }	(400-5)	[0000]		11
-3015	Zderbavipr	A553432-D		Ni Po		223	CsZh	G2 V D	{ 1 }	(D32+0)	[554G]		15
+3015	Zderbavipr	A553432-D		Ni Po		223	CsZh	G2 V D	{ 1 }	(D32+1)	[554G]		15
 3016	Fria-78	X110000-0		Ba		012	NaXX	K3 V	{ -3 }	(400-5)	[0000]		7
 3112	Echtanjshibr	X658000-0		Ba		012	NaXX	G4 V G4 V	{ -3 }	(C00-5)	[0000]		13
 3118	Zdonzhkaf	B684A88-B		Hi		800	ZhMe	K0 IV BD	{ 3 }	(397+2)	[AD8A]		9
 3119	Ziplseql	X000000-0		As Va Ba	F	000	ZhMe	K3 IV K7 V	{ -3 }	(500-5)	[0000]		9
 3120	Tebrzde	X637000-0		Ba	F	022	ZhMe	G4 IV G4 VI	{ -3 }	(200-5)	[0000]		13
 3212	Ia-769	X654000-0		Ba		013	NaXX	G0 VI M7 VI M6 VI	{ -3 }	(500-5)	[0000]		15
-3213	Rldie	C553610-4	KM	Ni Po		923	CsZh	K6 VI	{ -1 }	(354+0)	[4512]		16
+3213	Rldie	C553610-4	KM	Ni Po		923	CsZh	K6 VI	{ -1 }	(354+1)	[4512]		16
 3215	Tliaiadl	X523000-0		Ba Po		022	NaXX	G1 V K3 VI K3 VI M8 VI	{ -3 }	(900-5)	[0000]		12
 3218	Evrzheprev	C685477-4		Ga Ni Pa		821	ZhMe	K9 V	{ -2 }	(630+3)	[3244]		10
 3219	Evkriezmienj	X556000-0		Ba	F	012	ZhMe	F8 V	{ -3 }	(500-5)	[0000]		7
@@ -174,7 +174,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0626	Iedrie	X526000-0		Ba		024	NaXX	K9 II BD	{ -3 }	(B00-5)	[0000]		18
 0627	Shtiekesh	X311000-0		Ic Ba		000	NaXX	A6 IV D	{ -3 }	(800-5)	[0000]		10
 0629	Tsotljdenzrt	X539000-0		Ba		025	NaXX	F6 V F9 VI D	{ -3 }	(300-5)	[0000]		11
-0721	Iamesh	E98946A-3		Ni		510	NaHu	K6 V M6 VI	{ -3 }	(630+0)	[4185]		8
+0721	Iamesh	E98946A-3		Ni		510	NaHu	K6 V M6 VI	{ -3 }	(630+1)	[4185]		8
 0821	Stiadstofvre	X527000-0		Ba		024	NaXX	G5 V M7 VI	{ -3 }	(700-5)	[0000]		15
 0824	Plotlrntsech	X450000-0		De Ba Po		012	NaXX	G4 II	{ -3 }	(A00-5)	[0000]		7
 0828	Vranshafrshe	XA69000-0		Ba		000	NaXX	G9 V G8 VI K6 VI	{ -3 }	(700-5)	[0000]		7
@@ -190,10 +190,10 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1128	Fliav-84	X7B3000-0		Fl Ba		014	NaXX	M5 V M8 VI	{ -3 }	(B00-5)	[0000]		13
 1222	R'ia-65	X965000-0		Ba		004	NaXX	A0 II G3 V D G8 VI	{ -3 }	(600-5)	[0000]		13
 1224	Ieplriepravr	X857000-0		Ga Ba		023	NaXX	K6 V M0 VI	{ -3 }	(B00-5)	[0000]		9
-1225	Dievienzhpo	B88A537-C		Wa Ni Pr		323	NaHu	K6 V BD	{ 1 }	(G43+0)	[362F]		13
+1225	Dievienzhpo	B88A537-C		Wa Ni Pr		323	NaHu	K6 V BD	{ 1 }	(G43+1)	[362F]		13
 1226	Zdadrrvrienzh	E76A510-4		Wa Ni Pr		902	NaHu	F9 VI	{ -3 }	(B41+2)	[9255]		8
 1324	Enzhb-13	X552000-0		Ba Po		012	NaXX	M9 V D	{ -3 }	(800-5)	[0000]		8
-1326	Deqtlie	C432563-6		Ni Po		404	CsZh	K2 V K8 VI	{ -2 }	(740+0)	[235B]		12
+1326	Deqtlie	C432563-6		Ni Po		404	CsZh	K2 V K8 VI	{ -2 }	(740+1)	[235B]		12
 1327	Kaplfriaal	X622000-0		He Ba Po		013	NaXX	F6 V K1 VI G7 VI	{ -3 }	(500-5)	[0000]		15
 1328	Tlebr-65	XAA3000-0		Fl Ba		004	NaXX	G9 V	{ -3 }	(A00-5)	[0000]		16
 1429	Etlenj	X000000-0		As Va Ba		023	NaXX	F4 V G1 VI D	{ -3 }	(700-5)	[0000]		9
@@ -210,7 +210,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1825	Ieshs-31	X628000-0		Ba		034	NaXX	G5 V	{ -3 }	(700-5)	[0000]		15
 1828	Artiens	C675999-A	KM	Hi In		622	CsZh	G9 V M2 VI	{ 4 }	(E8A-2)	[6D67]		11
 1830	Ovlianzh	C676530-6		Ni Ag		924	NaHu	F2 IV D	{ -1 }	(541-1)	[A482]		15
-1923	Ianshiadr	B210663-9	KM	Ni Na		222	CsZh	F8 V K1 VI	{ 1 }	(A53+0)	[9727]		16
+1923	Ianshiadr	B210663-9	KM	Ni Na		222	CsZh	F8 V K1 VI	{ 1 }	(A53+1)	[9727]		16
 1924	Qloofste	XAA5000-0		Fl Ba		010	NaXX	F5 IV	{ -3 }	(400-5)	[0000]		11
 1930	Lienians	X675000-0		Ba		025	NaXX	G2 V K4 VI	{ -3 }	(800-5)	[0000]		16
 2023	Qrazhkra	D667475-2		Ga Ni Pa	A	122	NaHu	G7 V	{ -3 }	(630+4)	[7161]		11
@@ -235,11 +235,11 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2527	Sinsfre-66	X100000-0		Va Ba	F	000	ZhMe	G1 V	{ -3 }	(A00-5)	[0000]		6
 2528	Brorkrzhdrpl	X659000-0		Ba	F	024	ZhMe	F3 IV G5 V	{ -3 }	(A00-5)	[0000]		15
 2530	Tsrzhstanjsh	X648000-0		Ba	F	010	ZhMe	F9 V	{ -3 }	(700-5)	[0000]		5
-2627	Enshzabrinch	E655521-2		Ga Ni Ag		212	ZhMe	M4 II D M0 VI	{ -2 }	(642+0)	[4371]		10
+2627	Enshzabrinch	E655521-2		Ga Ni Ag		212	ZhMe	M4 II D M0 VI	{ -2 }	(642+1)	[4371]		10
 2727	Iefzda	A564AAB-D	KM	Hi		302	ZhMe	G6 V	{ 4 }	(696+4)	[FE8D]		10
 2728	Amtse	A141632-E		Ni Po		103	ZhMe	G1 V K5 VI	{ 1 }	(B56-1)	[574B]		11
 2824	Netlrenjkiefr	B100897-D		Va Ph Na Pi		423	ZhMe	K9 V M0 VI BD D	{ 2 }	(E78-3)	[CA8E]		18
-2825	Shtaplqriaki	A300A73-D	KM	Va Hi Na In		110	ZhMe	M1 V	{ 5 }	(B97+0)	[8F9F]		7
+2825	Shtaplqriaki	A300A73-D	KM	Va Hi Na In		110	ZhMe	M1 V	{ 5 }	(B97+1)	[8F9F]		7
 2828	Zhepr-32	X673000-0		Ba	F	023	ZhMe	F4 V F9 VI	{ -3 }	(A00-5)	[0000]		8
 2829	Nodlfabl	B4347BD-7				133	ZhMe	K3 IV K4 V BD	{ 0 }	(868-1)	[6776]		15
 2924	Zhorblients	B8AA778-B		Fl		224	ZhMe	G3 VI	{ 2 }	(J6A+3)	[8988]		11
@@ -250,19 +250,19 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 3025	Stiaqreprzdi	B687865-8	KM	Ga Ph Pa Ri		224	ZhMe	K9 V K1 VI	{ 2 }	(E7E-2)	[6A77]		13
 3026	Tlechatlchtrn	B420510-9		De He Ni Po		102	ZhMe	F2 V M4 VI	{ 0 }	(743-3)	[855B]		11
 3121	Fliaqriensh	A794953-E	KM	Hi In Cp		201	ZhMe	G0 V D	{ 5 }	(38E+2)	[AE6D]		11
-3122	Tsonsshtiel	B75657A-B		Ga Ni Ag		212	ZhMe	F4 IV G0 VI	{ 2 }	(745+0)	[974B]		15
+3122	Tsonsshtiel	B75657A-B		Ga Ni Ag		212	ZhMe	F4 IV G0 VI	{ 2 }	(745+1)	[974B]		15
 3126	Jiachdrk	A335786-C				900	ZhMe	A5 IV	{ 2 }	(46A-3)	[B92C]		10
 3129	Zdejchtiav	E677641-6		Ni Ag		100	ZhMe	G0 V	{ -2 }	(A50-1)	[6416]		12
 3222	Oprladrzhie	B641655-8	KM	He Ni Po		320	ZhMe	G5 V	{ 0 }	(856+2)	[B619]		12
 3228	Drdriablblie	X687000-0		Ga Ba	F	023	ZhMe	K3 II M9 III	{ -3 }	(A00-5)	[0000]		13
 0131	Ianzajde	X500000-0		Va Ba		024	NaXX	F2 V K8 VI	{ -3 }	(600-5)	[0000]		18
-0133	Ozsteiel	A6687AB-A	KM	Ag Ri		223	CsZh	M0 II	{ 5 }	(D6E+0)	[3C2B]		10
-0134	Ansdialchte	C788534-4		Ni Ag Pr		810	NaHu	G5 V	{ -1 }	(945+0)	[6484]		5
+0133	Ozsteiel	A6687AB-A	KM	Ag Ri		223	CsZh	M0 II	{ 5 }	(D6E+1)	[3C2B]		10
+0134	Ansdialchte	C788534-4		Ni Ag Pr		810	NaHu	G5 V	{ -1 }	(945+1)	[6484]		5
 0135	Chti-34	X66A000-0		Wa Ba		003	NaXX	G5 V K5 VI	{ -3 }	(700-5)	[0000]		7
 0138	Plech-45	X574000-0		Ba		024	NaXX	M1 V D BD BD	{ -3 }	(800-5)	[0000]		16
 0140	Yedlzhr-51	X7C0000-0		He Ba		034	NaXX	G4 V	{ -3 }	(900-5)	[0000]		10
 0231	Flrltsia	X590000-0		De He Ba		000	NaXX	K6 V M4 VI	{ -3 }	(B00-5)	[0000]		12
-0235	Zhdiaqadr	D565654-3		Ni Ag Ri		224	NaHu	F9 V K8 VI	{ -1 }	(755+0)	[9566]		12
+0235	Zhdiaqadr	D565654-3		Ni Ag Ri		224	NaHu	F9 V K8 VI	{ -1 }	(755+1)	[9566]		12
 0236	Tliedriej	C503467-9		Ic Va Ni		200	CsZh	G7 V D G1 VI	{ -1 }	(831-1)	[1374]		5
 0238	Dia'kez	X597000-0		Ba		023	NaXX	G4 IV M3 V	{ -3 }	(700-5)	[0000]		13
 0239	Tsizhzhio	X787000-0		Ga Ba		001	NaXX	G3 V M8 V	{ -3 }	(700-5)	[0000]		7
@@ -286,7 +286,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 0937	Yiblchtianzh	X656000-0		Ga Ba		004	NaXX	K5 III	{ -3 }	(B00-5)	[0000]		17
 1031	Qlan-76	X200000-0		Va Ba		025	NaXX	F7 V	{ -3 }	(B00-5)	[0000]		16
 1134	Pliedre'i'	B515400-8		Ic Ni		803	CsZh	K4 IV	{ -1 }	(730+1)	[234A]		14
-1135	Shtevrivri	E86A546-8		Wa Ni Pr		110	CsZh	G6 V	{ -3 }	(640+0)	[A226]		10
+1135	Shtevrivri	E86A546-8		Wa Ni Pr		110	CsZh	G6 V	{ -3 }	(640+1)	[A226]		10
 1139	Eflrchpla	E562559-8		Ni Pr		124	ZhMe	F0 IV F8 V	{ -3 }	(D43+3)	[322D]		12
 1140	Niadrzhr	X63A000-0		Wa Ba	F	023	ZhMe	G2 V D K9 V K2 VI	{ -3 }	(600-5)	[0000]		15
 1234	Vrebredl	X695000-0		Ba		004	NaXX	M4 III M0 V	{ -3 }	(700-5)	[0000]		11
@@ -294,7 +294,7 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1238	Davam	A57669A-C	KM	Ni Ag		223	ZhMe	A4 V	{ 3 }	(A57-1)	[694D]		17
 1333	Achdliez	C745646-5		Ni Ag		134	ZhMe	F7 II K0 V	{ -1 }	(A53-2)	[5574]		20
 1339	Fratla	CADA525-9		Ni Oc		124	ZhMe	K1 IV	{ -1 }	(C44+4)	[6419]		12
-1340	Srzholi	A559866-9	KM	Ph		524	ZhMe	G9 III G7 V	{ 2 }	(F77+0)	[4A59]		15
+1340	Srzholi	A559866-9	KM	Ph		524	ZhMe	G9 III G7 V	{ 2 }	(F77+1)	[4A59]		15
 1434	Stot-69	X683000-0		Ba	F	004	ZhMe	M3 V	{ -3 }	(700-5)	[0000]		9
 1437	Patl-96	X642000-0		He Ba Po	F	003	ZhMe	G4 V K6 V	{ -3 }	(600-5)	[0000]		12
 1438	Vevzeench	C673999-5		Hi In		224	ZhMe	A1 V A5 V A7 V D	{ 1 }	(889+2)	[DA38]		12
@@ -304,12 +304,12 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 1636	Inchozhe	C536555-6	KM	Ni	U	924	ZhMe	K3 IV D	{ -1 }	(A42+3)	[8474]		15
 1639	Zhdiaprdliebr	E582767-5		Ri		810	ZhMe	M1 II BD BD	{ -1 }	(A6A-1)	[3618]		9
 1640	Ier	C5459EF-7		Hi In	U	724	ZhMe	K7 V	{ 1 }	(788-4)	[6A34]		15
-1731	Srbllash	C423444-7	KM	Ni Po		124	ZhMe	G1 V K8 VI K6 VI	{ -1 }	(334+0)	[4355]		15
+1731	Srbllash	C423444-7	KM	Ni Po		124	ZhMe	G1 V K8 VI K6 VI	{ -1 }	(334+1)	[4355]		15
 1736	Shiazi	A520445-E	KM	De He Ni Po		503	ZhMe	M1 II	{ 2 }	(938+2)	[163K]		9
 1737	Dijiekr	A100656-F	KM	Va Ni Na		400	ZhMe	G1 V	{ 2 }	(A56-1)	[385F]		5
 1832	Dianzhdo	A552447-D	KM	Ni Po		614	ZhMe	K2 V	{ 2 }	(D34-1)	[365H]		14
 1833	Shtrvrpiadrc	C5459DA-6		Hi In		314	ZhMe	K5 V K9 V	{ 1 }	(48B+1)	[BA44]		9
-1834	Jonjqie	A444685-B		Ni Ag		422	ZhMe	G8 V	{ 2 }	(E53+0)	[685A]		14
+1834	Jonjqie	A444685-B		Ni Ag		422	ZhMe	G8 V	{ 2 }	(E53+1)	[685A]		14
 1835	Zhiache'	C594459-6		Ni Pa		823	ZhMe	K0 V	{ -2 }	(830-2)	[6297]		15
 1837	Chtieie	C636A75-8		Hi		324	ZhMe	F0 III	{ 0 }	(997-2)	[7A16]		15
 1839	Ievl	A9D3967-B	KM	Hi		124	ZhMe	F4 II F3 V	{ 4 }	(98C-4)	[9D7B]		13
@@ -329,8 +329,8 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2340	Fanplenz	C565554-7	KM	Ni Ag Pr		322	ZhMe	F4 V F4 V	{ 0 }	(545-5)	[3586]		14
 2431	Efrjrkiezh	B678579-9	KM	Ni Ag		223	ZhMe	K1 IV BD M7 V	{ 2 }	(B44+2)	[8769]		12
 2434	Ofniedr	A7C0975-D	KM	He Hi In		102	ZhMe	K4 IV	{ 5 }	(D8A+2)	[9E6E]		12
-2436	Lievlie'	AAEA876-C	KM	Ph Oc		300	ZhMe	F2 V	{ 3 }	(67B+0)	[8B8A]		5
-2439	Rplchtaepl	A2017BC-E	KM	Ic Va Na Pi		824	ZhMe	G2 III	{ 3 }	(F6A+0)	[AA9K]		11
+2436	Lievlie'	AAEA876-C	KM	Ph Oc		300	ZhMe	F2 V	{ 3 }	(67B+1)	[8B8A]		5
+2439	Rplchtaepl	A2017BC-E	KM	Ic Va Na Pi		824	ZhMe	G2 III	{ 3 }	(F6A+1)	[AA9K]		11
 2534	Ianzhiv	A678ACC-B	D	Hi In Cp		624	ZhMe	G1 V	{ 5 }	(H9E-1)	[6F38]		11
 2540	Blidlvletschi	C888953-9	KM	Hi Pr		104	ZhMe	F2 V	{ 2 }	(889+2)	[4B3E]		11
 2634	Tlanjonch	C541657-6		He Ni Po		203	ZhMe	G7 V M9 VI M7 VI	{ -2 }	(850+3)	[7435]		9
@@ -341,11 +341,11 @@ Hex	Name	UWP	Bases	Remarks	Zone	PBG	Allegiance	Stars	{Ix}	(Ex)	[Cx]	Nobility	W
 2739	Zhens-10	X773000-0		Ba	F	024	ZhMe	M7 III BD BD BD M4 V	{ -3 }	(A00-5)	[0000]		15
 2832	Ieprstizh	B767577-9	KM	Ga Ni Ag Pr		513	ZhMe	G2 V	{ 2 }	(C44-1)	[572D]		12
 2833	Pledrazhez	A477442-E		Ni Pa		502	ZhMe	G7 V K4 VI	{ 1 }	(D36-2)	[758H]		14
-2932	Adie	B6568AC-7		Ga Ph Pa		610	ZhMe	F9 V D	{ 0 }	(875+0)	[9864]		9
+2932	Adie	B6568AC-7		Ga Ph Pa		610	ZhMe	F9 V D	{ 0 }	(875+1)	[9864]		9
 2935	Aplle	B9B48AB-A		Fl Ph		621	ZhMe	G7 V	{ 2 }	(A7A+3)	[8A85]		16
 3031	Shtrianchtli	E100746-7		Va Na Pi		105	ZhMe	F8 V	{ -2 }	(865+3)	[7565]		13
 3034	Jiebliaz	A7C3958-E		Fl Hi In		325	ZhMe	M3 V BD	{ 4 }	(E8C-2)	[6D5A]		13
 3133	Onshmats	B542420-A	KM	He Ni Po		923	ZhMe	G4 V K9 VI	{ 2 }	(D33-3)	[366B]		11
 3134	Tsajdokr	D100968-B		Va Hi Na In		114	ZhMe	M5 V BD	{ 2 }	(C87+2)	[AB3C]		16
-3135	Ebladrplia	B9E9430-C	KM	Ni		510	ZhMe	G9 II	{ 2 }	(437+0)	[463D]		10
-3232	Ilzensdlr	C427A77-D		Hi In		205	ZhMe	A5 V A9 V	{ 3 }	(996+0)	[7D3D]		11
+3135	Ebladrplia	B9E9430-C	KM	Ni		510	ZhMe	G9 II	{ 2 }	(437+1)	[463D]		10
+3232	Ilzensdlr	C427A77-D		Hi In		205	ZhMe	A5 V A9 V	{ 3 }	(996+1)	[7D3D]		11

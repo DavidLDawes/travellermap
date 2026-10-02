@@ -1,6 +1,6 @@
-Gelath
-12 2
-              1    2          3 4               5  6   7      8
+# Gelath
+# 12 2
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 17315
 #Alleg: 04: Va: "Vargr (non-aligned)"
@@ -58,14 +58,14 @@ Gekfokh       3003 D76977B-2     Ri                702 Va     F3V M6V
 Thogagung     3203 C53889B-7     Ph                400 Va     F5V M0V
 !!gr'iikang   0204 C1209B7-F  K De Hi In Na Po     902 KO     F1V 
 Ku!!kighaal   0504 A000320-D  K As Lo Va           103 KO     F9III K4V 
-Aat Nokr K'ng 0704 C655000-B  O Ga Di              203 KO     F1V 
+Aat Nokr K'ng 0704 C655000-B  O Ga Di              003 KO     F1V 
 !!rit         1204 C254242-B  K Lo                 915 KO     M0V M5V
 Oo!'r         1304 CA96234-B    Lo                 203 KO     F2V M2V
 Aanuureerr!k  1704 C7787BC-F  K Ag Pi              801 KO     M4V M7V
 Koeganggvag   1904 B58A468-A    Ni Wa              305 Va     F7V M5V
 Khorotsekhel  2004 C346554-B    Ag Ni              211 Va     F3V 
 Thaegun       2104 E588795-2  C Ag Ri              214 Va     F6V 
-Ngasokkuz     2204 C796000-5    Di                 203 Va     F7V M2V
+Ngasokkuz     2204 C796000-5    Di                 003 Va     F7V M2V
 Gvueltie      2304 E888677-4    Ag Ni Ri           901 Va     G3V 
 Gzangularr    2904 BAA5976-D    Fl Hi In           200 Va     F3V 
 Kivuerzgvok   3104 C328789-5     Pi                505 Va     F5V M4V 
@@ -79,7 +79,7 @@ Kritiiruung   1705 C100223-C    Lo Va              402 KO     M1V M5V
 Raengtaeng    2105 C330521-5  C De Ni Po           902 Va     M1V M6V
 Guerskouz     2705 C330585-5    De Ni Po           403 Va     K6V 
 Fozoekh       2905 C552676-4  C Ni Po              421 Va     F5V M7V
-Foenong       3005 C300001-7  G Va Di              311 Va     M1V M1V
+Foenong       3005 C300001-7  G Va Di              011 Va     M1V M1V
 Kharok        3105 B57778A-9  G Ag Pi              404 Va     G3V 
 Ur!nuunguur   0306 C140100-B  K De Lo Po           614 KO     F1V M7V
 Rroonigirim   0406 E566747-A    Ag Ri              822 KO     F8V M1V
@@ -97,7 +97,7 @@ Rarulguerr    2506 B75A877-B  G Wa Ph              403 Va     F4V M8V
 Vaegrokae     2706 B885865-4  G Ri Ga Ph Pa          703 Va     M2V 
 Gaksaoegkaeg  3006 A8A5873-A  G Fl Ph              811 Va     F2V 
 Gzatharuz     3206 C00066A-5    As Na Ni Va          910 Va     M4II K7V 
-Gn!r'kk'ok    0807 E223000-A  K Po Di              902 KO     M0V 
+Gn!r'kk'ok    0807 E223000-A  K Po Di              002 KO     M0V 
 N!r'          1007 C42766A-E  K Ni                 904 KO     M1V 
 Gr'r!         1107 C000555-B  K As Ni Va           205 KO     F5IV M7V
 Poonooruur    1607 A224796-F  O  Pi                405 KO     M5V M5V
@@ -110,7 +110,7 @@ Gaersfezforr  2707 D432100-8  C Lo Po              704 Va     M4II
 Rrugzazighz   3007 C86A322-6  G Lo Wa              314 Va     F2V M7V
 Ksughzorall   3107 D564403-5  H Ni Pa              301 Va     F0V M3V F8V
 Lakrux        0508 C547555-E    Ag Ni              403 KO     F7V M7V
-L!grikr't     0808 E100005-8    Va Di              314 KO     M3V M7V
+L!grikr't     0808 E100005-8    Va Di              014 KO     M3V M7V
 Kku!!raan     1008 C772785-E  K  He Pi             903 KO     F1V 
 Kignuux!'r    1108 E584200-C  K Lo                 200 KO     F7V M8V
 Booghiir      1708 C335677-D  O Ni                 101 KO     K3V M5V
@@ -121,11 +121,11 @@ Rrouruen      2808 B100446-A  G Ni Va              416 Va     M6V M7V M6V
 Ghiug         2908 B89A7A9-B  G Wa Pi              501 Va     F5V 
 Gniku         0309 C440766-F    De Po He Pi          500 KO     F5V 
 K'gaar        0509 C743233-D  K Lo Po              802 KO     F0V 
-Riirrik!kuk   1309 E200000-8    Va Di              901 KO     M5V M5V
-Lupi          1609 C200000-9  K Va Di              801 KO     M5V M6V
+Riirrik!kuk   1309 E200000-8    Va Di              001 KO     M5V M5V
+Lupi          1609 C200000-9  K Va Di              001 KO     M5V M6V
 Reekeex'      1709 E410100-8  K Lo                 900 KO     F6V M8V
 Teetaarr'ng   1809 C4429BB-F  K Hi In Po He          212 KO     F9V 
-Kuroeku       2109 A785000-9  G Ga Di              310 Va     M4V 
+Kuroeku       2109 A785000-9  G Ga Di              010 Va     M4V 
 Ruedouroes    2209 B867321-4    Lo Ga              701 Va     F5V 
 Aenforrghodh  2309 D688677-0  C Ag Ni Ri           608 Va     M2V M3V
 Tutheziks     2709 D241452-6    Ni Po              304 Va     M6V 
@@ -182,18 +182,18 @@ Zougedor      0717 E553667-2  C Ni Po              610 Va     K2V
 Kfountuell    1117 E65A876-3    Wa Ph              900 Va     M4V M8V
 T!reerit      1417 C263586-F  O Ni Pr              504 KO     F2V M4V
 Ksorrgtith    0418 D677555-5    Ag Ni              102 Va     G0V 
-Kougakir      0718 B8B4000-8  G Fl Di              801 Va     M5V 
+Kougakir      0718 B8B4000-8  G Fl Di              001 Va     M5V 
 Rarakh        0818 C467442-9    Ni Pa              312 Va     K0V 
 Ueoughan      0918 C694500-8  G Ag Ni              200 Va     F9V 
 Dhorroetue    1118 E200533-6    Ni Va              314 Va     M4V M7V
 Invoegh       0219 E989878-4  C  Ph Ri             722 Va     F7V 
 Uethaghakue   0419 B310555-C  G Ni                 803 Va     M3V 
 Ifatsousokhs  0519 C24368C-4    Ni Po              901 Va     F1V 
-Gaedho        0619 B777001-5    Di                 333 Va     F0V M6V
+Gaedho        0619 B777001-5    Di                 033 Va     F0V M6V
 Naefae        0719 C947202-3    Lo                 103 Va     F7V 
 Vouraevoe     1019 E526521-5  C Ni                 520 Va     M1V 
 .             2919 X777000-0    Ba                 002 --     F3V 
-Uekhaeth      0120 CA99003-7    Di                 536 Va     F0V M1V F4V 
+Uekhaeth      0120 CA99003-7    Di                 036 Va     F0V M1V F4V 
 Dhaegvananul  0220 C514779-7  G Ic Pi              813 Va     G9V 
 Dovae         0320 C8C3968-7  C Fl Hi In           102 Va     M1V M2V
 Llokno        0420 C776777-6    Ag Pi              107 Va     F6V M0V
@@ -224,7 +224,7 @@ Krengxupix    3125 B10077B-F  K Na Va Pi           717 Kk     K0V M1V
 Rux!n!l       3225 C456533-E  O Ag Ni              504 Kk     F9V M8V
 .             1226 X666000-0    Ba Ga              020 --     M0V M2V
 Griigrul'     2826 C898443-F    Ni Pa              432 Kk     F3V M4V
-Iir'li        2926 C797003-A  K Di                 318 Kk     K2V M1V
+Iir'li        2926 C797003-A  K Di                 018 Kk     K2V M1V
 G'koooogr     3026 A58889B-F  K Ri Ph Pa           901 Kk     F8V M6V
 Laauruu       3126 D231656-B    Na Ni Po           804 Kk     G9V M6V
 Xin'keei      3226 C648424-F  K Ni Pa              531 Kk     F2V M6V
@@ -240,7 +240,7 @@ Keekubaarika  2528 C559648-F  O Ni                 811 Kk     F0V M0V M3V
 Kookuukeek    2628 C342656-E  K Ni Po He           502 Kk     M2V M4V
 Kkeek!axaa    2728 B869677-D  O Ni Ri              101 Kk     F0V 
 Kreekelee     2828 B7C3665-F  K Fl Ni              203 Kk     G1III 
-Rooxkxt'ip!!  3228 E884000-8  K Di                 122 Kk     F3V 
+Rooxkxt'ip!!  3228 E884000-8  K Di                 022 Kk     F3V 
 Kieerree      2129 C9B5877-E  K Fl Ph              535 Kk     F2V M3V
 Ghaare        2229 D476333-A  K Lo                 607 Kk     F6V M8V
 Roteer        2329 C456546-F  K Ag Ni              802 Kk     F9V M5V
@@ -272,15 +272,15 @@ Urr'rroo'     2132 B642534-F  K Ni Po He           213 Kk     K0V
 Xitur'krooxa  2232 C77A720-E  K Wa Pi              103 Kk     K2V 
 Nikrikrung    2332 A375842-F  K  Ph Pa Pi          411 Kk     F0V 
 Rikrir'k      2432 C648611-F    Ag Ni              111 Kk     M3V 
-Kteexktiluri  2732 D758000-A  O Di                 611 Kk     F0V 
-Legnaikel'm   1433 B6A0000-D  O He Di              810 Kk     M3V 
+Kteexktiluri  2732 D758000-A  O Di                 011 Kk     F0V 
+Legnaikel'm   1433 B6A0000-D  O He Di              010 Kk     M3V 
 Kigh!         1533 C510532-E  O Ni                 502 Kk     M5V 
 Kr'eeraat     1933 C346200-D  K Lo                 519 Kk     F4V M1V F6V M7V
 !tuuk         2033 D585300-B  O Lo                 405 Kk     F8V M3V
 K'eekeloorr   2133 B100473-F  K Ni Va              901 Kk     M1V 
 Iker          2233 C638200-B  K Lo                 300 Kk     M3III 
 Greex'l'ng    2533 C89A788-F    Wa Pi              112 Kk     F1V 
-Laarxti       2833 C9B6000-A  K Fl Di              925 Kk     F9V 
+Laarxti       2833 C9B6000-A  K Fl Di              025 Kk     F9V 
 Kiikiitaar    2933 B343610-F  O Ni Po              602 Kk     M6V 
 Paeemugn!'    3233 C78A561-F  K Ni Wa Pr           52B Kk     K6V M8V M7V
 .             1034 X723000-0    Ba Po              005 --     M6V M8V
@@ -307,7 +307,7 @@ Kr'iirul      2635 C332410-E  O Ni Po              304 Kk     M2V M4V
 K'ing'        2835 C340899-E  O De Po He Ph Pi          105 Kk     F0V M6V
 Kekuung       3035 B3347B9-F                       204 Kk     K0V M5V 
 Keenuunkri    3135 D000300-8  O As Lo Va           511 Kk     K3V 
-Eegr'rrekr    3235 C88A001-B  K Wa Di              405 Kk     F2V 
+Eegr'rrekr    3235 C88A001-B  K Wa Di              005 Kk     F2V 
 Kioor'rkoor   1436 A468120-F  K Lo                 500 Kk     F6V M5V
 Etiim         1536 C441400-F  K Ni Po He           504 Kk     F3V M8V
 Xtool!'neek   1636 C978530-D  O Ag Ni              505 Kk     F3V 
@@ -321,7 +321,7 @@ K!'kuutak'    2736 E67A8DE-D    Wa Ph Pi           303 Kk     F0V
 Gn'rr'rrxwe   2936 E321642-D  K Na Ni Po He          701 Kk     M6V 
 R'r't         3236 E788648-A    Ag Ni Ri           308 Kk     M1V M3V
 Eekuuing      1337 C401586-D  K Ic Ni Va           314 Kk     M8V 
-Rrooniix'ter  1437 D464003-B  K Di                 600 Kk     F0V 
+Rrooniix'ter  1437 D464003-B  K Di                 000 Kk     F0V 
 Kuitemam't    1937 C786300-E  O Lo Ga              702 Kk     F4V 
 Tulee         2137 D745512-9  K Ag Ni              812 Kk     F7V M3V
 Neeiiteek     2437 C665545-B  K Ag Ni Ga Pr          608 Kk     K8V M3V

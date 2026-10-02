@@ -1,6 +1,6 @@
-Knaeleng
-7 0
-              1    2          3 4               5  6   7      8
+# Knaeleng
+# 7 0
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 12578
 #Alleg: 01: VA: "Vargr (Alliance of Tju)"
@@ -202,7 +202,7 @@ Kuksezsong    1621 B8A078B-9    He                 902 Va     M1V M3V
 Aerungokh     1921 E667778-3    Ag Ga Ri           403 VA     G4V
 Ghaezoa       2421 C575123-2    Lo                 123 VA     F3V M0V
 Ghasa         2721 C785242-6    Lo Ga              615 VA     F0V M2V
-Naefirran     2921 B442002-7    Po He Di           502 VA     F4V M7V
+Naefirran     2921 B442002-7    Po He Di           002 VA     F4V M7V
 Katsuk        3021 C000653-B    As Na Ni Va          113 VA     F5V
 Zalghikanfag  3121 C686463-4  C Ni Ga Pa           812 VA     M0V M5V
 Lluenangaeng  3221 A120323-A  G De Lo Po           414 VA     M3V M3V
@@ -285,7 +285,7 @@ Nudzaeda      3029 C236401-A  C Ni                 602 Ve     M1V M6V
 Gaktsolig     3129 C120999-B    De Hi In Na Po     315 Ve     G9V M2V
 Llaknurroen   0730 E455648-3  C Ag Ni              503 Ve     F0V M2V
 Sazesuerrgh   1530 C504505-8  G Ic Ni Va           823 Ve     K6V
-Koeghthoez    1830 C410000-8    Di                 700 Ve     M6III
+Koeghthoez    1830 C410000-8    Di                 000 Ve     M6III
 Ksogllokhan   2330 C342443-5    Ni Po He           112 Ve     F7V
 Sorruelkakh   3030 C436743-A                       804 Ve     M2V M2V
 Kovaekang     3130 X967456-0  C Ni Pa              112 Ve     F6V
@@ -293,14 +293,14 @@ Ungvuekong    0931 B372334-7  C Lo He              904 Ve     K9V M4V
 Katsasdhedh   1231 E737863-4  C  Ph                311 Ve     F3V
 Rradhoutu     1331 D325120-7  C Lo                 302 Ve     F0V M7V
 Tharralogarr  1631 D686320-4  C Lo Ga              307 Ve     F8V F9V
-Oakkaeng      1831 C210002-4  G Di                 601 Ve     F2V
+Oakkaeng      1831 C210002-4  G Di                 001 Ve     F2V
 Degvog        2031 B592263-5  C Lo He              704 Ve     F0V M3V
 Thuezaaruel   2231 C694772-4  C Ag Pi              403 Ve     F0V M0V
 Luskaersull   2331 E8B2100-8  C Fl Lo He           902 Ve     M2V M5V
 Auvuotsaeue   2931 C779677-6  G Ni                 123 Ve     F2V M6V
 Knuekhoe      0232 C63738C-6  G Lo                 602 Ve     F2III K3V
 Kuevioenueng  0332 C345457-6  C Ni Pa              124 Ve     F0V M2V
-Osknuengaegz  0832 C610000-7  G Di                 204 Ve     K0V
+Osknuengaegz  0832 C610000-7  G Di                 004 Ve     K0V
 Ugnogvas      1032 E645457-5    Ni Pa              100 Ve     F6V
 Aorae         1332 B000326-D  G As Lo Va           911 Ve     G9V M4V
 Dzaaeza       1532 E69787A-0     Ph Pa Pi          114 Ve     M1V

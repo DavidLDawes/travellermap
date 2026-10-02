@@ -1,6 +1,6 @@
-Kharrthon
-8 0
-              1    2          3 4               5  6   7      8
+# Kharrthon
+# 8 0
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 12579
 #Alleg: 01: VA: "Vargr (Alliance of Tju)"
@@ -24,13 +24,13 @@ Gnoengoezvik  2601 A000202-F    As Lo Va           405 Va     M6III K6V
 Athgvuek      2901 C636420-7  G Ni                 714 Va     K1V M1V
 Uda           0502 X584225-0  C Lo                 613 Va     F1V M2V
 Suetsoezu     1002 C223540-9  G Ni Po              904 Va     M4V M8V
-Suedhaedz     1302 D100002-7    Va Di              700 Va     G4IV M8V
+Suedhaedz     1302 D100002-7    Va Di              000 Va     G4IV M8V
 Koudzangarr   1402 C77355A-4    Ni                 902 Va     F2V M8V
 Uearrdhenor   2002 E3325AB-6  C Ni Po              103 Va     G8V 
 Oeghzgnong    2402 CAB3676-8  G Fl Ni              705 Va     F7V M7V 
-Ifekhoerrers  2502 C858000-5  G Di                 101 Va     F2V 
+Ifekhoerrers  2502 C858000-5  G Di                 001 Va     F2V 
 Rroezuegz     2602 C895521-7    Ag Ni              904 Va     F8V M1V
-Gollaksien    2802 C442002-8    Po He Di           502 Va     F0V 
+Gollaksien    2802 C442002-8    Po He Di           002 Va     F0V 
 Dzoghuerrvae  0103 C628343-5    Lo                 303 VA     M0V 
 Zaeuerrgh     0203 E447675-1  C Ag Ni              414 VA     F4V M5V
 Dhoukfur      0303 C685785-4    Ag Ga Ri           405 VA     F6V 
@@ -161,7 +161,7 @@ Iofue         2013 E78A101-7  C Lo Wa              603 Va     F0V
 Faekhusi      2513 C00099A-6    As Hi Na Va In          316 Va     F7V M5V M3V
 Tsaetsaeaek   0514 C674341-6    Lo                 410 VA     F0V 
 Alleu         1314 C8A3537-9  C Fl Ni              910 VA     M8II M6V 
-Oeza          1714 D646000-1  C Di                 600 Va     G8V M7V
+Oeza          1714 D646000-1  C Di                 000 Va     G8V M7V
 Zugnangrrang  1914 C479775-6     Pi                303 Va     K9V M6V
 Eog           0115 C45157B-4    Ni Po              410 VA     F5V M3V
 Eo            0915 C622877-5    Na Po He Ph Pi          822 VA     F6V 
@@ -190,7 +190,7 @@ Kfaefoutanae  2816 D9B5748-6  G Fl                 204 Va     M2V M8V
 Uenguekna     3216 C78487A-2  G  Ph Pa Ri          504 Va     F1V 
 Tsesogtaegh   0117 B5619AA-8    Hi Pr              113 VA     F0V 
 Uae           0617 E384978-7  C Hi Pr              614 VA     F8V 
-Llasaegnoudo  0717 B8B5002-9  G Fl Di              912 VA     M7V 
+Llasaegnoudo  0717 B8B5002-9  G Fl Di              012 VA     M7V 
 Uozouzou      2017 B352200-6    Lo Po              918 Va     F5V M4V M1V
 Llaetha       2117 B000987-A  G As Hi Na Va In          103 Va     F9V 
 Rrakha        2717 C55559B-4  C Ag Ni              401 Va     G2V 
@@ -233,7 +233,7 @@ Fouvueghdarr  0721 E313204-5  C Ic Lo              502 VA     M1V M2V
 Kefuengkos    0921 C687241-7  C Lo Ga              102 VA     F1V M4V
 Gughuekhue    1121 D000232-7  G As Lo Va           610 VA     M5V 
 Uthaekhaeneg  1421 D99A544-7    Ni Wa              821 Va     F3V M5V
-Koeoung       1521 B577000-9  C Di                 422 Va     F1V 
+Koeoung       1521 B577000-9  C Di                 022 Va     F1V 
 Soetanoul     1621 D8B5742-1    Fl                 603 Va     M5V M8V
 Toksu         2121 C344102-6  G Lo                 201 VD     F5V M4V
 Gzadzuekdue   2621 B425651-C    Ni                 103 VD     K9V M5V
@@ -321,12 +321,12 @@ Kfalla        3029 C363A9A-B    Hi                 600 Va     F1V
 Aksufekha     1730 E000632-3  C As Na Ni Va          107 Va     K7V M4V M7V
 Segoe         2530 C22457C-6  G Ni                 702 Va     G2V 
 Asuesgnousik  2930 C424100-8  G Lo                 801 Va     F7V 
-Dhaeru        3030 D774000-5  C Di                 906 Va     M0V M7V
+Dhaeru        3030 D774000-5  C Di                 006 Va     M0V M7V
 Kuefuevoe     3130 C785786-4    Ag Ga Ri           403 Va     F5V 
 Knasougha     3230 C250463-3  C De Ni Po           905 Va     F5V 
 Aekok         0131 B658201-A  G Lo                 104 Ve     F7V 
 Zadzikon      0231 C300246-6    Lo Va              522 Ve     F9V 
-Gzoevaraerr   0431 B443001-8    Po Di              904 Ve     F3V M1V
+Gzoevaraerr   0431 B443001-8    Po Di              004 Ve     F3V M1V
 Aea           0531 C727433-6    Ni                 204 Ve     K8V 
 Uerrkhus      0931 A438572-9  C Ni                 913 Va     F0V 
 Adhinorrg     2431 C74A564-9    Ni Wa              903 Va     F1V 
@@ -344,7 +344,7 @@ Kaaegvoes     3032 X89968A-0    Ni                 502 Va     F7V
 Zouraengridh  3132 C5889CE-5    Hi Pr              200 Va     K9V 
 Raoudue       0633 B553788-6    Po                 401 Ve     M1V 
 Lloesoouuz    1433 C100776-8  C Na Va Pi           611 Va     M3III 
-Doeouagnoe    1533 C583000-6    Di                 700 Va     F3V 
+Doeouagnoe    1533 C583000-6    Di                 000 Va     F3V 
 Ghueouuoghz   1633 C55568A-6  H Ag Ni              110 Va     F3V 
 Kidzurre      2333 B5A4100-6  G Fl Lo              925 Va     M4V M7V
 Aenggvourr    2533 C383677-9  C Ni Ri              801 Va     M2V M5V

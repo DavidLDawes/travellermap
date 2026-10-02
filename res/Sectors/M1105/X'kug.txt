@@ -28,7 +28,7 @@ Hex  Name                         UWP       Remarks                             
 0705 Reehksh                      A867699-C Ag Ga Ni Ri                                                      -       N  - 324   K4   M0 V                                
 0707 Tilua                        C43277B-A Na Po                                                            -       -  - 701   K4   M8 IV M5 V                         
 0710 Karkarlan                    C100200-C Lo Va                                                            -       -  - 624   K4   G3 V K1 V                           
-0801 Xuxkgukar                    E100000-0 Ba Va                                                            -       -  - 213   Kk   M1 V M7 V                           
+0801 Xuxkgukar                    E100000-0 Ba Va                                                            -       -  - 013   Kk   M1 V M7 V                           
 0802 Utinxiraa                    D9B54QK-A Fl Ni                                                            -       O  - 223   Kk   M9 V                                
 0803 Oot!r                        B884ARK-F Hi                                                               -       K  - 624   Kk   K2 V M0 V                           
 0806 Keeua                        E551453-5 Ni Po                                                            -       -  - 511   K4   M5 V                                
@@ -57,7 +57,7 @@ Hex  Name                         UWP       Remarks                             
 1204 Kr!xata                      CAD46RK-E Ni                                                               -       -  - 224   Kk   K8 IV M5 V                          
 1205 Neerrk'                      A554ARK-F Hi                                                               -       K  - 400   Kk   M6 V BD                             
 1207 Bexan                        B673444-9 Ni                                                               -       -  - 923   K4   A7 III G6 V F5 V                    
-1210 Krang Haga                   C687000-2 Di Ga                                                            -       -  A 312   K4   K5 V K9 V                           
+1210 Krang Haga                   C687000-2 Di Ga                                                            -       -  A 012   K4   K5 V K9 V                           
 1304 Urur                         D8677RK-B Ag Ga Ri                                                         -       O  - 710   Kk   K2 IV M0 V M9 V                     
 1306 'Atate                       E200000-0 Ba Va                                                            -       -  - 023   Kk   M0 V M4 V M4 V                      
 1308 Tu Aratee                    D410566-8 Ni O:1309                                                        -       -  - 433   K4   M4 V                                
@@ -97,7 +97,7 @@ Hex  Name                         UWP       Remarks                             
 2207 Hkuu!ril                     E4212PK-9 He Lo Po                                                         -       -  - 112   Kk   M7 V                                
 2208 Gzeei                        B6265QK-E Ni                                                               -       K  - 223   Kk   G6 IV                               
 2210 Igam                         E200000-0 Ba Va                                                            -       -  - 004   Kk   G4 V                                
-2303 Ugnarre                      E300000-0 Ba Va                                                            -       -  - 422   Kk   K9 V M7 V                           
+2303 Ugnarre                      E300000-0 Ba Va                                                            -       -  - 022   Kk   K9 V M7 V                           
 2304 Tateel!                      B87A4QK-D Ni Wa                                                            -       O  - 124   Kk   M5 V                                
 2307 K'mukra                      A5758RK-F Pa Ph Pi                                                         -       K  - 700   Kk   K8 V M7 V                           
 2403 Hkaago                       D5345QK-B Ni                                                               -       O  - 834   Kk   K4 IV                               
@@ -120,7 +120,7 @@ Hex  Name                         UWP       Remarks                             
 2706 Kiarru                       A4226QK-F He Na Ni Po                                                      -       K  - 624   Kk   A2 V A5 V                           
 2708 Kr'gnag'                     C9A56RK-D Fl Ni                                                            -       K  - 302   Kk   G4 V M1 V                           
 2709 Reteerhki                    B6768RK-F Pa Ph Pi                                                         -       O  - 124   Kk   K5 V                                
-2801 Grarkarurr                   E300000-0 Ba Va                                                            -       -  - 924   Kk   K7 V M1 V                           
+2801 Grarkarurr                   E300000-0 Ba Va                                                            -       -  - 024   Kk   K7 V M1 V                           
 2804 Ixingxata                    C765ARK-E Ga Hi                                                            -       K  - 404   Kk   K5 V M3 V                           
 2807 Kaxegnul                     B7255QK-E Ni                                                               -       K  - 334   Kk   K3 V                                
 2809 Laalak                       B4102PK-C Lo                                                               -       K  - 701   Kk   F1 V G0 V D F6 V K4 V               
@@ -197,7 +197,7 @@ Hex  Name                         UWP       Remarks                             
 1120 Aagz'r                       A9B65QK-F Fl Ni                                                            -       K  - 604   Kk   G3 V M4 V                           
 1214 Bihd Lighk                   B321749-A He Na Pi Po                                                      -       -  - 412   K4   F6 V                                
 1215 Gurim                        B895752-A Ag Pi                                                            -       N  - 103   K4   M5 V                                
-1217 Aeghakiig                    E775000-4 Di (Yegha)                                                       -       -  - 814   Kk   M1 V                                
+1217 Aeghakiig                    E775000-4 Di (Yegha)                                                       -       -  - 014   Kk   M1 V                                
 1220 Xeeteonuu                    D9456RK-B Ag Ni                                                            -       K  - 702   Kk   G4 V D M4 V                         
 1314 Ghuagntuakar                 C556888-7 Pa Ph                                                            -       N  - 324   K4   K3 IV                               
 1320 Tr'maghakr                   E200454-A Ni Va                                                            -       -  - 324   Kk   K8 V                                
@@ -246,11 +246,11 @@ Hex  Name                         UWP       Remarks                             
 2318 Gnekrparr                    E430000-0 Ba De Po                                                         -       O  - 004   Kk   M3 V M4 V                           
 2319 Geta Kagu                    CAA46RK-D Fl Ni                                                            -       K  - 211   Kk   G6 V G8 V                           
 2320 Tekeel'                      B8345QK-E Ni                                                               -       O  - 800   Kk   K7 IV M6 V                          
-2411 Naxra Nuu                    E200000-0 Ba Va                                                            -       -  - 704   Kk   G4 V                                
+2411 Naxra Nuu                    E200000-0 Ba Va                                                            -       -  - 004   Kk   G4 V                                
 2415 Gheeka                       C8356RK-D Ni                                                               -       K  - 121   Kk   F1 IV G4 V                          
 2416 Akaarruum                    C9992PK-8 Lo                                                               -       O  - 225   Kk   K1 III M6 V                         
 2418 Xularre                      E100000-0 Ba Va                                                            -       -  - 004   Kk   M2 V M4 V                           
-2513 Niri Kretagn'                E89A000-0 Ba Wa                                                            -       K  - 415   Kk   F4 IV F5 V M1 V                     
+2513 Niri Kretagn'                E89A000-0 Ba Wa                                                            -       K  - 015   Kk   F4 IV F5 V M1 V                     
 2514 Lingtooka                    B782ARK-F Hi                                                               -       -  - 924   Kk   M9 V                                
 2516 Xothkarr                     C2112PK-8 Ic Lo                                                            -       O  - 721   Kk   F3 V                                
 2517 Aleekit                      BA7A4QK-C Ni Oc                                                            -       O  - 200   Kk   M3 V M6 V                           
@@ -287,7 +287,7 @@ Hex  Name                         UWP       Remarks                             
 3012 Ghaxkalee                    E200000-0 Ba Va                                                            -       -  - 024   Kk   G2 V                                
 3017 Gnatakaa                     E5424QK-9 He Ni Po                                                         -       -  - 922   Kk   M1 V M5 V M5 V                      
 3020 Mirrui                       B2225QK-D Ni Po                                                            -       K  - 423   Kk   K3 V                                
-3114 Gnaakrirkaga                 E310000-0 Ba                                                               -       -  - 722   Kk   A3 V D F4 V                         
+3114 Gnaakrirkaga                 E310000-0 Ba                                                               -       -  - 022   Kk   A3 V D F4 V                         
 3116 Graktanak                    A5427RK-F He Pi Po                                                         -       -  - 603   Kk   G8 V                                
 3118 Nat Agrita                   E200000-0 Ba Va                                                            -       -  - 002   Kk   M3 IV M6 V BD                       
 3119 Nen'rreer                    E8A0000-9 Di(Hes'fis'Tan) He                                               -       -  - 020   Kk   K5 V                                
@@ -301,7 +301,7 @@ Hex  Name                         UWP       Remarks                             
 0121 Ghilataph                    B100589-D Ni Va                                                            -       N  - 522   K4   G3 V                                
 0124 Xukikka                      E200000-0 Ba Va                                                            -       K  - 001   Kk   K5 V M8 V                           
 0125 Ixkuka                       B5627RK-F Ri                                                               -       -  - 124   Kk   K5 IV K3 V M7 V                     
-0127 Luukixkeer                   X673000-1 Di (Uulip)                                                       -       -  R 924   Kk   M2 V M7 V                           
+0127 Luukixkeer                   X673000-1 Di (Uulip)                                                       -       -  R 024   Kk   M2 V M7 V                           
 0221 Kagnuap                      D5247A7-7 Pi                                                               -       -  - 313   K4   G4 V                                
 0223 Inilud                       B5869RK-F Hi Pr                                                            -       K  - 514   Kk   M0 V M3 V                           
 0227 Kueetoorting                 B663ARK-F Hi                                                               -       -  - 320   Kk   M8 V                                
@@ -325,7 +325,7 @@ Hex  Name                         UWP       Remarks                             
 0725 N!kurul                      A3101PK-C Lo                                                               -       K  - 514   Kk   K9 V                                
 0728 Ikrorikar                    C5639RK-D Hi Pr                                                            -       K  - 800   Kk   K0 V                                
 0822 Kax'rat                      B656ARK-F Ga Hi                                                            -       K  - 622   Kk   F1 V                                
-0828 Kruurakra                    E200000-0 Ba Va                                                            -       K  - 434   Kk   M0 V M5 V M7 V                      
+0828 Kruurakra                    E200000-0 Ba Va                                                            -       K  - 034   Kk   M0 V M5 V M7 V                      
 0830 M'gharu                      A6579RK-F Ga Hi                                                            -       -  - 500   Kk   G6 V                                
 0921 Rakriiktar                   E6A0000-0 Ba He                                                            -       -  - 005   Kk   M6 V                                
 0927 N'akung                      C5426RK-D He Ni Po                                                         -       O  - 724   Kk   F4 V                                
@@ -396,7 +396,7 @@ Hex  Name                         UWP       Remarks                             
 2130 Ribaa Irau                   C5446RK-C Ag Ni                                                            -       -  - 624   Kk   K5 V                                
 2221 Kooria                       B7458RK-F Pa Ph Pi                                                         -       -  - 213   Kk   K6 V M5 V D M2 V                    
 2222 Akoo                         X535773-0 (S'geth)                                                         -       -  R 202   KC   K0 V                                
-2226 'Tigool                      E320000-0 Ba De He Po                                                      -       -  - 714   Kk   K4 IV M6 V                          
+2226 'Tigool                      E320000-0 Ba De He Po                                                      -       -  - 014   Kk   K4 IV M6 V                          
 2230 Gni'kakat                    A4125QK-F Ic Ni                                                            -       K  - 204   Kk   M1 II                               
 2322 Etra Kagu                    E528000-0 Ba                                                               -       K  - 014   Kk   M6 V                                
 2324 K'rrmarra                    C65A6RK-D Ni Wa                                                            -       K  - 502   Kk   K0 V                                
@@ -437,7 +437,7 @@ Hex  Name                         UWP       Remarks                             
 3223 Oakap Ema                    E430000-0 Ba De Po                                                         -       -  - 000   Kk   K1 V M6 V                           
 3226 Ghikri                       B66A5QK-D Ni Pr Wa                                                         -       -  - 724   Kk   M0 V M5 V                           
 0133 Xikuul                       C6766RK-D Ag Ni                                                            -       -  - 910   Kk   F7 V                                
-0136 N'gha                        E210000-0 Ba                                                               -       K  - 322   Kk   G1 V                                
+0136 N'gha                        E210000-0 Ba                                                               -       K  - 022   Kk   G1 V                                
 0233 Kr'kirii                     D9B34QK-B Fl Ni                                                            -       K  - 423   Kk   M3 V                                
 0235 Hkak'gzek                    C5374QK-9 Ni                                                               -       O  - 714   Kk   M3 V                                
 0237 Keexkaare                    D5356RK-A Ni                                                               -       -  - 733   Kk   K2 V                                
@@ -535,7 +535,7 @@ Hex  Name                         UWP       Remarks                             
 2831 Kughular                     A6678RK-F Ga Pa Ph Ri                                                      -       K  - 802   Kk   M6 V                                
 2832 Magakrarrni                  A7679RK-E Ga Hi Pr                                                         -       K  - 301   Kk   M1 V                                
 2834 Etugra                       E5313QK-A Lo Po                                                            -       -  - 400   Kk   G6 V                                
-2837 Kr'knakati                   E300000-0 Ba Va                                                            -       -  - 600   Kk   K2 V K9 V M7 V                      
+2837 Kr'knakati                   E300000-0 Ba Va                                                            -       -  - 000   Kk   K2 V K9 V M7 V                      
 2838 Gaangruui                    C6877RK-C Ag Ga Ri                                                         -       K  - 400   Kk   K7 V                                
 2839 Miiurak                      C5436RK-D Ni Po                                                            -       K  - 822   Kk   K8 V                                
 2840 Nereck                       C5549RK-E Hi                                                               -       K  - 525   Kk   K6 V M9 V                           

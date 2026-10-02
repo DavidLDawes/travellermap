@@ -1,22 +1,22 @@
-LEY SECTOR - M1000 (GATEWAY) ERA
+# LEY SECTOR - M1000 (GATEWAY) ERA
 
 # File from http://dotclue.org/t20/
 # Changes:
 # 2009-03-28 - Joshua Bell - Stellar data for 0314 changed from "2 V A6 D" to "K2 D M6 D"
 
-The data in the sector text files is laid out in column format:
+# The data in the sector text files is laid out in column format:
 
- 1-14: Name
-15-18: HexNbr
-20-28: UWP
-   31: Bases
-33-47: Codes & Comments
-   49: Zone
-52-54: PBG
-56-57: Allegiance
-59-74: Stellar Data
+#  1-14: Name
+# 15-18: HexNbr
+# 20-28: UWP
+#    31: Bases
+# 33-47: Codes & Comments
+#    49: Zone
+# 52-54: PBG
+# 56-57: Allegiance
+# 59-74: Stellar Data
 
-....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+# ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
 Amikell       0101 D720889-3    De Na Po He Ph Pi          404 Im K8 V 
 Kagemushi     0102 D235666-4    Ni                 612 Im K1 V 
 Maruur Lis    0107 C564976-5    Hi Pr              700 Im F1 V A9 D 
@@ -92,7 +92,7 @@ Mamdinga      0519 D878658-6    Ag Ni              502 Im G5 V K5 D
 Nicaceum      0530 A522775-C    Na Po He Pi          802 Im M3 V 
 Ipsham        0533 A594342-C  W Lo                 104 Im F2 V G4 D 
 Gig           0601 D876640-7    Ag Ni              903 Im F9 V 
-570-432       0606 CAC5044-6    Fl Di              404 Im M9 V A4 D 
+570-432       0606 CAC5044-6    Fl Di              004 Im M9 V A4 D 
 Secord        0608 B380533-B    De Ni Pr           803 Im F5 V 
 Galir         0609 A470621-B    De Ni He           300 Im G8 V 
 Mur Mura      0614 B88A305-9    Lo Wa              734 IL F5 V 
@@ -228,7 +228,7 @@ Adigigi       1523 X200441-8    Ni Va              410 Im K1 V
 Long Island   1525 C76A7CD-9    Wa Ri              221 Im F3 V 
 558-617       1526 CAA9200-B    Fl Lo              202 Im G5 V K8 D 
 Griik Maeii   1528 A575587-A    Ag Ni              513 Im G6 V A0 D 
-Gidikurda     1534 B200000-C    Va Di              203 Im M0 V M5 V 
+Gidikurda     1534 B200000-C    Va Di              003 Im M0 V M5 V 
 Initiate      1538 C000540-7    As Ni Va           703 Im K1 V G7 D 
 Khiskami      1540 B529831-B  N  Ph Pi             404 Im F2 V M2 D 
 Caeruleus     1603 E75A488-4    Ni Wa              812 Im F4 V 
@@ -240,7 +240,7 @@ Shurmon       1614 C00089A-7    As Na Va Ph Pi          902 Im F2 V K6 D
 Rusted Root   1616 A110676-D    Na Ni              812 Im M2 V 
 Keene         1623 A99769D-9    Ag Ni              904 Im F6 V 
 Asili         1625 C3658B5-5     Ph Pa Ri          214 Im G1 V 
-Kaga          1628 E535010-5    Di                 705 Im M7 V K5 D 
+Kaga          1628 E535010-5    Di                 005 Im M7 V K5 D 
 Guarda        1633 D000566-8    As Ni Va           414 Im G3 V A6 D 
 Sikali        1636 D324437-5    Ni                 703 Im K2 V 
 Dalganar      1637 A400534-B    Ni Va              814 Im G0 V 
@@ -342,7 +342,7 @@ Ukham         2521 C978552-6    Ag Ni              323 IC F6 V G9 D
 Dagkhanesh    2526 C554402-6    Ni Pa              804 IC G2 V 
 Udirgimma     2530 A773520-8    Ni                 914 KL G6 V 
 Maakar        2533 A2106B9-C    Na Ni              704 Na G1 V 
-Endless Blue  2534 X68A025-1    Wa Di              302 Na K0 V 
+Endless Blue  2534 X68A025-1    Wa Di              002 Na K0 V 
 Gergigi       2537 A896340-B    Lo                 623 IC G0 V 
 Navarino      2538 A547424-E    Ni Pa              203 IC M3 V G0 D 
 Nushanita     2614 C537731-8                       203 IC K2 V 

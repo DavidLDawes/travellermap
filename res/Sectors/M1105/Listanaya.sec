@@ -1,6 +1,6 @@
-Listanaya
-7 -1
-              1    2          3 4               5  6   7      8
+# Listanaya
+# 7 -1
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 31634
 #Alleg: 04: Va: "Vargr (non-aligned)"
@@ -146,7 +146,7 @@ Kaenggvaeg    1121 B332599-B  G Ni Po              800 Va     M3V
 Gvughonuerrg  1421 B6A1897-6  G Fl He Ph           902 Va     F4V 
 Vangdhaghagz  1921 C67A462-5    Ni Wa              523 Va     F1V M5V
 Zoghorsaers   2521 C997544-5  C Ag Ni              703 Va     F0V M0V
-Khueu         2721 C545000-3    Di                 612 Va     F5V M4V
+Khueu         2721 C545000-3    Di                 012 Va     F5V M4V
 .             3021 X540000-0    Ba De Po He        022 --     F0V 
 .             3121 X000000-0    As Ba Va           012 --     G4V 
 Zouzol        0122 E414673-3  C Ic Ni              211 Va     F4V M7V M2V
@@ -210,7 +210,7 @@ Oughakaer     1531 C270544-7  C De Ni              121 Va     F6V
 Tigue         1931 C120345-7  C De Lo Po           704 VL     M0V M3V
 Oksoghzukh    2031 C412485-6  G Ic Ni              403 VL     M0V 
 Zoukang       2131 E8C4262-5  C Fl Lo              712 VL     M0V M6V
-Oursarrgen    2231 C757000-7    Ga Di              604 VL     F6V M8V
+Oursarrgen    2231 C757000-7    Ga Di              004 VL     F6V M8V
 Agzong        2331 E666455-4  C Ni Ga Pa           312 VL     F1V M1V
 Zuedzetsnarr  2431 E574358-5    Lo                 803 VL     F8V M4V
 Gaegonadh     2931 E677100-5    Lo                 403 VL     K2V M0V
@@ -236,7 +236,7 @@ Kfurorron     2833 C377966-7  H Hi In              914 VL     F3V M5V
 Dzallunoerr   2933 C568645-5    Ag Ni Ri           702 VL     G1V M6V
 Iaghongun     0334 E241876-5    Po Ph Pi           220 Va     F3V M7V
 Aezuen        0434 BAC986A-8    Fl Ph              402 Va     M7V 
-Knueue        1434 B737000-7    Di                 910 Va     F0V 
+Knueue        1434 B737000-7    Di                 010 Va     F0V 
 Saauroung     1834 A423103-E    Lo Po              904 Va     F4V 
 Aerrge        3234 C447333-6  G Lo                 721 Va     F3V 
 Uag           1135 X98A67A-1  C Ni Wa Ri           310 Va     F6V 

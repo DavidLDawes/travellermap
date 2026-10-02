@@ -38,7 +38,7 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 0112 Banskonno            A582574-E Ni Pr Droy4 Asla3          { }  ( )  [ ]  - N  - 204   Re G0 V
 0118 Wyokhefao            B7374N8-B Ni                         { }  ( )  [ ]  - M  - 401   Rf A9 V K4 V
 0212 Aldaya               B885620-8 Ag Ni Ga Ri Asla2          { }  ( )  [ ]  - S  - 423   Re K4 V
-0216 Neon                 X782000-0 Ba                         { }  ( )  [ ]  - -  - 923      F6 V M4 V
+0216 Neon                 X782000-0 Ba                         { }  ( )  [ ]  - -  - 023      F6 V M4 V
 0217 Khoarfeah            B4236M3-C Na Ni Po AslaW             { }  ( )  [ ]  - N  - 534   Rf G1 IV
 0313 Helifil              D310744-9 Na Pi RsB Asla6            { }  ( )  [ ]  - -  - 403   Re K1 V
 0416 Tonnurad             B563787-7 Ri Asla3                   { }  ( )  [ ]  - N  - 803   Rf G3 V M5 V G5 V
@@ -46,7 +46,7 @@ Hex  Name                 UWP       Remarks                    {Ix} (Ex) [Cx] N 
 1314 R'Bak                E587773-2 Ag Ri                      { }  ( )  [ ]  - -  R 721   Na G3 V
 1812 Undrelyn             E551468-5 Ni Po Da Chir2             { }  ( )  [ ]  - M  A 314   Cs F1 V D
 0921 Zuflucht             D545655-7 Ag Ni                      { }  ( )  [ ]  - M  A 810   Re F0 V F8 V
-0925 Wellington           X8B0000-0 Ba He                      { }  ( )  [ ]  - -  R 600      G9 V M2 V
+0925 Wellington           X8B0000-0 Ba He                      { }  ( )  [ ]  - -  R 000      G9 V M2 V
 0926 Esperanza            A674ABC-A Hi In Pz Di (Droyne)       { }  ( )  [ ]  - N  A 113   Re F7 V
 0930 St. Hilaire          B579763-9 Pi O:0926                  { }  ( )  [ ]  - N  - 400   Re K1 V D
 1030 Nebelwelt            C879567-5 Ni O:0926                  { }  ( )  [ ]  - -  - 302   Re K3 V

@@ -1,18 +1,18 @@
-GLIMMERDRIFT REACHES SECTOR - M1000 (GATEWAY) ERA
+# GLIMMERDRIFT REACHES SECTOR - M1000 (GATEWAY) ERA
 
-The data in the sector text files is laid out in column format:
+# The data in the sector text files is laid out in column format:
 
- 1-14: Name
-15-18: HexNbr
-20-28: UWP
-   31: Bases
-33-47: Codes & Comments
-   49: Zone
-52-54: PBG
-56-57: Allegiance
-59-74: Stellar Data
+#  1-14: Name
+# 15-18: HexNbr
+# 20-28: UWP
+#    31: Bases
+# 33-47: Codes & Comments
+#    49: Zone
+# 52-54: PBG
+# 56-57: Allegiance
+# 59-74: Stellar Data
 
-....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+# ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
 Ker           0105 D89A225-7    Lo Wa              722 Na K4 V A4 D 
 Ipdamgasi     0125 B693356-8    Lo                 404 Na K7 V 
 Gadir Murgis  0126 A384630-A    Ag Ni Ri           904 Na K9 V 
@@ -26,7 +26,7 @@ Sheridan      0324 A525AC9-C    Hi In              613 Na M0 V
 Merbizinkhi   0327 B366340-C    Lo                 111 Na G8 V 
 Khamkhabu     0329 C3235AB-A    Ni Po              114 Na M1 V A9 D 
 Eduukhiima    0331 B100637-D    Na Ni Va           213 Id G4 V A4 D 
-Dashanilin    0336 B100000-9    Va Di              414 Id K9 V 
+Dashanilin    0336 B100000-9    Va Di              014 Id K9 V 
 Dimirbukhiir  0338 X889449-3    Ni                 805 Id K8 V M0 V 
 Chilok        0424 E326632-B    Ni                 114 Na K4 V 
 Dakharili     0430 D474452-A    Ni Pa              914 Id K4 V 
@@ -43,7 +43,7 @@ Granicus      0520 D335589-6    Ni                 304 FH K4 V M4 D
 Sardis        0521 A667553-D    Ag Ni Ga Pr          611 FH K4 V 
 Novae         0522 A686756-A    Ag Ri Ga           523 FH M3 V A2 D 
 Memgug        0533 B843302-7    Lo Po              522 Id K5 V M5 D 
-110-796       0536 BAB4001-B    Fl Di              704 Id K9 V M5 D 
+110-796       0536 BAB4001-B    Fl Di              004 Id K9 V M5 D 
 Ushkhesh      0538 C400796-7    Na Va Pi           613 Id M2 V 
 Thermon       0623 B888150-5    Lo                 624 FH F5 V 
 Mikhuurgakha  0633 B586200-9    Lo                 303 Id F7 V 
@@ -89,7 +89,7 @@ Richter       1034 C200789-6    Na Va Pi           123 Na M1 V
 Brunt         1038 E987421-6    Ni Pa              423 Na K1 V M0 D 
 Ulaam         1040 E576755-6    Ag Pi              404 Na M2 V 
 Vacc City     1103 C100243-A    Lo Va              102 Im K7 V 
-Arkaene       1104 B100000-9    Va Di              603 Im M9 V M3 D 
+Arkaene       1104 B100000-9    Va Di              003 Im M9 V M3 D 
 Liga          1105 E200455-9    Ni Va              803 Im M2 V F3 D 
 Endpoint      1106 D11079B-6    Na Pi              413 Na M2 V 
 Hovel         1109 D62389C-2    Na Ph Pi Po          314 Na M1 V A6 D 

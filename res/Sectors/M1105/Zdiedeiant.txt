@@ -327,7 +327,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2624 Niekrpiansh          A545783-B Ag Pi                               - KM - 114   ZhIa      
 2625 Zhdetlafrqia         C652402-9 Ni Po                               - -  - 112   ZhIa      
 2627 Tlinshzhdiak         A000414-E As Ni Va                            - -  - 102   ZhIa      
-2628 Tledrfra'iesh        X260000-0 De Ba                               - -  R 423   ZhIa      
+2628 Tledrfra'iesh        X260000-0 De Ba                               - -  R 023   ZhIa      
 2630 Abrinj               A5539BD-9 Hi Po                               - KM A 824   ZhIa      
 2721 Jdipchtizh           A746551-E Ag Ni                               - KM - 323   ZhIa      
 2723 Ezh Evlmr            A000732-E As Na Va Pi                         - KM - 214   ZhIa      

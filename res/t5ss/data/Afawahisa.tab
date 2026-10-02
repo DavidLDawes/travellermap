@@ -24,7 +24,7 @@ Afaw	M	0534	Yea	B100232-9	R	Lo Va		724	AsSc	M0 V D	{ 0 }	(E10+1)	[4239]		16	14
 Afaw	M	0535	Takakheah	C434979-B	R	Hi		113	AsMw	G9 V D	{ 2 }	(989-3)	[6B8B]		13	-1944
 Afaw	M	0536	Khtyu'eihaei	E642369-6		He Lo Po		500	AsT5	F3 V D	{ -3 }	(920+3)	[7116]		5	54
 Afaw	M	0537	Oi'oafoi	D567754-4		Ag Ri		814	AsMw	F8 V	{ 0 }	(862+3)	[4772]		13	288
-Afaw	E	0613	Herebedragons	X200000-0		Ba Va		000	NaXX	M5 V	{ -3 }	(B00+1)	[0000]		12	11
+Afaw	E	0613	Herebedragons	X200000-0		Ba Va		000	NaXX	M5 V	{ -3 }	(B00-5)	[0000]		12	-55
 Afaw	I	0629	Awiyl	E536887-4		Ph		513	AsWc	F2 V	{ -2 }	(875+3)	[C655]		12	840
 Afaw	M	0637	Auwaorlyai	D323535-7	T	Ni Po		414	AsT0	K0 IV M5 V	{ -3 }	(541+3)	[5265]		12	60
 Afaw	M	0638	Aihairl	D464100-8	T	Lo		113	AsT0	F5 V	{ -3 }	(G00-5)	[2164]		14	-80
@@ -46,14 +46,14 @@ Afaw	N	1032	Haolye	C200356-A		Lo Va		405	AsT0	M6 III	{ 0 }	(D20-3)	[6366]		14	-7
 Afaw	N	1035	Htihkuiew	C969567-A	R	Ni Pr		112	AsVc	G2 V	{ 0 }	(644-4)	[4548]		8	-384
 Afaw	N	1038	Fehaso	C559788-4	R			713	AsSc	F1 V	{ -1 }	(669-1)	[7637]		13	-324
 Afaw	N	1040	Iaia	B363366-A	R	Lo		502	AsVc	F7 V	{ 1 }	(B21-1)	[4447]		11	-22
-Afaw	F	1120	Yustetya	D240000-0		Ba De Po		014	NaXX	F1 V D	{ -3 }	(500+4)	[0000]		11	20
+Afaw	F	1120	Yustetya	D240000-0		Ba De Po		014	NaXX	F1 V D	{ -3 }	(500-5)	[0000]		11	-25
 Afaw	J	1128	Ahyulafa	E997653-5		Ag Ni		110	AsMw	G7 V	{ -2 }	(754-1)	[44A9]		6	-140
-Afaw	N	1135	Eweae	E756000-0		Ba Ga		004	AsT3	F3 V	{ -3 }	(700+1)	[0000]		15	7
+Afaw	N	1135	Eweae	E756000-0		Ba Ga		004	AsT3	F3 V	{ -3 }	(700-5)	[0000]		15	-35
 Afaw	N	1232	Ouwoira	D78A5AA-4		Ni Wa Pr		223	AsT1	G2 V D	{ -3 }	(940-1)	[6277]		13	-36
 Afaw	N	1235	Hoiseayuei	C236353-C		Lo		600	AsT0	F3 V D	{ 0 }	(920-4)	[1319]		6	-72
 Afaw	N	1237	Keiekhei	E682488-4		Ni		912	AsTv	F9 V	{ -3 }	(630-2)	[1135]		11	-36
 Afaw	N	1239	Kheyakheal	E120263-8		De Lo Po		102	AsVc	F5 III D	{ -3 }	(910+1)	[116B]		12	9
-Afaw	N	1335	Wesiikhea	E477000-0		Ba		003	AsTv	F8 V	{ -3 }	(200+1)	[0000]		13	2
+Afaw	N	1335	Wesiikhea	E477000-0		Ba		003	AsTv	F8 V	{ -3 }	(200-5)	[0000]		13	-10
 Afaw	N	1336	Eakhelei	E334385-6		Lo		513	AsSc	K5 V D	{ -3 }	(420+2)	[4166]		12	16
 Afaw	N	1337	Relohyasa	C8B6569-5		Fl Ni		310	AsVc	G8 III	{ -2 }	(A41+1)	[A31A]		14	40
 Afaw	N	1340	Oisehekhyelr	A896666-9	R	Ag Ni		602	AsMw	G2 V	{ 1 }	(C52+1)	[6735]		11	120
@@ -84,7 +84,7 @@ Afaw	K	2027	Woi'akiyo	B847977-C	R	Hi In Huma2		300	AsSc	F9 V	{ 4 }	(B8B+4)	[9D5C
 Afaw	O	2031	Ealoros	D658322-3	T	Lo		723	AsT3	F0 V D	{ -3 }	(320-1)	[1181]		12	-6
 Afaw	O	2034	Faihahyehreh	C651535-7		Ni Po		201	AsVc	F8 V	{ -2 }	(A44+2)	[5336]		10	320
 Afaw	O	2039	Toikeahao	C83A879-A		Wa Ph		320	AsT1	K9 V	{ 1 }	(879-1)	[A996]		11	-504
-Afaw	G	2119	Tekheal	X663000-0		Ba		004	NaXX	G2 V D	{ -3 }	(500+1)	[0000]		14	5
+Afaw	G	2119	Tekheal	X663000-0		Ba		004	NaXX	G2 V D	{ -3 }	(500-5)	[0000]		14	-25
 Afaw	O	2131	U'elea	B120723-B		De Na Po Pi		914	AsMw	K1 IV D	{ 2 }	(B6A+1)	[89AA]		12	660
 Afaw	O	2132	Khiyaai	C310837-8		Na Ph Pi		404	AsVc	F2 V D	{ -1 }	(C77+1)	[9789]		10	588
 Afaw	O	2136	Sah	B685846-5		Ga Ri Pa Ph		420	AsSc	F9 V	{ 1 }	(975+1)	[9925]		12	315
@@ -157,7 +157,7 @@ Afaw	P	3133	Ahiyeyoloi	E454243-7		Lo		702	AsWc	F2 V	{ -3 }	(410-1)	[5164]		12	-4
 Afaw	P	3136	Roayo	E696345-5		Lo		915	AsT0	F3 V D	{ -3 }	(920+1)	[5154]		11	18
 Afaw	P	3138	Seaaihyuki	B796122-9		Lo		920	AsVc	F6 V	{ 0 }	(900-3)	[4147]		5	-27
 Afaw	P	3140	Auwyu	B373889-8		Ph Pi		204	AsSc	G0 V	{ 0 }	(A73-1)	[686C]		9	-210
-Afaw	D	3201	Yalroeroh	X160000-0		Ba De		003	NaXX	F0 V	{ -3 }	(500+3)	[0000]		14	15
+Afaw	D	3201	Yalroeroh	X160000-0		Ba De		003	NaXX	F0 V	{ -3 }	(500-5)	[0000]		14	-25
 Afaw	H	3216	Hei'	C00059B-8		As Ni Va		225	AsWc	M7 V	{ -2 }	(F43+4)	[2389]		16	720
 Afaw	H	3217	Ktihtyeoh	C0008CE-9		As Na Va Ph Pi		103	AsVc	M9 V	{ 0 }	(B7A+1)	[B888]		11	770
 Afaw	H	3218	Eiahiyhawer	C78868A-3		Ag Ni Ri		314	AsT5	M2 V D	{ 0 }	(953+1)	[6651]		12	135

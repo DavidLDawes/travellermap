@@ -99,21 +99,21 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 0511 Kilskral             B463877-B Ph Ri                               - -  - 631   Na
 0615                      X9C0000-0 Ba He Lt                            - -  A 023   Na
 0618                      X100000-0 Ba Lt Va                            - -  - 010   Na
-0712 Ruin                 E573000-0 Ba Lt                               - -  - 411   Na
-0717                      X968000-0 Ba Lt                               - -  - 601   Na
-0813                      X743000-0 Ba Lt Po                            - -  - 742   Na
-0815                      X500000-0 Ba Lt Va                            - -  - 600   Na
-0917                      X863000-0 Ba Lt                               - -  - 201   Na
-0918                      X543000-0 Ba Lt Po                            - -  A 412   Na
+0712 Ruin                 E573000-0 Ba Lt                               - -  - 011   Na
+0717                      X968000-0 Ba Lt                               - -  - 001   Na
+0813                      X743000-0 Ba Lt Po                            - -  - 042   Na
+0815                      X500000-0 Ba Lt Va                            - -  - 000   Na
+0917                      X863000-0 Ba Lt                               - -  - 001   Na
+0918                      X543000-0 Ba Lt Po                            - -  A 012   Na
 1016 Iaak                 D68A8CE-4 Lt Ph Ri Wa                         - -  A 612   Gd
 1019 Ukellwes             B8A8787-6 Fl                                  - -  - 944   Na
-1113                      X577000-0 Ba Lt                               - -  - 721   Na
-1115                      X410000-0 Ba Lt                               - -  - 400   Na
+1113                      X577000-0 Ba Lt                               - -  - 021   Na
+1115                      X410000-0 Ba Lt                               - -  - 000   Na
 1217 Gzerotir             E588651-7 Ag Ni Ri                            - -  - 310   Gd
 1314 Imegh                E78A610-4 Lt Ni Ri Wa                         - -  - 521   Gd
 1315 Orzatj               D501443-8 Ic Ni Va                            - -  - 601   Gd
 1317 Sunreach             A4009BD-B Hi In Na Va Rs                      - M  A 723   Gd
-1319                      X886000-0 Ba Ga Lt                            - -  R 915   Gd
+1319                      X886000-0 Ba Ga Lt                            - -  R 015   Gd
 1320 Isjubal              D431998-8 Na Po Hi                            - -  - 722   Gd
 1412 Opal                 B369556-C Ht Ni Pr                            - -  - 511   Gd
 1415 Trezh                C633752-6 Na Po                               - -  - 721   Gd
@@ -139,7 +139,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2115 Edwayak              C9D9252-9 Lo                                  - -  - 731   Gd
 2117 Jallia               B100654-B Na Ni Va                            - -  - 942   Gd
 2219 Yaunuin              C310698-7 Na Ni                               - -  - 831   Gd
-2220 Gilikod              C497000-0 Ba Lt                               - -  - 412   Gd
+2220 Gilikod              C497000-0 Ba Lt                               - -  - 012   Gd
 2311 Wanouma              A79A954-D Hi Ht In Wa                         - M  - 623   Gd
 2312 Ifnar                A7B588C-D Fl Ht Ph                            - N  A 210   Gd
 2314 Vedena               B430326-D De Ht Lo Po                         - N  - 513   Gd
@@ -167,7 +167,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 3012 Quentium             B668447-7 Ni Pa                               - -  - 222   Sa
 3015 Reffen               C89A143-7 Lo Wa                               - -  - 623   Sa
 3017 Bastille             A87A8AF-B Pi Ph Wa                            - N  A 510   Sa
-3019 Sekija Port          A7C6000-0 Ba Fl Lt                            - -  - 724   Sa
+3019 Sekija Port          A7C6000-0 Ba Fl Lt                            - -  - 024   Sa
 3114 Puddle               E57A854-7 Pi Ph Wa                            - -  - 914   Sa
 3115 Shattered            B588872-7 Pa Ph Ri                            - -  - 231   Sa
 3118 Jaksali              C674256-9 Lo                                  - -  - 523   Sa
@@ -206,7 +206,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 1221 Rockshore            E0008BA-5 As Lt Pi Ph Na Va Rs                - -  - 622   Gd
 1223 Dominionhold         E320101-7 De He Lo Po                         - -  - 330   Gd
 1225 Emilium              B889778-B Ri Cp                               - M  - 632   Gd
-1227                      X310000-0 Ba Lt                               - -  R 300   Na
+1227                      X310000-0 Ba Lt                               - -  R 000   Na
 1328 Wrentonworld         X666400-1 Ga Lt Ni Pa                         - -  R 423   Na
 1423 New Arabia           E340658-4 De He Lt Po Ni                      - -  - 514   Gd
 1424 Fyren                B596644-6 Ag Ni                               - -  - 611   Gd
@@ -222,7 +222,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 1825 Loianu               E554566-4 Ag Lt Mr Ni                         - -  - 215   Na
 1926 Colony Gamma         C65488B-5 Lt Pa Ph                            - -  A 532   Na
 1927 Colony Delta         B8C5576-B Fl Ni                               - -  - 721   Na
-1928                      X734000-0 Ba Lt                               - -  - 422   Na
+1928                      X734000-0 Ba Lt                               - -  - 022   Na
 2024 Cromwell             C553455-A Ni Po                               - -  - 531   Gd
 2029 Napoleon             E254569-4 Ag Lt Mr Ni                         - -  - 612   Pf
 2126 Rommel               C630337-6 De Lo Po                            - -  - 422   Na
@@ -248,7 +248,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 2928 Yuut                 B565440-A Ni Pa                               - M  A 642   Pf
 3026 Diolun               A468330-A Lo                                  - N  A 713   Pf
 3125 Jiodori              D277864-4 Lt Mr Pa Pi Ph                      - -  - 422   Na
-3127                      X237000-0 Ba Lt                               - -  A 312   Na
+3127                      X237000-0 Ba Lt                               - -  A 012   Na
 3222 Astoron              C5216BD-5 He Lt Na Ni Po                      - -  A 911   Na
 0134 Uzmazara             C840446-5 De He Lt Ni Po                      - -  - 423   Na
 0136 Remora               E533120-3 Lo Lt Po                            - -  - 322   Na
@@ -269,7 +269,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 0637 Umra                 E000656-8 As Na Ni Va                         - -  - 722   Na
 0638 Fey                  C59A400-7 Ni Wa                               - -  - 332   Na
 0731 Barren               B412695-8 Ic Na Ni                            - -  - 522   Rb
-0839 Listless             CFF9000-0 Ba Lt                               - -  - 321   Na
+0839 Listless             CFF9000-0 Ba Lt                               - -  - 021   Na
 0840 Outpost              A669322-B Lo                                  - N  - 913   Rf
 0932 Threshold            C875673-4 Ag Lt Ni                            - -  - 633   Rb
 0940 Ippor                B867ABC-9 Ga Hi                               - -  - 121   Rf

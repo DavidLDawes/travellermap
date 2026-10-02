@@ -89,7 +89,7 @@ Ghoe	D	2805		X300000-0		Ba Va		002	--	M6 V D						0
 Ghoe	D	2901		X554000-0		Ba		002	--	F1 V D						0
 Ghoe	D	2903		X451000-0		Ba Po		004	--	G8 V D						0
 Ghoe	D	2905		X795000-0		Ba		015	--	F6 V D						0
-Ghoe	D	2908	Edhou	C325000-7	K	Di		802	Va	M2 V						0
+Ghoe	D	2908	Edhou	C325000-7	K	Di		002	Va	M2 V						0
 Ghoe	D	2909	Voeueae	B964766-9	K	Ag Ri		204	Va	F9 V						0
 Ghoe	D	3002		X503000-0		Ba Ic Va		000	--	M5 V						0
 Ghoe	D	3007	Gvueghoerr	C370678-5	C	De Ni He		420	Va	F1 V D						0
@@ -149,7 +149,7 @@ Ghoe	F	1414	Tonngorrg	B777300-6		Lo		703	Va	F9 V						0
 Ghoe	F	1415	Koee	A22358A-D	K	Ni Po		304	Va	K5 V						0
 Ghoe	F	1416	Ourrgvogh	C584111-4		Lo		500	Va	M3 V						0
 Ghoe	F	1517	Thotsgnuen	B444877-A		Ph Pa Pi		707	Va	F3 V D						0
-Ghoe	F	1612	Goekhkhugue	C446005-9		Di		411	Va	F8 V						0
+Ghoe	F	1612	Goekhkhugue	C446005-9		Di		011	Va	F8 V						0
 Ghoe	F	1617	Goega	C233445-6	K	Ni Po		402	Va	K9 V						0
 Ghoe	F	1619	Azdong	B242120-A	CK	Lo Po		700	Va	F6 V						0
 Ghoe	G	1712	Gunae	B556100-6		Lo		600	Va	G9 V						0
@@ -159,9 +159,9 @@ Ghoe	G	1718	Errazueghong	C463140-7	K	Lo		717	Va	G4 V K9 V						0
 Ghoe	G	1719	Uekakrus	E688212-3	C	Lo		524	Va	F6 V D						0
 Ghoe	G	1720	Goekhaghik	C561305-9		Lo		204	Va	F3 V						0
 Ghoe	G	1811	Ghoudhougue	C9A9165-9		Fl Lo		225	Va	A1 V						0
-Ghoe	G	1813	Ukneknag	C758002-7		Di		512	Va	F3 V						0
+Ghoe	G	1813	Ukneknag	C758002-7		Di		012	Va	F3 V						0
 Ghoe	G	1814	Saegllaers	B5557CF-5		Ag		107	Va	F3 V D						0
-Ghoe	G	1815	Kukha	A300000-B		Va Di		602	Va	M3 V						0
+Ghoe	G	1815	Kukha	A300000-B		Va Di		002	Va	M3 V						0
 Ghoe	G	1912	Dharsvoodh	B557211-7		Lo		720	Va	G6 V						0
 Ghoe	G	1915	Khurrgakhs	C57A47B-B	K	Ni Wa		502	Va	M6 V						0
 Ghoe	G	2013	Vollaenong	A200655-9		Na Ni Va		702	Va	K5 V						0
@@ -271,7 +271,7 @@ Ghoe	K	1725	Ksoezuoghz	B567156-7		Lo		211	VB	F2 V D						0
 Ghoe	K	1727	Daekekgug	A666425-B	K	Ga Ni Pa		204	VB	G6 V						0
 Ghoe	K	1728	Aknaghae	C512554-4	K	Ic Ni		600	VB	G5 IV						0
 Ghoe	K	1729	Ouodh	C543463-6		Ni Po O:1727		610	VB	F2 V						0
-Ghoe	K	1730	Koeoe	XAD4000-2	C	Di Fo	R	304	VB	K5 V						0
+Ghoe	K	1730	Koeoe	XAD4000-2	C	Di Fo	R	004	VB	K5 V						0
 Ghoe	K	1823	Ghefuerrgru	B876447-8		Ni Pa Borh5		300	VB	F4 V D						0
 Ghoe	K	1827	Douksosaekhu	C20049E-8	K	Da Ni Va	A	617	VB	M6 V D						0
 Ghoe	K	1830	Fukgvullakh	D551200-5	C	Da Lo Po	A	220	VB	F1 V D						0
@@ -310,7 +310,7 @@ Ghoe	L	2725	Azoaerr	C6A7300-9		Fl Lo		501	VB	M4 V						0
 Ghoe	L	2727	Tazarrggakh	C42067B-6	K	Da De He Na Ni Po	A	202	VB	M6 V D						0
 Ghoe	L	2728	Khaevan	C55257A-6		Ni Po		502	VB	F2 V						0
 Ghoe	L	2729	Gikueng	B55478B-5	K	Ag		806	VB	F6 V M3 V G9 V						0
-Ghoe	L	2730	Oudhaghz	D544000-4	K	Di		501	VB	F6 V						0
+Ghoe	L	2730	Oudhaghz	D544000-4	K	Di		001	VB	F6 V						0
 Ghoe	L	2824	Rogva	B200542-6	C	Ni Va		524	VB	M0 V						0
 Ghoe	L	2825	Gzazes	B597230-4	C	Lo		713	VB	F0 V						0
 Ghoe	L	2826	Torrak	X200897-0		Fo Na Ph Pi Va	R	510	VB	F7 V D						0

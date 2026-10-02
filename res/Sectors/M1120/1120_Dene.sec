@@ -125,7 +125,7 @@ Hex  Name           UWP       Remarks                          {Ix}   (Ex)    [C
 0516 Endimyon       X555434-2 Ni Pa Fo                         { -3 } (631-5) [2131] -    -  R 523 14 ImDd M3 V M1 V     
 0517 Seleen         A310467-E Ni O:0316                        { 1 }  (A34+1) [455E] B    -  - 704 15 ImDd M6 V          
 0518 Thengin        B567998-C Hi Pr                            { 3 }  (G8E+3) [9C5C] BcE  N  - 305 10 ImDd G9 V          
-0615 Anomaly Five   X100000-0 Va Ba Fo                         { -3 } (200-5) [0000] -    -  R 623 11 ImDd M9 V          
+0615 Anomaly Five   X100000-0 Va Ba Fo                         { -3 } (200-5) [0000] -    -  R 023 11 ImDd M9 V          
 0619 Sevas Topol    D9C4256-9 Fl Lo                            { -2 } (910-3) [1148] B    -  - 923 9  ImDd M2 V          
 0713 Amirante       D310899-7 Ph Na Pi                         { -2 } (A76-1) [9668] BDe  S  - 602 11 ImDd K5 V          
 0715 Bahadur        A426230-E Lo                               { 1 }  (611-3) [1319] B    N  - 102 12 ImDd M5 V          
@@ -184,7 +184,7 @@ Hex  Name           UWP       Remarks                          {Ix}   (Ex)    [C
 2011 Orenberg       B430678-C De Ni Na Po Jonk8                { 1 }  (955+1) [675C] B    -  - 201 10 ImDd M1 V M5 V     
 2013 Twinian        C40447B-7 Ic Va Ni                         { -2 } (631+1) [6279] B    S  - 702 7  ImDd M5 V          
 2014 Zinuun         E4367BA-5 Pz                               { -2 } (965+1) [9577] B    -  A 911 14 ImDd M8 V          
-2016 Ugrik          E300000-0 Va Ba                            { -3 } (200-5) [0000] -    -  - 321 13 ImDd F7 V          
+2016 Ugrik          E300000-0 Va Ba                            { -3 } (200-5) [0000] -    -  - 021 13 ImDd F7 V          
 2017 Ruwenzori      E749424-7 Ni                               { -3 } (631-5) [2135] B    -  - 303 8  ImDd K8 V          
 2019 Namidshur      B3106A9-C Ni Na                            { 1 }  (E55+2) [776D] B    S  - 215 10 ImDd G9 V          
 2111 Diiski         C66A200-8 Wa Lo                            { -2 } (710-5) [1113] B    -  - 812 6  ImDd K7 V          

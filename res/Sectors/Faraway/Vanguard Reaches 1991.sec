@@ -1,4 +1,4 @@
-Vanguard Reaches
+# Vanguard Reaches
 
 # 2012-03-12 - Joshua Bell - Regenerated from Chuck Kallenbach II's 1991-04-01 data
 # Saved from http://www.inlink.com/~scoundrl/paranoia.htm in 1997
@@ -20,7 +20,7 @@ Kolshedjielib      0304 B545864-8   Ph Pa Pi O:0203            910 Zh K7 V   M5 
 Chiadl             0308 C777300-0   Lo                   830 Zh F1 V   M0 VI
 Tliadlpabr         0310 B977500-C   Ni Ag                801 Zh F1 D
 Tlaiafribr         0311 E574300-3   Lo                   404 Zh G1 V
-Chfradr            0317 D878001-3   Di                   423 Zh A9 III
+Chfradr            0317 D878001-3   Di                   023 Zh A9 III
 Iabrpribr          0319 E303304-7   Ic Va Lo             802 Zh K3 V   G7 V
 Iadrdeibr          0322 C79A845-6     Wa Ph Pi         U 413 Zh F9 V
 Chyia Nedlkel      0406 A301AB9-D Z Hi Na Va Ic In Cx           101 Zh F2 D
@@ -37,7 +37,7 @@ Frianchie          0508 C581554-5     Ni Pr              812 Zh F8 D
 Nielkladlief       0511 C756944-D Z Hi Ga                120 Zh F9 D   M0 D
 Shtavrifl          0512 A6A5799-B   Fl                   410 Zh M0 VI
 Dlieblafia         0514 A322A95-D Z Hi In Na He Po            101 Zh G4 D   M7 D
-Ifabl              0516 B572010-A   He Di                704 Zh M7 V   G0 D
+Ifabl              0516 B572010-A   He Di                004 Zh M7 V   G0 D
 Ifiefla Achef      0519 B534755-C Z                      204 Zh F4 V
 Yavakrbi           0521 A878879-C Z  Ph Pa Pi            750 Zh F2 V
 Andress Balfor     0523 B523598-A V Ni Po              G 503 Na F7 VI  M4 V
@@ -61,7 +61,7 @@ Loser's Landing    0726 B120156-A   De Lo Po           A 304 Na G0 V   G1 V
 Helix Institute    0736 B00041A-G V Ni Va As Rs            101 Na B4 Ia
 Tarasca            0801 XA87897-C   Ri Ph Pa           R 604 Na F0 D
 Inat-Kalahi        0804 C203348-7 J Ic Lo Va           G 303 Na M7 V
-Yrfrzhielia        0808 X565000-0   Ba                 F 902 Zh F0 D   M1 D
+Yrfrzhielia        0808 X565000-0   Ba                 F 002 Zh F0 D   M1 D
 Defltlakr          0815 C667757-A     Ga Ag Ri         U 803 Zh F7 V
 Edldieflsh         0818 C773589-8   Ni                 U 703 Zh F9 VI  M3 D
 Big Bruno          0822 BA88533-9   Ag Ni Pr           G 923 Na F3 II
@@ -111,7 +111,7 @@ Holgarrem          1332 X921000-0   Ba Po He             010 Ac K7 V
 Howler             1334 B585669-E   Ag Ni Ri Rs          621 Ac M5 V
 Leavani            1335 A674924-D F Hi In Hw             201 Ac M4 V
 Rikkiti            1337 D4A1118-D   Fl Lo He O:1436       302 Ac A2 II
-Melvina            1339 X546000-0   Ba                 R 413 Na G9 V
+Melvina            1339 X546000-0   Ba                 R 013 Na G9 V
 Cinhoss            1403 X8C06BF-2 M Ni He H              620 Es M1 V
 Sovruat            1405 X738102-D   Lo Re O              721 Es K0 V
 Gyrkyn             1406 C1108CE-B   Na Ph Pi O           921 Es F0 V
@@ -247,7 +247,7 @@ Mokdol             2617 C6167AA-9 S Ic Pi                623 Co M9 V   M6 V
 Xiao               2633 E788344-3   Lo                   214 Na G1 V   M6 D
 Saishigei          2638 E452634-4   Ni Po                113 Na F5 V
 Voxarl             2701 X453343-7   Lo Po              R 404 Td F9 VI  M6 D
-Bauxia             2703 X566000-0   Ba Re              R 101 Td M3 VI
+Bauxia             2703 X566000-0   Ba Re              R 001 Td M3 VI
 Drogobycho         2705 A447777-8   Ag Pi Xb           A 803 Td G6 V
 Cozumel            2708 B874468-7 M Ni Pa Xb O:2607        G 741 Td M6 V
 Skraill            2710 C000578-A S Ni As Va             922 Co M9 V   M9 D
@@ -255,8 +255,8 @@ Vaal               2711 C223665-8   Na Ni Po O:2913      404 Co F4 V
 Dover              2713 CAE8379-A S Lo                   914 Co F8 V
 Dzaeri             2716 D96A466-7   Ni Wa O:2913         401 Co G4 V   M7 D
 Ciresi             2717 C310744-A S Na Pi                204 Co K5 V   M6 D
-Jzar               2720 E223000-0   Ba Po                600 Co F5 V   M2 D
-Joshi              2721 E310000-0   Ba                   403 Co F1 V
+Jzar               2720 E223000-0   Ba Po                000 Co F5 V   M2 D
+Joshi              2721 E310000-0   Ba                   003 Co F1 V
 Gaddis             2726 C100365-C S Lo Va                801 Co M7 V
 Feandar            2736 X656543-0   Ag Ni Ga             700 Na K0 D   M3 D
 Loomis 92          2804 C485449-6   An Ch30% Ni Pa         A 341 Td M8 V   M1 D

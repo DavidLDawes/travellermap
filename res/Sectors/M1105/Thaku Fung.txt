@@ -49,7 +49,7 @@ Hex  Name                 UWP       Remarks               {Ix}  (Ex)    [Cx]   N
 2008 Everswim             X957000-0 Ba Da Di              {-3 } (400-5) [0000] - -  A 002 15 Sp G1 V
 2103 Moice                X401000-0 Ba Ic Va Da Di        {-3 } (700-5) [0000] - -  A 010 10 Sp F9 III M8 V
 2105 Bridgeholm           X543000-0 Ba Po Da Di           {-3 } (400-5) [0000] - -  A 004 15 Sp G3 V
-2107 Digmore              X160000-0 Ba De Da Di           {-3 } (600-5) [0000] - -  A 502 15 Sp M6 V
+2107 Digmore              X160000-0 Ba De Da Di           {-3 } (600-5) [0000] - -  A 002 15 Sp M6 V
 2108 VoidBridge 5         ???????-? {Anomaly} {Fuel}                           - -  - ???    Sp
 2202 Summergust           X314000-0 Ba Ic Da Di           {-3 } (200-5) [0000] - -  A 001 11 Sp G4 V M1 V
 2208 Dredgelund           B685621-9 Ag Ga Ni Ri Tp        {+3 } (C59-2) [1949] - KV - 113 8  Sp F7 V
@@ -61,7 +61,7 @@ Hex  Name                 UWP       Remarks               {Ix}  (Ex)    [Cx]   N
 2601 SP Break 2601        X756000-0 Ba Ga Tp Fo           {-3 } (400-5) [0000] - -  R 002 11 Xx F4 V
 2604 SP Break 2604        X334000-0 Ba                    {-3 } (A00-5) [0000] - -  - 016 13 Xx G0 V D
 2607 Asid                 X6B4000-0 Ba Fl Da Di           {-3 } (900-5) [0000] - -  A 002 11 Sp M3 V
-2608 Port Bleak           X351000-0 Ba Po Da Di           {-3 } (800-5) [0000] - -  A 813 12 Sp F0 V D
+2608 Port Bleak           X351000-0 Ba Po Da Di           {-3 } (800-5) [0000] - -  A 013 12 Sp F0 V D
 2707 Skyfish              C687346-9 Ga Lo Tp Huma7 Chir3  {-1 } (A20-1) [3277] - -  - 103 11 Sp F8 V
 2709 VoidBridge 4         ???????-? {Anomaly} {Fuel}                           - -  - ???    Sp
 2802 SP Break 2802        X99A000-0 Ba Wa                 {-3 } (A00-5) [0000] - -  - 023 11 Xx F8 V

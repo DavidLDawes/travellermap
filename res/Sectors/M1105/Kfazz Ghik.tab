@@ -16,7 +16,7 @@ Kfaz	A	0702	Suegaeknaee	B322566-9		Ni Po He		110	Va	F5 II F8 V						0
 Kfaz	A	0709	Koungeksdoth	C432232-5	C	Lo Po		102	Va	M4 V						0
 Kfaz	A	0809	Koighousaedh	C5A3545-5	K	Fl Ni		413	Va	K1 V						0
 Kfaz	A	0810	Knaaedo	C210300-7	K	Lo		503	Va	M6 V						0
-Kfaz	B	0902	Sueksaeth	C756000-2	K	Ga Di		303	Va	F1 V D						0
+Kfaz	B	0902	Sueksaeth	C756000-2	K	Ga Di		003	Va	F1 V D						0
 Kfaz	B	0903	Zanghaerr	B662559-8		Ni Pr		205	Va	F5 V						0
 Kfaz	B	1003	Thirang	A744757-D	K	Ag Pi		115	Va	M7 V D						0
 Kfaz	B	1005	Khadhaara	D7A1872-6	CK	Fl He Ph		906	Va	F7 V D						0
@@ -41,7 +41,7 @@ Kfaz	C	1907	Koengko	C68A69A-5	C	Ni Ri Wa		421	Va	F3 V						0
 Kfaz	C	2002	Reru	A5958CB-9		Ph Pa Pi		906	Va	F6 V M0 V F9 V D						0
 Kfaz	C	2003	Ruerrrrur	C8C3877-7		Fl Ph		504	Va	F5 V D						0
 Kfaz	C	2103	Zaluerukhs	D371205-9	K	Lo He		801	Va	K9 V						0
-Kfaz	C	2107	Zifoenglaerr	C8A5000-8		Fl Di		403	Va	G2 IV M5 V						0
+Kfaz	C	2107	Zifoenglaerr	C8A5000-8		Fl Di		003	Va	G2 IV M5 V						0
 Kfaz	C	2109	Khikheng	B468615-4	C	Ag Ni Ri		804	Va	F2 V						0
 Kfaz	C	2308	Lozfaerkagz	E551462-3		Ni Po		424	Va	G5 V						0
 Kfaz	C	2310	Ksarrigh	D8A9411-5	C	Fl Ni		106	Va	M7 V D						0
@@ -68,7 +68,7 @@ Kfaz	D	3107		X78A000-0		Ba Wa		002	--	M3 V						0
 Kfaz	D	3202		X656000-0		Ba Ga		003	--	F3 V M0 V F9 V						0
 Kfaz	D	3207		X8D4000-0		Ba		010	--	F1 V						0
 Kfaz	E	0213	Knuengzaeseg	C13097A-D	K	De Hi Na Po		402	Va	F9 V						0
-Kfaz	E	0214	Rotegvuz	D210004-7	K	Di		201	Va	M7 V						0
+Kfaz	E	0214	Rotegvuz	D210004-7	K	Di		001	Va	M7 V						0
 Kfaz	E	0215	Sorrgeghzae	C647778-5		Ag Pi		216	Va	F0 V D						0
 Kfaz	E	0312	Gvozuengos	E330634-5		De Na Ni Po		723	Va	F1 V D						0
 Kfaz	E	0318	Gnoenelngaek	A400577-8	K	Ni Va		107	Va	M3 V D						0
@@ -106,7 +106,7 @@ Kfaz	G	1711	Tsoelou	C444202-4	K	Lo		822	Va	F1 V						0
 Kfaz	G	1712	Reloungtsae	E4325A9-6	C	Ni Po		904	Va	M2 V D						0
 Kfaz	G	1813	Knugivaegoug	C579756-7		Pi		103	Va	F4 V						0
 Kfaz	G	1815	Tsaghtirrgh	B000559-E	K	As Ni Va		611	Va	F9 V						0
-Kfaz	G	1816	Roegae	C310001-9		Di		320	Va	M0 V M6 V						0
+Kfaz	G	1816	Roegae	C310001-9		Di		020	Va	M0 V M6 V						0
 Kfaz	G	1817	Godharenzuk	C88A758-6	K	Ri Wa		330	Va	F6 V D						0
 Kfaz	G	1818	Vingaerz	D73687A-6	K	Ph		805	Va	G4 V						0
 Kfaz	G	2013	Knoza	C501449-9	K	Ic Ni Va		803	Va	A9 II						0
@@ -140,14 +140,14 @@ Kfaz	H	3112		X432000-0		Ba Po		024	--	G2 V M2 V						0
 Kfaz	I	0222	Gungukouth	E6A0521-3	C	Ni He		824	Va	M2 V						0
 Kfaz	I	0226	Vazsarrghak	D100886-3	C	Na Va Ph Pi		802	Va	D						0
 Kfaz	I	0228	Vaengfueg	C544679-4	C	Ag Ni		103	Va	F1 V						0
-Kfaz	I	0230	Raengroneks	E635004-4		Di		404	Va	F8 V						0
+Kfaz	I	0230	Raengroneks	E635004-4		Di		004	Va	F8 V						0
 Kfaz	I	0328	Dhallgarghaz	C9A8425-8	C	Fl Ni		724	Va	F0 V						0
 Kfaz	I	0427	Faerrarsag	E73879B-2				205	Va	M3 V D						0
 Kfaz	I	0429	Gangagthonak	C876644-1		Ag Ni		316	Va	F6 V D						0
 Kfaz	I	0525	Diginggnaegh	B7598AB-5	K	Ph		602	Va	F0 V D						0
-Kfaz	I	0526	Dzueaaeghuel	C424000-7		Di		904	Va	K1 V D						0
+Kfaz	I	0526	Dzueaaeghuel	C424000-7		Di		004	Va	K1 V D						0
 Kfaz	I	0628	Kaghunknog	C270620-7		De Ni		103	Va	F5 V						0
-Kfaz	I	0825	Oenuza	C76A001-7	K	Wa Di		702	Va	F0 V						0
+Kfaz	I	0825	Oenuza	C76A001-7	K	Wa Di		002	Va	F0 V						0
 Kfaz	I	0827	Faenglen	C887567-7	K	Ag Ni Ga Pr		710	Va	F8 V						0
 Kfaz	J	0924	Dzukenguerr	D554553-5		Ag Ni		833	Va	F1 V D						0
 Kfaz	J	0926	Anoreng	C977724-4	C	Ag Pi		213	Va	F6 V D						0
@@ -156,19 +156,19 @@ Kfaz	J	1029	Knauokaeng	E688200-3		Lo		105	Va	M4 V						0
 Kfaz	J	1223	Atsekoks	B9C59AA-7		Fl Hi In		114	Va	F5 V						0
 Kfaz	J	1227	Ogsaz	C969533-6	C	Ni Pr		715	Va	K0 V D						0
 Kfaz	J	1229	Gvoekoll	C411775-7	C	Ic Na Pi		616	Va	K2 V D						0
-Kfaz	J	1321	Aguekou	C544003-3		Di		613	Va	G0 V						0
+Kfaz	J	1321	Aguekou	C544003-3		Di		013	Va	G0 V						0
 Kfaz	J	1324	Urllugtos	C8B7774-7	C	Fl		125	Va	G9 V D						0
 Kfaz	J	1327	Dzego	E100ADF-7		Hi Na Va In		606	Va	F7 V D						0
 Kfaz	J	1330	Ghoersdouvur	C310130-6		Lo		215	Va	M8 V D						0
 Kfaz	J	1424	Guzasue	C502121-A		Ic Lo Va		207	Va	M6 V D						0
 Kfaz	J	1426	Roudodh	C656836-6	CK	Ga Ph Pa		700	Va	K1 V D						0
-Kfaz	J	1427	Aeroollaedu	X756002-0	C	Ga Ba		904	Va	F4 V D						0
+Kfaz	J	1427	Aeroollaedu	X756002-0	C	Ga Ba		004	Va	F4 V D						0
 Kfaz	J	1429	Kae	B200857-B	K	Na Va Ph Pi		304	Va	F2 V D						0
 Kfaz	J	1430	Gadzuegon	C693666-5	K	Ni		203	Va	K7 V D						0
 Kfaz	J	1525	Ghoeo	C798A78-A		Hi In		603	Va	F0 V D						0
 Kfaz	J	1526	Guenuek	C757686-2	K	Ag Ni Ga		913	Va	M5 V D						0
 Kfaz	J	1529	Roukueng	C120431-C		De Ni Po		210	Va	M6 V						0
-Kfaz	J	1624	Ogelaervugh	A567000-9	K	Di		402	Va	F9 V D						0
+Kfaz	J	1624	Ogelaervugh	A567000-9	K	Di		002	Va	F9 V D						0
 Kfaz	K	1721	Gufae	C231620-7	K	Na Ni Po		200	Va	F2 V						0
 Kfaz	K	1729	Isu	A405767-D		Ic Va Pi		903	Va	K9 V						0
 Kfaz	K	1821	Usakhsrarr	B231645-7	K	Na Ni Po		714	Va	M1 II						0

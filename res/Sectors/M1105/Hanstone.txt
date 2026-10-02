@@ -131,7 +131,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex) [Cx] N B  Z P
 0624 Eha                  B898305-B Lo                                  - NS - 903    Ak        
 0628 Eikhoi Yoa           D678313-3 Lo                                  - -  - 403    Na        
 0724 Aseah Hryeh          C226436-6 Ni                                  - -  - 013    Na        
-0726 Yuhoahtiyol          B448000-7 Di                                  - N  - 403    Ak        
+0726 Yuhoahtiyol          B448000-7 Di                                  - N  - 003    Ak        
 0729 Aosiel               D464454-4 Ni Pa                               - -  - 304    Na        
 0730 Faaua                D649428-4 Ni                                  - -  - 300    Na        
 0821 Aseah Kheh           D757336-5 Lo Ga                               - -  - 314    Na        

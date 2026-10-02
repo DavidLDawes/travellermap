@@ -140,13 +140,13 @@ Lenoshnia     2229 E610843-7    Ph Na Pi                213 Fp
 Walpurgue     2321 B52A764-C    Pi O:2719               511 Ff
 Sevitch       2328 DAB4565-7  S Fl Ni O:2128            323 Fp
 Aalicia       2523 D523201-7    Lo Po                   231 Na
-Marghama      2526 X591000-0    He Ba                R  211 Na
+Marghama      2526 X591000-0    He Ba                R  011 Na
 Jandiertje    2724 E441433-5    He Ni Po                111 Na
 Swassonia     2726 X684454-1    Ni Pa                R  211 Na
 Napann        2730 D796100-5    Lo                      934 Na
 Myriscamie    2822 C625578-8    Ni                   A  513 Na
 Volontiana    2827 D7268AB-7    Ph Pi                   114 Na
-Marthusann    3026 X683000-0    Ba                   R  211 Na
+Marthusann    3026 X683000-0    Ba                   R  011 Na
 Sophryseïs    3129 D652573-2    Ni Po                   111 Na
 Euryannia     3225 C000555-A    As Va Ni                113 Na
 Hersitalia    0232 D848425-5    Ni Pa                   131 Na

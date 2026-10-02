@@ -37,7 +37,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 1206 Pohiri               B9B3448-B Fl Ni                {+1} (C36-3) [4558] - - - 814 10 LC A3 V               
 1302 Mariposa             E549487-7 Ni Tz                {-3} (430+2) [5177] - - - 210 7  Na K8 V M4 V          
 1304 Conzinov             C643342-8 Lo Po Tz             {-2} (B20+1) [2129] - - - 320 7  LC M3 V               
-1305 Sear                 X210000-0 Ba Fo Tz             {-3} (800-5) [0000] - K R 102 8  LC M6 V BD            
+1305 Sear                 X210000-0 Ba Fo Tz             {-3} (800-5) [0000] - K R 002 8  LC M6 V BD            
 1309 Durance              E7759CE-8 Hi In Pz             {+0} (788+2) [79A4] - - A 423 10 Ca K0 V               
 1401 Syndan               E530513-5 De Ni Po Sa          {-3} (540-1) [5287] - - - 911 6  Na F8 IV D            
 1404 Lister               A642983-A He Hi In Po Tz       {+4} (58C+2) [7D7B] - - - 802 8  LC K5 V               
@@ -119,7 +119,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 0415 Budrun               C96847B-7 Ni Pa                {-2} (631-2) [6275] - - - 804 8  Na F6 V               
 0420 Lillirita            E555610-4 Ag Ni Tz             {-2} (751-1) [9446] - - - 312 8  Na K5 V               
 0512 Faruccus             C343959-A Hi In Po Tz          {+3} (A8D+2) [CC3B] - - - 510 6  Na M1 V BD            
-0516 Taraguse             X774000-0 Ba Fo                {-3} (900-5) [0000] - - R 103 8  Na G2 V               
+0516 Taraguse             X774000-0 Ba Fo                {-3} (900-5) [0000] - - R 003 8  Na G2 V               
 0517 Lancier              E467324-8 Lo Tz                {-3} (C20+1) [6168] - - - 621 12 Na K6 V M4 V          
 0518 Palareva             E64A642-B Ni Wa                {-1} (D54+1) [554C] - - - 904 9  Na G8 V               
 0520 Heiferone            C795556-6 Ag Ni                {-1} (642+2) [7495] - - - 512 10 Na G3 V M2 V          
@@ -186,7 +186,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 2511 Bushadi              C300432-9 Ni Va Sa             {-1} (B32+3) [7336] - - - 613 8  Na M3 V BD            
 2518 Shyta                E5719AC-8 He Hi In             {+0} (688+1) [B957] - - - 202 7  Na K0 IV              
 2611 Tomoni               B580573-7 De Ni Pr             {-1} (642-1) [5467] - - - 520 6  Na K3 V               
-2614 Rossier              X345000-0 Ba Tz                {-3} (700-5) [0000] - - - 303 11 Na K5 V K6 V          
+2614 Rossier              X345000-0 Ba Tz                {-3} (700-5) [0000] - - - 003 11 Na K5 V K6 V          
 2615 Icci                 A549500-F Ni                   {+1} (A44+2) [668J] - - - 831 8  Sa K1 V               
 2618 Trivolly             E200323-7 Lo Va                {-3} (920+1) [3147] - - - 720 10 Na M7 V M8 V          
 2718 Biplesia             A888400-E Ni Pa                {+1} (D34-2) [852D] - - - 512 8  Sa F7 V               
@@ -260,7 +260,7 @@ Hex  Name                 UWP       Remarks              {Ix} (Ex)    [Cx]   N B
 2323 Narabice             E83A631-5 Ni Wa                {-3} (351-2) [2362] - - - 803 9  Na F3 V G8 V          
 2324 Pellabede            E794114-5 Lo                   {-3} (B00+2) [1127] - - - 720 8  Na G5 V               
 2328 Linbleau             CAB5140-6 Fl Lo                {-2} (700-3) [2176] - - - 510 6  Na F0 V               
-2330 Ecks                 X300000-0 Ba Va Fo             {-3} (C00-5) [0000] - - R 301 5  Na A8 V               
+2330 Ecks                 X300000-0 Ba Va Fo             {-3} (C00-5) [0000] - - R 001 5  Na A8 V               
 2425 Elachoree            D767557-3 Ag Ga Ni Pr          {-2} (642+1) [8313] - - - 413 10 Na K3 V K7 V          
 2426 Ademaia              E334414-9 Ni Sa                {-2} (A31-2) [426A] - - - 902 8  Na K7 V M2 V          
 2428 Mossaquet            E643548-5 Ni Po Tz             {-3} (540-1) [6244] - - - 612 10 Na K5 V               

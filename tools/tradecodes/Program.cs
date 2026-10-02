@@ -1,27 +1,39 @@
 using Maps;
 using Maps.Admin;
+using Maps.Serialization;
 using Maps.Utilities;
 using System.Text;
 using System.Text.RegularExpressions;
 
-// Recomputes the trade codes that the UWP fully determines (World.TradeCodeRules, the same rules
-// the data validator checks) and the mechanical (Ex) values, editing sector data files in place:
+// Mechanical data repairs: recomputes the values the data validator can derive from the rest of a
+// world's data, editing sector data files in place:
 //   dotnet run --project tools/tradecodes                     report what would change
 //   dotnet run --project tools/tradecodes -- --apply          change the files
 //   dotnet run --project tools/tradecodes -- --apply Koog     only sectors whose name contains "Koog"
+//   dotnet run --project tools/tradecodes -- --t5ss --apply   the T5SS sources in res/t5ss/data
 //
 // Scope: the sectors the validator checks (tags OTU, Apocryphal, Faraway), except files generated
-// from T5SS data ("Generated file - DO NOT MODIFY"; fix those in res/t5ss/data instead).
+// from T5SS data ("Generated file - DO NOT MODIFY"). Fix those with --t5ss, then regenerate them:
+//   cd res/t5ss && perl update_world_data.pl --source-data
 //
 // Per world:
 // - Trade codes: removes codes the UWP rules out, adds codes it requires (in T5SS order, after the
 //   world's other trade codes), and adds Di for Pop 0 with TL 1+ unless a Di(sophont) code is there.
 //   Other remarks (sophonts, Cp/Cs/Cx, Ht, etc.) are kept, in order.
 // - (Ex), T5 formats only: infrastructure 0 and efficiency -5 if Pop 0; infrastructure = importance
-//   (min 0) if Pop 1-3. Resource Units are recomputed where a file has an RU column.
-// Only those fields change; T5 columns are widened when longer remarks need room.
+//   (min 0) if Pop 1-3; efficiency 0 is written +1. Resource Units are recomputed where a file has
+//   an RU column.
+// - {Ix}, T5 formats only: set to the calculated importance (keeping the brace style).
+// - PBG: a population multiplier of 1-9 becomes 0 if Pop is 0.
+// Only those fields change; T5 columns are widened when longer values need room.
+// Importance depends on trade codes, so run again after a run that changed codes.
+//
+// Per file, legacy SEC only: lines the parser ignores as "non-UWP data" (headers, notes) become
+// "#" comments, and whitespace-only lines become empty. Lines that look like malformed worlds are
+// reported, not changed.
 
 bool apply = args.Contains("--apply");
+bool t5ss = args.Contains("--t5ss");
 string[] filters = args.Where(a => !a.StartsWith("--")).ToArray();
 
 string? repo = Environment.GetEnvironmentVariable("TM_REPO_ROOT") ?? FindRepoRoot(Environment.CurrentDirectory)
@@ -33,21 +45,48 @@ if (repo == null)
 }
 Util.ContentRoot = repo;
 
-var map = SectorMap.GetInstance();
-var resources = ResourceManager.GetDedicatedInstance();
-var done = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 var utf8 = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false, throwOnInvalidBytes: true);
-int totalWorlds = 0, totalFiles = 0, totalAdded = 0, totalRemoved = 0, totalEx = 0;
+var totals = new Totals();
 
-foreach (var sector in map.Sectors.Where(s => s.DataFile != null && DataValidator.IsCurated(s)))
+if (t5ss)
 {
-    string name = sector.Names.Count > 0 ? sector.Names[0].Text : "?";
-    if (filters.Length > 0 && !filters.Any(f => name.Contains(f, StringComparison.OrdinalIgnoreCase)))
-        continue;
-    string path = Util.MapPath(sector.DataFile!.FileName);
-    if (!done.Add(path) || !File.Exists(path))
-        continue;
+    foreach (string path in Directory.GetFiles(Path.Combine(repo, "res", "t5ss", "data"), "*.tab").OrderBy(p => p, StringComparer.Ordinal))
+    {
+        string name = Path.GetFileNameWithoutExtension(path);
+        if (filters.Length > 0 && !filters.Any(f => name.Contains(f, StringComparison.OrdinalIgnoreCase)))
+            continue;
+        ProcessFile(path, name, isSec: false, text =>
+        {
+            var worlds = new WorldCollection();
+            using var reader = new StringReader(text);
+            new TabDelimitedParser().Parse(reader, worlds, null);
+            return worlds;
+        });
+    }
+}
+else
+{
+    var map = SectorMap.GetInstance();
+    var resources = ResourceManager.GetDedicatedInstance();
+    var done = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    foreach (var sector in map.Sectors.Where(s => s.DataFile != null && DataValidator.IsCurated(s)))
+    {
+        string name = sector.Names.Count > 0 ? sector.Names[0].Text : "?";
+        if (filters.Length > 0 && !filters.Any(f => name.Contains(f, StringComparison.OrdinalIgnoreCase)))
+            continue;
+        string path = Util.MapPath(sector.DataFile!.FileName);
+        if (!done.Add(path) || !File.Exists(path))
+            continue;
+        ProcessFile(path, name, isSec: sector.DataFile.Type == "SEC", _ => sector.GetWorlds(resources, cacheResults: false));
+    }
+}
 
+Console.WriteLine($"{(apply ? "Changed" : "Would change")} {totals.Worlds} worlds in {totals.Files} files: " +
+    $"+{totals.Added} -{totals.Removed} trade codes, {totals.Ex} (Ex), {totals.Ix} {{Ix}}, {totals.Pbg} PBG, {totals.Comments} lines commented.");
+return 0;
+
+void ProcessFile(string path, string name, bool isSec, Func<string, WorldCollection?> load)
+{
     byte[] raw = File.ReadAllBytes(path);
     bool bom = raw.Length >= 3 && raw[0] == 0xEF && raw[1] == 0xBB && raw[2] == 0xBF;
     string text;
@@ -58,14 +97,14 @@ foreach (var sector in map.Sectors.Where(s => s.DataFile != null && DataValidato
     catch (DecoderFallbackException)
     {
         Console.WriteLine($"SKIP {Rel(path)}: not UTF-8");
-        continue;
+        return;
     }
     if (text.Contains("Generated file - DO NOT MODIFY"))
-        continue;
+        return;
 
-    WorldCollection? worlds = sector.GetWorlds(resources, cacheResults: false);
+    WorldCollection? worlds = load(text);
     if (worlds == null)
-        continue;
+        return;
 
     string nl = text.Contains("\r\n") ? "\r\n" : "\n";
     var lines = text.Split(nl).ToList();
@@ -73,17 +112,17 @@ foreach (var sector in map.Sectors.Where(s => s.DataFile != null && DataValidato
     if (editor == null)
     {
         Console.WriteLine($"SKIP {Rel(path)}: format not recognized");
-        continue;
+        return;
     }
 
-    int changedWorlds = 0, added = 0, removed = 0, exFixes = 0;
+    int changedWorlds = 0, added = 0, removed = 0, exFixes = 0, ixFixes = 0, pbgFixes = 0;
     var samples = new List<string>();
     for (int i = 0; i < lines.Count; ++i)
     {
         var fields = editor.Read(lines, i);
         if (fields == null)
             continue;
-        if (!System.Text.RegularExpressions.Regex.IsMatch(fields.Hex, "^[0-9]{4}$"))
+        if (!Regex.IsMatch(fields.Hex, "^[0-9]{4}$"))
             continue;
         var hex = new Hex(fields.Hex);
         if (!hex.IsValid)
@@ -92,23 +131,58 @@ foreach (var sector in map.Sectors.Where(s => s.DataFile != null && DataValidato
         if (world == null || world.UWP.Contains('?') || world.UWP == "XXXXXXX-X")
             continue;
 
-        string newRemarks = FixRemarks(fields.Remarks, world, out int a, out int r);
-        string? newEx = fields.Economic == null ? null : FixEconomic(fields.Economic, world);
-        bool exChanged = newEx != null && newEx != fields.Economic;
-        if (newRemarks == fields.Remarks && !exChanged)
+        var fix = new Fields(fields.Hex,
+            FixRemarks(fields.Remarks, world, out int a, out int r),
+            fields.Economic == null ? null : FixEconomic(fields.Economic, world),
+            fields.Importance == null ? null : FixImportance(fields.Importance, world),
+            fields.Pbg == null ? null : FixPbg(fields.Pbg, world));
+        if (fix == fields)
             continue;
 
+        var changes = new List<string>();
+        if (fix.Remarks != fields.Remarks) changes.Add($"'{fields.Remarks}' -> '{fix.Remarks}'");
+        if (fix.Economic != fields.Economic) { changes.Add($"{fields.Economic} -> {fix.Economic}"); ++exFixes; }
+        if (fix.Importance != fields.Importance) { changes.Add($"{fields.Importance} -> {fix.Importance}"); ++ixFixes; }
+        if (fix.Pbg != fields.Pbg) { changes.Add($"PBG {fields.Pbg} -> {fix.Pbg}"); ++pbgFixes; }
         if (samples.Count < 3)
-            samples.Add($"    {fields.Hex} {world.UWP}: '{fields.Remarks}' -> '{newRemarks}'" + (exChanged ? $"  {fields.Economic} -> {newEx}" : ""));
-        editor.Write(lines, i, newRemarks, exChanged ? newEx : null, exChanged ? world : null);
-        ++changedWorlds; added += a; removed += r; if (exChanged) ++exFixes;
+            samples.Add($"    {fields.Hex} {world.UWP}: {string.Join("  ", changes)}");
+        editor.Write(lines, i, fields, fix);
+        ++changedWorlds; added += a; removed += r;
     }
-    if (changedWorlds == 0)
-        continue;
+    if (changedWorlds > 0)
+        editor.Finish(lines);
 
-    editor.Finish(lines);
-    ++totalFiles; totalWorlds += changedWorlds; totalAdded += added; totalRemoved += removed; totalEx += exFixes;
-    Console.WriteLine($"{Rel(path)} ({name}): {changedWorlds} worlds, +{added} -{removed} codes, {exFixes} (Ex)");
+    // Legacy SEC: comment out the lines the parser ignores as non-UWP data.
+    int comments = 0;
+    if (isSec && editor is SecEditor)
+    {
+        for (int i = 0; i < lines.Count; ++i)
+        {
+            string line = lines[i];
+            if (line.Length == 0 || "#$@".Contains(line[0]) || SecEditor.UwpRegex.IsMatch(line))
+                continue;
+            if (line.Trim().Length == 0)
+            {
+                lines[i] = "";
+            }
+            else if (Regex.IsMatch(line, @"\b[0-9]{4}\b") && Regex.IsMatch(line, @"\b[A-EX?][0-9A-Z?]{4,}"))
+            {
+                Console.WriteLine($"  {Rel(path)}, line {i + 1}: looks like a malformed world, left alone: {line.Trim()}");
+                continue;
+            }
+            else
+            {
+                lines[i] = "# " + line;
+            }
+            ++comments;
+        }
+    }
+
+    if (changedWorlds == 0 && comments == 0)
+        return;
+    ++totals.Files; totals.Worlds += changedWorlds; totals.Added += added; totals.Removed += removed;
+    totals.Ex += exFixes; totals.Ix += ixFixes; totals.Pbg += pbgFixes; totals.Comments += comments;
+    Console.WriteLine($"{Rel(path)} ({name}): {changedWorlds} worlds, +{added} -{removed} codes, {exFixes} (Ex), {ixFixes} {{Ix}}, {pbgFixes} PBG, {comments} lines commented");
     foreach (var s in samples)
         Console.WriteLine(s);
     if (apply)
@@ -117,9 +191,6 @@ foreach (var sector in map.Sectors.Where(s => s.DataFile != null && DataValidato
         File.WriteAllBytes(path, bom ? new byte[] { 0xEF, 0xBB, 0xBF }.Concat(output).ToArray() : output);
     }
 }
-
-Console.WriteLine($"{(apply ? "Changed" : "Would change")} {totalWorlds} worlds in {totalFiles} files: +{totalAdded} -{totalRemoved} trade codes, {totalEx} (Ex) fixes.");
-return 0;
 
 string Rel(string p) => Path.GetRelativePath(repo!, p);
 
@@ -147,7 +218,7 @@ static string FixRemarks(string remarks, World world, out int added, out int rem
 }
 
 // (Ex) is "(RLI+E)": resources, labor, infrastructure (eHex), efficiency (signed).
-static string? FixEconomic(string ex, World world)
+static string FixEconomic(string ex, World world)
 {
     var m = Regex.Match(ex.Trim(), @"^\(([0-9A-Za-z])([0-9A-Za-z])([0-9A-Za-z])([+-]\d)\)$");
     if (!m.Success)
@@ -164,12 +235,32 @@ static string? FixEconomic(string ex, World world)
     {
         infrastructure = Math.Max(0, world.CalculatedImportance);
     }
-    else
-    {
-        return ex;
-    }
+    if (efficiency == 0)
+        efficiency = 1;
     string result = $"({m.Groups[1].Value}{m.Groups[2].Value}{Maps.SecondSurvey.ToHex(infrastructure)}{(efficiency >= 0 ? "+" : "")}{efficiency})";
     return ex.Trim() == result ? ex : result;
+}
+
+// {Ix} is "{N}", "{ N }" or "{+N }"; keep whichever style the value uses.
+static string FixImportance(string ix, World world)
+{
+    var m = Regex.Match(ix.Trim(), @"^\{( *)([+-]?)(\d+)( *)\}$");
+    if (!m.Success)
+        return ix;
+    int imp = world.CalculatedImportance;
+    if (int.Parse(m.Groups[2].Value + m.Groups[3].Value) == imp)
+        return ix;
+    string sign = imp < 0 ? "-" : m.Groups[2].Value == "+" ? "+" : "";
+    return $"{{{m.Groups[1].Value}{sign}{Math.Abs(imp)}{m.Groups[4].Value}}}";
+}
+
+// PBG: no population multiplier without population. Only digits; X/? mean unknown.
+static string FixPbg(string pbg, World world)
+{
+    string p = pbg.Trim();
+    if (world.PopulationExponent != 0 || p.Length != 3 || p[0] < '1' || p[0] > '9')
+        return pbg;
+    return "0" + p.Substring(1);
 }
 
 static string? FindRepoRoot(string start)
@@ -180,14 +271,19 @@ static string? FindRepoRoot(string start)
     return null;
 }
 
-/// <summary>A world line's editable fields.</summary>
-sealed record Fields(string Hex, string Remarks, string? Economic);
+sealed class Totals
+{
+    public int Files, Worlds, Added, Removed, Ex, Ix, Pbg, Comments;
+}
+
+/// <summary>A world line's editable fields; null for a field the format doesn't have.</summary>
+sealed record Fields(string Hex, string Remarks, string? Economic, string? Importance, string? Pbg);
 
 /// <summary>Reads and rewrites world lines in one sector file format.</summary>
 abstract class LineEditor
 {
     public abstract Fields? Read(List<string> lines, int i);
-    public abstract void Write(List<string> lines, int i, string remarks, string? economic, World? world);
+    public abstract void Write(List<string> lines, int i, Fields old, Fields fix);
     public virtual void Finish(List<string> lines) { }
 
     public static LineEditor? For(List<string> lines)
@@ -218,15 +314,18 @@ sealed class TabEditor : LineEditor
 {
     // The names the server's parser accepts for the remarks column (TabDelimitedParser).
     internal static readonly string[] RemarksColumns = { "Remarks", "Trade Codes", "Comments" };
-    private readonly int header, hex, remarks, ex, ru;
+    private readonly int header, hex, remarks, ex, ix, pbg, ru;
     public TabEditor(List<string> columns, int header)
     {
         this.header = header;
         hex = columns.IndexOf("Hex");
         remarks = columns.FindIndex(RemarksColumns.Contains);
         ex = columns.IndexOf("{Ex}") is int a && a >= 0 ? a : columns.IndexOf("(Ex)");
+        ix = columns.IndexOf("{Ix}");
+        pbg = columns.IndexOf("PBG");
         ru = columns.IndexOf("RU");
     }
+    private static string? Cell(string[] cells, int i) => i >= 0 && i < cells.Length ? cells[i] : null;
     public override Fields? Read(List<string> lines, int i)
     {
         if (i <= header || hex < 0 || remarks < 0)
@@ -234,17 +333,21 @@ sealed class TabEditor : LineEditor
         var cells = lines[i].Split('\t');
         if (cells.Length <= Math.Max(hex, remarks))
             return null;
-        return new Fields(cells[hex], cells[remarks], ex >= 0 && ex < cells.Length ? cells[ex] : null);
+        return new Fields(cells[hex], cells[remarks], Cell(cells, ex), Cell(cells, ix), Cell(cells, pbg));
     }
-    public override void Write(List<string> lines, int i, string newRemarks, string? economic, World? world)
+    public override void Write(List<string> lines, int i, Fields old, Fields fix)
     {
         var cells = lines[i].Split('\t');
-        cells[remarks] = newRemarks;
-        if (economic != null && ex >= 0)
+        cells[remarks] = fix.Remarks;
+        if (fix.Importance != null)
+            cells[ix] = fix.Importance;
+        if (fix.Pbg != null)
+            cells[pbg] = fix.Pbg;
+        if (fix.Economic != null && fix.Economic != old.Economic)
         {
-            cells[ex] = economic;
+            cells[ex] = fix.Economic;
             if (ru >= 0 && ru < cells.Length && cells[ru].Trim().Length > 0)
-                cells[ru] = ResourceUnits(economic).ToString();
+                cells[ru] = ResourceUnits(fix.Economic).ToString();
         }
         lines[i] = string.Join("\t", cells);
     }
@@ -255,8 +358,9 @@ sealed class ColumnEditor : LineEditor
 {
     private readonly int header;
     private readonly List<(int start, int end)> spans;
-    private readonly int hex, remarks, ex;
-    private readonly Dictionary<int, string> newRemarks = new Dictionary<int, string>();
+    private readonly int hex, remarks, ex, ix, pbg;
+    // New values by column, then line; placed in Finish, once each column's width is known.
+    private readonly Dictionary<int, Dictionary<int, string>> pending = new Dictionary<int, Dictionary<int, string>>();
 
     public ColumnEditor(List<string> lines, int header)
     {
@@ -266,52 +370,64 @@ sealed class ColumnEditor : LineEditor
         hex = names.IndexOf("Hex");
         remarks = names.IndexOf("Remarks");
         ex = names.IndexOf("(Ex)");
+        ix = names.IndexOf("{Ix}");
+        pbg = names.IndexOf("PBG");
     }
 
     private static string Slice(string line, int start, int end) =>
         start >= line.Length ? "" : line.Substring(start, Math.Min(end, line.Length) - start);
 
+    private string? Column(string line, int column) =>
+        column >= 0 ? Slice(line, spans[column].start, spans[column].end).Trim() : null;
+
     public override Fields? Read(List<string> lines, int i)
     {
         if (i <= header + 1 || hex < 0 || remarks < 0 || lines[i].Length < spans[remarks].end || lines[i].StartsWith("#", StringComparison.Ordinal))
             return null;
-        var (rs, re) = spans[remarks];
-        return new Fields(Slice(lines[i], spans[hex].start, spans[hex].end).Trim(),
-            Slice(lines[i], rs, re).Trim(),
-            ex >= 0 ? Slice(lines[i], spans[ex].start, spans[ex].end).Trim() : null);
+        return new Fields(Column(lines[i], hex)!, Column(lines[i], remarks)!, Column(lines[i], ex), Column(lines[i], ix), Column(lines[i], pbg));
     }
 
-    public override void Write(List<string> lines, int i, string remarksText, string? economic, World? world)
+    public override void Write(List<string> lines, int i, Fields old, Fields fix)
     {
-        newRemarks[i] = remarksText; // placed in Finish, once the column width is known
-        if (economic != null && ex >= 0)
+        void Set(int column, string? before, string? after)
         {
-            var (es, ee) = spans[ex];
-            string line = lines[i];
-            lines[i] = line.Substring(0, es) + economic.PadRight(ee - es) + line.Substring(Math.Min(ee, line.Length));
+            if (column < 0 || after == null || after == before)
+                return;
+            if (!pending.TryGetValue(column, out var values))
+                pending[column] = values = new Dictionary<int, string>();
+            values[i] = after;
         }
+        Set(remarks, old.Remarks, fix.Remarks);
+        Set(ex, old.Economic, fix.Economic);
+        Set(ix, old.Importance, fix.Importance);
+        Set(pbg, old.Pbg, fix.Pbg);
     }
 
     public override void Finish(List<string> lines)
     {
-        var (rs, re) = spans[remarks];
-        int width = re - rs;
-        int needed = newRemarks.Values.Max(r => r.Length);
-        if (needed > width)
+        // Right to left, so widening a column doesn't move the ones still to be placed.
+        foreach (int column in pending.Keys.OrderByDescending(c => spans[c].start))
         {
-            // Widen the Remarks column in every line that reaches it.
-            int extra = needed - width;
-            for (int i = header; i < lines.Count; ++i)
+            var values = pending[column];
+            var (start, end) = spans[column];
+            int width = end - start;
+            int needed = values.Values.Max(r => r.Length);
+            if (needed > width)
             {
-                if (lines[i].Length < re || lines[i].StartsWith("#", StringComparison.Ordinal))
-                    continue;
-                char pad = i == header + 1 ? '-' : ' ';
-                lines[i] = lines[i].Substring(0, re) + new string(pad, extra) + lines[i].Substring(re);
+                // Widen the column in every line that reaches it.
+                int extra = needed - width;
+                for (int i = header; i < lines.Count; ++i)
+                {
+                    if (lines[i].Length < end || lines[i].StartsWith("#", StringComparison.Ordinal))
+                        continue;
+                    char pad = i == header + 1 ? '-' : ' ';
+                    lines[i] = lines[i].Substring(0, end) + new string(pad, extra) + lines[i].Substring(end);
+                }
+                width = needed;
             }
-            width = needed;
+            foreach (var (i, text) in values)
+                lines[i] = lines[i].Substring(0, start) + text.PadRight(width) + lines[i].Substring(Math.Min(start + width, lines[i].Length));
         }
-        foreach (var (i, text) in newRemarks)
-            lines[i] = lines[i].Substring(0, rs) + text.PadRight(width) + lines[i].Substring(rs + width);
     }
 }
 
@@ -331,18 +447,33 @@ sealed class SecEditor : LineEditor
         @"[ \t]*$",
         RegexOptions.CultureInvariant | RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.IgnorePatternWhitespace);
 
+    // What SecParser requires of a line before it tries to parse a world.
+    internal static readonly Regex UwpRegex = new Regex(@"[ABCDEX?][0-9A-Z?]{6}-[0-9A-Z?]", RegexOptions.CultureInvariant);
+
     public override Fields? Read(List<string> lines, int i)
     {
         var m = WorldRegex.Match(lines[i]);
         return m.Success && !lines[i].StartsWith("#", StringComparison.Ordinal)
-            ? new Fields(m.Groups["hex"].Value, m.Groups["codes"].Value.Trim(), null) : null;
+            ? new Fields(m.Groups["hex"].Value, m.Groups["codes"].Value.Trim(), null, null, m.Groups["pbg"].Value) : null;
     }
 
-    public override void Write(List<string> lines, int i, string remarks, string? economic, World? world)
+    public override void Write(List<string> lines, int i, Fields old, Fields fix)
     {
-        var g = WorldRegex.Match(lines[i]).Groups["codes"];
-        // Keep the field's width (it includes trailing padding); grow it if the codes need room.
-        string field = remarks.Length < g.Length ? remarks.PadRight(g.Length) : remarks + " ";
-        lines[i] = lines[i].Substring(0, g.Index) + field + lines[i].Substring(g.Index + g.Length);
+        var groups = WorldRegex.Match(lines[i]).Groups;
+        string line = lines[i];
+        // PBG first: it comes after the codes, so its index is still good.
+        if (fix.Pbg != old.Pbg)
+        {
+            var p = groups["pbg"];
+            line = line.Substring(0, p.Index) + fix.Pbg + line.Substring(p.Index + p.Length);
+        }
+        if (fix.Remarks != old.Remarks)
+        {
+            var g = groups["codes"];
+            // Keep the field's width (it includes trailing padding); grow it if the codes need room.
+            string field = fix.Remarks.Length < g.Length ? fix.Remarks.PadRight(g.Length) : fix.Remarks + " ";
+            line = line.Substring(0, g.Index) + field + line.Substring(g.Index + g.Length);
+        }
+        lines[i] = line;
     }
 }

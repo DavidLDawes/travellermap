@@ -1,6 +1,6 @@
-Oeghz Vaerrghr
-9 0
-              1    2          3 4               5  6   7      8
+# Oeghz Vaerrghr
+# 9 0
+#               1    2          3 4               5  6   7      8
 #
 #Seed: 22781
 #Alleg: 04: Va: "Vargr (non-aligned)"
@@ -69,7 +69,7 @@ Akhsersukh    0607 C8B9521-9  C Fl Ni              521 Va     M0V M8V
 Gzoefaae      0807 B8A4137-8    Fl Lo              701 Va     M8V 
 Guaaekhokhs   1507 C254477-7    Ni Pa              625 Va     F1V 
 Ghaeaegurr    1907 C545ACA-7    Hi In              602 Va     F2V 
-Dhosoerrkar   2007 C100004-7    Va Di              400 Va     M5V 
+Dhosoerrkar   2007 C100004-7    Va Di              000 Va     M5V 
 Oethforoez    2807 C565766-4    Ag Ri              100 Va     F1V M1V
 Dzuerrou      2907 B53A352-9    Lo Wa              501 Va     F9V 
 Ghoekraks     3007 C450675-5  C De Ni Po           201 Va     G0V 
@@ -124,7 +124,7 @@ Orrvanungzan  2812 D746253-8  C Lo                 921 Va     F7V
 Orrengruth    3112 C483647-5  C Ni Ri              403 Va     M4V 
 Vikuu         3212 C767104-8  G Lo Ga              401 Va     G8V 
 Llaevogoa     0113 C300433-7  G Ni Va              104 Va     M1V M3V M3V
-Orrorrgokhs   0313 C666000-4    Ga Di              810 Va     F4V 
+Orrorrgokhs   0313 C666000-4    Ga Di              010 Va     F4V 
 Tonez         0513 E424678-7  C Ni                 901 Va     F4III M6V 
 Sueeksaerz    0613 X366469-0    Ni Pa              721 Va     G0V 
 Gvizola       0813 B310679-9  G Na Ni              706 Va     M0V M3V
@@ -140,7 +140,7 @@ Ngegoerr      2514 D773672-6    Ni                 201 Va     K6V
 Tsueraeats    2714 E241666-1  C Ni Po              304 Va     F5V M1V
 Agongoruaei   2914 E000200-9  C As Lo Va           504 Va     M0V M5V 
 Khaosoezel    0315 B643A77-9  C Hi In Po           404 Va     F6V 
-Oekhoksoug    0615 B645002-9    Di                 604 Va     F9V 
+Oekhoksoug    0615 B645002-9    Di                 004 Va     F9V 
 Kotsi         0715 E410552-7    Ni                 700 Va     F2V M5V
 Ongekikoegh   0915 E9E6978-6  C Hi                 600 Va     F9V M4V
 Kfaekaeaoe    1015 C666658-3    Ag Ni Ri Ga          300 Va     F2V 
@@ -199,7 +199,7 @@ Khorrnegfue   2423 B421158-D  G Lo Po He           103 Va     K9V
 Kedaegvarroa  0824 B433977-A    Hi Na Po           700 Va     F4V 
 Ekhtsaen      1424 D786400-6  C Ni Ga Pa           401 Va     F6V M3V
 Dheksokhots   1724 C998345-6  G Lo                 102 Va     M7V 
-Dzugol        2524 CAB6000-9    Fl Di              125 Va     K7V M1V 
+Dzugol        2524 CAB6000-9    Fl Di              025 Va     K7V M1V 
 Doghzsur      2624 B344684-9  G Ag Ni              302 Va     K1V M3V
 Ghaeedhunoun  0425 A671532-9  G Ni He              703 Va     F7V M5V
 Zaerrgfonoe   0525 B654137-5    Lo                 800 Va     F5V 
@@ -250,7 +250,7 @@ Ksoursdhigz   0432 E764320-3  C Lo                 405 Va     F5V M1V
 Tsounaeooe    0632 B200443-A  C Ni Va              905 Va     M1V M4V
 Aerkforrghug  0832 CAD197B-5    Hi                 701 Va     K5V 
 Surrgaekhs    1432 E346340-3  C Lo                 722 Va     F5V M5V
-Ksunaghaers   2832 C200003-6  C Va Di              704 Va     M3V 
+Ksunaghaers   2832 C200003-6  C Va Di              004 Va     M3V 
 Rroedhgol     3032 X15057A-3  C De Ni Po           810 Va     F1V M3V
 Fazadzaeks    0133 B656204-C  C Lo Ga              405 Va     F5V M3V
 Sokakh        0233 E764534-1  C Ag Ni Pr           413 Va     F5V 

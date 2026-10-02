@@ -141,9 +141,14 @@ binding redirects to copy into `Web.config.sample`. (Unit tests don't use them:
   must match the file names' **case** exactly (Linux). Interactive equivalents: `/admin/errors`,
   `/admin/codes`, `tools/lintsec.html`. Data problems that need sector authors are listed in
   `DATA-ISSUES.md`.
-- **Trade codes**: `dotnet run --project tools/tradecodes` reports, and `-- --apply` fixes,
-  UWP-determined trade codes and mechanical (Ex) values in sector files, using the validator's
-  rules (`World.TradeCodeRules`). Run it after adding or editing hand-maintained sector data.
+- **Mechanical data fixes**: `dotnet run --project tools/tradecodes` reports, and `-- --apply`
+  fixes, the values the validator can derive in sector files: UWP-determined trade codes (the
+  validator's `World.TradeCodeRules`), mechanical (Ex) values, `{Ix}`, Pop-0 PBG multipliers, and
+  ignored non-UWP lines in legacy SEC files (made `#` comments). Run it after adding or editing
+  hand-maintained sector data. Files marked "Generated file - DO NOT MODIFY" come from
+  `res/t5ss/data`: fix those with `-- --t5ss --apply`, then regenerate with
+  `cd res/t5ss && perl update_world_data.pl --source-data`. The script writes LF line endings;
+  `git checkout` files whose only change is line endings.
 - **Editing data files with scripts**: preserve the BOM, line endings and encoding. Don't use
   `sed -i` with a differently-cased path on Windows: it rewrites the file under the name you
   typed, changing its case, which the file-case check rejects.
