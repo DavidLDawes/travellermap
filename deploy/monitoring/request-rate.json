@@ -1,0 +1,31 @@
+{
+  "displayName": "travellermap: sustained request rate",
+  "documentation": {
+    "content": "The site has averaged more than 5 requests/second for 10 minutes. Normal map use through the CDN is well below that; look for a scraper or an uncached URL pattern. Thresholds are in deploy/monitoring/request-rate.json.",
+    "mimeType": "text/markdown"
+  },
+  "userLabels": { "severity": "critical" },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "request_count > 5/s for 10 min",
+      "conditionThreshold": {
+        "filter": "resource.type = \"cloud_run_revision\" AND resource.labels.service_name = \"__SERVICE__\" AND metric.type = \"run.googleapis.com/request_count\"",
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "perSeriesAligner": "ALIGN_RATE",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "groupByFields": ["resource.labels.service_name"]
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 5,
+        "duration": "600s",
+        "trigger": { "count": 1 }
+      }
+    }
+  ],
+  "alertStrategy": { "autoClose": "1800s" },
+  "notificationChannels": ["__CHANNEL__"]
+}

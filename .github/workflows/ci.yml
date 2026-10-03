@@ -166,3 +166,68 @@ jobs:
           path: image-diffs/
           if-no-files-found: ignore
           retention-days: 14
+
+  deploy:
+    # Deploys the Docker image to Cloud Run (see deploy/README.md). Only for pushes to main, only
+    # when every job above passed, and only once deploy/setup.sh has set the repository variables
+    # (until GCP_PROJECT_ID exists this job is skipped). Authenticates without stored keys.
+    name: Deploy to Cloud Run
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.GCP_PROJECT_ID != ''
+    needs: [javascript, data-linux, host-linux, docker, windows]
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      PROJECT: ${{ vars.GCP_PROJECT_ID }}
+      REGION: ${{ vars.GCP_REGION }}
+      SERVICE: ${{ vars.GCP_SERVICE }}
+      IMAGE: ${{ vars.GCP_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GCP_REGISTRY }}/site
+    steps:
+      - uses: actions/checkout@v7
+      - uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOYER_SA }}
+      - uses: google-github-actions/setup-gcloud@v3
+      - name: Let Docker push to Artifact Registry
+        run: gcloud auth configure-docker "$REGION-docker.pkg.dev" --quiet
+      - uses: docker/setup-buildx-action@v4
+      - name: Build and push image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ env.IMAGE }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Deploy
+        # Public access is deliberately not set here: it is set once by `deploy/setup.sh live`, and
+        # the cost-alert responder removes it at 100% of budget. A deploy must not undo that.
+        # AdminKey comes from Secret Manager; it never passes through GitHub.
+        run: |
+          gcloud run deploy "$SERVICE" \
+            --project "$PROJECT" --region "$REGION" \
+            --image "$IMAGE:$GITHUB_SHA" \
+            --service-account "${{ vars.GCP_RUNTIME_SA }}" \
+            --port 8080 --cpu 1 --memory 1Gi --cpu-boost --concurrency 20 --timeout 120 \
+            --min-instances 0 --max-instances 2 \
+            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true" \
+            --set-secrets "AdminKey=admin-key:latest" \
+            --labels "commit=${GITHUB_SHA::12}"
+      - name: Smoke test
+        run: |
+          url=$(gcloud run services describe "$SERVICE" --project "$PROJECT" --region "$REGION" --format 'value(status.url)')
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 --retry 5 --retry-delay 5 --retry-all-errors "$url/api/search?q=Regina")
+          if [ "$code" = 403 ]; then
+            echo "::warning::$url answers 403: the service is private (not yet made live, or cut off by the cost alert). Skipping the smoke test."
+            exit 0
+          fi
+          [ "$code" = 200 ] || { echo "::error::search returned $code"; exit 1; }
+          curl -sf --max-time 120 -o poster.pdf "$url/api/poster?sector=Spinward%20Marches&subsector=C&accept=application/pdf"
+          [ "$(head -c 4 poster.pdf)" = "%PDF" ] || { echo "::error::poster is not a PDF"; exit 1; }
+          echo "Deployed $url at $GITHUB_SHA"
