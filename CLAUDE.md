@@ -84,6 +84,10 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
   - Until 2026-10 these were per-thread copies. Parsed worlds accumulated in each thread's map,
     costing ~4× the memory under load.
 
+**Deployment.** Pushes to `main` that pass CI deploy the Docker image to Cloud Run (CI job `deploy`;
+setup, secrets, cost alarms and runbook in `deploy/README.md`; `deploy/setup.sh` is the one-time GCP setup).
+Runtime secrets live in Secret Manager, never in GitHub. `deploy/` is excluded from the image.
+
 **Client — plain ES modules, no build step.**
 - `index.html` + `index.js` — main page UI (search, routes, world/sector info cards, settings).
 - `map.js` — the `TravellerMap` tiled map widget, `MapService` API client, `Util`, LRU cache.

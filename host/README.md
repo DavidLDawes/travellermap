@@ -65,6 +65,8 @@ docker run -d -p 8080:8080 -e AdminKey=YOUR_SECRET travellermap
 - Requests through Docker's port mapping or a proxy never count as local. A spoofed
   `X-Forwarded-For: 127.0.0.1` is refused.
 
+**Cloud Run:** CI deploys the image on every push to `main`; see [`deploy/README.md`](../deploy/README.md).
+
 ## Compared with the IIS site
 
 Responses are the same, byte for byte, for nearly all of the API, data, image, static, redirect,

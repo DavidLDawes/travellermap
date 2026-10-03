@@ -1,0 +1,31 @@
+{
+  "displayName": "travellermap: free-tier burn rate",
+  "documentation": {
+    "content": "Billable instance time averaged more than 0.15 instance-seconds per second over the last hour. Sustained, that uses up the monthly free tier (50 hours at 1 vCPU) in about 14 days. Thresholds are in deploy/monitoring/billable-time.json.",
+    "mimeType": "text/markdown"
+  },
+  "userLabels": { "severity": "warn" },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "billable_instance_time > 0.15 s/s over 1 h",
+      "conditionThreshold": {
+        "filter": "resource.type = \"cloud_run_revision\" AND resource.labels.service_name = \"__SERVICE__\" AND metric.type = \"run.googleapis.com/container/billable_instance_time\"",
+        "aggregations": [
+          {
+            "alignmentPeriod": "3600s",
+            "perSeriesAligner": "ALIGN_RATE",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "groupByFields": ["resource.labels.service_name"]
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0.15,
+        "duration": "0s",
+        "trigger": { "count": 1 }
+      }
+    }
+  ],
+  "alertStrategy": { "autoClose": "3600s" },
+  "notificationChannels": ["__CHANNEL__"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "travellermap-cost-alert",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node index.mjs"
+  }
+}

@@ -12,3 +12,4 @@ web.config
 Web.config
 *.user
 **/*.db
+deploy

@@ -1,0 +1,113 @@
+# Deploying to Cloud Run
+
+Every push to `main` that passes CI builds the root `Dockerfile` and deploys it to Google Cloud Run
+(`.github/workflows/ci.yml`, job `deploy`). The design goal is **$0/month**, with an alarm on your
+phone if that stops being true.
+
+```
+GitHub Actions ──(keyless, main branch only)──> Artifact Registry ──> Cloud Run "travellermap"
+                                                                        │  AdminKey from Secret Manager
+Cloud Billing budget ($2/month) ──┐                                     │
+Cloud Monitoring alerts ──────────┴─> Pub/Sub "cost-alerts" ──> Cloud Run "cost-alerts" ──> Pushover
+                                                                        └─ at 100% of budget: removes the
+                                                                           site's public access (403)
+```
+
+## What the settings are for
+
+| Setting | Why |
+| --- | --- |
+| 1 vCPU, 1 GiB | Below 1 vCPU, Cloud Run forces concurrency 1, which would serialize tile requests. |
+| `--max-instances 2`, `--concurrency 20` | Caps both capacity and the worst-case bill. |
+| `--min-instances 0` | Scales to zero, so idle time is free. First request after idle takes a few seconds. |
+| `--cpu-boost` | Faster cold starts. You pay for the extra CPU only during startup. |
+| us-central1 | The always-free tier covers us-central1, us-east1 and us-west1. |
+
+**Free tier (request-based billing):** 180,000 vCPU-seconds (= **50 hours** of busy 1-vCPU instance
+time), 360,000 GiB-seconds, 2 million requests, and 1 GiB of egress per month. Idle time between
+requests is not billed. Past the free tier it is about $0.086 per busy vCPU-hour. Always-on
+(`--min-instances 1`) would use the whole allowance in about two days.
+
+## Secrets
+
+Runtime secrets live **only** in Secret Manager. They never pass through GitHub or the repo.
+
+| Secret | Read by | How |
+| --- | --- | --- |
+| `admin-key` | the site (`site-runtime` account) | `--set-secrets AdminKey=admin-key:latest` → the `AdminKey` env var |
+| `pushover-token`, `pushover-user` | the alert responder (`cost-alerts` account) | `--set-secrets` → env vars |
+
+Rotate one with `printf %s "$NEW" | gcloud secrets versions add admin-key --data-file=-`, then
+redeploy (`:latest` is resolved when a revision starts). The GitHub repository variables
+(`GCP_PROJECT_ID`, …) are identifiers, not secrets.
+
+## Setup
+
+You need `gcloud` (logged in as an owner of the project and billing account), `gh`, `node`, `curl`.
+Run these from the repo root in Git Bash. Use a dedicated project, so the budget and the cutoff
+only ever affect this site. (`gcloud billing accounts list` shows your billing accounts.)
+
+```bash
+export PROJECT_ID=travellermap-xxxx            # globally unique
+export BILLING_ACCOUNT=XXXXXX-XXXXXX-XXXXXX
+
+./deploy/setup.sh project infra wif github     # project, APIs, registry, accounts, keyless GitHub access
+./deploy/setup.sh secrets                      # prompts (hidden) for the admin key and Pushover keys
+./deploy/setup.sh alerts budget                # alert responder, Monitoring policies, $2 budget
+```
+
+Then merge to `main`. The first deploy creates the site **privately** (403). Check the run, then:
+
+```bash
+./deploy/setup.sh live                         # public, and lets the responder cut it off
+```
+
+Why a separate step: deploys never touch public access, so a deploy cannot silently undo a cost
+cutoff.
+
+## Fire drill
+
+An alarm you have never triggered is a guess. The drill messages go through Pub/Sub exactly as real
+ones do. A `"drill": true` message never changes access and is not remembered.
+
+```bash
+./deploy/setup.sh drill budget 0.5             # normal "50% of budget" message
+./deploy/setup.sh drill budget 1               # emergency priority: the phone should alarm until acknowledged
+./deploy/setup.sh drill monitoring critical    # the Monitoring path
+```
+
+To test the real cutoff end to end, run `./deploy/setup.sh cutoff`, confirm the site answers 403,
+then `./deploy/setup.sh restore`.
+
+## Alerts
+
+| Event | Pushover | Action |
+| --- | --- | --- |
+| Budget 25% ($0.50) | normal | |
+| Budget 50% / 90%, or forecast to reach 100% | high (bypasses quiet hours) | |
+| **Budget 100% ($2)** | **emergency** (repeats every 60 s for an hour, until acknowledged) | **site made private** |
+| Request rate over 5/s for 10 min (`critical`) | emergency | |
+| Both instances busy for 10 min (`critical`) | emergency | |
+| Billable time over 0.15 instance-s/s for an hour (`warn`) | high | |
+| An incident resolves | lowest (silent) | |
+
+- Budget notifications can lag spending by hours. The Monitoring alerts react in minutes; the budget
+  is the backstop.
+- Monitoring `critical` alerts do not cut the site off. To make them do so, set
+  `CUTOFF_ON_CRITICAL=1` on the `cost-alerts` service.
+- The monitoring thresholds in `deploy/monitoring/*.json` are starting guesses. Watch the real
+  numbers for a few weeks, then edit the file, delete the policy in the Cloud Console, and re-run
+  `./deploy/setup.sh alerts`.
+- Change the budget: edit it in the Cloud Console (Billing → Budgets), or re-run `budget` with
+  `BUDGET_USD=5` after deleting the old one.
+
+## After a cutoff
+
+The site answers 403. Find out why (Cloud Run logs, the Monitoring incident, the billing report),
+then `./deploy/setup.sh restore`.
+
+## Cloudflare in front (optional, free)
+
+Cloudflare's free plan can cache tiles and static files in front of Cloud Run, so most map traffic
+never reaches it. It needs a domain on Cloudflare; without one the site is at its `*.run.app` URL.
+Not set up yet.
