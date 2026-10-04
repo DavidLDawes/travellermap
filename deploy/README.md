@@ -80,6 +80,8 @@ To read the key: `gcloud secrets versions access latest --secret=admin-key --pro
 | --- | --- |
 | `/admin` | **Landing page** linking to everything below; links keep the `?key=` |
 | `/admin/status` | **This server process:** deployed commit and time, Cloud Run revision, uptime, cold start, memory and CPU, requests since start by kind (counts, status classes, median/95th percentile/slowest), PDF lock waits, sectors loaded, search index |
+| `/admin/fleet` | **All instances, from Cloud Monitoring:** instances running now, most at once (24 h, 30 d), minutes at the instance limit, requests last hour and by hour with the peak instances in each |
+| `/admin/usage` | **This month against the free tier:** vCPU-seconds, GiB-seconds, requests and egress used, percent and projected month end, when the free tier would run out at this pace, a rough cost beyond it, busy time by day |
 | `/admin/overview` | Overview map of the sector data |
 | `/admin/errors` | Data errors found in the sector files |
 | `/admin/uptime` | Server uptime |
@@ -88,8 +90,23 @@ To read the key: `gcloud secrets versions access latest --secret=admin-key --pro
 
 `/admin/status` describes the one instance that answers: Cloud Run can run up to two, and its counters
 restart whenever the instance stops (it scales to zero when idle). The deploy job sets `GIT_SHA` and
-`DEPLOYED_AT` so the page can say what is running. Instance counts, monthly usage against the free tier,
-and budget spend are planned as `/admin/fleet`, `/admin/usage` and `/admin/budget`.
+`DEPLOYED_AT` so the page can say what is running.
+
+`/admin/fleet` and `/admin/usage` read Cloud Monitoring, so they cover every instance and survive restarts and
+scale-to-zero (answers are cached for a minute; the data runs a few minutes behind). The site's service
+account needs read-only access for them: `./deploy/setup.sh status-access` grants `roles/monitoring.viewer`
+(nothing that can change anything). Without it the pages show the error and this hint. Notes:
+
+- Month boundaries are Pacific time, which is how Google bills. The free amounts and list prices are constants in
+  `server/admin/CloudStatus.cs` (`FreeTier`); the prices only feed the rough estimate.
+- The instance limit (`--max-instances`) applies per revision, and two revisions overlap during a deploy, so
+  "most instances at once" can exceed it briefly. "Minutes at the limit" and the `instances-maxed` alert compare
+  each revision with the limit separately.
+- The deploy job passes the instance size (`CLOUD_RUN_VCPU`, `CLOUD_RUN_MEMORY_GIB`, `CLOUD_RUN_MAX_INSTANCES`) so
+  busy time can be turned into vCPU- and GiB-seconds. Keep them in step with the `gcloud run deploy` flags (they
+  come from the same three values in the job).
+- Locally, run the host with `GCP_ACCESS_TOKEN="$(gcloud auth print-access-token)"`, `GCP_PROJECT_ID` and
+  `GCP_SERVICE` set to see real data.
 
 `/admin/admin` is the shared handler behind `flush`, `reindex`, `profile` and `uptime`. It needs an
 `action` and prints "Unknown action:" without one, so don't use it as a landing page.

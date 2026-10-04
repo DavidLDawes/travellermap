@@ -50,6 +50,9 @@ var searchIndex = Maps.Search.SqliteSearchIndex.FromSettings();
 Maps.Search.SearchEngine.Index = searchIndex;
 searchIndex.EnsureBuilt(message => app.Logger.LogInformation("{Message}", message));
 
+// Platform metrics for /admin/fleet and /admin/usage: on Cloud Run, or locally with GCP_ACCESS_TOKEN (see host/README.md).
+CloudStatus.Provider = GoogleCloudStatusProvider.FromEnvironment(new HttpClient { Timeout = TimeSpan.FromSeconds(20) });
+
 var files = new PhysicalFileProvider(contentRoot);
 
 // The site's 404 page (Web.config httpErrors).

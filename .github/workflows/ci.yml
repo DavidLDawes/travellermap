@@ -208,15 +208,20 @@ jobs:
       - name: Deploy
         # Public access is deliberately not set here: it is set once by `deploy/setup.sh live`, and
         # the cost-alert responder removes it at 100% of budget. A deploy must not undo that.
-        # AdminKey comes from Secret Manager; it never passes through GitHub.
+        # AdminKey comes from Secret Manager; it never passes through GitHub. The instance size is
+        # also passed to the app, so /admin/usage can turn busy time into vCPU- and GiB-seconds.
+        env:
+          CPU: "1"
+          MEMORY_GIB: "1"
+          MAX_INSTANCES: "2"
         run: |
           gcloud run deploy "$SERVICE" \
             --project "$PROJECT" --region "$REGION" \
             --image "$IMAGE:$GITHUB_SHA" \
             --service-account "${{ vars.GCP_RUNTIME_SA }}" \
-            --port 8080 --cpu 1 --memory 1Gi --cpu-boost --concurrency 20 --timeout 120 \
-            --min-instances 0 --max-instances 2 \
-            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true,GIT_SHA=$GITHUB_SHA,DEPLOYED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --port 8080 --cpu "$CPU" --memory "${MEMORY_GIB}Gi" --cpu-boost --concurrency 20 --timeout 120 \
+            --min-instances 0 --max-instances "$MAX_INSTANCES" \
+            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true,GIT_SHA=$GITHUB_SHA,DEPLOYED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ),GCP_PROJECT_ID=$PROJECT,CLOUD_RUN_VCPU=$CPU,CLOUD_RUN_MEMORY_GIB=$MEMORY_GIB,CLOUD_RUN_MAX_INSTANCES=$MAX_INSTANCES" \
             --set-secrets "AdminKey=admin-key:latest" \
             --labels "commit=${GITHUB_SHA::12}"
       - name: Smoke test
