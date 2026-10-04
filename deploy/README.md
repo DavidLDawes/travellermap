@@ -76,8 +76,10 @@ ones do. A `"drill": true` message never changes access and is not remembered.
 ./deploy/setup.sh drill monitoring critical    # the Monitoring path
 ```
 
-To test the real cutoff end to end, run `./deploy/setup.sh cutoff`, confirm the site answers 403,
-then `./deploy/setup.sh restore`.
+To test the real cutoff end to end, run `./deploy/setup.sh cutoff`, then poll the site until it answers
+403, then `./deploy/setup.sh restore`. **Removing access takes about 100 seconds to take effect** (measured:
+still 200 after 90 s, 403 at about 100 s); restoring it takes seconds. A cutoff is therefore not
+instantaneous, which is one more reason for the `--max-instances 2` cap.
 
 ## Alerts
 
