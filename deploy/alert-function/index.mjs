@@ -8,7 +8,8 @@
 // (command in deploy/README.md). No dependencies: it uses Node's fetch and the metadata server.
 //
 // Environment: PUSHOVER_TOKEN, PUSHOVER_USER (from Secret Manager); PROJECT_ID, REGION, SERVICE
-// (the site's Cloud Run service); STATE_BUCKET (optional: remembers what was already announced);
+// (the site's Cloud Run service); STATE_BUCKET (optional: remembers what was already announced, and
+// keeps latest-budget.json and latest-alert.json for /admin/budget to read);
 // CUTOFF_ON_CRITICAL=1 (optional: Monitoring "critical" incidents also cut the site off).
 
 import http from 'node:http';
@@ -21,9 +22,11 @@ const {
   PROJECT_ID,
   REGION,
   SERVICE,
-  STATE_BUCKET,
   CUTOFF_ON_CRITICAL,
 } = process.env;
+
+// Read when used (not at import), so tests can switch it.
+const stateBucket = () => process.env.STATE_BUCKET;
 
 const INVOKER_ROLE = 'roles/run.invoker';
 const announced = new Set(); // fallback when there is no STATE_BUCKET; lost when the instance stops
@@ -77,27 +80,46 @@ async function cutOff() {
 // True if `key` was announced before; otherwise records it. Announcing the same threshold again
 // (budget notifications repeat several times a day) would be noise.
 async function alreadyAnnounced(key) {
-  if (!STATE_BUCKET) {
+  const bucket = stateBucket();
+  if (!bucket) {
     if (announced.has(key)) return true;
     announced.add(key);
     return false;
   }
   const headers = { Authorization: `Bearer ${await accessToken()}` };
   const name = encodeURIComponent(`announced/${key}`);
-  const found = await fetch(`https://storage.googleapis.com/storage/v1/b/${STATE_BUCKET}/o/${name}`, { headers });
+  const found = await fetch(`https://storage.googleapis.com/storage/v1/b/${bucket}/o/${name}`, { headers });
   if (found.ok) return true;
   if (found.status !== 404) throw new Error(`state lookup: ${found.status}`);
   return false;
 }
 
 async function markAnnounced(key) {
-  if (!STATE_BUCKET) return;
+  const bucket = stateBucket();
+  if (!bucket) return;
   const headers = { Authorization: `Bearer ${await accessToken()}` };
   const name = encodeURIComponent(`announced/${key}`);
   const response = await fetch(
-    `https://storage.googleapis.com/upload/storage/v1/b/${STATE_BUCKET}/o?uploadType=media&name=${name}`,
+    `https://storage.googleapis.com/upload/storage/v1/b/${bucket}/o?uploadType=media&name=${name}`,
     { method: 'POST', headers, body: new Date().toISOString() });
   if (!response.ok) throw new Error(`state write: ${response.status}`);
+}
+
+// Overwrites a small JSON status file in the state bucket, which /admin/budget reads
+// (latest-budget.json: the newest budget notification; latest-alert.json: the last alert sent).
+// Best effort: a failure here is logged but never stops an alert from going out.
+export async function writeState(name, value) {
+  const bucket = stateBucket();
+  if (!bucket) return;
+  try {
+    const headers = { Authorization: `Bearer ${await accessToken()}`, 'Content-Type': 'application/json' };
+    const response = await fetch(
+      `https://storage.googleapis.com/upload/storage/v1/b/${bucket}/o?uploadType=media&name=${encodeURIComponent(name)}`,
+      { method: 'POST', headers, body: JSON.stringify(value) });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  } catch (error) {
+    log('WARNING', `could not write ${name}: ${error}`);
+  }
 }
 
 const money = (amount, currency) => `${amount.toFixed(2)} ${currency}`;
@@ -158,12 +180,28 @@ export function describeIncident({ incident }) {
 
 export async function handle(envelope) {
   const data = JSON.parse(Buffer.from(envelope.message.data, 'base64').toString('utf8'));
+
+  // "drill": true in a hand-published test message: notify at the given level, but never cut
+  // off, and never remember it as a real notification (see deploy/README.md).
+  const drill = data.drill === true;
+
+  // Keep the newest budget notification, whether or not it crossed a threshold (most do not).
+  if (data.budgetDisplayName && !drill) {
+    await writeState('latest-budget.json', {
+      receivedAt: new Date().toISOString(),
+      budgetDisplayName: data.budgetDisplayName,
+      costAmount: data.costAmount,
+      budgetAmount: data.budgetAmount,
+      currencyCode: data.currencyCode,
+      costIntervalStart: data.costIntervalStart,
+      alertThresholdExceeded: data.alertThresholdExceeded,
+      forecastThresholdExceeded: data.forecastThresholdExceeded,
+    });
+  }
+
   const alert = data.incident ? describeIncident(data) : data.budgetDisplayName ? describeBudget(data) : null;
   if (!alert) return;
 
-  // "drill": true in a hand-published test message: notify at the given level, but never cut
-  // off, and never remember it (see deploy/README.md).
-  const drill = data.drill === true;
   if (!drill && await alreadyAnnounced(alert.key)) return;
 
   let cutOffNow = false;
@@ -175,6 +213,9 @@ export async function handle(envelope) {
     url: alert.url,
   });
   if (!drill) await markAnnounced(alert.key);
+  await writeState('latest-alert.json', {
+    time: new Date().toISOString(), title: alert.title, priority: alert.priority, cutOff: cutOffNow, drill,
+  });
   log('NOTICE', 'alert sent', { key: alert.key, priority: alert.priority, cutOff: cutOffNow, drill });
 }
 

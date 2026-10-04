@@ -25,6 +25,7 @@ namespace Maps.Admin
         string Describe();
         FleetData GetFleetData();
         UsageData GetUsageData();
+        BudgetData GetBudgetData();
     }
 
     internal static class CloudStatus

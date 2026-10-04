@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AstrometricsTest.cs" />
+    <Compile Include="BudgetStatusTest.cs" />
     <Compile Include="CacheTest.cs" />
     <Compile Include="CloudStatusTest.cs" />
     <Compile Include="DataValidationTest.cs" />

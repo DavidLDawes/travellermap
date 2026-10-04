@@ -260,8 +260,14 @@ stage_live() {
 }
 
 stage_status_access() {
-  say "Read-only access to metrics for the site's service account"
+  say "Read-only access for the site's service account: metrics and alerts, its own access policy, the alert state files"
   grant site-runtime roles/monitoring.viewer
+  # Whether the cost cutoff has made the site private (reads the IAM policy of this one service).
+  g run services add-iam-policy-binding "$SERVICE" --region="$REGION" \
+    --member="serviceAccount:$(sa site-runtime)" --role=roles/run.viewer --quiet >/dev/null
+  # The responder's latest-budget.json, latest-alert.json and announced/ marker files.
+  g storage buckets add-iam-policy-binding "gs://$STATE_BUCKET" \
+    --member="serviceAccount:$(sa site-runtime)" --role=roles/storage.objectViewer --quiet >/dev/null
 }
 
 stage_restore() {

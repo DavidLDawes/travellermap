@@ -105,7 +105,7 @@ nav a { margin-right: 1rem; }
             page.Append("<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
             page.Append("<title>Traveller Map - ").Append(E(title)).Append("</title>\n<style>").Append(Style).Append("</style>\n");
             page.Append("<nav><a href=\"/admin").Append(key).Append("\">Admin</a>");
-            foreach (string name in new[] { "status", "fleet", "usage" })
+            foreach (string name in new[] { "status", "fleet", "usage", "budget" })
                 page.Append("<a href=\"/admin/").Append(name).Append(key).Append("\">").Append(char.ToUpperInvariant(name[0])).Append(name, 1, name.Length - 1).Append("</a>");
             page.Append("</nav>\n");
             page.Append("<h1>Traveller Map - ").Append(E(title)).Append("</h1>\n");
@@ -259,6 +259,7 @@ nav a { margin-right: 1rem; }
             Link("/admin/status", "This server process: deployment, memory, requests, caches, search index.");
             Link("/admin/fleet", "All instances, from Cloud Monitoring: how many are running, peaks, requests per hour.");
             Link("/admin/usage", "This month's usage against the Cloud Run free tier, projected to month end.");
+            Link("/admin/budget", "Spend against the budget, the budget alerts, open incidents, the last phone alert, and whether the cost cutoff has fired.");
             Link("/admin/overview", "Overview map of the sector data.");
             Link("/admin/errors", "Data errors found in the sector files.");
             Link("/admin/uptime", "How long this process has been running.");
