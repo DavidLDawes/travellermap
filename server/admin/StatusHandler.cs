@@ -49,7 +49,7 @@ namespace Maps.Admin
 
     internal static class StatusPage
     {
-        private static string E(object? value) => WebUtility.HtmlEncode(Convert.ToString(value, CultureInfo.InvariantCulture) ?? "");
+        internal static string E(object? value) => WebUtility.HtmlEncode(Convert.ToString(value, CultureInfo.InvariantCulture) ?? "");
 
         // Formatting ----------------------------------------------------------
 
@@ -83,7 +83,7 @@ namespace Maps.Admin
 
         // Pages ----------------------------------------------------------------
 
-        private const string Style = @"
+        internal const string Style = @"
 :root { color-scheme: light dark; --line: #8884; --muted: #888; }
 body { font: 15px/1.45 system-ui, sans-serif; max-width: 62rem; margin: 1.5rem auto; padding: 0 1rem; }
 h1 { font-size: 1.4rem; margin-bottom: .2rem; }
@@ -94,24 +94,31 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 td.label { color: var(--muted); width: 14rem; }
 .note { color: var(--muted); font-size: .9em; }
 nav a { margin-right: 1rem; }
+.bar { background: var(--line); border-radius: 3px; height: .75rem; min-width: 6rem; }
+.bar > i { display: block; height: 100%; background: #3a8; border-radius: 3px; }
+.bar.warn > i { background: #d90; }
+.bar.over > i { background: #d33; }
 ";
 
-        private static void Header(StringBuilder page, string title, string key)
+        internal static void Header(StringBuilder page, string title, string key)
         {
             page.Append("<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
             page.Append("<title>Traveller Map - ").Append(E(title)).Append("</title>\n<style>").Append(Style).Append("</style>\n");
-            page.Append("<nav><a href=\"/admin").Append(key).Append("\">Admin</a><a href=\"/admin/status").Append(key).Append("\">Status</a></nav>\n");
+            page.Append("<nav><a href=\"/admin").Append(key).Append("\">Admin</a>");
+            foreach (string name in new[] { "status", "fleet", "usage" })
+                page.Append("<a href=\"/admin/").Append(name).Append(key).Append("\">").Append(char.ToUpperInvariant(name[0])).Append(name, 1, name.Length - 1).Append("</a>");
+            page.Append("</nav>\n");
             page.Append("<h1>Traveller Map - ").Append(E(title)).Append("</h1>\n");
         }
 
-        private static void Section(StringBuilder page, string title, string? note = null)
+        internal static void Section(StringBuilder page, string title, string? note = null)
         {
             page.Append("<h2>").Append(E(title)).Append("</h2>\n");
             if (note != null)
                 page.Append("<p class=\"note\">").Append(E(note)).Append("</p>\n");
         }
 
-        private static void Row(StringBuilder page, string label, object? value, string? note = null)
+        internal static void Row(StringBuilder page, string label, object? value, string? note = null)
         {
             page.Append("<tr><td class=\"label\">").Append(E(label)).Append("</td><td>").Append(E(value));
             if (note != null)
@@ -250,6 +257,8 @@ nav a { margin-right: 1rem; }
             void Link(string path, string description) =>
                 page.Append("<tr><td class=\"label\"><a href=\"").Append(path).Append(key).Append("\">").Append(E(path)).Append("</a></td><td>").Append(E(description)).Append("</td></tr>\n");
             Link("/admin/status", "This server process: deployment, memory, requests, caches, search index.");
+            Link("/admin/fleet", "All instances, from Cloud Monitoring: how many are running, peaks, requests per hour.");
+            Link("/admin/usage", "This month's usage against the Cloud Run free tier, projected to month end.");
             Link("/admin/overview", "Overview map of the sector data.");
             Link("/admin/errors", "Data errors found in the sector files.");
             Link("/admin/uptime", "How long this process has been running.");

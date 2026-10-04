@@ -13,6 +13,7 @@
 #   budget    create the monthly budget and its notification thresholds   (needs BILLING_ACCOUNT)
 #   live      after the first deploy: make the site public and let the responder cut it off
 #   restore   make the site public again (after a cutoff)
+#   status-access   let the site read its own Cloud Monitoring metrics (read-only), for /admin/fleet and /admin/usage
 #   cutoff    make the site private by hand (what the responder does at 100% of budget)
 #   drill budget|monitoring [level]   send a test alert through the whole chain
 #
@@ -258,6 +259,11 @@ stage_live() {
   echo "Site: $(g run services describe "$SERVICE" --region="$REGION" --format='value(status.url)')"
 }
 
+stage_status_access() {
+  say "Read-only access to metrics for the site's service account"
+  grant site-runtime roles/monitoring.viewer
+}
+
 stage_restore() {
   g run services add-iam-policy-binding "$SERVICE" --region="$REGION" \
     --member=allUsers --role=roles/run.invoker --quiet >/dev/null
@@ -292,7 +298,7 @@ if [ "$1" = drill ]; then
 fi
 for stage in "$@"; do
   case "$stage" in
-    project|infra|wif|github|secrets|alerts|budget|live|restore|cutoff) "stage_$stage" ;;
+    project|infra|wif|github|secrets|alerts|budget|live|restore|cutoff|status-access) "stage_${stage//-/_}" ;;
     *) echo "unknown stage: $stage (drill must be used on its own)" >&2; exit 2 ;;
   esac
 done

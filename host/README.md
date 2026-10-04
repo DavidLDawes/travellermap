@@ -31,6 +31,7 @@ In `appsettings.json`, or as environment variables (e.g. `AdminKey=...`):
 | `SearchIndex` | The SQLite search index file. Default `~/App_Data/search.db`; built on first start if missing. |
 | `RedirectToHttps` | `true`: redirect plain HTTP to HTTPS (except `localhost`), as `Web.config` does. Off by default. |
 | `RemoveWww` | `true`: redirect `www.example.com` to `https://example.com`. Off by default. |
+| `GCP_ACCESS_TOKEN`, `GCP_PROJECT_ID`, `GCP_SERVICE` | Local runs only: show real Cloud Run metrics on `/admin/fleet` and `/admin/usage` (token from `gcloud auth print-access-token`). On Cloud Run the service's own account is used and none of these are needed. |
 | `ASPNETCORE_FORWARDEDHEADERS_ENABLED` | `true` behind a reverse proxy (environment variable): take the client's address and scheme from `X-Forwarded-For`/`-Proto`. |
 
 ## Deploy (Docker)

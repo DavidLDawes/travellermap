@@ -1,14 +1,14 @@
 {
   "displayName": "travellermap: both instances busy",
   "documentation": {
-    "content": "Cloud Run has had 2 active instances (the --max-instances limit) for 10 minutes. The site is at capacity, which also means it is spending free-tier hours quickly. Thresholds are in deploy/monitoring/instances-maxed.json.",
+    "content": "One revision of the service has had 2 active instances (the --max-instances limit) for 10 minutes. The site is at capacity, which also means it is spending free-tier hours quickly. Each revision is checked on its own, because two overlap while a deploy rolls out. Thresholds are in deploy/monitoring/instances-maxed.json.",
     "mimeType": "text/markdown"
   },
   "userLabels": { "severity": "critical" },
   "combiner": "OR",
   "conditions": [
     {
-      "displayName": "active instances = 2 for 10 min",
+      "displayName": "one revision at 2 active instances for 10 min",
       "conditionThreshold": {
         "filter": "resource.type = \"cloud_run_revision\" AND resource.labels.service_name = \"__SERVICE__\" AND metric.type = \"run.googleapis.com/container/instance_count\" AND metric.labels.state = \"active\"",
         "aggregations": [
@@ -16,7 +16,7 @@
             "alignmentPeriod": "60s",
             "perSeriesAligner": "ALIGN_MAX",
             "crossSeriesReducer": "REDUCE_SUM",
-            "groupByFields": ["resource.labels.service_name"]
+            "groupByFields": ["resource.labels.revision_name"]
           }
         ],
         "comparison": "COMPARISON_GT",
