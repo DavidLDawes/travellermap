@@ -77,6 +77,10 @@ function forCache(response, ttl) {
  */
 export async function handle(request, env, ctx, cache, fetchOrigin) {
   const publicUrl = new URL(request.url);
+  if (publicUrl.protocol === 'http:') {
+    publicUrl.protocol = 'https:';
+    return Response.redirect(publicUrl.toString(), 301);
+  }
   const originUrl = new URL(request.url);
   originUrl.protocol = 'https:';
   originUrl.hostname = env.ORIGIN_HOST;

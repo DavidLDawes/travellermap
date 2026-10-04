@@ -116,3 +116,10 @@ test('an unreachable origin is a 502, not an exception', async () => {
   const {response} = await run(fakeCache(), () => { throw new Error('connection refused'); }, `${site}/`);
   assert.equal(response.status, 502);
 });
+
+test('plain http is redirected to https without touching the origin', async () => {
+  const {response, seen} = await run(fakeCache(), publicOrigin(60), 'http://travellermap.example.com/a?b=1');
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('Location'), 'https://travellermap.example.com/a?b=1');
+  assert.equal(seen.length, 0);
+});
