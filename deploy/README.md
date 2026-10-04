@@ -108,8 +108,25 @@ instantaneous, which is one more reason for the `--max-instances 2` cap.
 The site answers 403. Find out why (Cloud Run logs, the Monitoring incident, the billing report),
 then `./deploy/setup.sh restore`.
 
-## Cloudflare in front (optional, free)
+## Cloudflare in front (free): travellermap.srd-tools.com
 
-Cloudflare's free plan can cache tiles and static files in front of Cloud Run, so most map traffic
-never reaches it. It needs a domain on Cloudflare; without one the site is at its `*.run.app` URL.
-Not set up yet.
+`deploy/cloudflare/` is a Worker that serves the site's hostname and caches in front of Cloud Run.
+Why a Worker: Cloud Run routes by the `Host` header, and overriding Host for a proxied DNS record is
+an Enterprise feature. The Worker fetches the `run.app` URL itself, which sets the right Host.
+
+- **Caching** follows the app's own `Cache-Control: public, max-age=...`, capped at 1 hour at the edge, so a
+  deploy shows up within an hour. `Accept` is part of the cache key, because the API picks JSON, XML or
+  PNG by `Accept` on one URL and Cloudflare's cache ignores `Vary`. Only plain 200 GETs that are `public`
+  and cookie-free are cached; `/admin` pages (not `public`) never are. Redirects are rewritten from the
+  `run.app` host to the public one. Responses carry `X-Edge: HIT` or `MISS`.
+- **Free-plan limit: 100,000 Worker requests per day** (resets at midnight UTC), and cache hits count.
+  Past it, visitors get Cloudflare error 1027 until the reset. Each map view is roughly 10-30 requests.
+  The Cache API is per datacenter, so a cache hit is not guaranteed in every location.
+- **The `run.app` URL still works directly.** Cloudflare saves requests and money; it is not a shield.
+  The budget cutoff is the real protection.
+- Deploy: `cd deploy/cloudflare && npx wrangler@latest deploy` (after `wrangler login`; the zone
+  `srd-tools.com` must be on that Cloudflare account). It creates the DNS record and certificate.
+  Don't create a DNS record for the hostname by hand. The Worker rarely changes, so this is a manual step,
+  not part of CI. If the Cloud Run service is ever recreated with a different URL, update `ORIGIN_HOST`
+  in `wrangler.jsonc`.
+- Tests: `test/unit/edge-worker.test.js` (run by `npm test`).

@@ -1,0 +1,16 @@
+{
+  // Deploy (needs `wrangler login`; the zone srd-tools.com must be on the same Cloudflare account):
+  //   cd deploy/cloudflare && npx wrangler@latest deploy
+  "name": "travellermap-edge",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  // A Custom Domain points every path at the Worker and creates the DNS record and certificate.
+  // (Don't create a DNS record for this hostname yourself: that conflicts.)
+  "routes": [{ "pattern": "travellermap.srd-tools.com", "custom_domain": true }],
+  "vars": {
+    // The Cloud Run service's own hostname (not a secret).
+    "ORIGIN_HOST": "travellermap-dtw35cxn7q-uc.a.run.app"
+  },
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 }
+}

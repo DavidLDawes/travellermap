@@ -28,6 +28,15 @@ export default [
     },
   },
   {
+    // The Cloudflare Worker in front of Cloud Run (deploy/cloudflare)
+    files: ['deploy/cloudflare/*.mjs'],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+      },
+    },
+  },
+  {
     files: ['sw.js'],
     languageOptions: {
       globals: {
