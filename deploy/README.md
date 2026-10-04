@@ -65,6 +65,32 @@ Then merge to `main`. The first deploy creates the site **privately** (403). Che
 Why a separate step: deploys never touch public access, so a deploy cannot silently undo a cost
 cutoff.
 
+## Admin pages
+
+Open an admin page over HTTPS with the key from Secret Manager as `?key=`:
+
+```
+https://travellermap.srd-tools.com/admin/overview?key=YOUR_ADMIN_KEY
+```
+
+Without the key (or over plain HTTP) the answer is 403 "Incorrect secret or connection not secure."
+To read the key: `gcloud secrets versions access latest --secret=admin-key --project travellermap-dld`.
+
+| Page | Shows |
+| --- | --- |
+| `/admin/overview` | Overview report (a good first page) |
+| `/admin/errors` | Data errors found in the sector files |
+| `/admin/uptime` | Server uptime |
+| `/admin/codes`, `/admin/routes`, `/admin/dump`, `/admin/profile` | Code tables, route table, data dump, profiling |
+| `/admin/flush`, `/admin/reindex` | **Change state:** reload cached sector data; rebuild the search index |
+
+`/admin/admin` is the shared handler behind `flush`, `reindex`, `profile` and `uptime`. It needs an
+`action` and prints "Unknown action:" without one, so don't use it as a landing page.
+
+Each Cloud Run instance has its own memory and search index, so `flush` and `reindex` affect only the
+instance that answers. Data changes go out by deploying, not through these pages. The key travels in the
+URL, so it ends up in browser history and logs; don't share links that contain it.
+
 ## Fire drill
 
 An alarm you have never triggered is a guess. The drill messages go through Pub/Sub exactly as real
