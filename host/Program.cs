@@ -1,9 +1,11 @@
 using Maps;
+using Maps.Admin;
 using Maps.Host;
 using Maps.HTTP;
 using Maps.Utilities;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -61,6 +63,25 @@ async Task SendNotFound(HttpContext context)
         await context.Response.SendFileAsync(page);
     }
 }
+
+// Request counters for /admin/status (outermost, so the timing covers everything below).
+app.Use(async (context, next) =>
+{
+    var stats = RequestStats.Current;
+    TimeSpan sinceStart = DateTime.Now - HandlerBase.StartupTime;
+    long started = Stopwatch.GetTimestamp();
+    stats.Begin();
+    int status = 500; // if next() throws
+    try
+    {
+        await next(context);
+        status = context.Response.StatusCode;
+    }
+    finally
+    {
+        stats.End(context.Request.Path.Value ?? "/", status, RequestStats.Since(started), sinceStart);
+    }
+});
 
 app.UseResponseCompression();
 

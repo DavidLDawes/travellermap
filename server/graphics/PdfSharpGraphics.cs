@@ -43,8 +43,10 @@ namespace Maps.Graphics
         public static void RenderPdf(Stream output, double width, double height, PdfInfo info, Action<AbstractGraphics> render)
         {
             // PDFsharp's font and image caches are shared, so serialize usage.
+            long waitStart = System.Diagnostics.Stopwatch.GetTimestamp();
             lock (s_lock)
             {
+                Maps.Admin.RequestStats.Current.RecordPdfLockWait(Maps.Admin.RequestStats.Since(waitStart));
                 using var document = new PdfDocument();
                 document.Version = 14; // 1.4 for opacity
                 document.Info.Title = info.Title ?? "";

@@ -70,7 +70,7 @@ cutoff.
 Open an admin page over HTTPS with the key from Secret Manager as `?key=`:
 
 ```
-https://travellermap.srd-tools.com/admin/overview?key=YOUR_ADMIN_KEY
+https://travellermap.srd-tools.com/admin?key=YOUR_ADMIN_KEY
 ```
 
 Without the key (or over plain HTTP) the answer is 403 "Incorrect secret or connection not secure."
@@ -78,11 +78,18 @@ To read the key: `gcloud secrets versions access latest --secret=admin-key --pro
 
 | Page | Shows |
 | --- | --- |
-| `/admin/overview` | Overview report (a good first page) |
+| `/admin` | **Landing page** linking to everything below; links keep the `?key=` |
+| `/admin/status` | **This server process:** deployed commit and time, Cloud Run revision, uptime, cold start, memory and CPU, requests since start by kind (counts, status classes, median/95th percentile/slowest), PDF lock waits, sectors loaded, search index |
+| `/admin/overview` | Overview map of the sector data |
 | `/admin/errors` | Data errors found in the sector files |
 | `/admin/uptime` | Server uptime |
 | `/admin/codes`, `/admin/routes`, `/admin/dump`, `/admin/profile` | Code tables, route table, data dump, profiling |
 | `/admin/flush`, `/admin/reindex` | **Change state:** reload cached sector data; rebuild the search index |
+
+`/admin/status` describes the one instance that answers: Cloud Run can run up to two, and its counters
+restart whenever the instance stops (it scales to zero when idle). The deploy job sets `GIT_SHA` and
+`DEPLOYED_AT` so the page can say what is running. Instance counts, monthly usage against the free tier,
+and budget spend are planned as `/admin/fleet`, `/admin/usage` and `/admin/budget`.
 
 `/admin/admin` is the shared handler behind `flush`, `reindex`, `profile` and `uptime`. It needs an
 `action` and prints "Unknown action:" without one, so don't use it as a landing page.
