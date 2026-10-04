@@ -242,7 +242,7 @@ stage_alerts() {
 stage_budget() {
   : "${BILLING_ACCOUNT:?set BILLING_ACCOUNT (gcloud billing accounts list)}"
   say "Budget: ${BUDGET_USD} USD per month for project $PROJECT_ID"
-  gcloud billing budgets create --billing-account="$BILLING_ACCOUNT" --display-name="$SERVICE" \
+  gcloud billing budgets create --billing-project="$PROJECT_ID" --billing-account="$BILLING_ACCOUNT" --display-name="$SERVICE" \
     --budget-amount="${BUDGET_USD}USD" --calendar-period=month \
     --filter-projects="projects/$(project_number)" \
     --threshold-rule=percent=0.25 --threshold-rule=percent=0.5 --threshold-rule=percent=0.9 \
