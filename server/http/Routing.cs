@@ -137,6 +137,8 @@ namespace Maps.HTTP
 
             // Administration -----------------------------------------------
 
+            Add(@"/admin/?", typeof(Admin.IndexHandler));
+            Add(@"/admin/status", typeof(Admin.StatusHandler));
             Add(@"/admin/admin", typeof(Admin.AdminHandler));
             Add(@"/admin/flush", typeof(Admin.AdminHandler), D(("action", "flush")));
             Add(@"/admin/reindex", typeof(Admin.AdminHandler), D(("action", "reindex")));

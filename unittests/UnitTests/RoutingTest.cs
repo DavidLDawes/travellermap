@@ -126,6 +126,9 @@ namespace UnitTests
             AssertHandler("/admin/flush", typeof(AdminHandler), "action=flush");
             AssertHandler("/admin/reindex", typeof(AdminHandler), "action=reindex");
             AssertHandler("/admin/errors", typeof(ErrorsHandler));
+            AssertHandler("/admin/status", typeof(StatusHandler));
+            AssertHandler("/admin", typeof(IndexHandler));
+            AssertHandler("/admin/", typeof(IndexHandler));
         }
 
         [TestMethod]

@@ -216,7 +216,7 @@ jobs:
             --service-account "${{ vars.GCP_RUNTIME_SA }}" \
             --port 8080 --cpu 1 --memory 1Gi --cpu-boost --concurrency 20 --timeout 120 \
             --min-instances 0 --max-instances 2 \
-            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true" \
+            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true,GIT_SHA=$GITHUB_SHA,DEPLOYED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             --set-secrets "AdminKey=admin-key:latest" \
             --labels "commit=${GITHUB_SHA::12}"
       - name: Smoke test
