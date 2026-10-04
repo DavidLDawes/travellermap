@@ -17,23 +17,31 @@ internal sealed class GoogleCloudStatusProvider : ICloudStatusProvider
     private static readonly TimeSpan CacheFor = TimeSpan.FromSeconds(60);
     private const string MetadataToken = "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token";
     private const string MetadataProject = "http://metadata.google.internal/computeMetadata/v1/project/project-id";
+    private const string MetadataRegion = "http://metadata.google.internal/computeMetadata/v1/instance/region";
 
     private readonly HttpClient http;
     private readonly string service;
     private readonly string? developerToken;
+    private readonly string? stateBucket;
     private string? project;
+    private string? region;
     private (string Token, DateTime Expires)? metadataToken;
 
     private readonly object cacheLock = new();
     private (DateTime At, FleetData Value)? fleet;
     private (DateTime At, UsageData Value)? usage;
+    private (DateTime At, BudgetData Value)? budget;
 
-    public GoogleCloudStatusProvider(HttpClient http, string service, string? project, string? developerToken)
+    /// <param name="stateBucket">The cost-alert responder's bucket; defaults to "{project}-alert-state".</param>
+    public GoogleCloudStatusProvider(HttpClient http, string service, string? project, string? developerToken,
+        string? region = null, string? stateBucket = null)
     {
         this.http = http;
         this.service = service;
         this.project = project;
         this.developerToken = developerToken;
+        this.region = region;
+        this.stateBucket = stateBucket;
     }
 
     /// <summary>A provider if this is Cloud Run (K_SERVICE is set) or a developer token is supplied; else null.</summary>
@@ -44,14 +52,16 @@ internal sealed class GoogleCloudStatusProvider : ICloudStatusProvider
         string? service = Env("K_SERVICE") ?? Env("GCP_SERVICE");
         if (service == null || (Env("K_SERVICE") == null && token == null))
             return null;
-        return new GoogleCloudStatusProvider(http, service, Env("GCP_PROJECT_ID"), token);
+        return new GoogleCloudStatusProvider(http, service, Env("GCP_PROJECT_ID"), token, Env("GCP_REGION"), Env("ALERT_STATE_BUCKET"));
     }
 
-    public string Describe() => $"Cloud Monitoring, project {project ?? "(from the metadata server)"}, service {service}; answers are cached for {CacheFor.TotalSeconds:0} s";
+    public string Describe() => $"Google Cloud, project {project ?? "(from the metadata server)"}, service {service}; answers are cached for {CacheFor.TotalSeconds:0} s";
 
     public FleetData GetFleetData() => Cached(ref fleet, LoadFleet);
 
     public UsageData GetUsageData() => Cached(ref usage, LoadUsage);
+
+    public BudgetData GetBudgetData() => Cached(ref budget, LoadBudget);
 
     private T Cached<T>(ref (DateTime At, T Value)? slot, Func<T> load) where T : class
     {
@@ -185,19 +195,174 @@ internal sealed class GoogleCloudStatusProvider : ICloudStatusProvider
         string? next = null;
         do
         {
-            using var request = new HttpRequestMessage(HttpMethod.Get, Url(next));
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            // A developer's own token needs a quota project; the service's account must not send one
-            // (that would need an extra role).
-            if (developerToken != null)
-                request.Headers.Add("x-goog-user-project", projectId);
-            using var response = await http.SendAsync(request);
-            string body = await response.Content.ReadAsStringAsync();
-            if (!response.IsSuccessStatusCode)
-                throw new InvalidOperationException($"Monitoring API answered {(int)response.StatusCode}: {(body.Length > 400 ? body[..400] : body)}");
-            all.AddRange(ParseSeries(body, out next));
+            all.AddRange(ParseSeries((await GetAsync(Url(next)))!, out next));
         } while (next != null);
         return all;
+    }
+
+    /// <summary>GET with the account's token; throws with the API's own error text. Null for a 404 if asked.</summary>
+    private async Task<string?> GetAsync(string url, bool notFoundIsNull = false)
+    {
+        string projectId = await ProjectAsync();
+        string token = await TokenAsync();
+        using var request = new HttpRequestMessage(HttpMethod.Get, url);
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        // A developer's own token needs a quota project; the service's account must not send one
+        // (that would need an extra role).
+        if (developerToken != null)
+            request.Headers.Add("x-goog-user-project", projectId);
+        using var response = await http.SendAsync(request);
+        string body = await response.Content.ReadAsStringAsync();
+        if (notFoundIsNull && response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            return null;
+        if (!response.IsSuccessStatusCode)
+            throw new InvalidOperationException($"{new Uri(url).Host} answered {(int)response.StatusCode}: {(body.Length > 400 ? body[..400] : body)}");
+        return body;
+    }
+
+    // Budget, alerts and the kill switch -----------------------------------------
+
+    private BudgetData LoadBudget()
+    {
+        var data = new BudgetData { AsOfUtc = DateTime.UtcNow };
+
+        // Each source is read on its own, so one that fails (a missing permission, say) is reported
+        // on the page without hiding the rest.
+        async Task Guard(string what, Func<Task> read)
+        {
+            try { await read(); }
+            catch (Exception ex) { lock (data.Problems) data.Problems.Add($"{what}: {ex.GetBaseException().Message}"); }
+        }
+
+        async Task<string> Bucket() => stateBucket ?? $"{await ProjectAsync()}-alert-state";
+        async Task<string?> StateFile(string name) =>
+            await GetAsync($"https://storage.googleapis.com/storage/v1/b/{await Bucket()}/o/{Uri.EscapeDataString(name)}?alt=media", notFoundIsNull: true);
+
+        var tasks = new[]
+        {
+            Guard("Budget notification", async () => data.Latest = ParseNotification(await StateFile("latest-budget.json"))),
+            Guard("Last alert", async () => data.LastAlert = ParseLastAlert(await StateFile("latest-alert.json"))),
+            Guard("Threshold history", async () => data.Announcements = ParseAnnouncements((await GetAsync(
+                $"https://storage.googleapis.com/storage/v1/b/{await Bucket()}/o?prefix=announced%2F&fields=items(name%2CtimeCreated)"))!)),
+            Guard("Site access", async () => data.SitePublic = ParseSiteIsPublic((await GetAsync(
+                $"https://run.googleapis.com/v2/projects/{await ProjectAsync()}/locations/{await RegionAsync()}/services/{service}:getIamPolicy"))!)),
+            Guard("Alert policies", async () => data.Policies = ParsePolicies((await GetAsync(
+                $"https://monitoring.googleapis.com/v3/projects/{await ProjectAsync()}/alertPolicies"))!)),
+            Guard("Open incidents", async () => data.OpenIncidents = ParseIncidents((await GetAsync(
+                $"https://monitoring.googleapis.com/v3/projects/{await ProjectAsync()}/alerts?filter={Uri.EscapeDataString("state = \"OPEN\"")}"))!)),
+        };
+        Task.WaitAll(tasks);
+        return data;
+    }
+
+    private async Task<string> RegionAsync()
+    {
+        if (region != null)
+            return region;
+        using var request = new HttpRequestMessage(HttpMethod.Get, MetadataRegion);
+        request.Headers.Add("Metadata-Flavor", "Google");
+        using var response = await http.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        // "projects/123456/regions/us-central1"
+        return region = (await response.Content.ReadAsStringAsync()).Trim().Split('/').Last();
+    }
+
+    private static DateTime ParseTime(string text) =>
+        DateTime.Parse(text, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal);
+
+    internal static BudgetNotification? ParseNotification(string? json)
+    {
+        if (json == null) return null;
+        using var doc = JsonDocument.Parse(json);
+        var r = doc.RootElement;
+        return new BudgetNotification
+        {
+            ReceivedUtc = ParseTime(r.GetProperty("receivedAt").GetString()!),
+            BudgetName = r.TryGetProperty("budgetDisplayName", out var name) ? name.GetString() ?? "" : "",
+            CostAmount = r.GetProperty("costAmount").GetDouble(),
+            BudgetAmount = r.GetProperty("budgetAmount").GetDouble(),
+            Currency = r.TryGetProperty("currencyCode", out var c) && c.GetString() is { Length: > 0 } code ? code : "USD",
+            CostIntervalStartUtc = r.TryGetProperty("costIntervalStart", out var s) && s.ValueKind == JsonValueKind.String ? ParseTime(s.GetString()!) : null,
+        };
+    }
+
+    internal static LastAlertInfo? ParseLastAlert(string? json)
+    {
+        if (json == null) return null;
+        using var doc = JsonDocument.Parse(json);
+        var r = doc.RootElement;
+        return new LastAlertInfo
+        {
+            TimeUtc = ParseTime(r.GetProperty("time").GetString()!),
+            Title = r.GetProperty("title").GetString() ?? "",
+            Priority = r.GetProperty("priority").GetInt32(),
+            Drill = r.TryGetProperty("drill", out var d) && d.ValueKind == JsonValueKind.True,
+            CutOff = r.TryGetProperty("cutOff", out var o) && o.ValueKind == JsonValueKind.True,
+        };
+    }
+
+    /// <summary>Objects under announced/ in a storage list response ({} when there are none).</summary>
+    internal static List<Announcement> ParseAnnouncements(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
+        var result = new List<Announcement>();
+        if (!doc.RootElement.TryGetProperty("items", out var items))
+            return result;
+        foreach (var item in items.EnumerateArray())
+            result.Add(new Announcement
+            {
+                Key = item.GetProperty("name").GetString()!.Substring("announced/".Length),
+                TimeUtc = ParseTime(item.GetProperty("timeCreated").GetString()!),
+            });
+        return result;
+    }
+
+    /// <summary>True if allUsers can invoke the service (the cost cutoff removes this).</summary>
+    internal static bool ParseSiteIsPublic(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
+        if (!doc.RootElement.TryGetProperty("bindings", out var bindings))
+            return false;
+        return bindings.EnumerateArray().Any(b =>
+            b.GetProperty("role").GetString() == "roles/run.invoker" &&
+            b.TryGetProperty("members", out var members) &&
+            members.EnumerateArray().Any(m => m.GetString() == "allUsers"));
+    }
+
+    internal static List<PolicyInfo> ParsePolicies(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
+        var result = new List<PolicyInfo>();
+        if (!doc.RootElement.TryGetProperty("alertPolicies", out var policies))
+            return result;
+        foreach (var p in policies.EnumerateArray())
+            result.Add(new PolicyInfo
+            {
+                Name = p.GetProperty("displayName").GetString() ?? "",
+                // "enabled" is omitted when true on some responses; only an explicit false disables.
+                Enabled = !(p.TryGetProperty("enabled", out var e) && e.ValueKind == JsonValueKind.False),
+                Severity = p.TryGetProperty("userLabels", out var labels) && labels.TryGetProperty("severity", out var sev) ? sev.GetString() ?? "" : "",
+            });
+        return result;
+    }
+
+    internal static List<IncidentInfo> ParseIncidents(string json)
+    {
+        using var doc = JsonDocument.Parse(json);
+        var result = new List<IncidentInfo>();
+        if (!doc.RootElement.TryGetProperty("alerts", out var alerts))
+            return result;
+        foreach (var a in alerts.EnumerateArray())
+        {
+            var policy = a.TryGetProperty("policy", out var p) ? p : default;
+            result.Add(new IncidentInfo
+            {
+                Policy = policy.ValueKind == JsonValueKind.Object && policy.TryGetProperty("displayName", out var n) ? n.GetString() ?? "" : "(unnamed policy)",
+                OpenedUtc = ParseTime(a.GetProperty("openTime").GetString()!),
+                Severity = policy.ValueKind == JsonValueKind.Object && policy.TryGetProperty("userLabels", out var l) && l.TryGetProperty("severity", out var s) ? s.GetString() ?? "" : "",
+            });
+        }
+        return result;
     }
 
     /// <summary>The series in a timeSeries.list response, with points oldest first; sets the next page token.</summary>

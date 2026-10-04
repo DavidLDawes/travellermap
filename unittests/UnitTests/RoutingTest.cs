@@ -129,6 +129,7 @@ namespace UnitTests
             AssertHandler("/admin/status", typeof(StatusHandler));
             AssertHandler("/admin/fleet", typeof(FleetHandler));
             AssertHandler("/admin/usage", typeof(UsageHandler));
+            AssertHandler("/admin/budget", typeof(BudgetHandler));
             AssertHandler("/admin", typeof(IndexHandler));
             AssertHandler("/admin/", typeof(IndexHandler));
         }

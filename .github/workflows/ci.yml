@@ -214,6 +214,7 @@ jobs:
           CPU: "1"
           MEMORY_GIB: "1"
           MAX_INSTANCES: "2"
+          BUDGET_USD: "2" # keep in step with the budget (deploy/setup.sh budget); shown on /admin/budget until Google's first notification
         run: |
           gcloud run deploy "$SERVICE" \
             --project "$PROJECT" --region "$REGION" \
@@ -221,7 +222,7 @@ jobs:
             --service-account "${{ vars.GCP_RUNTIME_SA }}" \
             --port 8080 --cpu "$CPU" --memory "${MEMORY_GIB}Gi" --cpu-boost --concurrency 20 --timeout 120 \
             --min-instances 0 --max-instances "$MAX_INSTANCES" \
-            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true,GIT_SHA=$GITHUB_SHA,DEPLOYED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ),GCP_PROJECT_ID=$PROJECT,CLOUD_RUN_VCPU=$CPU,CLOUD_RUN_MEMORY_GIB=$MEMORY_GIB,CLOUD_RUN_MAX_INSTANCES=$MAX_INSTANCES" \
+            --set-env-vars "ASPNETCORE_FORWARDEDHEADERS_ENABLED=true,RedirectToHttps=true,GIT_SHA=$GITHUB_SHA,DEPLOYED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ),GCP_PROJECT_ID=$PROJECT,GCP_REGION=$REGION,BUDGET_USD=$BUDGET_USD,CLOUD_RUN_VCPU=$CPU,CLOUD_RUN_MEMORY_GIB=$MEMORY_GIB,CLOUD_RUN_MAX_INSTANCES=$MAX_INSTANCES" \
             --set-secrets "AdminKey=admin-key:latest" \
             --labels "commit=${GITHUB_SHA::12}"
       - name: Smoke test

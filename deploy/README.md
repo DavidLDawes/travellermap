@@ -82,6 +82,7 @@ To read the key: `gcloud secrets versions access latest --secret=admin-key --pro
 | `/admin/status` | **This server process:** deployed commit and time, Cloud Run revision, uptime, cold start, memory and CPU, requests since start by kind (counts, status classes, median/95th percentile/slowest), PDF lock waits, sectors loaded, search index |
 | `/admin/fleet` | **All instances, from Cloud Monitoring:** instances running now, most at once (24 h, 30 d), minutes at the instance limit, requests last hour and by hour with the peak instances in each |
 | `/admin/usage` | **This month against the free tier:** vCPU-seconds, GiB-seconds, requests and egress used, percent and projected month end, when the free tier would run out at this pace, a rough cost beyond it, busy time by day |
+| `/admin/budget` | **The money side:** spend against the budget (Google's latest budget notification, which lags by hours, plus a rough estimate from usage), which budget alerts have fired this month, whether the cost cutoff has fired (is the site public?), open Monitoring incidents, the alert policies, and the last alert sent to your phone |
 | `/admin/overview` | Overview map of the sector data |
 | `/admin/errors` | Data errors found in the sector files |
 | `/admin/uptime` | Server uptime |
@@ -92,10 +93,12 @@ To read the key: `gcloud secrets versions access latest --secret=admin-key --pro
 restart whenever the instance stops (it scales to zero when idle). The deploy job sets `GIT_SHA` and
 `DEPLOYED_AT` so the page can say what is running.
 
-`/admin/fleet` and `/admin/usage` read Cloud Monitoring, so they cover every instance and survive restarts and
+`/admin/fleet`, `/admin/usage` and `/admin/budget` read Google Cloud, so they cover every instance and survive restarts and
 scale-to-zero (answers are cached for a minute; the data runs a few minutes behind). The site's service
-account needs read-only access for them: `./deploy/setup.sh status-access` grants `roles/monitoring.viewer`
-(nothing that can change anything). Without it the pages show the error and this hint. Notes:
+account needs read-only access for them: `./deploy/setup.sh status-access` grants three read-only roles, each as narrow as it can be:
+`monitoring.viewer` (project), `run.viewer` (this one service: to see whether the cost cutoff has fired) and
+`storage.objectViewer` (the alert state bucket only). Nothing that can change anything. Without them the pages show
+the error and this hint. Notes:
 
 - Month boundaries are Pacific time, which is how Google bills. The free amounts and list prices are constants in
   `server/admin/CloudStatus.cs` (`FreeTier`); the prices only feed the rough estimate.
@@ -114,6 +117,19 @@ account needs read-only access for them: `./deploy/setup.sh status-access` grant
 Each Cloud Run instance has its own memory and search index, so `flush` and `reindex` affect only the
 instance that answers. Data changes go out by deploying, not through these pages. The key travels in the
 URL, so it ends up in browser history and logs; don't share links that contain it.
+
+### What `/admin/budget` reads
+
+- **Spend.** Budget notifications are not pulled from Google: the cost-alert responder receives them (Pub/Sub) and
+  keeps the newest as `latest-budget.json` in the state bucket; the page reads that. Google sends them as spend
+  changes, so there may be none while usage is inside the free tier. Until the first arrives the page shows the
+  budget from `BUDGET_USD` (set in the deploy job; keep it equal to the budget) and an estimate from usage.
+  A notification from an earlier month is labelled as such, never shown as this month's spend.
+- **Which alerts fired.** The responder's `announced/` marker files in the same bucket (one per threshold per month).
+- **Last alert sent.** `latest-alert.json`; fire drills are recorded too and marked as drills (they never count as
+  spend or as a threshold).
+- **Cutoff.** Reads the service's IAM policy: public means `allUsers` can invoke it.
+- **Redeploy the responder after changing it:** `./deploy/setup.sh alerts` (CI deploys the site, not the responder).
 
 ## Fire drill
 

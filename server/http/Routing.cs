@@ -141,6 +141,7 @@ namespace Maps.HTTP
             Add(@"/admin/status", typeof(Admin.StatusHandler));
             Add(@"/admin/fleet", typeof(Admin.FleetHandler));
             Add(@"/admin/usage", typeof(Admin.UsageHandler));
+            Add(@"/admin/budget", typeof(Admin.BudgetHandler));
             Add(@"/admin/admin", typeof(Admin.AdminHandler));
             Add(@"/admin/flush", typeof(Admin.AdminHandler), D(("action", "flush")));
             Add(@"/admin/reindex", typeof(Admin.AdminHandler), D(("action", "reindex")));
