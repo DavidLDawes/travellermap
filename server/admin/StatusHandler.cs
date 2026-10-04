@@ -167,7 +167,7 @@ nav a { margin-right: 1rem; }
             Row(page, "Memory in use", FormatBytes(workingSet));
 #else
             long limit = GC.GetGCMemoryInfo().TotalAvailableMemoryBytes;
-            Row(page, "Memory in use", FormatBytes(workingSet), limit > 0 ? $"of {FormatBytes(limit)} available ({workingSet * 100.0 / limit:0}%)" : null);
+            Row(page, "Memory in use", FormatBytes(workingSet), limit > 0 ? $"of the {FormatBytes(limit)} the .NET runtime may use ({workingSet * 100.0 / limit:0}%)" : null);
 #endif
             Row(page, ".NET heap", FormatBytes(GC.GetTotalMemory(false)));
             Row(page, "Garbage collections", $"{GC.CollectionCount(0)} gen0, {GC.CollectionCount(1)} gen1, {GC.CollectionCount(2)} gen2");

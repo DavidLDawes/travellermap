@@ -22,13 +22,38 @@ namespace UnitTests
         [TestMethod]
         public void BillingMonthStartsAtMidnightPacific()
         {
-            DateTime start = CloudReports.BillingMonthStartUtc(Utc(2026, 10, 4, 10));
-            if (start.Hour == 0) Assert.Inconclusive("No Pacific time zone on this machine; fell back to UTC.");
-
-            Assert.AreEqual(Utc(2026, 10, 1, 7), start, "PDT is UTC-7");
+            Assert.AreEqual(Utc(2026, 10, 1, 7), CloudReports.BillingMonthStartUtc(Utc(2026, 10, 4, 10)), "PDT is UTC-7");
             Assert.AreEqual(Utc(2026, 11, 1, 7), CloudReports.BillingMonthStartUtc(Utc(2026, 11, 15)), "DST ends at 2am on 1 Nov, after midnight");
             Assert.AreEqual(Utc(2026, 12, 1, 8), CloudReports.BillingMonthStartUtc(Utc(2026, 12, 3)), "PST is UTC-8");
             Assert.AreEqual(Utc(2026, 12, 1, 8), CloudReports.BillingMonthStartUtc(Utc(2027, 1, 1, 0, 30)), "00:30 UTC on 1 Jan is still 31 Dec in Pacific time");
+            Assert.AreEqual(Utc(2026, 3, 1, 8), CloudReports.BillingMonthStartUtc(Utc(2026, 3, 20)), "DST starts on 8 Mar, after the 1st");
+            Assert.AreEqual(Utc(2026, 4, 1, 7), CloudReports.BillingMonthStartUtc(Utc(2026, 4, 2)));
+            Assert.AreEqual(Utc(2027, 11, 1, 7), CloudReports.BillingMonthStartUtc(Utc(2027, 11, 20)), "in 2027 DST lasts until 7 Nov");
+            Assert.AreEqual(Utc(2027, 12, 1, 8), CloudReports.BillingMonthStartUtc(Utc(2027, 12, 20)));
+        }
+
+        [TestMethod]
+        public void PacificOffsetChangesAtTwoInTheMorningOnTheRightSundays()
+        {
+            // 2026: DST starts Sunday 8 March at 2:00 PST (10:00 UTC) and ends Sunday 1 November at 2:00 PDT (09:00 UTC).
+            Assert.AreEqual(TimeSpan.FromHours(-8), CloudReports.PacificOffset(Utc(2026, 3, 8, 9, 59)));
+            Assert.AreEqual(TimeSpan.FromHours(-7), CloudReports.PacificOffset(Utc(2026, 3, 8, 10, 0)));
+            Assert.AreEqual(TimeSpan.FromHours(-7), CloudReports.PacificOffset(Utc(2026, 11, 1, 8, 59)));
+            Assert.AreEqual(TimeSpan.FromHours(-8), CloudReports.PacificOffset(Utc(2026, 11, 1, 9, 0)));
+            Assert.AreEqual(TimeSpan.FromHours(-8), CloudReports.PacificOffset(Utc(2026, 1, 15)));
+            Assert.AreEqual(TimeSpan.FromHours(-7), CloudReports.PacificOffset(Utc(2026, 7, 4)));
+        }
+
+        [TestMethod]
+        public void PacificOffsetAgreesWithTheSystemTimeZoneWhereThereIsOne()
+        {
+            TimeZoneInfo zone;
+            try { zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time"); }
+            catch (TimeZoneNotFoundException) { try { zone = TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles"); } catch (TimeZoneNotFoundException) { Assert.Inconclusive("No Pacific time zone on this machine."); return; } }
+
+            // Every 6 hours for 2026 and 2027.
+            for (DateTime t = Utc(2026, 1, 1); t < Utc(2028, 1, 1); t = t.AddHours(6))
+                Assert.AreEqual(zone.GetUtcOffset(t), CloudReports.PacificOffset(t), t.ToString("u"));
         }
 
         // Fleet ------------------------------------------------------------------

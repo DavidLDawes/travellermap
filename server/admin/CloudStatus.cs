@@ -162,25 +162,39 @@ namespace Maps.Admin
 
     internal static class CloudReports
     {
-        private static readonly string[] PacificZoneIds = { "America/Los_Angeles", "Pacific Standard Time" };
+        private static readonly TimeSpan Pst = TimeSpan.FromHours(-8);
+        private static readonly TimeSpan Pdt = TimeSpan.FromHours(-7);
+
+        private static DateTime FirstSunday(int year, int month)
+        {
+            var first = new DateTime(year, month, 1, 0, 0, 0, DateTimeKind.Utc);
+            return first.AddDays(((int)DayOfWeek.Sunday - (int)first.DayOfWeek + 7) % 7);
+        }
+
+        /// <summary>
+        /// Pacific time's offset from UTC at an instant, by the US rules in force since 2007: daylight
+        /// time runs from 2:00 on the second Sunday of March to 2:00 on the first Sunday of November.
+        /// Computed rather than read from the system time zone database, because the Linux container
+        /// has none and both hosts must give the same answer.
+        /// </summary>
+        public static TimeSpan PacificOffset(DateTime utc)
+        {
+            DateTime starts = FirstSunday(utc.Year, 3).AddDays(7).AddHours(2).Subtract(Pst);  // 2:00 PST
+            DateTime ends = FirstSunday(utc.Year, 11).AddHours(2).Subtract(Pdt);              // 2:00 PDT
+            return utc >= starts && utc < ends ? Pdt : Pst;
+        }
 
         /// <summary>
         /// Midnight at the start of the current month in Pacific time, in UTC: Google bills (and
-        /// resets the free tier) by Pacific time. Falls back to UTC if no time zone database is available.
+        /// resets the free tier) by Pacific time.
         /// </summary>
         public static DateTime BillingMonthStartUtc(DateTime nowUtc)
         {
-            foreach (string id in PacificZoneIds)
-            {
-                TimeZoneInfo zone;
-                try { zone = TimeZoneInfo.FindSystemTimeZoneById(id); }
-                catch (Exception ex) when (ex is TimeZoneNotFoundException || ex is InvalidTimeZoneException) { continue; }
-
-                DateTime local = TimeZoneInfo.ConvertTimeFromUtc(nowUtc, zone);
-                var monthStartLocal = new DateTime(local.Year, local.Month, 1, 0, 0, 0, DateTimeKind.Unspecified);
-                return TimeZoneInfo.ConvertTimeToUtc(monthStartLocal, zone);
-            }
-            return new DateTime(nowUtc.Year, nowUtc.Month, 1, 0, 0, 0, DateTimeKind.Utc);
+            DateTime local = nowUtc + PacificOffset(nowUtc);
+            var wallMidnight = new DateTime(local.Year, local.Month, 1, 0, 0, 0, DateTimeKind.Utc);
+            // Midnight on the 1st is never inside a clock change (those are at 2:00 on a Sunday).
+            DateTime ifDaylight = wallMidnight - Pdt;
+            return PacificOffset(ifDaylight) == Pdt ? ifDaylight : wallMidnight - Pst;
         }
 
         public static FleetReport BuildFleet(FleetData data, ServiceLimits limits)
