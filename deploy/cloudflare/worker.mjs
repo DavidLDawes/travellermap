@@ -44,11 +44,17 @@ export function withPrefix(value, prefix) {
   return prefix + value;
 }
 
-// The key the Cache API files an entry under: the public URL, plus Accept for the
-// content-negotiated API (decided on the origin's path, which is the same with or without a mount).
+// Whether the app chooses the answer's format by the Accept header. Everything it generates may
+// (/api/, /data/, /t5ss/: JSON, XML, text, PNG, PDF...), and none of its routes ends in a file
+// extension; static files do, and don't vary. Decided on the origin's path (same with or without a mount).
+export function variesByAccept(originPath) {
+  return !/\.[A-Za-z0-9]+$/.test(originPath);
+}
+
+// The key the Cache API files an entry under: the public URL, plus Accept where the answer depends on it.
 function cacheKeyFor(request, originPath) {
   const url = new URL(request.url);
-  if (originPath.startsWith('/api/')) {
+  if (variesByAccept(originPath)) {
     url.searchParams.set('~accept', (request.headers.get('Accept') ?? '').slice(0, 200));
   }
   return new Request(url.toString(), {method: 'GET'});

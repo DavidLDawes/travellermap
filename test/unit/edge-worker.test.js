@@ -2,7 +2,7 @@
 // the origin's Cache-Control, Accept-aware cache keys, and redirect rewriting.
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
-import {handle} from '../../deploy/cloudflare/worker.mjs';
+import {handle, variesByAccept} from '../../deploy/cloudflare/worker.mjs';
 
 const ORIGIN_HOST = 'site-abc-uc.a.run.app';
 const env = {ORIGIN_HOST};
@@ -122,4 +122,30 @@ test('plain http is redirected to https without touching the origin', async () =
   assert.equal(response.status, 301);
   assert.equal(response.headers.get('Location'), 'https://travellermap.example.com/a?b=1');
   assert.equal(seen.length, 0);
+});
+
+test('sector data and T5SS tables are cached per Accept header too, not just the API', async () => {
+  // /data/spin/1910 answers JSON, XML or text by Accept; one format must never be served for another.
+  for (const path of ['/data/spin/1910', '/t5ss/sophonts', '/data/spin/C/image']) {
+    const cache = fakeCache();
+    const answer = request => new Response(request.headers.get('Accept'), {headers: {'Cache-Control': 'public, max-age=60'}});
+    const json = await run(cache, answer, `${site}${path}`, {headers: {Accept: 'application/json'}});
+    const xml = await run(cache, answer, `${site}${path}`, {headers: {Accept: 'text/xml'}});
+    assert.equal(await json.response.text(), 'application/json', path);
+    assert.equal(await xml.response.text(), 'text/xml', `${path}: not the cached JSON`);
+  }
+});
+
+test('static files share one cache entry whatever the Accept header', async () => {
+  const cache = fakeCache();
+  await run(cache, publicOrigin(60), `${site}/index.js`, {headers: {Accept: '*/*'}});
+  const other = await run(cache, publicOrigin(60), `${site}/index.js`, {headers: {Accept: 'application/javascript'}});
+  assert.equal(other.seen.length, 0, 'served from the same entry');
+});
+
+test('generated paths vary by Accept; static files do not', () => {
+  for (const path of ['/api/tile', '/data/spin/1910', '/t5ss/sophonts', '/', '/doc/api', '/admin/status'])
+    assert.equal(variesByAccept(path), true, path);
+  for (const path of ['/index.js', '/res/mains.json', '/favicon.svg', '/doc/api.html', '/res/app/regina192.png'])
+    assert.equal(variesByAccept(path), false, path);
 });

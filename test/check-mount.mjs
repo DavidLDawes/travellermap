@@ -126,7 +126,10 @@ try {
       if (u.origin !== base.origin) continue;  // fonts, CDN scripts
       ++sameOrigin;
       const shown = u.pathname + u.search.slice(0, 60);
-      if (!(u.pathname + '/').startsWith(MOUNT + '/')) problems.push(`outside the mount: ${shown}`);
+      // /cdn-cgi/ is reserved by Cloudflare on every zone and served by Cloudflare itself (for
+      // example its Web Analytics beacon, /cdn-cgi/rum): outside the mount, but not another site's.
+      const cloudflare = u.pathname.startsWith('/cdn-cgi/');
+      if (!cloudflare && !(u.pathname + '/').startsWith(MOUNT + '/')) problems.push(`outside the mount: ${shown}`);
       const isPage = u.href.split('#')[0] === url.split('#')[0];
       if (r.status >= 400 && !(isPage && r.status === page.status)) problems.push(`HTTP ${r.status}: ${shown}`);
       if (r.error) problems.push(`failed (${r.error}): ${shown}`);
