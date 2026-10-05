@@ -1,8 +1,8 @@
-// version 5
+// version 6
 
 const CACHE_NAME = 'offline-resources';
 const urlsToCache = [
-  '/',  // start_url in manifest, even though this isn't served; see:
+  './',  // start_url in manifest (the site root, wherever it is mounted); see:
   // https://developers.google.com/web/tools/lighthouse/audits/cache-contains-start_url
 
   'offline.html',

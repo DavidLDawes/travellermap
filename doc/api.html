@@ -232,7 +232,7 @@ table#features, #features th, #features td { border: solid 1px black; }
             }
           });
           document.querySelector("#computed_options").innerHTML = String(options);
-          document.querySelector("#test_options").href = "/data/spin/C/image?options=" + encodeURIComponent(String(options));
+          document.querySelector("#test_options").href = "../data/spin/C/image?options=" + encodeURIComponent(String(options));
         }
         const checkboxes = [].slice.call(document.querySelectorAll("#options_table input[type='checkbox']"));
         checkboxes.forEach(cb => {

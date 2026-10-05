@@ -163,7 +163,8 @@ const SERVICE_BASE = (function(l) {
   'use strict';
   if (l.hostname === 'localhost' && l.pathname.indexOf('~') !== -1)
     return 'https://travellermap.com';
-  return '';
+  // The site root: this page is in its test/ directory, and the site may be mounted under a path.
+  return l.pathname.replace(/\/test\/[^/]*$/, '');
 }(window.location));
 
 async function fetchXML(uri) {

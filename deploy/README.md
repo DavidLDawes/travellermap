@@ -174,7 +174,7 @@ instantaneous, which is one more reason for the `--max-instances 2` cap.
 The site answers 403. Find out why (Cloud Run logs, the Monitoring incident, the billing report),
 then `./deploy/setup.sh restore`.
 
-## Cloudflare in front (free): travellermap.srd-tools.com
+## Cloudflare in front (free): travellermap.srd-tools.com and srd-tools.com/TravellerMap/
 
 `deploy/cloudflare/` is a Worker that serves the site's hostname and caches in front of Cloud Run.
 Why a Worker: Cloud Run routes by the `Host` header, and overriding Host for a proxied DNS record is
@@ -186,7 +186,8 @@ an Enterprise feature. The Worker fetches the `run.app` URL itself, which sets t
   and cookie-free are cached; `/admin` pages (not `public`) never are. Redirects are rewritten from the
   `run.app` host to the public one. Responses carry `X-Edge: HIT` or `MISS`.
 - **Free-plan limit: 100,000 Worker requests per day** (resets at midnight UTC), and cache hits count.
-  Past it, visitors get Cloudflare error 1027 until the reset. Each map view is roughly 10-30 requests.
+  Past it, visitors get Cloudflare error 1027 until the reset. A first map view is about 60 requests
+  (measured: tiles, scripts, data), so roughly 1,600 fresh map views a day.
   The Cache API is per datacenter, so a cache hit is not guaranteed in every location.
 - **The `run.app` URL still works directly.** Cloudflare saves requests and money; it is not a shield.
   The budget cutoff is the real protection.
@@ -195,4 +196,43 @@ an Enterprise feature. The Worker fetches the `run.app` URL itself, which sets t
   Don't create a DNS record for the hostname by hand. The Worker rarely changes, so this is a manual step,
   not part of CI. If the Cloud Run service is ever recreated with a different URL, update `ORIGIN_HOST`
   in `wrangler.jsonc`.
-- Tests: `test/unit/edge-worker.test.js` (run by `npm test`).
+- Tests: `test/unit/edge-worker.test.js` and `edge-worker-mount.test.js` (run by `npm test`).
+
+### Mounted at srd-tools.com/TravellerMap/
+
+srd-tools.com is one Cloudflare zone shared by several apps, each a Worker on its own path; the root site
+(the Sector Generator, repo `DavidLDawes/tsg`) is the `srd-tools.com/*` catch-all, and the more specific
+route wins. This Worker also has routes for `srd-tools.com/TravellerMap` and `/TravellerMap/*` (plus the
+lowercase spelling, which only redirects). With `MOUNT_PATH` set to `/TravellerMap`:
+
+- The prefix is removed before the origin sees the path, so the app itself knows nothing about it.
+- `/TravellerMap` redirects to `/TravellerMap/` (or the page's relative URLs resolve one level up);
+  `/travellermap/...` redirects to the canonical spelling. Route paths are case-sensitive.
+- What the origin sends that names its own paths gets the prefix back: redirect `Location`s
+  (`/go/spin/1910` → `/TravellerMap/?sector=...`), and root-absolute `href`/`src`/`action` attributes in
+  HTML, rewritten by Cloudflare's `HTMLRewriter` (`404.html`, the docs and admin pages). The rewritten page
+  is what gets cached.
+- **URLs that pages build in JavaScript can't be rewritten**, so the client builds them on the site root:
+  `map.js` derives `SERVICE_BASE` from its own URL (`serviceBase()`), and `MapService.makeURL('/api/...')`
+  uses it. **New client code must do the same**: use `MapService.makeURL` or a relative URL, never a literal
+  `'/api/...'` or `'/res/...'`. The PWA manifest and service worker use relative URLs for the same reason.
+- `/admin` pages are reachable at `https://srd-tools.com/TravellerMap/admin?key=...` too.
+
+Check it (both are also how this was tested before it went live):
+
+```bash
+# Every page in a real browser: all requests stay under the mount, nothing fails, tiles draw.
+npm run test:mount -- --base https://srd-tools.com/TravellerMap [--key ADMIN_KEY]
+# The whole browser suite, through the mount.
+npm run test:browser -- --base https://srd-tools.com/TravellerMap
+```
+
+Locally, with the real Cloudflare runtime in front of a local host (the mount is in `wrangler.jsonc`):
+
+```bash
+dotnet run -c Debug --project host --urls http://localhost:5080          # one terminal
+cd deploy/cloudflare && npx wrangler@latest dev   --var ORIGIN_HOST:localhost:5080 --var ORIGIN_PROTOCOL:http:            # another
+npm run test:mount -- --base http://localhost:8787/TravellerMap
+```
+
+(On Windows Git Bash, prefix the `wrangler dev` line with `MSYS_NO_PATHCONV=1`.)

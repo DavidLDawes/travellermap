@@ -87,6 +87,10 @@ Phase 7 describes the migration off IIS/System.Drawing/SQL Server.
 **Deployment.** Pushes to `main` that pass CI deploy the Docker image to Cloud Run (CI job `deploy`;
 setup, secrets, cost alarms and runbook in `deploy/README.md`; `deploy/setup.sh` is the one-time GCP setup).
 Runtime secrets live in Secret Manager, never in GitHub. `deploy/` is excluded from the image.
+The site is also mounted at `srd-tools.com/TravellerMap/` (Cloudflare Worker `deploy/cloudflare`), so
+client code must not hard-code root-absolute URLs: use `MapService.makeURL('/api/...')` (built on
+`SERVICE_BASE`, the site root) or relative URLs. HTML attributes may be root-absolute; the Worker prefixes them.
+Check with `npm run test:mount` (see `deploy/README.md`).
 
 **Client — plain ES modules, no build step.**
 - `index.html` + `index.js` — main page UI (search, routes, world/sector info cards, settings).
