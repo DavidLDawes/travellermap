@@ -1,16 +1,29 @@
 {
   // Deploy (needs `wrangler login`; the zone srd-tools.com must be on the same Cloudflare account):
   //   cd deploy/cloudflare && npx wrangler@latest deploy
+  // Local test, mounted, in front of a local host (see deploy/README.md):
+  //   npx wrangler@latest dev --var ORIGIN_HOST:localhost:5080 --var ORIGIN_PROTOCOL:http:
   "name": "travellermap-edge",
   "main": "worker.mjs",
   "compatibility_date": "2026-10-01",
   "workers_dev": false,
-  // A Custom Domain points every path at the Worker and creates the DNS record and certificate.
-  // (Don't create a DNS record for this hostname yourself: that conflicts.)
-  "routes": [{ "pattern": "travellermap.srd-tools.com", "custom_domain": true }],
+  "routes": [
+    // The site's own hostname. A Custom Domain points every path at the Worker and creates the
+    // DNS record and certificate. (Don't create a DNS record for this hostname yourself.)
+    { "pattern": "travellermap.srd-tools.com", "custom_domain": true },
+    // Mounted under srd-tools.com, whose root is another Worker (tsg-root, srd-tools.com/*); the
+    // more specific route wins. Paths are case-sensitive: the lowercase spelling is routed here
+    // only to be redirected to the canonical one, and the bare path needs its own route.
+    { "pattern": "srd-tools.com/TravellerMap", "zone_name": "srd-tools.com" },
+    { "pattern": "srd-tools.com/TravellerMap/*", "zone_name": "srd-tools.com" },
+    { "pattern": "srd-tools.com/travellermap", "zone_name": "srd-tools.com" },
+    { "pattern": "srd-tools.com/travellermap/*", "zone_name": "srd-tools.com" }
+  ],
   "vars": {
     // The Cloud Run service's own hostname (not a secret).
-    "ORIGIN_HOST": "travellermap-dtw35cxn7q-uc.a.run.app"
+    "ORIGIN_HOST": "travellermap-dtw35cxn7q-uc.a.run.app",
+    // The path the site is mounted at on srd-tools.com.
+    "MOUNT_PATH": "/TravellerMap"
   },
   "observability": { "enabled": true, "head_sampling_rate": 0.1 }
 }

@@ -103,6 +103,9 @@ nav a { margin-right: 1rem; }
         internal static void Header(StringBuilder page, string title, string key)
         {
             page.Append("<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+            // Without an icon link the browser asks for /favicon.ico at the domain root, which is another
+            // site's when this one is mounted under a path. Root-absolute links get the mount prefix.
+            page.Append("<link rel=\"icon\" href=\"/favicon.svg\">\n");
             page.Append("<title>Traveller Map - ").Append(E(title)).Append("</title>\n<style>").Append(Style).Append("</style>\n");
             page.Append("<nav><a href=\"/admin").Append(key).Append("\">Admin</a>");
             foreach (string name in new[] { "status", "fleet", "usage", "budget" })

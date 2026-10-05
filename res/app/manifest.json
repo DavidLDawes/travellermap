@@ -3,23 +3,23 @@
   "name": "The Traveller Map",
   "short_name": "TravellerMap",
   "description": "An interactive map of the universe of the Traveller role playing game, incorporating official data and fan submissions.",
-  "scope": "/",
+  "scope": "../../",
   "icons": [
     {
-      "src": "/res/app/regina192.png",
+      "src": "regina192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/res/app/regina512.png",
+      "src": "regina512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "../../",
   "serviceworker": {
     "src": "../../sw.js",
     "scope": "../../"

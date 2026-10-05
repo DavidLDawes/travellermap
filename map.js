@@ -261,12 +261,24 @@ export class Util {
 // General Traveller stuff
 //----------------------------------------------------------------------
 
-const SERVICE_BASE = ((l) => {
-  if ((l.hostname === 'localhost' && l.pathname.indexOf('~') !== -1) ||
-      (l.protocol === 'file:'))
+// The site's root path, which API URLs ("/api/tile") are built on: "" when the site is at the
+// root of its domain, "/TravellerMap" when it is mounted under a path (srd-tools.com/TravellerMap/).
+// map.js sits at the site root, so the root is the directory this module was loaded from.
+export function serviceBase(location, moduleUrl) {
+  if ((location.hostname === 'localhost' && location.pathname.indexOf('~') !== -1) ||
+      (location.protocol === 'file:'))
     return 'https://travellermap.com';
+  try {
+    const root = new URL('.', moduleUrl);
+    if ((root.protocol === 'http:' || root.protocol === 'https:') && root.origin === location.origin)
+      return root.pathname.replace(/\/$/, '');
+  } catch {
+    // Not a URL we can read: assume the root of the domain.
+  }
   return '';
-})(window.location);
+}
+
+const SERVICE_BASE = serviceBase(window.location, import.meta.url);
 
 const LEGACY_STYLES = true;
 

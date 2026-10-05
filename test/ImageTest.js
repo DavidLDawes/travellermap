@@ -1,7 +1,8 @@
 var SERVICE_BASE = (function(l) {
   if (l.hostname === 'localhost' && l.pathname.indexOf('~') !== -1)
     return 'https://travellermap.com';
-  return '';
+  // The site root: this page is in its test/ directory, and the site may be mounted under a path.
+  return l.pathname.replace(/\/test\/[^/]*$/, '');
 }(window.location));
 
 var DEFAULT_THRESHOLD = 8;  // per-channel difference that counts as "soft"
